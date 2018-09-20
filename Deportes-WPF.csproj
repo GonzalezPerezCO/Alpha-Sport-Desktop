@@ -103,5 +103,6 @@
   <ItemGroup>
     <Resource Include="editor.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

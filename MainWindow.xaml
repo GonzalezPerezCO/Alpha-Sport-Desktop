@@ -11,6 +11,7 @@
         <TextBox x:Name="text2" HorizontalAlignment="Left" Height="23" Margin="382,335,0,0" TextWrapping="Wrap" Text="contraseña" VerticalAlignment="Center" Width="120"/>
         <Label x:Name="la1" Content="Usuario:" HorizontalAlignment="Left" Margin="287,296,0,0" VerticalAlignment="Center" FontWeight="Bold"/>
         <Label x:Name="la2" Content="Contraseña:" HorizontalAlignment="Left" Margin="287,331,0,0" VerticalAlignment="Center" FontWeight="Bold"/>
+        <Image x:Name="escuela" Height="100" Margin="0" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Source="fit.ico"/>
 
     </Grid>
 </Window>
