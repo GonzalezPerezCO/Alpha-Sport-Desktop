@@ -11,11 +11,11 @@
             <ColumnDefinition Width="401*"/>
             <ColumnDefinition Width="391*"/>
         </Grid.ColumnDefinitions>
-        <Label Content="Usuario" HorizontalAlignment="Center" Margin="22,241,292,142" VerticalAlignment="Center" Grid.Column="1" Height="36" FontWeight="Bold" Width="77"/>
-        <Label Content="Contraseña" HorizontalAlignment="Center" Margin="22,296,292,88" VerticalAlignment="Center" Grid.Column="1" Height="35" FontWeight="Bold" Width="77"/>
-        <TextBox HorizontalAlignment="Center" Height="31" Margin="108,243,44,145" TextWrapping="Wrap" Text="usuario" VerticalAlignment="Center" Width="239" Grid.Column="1" TextAlignment="Center" BorderThickness="3" ClipToBounds="True" ForceCursor="True"/>
-        <TextBox HorizontalAlignment="Center" Height="33" Margin="108,297,44,89" TextWrapping="Wrap" Text="contraseña" VerticalAlignment="Center" Width="239" Grid.Column="1" TextAlignment="Center" BorderThickness="3" ClipToBounds="True"/>
-        <Button Content="enviar" HorizontalAlignment="Center" Margin="108,357,106,19" VerticalAlignment="Center" Width="177" Grid.Column="1" Height="43" ClipToBounds="True"/>
+        <Label x:Name="lab1" Content="Usuario" HorizontalAlignment="Center" Margin="22,241,292,142" VerticalAlignment="Center" Grid.Column="1" Height="36" FontWeight="Bold" Width="77"/>
+        <Label x:Name="lab2" Content="Contraseña" HorizontalAlignment="Center" Margin="22,296,292,88" VerticalAlignment="Center" Grid.Column="1" Height="35" FontWeight="Bold" Width="77"/>
+        <TextBox x:Name="text1" HorizontalAlignment="Center" Height="31" Margin="108,243,44,145" TextWrapping="Wrap" Text="usuario" VerticalAlignment="Center" Width="239" Grid.Column="1" TextAlignment="Center" BorderThickness="3" ClipToBounds="True" ForceCursor="True"/>
+        <TextBox x:Name="text2" HorizontalAlignment="Center" Height="33" Margin="108,297,44,89" TextWrapping="Wrap" Text="contraseña" VerticalAlignment="Center" Width="239" Grid.Column="1" TextAlignment="Center" BorderThickness="3" ClipToBounds="True"/>
+        <Button x:Name="btn1" Content="enviar" HorizontalAlignment="Center" Margin="108,357,106,19" VerticalAlignment="Center" Width="177" Grid.Column="1" Height="43" ClipToBounds="True"/>
         <Image HorizontalAlignment="Left" Height="100" Margin="45,154,0,0" VerticalAlignment="Top" Width="100" Source="fit.ico"/>
 
     </Grid>
