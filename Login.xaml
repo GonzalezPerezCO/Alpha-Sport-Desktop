@@ -14,7 +14,7 @@
             <TextBox Name="txt1" Foreground="Black" Background="LightGray" FontSize="18"/>
             <Label Content="Contraseña" Foreground="Black"></Label>
             <PasswordBox Name="txt2" Foreground="Black" Background="LightGray" FontSize="18"></PasswordBox>
-            <Button Name="btn1" Content="enviar" Margin="60 10" Foreground="Black" Background="LightGray"></Button>
+            <Button Name="btn1" Content="enviar" Margin="60 10" Foreground="Black" Background="LightGray" Click="btn1_Click"></Button>
         </StackPanel>
     </Border>
 </Window>

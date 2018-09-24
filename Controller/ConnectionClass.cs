@@ -24,10 +24,10 @@ namespace Deportes_WPF.Controller
         //Initialize values
         private void Initialize()
         {
-            server = "localhost";
-            database = "connectcsharptomysql";
-            uid = "username";
-            password = "password";
+            server = "estudiantes.is.escuelaing.edu.co";
+            database = "deportes";
+            uid = "deportes";
+            password = "deportes20182";
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" +
             database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
