@@ -11,7 +11,7 @@
             <Label Content="Login" Foreground="Black" FontSize="25" HorizontalAlignment="Center"></Label>
             <Separator></Separator>
             <Label Content="Usuario" Foreground="Black"></Label>
-            <TextBox Name="txt1" Foreground="Black" Background="LightGray" FontSize="18" Text="su correo"/>
+            <TextBox Name="txt1" Foreground="Black" Background="LightGray" FontSize="18"/>
             <Label Content="Contraseña" Foreground="Black"></Label>
             <PasswordBox Name="txt2" Foreground="Black" Background="LightGray" FontSize="18"></PasswordBox>
             <Button Name="btn1" Content="enviar" Margin="60 10" Foreground="Black" Background="LightGray"></Button>
