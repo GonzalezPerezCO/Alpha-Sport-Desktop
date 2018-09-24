@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MySql.Data.MySqlClient;
 
 namespace Deportes_WPF
 {
@@ -23,6 +24,11 @@ namespace Deportes_WPF
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void btn1_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Mensaje");
         }
     }
 }
