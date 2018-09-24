@@ -5,8 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Deportes_WPF"
         mc:Ignorable="d"
-        Title="Login" Height="300" Width="300" FontSize="14">
-    <Grid>
-        
-    </Grid>
+        Title="Login" Height="300" Width="300" FontSize="14" Background="DarkRed">
+    <Border Background="White" CornerRadius="20" Margin="20">
+        <StackPanel Margin="10">
+            <Label Content="Login" Foreground="Black" FontSize="25" HorizontalAlignment="Center"></Label>
+            <Separator></Separator>
+            <Label Content="Usuario" Foreground="Black"></Label>
+            <TextBox Name="txt1" Foreground="Black" Background="LightGray" FontSize="18" Text="su correo"/>
+            <Label Content="Contraseña" Foreground="Black"></Label>
+            <PasswordBox Name="txt2" Foreground="Black" Background="LightGray" FontSize="18"></PasswordBox>
+            <Button Name="btn1" Content="enviar" Margin="60 10" Foreground="Black" Background="LightGray"></Button>
+        </StackPanel>
+    </Border>
 </Window>
