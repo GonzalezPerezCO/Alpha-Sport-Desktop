@@ -81,7 +81,7 @@ namespace Deportes_WPF
                     MessageBox.Show("Usuario no encontrado!");
                 }
 
-                //connection.Close();
+                connection.Close();
             }
             
 
