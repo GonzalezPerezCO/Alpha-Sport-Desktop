@@ -12,8 +12,11 @@ namespace Deportes_WPF.Controller
         private MySqlConnection connection;
         private string server;
         private string database;
-        private string uid;
+        private string user;
         private string password;
+        private string port;
+        private string connectionString;
+        private string sslM;
 
         //Constructor
         public ConnectionClass()
@@ -26,11 +29,12 @@ namespace Deportes_WPF.Controller
         {
             server = "estudiantes.is.escuelaing.edu.co";
             database = "deportes";
-            uid = "deportes";
+            user = "deportes";
             password = "deportes20182";
-            string connectionString;
-            connectionString = "SERVER=" + server + ";" + "DATABASE=" +
-            database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
+            port = "3306";
+            sslM = "none";
+
+            connectionString = String.Format("server={0};port={1};user id={2}; password={3}; database={4}; SslMode={5}", server, port, user, password, database, sslM);
 
             connection = new MySqlConnection(connectionString);
         }
@@ -41,25 +45,15 @@ namespace Deportes_WPF.Controller
             try
             {
                 connection.Open();
+
+                MessageBox.Show("mensaje nuevo");
+
                 return true;
             }
             catch (MySqlException ex)
             {
-                //When handling errors, you can your application's response based 
-                //on the error number.
-                //The two most common error numbers when connecting are as follows:
-                //0: Cannot connect to server.
-                //1045: Invalid user name and/or password.
-                switch (ex.Number)
-                {
-                    case 0:
-                        System.Windows.MessageBox.Show("Cannot connect to server.  Contact administrator");
-                        break;
+                MessageBox.Show(ex.Message + connectionString);
 
-                    case 1045:
-                        System.Windows.MessageBox.Show("Invalid username/password, please try again");
-                        break;
-                }
                 return false;
             }
         }
