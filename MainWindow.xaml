@@ -11,7 +11,7 @@
             <ColumnDefinition Width="401*"/>
             <ColumnDefinition Width="391*"/>
         </Grid.ColumnDefinitions>
-        <Image HorizontalAlignment="Left" Height="100" Margin="45,154,0,0" VerticalAlignment="Top" Width="100" Source="fit.ico"/>
+        <Image HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" Source="fit.ico"/>
 
     </Grid>
 </Window>

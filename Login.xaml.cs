@@ -55,8 +55,7 @@ namespace Deportes_WPF
 
                 try
                 {
-                    connection.Open();
-                    
+                    connection.Open();                   
 
                 }
                 catch (MySqlException ex)
@@ -70,14 +69,19 @@ namespace Deportes_WPF
 
                 if (reader.Read())
                 {
-                    if (Convert.ToString(reader["email"]) != txt1.Text) MessageBox.Show("Parametros incorrectos");
+                    //if (Convert.ToString(reader["email"]) != txt1.Text) MessageBox.Show("Parametros incorrectos");
+
+                    Window main = new MainWindow();
+
+                    this.Hide();
+                    main.Show();
                 }
                 else
                 {
                     MessageBox.Show("Usuario no encontrado!");
                 }
 
-                connection.Close();
+                //connection.Close();
             }
             
 
