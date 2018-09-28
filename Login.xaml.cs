@@ -24,10 +24,11 @@ namespace Deportes_WPF
         private MySqlConnection connection;
         private string server;
         private string database;
-        private string uid;
+        private string user;
         private string password;
         private string port;
         private string connectionString;
+        private string sslM;
 
         public Login()
         {
@@ -35,12 +36,12 @@ namespace Deportes_WPF
 
             server = "estudiantes.is.escuelaing.edu.co";
             database = "deportes";
-            uid = "deportes";
+            user = "deportes";
             password = "deportes20182";
             port = "3306";
-
-            connectionString = "Server=" + server + ";" + "Port="+ port +";"+"Database=" +
-            database + ";" + "Uid=" + uid + ";" + "Password=" + password + ";";
+            sslM = "none";
+           
+            connectionString = String.Format("server={0};port={1};user id={2}; password={3}; database={4}; SslMode={5}", server, port, user, password, database, sslM);
 
             connection = new MySqlConnection(connectionString);
         }
@@ -52,10 +53,12 @@ namespace Deportes_WPF
                 connection.Open();
 
                 MessageBox.Show("mensaje nuevo");
+
+                connection.Close();
             }
             catch (MySqlException ex)
             {
-                MessageBox.Show(connectionString);
+                MessageBox.Show(ex.Message + connectionString);
             }
         }
 
