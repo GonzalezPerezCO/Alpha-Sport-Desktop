@@ -18,7 +18,7 @@ namespace Deportes_WPF.Controller
         private string connectionString;
         private string sslM;
 
-        //Constructor
+       
         public ConnectionClass()
         {
             Initialize();
@@ -39,27 +39,25 @@ namespace Deportes_WPF.Controller
             connection = new MySqlConnection(connectionString);
         }
 
-        //open connection to database
-        private bool OpenConnection()
+        //open connection
+        public bool OpenConnection()
         {
             try
             {
-                connection.Open();
-
-                MessageBox.Show("mensaje nuevo");
+                connection.Open();              
 
                 return true;
             }
             catch (MySqlException ex)
             {
-                MessageBox.Show(ex.Message + connectionString);
+                System.Windows.MessageBox.Show(ex.Message + connectionString);
 
                 return false;
             }
         }
 
         //Close connection
-        private bool CloseConnection()
+        public bool CloseConnection()
         {
             try
             {
@@ -198,15 +196,7 @@ namespace Deportes_WPF.Controller
             }
         }
 
-        //Backup
-        public void Backup()
-        {
-        }
-
-        //Restore
-        public void Restore()
-        {
-        }
+       
 
     }
 }
