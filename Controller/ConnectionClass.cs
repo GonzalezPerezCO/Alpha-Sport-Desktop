@@ -20,14 +20,13 @@ namespace Deportes_WPF.Controller
         private readonly string port = "3306";         
         private readonly string sslM = "none";
 
-        string query;
         private MySqlCommand cmd;
         private MySqlDataReader reader;
 
 
         public ConnectionClass()
         {
-           // cuerpo constructor
+            // cuerpo constructor
         }
 
         //Initialize values
@@ -44,10 +43,8 @@ namespace Deportes_WPF.Controller
         }
 
         //open connection
-        public bool OpenConnection()
-        {
-            bool result = false;
-
+        public void OpenConnection()
+        {            
             if (!status)
             {
                 //System.Windows.MessageBox.Show("Conexión no iniciada");
@@ -58,8 +55,6 @@ namespace Deportes_WPF.Controller
                 try
                 {
                     connection.Open();
-
-                    result = true;
                 }
                 catch (MySqlException ex)
                 {
@@ -68,7 +63,6 @@ namespace Deportes_WPF.Controller
                 }
             }
 
-            return result;
         }
 
         //Close connection
@@ -87,6 +81,15 @@ namespace Deportes_WPF.Controller
             }
         }
 
+        //Login
+        public bool loginConnection(string email, string password) {
+            string queryLog = "select email from tadmin where email= '" + email + "' and password= '" + password+ "';";
+            cmd = new MySqlCommand(queryLog, connection);
+            reader = cmd.ExecuteReader();
+
+            if (reader.Read()) return true;
+            else return false;
+        }
 
         //Execute query
         public MySqlDataReader queryTable(string query) {
@@ -112,7 +115,8 @@ namespace Deportes_WPF.Controller
             string query = "INSERT INTO tableinfo (name, age) VALUES('John Smith', '33')";
 
             //open connection
-            if (this.OpenConnection() == true)
+            OpenConnection();
+            if ( this.status == true)
             {
                 //create command and assign the query and connection from the constructor
                 MySqlCommand cmd = new MySqlCommand(query, connection);
@@ -131,7 +135,8 @@ namespace Deportes_WPF.Controller
             string query = "UPDATE tableinfo SET name='Joe', age='22' WHERE name='John Smith'";
 
             //Open connection
-            if (this.OpenConnection() == true)
+            OpenConnection();
+            if (this.status == true)
             {
                 //create mysql command
                 MySqlCommand cmd = new MySqlCommand();
@@ -153,7 +158,8 @@ namespace Deportes_WPF.Controller
         {
             string query = "DELETE FROM tableinfo WHERE name='John Smith'";
 
-            if (this.OpenConnection() == true)
+            OpenConnection();
+            if (this.status == true)
             {
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 cmd.ExecuteNonQuery();
@@ -174,7 +180,8 @@ namespace Deportes_WPF.Controller
             list[2] = new List<string>();
 
             //Open connection
-            if (this.OpenConnection() == true)
+            OpenConnection();
+            if (this.status == true)
             {
                 //Create Command
                 MySqlCommand cmd = new MySqlCommand(query, connection);
@@ -211,7 +218,8 @@ namespace Deportes_WPF.Controller
             int Count = -1;
 
             //Open Connection
-            if (this.OpenConnection() == true)
+            OpenConnection();
+            if (this.status == true)
             {
                 //Create Mysql Command
                 MySqlCommand cmd = new MySqlCommand(query, connection);

@@ -14,25 +14,32 @@ namespace Deportes_WPF.Controller
      * CONSULTAR: CUPOS, HORARIOS, ESTUDIANTES
      * 
      * */
-    static class Entorno
+    class Entorno
     {
 
-        private static ConnectionClass connection;
+        private ConnectionClass connection;
+
+        public Entorno() {
+
+        }
 
 
-        public static bool login() {
-            bool result;
+        public bool login(string email, string password) {
+            
             connection = new ConnectionClass();
-
             connection.Initialize();
 
             try
             {
+                connection.OpenConnection();                
             }
-            catch
+            catch (Exception e)
             {
+                //System.Windows.MessageBox.Show("Problemas al iniciar sesión + e");
+                return false;
             }
 
+            return connection.loginConnection(email, password);
             
         }
 

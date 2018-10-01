@@ -12,25 +12,15 @@ using MySql.Data.MySqlClient;
 
 namespace Deportes_WPF
 {
-
+    
     public partial class Login : Window
     {
-        private MySqlConnection connection;
-        private string server;
-        private string database;
-        private string user;
-        private string password;
-        private string port;
-        private string connectionString;
-        private string sslM;
-
-        string query;
-        MySqlCommand cmd;
-        MySqlDataReader reader;
+        private Entorno entorno;
 
         public Login()
         {
             InitializeComponent();
+            entorno = new Entorno();
         }
 
         private void btn1_Click(object sender, RoutedEventArgs e)
@@ -83,9 +73,33 @@ namespace Deportes_WPF
                 connection.Close();
             }
             
+            */
+            string email = txt1.Text;
+            string password = txt2.Password.ToString();
 
+            if (email == "" || password == "")
+            {
+                MessageBox.Show("Llene todos los campos");
+            }
+            else
+            {
+                if (entorno.login(email, password))
+                {
+                    //if (Convert.ToString(reader["email"]) != txt1.Text) MessageBox.Show("Parametros incorrectos");
+
+                    Window main = new MainWindow();
+
+                    this.Hide();
+                    main.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Usuario no encontrado!");
+                }
+                
+            }
         }
-
+        
        
-    }*/
+    }
 }
