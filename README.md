@@ -10,6 +10,7 @@ Aplicación de escritorio para Windows en WPF (Windows Platform Foundation)
 
 Plataforma: x64
 Emisor: DESKTOP-TOP/manue
+Ruta: /
 Clave: deportes20182
 Tipo: Certificado de pruebas
 Cifrado: SHA256RSA
