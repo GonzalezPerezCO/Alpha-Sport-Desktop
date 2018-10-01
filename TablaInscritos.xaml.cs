@@ -22,9 +22,6 @@ namespace Deportes_WPF
     /// </summary>
     public partial class TablaInscritos : Window
     {
-
-
-
         private MySqlConnection connection;
         private string server;
         private string database;
@@ -86,13 +83,6 @@ namespace Deportes_WPF
 
 
             connection.Close();
-            
-
-
-
-
-           
-
         }
 
       

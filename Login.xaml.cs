@@ -38,6 +38,9 @@ namespace Deportes_WPF
                 {
                     //if (Convert.ToString(reader["email"]) != txt1.Text) MessageBox.Show("Parametros incorrectos");
 
+
+
+
                     Window main = new TablaInscritos();
 
                     this.Hide();

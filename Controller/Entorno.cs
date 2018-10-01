@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
+using Deportes_WPF.Model;
+using System.Diagnostics;
 
 // using R_Connection = Deportes_WPF.Controller.ConnectionClass;
 
@@ -18,6 +19,7 @@ namespace Deportes_WPF.Controller
     {
 
         private ConnectionClass connection;
+        private User user;
 
         public Entorno() {
 
@@ -39,8 +41,25 @@ namespace Deportes_WPF.Controller
                 return false;
             }
 
-            return connection.loginConnection(email, password);
+            User result = connection.loginConnection(email, password);
+
+            if (result != null)
+            {
+                setUser(result); Debug.WriteLine("User log: "+result.getNombreCompleto());
+                return true;
+            }
+            else {
+                return false;
+            }
             
+        }
+
+        public User getUser() {
+            return user;
+        }
+
+        public void setUser(User user) {
+            this.user = user;
         }
 
     }

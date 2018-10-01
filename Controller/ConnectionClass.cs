@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Deportes_WPF.Model;
 using MySql.Data.MySqlClient;
 
 namespace Deportes_WPF.Controller
@@ -82,13 +83,13 @@ namespace Deportes_WPF.Controller
         }
 
         //Login
-        public bool loginConnection(string email, string password) {
-            string queryLog = "select email from tadmin where email= '" + email + "' and password= '" + password+ "';";
+        public User loginConnection(string email, string password) {
+            string queryLog = "select email, nombre, apellido from tadmin where email= '" + email + "' and password= '" + password+ "';";
             cmd = new MySqlCommand(queryLog, connection);
             reader = cmd.ExecuteReader();
-
-            if (reader.Read()) return true;
-            else return false;
+            
+            if (reader.Read()) return new User((string)reader["email"], (string)reader["nombre"], (string)reader["apellido"]);
+            else return null;
         }
 
         //Execute query
