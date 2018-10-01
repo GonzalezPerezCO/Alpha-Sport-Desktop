@@ -91,9 +91,8 @@ namespace Deportes_WPF.Controller
 
 
         //Execute query
-        public MySqlDataReader executeQuery(string query) {
-
-            MySqlDataReader result = null;
+        public MySqlDataReader queryTable(string query) {
+            reader = null;
 
             if (!status)
             {
@@ -102,10 +101,9 @@ namespace Deportes_WPF.Controller
             else {                
                 cmd = new MySqlCommand(query, connection);
                 reader = cmd.ExecuteReader();
-                result = reader;
             }
 
-            return result;
+            return reader;
         }
 
 
