@@ -10,14 +10,15 @@ namespace Deportes_WPF.Controller
     class ConnectionClass
     {
         private MySqlConnection connection;
-        private string server;
-        private string database;
-        private string user;
-        private string password;
-        private string port;
         private string connectionString;
-        private string sslM;
         private bool status; // true. ok, false: sin-conexion
+
+        private readonly string server = "estudiantes.is.escuelaing.edu.co";
+        private readonly string database = "deportes";
+        private readonly string user = "deportes";
+        private readonly string password = "deportes20182";
+        private readonly string port = "3306";         
+        private readonly string sslM = "none";
 
         string query;
         private MySqlCommand cmd;
