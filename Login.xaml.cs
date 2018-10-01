@@ -13,14 +13,14 @@ using MySql.Data.MySqlClient;
 namespace Deportes_WPF
 {
     
-    public partial class Login : Window
+    public  partial class Login : Window
     {
         private Entorno entorno;
 
         public Login()
         {
             InitializeComponent();
-            entorno = new Entorno();
+            entorno = Entorno.GetInstance(); ;
         }
 
         private void btn1_Click(object sender, RoutedEventArgs e)
@@ -38,9 +38,6 @@ namespace Deportes_WPF
                 {
                     //if (Convert.ToString(reader["email"]) != txt1.Text) MessageBox.Show("Parametros incorrectos");
 
-
-
-
                     Window main = new TablaInscritos();
 
                     this.Hide();
@@ -54,6 +51,5 @@ namespace Deportes_WPF
             }
         }
         
-       
     }
 }

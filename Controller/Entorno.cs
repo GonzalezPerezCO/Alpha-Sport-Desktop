@@ -18,13 +18,21 @@ namespace Deportes_WPF.Controller
     class Entorno
     {
 
+        private static Entorno instance = null;
         private ConnectionClass connection;
         private User user;
 
-        public Entorno() {
+        private Entorno() {
 
         }
 
+        public static Entorno GetInstance()
+        {
+            if (instance == null)
+                instance = new Entorno();
+
+            return instance;
+        }
 
         public bool login(string email, string password) {
             
