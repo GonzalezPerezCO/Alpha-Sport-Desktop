@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
+
+// using R_Connection = Deportes_WPF.Controller.ConnectionClass;
 
 namespace Deportes_WPF.Controller
 {
@@ -14,7 +17,21 @@ namespace Deportes_WPF.Controller
     static class Entorno
     {
 
-         
+        private static ConnectionClass connection;
+
+
+        public static bool login() {
+
+            connection = new ConnectionClass();
+
+            connection.Initialize();
+            
+        }
+
+        public static MySqlDataReader Login() {
+
+        }
+
 
 
     }
