@@ -49,9 +49,6 @@ namespace Deportes_WPF
 
 
         public void mostrarTabla() {
-
-
-
             server = "estudiantes.is.escuelaing.edu.co";
             database = "deportes";
             user = "deportes";
