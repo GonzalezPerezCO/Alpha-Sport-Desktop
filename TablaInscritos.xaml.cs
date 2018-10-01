@@ -23,23 +23,26 @@ namespace Deportes_WPF
     /// </summary>
     public partial class TablaInscritos : Window
     {
-        string query;
-        MySqlCommand cmd;
-        MySqlDataReader reader;
+        private string query;
+        private MySqlCommand cmd;
+        private MySqlDataReader reader;
+
         private Entorno entorno;
+        private ConnectionClass connection;
 
         public TablaInscritos()
         {
             InitializeComponent();
             entorno = Entorno.GetInstance();
+            connection = ConnectionClass.GetInstance();
             mostrarTabla();
         }
 
 
         public void mostrarTabla() {
             query = "select nombre, apellido, codigo, carrera, semestre from testudiantes";
-            
-            reader = entorno.
+
+            reader = connection.queryTable(query);
 
             if (reader.HasRows)
             {
@@ -50,9 +53,6 @@ namespace Deportes_WPF
             else {
                 MessageBox.Show(reader.ToString());
             }
-
-
-            connection.Close();
         }
 
       

@@ -14,7 +14,6 @@ namespace Deportes_WPF.Controller
 
         private MySqlConnection connection;
         private string connectionString;
-        private bool status; // true. ok, false: sin-conexion
 
         private readonly string server = "estudiantes.is.escuelaing.edu.co";
         private readonly string database = "deportes";
@@ -29,7 +28,7 @@ namespace Deportes_WPF.Controller
 
         private ConnectionClass()
         {
-            // cuerpo constructor
+            Initialize();
         }
 
         public static ConnectionClass GetInstance()
@@ -43,36 +42,23 @@ namespace Deportes_WPF.Controller
         //Initialize values
         public void Initialize()
         {
-            status = false;
             connectionString = String.Format("server={0};port={1};user id={2}; password={3}; database={4}; SslMode={5}", server, port, user, password, database, sslM);
             connection = new MySqlConnection(connectionString);
-            status = true;             
         }
 
-        public bool getStatus() {
-            return status;
-        }
-
+        
         //open connection
         public void OpenConnection()
-        {            
-            if (!status)
+        {                       
+            try
             {
-                //System.Windows.MessageBox.Show("Conexión no iniciada");
-                throw new System.ArgumentException("Conexión no iniciada");
+                connection.Open();
             }
-            else
+            catch (MySqlException ex)
             {
-                try
-                {
-                    connection.Open();
-                }
-                catch (MySqlException ex)
-                {
-                    //System.Windows.MessageBox.Show(ex.Message + connectionString);
-                    throw new System.ArgumentException("ex.Message + connectionString");                    
-                }
-            }
+                //System.Windows.MessageBox.Show(ex.Message + connectionString);
+                throw new System.ArgumentException("ex.Message + connectionString");                    
+            }          
 
         }
 
@@ -81,8 +67,7 @@ namespace Deportes_WPF.Controller
         {
             try
             {
-                connection.Close();
-                status = false;                
+                connection.Close();          
             }
             catch (MySqlException ex)
             {
@@ -94,26 +79,34 @@ namespace Deportes_WPF.Controller
 
         //Login
         public User loginConnection(string email, string password) {
+            User result = null;
             string queryLog = "select email, nombre, apellido from tadmin where email= '" + email + "' and password= '" + password+ "';";
+
+            this.OpenConnection();
+
             cmd = new MySqlCommand(queryLog, connection);
             reader = cmd.ExecuteReader();
-            
-            if (reader.Read()) return new User((string)reader["email"], (string)reader["nombre"], (string)reader["apellido"]);
-            else return null;
+
+            if (reader.Read())
+            {                
+                result = new User((string)reader["email"], (string)reader["nombre"], (string)reader["apellido"]);
+            }
+
+            this.CloseConnection();
+
+            return result;
         }
 
         //Execute query
         public MySqlDataReader queryTable(string query) {
             reader = null;
 
-            if (!status)
-            {
-                System.Windows.MessageBox.Show("Conexión no iniciada");
-            }
-            else {                
-                cmd = new MySqlCommand(query, connection);
-                reader = cmd.ExecuteReader();
-            }
+            this.OpenConnection();
+            
+            cmd = new MySqlCommand(query, connection);
+            reader = cmd.ExecuteReader();            
+
+            this.CloseConnection();
 
             return reader;
         }
@@ -127,17 +120,16 @@ namespace Deportes_WPF.Controller
 
             //open connection
             OpenConnection();
-            if ( this.status == true)
-            {
-                //create command and assign the query and connection from the constructor
-                MySqlCommand cmd = new MySqlCommand(query, connection);
+           
+            //create command and assign the query and connection from the constructor
+            MySqlCommand cmd = new MySqlCommand(query, connection);
 
-                //Execute command
-                cmd.ExecuteNonQuery();
+            //Execute command
+            cmd.ExecuteNonQuery();
 
-                //close connection
-                this.CloseConnection();
-            }
+            //close connection
+            this.CloseConnection();
+            
         }
 
         //Update statement
@@ -146,22 +138,21 @@ namespace Deportes_WPF.Controller
             string query = "UPDATE tableinfo SET name='Joe', age='22' WHERE name='John Smith'";
 
             //Open connection
-            OpenConnection();
-            if (this.status == true)
-            {
-                //create mysql command
-                MySqlCommand cmd = new MySqlCommand();
-                //Assign the query using CommandText
-                cmd.CommandText = query;
-                //Assign the connection using Connection
-                cmd.Connection = connection;
+            this.OpenConnection();
+           
+            //create mysql command
+            MySqlCommand cmd = new MySqlCommand();
+            //Assign the query using CommandText
+            cmd.CommandText = query;
+            //Assign the connection using Connection
+            cmd.Connection = connection;
 
-                //Execute query
-                cmd.ExecuteNonQuery();
+            //Execute query
+            cmd.ExecuteNonQuery();
 
-                //close connection
-                this.CloseConnection();
-            }
+            //close connection
+            this.CloseConnection();
+            
         }
 
         //Delete statement
@@ -169,19 +160,18 @@ namespace Deportes_WPF.Controller
         {
             string query = "DELETE FROM tableinfo WHERE name='John Smith'";
 
-            OpenConnection();
-            if (this.status == true)
-            {
-                MySqlCommand cmd = new MySqlCommand(query, connection);
-                cmd.ExecuteNonQuery();
-                this.CloseConnection();
-            }
+           this. OpenConnection();
+           
+            MySqlCommand cmd = new MySqlCommand(query, connection);
+            cmd.ExecuteNonQuery();
+            this.CloseConnection();
+            
         }
 
         //Select statement
         public List<string>[] Select()
         {
-
+            /*
             string query = "SELECT * FROM tableinfo";
 
             //Create a list to store the result
@@ -219,7 +209,9 @@ namespace Deportes_WPF.Controller
             else
             {
                 return list;
-            }
+            }*/
+
+            return null;
         }
 
         //Count statement
@@ -227,26 +219,17 @@ namespace Deportes_WPF.Controller
         {
             string query = "SELECT Count(*) FROM tableinfo";
             int Count = -1;
+            
+            //Create Mysql Command
+            MySqlCommand cmd = new MySqlCommand(query, connection);
 
-            //Open Connection
-            OpenConnection();
-            if (this.status == true)
-            {
-                //Create Mysql Command
-                MySqlCommand cmd = new MySqlCommand(query, connection);
+            //ExecuteScalar will return one value
+            Count = int.Parse(cmd.ExecuteScalar() + "");
 
-                //ExecuteScalar will return one value
-                Count = int.Parse(cmd.ExecuteScalar() + "");
+            //close Connection
+            this.CloseConnection();
 
-                //close Connection
-                this.CloseConnection();
-
-                return Count;
-            }
-            else
-            {
-                return Count;
-            }
+            return Count;         
         }
 
        

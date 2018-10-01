@@ -23,7 +23,7 @@ namespace Deportes_WPF.Controller
         private User user;
 
         private Entorno() {
-
+            connection = ConnectionClass.GetInstance();
         }
 
         public static Entorno GetInstance()
@@ -34,20 +34,7 @@ namespace Deportes_WPF.Controller
             return instance;
         }
 
-        public bool login(string email, string password) {
-
-            connection = ConnectionClass.GetInstance();
-            connection.Initialize();
-
-            try
-            {
-                connection.OpenConnection();                
-            }
-            catch (Exception e)
-            {
-                //System.Windows.MessageBox.Show("Problemas al iniciar sesión + e");
-                return false;
-            }
+        public bool login(string email, string password) {            
 
             User result = connection.loginConnection(email, password);
 
