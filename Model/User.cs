@@ -34,5 +34,9 @@ namespace Deportes_WPF.Model
             return apellido;
         }
 
+        public string getNombreCompleto() {
+            return nombre + " " + apellido;
+        }
+
     }
 }
