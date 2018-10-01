@@ -8,10 +8,10 @@ Aplicación de escritorio para Windows en WPF (Windows Platform Foundation)
 
 ## Certificado de Prueba
 
-Plataforma: x64
-Emisor: DESKTOP-TOP/manue
-Ruta: /
-Clave: deportes20182
-Tipo: Certificado de pruebas
-Cifrado: SHA256RSA
-Valido: de 30/09/2018 a 1/10/2019
+Plataforma: x64  
+Emisor: DESKTOP-TOP/manue  
+Ruta: /  
+Clave: deportes20182  
+Tipo: Certificado de pruebas  
+Cifrado: SHA256RSA  
+Valido: de 30/09/2018 a 1/10/2019  
