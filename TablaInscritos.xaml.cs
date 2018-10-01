@@ -20,7 +20,7 @@ namespace Deportes_WPF
     /// <summary>
     /// Lógica de interacción para MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class TablaInscritos : Window
     {
 
 
@@ -40,7 +40,7 @@ namespace Deportes_WPF
         MySqlDataReader reader;
 
 
-        public MainWindow()
+        public TablaInscritos()
         {
             InitializeComponent();
 
