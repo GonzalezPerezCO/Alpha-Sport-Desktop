@@ -31,34 +31,27 @@ namespace Deportes_WPF.Controller
         }
 
         //Initialize values
-        public bool Initialize()
+        public void Initialize()
         {
             status = false;
+            connectionString = String.Format("server={0};port={1};user id={2}; password={3}; database={4}; SslMode={5}", server, port, user, password, database, sslM);
+            connection = new MySqlConnection(connectionString);
+            status = true;             
+        }
 
-            try
-            {
-                connectionString = String.Format("server={0};port={1};user id={2}; password={3}; database={4}; SslMode={5}", server, port, user, password, database, sslM);
-
-                connection = new MySqlConnection(connectionString);
-                status = true;
-
-                return true;
-            }
-            catch (MySqlException ex)
-            {
-                return false;
-            }
-            
+        public bool getStatus() {
+            return status;
         }
 
         //open connection
         public bool OpenConnection()
         {
+            bool result = false;
+
             if (!status)
             {
-                System.Windows.MessageBox.Show("Conexión no iniciada");
-
-                return false;
+                //System.Windows.MessageBox.Show("Conexión no iniciada");
+                throw new System.ArgumentException("Conexión no iniciada");
             }
             else
             {
@@ -66,30 +59,31 @@ namespace Deportes_WPF.Controller
                 {
                     connection.Open();
 
-                    return true;
+                    result = true;
                 }
                 catch (MySqlException ex)
                 {
-                    System.Windows.MessageBox.Show(ex.Message + connectionString);
-
-                    return false;
+                    //System.Windows.MessageBox.Show(ex.Message + connectionString);
+                    throw new System.ArgumentException("ex.Message + connectionString");                    
                 }
             }
+
+            return result;
         }
 
         //Close connection
-        public bool CloseConnection()
+        public void CloseConnection()
         {
             try
             {
                 connection.Close();
-                status = false;
-                return true;
+                status = false;                
             }
             catch (MySqlException ex)
             {
-                System.Windows.MessageBox.Show(ex.Message);
-                return false;
+                //System.Windows.MessageBox.Show(ex.Message);
+                throw new System.ArgumentException(ex.Message);
+                
             }
         }
 

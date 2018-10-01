@@ -21,18 +21,20 @@ namespace Deportes_WPF.Controller
 
 
         public static bool login() {
-
+            bool result;
             connection = new ConnectionClass();
 
             connection.Initialize();
+
+            try
+            {
+            }
+            catch
+            {
+            }
+
             
         }
-
-        public static MySqlDataReader Login() {
-
-        }
-
-
 
     }
 }

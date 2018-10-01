@@ -35,7 +35,7 @@ namespace Deportes_WPF
 
         private void btn1_Click(object sender, RoutedEventArgs e)
         {
-            server = "estudiantes.is.escuelaing.edu.co";
+            /*server = "estudiantes.is.escuelaing.edu.co";
             database = "deportes";
             user = "deportes";
             password = "deportes20182";
@@ -87,5 +87,5 @@ namespace Deportes_WPF
         }
 
        
-    }
+    }*/
 }
