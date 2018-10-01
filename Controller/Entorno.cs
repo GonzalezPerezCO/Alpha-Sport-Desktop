@@ -35,8 +35,8 @@ namespace Deportes_WPF.Controller
         }
 
         public bool login(string email, string password) {
-            
-            connection = new ConnectionClass();
+
+            connection = ConnectionClass.GetInstance();
             connection.Initialize();
 
             try

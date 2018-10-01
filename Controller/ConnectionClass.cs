@@ -10,6 +10,8 @@ namespace Deportes_WPF.Controller
 {
     class ConnectionClass
     {
+        private static ConnectionClass instance = null;
+
         private MySqlConnection connection;
         private string connectionString;
         private bool status; // true. ok, false: sin-conexion
@@ -25,9 +27,17 @@ namespace Deportes_WPF.Controller
         private MySqlDataReader reader;
 
 
-        public ConnectionClass()
+        private ConnectionClass()
         {
             // cuerpo constructor
+        }
+
+        public static ConnectionClass GetInstance()
+        {
+            if (instance == null)
+                instance = new ConnectionClass();
+
+            return instance;
         }
 
         //Initialize values

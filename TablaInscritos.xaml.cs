@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Deportes_WPF.Controller;
 using MySql.Data.MySqlClient;
 
 namespace Deportes_WPF
@@ -25,12 +26,12 @@ namespace Deportes_WPF
         string query;
         MySqlCommand cmd;
         MySqlDataReader reader;
-
+        private Entorno entorno;
 
         public TablaInscritos()
         {
             InitializeComponent();
-
+            entorno = Entorno.GetInstance();
             mostrarTabla();
         }
 
@@ -38,7 +39,7 @@ namespace Deportes_WPF
         public void mostrarTabla() {
             query = "select nombre, apellido, codigo, carrera, semestre from testudiantes";
             
-            reader = 
+            reader = entorno.
 
             if (reader.HasRows)
             {
