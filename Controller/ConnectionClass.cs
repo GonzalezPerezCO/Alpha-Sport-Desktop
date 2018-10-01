@@ -17,8 +17,13 @@ namespace Deportes_WPF.Controller
         private string port;
         private string connectionString;
         private string sslM;
+        private bool status; // true. ok, false: sin-conexion
 
-       
+        string query;
+        private MySqlCommand cmd;
+        private MySqlDataReader reader;
+
+
         public ConnectionClass()
         {
             Initialize();
@@ -27,6 +32,9 @@ namespace Deportes_WPF.Controller
         //Initialize values
         private void Initialize()
         {
+            status = false;
+
+
             server = "estudiantes.is.escuelaing.edu.co";
             database = "deportes";
             user = "deportes";
@@ -42,17 +50,26 @@ namespace Deportes_WPF.Controller
         //open connection
         public bool OpenConnection()
         {
-            try
+            if (!status)
             {
-                connection.Open();              
-
-                return true;
-            }
-            catch (MySqlException ex)
-            {
-                System.Windows.MessageBox.Show(ex.Message + connectionString);
+                System.Windows.MessageBox.Show("Conexión no iniciada");
 
                 return false;
+            }
+            else
+            {
+                try
+                {
+                    connection.Open();
+
+                    return true;
+                }
+                catch (MySqlException ex)
+                {
+                    System.Windows.MessageBox.Show(ex.Message + connectionString);
+
+                    return false;
+                }
             }
         }
 
@@ -62,6 +79,7 @@ namespace Deportes_WPF.Controller
             try
             {
                 connection.Close();
+                status = false;
                 return true;
             }
             catch (MySqlException ex)
@@ -70,6 +88,26 @@ namespace Deportes_WPF.Controller
                 return false;
             }
         }
+
+
+        //Execute query
+        public MySqlDataReader executeQuery(string query) {
+
+            MySqlDataReader result = null;
+
+            if (!status)
+            {
+                System.Windows.MessageBox.Show("Conexión no iniciada");
+            }
+            else {                
+                cmd = new MySqlCommand(query, connection);
+                reader = cmd.ExecuteReader();
+                result = reader;
+            }
+
+            return result;
+        }
+
 
         //Insert statement
         public void Insert()

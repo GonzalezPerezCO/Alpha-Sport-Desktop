@@ -24,7 +24,6 @@ namespace Deportes_WPF
         private string connectionString;
         private string sslM;
 
-
         string query;
         MySqlCommand cmd;
         MySqlDataReader reader;

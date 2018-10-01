@@ -13,7 +13,8 @@
             <ColumnDefinition Width="391*"/>
         </Grid.ColumnDefinitions>
         <Image HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" Source="fit.ico"/>
-        <DataGrid x:Name="dtgrid1" HorizontalAlignment="Left" Height="352" Margin="130,46,0,0" VerticalAlignment="Top" Width="637" Grid.ColumnSpan="3"/>
+        <DataGrid x:Name="dtgrid1" HorizontalAlignment="Left" Height="327" Margin="130,71,0,0" VerticalAlignment="Top" Width="637" Grid.ColumnSpan="3"/>
+        <Label Content="Label" Grid.Column="2" HorizontalAlignment="Left" Margin="26,15,0,0" VerticalAlignment="Top" RenderTransformOrigin="4.868,0.577"/>
 
     </Grid>
 </Window>

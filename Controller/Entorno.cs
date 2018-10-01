@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Deportes_WPF.Controller
 {
-    static class Variables
+    /**
+     * CLASE PARA TENER PERIODO
+     * CONSULTAR: CUPOS, HORARIOS, ESTUDIANTES
+     * 
+     * */
+    static class Entorno
     {
 
          

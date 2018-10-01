@@ -24,5 +24,6 @@ namespace Deportes_WPF.Model
         public string getNombre() {
             return nombre;
         }
+
     }
 }
