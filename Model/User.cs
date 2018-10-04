@@ -38,5 +38,9 @@ namespace Deportes_WPF.Model
             return nombre + " " + apellido;
         }
 
+        public override string ToString()
+        {            
+            return "Email: " + email + ", Nombre: " + nombre + ", Apellido: " + apellido;
+        }
     }
 }

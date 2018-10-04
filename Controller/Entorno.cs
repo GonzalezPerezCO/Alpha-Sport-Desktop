@@ -40,7 +40,8 @@ namespace Deportes_WPF.Controller
 
             if (result != null)
             {
-                setUser(result); Debug.WriteLine("User log: "+result.getNombreCompleto());
+                setUser(result);
+                Debug.WriteLine("User log: "+result.getNombreCompleto());
                 return true;
             }
             else {

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,13 +29,18 @@ namespace Deportes_WPF.Controller
 
         private ConnectionClass()
         {
+            Debug.WriteLine(" ----   INITIALIZATE");
             Initialize();
         }
 
         public static ConnectionClass GetInstance()
         {
+            Debug.WriteLine(" ----  GET INSTANCE ");
             if (instance == null)
+            {
                 instance = new ConnectionClass();
+                Debug.WriteLine(" ----   NEW INSTANCE");
+            }
 
             return instance;
         }
@@ -44,6 +50,8 @@ namespace Deportes_WPF.Controller
         {
             connectionString = String.Format("server={0};port={1};user id={2}; password={3}; database={4}; SslMode={5}", server, port, user, password, database, sslM);
             connection = new MySqlConnection(connectionString);
+
+            Debug.WriteLine(" ----   END INITIALIZATE");
         }
 
         
@@ -53,11 +61,14 @@ namespace Deportes_WPF.Controller
             try
             {
                 connection.Open();
+
+                Debug.WriteLine(" ----   TRY OPEN CONNECTION");
             }
             catch (MySqlException ex)
             {
-                //System.Windows.MessageBox.Show(ex.Message + connectionString);
-                throw new System.ArgumentException("ex.Message + connectionString");                    
+                Debug.WriteLine(" ----  CATCH OPEN CONNECTION ");
+                Debug.WriteLine(ex.Message + connectionString);
+                throw new System.ArgumentException("ex.Message OpenConnection" + ex);                    
             }          
 
         }
@@ -65,16 +76,9 @@ namespace Deportes_WPF.Controller
         //Close connection
         public void CloseConnection()
         {
-            try
-            {
-                connection.Close();          
-            }
-            catch (MySqlException ex)
-            {
-                //System.Windows.MessageBox.Show(ex.Message);
-                throw new System.ArgumentException(ex.Message);
-                
-            }
+           connection.Close();
+
+            Debug.WriteLine(" ----   CLOSE CONNECTION");           
         }
 
         //Login
@@ -82,24 +86,29 @@ namespace Deportes_WPF.Controller
             User result = null;
             string queryLog = "select email, nombre, apellido from tadmin where email= '" + email + "' and password= '" + password+ "';";
 
+            Debug.WriteLine(" ----   LOGIN CONNECTION OPEN");
+
             this.OpenConnection();
 
             cmd = new MySqlCommand(queryLog, connection);
             reader = cmd.ExecuteReader();
 
+
             if (reader.Read())
             {                
                 result = new User((string)reader["email"], (string)reader["nombre"], (string)reader["apellido"]);
             }
-
+            Debug.WriteLine(" ----   result: " + result.ToString());
             this.CloseConnection();
-
+            Debug.WriteLine(" ----   result: "+ result.ToString());
             return result;
         }
 
         //Execute query
         public MySqlDataReader queryTable(string query) {
             reader = null;
+
+            Debug.WriteLine(" ----   QUERY TABLE OPEN CONNECTION");
 
             this.OpenConnection();
             
