@@ -66,7 +66,7 @@ namespace Deportes_WPF.Controller
             catch (MySqlException ex)
             {
                 Debug.WriteLine(" ----  CATCH OPEN CONNECTION ");
-                Debug.WriteLine(ex.Message + connectionString);               
+                Debug.WriteLine("CATCH EX: "+ex.Message);               
             }          
 
         }
@@ -114,10 +114,15 @@ namespace Deportes_WPF.Controller
             this.OpenConnection();
             
             cmd = new MySqlCommand(query, connection);
-            reader = cmd.ExecuteReader();            
+
+            try {
+                reader = cmd.ExecuteReader();
+            } catch(MySqlException ex) {
+                Debug.WriteLine(" ----   CATCH QERY TABLE: "+ex);
+            }
 
             this.CloseConnection();
-
+            if (reader==null) Debug.WriteLine(" ----   READER null");
             return reader;
         }
 

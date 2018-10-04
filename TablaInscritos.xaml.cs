@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,18 +36,20 @@ namespace Deportes_WPF
 
 
         public void mostrarTabla() {
-
+            Debug.WriteLine("MOSTRAR TABLA");
             query = "select nombre, apellido, codigo, carrera, semestre from testudiantes";
             MySqlDataReader reader = connection.queryTable(query);
-
+            Debug.WriteLine("RECIBIR READER EN TABLE");
+           
             if (reader.HasRows)
             {
+                Debug.WriteLine("If true READER HASROWS");
                 DataTable dt = new DataTable();
                 dt.Load(reader);
                 dtgrid1.ItemsSource = dt.DefaultView;
             }
             else {
-                MessageBox.Show(reader.ToString());
+                MessageBox.Show("MOSTRAR TABLA TO STRING: "+reader.ToString());
             }
         }
 
