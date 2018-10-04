@@ -8,7 +8,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Deportes_WPF.Controller;
-using MySql.Data.MySqlClient;
 
 namespace Deportes_WPF
 {
