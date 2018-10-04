@@ -35,13 +35,12 @@ namespace Deportes_WPF
             else
             {
                 if (entorno.login(email, password))
-                {
-                    //if (Convert.ToString(reader["email"]) != txt1.Text) MessageBox.Show("Parametros incorrectos");
+                {                  
 
-                    Window main = new TablaInscritos();
+                    Window tabla = new TablaInscritos();
 
                     this.Hide();
-                    main.Show();
+                    tabla.Show();
                 }
                 else
                 {

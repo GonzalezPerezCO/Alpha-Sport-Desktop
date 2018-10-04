@@ -26,7 +26,6 @@ namespace Deportes_WPF.Controller
         private MySqlCommand cmd;
         private MySqlDataReader reader;
 
-
         private ConnectionClass()
         {
             Debug.WriteLine(" ----   INITIALIZATE");
@@ -57,7 +56,7 @@ namespace Deportes_WPF.Controller
         
         //open connection
         public void OpenConnection()
-        {                       
+        {            
             try
             {
                 connection.Open();
@@ -67,8 +66,7 @@ namespace Deportes_WPF.Controller
             catch (MySqlException ex)
             {
                 Debug.WriteLine(" ----  CATCH OPEN CONNECTION ");
-                Debug.WriteLine(ex.Message + connectionString);
-                throw new System.ArgumentException("ex.Message OpenConnection" + ex);                    
+                Debug.WriteLine(ex.Message + connectionString);               
             }          
 
         }
@@ -83,7 +81,9 @@ namespace Deportes_WPF.Controller
 
         //Login
         public User loginConnection(string email, string password) {
+            
             User result = null;
+
             string queryLog = "select email, nombre, apellido from tadmin where email= '" + email + "' and password= '" + password+ "';";
 
             Debug.WriteLine(" ----   LOGIN CONNECTION OPEN");
@@ -106,6 +106,7 @@ namespace Deportes_WPF.Controller
 
         //Execute query
         public MySqlDataReader queryTable(string query) {
+            
             reader = null;
 
             Debug.WriteLine(" ----   QUERY TABLE OPEN CONNECTION");
