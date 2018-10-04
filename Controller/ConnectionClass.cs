@@ -160,8 +160,8 @@ namespace Deportes_WPF.Controller
                 reader = cmd.ExecuteReader();
 
                 while (reader.Read()) {
-                    result.Add((string)reader["nombre"]);
-                    result.Add((string)reader["codigo"]);
+                    result.Add(reader.GetString(0));
+                    result.Add(reader.GetString(1));
                 }
 
                 Debug.WriteLine(" ----   RESULT QERY READER: " + result.ToString());
