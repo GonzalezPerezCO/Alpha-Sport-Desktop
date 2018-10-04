@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -104,7 +105,7 @@ namespace Deportes_WPF.Controller
             return result;
         }
 
-        //Execute query
+        //Execute query return Table
         public System.Data.DataTable queryTable(string query) {
             
             reader = null;
@@ -137,6 +138,36 @@ namespace Deportes_WPF.Controller
             this.CloseConnection();
 
             return dt;
+        }
+
+
+        //Execute query return Array
+        public List<string> queryReader(string query)
+        {
+
+            reader = null;
+            List<string> result = new List<string>();
+
+            Debug.WriteLine(" ----   QUERY READER OPEN CONNECTION");
+
+            this.OpenConnection();
+
+            cmd = new MySqlCommand(query, connection);
+
+            try
+            {
+                reader = cmd.ExecuteReader();
+
+                result = (from IDataRecord r in reader select (string)r["FieldName"] ).ToList();
+            }
+            catch (MySqlException ex)
+            {
+                Debug.WriteLine(" ----   CATCH QERY READER: " + ex);
+            }
+
+            this.CloseConnection();
+
+            return result;
         }
 
 

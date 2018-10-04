@@ -54,6 +54,10 @@ namespace Deportes_WPF.Controller
             
         }
 
+        public List<string> asistencia(string query) {
+            return connection.queryReader(query);
+        }
+
         public User getUser() {
             return user;
         }
