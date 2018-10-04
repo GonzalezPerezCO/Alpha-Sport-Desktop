@@ -18,6 +18,10 @@ namespace Deportes_WPF.Controller
     class Entorno
     {
 
+        public readonly string PROYECTO = "Sistema Integrado Deportes de la Escuela";
+        public readonly string GIMNASIO = "Sistema de Gimnasio";
+        public readonly string DEPORTES = "Sistema de Deportes";
+
         private static Entorno instance = null;
         private ConnectionClass connection;
         private User user;

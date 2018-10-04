@@ -21,6 +21,7 @@ namespace Deportes_WPF
         {
             InitializeComponent();
             entorno = Entorno.GetInstance(); ;
+            lab1.Content = entorno.PROYECTO;
         }
 
         private void btn1_Click(object sender, RoutedEventArgs e)

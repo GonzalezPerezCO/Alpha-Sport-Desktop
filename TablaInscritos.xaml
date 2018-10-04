@@ -12,7 +12,7 @@
             <ColumnDefinition Width="255*"/>
             <ColumnDefinition Width="391*"/>
         </Grid.ColumnDefinitions>
-        <Image HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" Source="fit.ico"/>
+        <Image HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" Source="Recursos/fit.ico"/>
         <DataGrid x:Name="dtgrid1" Height="571" Margin="231,144,472,0" VerticalAlignment="Top" Grid.ColumnSpan="3" IsReadOnly="True"/>
         <Label x:Name="lab1" Content="Label" Grid.Column="2" HorizontalAlignment="Left" Margin="26,15,0,0" VerticalAlignment="Top" RenderTransformOrigin="4.868,0.577" FontWeight="Bold" FontSize="18"/>
         <Label x:Name="lab2" Content="Label" Grid.Column="2" HorizontalAlignment="Left" Margin="26,76,0,0" VerticalAlignment="Top" RenderTransformOrigin="4.868,0.577" FontWeight="Bold" FontSize="18"/>
