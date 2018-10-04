@@ -27,6 +27,7 @@ namespace Deportes_WPF.Vista
         {
             InitializeComponent();
             entorno = Entorno.GetInstance(); ;
+            txt1.Focus();
         }       
 
         private void btn1_Click(object sender, RoutedEventArgs e)
@@ -41,6 +42,7 @@ namespace Deportes_WPF.Vista
         {
             lab5.Content = "nombre y apellido";
             txt1.Text = "";
+            txt1.Focus();
         }
 
         private void bt3_Click(object sender, RoutedEventArgs e)
@@ -58,7 +60,8 @@ namespace Deportes_WPF.Vista
 
                 if (lista.Capacity > 0)
                 {
-                    MessageBox.Show("encontrado: " + lista.ToString());
+                    lab5.Content = lista[0];
+                    
                 }
                 else
                 {
