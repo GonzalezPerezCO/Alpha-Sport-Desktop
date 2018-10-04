@@ -15,6 +15,7 @@
         <DataGrid x:Name="dtgrid1" Height="571" Margin="231,144,472,0" VerticalAlignment="Top" Grid.ColumnSpan="3" IsReadOnly="True"/>
         <Label x:Name="lab1" Content="Label" Grid.Column="2" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="26,15,0,0" VerticalAlignment="Top" RenderTransformOrigin="4.868,0.577" FontSize="36" FontWeight="Bold"/>
         <Label x:Name="lab2" Content="Label" Grid.Column="2" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="26,76,0,0" VerticalAlignment="Top" RenderTransformOrigin="4.868,0.577" FontSize="24" FontWeight="Bold"/>
+        <Button x:Name="bt1" Content="asistencia" Grid.Column="2" HorizontalAlignment="Left" Margin="533,44,0,0" VerticalAlignment="Top" Width="75" Click="bt1_Click"/>
 
     </Grid>
 </Window>

@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Deportes_WPF.Controller;
+using Deportes_WPF.Vista;
 using MySql.Data.MySqlClient;
 
 namespace Deportes_WPF
@@ -45,6 +46,12 @@ namespace Deportes_WPF
            
         }
 
-      
+        private void bt1_Click(object sender, RoutedEventArgs e)
+        {
+            Window asistencia = new Asistencia();
+
+            this.Hide();
+            asistencia.Show();
+        }
     }
 }

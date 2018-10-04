@@ -23,5 +23,19 @@ namespace Deportes_WPF.Vista
         {
             InitializeComponent();
         }
+
+        private void btn1_Click(object sender, RoutedEventArgs e)
+        {
+            Window tabla = new TablaInscritos();
+
+            this.Hide();
+            tabla.Show();
+        }
+
+        private void btn2_Click(object sender, RoutedEventArgs e)
+        {
+            lab5.Content = "nombre y apellido";
+            txt1.Text = "";
+        }
     }
 }
