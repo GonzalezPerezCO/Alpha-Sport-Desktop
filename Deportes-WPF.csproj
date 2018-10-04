@@ -104,28 +104,28 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <ApplicationDefinition Include="App.xaml">
+    <ApplicationDefinition Include="Vista\App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Login.xaml">
+    <Page Include="Vista\Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TablaInscritos.xaml">
+    <Page Include="Vista\TablaInscritos.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="App.xaml.cs">
+    <Compile Include="Vista\App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Controller\ConnectionClass.cs" />
     <Compile Include="Controller\Entorno.cs" />
-    <Compile Include="Login.xaml.cs">
+    <Compile Include="Vista\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TablaInscritos.xaml.cs">
+    <Compile Include="Vista\TablaInscritos.xaml.cs">
       <DependentUpon>TablaInscritos.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>

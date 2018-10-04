@@ -22,16 +22,5 @@ namespace Deportes_WPF.Properties {
                 return defaultInstance;
             }
         }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("server=estudiantes.is.escuelaing.edu.co;user id=deportes;password=deportes20182;p" +
-            "ersistsecurityinfo=True;database=deportes")]
-        public string deportesConnectionString {
-            get {
-                return ((string)(this["deportesConnectionString"]));
-            }
-        }
     }
 }
