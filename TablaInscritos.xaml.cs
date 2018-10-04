@@ -38,19 +38,11 @@ namespace Deportes_WPF
         public void mostrarTabla() {
             Debug.WriteLine("MOSTRAR TABLA");
             query = "select nombre, apellido, codigo, carrera, semestre from testudiantes";
-            MySqlDataReader reader = connection.queryTable(query);
+            DataTable dt = connection.queryTable(query);
             Debug.WriteLine("RECIBIR READER EN TABLE");
            
-            if (reader.HasRows)
-            {
-                Debug.WriteLine("If true READER HASROWS");
-                DataTable dt = new DataTable();
-                dt.Load(reader);
-                dtgrid1.ItemsSource = dt.DefaultView;
-            }
-            else {
-                MessageBox.Show("MOSTRAR TABLA TO STRING: "+reader.ToString());
-            }
+            dtgrid1.ItemsSource = dt.DefaultView;
+           
         }
 
       

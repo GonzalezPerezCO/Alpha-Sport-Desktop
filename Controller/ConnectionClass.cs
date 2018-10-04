@@ -105,9 +105,10 @@ namespace Deportes_WPF.Controller
         }
 
         //Execute query
-        public MySqlDataReader queryTable(string query) {
+        public System.Data.DataTable queryTable(string query) {
             
             reader = null;
+            System.Data.DataTable dt = new System.Data.DataTable();
 
             Debug.WriteLine(" ----   QUERY TABLE OPEN CONNECTION");
 
@@ -117,13 +118,25 @@ namespace Deportes_WPF.Controller
 
             try {
                 reader = cmd.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    Debug.WriteLine(" ----   If true READER HASROWS");
+                    dt.Load(reader);
+                }
+                else
+                {
+                    Debug.WriteLine(" ----   else MOSTRAR TABLA TO STRING: " + reader.ToString());
+                }
+
+
             } catch(MySqlException ex) {
                 Debug.WriteLine(" ----   CATCH QERY TABLE: "+ex);
             }
 
             this.CloseConnection();
-            if (reader==null) Debug.WriteLine(" ----   READER null");
-            return reader;
+
+            return dt;
         }
 
 
