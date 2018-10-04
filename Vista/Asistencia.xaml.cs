@@ -27,34 +27,7 @@ namespace Deportes_WPF.Vista
         {
             InitializeComponent();
             entorno = Entorno.GetInstance(); ;
-        }
-
-        public void asistencia() {
-
-            string codigo = txt1.Text;
-
-            if (codigo == "")
-            {
-                MessageBox.Show("No hay codigo del estudiante");
-            }
-            else {
-
-                List<string> lista = entorno.asistencia(codigo);
-
-                if (lista.Capacity >0){
-                    MessageBox.Show("encontrado: "+ lista.ToString());
-                }
-                else
-                {
-                    lab5.Content = "No encontrado";
-                    MessageBox.Show("Estudiante no encontrado!");
-                }
-
-            }
-
-          
-
-        }
+        }       
 
         private void btn1_Click(object sender, RoutedEventArgs e)
         {
@@ -68,6 +41,33 @@ namespace Deportes_WPF.Vista
         {
             lab5.Content = "nombre y apellido";
             txt1.Text = "";
+        }
+
+        private void bt3_Click(object sender, RoutedEventArgs e)
+        {
+            string codigo = txt1.Text;
+
+            if (codigo == "")
+            {
+                MessageBox.Show("No hay codigo del estudiante");
+            }
+            else
+            {
+
+                List<string> lista = entorno.asistencia(codigo);
+
+                if (lista.Capacity > 0)
+                {
+                    MessageBox.Show("encontrado: " + lista.ToString());
+                }
+                else
+                {
+                    lab5.Content = "No encontrado";
+                    MessageBox.Show("Estudiante no encontrado!");
+                }
+
+            }
+
         }
     }
 }

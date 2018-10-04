@@ -15,7 +15,7 @@
         <Label x:Name="lab4" Content="Código:" HorizontalAlignment="Left" Margin="156,456,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
         <Label x:Name="lab5" Content="nombre y apellido" HorizontalAlignment="Left" Margin="432,363,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.355,-0.212" FontSize="24" Width="290"/>
         <TextBox x:Name="txt1" HorizontalAlignment="Left" Height="45" HorizontalContentAlignment="Center"  Margin="432,471,0,0" TextWrapping="Wrap" Text="codigo" VerticalAlignment="Top" Width="290" FontSize="24"/>
-        <Button x:Name="bt3" Content="Registrar Asistencia" HorizontalAlignment="Left" Margin="964,412,0,0" VerticalAlignment="Top" Width="228" Height="70" FontWeight="Bold" FontSize="20"/>
+        <Button x:Name="bt3" Content="Registrar Asistencia" HorizontalAlignment="Left" Margin="964,412,0,0" VerticalAlignment="Top" Width="228" Height="70" FontWeight="Bold" FontSize="20" Click="bt3_Click"/>
 
     </Grid>
 </Window>

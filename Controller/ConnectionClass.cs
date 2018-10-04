@@ -156,9 +156,15 @@ namespace Deportes_WPF.Controller
 
             try
             {
+                Debug.WriteLine(" ----   RESULT QERY TRY recibido: " + query);
                 reader = cmd.ExecuteReader();
 
-                result = (from IDataRecord r in reader select (string)r["FieldName"] ).ToList();
+                while (reader.Read()) {
+                    result.Add((string)reader["nombre"]);
+                    result.Add((string)reader["codigo"]);
+                }
+
+                Debug.WriteLine(" ----   RESULT QERY READER: " + result.ToString());
             }
             catch (MySqlException ex)
             {
