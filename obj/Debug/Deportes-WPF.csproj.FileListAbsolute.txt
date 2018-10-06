@@ -24,3 +24,4 @@ C:\Users\manue\source\repos\Epic-Sport-_Deportes\obj\Debug\TablaInscritos.g.cs
 C:\Users\manue\source\repos\Epic-Sport-_Deportes\obj\Debug\App.g.cs
 C:\Users\manue\source\repos\Epic-Sport-_Deportes\obj\Debug\Vista\Asistencia.baml
 C:\Users\manue\source\repos\Epic-Sport-_Deportes\obj\Debug\Vista\Asistencia.g.cs
+C:\Users\manue\source\repos\Epic-Sport-_Deportes\obj\Debug\Deportes-WPF.csprojAssemblyReference.cache

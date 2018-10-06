@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.28010.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Deportes-WPF", "Deportes-WPF.csproj", "{EE98DBDA-6BB1-47D0-BA0A-8B6D3B4D9FCA}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Deportes", "..\Deportes\Deportes.vdproj", "{E6E62FC5-D975-47BE-9BF8-5ACD4BC08776}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,8 +15,6 @@ Global
 		{EE98DBDA-6BB1-47D0-BA0A-8B6D3B4D9FCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE98DBDA-6BB1-47D0-BA0A-8B6D3B4D9FCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE98DBDA-6BB1-47D0-BA0A-8B6D3B4D9FCA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E6E62FC5-D975-47BE-9BF8-5ACD4BC08776}.Debug|Any CPU.ActiveCfg = Debug
-		{E6E62FC5-D975-47BE-9BF8-5ACD4BC08776}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
