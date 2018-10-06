@@ -5,6 +5,9 @@
 Aplicación de escritorio para Windows en WPF (Windows Platform Foundation)
 
 
+Para importar proyecto primero instale el certificado .kys
+Luego pruebe la conexión con MYSQLconnect for Visual Studio
+
 
 ## Certificado de Prueba
 
