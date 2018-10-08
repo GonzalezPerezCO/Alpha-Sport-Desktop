@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Deportes_WPF.Model;
 using System.Diagnostics;
+using System.Data;
 
 // using R_Connection = Deportes_WPF.Controller.ConnectionClass;
 
@@ -57,6 +58,17 @@ namespace Deportes_WPF.Controller
         public List<string> asistencia(string codigo) {
             string query = "SELECT CONCAT(nombre, ' ', apellido) As nombre, testudiantes.codigo as codigo from testudiantes INNER JOIN tasistencia on testudiantes.codigo = " + codigo+" and testudiantes.email = tasistencia.email ";
             return connection.queryReader(query);
+        }
+
+
+        public DataTable mostrarTabla() {
+           
+            Debug.WriteLine("MOSTRAR TABLA");
+            string query = "select nombre, apellido, codigo, carrera, semestre from testudiantes";
+            DataTable dt = connection.queryTable(query);
+            Debug.WriteLine("RECIBIR READER EN TABLE");
+
+            return dt;
         }
 
         public User getUser() {

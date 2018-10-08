@@ -25,22 +25,19 @@ namespace Deportes_WPF
     /// </summary>
     public partial class TablaInscritos : Window
     {
-        private ConnectionClass connection;
-        private string query;
+        private Entorno entorno;
 
         public TablaInscritos()
         {
             InitializeComponent();
-            connection = ConnectionClass.GetInstance();
+            entorno = Entorno.GetInstance();
             mostrarTabla();
         }
 
 
         public void mostrarTabla() {
-            Debug.WriteLine("MOSTRAR TABLA");
-            query = "select nombre, apellido, codigo, carrera, semestre from testudiantes";
-            DataTable dt = connection.queryTable(query);
-            Debug.WriteLine("RECIBIR READER EN TABLE");
+
+           DataTable dt = entorno.mostrarTabla();
            
             dtgrid1.ItemsSource = dt.DefaultView;
            

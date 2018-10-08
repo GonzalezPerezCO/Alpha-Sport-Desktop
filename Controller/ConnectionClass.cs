@@ -106,10 +106,10 @@ namespace Deportes_WPF.Controller
         }
 
         //Execute query return Table
-        public System.Data.DataTable queryTable(string query) {
+        public DataTable queryTable(string query) {
             
             reader = null;
-            System.Data.DataTable dt = new System.Data.DataTable();
+            DataTable dt = new DataTable();
 
             Debug.WriteLine(" ----   QUERY TABLE OPEN CONNECTION");
 
