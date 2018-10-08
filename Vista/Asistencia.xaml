@@ -16,6 +16,17 @@
         <Label x:Name="lab5" Content="nombre y apellido" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="432,363,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.355,-0.212" FontSize="24" Width="550"/>
         <TextBox x:Name="txt1" HorizontalAlignment="Left" Height="45" HorizontalContentAlignment="Center"  Margin="432,471,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="290" FontSize="24"/>
         <Button x:Name="bt3" Content="Registrar Asistencia" HorizontalAlignment="Left" Margin="1057,412,0,0" VerticalAlignment="Top" Width="228" Height="70" FontWeight="Bold" FontSize="20" Click="bt3_Click"/>
+        <Label x:Name="lab6" Content="aceptado" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="432,542,0,0" VerticalAlignment="Top" Width="569" Height="96" FontSize="18">
+            <Label.Background>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightColorKey}}"/>
+            </Label.Background>
+        </Label>
+        <Button x:Name="bt4" Content="Button" HorizontalAlignment="Left" Margin="432,657,0,0" VerticalAlignment="Top" Width="569" Height="39" FontWeight="Bold" FontSize="16">
+            <Button.Background>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.MenuHighlightColorKey}}"/>
+            </Button.Background>
+        </Button>
+        
 
     </Grid>
 </Window>
