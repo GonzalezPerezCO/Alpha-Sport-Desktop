@@ -11,22 +11,27 @@
         <Label x:Name="lab1" Content="Nombre del Proyecto" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="489,7,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="36"/>
         <Label x:Name="lab2" Content="Asistencia Estudiantes" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="544,112,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.013,-0.288" FontWeight="Bold" FontSize="24"/>
         <Label Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <Label x:Name="lab3" Content="Nombre:" HorizontalAlignment="Left" Margin="156,365,0,0" VerticalAlignment="Top" FontSize="22" FontWeight="Bold"/>
-        <Label x:Name="lab4" Content="Código:" HorizontalAlignment="Left" Margin="156,456,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
-        <Label x:Name="lab5" Content="nombre y apellido" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="432,363,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.355,-0.212" FontSize="24" Width="550"/>
-        <TextBox x:Name="txt1" HorizontalAlignment="Left" Height="45" HorizontalContentAlignment="Center"  Margin="432,471,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="290" FontSize="24"/>
-        <Button x:Name="bt3" Content="Registrar Asistencia" HorizontalAlignment="Left" Margin="1057,412,0,0" VerticalAlignment="Top" Width="228" Height="70" FontWeight="Bold" FontSize="20" Click="bt3_Click"/>
-        <Label x:Name="lab6" Content="aceptado" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="432,542,0,0" VerticalAlignment="Top" Width="569" Height="96" FontSize="18">
+        <Label x:Name="lab3" Content="Nombre:" HorizontalAlignment="Left" Margin="156,283,0,0" VerticalAlignment="Top" FontSize="22" FontWeight="Bold"/>
+        <Label x:Name="lab4" Content="Código:" HorizontalAlignment="Left" Margin="156,374,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+        <Label x:Name="lab5" Content="nombre y apellido" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="432,281,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.355,-0.212" FontSize="24" Width="550"/>
+        <TextBox x:Name="txt1" HorizontalAlignment="Left" Height="45" HorizontalContentAlignment="Center"  Margin="432,389,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="290" FontSize="24"/>
+        <Button x:Name="bt3" Content="Buscar" HorizontalAlignment="Left" Margin="1020,394,0,0" VerticalAlignment="Top" Width="150" Height="40" FontWeight="Bold" FontSize="20" Click="bt3_Click"/>
+        <Label x:Name="lab6" Content="aceptado" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="432,485,0,0" VerticalAlignment="Top" Width="569" Height="106" FontSize="18">
             <Label.Background>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightColorKey}}"/>
             </Label.Background>
         </Label>
-        <Button x:Name="bt4" Content="Button" HorizontalAlignment="Left" Margin="432,657,0,0" VerticalAlignment="Top" Width="569" Height="39" FontWeight="Bold" FontSize="16">
+        <Button x:Name="bt4" Content="Permitir" HorizontalAlignment="Left" Margin="432,657,0,0" VerticalAlignment="Top" Width="290" Height="39" FontWeight="Bold" FontSize="16">
             <Button.Background>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.MenuHighlightColorKey}}"/>
             </Button.Background>
         </Button>
-        
+        <Button x:Name="bt5" Content="Rechazar" HorizontalAlignment="Left" Margin="727,657,0,0" VerticalAlignment="Top" Width="274" Height="39" FontWeight="Bold" FontSize="16">
+            <Button.Background>
+                <SolidColorBrush Color="#FFFF6B33"/>
+            </Button.Background>
+        </Button>
+
 
     </Grid>
 </Window>

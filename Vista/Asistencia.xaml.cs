@@ -26,7 +26,10 @@ namespace Deportes_WPF.Vista
         public Asistencia()
         {
             InitializeComponent();
-            entorno = Entorno.GetInstance(); ;
+            entorno = Entorno.GetInstance();
+            bt4.IsEnabled = false;
+            bt5.IsEnabled = false;
+            lab6.Content = "Ingrese el código del estudiante y realice la busqueda";
             txt1.Focus();
         }       
 
@@ -66,7 +69,8 @@ namespace Deportes_WPF.Vista
                 else
                 {
                     lab5.Content = "No encontrado";
-                    MessageBox.Show("Estudiante no encontrado!");
+                    lab6.Content = "Estudiante no encontrado!";
+                    
                 }
 
             }

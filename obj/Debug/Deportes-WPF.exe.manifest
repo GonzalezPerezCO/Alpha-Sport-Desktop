@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Deportes-WPF.exe" size="298952">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Deportes-WPF.exe" size="299976">
       <assemblyIdentity name="Deportes-WPF" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>l8XwduoCLhPehAcOVA+YuiGKeEx9MiW39rjBKtASpYI=</dsig:DigestValue>
+        <dsig:DigestValue>ARk/QX42G859hN6V6Q4AruDpoRBgDpag6LzBIQoKt/0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
