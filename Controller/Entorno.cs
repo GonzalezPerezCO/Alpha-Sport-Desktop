@@ -56,7 +56,7 @@ namespace Deportes_WPF.Controller
         }
 
         public List<string> asistencia(string codigo) {
-            string query = "SELECT CONCAT(nombre, ' ', apellido) As nombre, testudiantes.codigo as codigo from testudiantes INNER JOIN tasistencia on testudiantes.codigo = " + codigo+" and testudiantes.email = tasistencia.email ";
+            string query = "SELECT CONCAT(nombre, ' ', apellido) As nombre, testudiantes.codigo as codigo,  dia1, dia2, dia3, hora1, hora2, hora3 from testudiantes INNER JOIN thorarios on testudiantes.codigo = "+codigo+" and testudiantes.email = thorarios.email;";
             return connection.queryReader(query);
         }
 
