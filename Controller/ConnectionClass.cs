@@ -97,11 +97,11 @@ namespace Deportes_WPF.Controller
 
             if (reader.Read())
             {                
-                result = new User((string)reader["email"], (string)reader["nombre"], (string)reader["apellido"]);
-                this.CloseConnection();
+                result = new User((string)reader["email"], (string)reader["nombre"], (string)reader["apellido"]);                
                 Debug.WriteLine(" ----   result: " + result.ToString());
             }
-                    
+            this.CloseConnection();
+
             Debug.WriteLine(" ----   result: retorna");
             return result;
         }

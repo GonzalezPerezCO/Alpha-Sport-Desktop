@@ -28,8 +28,7 @@ namespace Deportes_WPF.Vista
         {
             InitializeComponent();
             entorno = Entorno.GetInstance();
-            bt4.IsEnabled = false;
-            bt5.IsEnabled = false;
+            botonesEstado(false);
             lab6.Content = "Ingrese el código del estudiante y realice la busqueda";
             txt1.Focus();
         }       
@@ -45,7 +44,8 @@ namespace Deportes_WPF.Vista
         private void btn2_Click(object sender, RoutedEventArgs e)
         {
             lab5.Content = "nombre y apellido";
-            txt1.Text = "";
+            botonesEstado(false);
+            lab6.Content = "Ingrese el código del estudiante y realice la busqueda";
             txt1.Focus();
         }
 
@@ -59,19 +59,43 @@ namespace Deportes_WPF.Vista
             }
             else
             {
-                //0: nombre, 1:codigo, 2:dia1, 3:dia2, 4:dia3, 5:hora1, 6:hora2, 6:hora3
+                //0: nombre, 1:codigo, 2:dia1, 3:dia2, 4:dia3, 5:hora1, 6:hora2, 7:hora3
                 List<string> lista = entorno.asistencia(codigo);
 
                 if (lista.Capacity > 0)
                 {
                     lab5.Content = lista[0];
-                    Debug.WriteLine("**** For :"+lista.Count);
-                    for (int i=2; i<lista.Count();i++) {
-                        Debug.WriteLine("data: "+lista[i].ToString());
+                    Debug.WriteLine("**** For :" + lista.Count);
 
+                    DateTime dt = DateTime.Now;
+                    string diaActual = aEspanol(dt.DayOfWeek.ToString());
+                    string horaActual = dt.Hour.ToString(); ;
+
+
+                    string mensaje = "";
+                    for (int i= 2; i <= 4; i++)
+                    {
+                        Debug.WriteLine("<<<<<<<<<<<<< datos: " + lista[i]);
+
+                        if (lista[i] == diaActual) {
+                            if (lista[i + 3] == horaActual)
+                            {
+                                mensaje = "Franja Horaria para registrar: " + diaActual + " - " + horaActual + ":00.";
+                                bt4.IsEnabled = true;
+                            }
+                            else
+                            {
+                                Debug.WriteLine("<<<<<<<<<<<<< no asignado");
+                                mensaje = "El estudiante no tiene asignada esta franja horaria: " + diaActual + " - " + horaActual + ":00.";                               
+                            }
+                            bt5.IsEnabled = true;
+                        }
+                        
                     }
-
                     
+                    if(mensaje =="") mensaje = "El estudiante no tiene un horario para el Gimnasio.";
+
+                    lab6.Content = mensaje;
                 }
                 else
                 {
@@ -84,6 +108,40 @@ namespace Deportes_WPF.Vista
 
         }
 
+        private string aEspanol(string day) {
+            string dia = "";
+
+            switch (day)
+            {
+                case "Monday":
+                    dia = "Lunes";
+                    break;
+                case "Tuesday":
+                    dia = "Martes";
+                    break;
+                case "Wednesday":
+                    dia = "Miercoles";
+                    break;
+                case "Thursday":
+                    dia = "Jueves";
+                    break;
+                case "Friday":
+                    dia = "Viernes";
+                    break;
+                case "Saturday":
+                    dia = "Sabado";
+                    break;
+                case "Sunday":
+                    dia = "Domingo";
+                    break;
+                //default:
+                    //dia = "N/A";
+                    //break;
+            }
+
+            return dia;
+        }
+
         private void Window_Closed(object sender, EventArgs e)
         {
             Application.Current.Shutdown();
@@ -92,6 +150,26 @@ namespace Deportes_WPF.Vista
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             Application.Current.Shutdown();
+        }
+
+        private void bt4_Click(object sender, RoutedEventArgs e)
+        {
+            // falta colocar aceptar
+            MessageBox.Show("Asistencia registrada");
+            botonesEstado(false);
+        }
+
+        private void bt5_Click(object sender, RoutedEventArgs e)
+        {
+            // falta rechazar
+            MessageBox.Show("Asistencia Rechazada");
+            botonesEstado(false);
+        }
+
+        private void botonesEstado(bool estado) {
+            Debug.WriteLine("Mostrar botnos 5 y 6 = "+estado);
+            bt4.IsEnabled = estado;
+            bt5.IsEnabled = estado;            
         }
     }
 }
