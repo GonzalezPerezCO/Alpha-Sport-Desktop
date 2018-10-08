@@ -1,6 +1,7 @@
 ﻿using Deportes_WPF.Controller;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -58,12 +59,18 @@ namespace Deportes_WPF.Vista
             }
             else
             {
-
+                //0: nombre, 1:codigo, 2:dia1, 3:dia2, 4:dia3, 5:hora1, 6:hora2, 6:hora3
                 List<string> lista = entorno.asistencia(codigo);
 
                 if (lista.Capacity > 0)
                 {
                     lab5.Content = lista[0];
+                    Debug.WriteLine("**** For :"+lista.Count);
+                    for (int i=2; i<lista.Count();i++) {
+                        Debug.WriteLine("data: "+lista[i].ToString());
+
+                    }
+
                     
                 }
                 else

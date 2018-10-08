@@ -163,6 +163,12 @@ namespace Deportes_WPF.Controller
                 while (reader.Read()) {
                     result.Add(reader.GetString(0));
                     result.Add(reader.GetString(1));
+                    result.Add(reader.GetString(2));
+                    result.Add(reader.GetString(3));
+                    result.Add(reader.GetString(4));
+                    result.Add(reader.GetString(5));
+                    result.Add(reader.GetString(6));
+                    result.Add(reader.GetString(7));
                 }
 
                 Debug.WriteLine(" ----   RESULT QERY READER: " + result.ToString());
