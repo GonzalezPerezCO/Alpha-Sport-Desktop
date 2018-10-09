@@ -111,6 +111,9 @@
     <Compile Include="Vista\Asistencia.xaml.cs">
       <DependentUpon>Asistencia.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Cupos.xaml.cs">
+      <DependentUpon>Cupos.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Horarios.xaml.cs">
       <DependentUpon>Horarios.xaml</DependentUpon>
     </Compile>
@@ -136,6 +139,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Vista\Asistencia.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vista\Cupos.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
