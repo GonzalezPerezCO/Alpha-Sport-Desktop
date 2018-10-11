@@ -1,6 +1,7 @@
 ﻿using Deportes_WPF.Controller;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -26,6 +27,7 @@ namespace Deportes_WPF.Vista
         public Horarios()
         {
             InitializeComponent();
+            entorno = Entorno.GetInstance();
         }
 
         private void Window_Closed(object sender, EventArgs e)
@@ -56,27 +58,13 @@ namespace Deportes_WPF.Vista
             else
             {
                 //0: nombre, 1:codigo, 2:dia1, 3:dia2, 4:dia3, 5:hora1, 6:hora2, 7:hora3
-                List<string> lista = entorno.horario(codigo);
+                List<string> lista = entorno.datos(codigo);
+                List<string> listaH = entorno.horario(codigo);
+                Debug.WriteLine(">>>>>>>> Horario: ");
 
-                if (lista.Capacity > 0)
-                // nombre, apellido, carrera, semestre, dia1, dia2, dia3, hora1, hora2, hora3
-                {
-                    txt4.Content = lista[0] + " " +lista[1];
-                    txt5.Content = lista[2];
-                    txt6.Content = lista[3];
-                    txt7.Content = lista[4];
-                    txt8.Content = lista[5];
-                    txt9.Content = lista[6];
-                    txt10.Content = lista[7];
-                    txt11.Content = lista[8];
-                    txt12.Content = lista[9];
+                DataTable dt = entorno.mostrarHorario(Int32.Parse(txt3.Text));
 
-                }
-                else
-                {                   
-                    MessageBox.Show("Estudiante no encontrado!");
-
-                }
+                dtgrid1.ItemsSource = dt.DefaultView;
 
             }
 

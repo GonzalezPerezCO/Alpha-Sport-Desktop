@@ -80,7 +80,13 @@ namespace Deportes_WPF.Controller
 
         public List<string> horario(string codigo)
         {
-            string query = "select testudiantes.nombre as nombre, testudiantes.apellido as apellido, carrera, semestre, dia1, dia2, dia3, hora1, hora2, hora3 from testudiantes INNER JOIN thorarios on testudiantes.email = thorarios.email where testudiantes.codigo = "+codigo+"";
+            string query = "select dia1, dia2, dia3, hora1, hora2, hora3 from testudiantes INNER JOIN thorarios on testudiantes.email = thorarios.email where testudiantes.codigo = " + codigo+"";
+            return connection.queryReader(query);
+        }
+
+        public List<string> datos(string codigo)
+        {
+            string query = "select  CONCAT(testudiantes.nombre, ' ', testudiantes.apellido) As nombre, carrera, semestre from testudiantes where testudiantes.codigo = " + codigo + "";
             return connection.queryReader(query);
         }
 
@@ -89,6 +95,16 @@ namespace Deportes_WPF.Controller
         {
             Debug.WriteLine("MOSTRAR TABLA");
             string query = "select nombre, apellido, codigo, carrera, semestre from testudiantes";
+            DataTable dt = connection.queryTable(query);
+            Debug.WriteLine("RECIBIR READER EN TABLE");
+
+            return dt;
+        }
+
+        public DataTable mostrarHorario(int codigo)
+        {
+            Debug.WriteLine("MOSTRAR TABLA");
+            string query = "select  CONCAT(testudiantes.nombre, ' ', testudiantes.apellido) As nombre, carrera, semestre, dia1, dia2, dia3, hora1, hora2, hora3 from testudiantes INNER JOIN thorarios on testudiantes.email = thorarios.email where testudiantes.codigo ="+codigo+"";
             DataTable dt = connection.queryTable(query);
             Debug.WriteLine("RECIBIR READER EN TABLE");
 

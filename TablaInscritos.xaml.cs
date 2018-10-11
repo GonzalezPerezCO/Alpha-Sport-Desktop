@@ -76,5 +76,12 @@ namespace Deportes_WPF
             this.Hide();
             agregar.Show();
         }
+
+        private void bt4_Click(object sender, RoutedEventArgs e)
+        {
+            Window horario = new Horarios();
+            this.Hide();
+            horario.Show();
+        }
     }
 }
