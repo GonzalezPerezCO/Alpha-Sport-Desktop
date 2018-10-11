@@ -20,7 +20,7 @@
             <ColumnDefinition Width="6*"/>
         </Grid.ColumnDefinitions>
         <Image HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" Source="/Recursos/fit.ico" Grid.ColumnSpan="2"/>
-        <DataGrid x:Name="dtgrid1" Height="571" Margin="214.789,144,311,0" VerticalAlignment="Top" Grid.ColumnSpan="3" IsReadOnly="True" Grid.Column="1"/>
+        <DataGrid x:Name="dtgrid1" Height="571" Margin="88,130,204,0" VerticalAlignment="Top" Grid.ColumnSpan="2" IsReadOnly="True" Grid.Column="2"/>
         <Label x:Name="lab1" Content="Nombre del Proyecto" Grid.Column="2" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="244,20,0,0" VerticalAlignment="Top" RenderTransformOrigin="4.868,0.577" FontSize="36" FontWeight="Bold" Grid.ColumnSpan="2"/>
         <Label x:Name="lab2" Content="Estudiantes Inscritos" Grid.Column="2" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="306,83,0,0" VerticalAlignment="Top" RenderTransformOrigin="4.868,0.577" FontSize="24" FontWeight="Bold" Grid.ColumnSpan="2"/>
         <Button x:Name="bt1" Content="asistencia" Grid.Column="4" HorizontalAlignment="Left" Margin="24,44,0,0" VerticalAlignment="Top" Width="75" Click="bt1_Click" Grid.ColumnSpan="3"/>

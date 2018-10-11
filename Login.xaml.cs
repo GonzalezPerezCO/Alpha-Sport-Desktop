@@ -21,6 +21,7 @@ namespace Deportes_WPF
             InitializeComponent();
             entorno = Entorno.GetInstance(); ;
             lab1.Content = entorno.PROYECTO;
+            lab2.Content = entorno.PERIODO;
             txt1.Focus();
         }
 

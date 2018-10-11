@@ -21,5 +21,6 @@
             </StackPanel>
         </Border>
         <Label x:Name="lab1" Content="Nombre del Proyecto" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="36"  Height="Auto" Margin="-333,-145,-339,0" Width="972" />
+        <Label x:Name="lab2" Content="Periodo Académico" HorizontalContentAlignment="Right" Foreground="White" HorizontalAlignment="Left" Height="37" Margin="503,478,-518,-215" VerticalAlignment="Top" Width="315" FontWeight="Bold" FontSize="20"/>
     </Grid>
 </Window>

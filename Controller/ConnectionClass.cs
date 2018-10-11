@@ -304,7 +304,9 @@ namespace Deportes_WPF.Controller
             return Count;         
         }
 
-       
+        public string getPeriodo() {
+            return "Periodo Académico";
+        }
 
     }
 }

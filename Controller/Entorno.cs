@@ -22,6 +22,7 @@ namespace Deportes_WPF.Controller
         public readonly string PROYECTO = "Sistema Integrado Deportes de la Escuela";
         public readonly string GIMNASIO = "Sistema de Gimnasio";
         public readonly string DEPORTES = "Sistema de Deportes";
+        public string PERIODO = "Periodo Académico";
 
         private static Entorno instance = null;
         private ConnectionClass connection;
@@ -29,6 +30,7 @@ namespace Deportes_WPF.Controller
 
         private Entorno() {
             connection = ConnectionClass.GetInstance();
+            PERIODO = connection.getPeriodo();
         }
 
         public static Entorno GetInstance()
