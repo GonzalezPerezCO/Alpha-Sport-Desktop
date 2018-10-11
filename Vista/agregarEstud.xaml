@@ -13,31 +13,31 @@
             <ColumnDefinition Width="1048*"/>
             <ColumnDefinition Width="311*"/>
         </Grid.ColumnDefinitions>
-        <Label x:Name="lab1" Content="Nombre del Proyecto" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="489,7,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="36"/>
+        <Label x:Name="lab1" Content="Nombre del Proyecto" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="10,7,10,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="36" Width="1338" Grid.ColumnSpan="2"/>
         <Label x:Name="lab2" Content="Agregar Estudiante al Gimnasio" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="495,112,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.013,-0.288" FontWeight="Bold" FontSize="24"/>
-        <Button Content="Volver" HorizontalAlignment="Left" Margin="185.5,50,0,0" VerticalAlignment="Top" Width="76" Grid.Column="1" Click="Button_Click_2"/>
-        <Button Content="Guardar" HorizontalAlignment="Left" Margin="502,679,0,0" VerticalAlignment="Top" Width="101" FontWeight="Bold" FontSize="16" Click="Button_Click_1" Height="43">
+        <Button Content="Volver" HorizontalAlignment="Right" Margin="202,128,33,0" VerticalAlignment="Top" Width="76" Grid.Column="1" Click="Button_Click_2"/>
+        <Button Content="Guardar" HorizontalAlignment="Center" Margin="502,679,444,0" VerticalAlignment="Top" Width="101" FontWeight="Bold" FontSize="16" Click="Button_Click_1" Height="43">
             <Button.Background>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.MenuHighlightColorKey}}"/>
             </Button.Background>
         </Button>
-        <Button Content="Cancelar" HorizontalAlignment="Left" Margin="759,679,0,0" VerticalAlignment="Top" Width="101" FontWeight="Bold" FontSize="16" Click="Button_Click" Height="43" Background="#FFD36D19"/>
-        <Label x:Name="lab3" Content="Nombres" HorizontalAlignment="Left" Margin="502,206,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20"/>
-        <TextBox x:Name="txt1" HorizontalAlignment="Left" Height="37" HorizontalContentAlignment="Left" Margin="666,206,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="194" FontSize="20" IsEnabled="False"/>
-        <Label x:Name="lab4" Content="Apellidos" HorizontalAlignment="Left" Margin="502,248,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20"/>
-        <TextBox x:Name="txt2" HorizontalAlignment="Left" Height="37" HorizontalContentAlignment="Left" Margin="666,248,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="194" FontSize="20" IsEnabled="False"/>
-        <Label x:Name="lab5" Content="Código" HorizontalAlignment="Left" Margin="502,290,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20"/>
-        <TextBox x:Name="txt3" HorizontalAlignment="Left" Height="37" HorizontalContentAlignment="Left" Margin="666,290,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="194" FontSize="20" IsEnabled="False"/>
-        <Label x:Name="lab6" Content="Carrera" HorizontalAlignment="Left" Margin="502,332,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20"/>
-        <TextBox x:Name="txt4" HorizontalAlignment="Left" Height="37" HorizontalContentAlignment="Left" Margin="666,332,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="194" FontSize="20" IsEnabled="False"/>
-        <Label x:Name="lab7" Content="Semestre" HorizontalAlignment="Left" Margin="502,374,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20"/>
-        <TextBox x:Name="txt5" HorizontalAlignment="Left" Height="37" HorizontalContentAlignment="Left" Margin="666,374,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="194" FontSize="20" IsEnabled="False"/>
-        <Label x:Name="lab8" Content="email" HorizontalAlignment="Left" Margin="502,416,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20"/>
-        <TextBox x:Name="txt6" HorizontalAlignment="Left" Height="37" HorizontalContentAlignment="Left" Margin="666,416,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="194" FontSize="20" IsEnabled="False"/>
-        <Label x:Name="lab10" Content="Nombre" HorizontalAlignment="Left" Margin="606,501,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20"/>
-        <TextBox x:Name="txt7" HorizontalAlignment="Left" Height="117" HorizontalContentAlignment="Left" Margin="502,543,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="358" FontSize="20" IsEnabled="False"/>
-        <Label x:Name="lab9" Content="documento" HorizontalAlignment="Left" Margin="502,456,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20"/>
-        <TextBox x:Name="txt8" HorizontalAlignment="Left" Height="37" HorizontalContentAlignment="Left" Margin="666,456,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="194" FontSize="20" IsEnabled="False"/>
+        <Button Content="Cancelar" HorizontalAlignment="Center" Margin="804,679,141,0" VerticalAlignment="Top" Width="102" FontWeight="Bold" FontSize="16" Click="Button_Click" Height="43" Background="#FFD36D19"/>
+        <Label x:Name="lab3" Content="Nombres" HorizontalAlignment="Center" Margin="495,202,456,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20"/>
+        <TextBox x:Name="txt1" HorizontalAlignment="Center" Height="37" HorizontalContentAlignment="Left" Margin="664,206,189,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="194" FontSize="20" IsEnabled="False"/>
+        <Label x:Name="lab4" Content="Apellidos" HorizontalAlignment="Center" Margin="495,244,454,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20"/>
+        <TextBox x:Name="txt2" HorizontalAlignment="Center" Height="37" HorizontalContentAlignment="Left" Margin="664,248,189,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="194" FontSize="20" IsEnabled="False"/>
+        <Label x:Name="lab5" Content="Código" HorizontalAlignment="Center" Margin="495,286,475,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" RenderTransformOrigin="0.182,0.378"/>
+        <TextBox x:Name="txt3" HorizontalAlignment="Center" Height="37" HorizontalContentAlignment="Left" Margin="664,290,189,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="194" FontSize="20" IsEnabled="False"/>
+        <Label x:Name="lab6" Content="Carrera" HorizontalAlignment="Center" Margin="495,328,473,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20"/>
+        <TextBox x:Name="txt4" HorizontalAlignment="Center" Height="37" HorizontalContentAlignment="Left" Margin="664,332,189,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="194" FontSize="20" IsEnabled="False"/>
+        <Label x:Name="lab7" Content="Semestre" HorizontalAlignment="Center" Margin="495,370,456,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20"/>
+        <TextBox x:Name="txt5" HorizontalAlignment="Center" Height="37" HorizontalContentAlignment="Left" Margin="664,374,189,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="194" FontSize="20" IsEnabled="False"/>
+        <Label x:Name="lab8" Content="Email" HorizontalAlignment="Center" Margin="495,416,491,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20"/>
+        <TextBox x:Name="txt6" HorizontalAlignment="Center" Height="37" HorizontalContentAlignment="Left" Margin="664,416,189,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="194" FontSize="20" IsEnabled="False"/>
+        <Label x:Name="lab10" Content="Nombre" HorizontalAlignment="Center" Margin="632,501,328,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20"/>
+        <TextBox x:Name="txt7" HorizontalAlignment="Center" Height="117" HorizontalContentAlignment="Left" Margin="502,543,187,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="358" FontSize="20" IsEnabled="False"/>
+        <Label x:Name="lab9" Content="Documento" HorizontalAlignment="Center" Margin="495,452,422,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" Width="130"/>
+        <TextBox x:Name="txt8" HorizontalAlignment="Center" Height="37" HorizontalContentAlignment="Left" Margin="664,456,189,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="194" FontSize="20" IsEnabled="False"/>
 
     </Grid>
 </Window>
