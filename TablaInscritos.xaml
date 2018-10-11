@@ -23,7 +23,16 @@
         <DataGrid x:Name="dtgrid1" Height="571" Margin="88,130,204,0" VerticalAlignment="Top" Grid.ColumnSpan="2" IsReadOnly="True" Grid.Column="2"/>
         <Label x:Name="lab1" Content="Nombre del Proyecto" Grid.Column="2" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="244,20,0,0" VerticalAlignment="Top" RenderTransformOrigin="4.868,0.577" FontSize="36" FontWeight="Bold" Grid.ColumnSpan="2"/>
         <Label x:Name="lab2" Content="Estudiantes Inscritos" Grid.Column="2" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="306,83,0,0" VerticalAlignment="Top" RenderTransformOrigin="4.868,0.577" FontSize="24" FontWeight="Bold" Grid.ColumnSpan="2"/>
-        <Button x:Name="bt1" Content="asistencia" Grid.Column="4" HorizontalAlignment="Left" Margin="24,44,0,0" VerticalAlignment="Top" Width="75" Click="bt1_Click" Grid.ColumnSpan="3"/>
+        <Button x:Name="bt1" Content="Asistencia" Grid.Column="4" HorizontalAlignment="Left" Margin="24,44,0,0" VerticalAlignment="Top" Width="75" Click="bt1_Click" Grid.ColumnSpan="3">
+            <Button.Background>
+                <SolidColorBrush Color="#FFFFDA33"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="bt2" Content="Ver Cupos" Grid.Column="4" HorizontalAlignment="Left" Margin="24,83,0,0" VerticalAlignment="Top" Width="75" Click="bt2_Click" Grid.ColumnSpan="3" RenderTransformOrigin="0.52,2.5" FontWeight="Bold">
+            <Button.Background>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.MenuHighlightColorKey}}"/>
+            </Button.Background>
+        </Button>
 
     </Grid>
 </Window>

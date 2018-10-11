@@ -61,5 +61,13 @@ namespace Deportes_WPF
         {
             Application.Current.Shutdown();
         }
+
+        private void bt2_Click(object sender, RoutedEventArgs e)
+        {
+            Window cupos = new Cupos();
+
+            this.Hide();
+            cupos.Show();
+        }
     }
 }

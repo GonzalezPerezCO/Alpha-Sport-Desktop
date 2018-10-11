@@ -73,6 +73,17 @@ namespace Deportes_WPF.Controller
             return dt;
         }
 
+        public DataTable mostrarCupos()
+        {
+
+            Debug.WriteLine("MOSTRAR CUPOS");
+            string query = "select lunes as Lunes, martes as Martes, miercoles as Miercoles, jueves as Jueves, viernes as Jueves  from tcupos";
+            DataTable dt = connection.queryTable(query);
+            Debug.WriteLine("RECIBIR READER EN CUPOS");
+
+            return dt;
+        }
+
         public User getUser() {
             return user;
         }

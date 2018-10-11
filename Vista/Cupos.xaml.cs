@@ -1,6 +1,7 @@
 ﻿using Deportes_WPF.Controller;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,11 +21,28 @@ namespace Deportes_WPF.Vista
     /// </summary>
     public partial class Cupos : Window
     {
+        private Entorno entorno;
+
         public Cupos()
         {
             InitializeComponent();
-            Entorno entorno = Entorno.GetInstance();
+            entorno = Entorno.GetInstance();
+            lab1.Content = entorno.PROYECTO;
+            mostrarTabla();
 
+        }
+
+        public void mostrarTabla()
+        {
+            DataTable dt = entorno.mostrarTabla();
+
+            dtgrid1.ItemsSource = dt.DefaultView;
+
+        }
+
+        private void bt1_Click(object sender, RoutedEventArgs e)
+        {
+            mostrarTabla();
         }
     }
 }
