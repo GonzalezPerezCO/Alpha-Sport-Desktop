@@ -25,3 +25,8 @@ C:\Users\manue\source\repos\Epic-Sport-_Deportes\obj\Debug\Deportes-WPF.csproj.C
 C:\Users\manue\source\repos\Epic-Sport-_Deportes\obj\Debug\Deportes-WPF.exe
 C:\Users\manue\source\repos\Epic-Sport-_Deportes\obj\Debug\Deportes-WPF.pdb
 C:\Users\manue\source\repos\Epic-Sport-_Deportes\obj\Debug\Deportes-WPF.csprojAssemblyReference.cache
+C:\Users\manue\source\repos\Epic-Sport-_Deportes\obj\Debug\Vista\Cupos.g.cs
+C:\Users\manue\source\repos\Epic-Sport-_Deportes\obj\Debug\Vista\Horarios.g.cs
+C:\Users\manue\source\repos\Epic-Sport-_Deportes\obj\Debug\Deportes-WPF_MarkupCompile.lref
+C:\Users\manue\source\repos\Epic-Sport-_Deportes\obj\Debug\Vista\Cupos.baml
+C:\Users\manue\source\repos\Epic-Sport-_Deportes\obj\Debug\Vista\Horarios.baml
