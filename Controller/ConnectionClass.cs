@@ -141,7 +141,6 @@ namespace Deportes_WPF.Controller
             return dt;
         }
 
-
         //Execute query return Array
         public List<string> queryReader(string query)
         {
