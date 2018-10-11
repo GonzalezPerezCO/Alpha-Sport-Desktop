@@ -31,6 +31,7 @@ namespace Deportes_WPF
         {
             InitializeComponent();
             entorno = Entorno.GetInstance();
+            lab1.Content = entorno.PROYECTO;
             mostrarTabla();
         }
 

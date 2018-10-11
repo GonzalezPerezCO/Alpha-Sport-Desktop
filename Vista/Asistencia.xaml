@@ -4,13 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="Asistencia" Width="1366" Height="768" Closed="Window_Closed" Closing="Window_Closing" >
+        Title="Asistencia" Width="1366" Height="768" Closed="Window_Closed" Closing="Window_Closing" 
+        WindowState="Maximized"
+        WindowStyle="None">
     <Grid>
         <Button x:Name="btn1" Content="volver" HorizontalAlignment="Left" Margin="1186,36,0,0" VerticalAlignment="Top" Width="74" Click="btn1_Click"/>
         <Button x:Name="btn2" Content="nuevo" HorizontalAlignment="Left" Margin="1186,76,0,0" VerticalAlignment="Top" Width="74" Click="btn2_Click"/>
         <Label x:Name="lab1" Content="Nombre del Proyecto" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="489,7,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="36"/>
         <Label x:Name="lab2" Content="Asistencia Estudiantes" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="544,112,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.013,-0.288" FontWeight="Bold" FontSize="24"/>
-        <Label Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <Label x:Name="lab3" Content="Nombre:" HorizontalAlignment="Left" Margin="156,283,0,0" VerticalAlignment="Top" FontSize="22" FontWeight="Bold"/>
         <Label x:Name="lab4" Content="Código:" HorizontalAlignment="Left" Margin="156,374,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
         <Label x:Name="lab5" Content="nombre y apellido" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="432,281,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.355,-0.212" FontSize="24" Width="550"/>

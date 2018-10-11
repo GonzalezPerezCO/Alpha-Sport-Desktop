@@ -28,6 +28,7 @@ namespace Deportes_WPF.Vista
         {
             InitializeComponent();
             entorno = Entorno.GetInstance();
+            lab1.Content = entorno.PROYECTO;
             botonesEstado(false);
             lab6.Content = "Ingrese el código del estudiante y realice la busqueda";
             txt1.Focus();

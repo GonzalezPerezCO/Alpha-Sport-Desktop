@@ -5,8 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Deportes_WPF.Vista"
         mc:Ignorable="d"
-        Title="Horarios" Height="450" Width="800">
+        Title="Horarios" Width="1366" Height="768"
+        WindowState="Maximized"
+        WindowStyle="SingleBorderWindow">
     <Grid>
-        
+        <Label x:Name="lab1" Content="Nombre del Proyecto" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="489,7,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="36"/>
+        <Label x:Name="lab2" Content="Asistencia Estudiantes" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="544,112,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.013,-0.288" FontWeight="Bold" FontSize="24"/>
+
     </Grid>
 </Window>
