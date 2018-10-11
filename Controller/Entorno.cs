@@ -78,6 +78,12 @@ namespace Deportes_WPF.Controller
             return connection.queryReader(query);
         }
 
+        public List<string> horario(string codigo)
+        {
+            string query = "select testudiantes.nombre as nombre, testudiantes.apellido as apellido, carrera, semestre, dia1, dia2, dia3, hora1, hora2, hora3 from testudiantes INNER JOIN thorarios on testudiantes.email = thorarios.email where testudiantes.codigo = "+codigo+"";
+            return connection.queryReader(query);
+        }
+
 
         public DataTable mostrarTabla()
         {
