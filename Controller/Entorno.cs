@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Deportes_WPF.Model;
 using System.Diagnostics;
 using System.Data;
+using System.Windows;
 
 // using R_Connection = Deportes_WPF.Controller.ConnectionClass;
 
@@ -33,12 +34,26 @@ namespace Deportes_WPF.Controller
             PERIODO = connection.getPeriodo();
         }
 
+
+
         public static Entorno GetInstance()
         {
             if (instance == null)
                 instance = new Entorno();
 
             return instance;
+        }
+
+        public void logOut(Window ventana)
+        {
+            user = null;
+
+            Window login = new Login();
+
+            ventana.Hide();
+            login.Show();
+
+            // falta usar en las venatnas
         }
 
         public bool login(string email, string password) {            
@@ -91,6 +106,5 @@ namespace Deportes_WPF.Controller
         public void setUser(User user) {
             this.user = user;
         }
-
     }
 }
