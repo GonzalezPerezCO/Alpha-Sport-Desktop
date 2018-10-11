@@ -68,6 +68,13 @@ namespace Deportes_WPF
 
             this.Hide();
             cupos.Show();
+        }              
+
+        private void bt3_Click(object sender, RoutedEventArgs e)
+        {
+            Window agregar = new agregarEstud();
+            this.Hide();
+            agregar.Show();
         }
     }
 }

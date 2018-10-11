@@ -9,8 +9,19 @@
         WindowState="Maximized"
         WindowStyle="SingleBorderWindow" Closed="Window_Closed" Closing="Window_Closing">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1048*"/>
+            <ColumnDefinition Width="311*"/>
+        </Grid.ColumnDefinitions>
         <Label x:Name="lab1" Content="Nombre del Proyecto" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="489,7,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="36"/>
-        <Label x:Name="lab2" Content="Asistencia Estudiantes" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="544,112,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.013,-0.288" FontWeight="Bold" FontSize="24"/>
+        <Label x:Name="lab2" Content="Agregar Estudiante al Gimnasio" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="495,112,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.013,-0.288" FontWeight="Bold" FontSize="24"/>
+        <Button Content="Volver" HorizontalAlignment="Left" Margin="185.5,50,0,0" VerticalAlignment="Top" Width="76" Grid.Column="1" Click="Button_Click_2"/>
+        <Button Content="Guardar" HorizontalAlignment="Left" Margin="489,679,0,0" VerticalAlignment="Top" Width="101" FontWeight="Bold" FontSize="16" Click="Button_Click_1" Height="43">
+            <Button.Background>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.MenuHighlightColorKey}}"/>
+            </Button.Background>
+        </Button>
+        <Button Content="Cancelar" HorizontalAlignment="Left" Margin="727,679,0,0" VerticalAlignment="Top" Width="101" FontWeight="Bold" FontSize="16" Click="Button_Click" Height="43" Background="#FFD36D19"/>
 
     </Grid>
 </Window>
