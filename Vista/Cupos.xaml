@@ -7,12 +7,12 @@
         mc:Ignorable="d"
         Title="Cupos" Width="1366" Height="768"
         WindowState="Maximized"
-        WindowStyle="SingleBorderWindow">
+        WindowStyle="SingleBorderWindow" Closed="Window_Closed" Closing="Window_Closing">
     <Grid>
         <Label x:Name="lab1" Content="Nombre del Proyecto" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="489,7,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="36"/>
         <Label x:Name="lab2" Content="Disponibilidad de Cupos Por Franja Horaria" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="407,112,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.013,-0.288" FontWeight="Bold" FontSize="24"/>
-        <DataGrid x:Name="dtgrid1" HorizontalAlignment="Left" Height="378" Margin="308,236,0,0" VerticalAlignment="Top" Width="698" IsReadOnly="True"/>
-        <Button x:Name="bt1" Content="Actulializar tabla de cupos" HorizontalAlignment="Left" Margin="308,211,0,0" VerticalAlignment="Top" Width="698" FontWeight="Bold" FontSize="10" Click="bt1_Click">
+        <DataGrid x:Name="dtgrid1" HorizontalAlignment="Left" Height="515" Margin="308,212,0,0" VerticalAlignment="Top" Width="698" IsReadOnly="True"/>
+        <Button x:Name="bt1" Content="Actulializar tabla de cupos" HorizontalAlignment="Left" Margin="308,174,0,0" VerticalAlignment="Top" Width="698" FontWeight="Bold" FontSize="10" Click="bt1_Click">
             <Button.Background>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.MenuHighlightColorKey}}"/>
             </Button.Background>
