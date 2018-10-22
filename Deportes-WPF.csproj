@@ -30,7 +30,7 @@
     <ProductName>Sistema de Deportes para la Escuela</ProductName>
     <PublisherName>GonzalezPerezCO</PublisherName>
     <SuiteName>Deportes-system</SuiteName>
-    <ApplicationRevision>5</ApplicationRevision>
+    <ApplicationRevision>6</ApplicationRevision>
     <ApplicationVersion>2.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
