@@ -34,7 +34,7 @@ namespace Deportes_WPF.Vista
 
         public void mostrarTabla()
         {
-            DataTable dt = entorno.mostrarTabla();
+            DataTable dt = entorno.mostrarCupos();
 
             dtgrid1.ItemsSource = dt.DefaultView;
 

@@ -91,21 +91,21 @@ namespace Deportes_WPF.Controller
         }
 
 
-        public DataTable mostrarTabla()
+        public DataTable tablaInscritos()
         {
-            Debug.WriteLine("MOSTRAR TABLA");
+            Debug.WriteLine("MOSTRAR TABLA INSCRITOS");
             string query = "select nombre, apellido, codigo, carrera, semestre from testudiantes";
-            DataTable dt = connection.queryTable(query);
-            Debug.WriteLine("RECIBIR READER EN TABLE");
+            DataTable dt = connection.mostrarTabla(query);
+            Debug.WriteLine("RECIBIR READER EN TABLE INSCRITOS");
 
             return dt;
         }
 
-        public DataTable mostrarHorario(int codigo)
+        public DataTable horarioEstudiante(int codigo)
         {
-            Debug.WriteLine("MOSTRAR TABLA");
+            Debug.WriteLine("MOSTRAR TABLA HORARIO ESTUDIANTE");
             string query = "select  CONCAT(testudiantes.nombre, ' ', testudiantes.apellido) As nombre, carrera, semestre, dia1, dia2, dia3, hora1, hora2, hora3 from testudiantes INNER JOIN thorarios on testudiantes.email = thorarios.email where testudiantes.codigo ="+codigo+"";
-            DataTable dt = connection.queryTable(query);
+            DataTable dt = connection.mostrarTabla(query);
             Debug.WriteLine("RECIBIR READER EN TABLE");
 
             return dt;
@@ -114,8 +114,8 @@ namespace Deportes_WPF.Controller
         public DataTable mostrarCupos()
         {
             Debug.WriteLine("MOSTRAR CUPOS");
-            string query = "select lunes as Lunes, martes as Martes, miercoles as Miercoles, jueves as Jueves, viernes as Jueves  from tcupos";
-            DataTable dt = connection.queryTable(query);
+            string query = "select id as Hora, lunes as Lunes, martes as Martes, miercoles as Miercoles, jueves as Jueves, viernes as Viernes from tcupos";
+            DataTable dt = connection.mostrarTabla(query);
             Debug.WriteLine("RECIBIR READER EN CUPOS");
 
             return dt;

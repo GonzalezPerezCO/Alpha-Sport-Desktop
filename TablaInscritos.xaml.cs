@@ -38,7 +38,7 @@ namespace Deportes_WPF
 
         public void mostrarTabla() {
 
-           DataTable dt = entorno.mostrarTabla();
+           DataTable dt = entorno.tablaInscritos();
            
             dtgrid1.ItemsSource = dt.DefaultView;
            

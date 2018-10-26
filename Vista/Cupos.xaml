@@ -11,8 +11,8 @@
     <Grid>
         <Label x:Name="lab1" Content="Nombre del Proyecto" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="496,29,491,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="36"/>
         <Label x:Name="lab2" Content="Disponibilidad de Cupos Por Franja Horaria" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="430,134,431,0" VerticalAlignment="Top" RenderTransformOrigin="-0.013,-0.288" FontWeight="Bold" FontSize="24"/>
-        <DataGrid x:Name="dtgrid1" HorizontalAlignment="Center" Height="515" Margin="328,242,332,-20" VerticalAlignment="Top" Width="698" IsReadOnly="True"/>
-        <Button x:Name="bt1" Content="Actualizar tabla de cupos" HorizontalAlignment="Center" Margin="328,194,332,0" VerticalAlignment="Top" Width="698" FontWeight="Bold" FontSize="16" Click="bt1_Click">
+        <DataGrid x:Name="dtgrid1" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Height="357" Margin="466,300,461,0" VerticalAlignment="Top" Width="431" IsReadOnly="True" FontSize="18" VerticalContentAlignment="Center" />
+        <Button x:Name="bt1" Content="Actualizar tabla de cupos" HorizontalAlignment="Center" Margin="466,270,461,0" VerticalAlignment="Top" Width="431" FontWeight="Bold" FontSize="16" Click="bt1_Click">
             <Button.Background>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.MenuHighlightColorKey}}"/>
             </Button.Background>

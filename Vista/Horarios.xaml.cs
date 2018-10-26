@@ -62,9 +62,9 @@ namespace Deportes_WPF.Vista
                 List<string> listaH = entorno.horario(codigo);
                 Debug.WriteLine(">>>>>>>> Horario: ");
 
-                DataTable dt = entorno.mostrarHorario(Int32.Parse(txt3.Text));
+                //DataTable dt = entorno.mostrarHorario(Int32.Parse(txt3.Text));
 
-                dtgrid1.ItemsSource = dt.DefaultView;
+                //dtgrid1.ItemsSource = dt.DefaultView;
 
             }
 

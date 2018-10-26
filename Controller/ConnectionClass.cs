@@ -107,7 +107,7 @@ namespace Deportes_WPF.Controller
         }
 
         //Execute query return Table
-        public DataTable queryTable(string query) {
+        public DataTable mostrarTabla(string query) {
             
             reader = null;
             DataTable dt = new DataTable();
@@ -140,7 +140,7 @@ namespace Deportes_WPF.Controller
 
             return dt;
         }
-
+       
         //Execute query return Array
         public List<string> queryReader(string query)
         {
