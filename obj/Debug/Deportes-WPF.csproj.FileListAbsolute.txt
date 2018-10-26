@@ -6,6 +6,7 @@ C:\Users\manue\source\repos\Epic-Sport-_Deportes\bin\Debug\Deportes-WPF.pdb
 C:\Users\manue\source\repos\Epic-Sport-_Deportes\bin\Debug\MySql.Data.dll
 C:\Users\manue\source\repos\Epic-Sport-_Deportes\bin\Debug\Google.Protobuf.dll
 C:\Users\manue\source\repos\Epic-Sport-_Deportes\bin\Debug\MySql.Data.xml
+C:\Users\manue\source\repos\Epic-Sport-_Deportes\obj\Debug\Deportes-WPF.csprojAssemblyReference.cache
 C:\Users\manue\source\repos\Epic-Sport-_Deportes\obj\Debug\Login.baml
 C:\Users\manue\source\repos\Epic-Sport-_Deportes\obj\Debug\TablaInscritos.baml
 C:\Users\manue\source\repos\Epic-Sport-_Deportes\obj\Debug\Vista\Asistencia.baml
@@ -31,4 +32,3 @@ C:\Users\manue\source\repos\Epic-Sport-_Deportes\obj\Debug\Deportes-WPF.applicat
 C:\Users\manue\source\repos\Epic-Sport-_Deportes\obj\Debug\Deportes-WPF.csproj.CopyComplete
 C:\Users\manue\source\repos\Epic-Sport-_Deportes\obj\Debug\Deportes-WPF.exe
 C:\Users\manue\source\repos\Epic-Sport-_Deportes\obj\Debug\Deportes-WPF.pdb
-C:\Users\manue\source\repos\Epic-Sport-_Deportes\obj\Debug\Deportes-WPF.csprojAssemblyReference.cache
