@@ -28,6 +28,9 @@ namespace Deportes_WPF.Vista
             InitializeComponent();
             entorno = Entorno.GetInstance();
             lab1.Content = entorno.PROYECTO;
+            limpiar();
+            botonesEstado(true);
+
         }
 
         private void Window_Closed(object sender, EventArgs e)
@@ -40,22 +43,63 @@ namespace Deportes_WPF.Vista
             Application.Current.Shutdown();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        private void btn1_Click(object sender, RoutedEventArgs e)
         {
             Window inscritos = new TablaInscritos();
-            
+
             inscritos.Show();
             this.Hide();
         }
+
+        private void btn2_Click(object sender, RoutedEventArgs e)
+        {
+            limpiar();
+        }
+
+        private void btn3_Click(object sender, RoutedEventArgs e)
+        {
+            if (txt1.Text == "" || txt2.Text == "" || txt3.Text == "" || txt4.Text == "" || txt5.Text == "" || txt6.Text == "")
+            {
+                MessageBox.Show("Llene todos los campos para poder continuar.");
+            }
+            else {
+                string nombres = txt1.Text;
+                string apellidos = txt2.Text;
+                string codigo = txt3.Text;
+                string carrera = txt4.Text;
+                string semestre = txt5.Text;
+                string email = txt6.Text;
+                string obs = txt7.Text;
+                entorno.agregarEstudiante(nombres, apellidos, Convert.ToInt32(codigo), carrera, Convert.ToInt32(semestre), email, obs);
+                MessageBox.Show("El estudiante "+nombres+" "+apellidos+" fue agregado.");
+                limpiar();
+            }
+         
+        }
+
+        private void btn4_Click(object sender, RoutedEventArgs e)
+        {
+            Window inscritos = new TablaInscritos();
+
+            inscritos.Show();
+            this.Hide();
+        }
+
+        public void botonesEstado(bool estado) {
+            btn3.IsEnabled = estado;
+            btn4.IsEnabled = estado;
+        }
+
+        public void limpiar() {
+            txt1.Text = "";
+            txt2.Text = "";
+            txt3.Text = "";
+            txt4.Text = "";
+            txt5.Text = "";
+            txt6.Text = "";
+            txt7.Text = "";
+        }
     }
 }
+
+

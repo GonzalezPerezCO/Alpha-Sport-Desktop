@@ -140,7 +140,21 @@ namespace Deportes_WPF.Controller
 
             return dt;
         }
-       
+
+        //Login
+        public void queryAddEstuFull(string query)
+        {
+            Debug.WriteLine(" ----   Query add estu full");
+            this.OpenConnection();
+
+            cmd = new MySqlCommand(query, connection);
+            reader = cmd.ExecuteReader();            
+            this.CloseConnection();
+
+            Debug.WriteLine(" ----   FIN; Query add estu full");            
+        }
+
+
         //Execute query return Array
         public List<string> queryReader(string query)
         {

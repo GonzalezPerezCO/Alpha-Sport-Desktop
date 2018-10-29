@@ -78,10 +78,10 @@ namespace Deportes_WPF.Controller
             return connection.asistenciaReader(query);
         }
 
-        public List<string> agregarEstudiante(int reserva, string nombre, string apellido, int codigo, string carrera, int semestre, string email, int documento, string password, string observacion)
+        public void agregarEstudiante(string nombre, string apellido, int codigo, string carrera, int semestre, string email, string observacion)
         {
-            string query = "cell addEstudFull('" + nombre + "', '" + apellido + "', " + codigo + ", '" + carrera + "', " + semestre + ", '" + email + "', '" + password + "', '" + observacion + "');";
-            return connection.queryReader(query);
+            string query = "call addEstudFull('" + nombre + "', '" + apellido + "', " + codigo + ", '" + carrera + "', " + semestre + ", '" + email + "', '" + observacion + "');";
+            connection.queryAddEstuFull(query);
         }
 
         public string fallas(int codigo) {
