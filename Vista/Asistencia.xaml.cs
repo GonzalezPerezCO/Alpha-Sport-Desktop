@@ -38,8 +38,8 @@ namespace Deportes_WPF.Vista
         {
             Window tabla = new TablaInscritos();
 
-            this.Hide();
             tabla.Show();
+            this.Hide();
         }
 
         private void btn2_Click(object sender, RoutedEventArgs e)

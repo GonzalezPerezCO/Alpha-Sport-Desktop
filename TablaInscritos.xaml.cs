@@ -48,8 +48,8 @@ namespace Deportes_WPF
         {
             Window asistencia = new Asistencia();
 
-            this.Hide();
             asistencia.Show();
+            this.Hide();            
         }
 
         private void Window_Closed(object sender, EventArgs e)
@@ -66,22 +66,24 @@ namespace Deportes_WPF
         {
             Window cupos = new Cupos();
 
-            this.Hide();
             cupos.Show();
+            this.Hide();            
         }              
 
         private void bt3_Click(object sender, RoutedEventArgs e)
         {
             Window agregar = new agregarEstud();
-            this.Hide();
+                        
             agregar.Show();
+            this.Hide();
         }
 
         private void bt4_Click(object sender, RoutedEventArgs e)
         {
             Window horario = new Horarios();
-            this.Hide();
+            
             horario.Show();
+            this.Hide();
         }
     }
 }

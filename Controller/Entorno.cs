@@ -20,9 +20,9 @@ namespace Deportes_WPF.Controller
     class Entorno
     {
 
-        public readonly string PROYECTO = "Sistema Integrado Deportes de la Escuela";
-        public readonly string GIMNASIO = "Sistema de Gimnasio";
-        public readonly string DEPORTES = "Sistema de Deportes";
+        public readonly string PROYECTO = "Alpha Sport";
+        public readonly string GIMNASIO = "Alpha Sport: Sistema de Gimnasio";
+        public readonly string DEPORTES = "Alpha Sport: Sistema de Deportes";
         public string PERIODO = "Periodo Académico";
 
         private static Entorno instance = null;
@@ -84,7 +84,7 @@ namespace Deportes_WPF.Controller
             return connection.queryReader(query);
         }
 
-        public List<string> datos(string codigo)
+        public List<string> datosAsistencia(string codigo)
         {
             string query = "select  CONCAT(testudiantes.nombre, ' ', testudiantes.apellido) As nombre, carrera, semestre from testudiantes where testudiantes.codigo = " + codigo + "";
             return connection.queryReader(query);

@@ -53,8 +53,9 @@ namespace Deportes_WPF.Vista
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             Window inscritos = new TablaInscritos();
-            this.Hide();
+            
             inscritos.Show();
+            this.Hide();
         }
     }
 }

@@ -58,8 +58,9 @@ namespace Deportes_WPF.Vista
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Window tabla = new TablaInscritos();
-            this.Hide();
+
             tabla.Show();
+            this.Hide();
         }
     }
 }

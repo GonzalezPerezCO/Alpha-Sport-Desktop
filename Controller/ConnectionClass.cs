@@ -170,7 +170,11 @@ namespace Deportes_WPF.Controller
                     result.Add(reader.GetString(7));
                 }
 
-                Debug.WriteLine(" ----   RESULT QERY READER: " + result.ToString());
+                Debug.WriteLine(" ----   RESULT QERY READER: ");
+                foreach (var item in result)
+                {
+                    Debug.WriteLine(" ---- " + item.ToString());
+                }
             }
             catch (MySqlException ex)
             {

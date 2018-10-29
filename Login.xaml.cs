@@ -40,9 +40,9 @@ namespace Deportes_WPF
                 {                  
 
                     Window tabla = new TablaInscritos();
-
-                    this.Hide();
+                    
                     tabla.Show();
+                    this.Hide();
                 }
                 else
                 {
