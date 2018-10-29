@@ -84,6 +84,13 @@ namespace Deportes_WPF.Controller
             return connection.queryReader(query);
         }
 
+        public string fallas(int codigo) {
+            string query = "UPDATE testudiantes SET fallas = fallas+1 WHERE codigo="+codigo+ "; SELECT fallas from testudiantes WHERE codigo="+codigo+"; ";
+            string result;
+            List<string> lista = connection.querySumarAsistencia(query);
+            result = lista[0];
+            return result;
+        }
 
         public DataTable tablaInscritos()
         {

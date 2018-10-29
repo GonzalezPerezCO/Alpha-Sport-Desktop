@@ -25,6 +25,8 @@ namespace Deportes_WPF.Vista
 
         private Entorno entorno;
 
+        private string codigo;
+
         public Asistencia()
         {
             InitializeComponent();
@@ -66,7 +68,7 @@ namespace Deportes_WPF.Vista
 
         private void bt3_Click(object sender, RoutedEventArgs e)
         {
-            string codigo = txt1.Text;
+            codigo = txt1.Text;
 
             if (codigo == "")
             {
@@ -104,7 +106,7 @@ namespace Deportes_WPF.Vista
                         Debug.WriteLine("<<<<<<<<<<<<< datos: " + lista[i]);
 
                         if (lista[i] == diaActual || codigo == "2095112") {
-                            if (lista[i + 3] == horaActual)
+                            if (lista[i + 3] == horaActual || lista[i + 3] == "0")
                             {
                                 mensaje = "Franja Horaria para registrar: " + diaActual + " - " + horaActual + ":00.";
                                 bt4.IsEnabled = true;
@@ -180,14 +182,17 @@ namespace Deportes_WPF.Vista
 
         private void bt4_Click(object sender, RoutedEventArgs e)
         {
-            // falta colocar aceptar
+            if (codigo == "2095112")
+            {
+              lab8.Content = entorno.fallas(Convert.ToInt32(codigo));
+
+            }
             MessageBox.Show("Asistencia registrada");
             botonesEstado(false);
         }
 
         private void bt5_Click(object sender, RoutedEventArgs e)
-        {
-            // falta rechazar
+        {            
             MessageBox.Show("Asistencia Rechazada");
             limpiar();
             botonesEstado(false);

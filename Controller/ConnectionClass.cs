@@ -236,7 +236,47 @@ namespace Deportes_WPF.Controller
             return result;
         }
 
-       
+
+        //Query statament one string
+        public List<string> querySumarAsistencia(string query)
+        {
+            reader = null;
+            List<string> result = new List<string>();
+
+            Debug.WriteLine(" ----   QUERY OPEN CONNECTION statament sumar");
+
+            this.OpenConnection();
+
+            cmd = new MySqlCommand(query, connection);
+
+            try
+            {
+                Debug.WriteLine(" ----   RESULT QERY TRY statament sumar: " + query);
+                reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    result.Add(Convert.ToString(reader.GetString(0)));                    
+                }
+                Debug.WriteLine(" ----   RESULT QERY statament sumar: ");
+                foreach (var item in result)
+                {
+                    Debug.WriteLine(" ---- " + item.ToString());
+                }
+
+
+            }
+            catch (MySqlException ex)
+            {
+                Debug.WriteLine(" ----   CATCH QERY statament sumar: " + ex);
+            }
+
+            this.CloseConnection();
+
+            return result;
+
+        }
+
         //Insert statement
         public void Insert()
         {
