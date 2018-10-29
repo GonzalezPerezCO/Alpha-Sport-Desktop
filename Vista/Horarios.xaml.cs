@@ -23,6 +23,7 @@ namespace Deportes_WPF.Vista
     public partial class Horarios : Window
     {
         private Entorno entorno;
+        private string codigo;
 
         public Horarios()
         {
@@ -38,19 +39,32 @@ namespace Deportes_WPF.Vista
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             Application.Current.Shutdown();
+        }            
+             
+        private void limpiar() {
+            txt3.Text = "";
+            txt4.Content = "Nombre y Apellido";
+            txt5.Content = "Desconocido";
+            txt6.Content = "0";
+            txt7.Content = "0";
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void click_bt2(object sender, RoutedEventArgs e)
         {
             Window tabla = new TablaInscritos();
-            
+
             tabla.Show();
             this.Hide();
         }
 
-        private void bt3_Click(object sender, RoutedEventArgs e)
+        private void click_bt1(object sender, RoutedEventArgs e)
         {
-            string codigo = txt3.Text;
+            limpiar();
+        }
+
+        private void click_bt3(object sender, RoutedEventArgs e)
+        {
+            codigo = txt3.Text;
 
             if (codigo == "")
             {
@@ -58,17 +72,17 @@ namespace Deportes_WPF.Vista
             }
             else
             {
-                //0: nombre, 1:codigo, 2:dia1, 3:dia2, 4:dia3, 5:hora1, 6:hora2, 7:hora3
-                //List<string> lista = entorno.datosAsistencia(codigo);
-                //List<string> listaH = entorno.horario(codigo);
-                Debug.WriteLine(">>>>>>>> Horario: ");
+                //0: nombre, 1: carrera, 2: semestre, 3: fallas, 4: codigo, 5: dia1, 6: dia2, 7: dia3, 8: hora1, 9: hora2, 10: hora3
+                List<string> lista = entorno.asistencia(Convert.ToInt32(codigo));
 
-                //DataTable dt = entorno.mostrarHorario(Int32.Parse(txt3.Text));
-
-                //dtgrid1.ItemsSource = dt.DefaultView;
-
+                if (lista.Capacity > 0)
+                {
+                    txt4.Content = lista[0];
+                    txt5.Content = lista[1];
+                    txt6.Content = lista[2];
+                    txt7.Content = lista[3];                    
+                }
             }
-
         }
     }
 }
