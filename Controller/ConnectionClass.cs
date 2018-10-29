@@ -194,7 +194,7 @@ namespace Deportes_WPF.Controller
             reader = null;
             List<string> result = new List<string>();
 
-            Debug.WriteLine(" ----   QUERY READER OPEN CONNECTION");
+            Debug.WriteLine(" ----   QUERY READER OPEN CONNECTION asistencia reader");
 
             this.OpenConnection();
 
@@ -202,22 +202,19 @@ namespace Deportes_WPF.Controller
 
             try
             {
-                Debug.WriteLine(" ----   RESULT QERY TRY recibido: " + query);
+                Debug.WriteLine(" ----   RESULT QERY TRY recibido asistencia reader: " + query);
                 reader = cmd.ExecuteReader();
 
                 while (reader.Read())
                 {
                     result.Add(reader.GetString(0));
                     result.Add(reader.GetString(1));
-                    result.Add(reader.GetString(2));
-                    result.Add(reader.GetString(3));
-                    result.Add(reader.GetString(4));
-                    result.Add(reader.GetString(5));
-                    result.Add(reader.GetString(6));
-                    result.Add(reader.GetString(7));
+                    result.Add(Convert.ToString(reader.GetString(2)));
+                    result.Add(Convert.ToString(reader.GetString(3)));
+                    result.Add(Convert.ToString(reader.GetString(4)));
                 }
 
-                Debug.WriteLine(" ----   RESULT QERY READER: ");
+                Debug.WriteLine(" ----   RESULT QERY READER asistencia reader: ");
                 foreach (var item in result)
                 {
                     Debug.WriteLine(" ---- " + item.ToString());
@@ -225,7 +222,7 @@ namespace Deportes_WPF.Controller
             }
             catch (MySqlException ex)
             {
-                Debug.WriteLine(" ----   CATCH QERY READER: " + ex);
+                Debug.WriteLine(" ----   CATCH QERY READER asistencia reader: " + ex);
             }
 
             this.CloseConnection();

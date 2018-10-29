@@ -60,12 +60,16 @@ namespace Deportes_WPF.Vista
             }
             else
             {
-                //0: nombre, 1:codigo, 2:dia1, 3:dia2, 4:dia3, 5:hora1, 6:hora2, 7:hora3
+                //0: nombre, 1: carrera, 2: semestre, 3: fallas, 4: codigo
                 List<string> lista = entorno.asistencia(codigo);
 
                 if (lista.Capacity > 0)
                 {
                     lab5.Content = lista[0];
+                    lab10.Content = lista[1];
+                    lab11.Content = lista[2];
+                    lab8.Content = lista[3];
+
                     Debug.WriteLine("**** For :" + lista.Count);
 
                     DateTime dt = DateTime.Now;
