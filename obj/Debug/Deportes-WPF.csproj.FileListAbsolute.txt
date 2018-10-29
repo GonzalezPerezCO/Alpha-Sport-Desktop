@@ -31,3 +31,9 @@ C:\Users\manue\source\repos\Epic-Sport-_Deportes\obj\Debug\Deportes-WPF.applicat
 C:\Users\manue\source\repos\Epic-Sport-_Deportes\obj\Debug\Deportes-WPF.csproj.CopyComplete
 C:\Users\manue\source\repos\Epic-Sport-_Deportes\obj\Debug\Deportes-WPF.exe
 C:\Users\manue\source\repos\Epic-Sport-_Deportes\obj\Debug\Deportes-WPF.pdb
+C:\Users\manue\source\repos\Epic-Sport-_Deportes\bin\Debug\System.Windows.Controls.Input.Toolkit.dll
+C:\Users\manue\source\repos\Epic-Sport-_Deportes\bin\Debug\System.Windows.Controls.Layout.Toolkit.dll
+C:\Users\manue\source\repos\Epic-Sport-_Deportes\bin\Debug\WPFToolkit.dll
+C:\Users\manue\source\repos\Epic-Sport-_Deportes\obj\Debug\Deportes-WPF.csprojAssemblyReference.cache
+C:\Users\manue\source\repos\Epic-Sport-_Deportes\obj\Debug\Vista\Informes.g.cs
+C:\Users\manue\source\repos\Epic-Sport-_Deportes\obj\Debug\Vista\Informes.baml
