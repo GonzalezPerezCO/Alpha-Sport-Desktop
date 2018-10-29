@@ -110,7 +110,7 @@ namespace Deportes_WPF.Controller
         }
 
         public List<string> agregarEstudiante(int reserva, string nombre, string apellido, int codigo, string carrera, int semestre, string email, int documento, string password, string observacion) {
-            string query = "call addEstudFull("+ reserva + ", '"+ nombre + "', '"+ apellido + "', "+ codigo + ", '"+ carrera + "', "+ semestre + ", '"+ email + "', "+ documento + ", '"+password+"', '"+ observacion + "');";
+            string query = "cell addEstudFull('"+ nombre + "', '"+ apellido + "', "+ codigo + ", '"+ carrera + "', "+ semestre + ", '"+ email + "', '"+password+"', '"+ observacion + "');";
             return connection.queryReader(query);
         }
 
