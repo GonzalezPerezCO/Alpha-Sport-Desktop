@@ -74,22 +74,10 @@ namespace Deportes_WPF.Controller
 
         public List<string> asistencia(string codigo)
         {
-            string query = "SELECT CONCAT(nombre, ' ', apellido) As nombre, testudiantes.codigo as codigo from testudiantes INNER JOIN thorarios on testudiantes.codigo = " + codigo + " and testudiantes.email = thorarios.email;";
-            return connection.queryReader(query);
+            string query = "SELECT CONCAT(nombre, ' ', apellido) As nombre, carrera, semestre, fallas testudiantes.codigo as codigo from testudiantes INNER JOIN thorarios on testudiantes.codigo = " + codigo + " and testudiantes.email = thorarios.email;";
+            return connection.asistenciaReader(query);
         }
-
-        public List<string> horario(string codigo)
-        {
-            string query = "select dia1, dia2, dia3, hora1, hora2, hora3 from testudiantes INNER JOIN thorarios on testudiantes.email = thorarios.email where testudiantes.codigo = " + codigo+"";
-            return connection.horarioReader(query);
-        }
-
-        public List<string> datosAsistencia(string codigo)
-        {
-            string query = "select  CONCAT(testudiantes.nombre, ' ', testudiantes.apellido) As nombre, carrera, semestre from testudiantes where testudiantes.codigo = " + codigo + "";
-            return connection.queryReader(query);
-        }
-
+       
 
         public DataTable tablaInscritos()
         {

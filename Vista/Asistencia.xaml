@@ -34,7 +34,7 @@
         </Button>
         <Label x:Name="lab7" Content="Fallas:" HorizontalAlignment="Center" Margin="286,416,994,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
         <Label x:Name="lab8" Content="-1" HorizontalContentAlignment="Left" HorizontalAlignment="Center" Margin="378,416,902,0" VerticalAlignment="Top" RenderTransformOrigin="0.355,-0.212" FontSize="24" Width="78"/>
-        <DataGrid x:Name="dtgrid1" HorizontalAlignment="Center" Height="100" Margin="999,496,166,141" VerticalAlignment="Center" Width="193"/>
+        <DataGrid x:Name="dtgrid1" HorizontalAlignment="Center" Height="48" Margin="999,523,166,166" VerticalAlignment="Center" Width="193"/>
         <Label x:Name="lab9" Content="Carrera:" HorizontalAlignment="Center" Margin="263,284,994,0" VerticalAlignment="Top" FontSize="22" FontWeight="Bold"/>
         <Label x:Name="lab10" Content="nombre carrera" HorizontalContentAlignment="Left" HorizontalAlignment="Center" Margin="378,284,642,0" VerticalAlignment="Top" RenderTransformOrigin="0.355,-0.212" FontSize="24" Width="338"/>
         <Label x:Name="lab11" Content="-1" HorizontalContentAlignment="Left" HorizontalAlignment="Center" Margin="788,284,522,0" VerticalAlignment="Top" RenderTransformOrigin="0.355,-0.212" FontSize="24" Width="48" FontWeight="Bold"/>

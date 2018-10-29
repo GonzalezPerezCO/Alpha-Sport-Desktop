@@ -59,8 +59,8 @@ namespace Deportes_WPF.Vista
             else
             {
                 //0: nombre, 1:codigo, 2:dia1, 3:dia2, 4:dia3, 5:hora1, 6:hora2, 7:hora3
-                List<string> lista = entorno.datosAsistencia(codigo);
-                List<string> listaH = entorno.horario(codigo);
+                //List<string> lista = entorno.datosAsistencia(codigo);
+                //List<string> listaH = entorno.horario(codigo);
                 Debug.WriteLine(">>>>>>>> Horario: ");
 
                 //DataTable dt = entorno.mostrarHorario(Int32.Parse(txt3.Text));

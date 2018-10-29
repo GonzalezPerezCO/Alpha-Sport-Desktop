@@ -186,6 +186,53 @@ namespace Deportes_WPF.Controller
             return result;
         }
 
+
+        //Execute query return Array Asistencia datos
+        public List<string> asistenciaReader(string query)
+        {
+
+            reader = null;
+            List<string> result = new List<string>();
+
+            Debug.WriteLine(" ----   QUERY READER OPEN CONNECTION");
+
+            this.OpenConnection();
+
+            cmd = new MySqlCommand(query, connection);
+
+            try
+            {
+                Debug.WriteLine(" ----   RESULT QERY TRY recibido: " + query);
+                reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    result.Add(reader.GetString(0));
+                    result.Add(reader.GetString(1));
+                    result.Add(reader.GetString(2));
+                    result.Add(reader.GetString(3));
+                    result.Add(reader.GetString(4));
+                    result.Add(reader.GetString(5));
+                    result.Add(reader.GetString(6));
+                    result.Add(reader.GetString(7));
+                }
+
+                Debug.WriteLine(" ----   RESULT QERY READER: ");
+                foreach (var item in result)
+                {
+                    Debug.WriteLine(" ---- " + item.ToString());
+                }
+            }
+            catch (MySqlException ex)
+            {
+                Debug.WriteLine(" ----   CATCH QERY READER: " + ex);
+            }
+
+            this.CloseConnection();
+
+            return result;
+        }
+
         //Execute query return Array para horario estudiante
         public List<string> horarioReader(string query)
         {

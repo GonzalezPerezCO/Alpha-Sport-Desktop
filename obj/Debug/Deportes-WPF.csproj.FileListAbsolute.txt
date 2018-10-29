@@ -31,3 +31,4 @@ C:\Users\manue\source\repos\Epic-Sport-_Deportes\obj\Debug\Deportes-WPF.applicat
 C:\Users\manue\source\repos\Epic-Sport-_Deportes\obj\Debug\Deportes-WPF.csproj.CopyComplete
 C:\Users\manue\source\repos\Epic-Sport-_Deportes\obj\Debug\Deportes-WPF.exe
 C:\Users\manue\source\repos\Epic-Sport-_Deportes\obj\Debug\Deportes-WPF.pdb
+C:\Users\manue\source\repos\Epic-Sport-_Deportes\obj\Debug\Deportes-WPF.csprojAssemblyReference.cache
