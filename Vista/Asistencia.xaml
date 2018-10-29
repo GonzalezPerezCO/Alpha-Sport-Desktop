@@ -12,11 +12,11 @@
         <Button x:Name="btn2" Content="nuevo" HorizontalAlignment="Right" Margin="0,68,10,0" VerticalAlignment="Top" Width="74" Click="btn2_Click"/>
         <Label x:Name="lab1" Content="Nombre del Proyecto" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="436,30,444,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="36" Width="478"/>
         <Label x:Name="lab2" Content="Asistencia Estudiantes" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="549,124,550,0" VerticalAlignment="Top" RenderTransformOrigin="-0.013,-0.288" FontWeight="Bold" FontSize="24"/>
-        <Label x:Name="lab3" Content="Nombre:" HorizontalAlignment="Center" Margin="263,285,994,0" VerticalAlignment="Top" FontSize="22" FontWeight="Bold"/>
+        <Label x:Name="lab3" Content="Nombre:" HorizontalAlignment="Center" Margin="263,237,994,0" VerticalAlignment="Top" FontSize="22" FontWeight="Bold"/>
         <Label x:Name="lab4" Content="Código:" HorizontalAlignment="Center" Margin="263,356,998,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
-        <Label x:Name="lab5" Content="nombre y apellido" HorizontalContentAlignment="Left" HorizontalAlignment="Center" Margin="378,285,430,0" VerticalAlignment="Top" RenderTransformOrigin="0.355,-0.212" FontSize="24" Width="550"/>
+        <Label x:Name="lab5" Content="nombre y apellido" HorizontalContentAlignment="Left" HorizontalAlignment="Center" Margin="378,237,430,0" VerticalAlignment="Top" RenderTransformOrigin="0.355,-0.212" FontSize="24" Width="550"/>
         <TextBox x:Name="txt1" HorizontalAlignment="Center" Height="44" HorizontalContentAlignment="Center"  Margin="378,356,690,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="290" FontSize="24"/>
-        <Button x:Name="bt3" Content="Buscar" HorizontalAlignment="Center" Margin="1092,523,116,0" VerticalAlignment="Top" Width="150" Height="40" FontWeight="Bold" FontSize="20" Click="bt3_Click"/>
+        <Button x:Name="bt3" Content="Buscar" HorizontalAlignment="Center" Margin="999,360,209,0" VerticalAlignment="Top" Width="150" Height="40" FontWeight="Bold" FontSize="20" Click="bt3_Click"/>
         <Label x:Name="lab6" Content="aceptado" HorizontalContentAlignment="Left" HorizontalAlignment="Center" Margin="378,496,411,0" VerticalAlignment="Top" Width="569" Height="106" FontSize="18">
             <Label.Background>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightColorKey}}"/>
@@ -32,6 +32,12 @@
                 <SolidColorBrush Color="#FFFF6B33"/>
             </Button.Background>
         </Button>
+        <Label x:Name="lab7" Content="Fallas:" HorizontalAlignment="Center" Margin="286,416,994,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+        <Label x:Name="lab8" Content="-1" HorizontalContentAlignment="Left" HorizontalAlignment="Center" Margin="378,416,902,0" VerticalAlignment="Top" RenderTransformOrigin="0.355,-0.212" FontSize="24" Width="78"/>
+        <DataGrid x:Name="dtgrid1" HorizontalAlignment="Center" Height="100" Margin="999,496,166,141" VerticalAlignment="Center" Width="193"/>
+        <Label x:Name="lab9" Content="Carrera:" HorizontalAlignment="Center" Margin="263,284,994,0" VerticalAlignment="Top" FontSize="22" FontWeight="Bold"/>
+        <Label x:Name="lab10" Content="nombre carrera" HorizontalContentAlignment="Left" HorizontalAlignment="Center" Margin="378,284,642,0" VerticalAlignment="Top" RenderTransformOrigin="0.355,-0.212" FontSize="24" Width="338"/>
+        <Label x:Name="lab11" Content="-1" HorizontalContentAlignment="Left" HorizontalAlignment="Center" Margin="788,284,522,0" VerticalAlignment="Top" RenderTransformOrigin="0.355,-0.212" FontSize="24" Width="48" FontWeight="Bold"/>
 
 
     </Grid>

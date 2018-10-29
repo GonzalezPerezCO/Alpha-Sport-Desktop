@@ -168,7 +168,7 @@ namespace Deportes_WPF.Vista
         }
 
         private void botonesEstado(bool estado) {
-            Debug.WriteLine("Mostrar botnos 5 y 6 = "+estado);
+            Debug.WriteLine("Mostrar botones 5 y 6 = "+estado);
             bt4.IsEnabled = estado;
             bt5.IsEnabled = estado;            
         }
