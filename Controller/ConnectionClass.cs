@@ -155,52 +155,6 @@ namespace Deportes_WPF.Controller
         }
 
 
-        //Execute query return Array
-        public List<string> queryReader(string query)
-        {
-
-            reader = null;
-            List<string> result = new List<string>();
-
-            Debug.WriteLine(" ----   QUERY READER OPEN CONNECTION");
-
-            this.OpenConnection();
-
-            cmd = new MySqlCommand(query, connection);
-
-            try
-            {
-                Debug.WriteLine(" ----   RESULT QERY TRY recibido: " + query);
-                reader = cmd.ExecuteReader();
-
-                while (reader.Read()) {
-                    result.Add(reader.GetString(0));
-                    result.Add(reader.GetString(1));
-                    result.Add(reader.GetString(2));
-                    result.Add(reader.GetString(3));
-                    result.Add(reader.GetString(4));
-                    result.Add(reader.GetString(5));
-                    result.Add(reader.GetString(6));
-                    result.Add(reader.GetString(7));
-                }
-
-                Debug.WriteLine(" ----   RESULT QERY READER: ");
-                foreach (var item in result)
-                {
-                    Debug.WriteLine(" ---- " + item.ToString());
-                }
-            }
-            catch (MySqlException ex)
-            {
-                Debug.WriteLine(" ----   CATCH QERY READER: " + ex);
-            }
-
-            this.CloseConnection();
-
-            return result;
-        }
-
-
         //Execute query return Array Asistencia datos
         public List<string> asistenciaReader(string query)
         {
@@ -221,17 +175,18 @@ namespace Deportes_WPF.Controller
 
                 while (reader.Read())
                 {
-                    result.Add(reader.GetString(0));
-                    result.Add(reader.GetString(1));
-                    result.Add(Convert.ToString(reader.GetString(2)));
-                    result.Add(Convert.ToString(reader.GetString(3)));
-                    result.Add(Convert.ToString(reader.GetString(4)));
-                    result.Add(reader.GetString(5));
-                    result.Add(reader.GetString(6));
-                    result.Add(reader.GetString(7));
-                    result.Add(Convert.ToString(reader.GetString(8)));
-                    result.Add(Convert.ToString(reader.GetString(9)));
-                    result.Add(Convert.ToString(reader.GetString(10)));
+                    if (reader.GetString(0) != null) { result.Add(reader.GetString(0)); } else { result.Add("N/A"); }
+                    if (reader.GetString(1) != null) { result.Add(reader.GetString(1)); } else { result.Add("N/A"); }
+                    if (reader.GetString(2) != null) { result.Add(Convert.ToString(reader.GetString(2))); } else { result.Add("0"); }
+                    if (reader.GetString(3) != null) { result.Add(Convert.ToString(reader.GetString(3))); } else { result.Add("0"); }
+                    if (reader.GetString(4) != null) { result.Add(Convert.ToString(reader.GetString(4))); } else { result.Add("0"); }
+                    if (reader.GetString(5) != null) { result.Add(reader.GetString(5)); } else { result.Add("N/A"); }
+                    if (reader.GetString(6) != null) { result.Add(reader.GetString(6)); } else { result.Add("N/A"); }
+                    if (reader.GetString(7) != null) { result.Add(reader.GetString(7)); } else { result.Add("N/A"); }
+                    if (reader.GetString(8) != null) { result.Add(Convert.ToString(reader.GetString(8))); } else { result.Add("0"); }
+                    if (reader.GetString(9) != null) { result.Add(Convert.ToString(reader.GetString(9))); } else { result.Add("0"); }
+                    if (reader.GetString(10) != null) { result.Add(Convert.ToString(reader.GetString(10))); } else { result.Add("0"); }
+
                 }
 
                 Debug.WriteLine(" ----   RESULT QERY READER asistencia reader: ");

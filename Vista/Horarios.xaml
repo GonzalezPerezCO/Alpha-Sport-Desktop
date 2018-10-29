@@ -24,6 +24,12 @@
         <Label x:Name="lab6_Copy" Content="Fallas:" HorizontalAlignment="Center" Margin="342,455,899,0" VerticalAlignment="Top" FontSize="22" FontWeight="Bold" Width="117" VerticalContentAlignment="Center"/>
         <Label x:Name="txt7" Content="0" HorizontalContentAlignment="Left" HorizontalAlignment="Center" Margin="485,458,827,0" VerticalAlignment="Top" RenderTransformOrigin="0.355,-0.212" FontSize="24" Width="46"/>
         <Button x:Name="bt2" Content="Volver" HorizontalAlignment="Right" Margin="0,157,31,0" VerticalAlignment="Top" Width="74" Click="click_bt2"/>
+        <Label x:Name="txt8" Content="Dia 1" HorizontalAlignment="Center" Margin="342,526,899,0" VerticalAlignment="Top" FontSize="22" FontWeight="Bold" Width="117" VerticalContentAlignment="Center"/>
+        <Label x:Name="txt9" Content="Dia 2" HorizontalAlignment="Center" Margin="485,526,756,0" VerticalAlignment="Top" FontSize="22" FontWeight="Bold" Width="117" VerticalContentAlignment="Center" RenderTransformOrigin="1.009,2.487"/>
+        <Label x:Name="txt10" Content="Dia 3" HorizontalAlignment="Center" Margin="666,526,575,0" VerticalAlignment="Top" FontSize="22" FontWeight="Bold" Width="117" VerticalContentAlignment="Center"/>
+        <Label x:Name="txt11" Content="0" HorizontalContentAlignment="Left" HorizontalAlignment="Center" Margin="342,587,909,0" VerticalAlignment="Top" RenderTransformOrigin="0.355,-0.212" FontSize="24" Width="107"/>
+        <Label x:Name="txt12" Content="0" HorizontalContentAlignment="Left" HorizontalAlignment="Center" Margin="485,587,766,0" VerticalAlignment="Top" RenderTransformOrigin="0.355,-0.212" FontSize="24" Width="107"/>
+        <Label x:Name="txt13" Content="0" HorizontalContentAlignment="Left" HorizontalAlignment="Center" Margin="666,587,585,0" VerticalAlignment="Top" RenderTransformOrigin="0.355,-0.212" FontSize="24" Width="107"/>
 
     </Grid>
 </Window>
