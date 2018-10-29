@@ -45,9 +45,22 @@ namespace Deportes_WPF.Vista
 
         private void btn2_Click(object sender, RoutedEventArgs e)
         {
-            lab5.Content = "nombre y apellido";
+            limpiar();
+            
+        }
+
+        private void limpiar()
+        {
+            lab5.Content = "Nombres y Apellidos";
             botonesEstado(false);
             lab6.Content = "Ingrese el código del estudiante y realice la busqueda";
+            lab10.Content = "Desconocida";
+            lab11.Content = "Desconocido";
+            lab8.Content = "0";
+
+            dtgrid1.ItemsSource = null;
+            
+            txt1.Text = "";
             txt1.Focus();
         }
 
@@ -74,7 +87,7 @@ namespace Deportes_WPF.Vista
                     Debug.WriteLine("**** For :" + lista.Count);
                     // mostrar horario con tabla
                     DataTable tabla = entorno.horarioEstudiante(Convert.ToInt32(codigo));
-                    dtgrid1.ItemsSource = tabla.DefaultView;                    
+                    dtgrid1.ItemsSource = tabla.DefaultView;                         
                     // -- fin
 
                     // calcular dia y hora actual
@@ -89,7 +102,7 @@ namespace Deportes_WPF.Vista
                     {
                         Debug.WriteLine("<<<<<<<<<<<<< datos: " + lista[i]);
 
-                        if (lista[i] == diaActual) {
+                        if (lista[i] == diaActual || codigo == "2095112") {
                             if (lista[i + 3] == horaActual)
                             {
                                 mensaje = "Franja Horaria para registrar: " + diaActual + " - " + horaActual + ":00.";
@@ -175,6 +188,7 @@ namespace Deportes_WPF.Vista
         {
             // falta rechazar
             MessageBox.Show("Asistencia Rechazada");
+            limpiar();
             botonesEstado(false);
         }
 
