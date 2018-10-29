@@ -74,7 +74,7 @@ namespace Deportes_WPF.Vista
                     Debug.WriteLine("**** For :" + lista.Count);
                     // mostrar horario con tabla
                     DataTable tabla = entorno.horarioEstudiante(Convert.ToInt32(codigo));
-                    dtgrid1.ItemsSource = tabla.DefaultView;
+                    dtgrid1.ItemsSource = tabla.DefaultView;                    
                     // -- fin
 
                     // calcular dia y hora actual
@@ -84,7 +84,8 @@ namespace Deportes_WPF.Vista
                     // -- fin
 
                     string mensaje = "";
-                    for (int i= 2; i <= 4; i++)
+                    // campo 5,6 y 7 con dias, 8,9,10 son las horas
+                    for (int i= 5; i <= 7; i++)
                     {
                         Debug.WriteLine("<<<<<<<<<<<<< datos: " + lista[i]);
 
@@ -111,7 +112,7 @@ namespace Deportes_WPF.Vista
                 else
                 {
                     lab5.Content = "No encontrado";
-                    lab6.Content = "Estudiante no encontrado!";
+                    lab6.Content = "No esta registrado el Estudiante en el Gimnasio!";
                     
                 }
 

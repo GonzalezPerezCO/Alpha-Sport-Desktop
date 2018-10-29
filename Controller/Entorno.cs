@@ -74,7 +74,7 @@ namespace Deportes_WPF.Controller
 
         public List<string> asistencia(int codigo)
         {
-            string query = "SELECT CONCAT(nombre, ' ', apellido) As nombre, carrera, semestre, fallas, testudiantes.codigo as codigo, dia1, dia2, dia3, hora1, hora2, hora3 from testudiantes INNER JOIN thorarios on testudiantes.codigo = " + codigo + " and testudiantes.email = thorarios.email;";
+            string query = "SELECT CONCAT(nombre, ' ', apellido) As nombre, carrera, semestre, fallas, testudiantes.codigo as codigo, dia1, dia2, dia3, hora1, hora2, hora3 from testudiantes INNER JOIN thorarios on testudiantes.codigo = " + codigo + " and testudiantes.email = thorarios.email Limit 1;";
             return connection.asistenciaReader(query);
         }
 
@@ -88,7 +88,7 @@ namespace Deportes_WPF.Controller
         public DataTable tablaInscritos()
         {
             Debug.WriteLine("MOSTRAR TABLA INSCRITOS");
-            string query = "select nombre, apellido, codigo, carrera, semestre from testudiantes";
+            string query = "select nombre, apellido, codigo, carrera, semestre from testudiantes;";
             DataTable dt = connection.mostrarTabla(query);
             Debug.WriteLine("RECIBIR READER EN TABLE INSCRITOS");
 
@@ -98,7 +98,7 @@ namespace Deportes_WPF.Controller
         public DataTable horarioEstudiante(int codigo)
         {
             Debug.WriteLine("MOSTRAR TABLA HORARIO ESTUDIANTE");
-            string query = "select  dia1 as Dia1, hora1 as Hora1, dia2 as Dia2, hora2 as Hora2, dia3 as Dia3, hora3 as Hora3 from testudiantes INNER JOIN thorarios on testudiantes.email = thorarios.email where testudiantes.codigo ="+codigo+"";
+            string query = "select  dia1 as Dia1, hora1 as Hora1, dia2 as Dia2, hora2 as Hora2, dia3 as Dia3, hora3 as Hora3 from testudiantes INNER JOIN thorarios on testudiantes.email = thorarios.email where testudiantes.codigo ="+codigo+ " Limit 1;";
             DataTable dt = connection.mostrarTabla(query);
             Debug.WriteLine("RECIBIR READER EN TABLE");
 
