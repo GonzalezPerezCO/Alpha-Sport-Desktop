@@ -54,7 +54,7 @@ namespace Deportes_WPF.Vista
             lab5.Content = "Nombres y Apellidos";
             botonesEstado(false);
             lab6.Content = "Ingrese el código del estudiante y realice la busqueda";
-            lab10.Content = "Desconocida";
+            lab10.Content = "0";
             lab11.Content = "Desconocido";
             lab8.Content = "0";
 
@@ -95,6 +95,7 @@ namespace Deportes_WPF.Vista
                     string diaActual = aEspanol(dt.DayOfWeek.ToString());
                     string horaActual = dt.Hour.ToString(); ;
                     // -- fin
+                    Debug.WriteLine("<<<<<<<<<<<<< datos hora: " + diaActual + "a las  " +horaActual);
 
                     string mensaje = "";
                     // campo 5,6 y 7 con dias, 8,9,10 son las horas
@@ -110,7 +111,7 @@ namespace Deportes_WPF.Vista
                             }
                             else
                             {
-                                Debug.WriteLine("<<<<<<<<<<<<< no asignado");
+                                Debug.WriteLine("<<<<<<<<<<<<< día no asignado");
                                 mensaje = "El estudiante no tiene asignada esta franja horaria: " + diaActual + " - " + horaActual + ":00.";                               
                             }
                             bt5.IsEnabled = true;
