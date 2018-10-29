@@ -212,6 +212,12 @@ namespace Deportes_WPF.Controller
                     result.Add(Convert.ToString(reader.GetString(2)));
                     result.Add(Convert.ToString(reader.GetString(3)));
                     result.Add(Convert.ToString(reader.GetString(4)));
+                    result.Add(reader.GetString(5));
+                    result.Add(reader.GetString(6));
+                    result.Add(reader.GetString(7));
+                    result.Add(Convert.ToString(reader.GetString(8)));
+                    result.Add(Convert.ToString(reader.GetString(9)));
+                    result.Add(Convert.ToString(reader.GetString(10)));
                 }
 
                 Debug.WriteLine(" ----   RESULT QERY READER asistencia reader: ");

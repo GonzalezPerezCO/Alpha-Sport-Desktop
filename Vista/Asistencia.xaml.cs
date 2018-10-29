@@ -1,6 +1,7 @@
 ﻿using Deportes_WPF.Controller;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -60,8 +61,8 @@ namespace Deportes_WPF.Vista
             }
             else
             {
-                //0: nombre, 1: carrera, 2: semestre, 3: fallas, 4: codigo
-                List<string> lista = entorno.asistencia(codigo);
+                //0: nombre, 1: carrera, 2: semestre, 3: fallas, 4: codigo, 5: dia1, 6: dia2, 7: dia3, 8: hora1, 9: hora2, 10: hora3
+                List<string> lista = entorno.asistencia(Convert.ToInt32(codigo));
 
                 if (lista.Capacity > 0)
                 {
@@ -71,11 +72,16 @@ namespace Deportes_WPF.Vista
                     lab8.Content = lista[3];
 
                     Debug.WriteLine("**** For :" + lista.Count);
+                    // mostrar horario con tabla
+                    DataTable tabla = entorno.horarioEstudiante(Convert.ToInt32(codigo));
+                    dtgrid1.ItemsSource = tabla.DefaultView;
+                    // -- fin
 
+                    // calcular dia y hora actual
                     DateTime dt = DateTime.Now;
                     string diaActual = aEspanol(dt.DayOfWeek.ToString());
                     string horaActual = dt.Hour.ToString(); ;
-
+                    // -- fin
 
                     string mensaje = "";
                     for (int i= 2; i <= 4; i++)

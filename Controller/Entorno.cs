@@ -72,12 +72,18 @@ namespace Deportes_WPF.Controller
 
         }
 
-        public List<string> asistencia(string codigo)
+        public List<string> asistencia(int codigo)
         {
-            string query = "SELECT CONCAT(nombre, ' ', apellido) As nombre, carrera, semestre, fallas, testudiantes.codigo as codigo from testudiantes INNER JOIN thorarios on testudiantes.codigo = " + codigo + " and testudiantes.email = thorarios.email;";
+            string query = "SELECT CONCAT(nombre, ' ', apellido) As nombre, carrera, semestre, fallas, testudiantes.codigo as codigo, dia1, dia2, dia3, hora1, hora2, hora3 from testudiantes INNER JOIN thorarios on testudiantes.codigo = " + codigo + " and testudiantes.email = thorarios.email;";
             return connection.asistenciaReader(query);
         }
-       
+
+        public List<string> agregarEstudiante(int reserva, string nombre, string apellido, int codigo, string carrera, int semestre, string email, int documento, string password, string observacion)
+        {
+            string query = "cell addEstudFull('" + nombre + "', '" + apellido + "', " + codigo + ", '" + carrera + "', " + semestre + ", '" + email + "', '" + password + "', '" + observacion + "');";
+            return connection.queryReader(query);
+        }
+
 
         public DataTable tablaInscritos()
         {
@@ -107,12 +113,7 @@ namespace Deportes_WPF.Controller
             Debug.WriteLine("RECIBIR READER EN CUPOS");
 
             return dt;
-        }
-
-        public List<string> agregarEstudiante(int reserva, string nombre, string apellido, int codigo, string carrera, int semestre, string email, int documento, string password, string observacion) {
-            string query = "cell addEstudFull('"+ nombre + "', '"+ apellido + "', "+ codigo + ", '"+ carrera + "', "+ semestre + ", '"+ email + "', '"+password+"', '"+ observacion + "');";
-            return connection.queryReader(query);
-        }
+        }       
 
         public bool buscarEstudiante() {
             return false;
