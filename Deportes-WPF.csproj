@@ -31,7 +31,7 @@
     <PublisherName>GonzalezPerezCO</PublisherName>
     <SuiteName>Deportes-system</SuiteName>
     <ApplicationRevision>2</ApplicationRevision>
-    <ApplicationVersion>2.2.0.%2a</ApplicationVersion>
+    <ApplicationVersion>2.2.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -129,30 +129,18 @@
     <Compile Include="Vista\Horarios.xaml.cs">
       <DependentUpon>Horarios.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Informes.xaml.cs">
-      <DependentUpon>Informes.xaml</DependentUpon>
+    <Compile Include="Vista\Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
-    <Page Include="Login.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="TablaInscritos.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
+    <Compile Include="Vista\TablaInscritos.xaml.cs">
+      <DependentUpon>TablaInscritos.xaml</DependentUpon>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Controller\ConnectionClass.cs" />
     <Compile Include="Controller\Entorno.cs" />
-    <Compile Include="Login.xaml.cs">
-      <DependentUpon>Login.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="TablaInscritos.xaml.cs">
-      <DependentUpon>TablaInscritos.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
     <Page Include="Vista\agregarEstud.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -169,9 +157,13 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Vista\Informes.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="Vista\Login.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Vista\TablaInscritos.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>

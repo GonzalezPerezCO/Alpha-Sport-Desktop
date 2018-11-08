@@ -85,13 +85,6 @@ namespace Deportes_WPF
             horario.Show();
             this.Hide();
         }
-
-        private void bt5_Click(object sender, RoutedEventArgs e)
-        {
-            Window informes = new Informes();
-
-            informes.Show();
-            this.Hide();
-        }
+       
     }
 }
