@@ -195,7 +195,7 @@ namespace Deportes_WPF.Vista {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Deportes-WPF;component/vista/asistencia.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/GonzalezPerezCO;component/vista/asistencia.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\Vista\Asistencia.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

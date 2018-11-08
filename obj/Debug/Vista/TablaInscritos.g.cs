@@ -107,7 +107,7 @@ namespace Deportes_WPF {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Deportes-WPF;component/vista/tablainscritos.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/GonzalezPerezCO;component/vista/tablainscritos.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\Vista\TablaInscritos.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

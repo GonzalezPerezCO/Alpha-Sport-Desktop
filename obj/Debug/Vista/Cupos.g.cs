@@ -84,7 +84,7 @@ namespace Deportes_WPF.Vista {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Deportes-WPF;component/vista/cupos.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/GonzalezPerezCO;component/vista/cupos.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\Vista\Cupos.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

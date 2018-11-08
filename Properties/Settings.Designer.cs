@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Deportes_WPF.Properties {
+namespace AlphaSport.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
