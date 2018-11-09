@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="Asistencia" Width="1366" Height="768" Closed="Window_Closed" Closing="Window_Closing" 
+        Title="Asistencia" Width="1440" Height="900" Closed="Window_Closed" Closing="Window_Closing" 
         WindowState="Maximized"
         WindowStyle="SingleBorderWindow">
     <Grid>

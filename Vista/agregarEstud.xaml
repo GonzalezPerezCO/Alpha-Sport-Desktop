@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Deportes_WPF.Vista"
         mc:Ignorable="d"
-        Title="agregarEstud" Width="1366" Height="768"
+        Title="agregarEstud" Width="1440" Height="900"
         WindowState="Maximized"
         WindowStyle="SingleBorderWindow" Closed="Window_Closed" Closing="Window_Closing">
     <Grid>
