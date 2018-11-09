@@ -4,7 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="Login" Width="1440" Height="900" FontSize="14" Closing="Window_Closing" Closed="Window_Closed">
+        Title="Login" Width="1440" Height="900" FontSize="14" Closing="Window_Closing" Closed="Window_Closed" 
+        WindowState="Maximized"
+        WindowStyle="SingleBorderWindow">
     <Window.Background>
         <ImageBrush ImageSource="/Recursos/escuela_fondo.jpg" Opacity="0.5" Stretch="UniformToFill" TileMode="Tile"/>
     </Window.Background>

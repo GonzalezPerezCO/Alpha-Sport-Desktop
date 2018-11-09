@@ -4,9 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="Main" Width="1440" Height="900" Closed="Window_Closed" Closing="Window_Closing">
+        Title="Main" Width="1440" Height="900" Closed="Window_Closed" Closing="Window_Closing"
+        WindowState="Maximized"
+        WindowStyle="SingleBorderWindow">
     <Grid>
-        <Button x:Name="btn1" Content="Gimnasio" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Center" Width="480" Height="869" Margin="0,0,952,0" FontSize="48" FontWeight="Bold" MouseEnter="btn1_MouseEnter" MouseLeave="btn1_MouseLeave">
+        <Button x:Name="btn1" Content="Gimnasio" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Center" Width="480" Height="869" Margin="0,0,952,0" FontSize="48" FontWeight="Bold" MouseEnter="btn1_MouseEnter" MouseLeave="btn1_MouseLeave" Click="btn1_Click">
             <Button.Background>
                 <ImageBrush Stretch="UniformToFill" ImageSource="/GonzalezPerezCO;component/Recursos/gym.jpg" Opacity="0.7"/>
             </Button.Background>

@@ -38,11 +38,7 @@ namespace Deportes_WPF
             else
             {
                 if (entorno.login(email, password))
-                {                  
-                    //Window tabla = new TablaInscritos();                    
-                    //tabla.Show();
-                    //this.Hide();
-
+                {       
                     Window ventana = new Main();
 
                     ventana.Show();

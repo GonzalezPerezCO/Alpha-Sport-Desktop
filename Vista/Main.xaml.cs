@@ -1,4 +1,5 @@
-﻿using Deportes_WPF.Controller;
+﻿using Deportes_WPF;
+using Deportes_WPF.Controller;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -59,6 +60,13 @@ namespace AlphaSport.Vista
             imgBrush.ImageSource = new BitmapImage(new Uri(@"/Recursos/gym.jpg", UriKind.RelativeOrAbsolute));
             btn1.Background = imgBrush;          
              */
+        }
+
+        private void btn1_Click(object sender, RoutedEventArgs e)
+        {
+            Window tabla = new TablaInscritos();                    
+            tabla.Show();
+            this.Hide();
         }
     }
 }
