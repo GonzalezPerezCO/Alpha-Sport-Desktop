@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GonzalezPerezCO.exe" size="1193416">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GonzalezPerezCO.exe" size="1193928">
       <assemblyIdentity name="GonzalezPerezCO" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>f2PsE3BwAQV/OaoZ0yR/utr8MDe8TwiW99h7KNkv8iY=</dsig:DigestValue>
+        <dsig:DigestValue>WxAdQdEZbLBGiFA3UcxpNCuS88hs7+y1rN6DJn2Giwk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

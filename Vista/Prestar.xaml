@@ -9,6 +9,7 @@
         WindowState="Maximized"
         WindowStyle="SingleBorderWindow" Closed="Window_Closed" Closing="Window_Closing" >
     <Grid>
-        
+        <Button x:Name="btn1" Content="volver" HorizontalAlignment="Right" Margin="0,28,10,0" VerticalAlignment="Top" Width="74" Click="btn1_Click"/>
+
     </Grid>
 </Window>

@@ -33,5 +33,17 @@ namespace AlphaSport.Vista
         {
             Application.Current.Shutdown();
         }
+
+        private void btn1_Click(object sender, RoutedEventArgs e)
+        {
+            Window tabla = new TablaImplementos();
+            tabla.Show();
+            this.Hide();
+        }
+
+        private void btn2_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }

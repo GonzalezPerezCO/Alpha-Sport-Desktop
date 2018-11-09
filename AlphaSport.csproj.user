@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PublishUrlHistory>C:\Users\manue\source\repos\Epic-Sport-_Deportes\OneClick\|C:\Users\manue\source\repos\Epic-Sport-_Deportes\Oneclick-Deportes\|C:\Users\manue\source\repos\Oneclick-Deportes\|C:\Users\manue\source\repos\</PublishUrlHistory>
+    <InstallUrlHistory />
+    <SupportUrlHistory>https://github.com/GonzalezPerezCO/Epic-Sport-_Deportes|https://github.com/GonzalezPerezCO</SupportUrlHistory>
+    <UpdateUrlHistory />
+    <BootstrapperUrlHistory />
+    <ErrorReportUrlHistory>https://github.com/GonzalezPerezCO|https://github.com/GonzalezPerezCO/Epic-Sport-_Deportes</ErrorReportUrlHistory>
+    <FallbackCulture>es-ES</FallbackCulture>
+    <VerifyUploadedFiles>false</VerifyUploadedFiles>
+  </PropertyGroup>
+  <PropertyGroup>
+    <EnableSecurityDebugging>false</EnableSecurityDebugging>
+  </PropertyGroup>
+</Project>
