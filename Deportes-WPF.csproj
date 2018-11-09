@@ -135,6 +135,9 @@
     <Compile Include="Vista\Main.xaml.cs">
       <DependentUpon>Main.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Vista\TablaImplementos.xaml.cs">
+      <DependentUpon>TablaImplementos.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Vista\TablaInscritos.xaml.cs">
       <DependentUpon>TablaInscritos.xaml</DependentUpon>
     </Compile>
@@ -165,6 +168,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Vista\Main.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vista\TablaImplementos.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

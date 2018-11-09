@@ -13,12 +13,12 @@
                 <ImageBrush Stretch="UniformToFill" ImageSource="/GonzalezPerezCO;component/Recursos/gym.jpg" Opacity="0.7"/>
             </Button.Background>
         </Button>
-        <Button x:Name="btn2" Content="Deportes" HorizontalAlignment="Center" VerticalAlignment="Center" Width="480" Height="869" Margin="476,0" Click="Button_Click" FontSize="48" FontWeight="Bold">
+        <Button x:Name="btn2" Content="Deportes" HorizontalAlignment="Center" VerticalAlignment="Center" Width="480" Height="869" Margin="476,0" FontSize="48" FontWeight="Bold" Click="btn2_Click">
             <Button.Background>
                 <ImageBrush Stretch="UniformToFill" ImageSource="/GonzalezPerezCO;component/Recursos/deportes.jpg" Opacity="0.7"/>
             </Button.Background>
         </Button>
-        <Button x:Name="btn3" Content="Casilleros" HorizontalAlignment="Center" VerticalAlignment="Center" Width="480" Height="869" Margin="956,0,-4,0" FontSize="48" FontWeight="Bold">
+        <Button x:Name="btn3" Content="Casilleros" HorizontalAlignment="Center" VerticalAlignment="Center" Width="480" Height="869" Margin="956,0,-4,0" FontSize="48" FontWeight="Bold" Click="btn3_Click">
             <Button.Background>
                 <ImageBrush Stretch="UniformToFill" ImageSource="/GonzalezPerezCO;component/Recursos/casilleros.jpg" Opacity="0.7"/>
             </Button.Background>
