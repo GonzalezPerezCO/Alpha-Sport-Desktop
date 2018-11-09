@@ -14,9 +14,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using AlphaSport.Vista;
 using Deportes_WPF.Controller;
 using Deportes_WPF.Vista;
-using MySql.Data.MySqlClient;
 
 namespace Deportes_WPF
 {
@@ -36,12 +36,10 @@ namespace Deportes_WPF
         }
 
 
-        public void mostrarTabla() {
-
-           DataTable dt = entorno.tablaInscritos();
-           
-            dtgrid1.ItemsSource = dt.DefaultView;
-           
+        public void mostrarTabla()
+        {
+           DataTable dt = entorno.tablaInscritos();           
+           dtgrid1.ItemsSource = dt.DefaultView;           
         }
 
         private void bt1_Click(object sender, RoutedEventArgs e)
@@ -85,6 +83,13 @@ namespace Deportes_WPF
             horario.Show();
             this.Hide();
         }
-       
+
+        private void bt5_Click(object sender, RoutedEventArgs e)
+        {
+            Window main = new Main();
+
+            main.Show();
+            this.Hide();
+        }
     }
 }

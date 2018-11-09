@@ -102,6 +102,16 @@ namespace Deportes_WPF.Controller
             return dt;
         }
 
+        public DataTable tablaImplementos()
+        {
+            Debug.WriteLine("MOSTRAR TABLA INSCRITOS");
+            string query = "select nombre, cantidad from timplementos;";
+            DataTable dt = connection.mostrarTabla(query);
+            Debug.WriteLine("RECIBIR READER EN TABLE IMPLEMENTOS");
+
+            return dt;
+        }
+
         public DataTable horarioEstudiante(int codigo)
         {
             Debug.WriteLine("MOSTRAR TABLA HORARIO ESTUDIANTE");

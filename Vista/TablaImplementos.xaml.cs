@@ -1,6 +1,7 @@
 ﻿using Deportes_WPF.Controller;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,7 +28,15 @@ namespace AlphaSport.Vista
             InitializeComponent();
             entorno = Entorno.GetInstance();
             lab1.Content = entorno.PROYECTO;
+            mostrarTabla();
         }
+
+        public void mostrarTabla()
+        {
+            DataTable dt = entorno.tablaImplementos();
+            dtgrid1.ItemsSource = dt.DefaultView;
+        }
+
 
         private void Window_Closed(object sender, EventArgs e)
         {
@@ -37,6 +46,14 @@ namespace AlphaSport.Vista
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             Application.Current.Shutdown();
+        }
+
+        private void bt5_Click(object sender, RoutedEventArgs e)
+        {
+            Window main = new Main();
+
+            main.Show();
+            this.Hide();
         }
     }
 }

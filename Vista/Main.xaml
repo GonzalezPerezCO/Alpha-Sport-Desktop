@@ -24,7 +24,7 @@
             </Button.Background>
         </Button>
 
-        <Label x:Name="lab1" Content="Nombre del Proyecto" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="473,30,481,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="36" Width="478"/>
+        <Label x:Name="lab1" Content="Nombre del Proyecto" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="473,0,481,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="36" Width="478"/>
 
     </Grid>
 </Window>

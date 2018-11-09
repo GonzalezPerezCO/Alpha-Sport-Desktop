@@ -10,9 +10,20 @@
         WindowStyle="SingleBorderWindow" Closed="Window_Closed" Closing="Window_Closing">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="22*"/>
-            <ColumnDefinition Width="157*"/>
+            <ColumnDefinition Width="176*"/>
+            <ColumnDefinition Width="1061*"/>
+            <ColumnDefinition Width="196*"/>
         </Grid.ColumnDefinitions>
+        <DataGrid x:Name="dtgrid1" Height="710" Margin="233,130,197,0" VerticalAlignment="Top" IsReadOnly="True" Grid.Column="1" HorizontalAlignment="Center" Width="630"/>
+        <Label x:Name="lab1" Content="Nombre del Proyecto" Grid.Column="1" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="74,15,59,0" VerticalAlignment="Top" RenderTransformOrigin="4.868,0.577" FontSize="36" FontWeight="Bold" Width="927"/>
+        <Label x:Name="lab2" Content="Implementos Deportivos" Grid.Column="1" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="362,88,345,0" VerticalAlignment="Top" RenderTransformOrigin="4.868,0.577" FontSize="24" FontWeight="Bold" Width="353"/>
+        <Button x:Name="bt1" Content="Asistencia" Grid.Column="2" Margin="0,44,16,0" VerticalAlignment="Top" Width="130" HorizontalAlignment="Right" Background="#FFFFDA33"/>
+        <Button x:Name="bt2" Content="Ver Cupos" Grid.Column="2" HorizontalAlignment="Right" Margin="0,83,16,0" VerticalAlignment="Top" Width="130" RenderTransformOrigin="0.52,2.5" FontWeight="Bold">
+            <Button.Background>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.MenuHighlightColorKey}}"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="bt5" Content="Menú principal" Grid.Column="2" HorizontalAlignment="Right" Margin="0,794,16,0" VerticalAlignment="Top" Width="130" RenderTransformOrigin="0.52,2.5" FontWeight="Bold" Height="48" Background="#FFFFDA33" Click="bt5_Click"/>
 
     </Grid>
 </Window>
