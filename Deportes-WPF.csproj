@@ -27,9 +27,9 @@
     <MapFileExtensions>true</MapFileExtensions>
     <SupportUrl>https://github.com/GonzalezPerezCO/Epic-Sport-_Deportes</SupportUrl>
     <ErrorReportUrl>https://github.com/GonzalezPerezCO</ErrorReportUrl>
-    <ProductName>Sistema de Deportes para la Escuela</ProductName>
-    <PublisherName>GonzalezPerezCO</PublisherName>
-    <SuiteName>Deportes-system</SuiteName>
+    <ProductName>Alpha Sport</ProductName>
+    <PublisherName>Alpha Sport</PublisherName>
+    <SuiteName>Alpha Sport</SuiteName>
     <ApplicationRevision>2</ApplicationRevision>
     <ApplicationVersion>2.3.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
@@ -132,6 +132,9 @@
     <Compile Include="Vista\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Main.xaml.cs">
+      <DependentUpon>Main.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Vista\TablaInscritos.xaml.cs">
       <DependentUpon>TablaInscritos.xaml</DependentUpon>
     </Compile>
@@ -160,6 +163,10 @@
     <Page Include="Vista\Login.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Vista\Main.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Vista\TablaInscritos.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -223,6 +230,11 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="alpha.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recursos\casilleros.jpg" />
+    <Resource Include="Recursos\deportes.jpg" />
+    <Resource Include="Recursos\gym.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

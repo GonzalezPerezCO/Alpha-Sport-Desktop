@@ -8,6 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("alpha.ico")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/casilleros.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/deportes.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/gym.jpg")]
 
 

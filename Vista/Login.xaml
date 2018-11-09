@@ -6,7 +6,7 @@
         mc:Ignorable="d"
         Title="Login" Width="1440" Height="900" FontSize="14" Closing="Window_Closing" Closed="Window_Closed">
     <Window.Background>
-        <ImageBrush ImageSource="/Recursos/escuela_fondo.jpg" Stretch="UniformToFill" Opacity="0.5"/>
+        <ImageBrush ImageSource="/Recursos/escuela_fondo.jpg" Opacity="0.5" Stretch="UniformToFill" TileMode="Tile"/>
     </Window.Background>
     <Grid Height="300" Width="300" >
         <Border CornerRadius="20" Margin="20" Background="White">

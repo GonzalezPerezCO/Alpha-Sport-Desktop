@@ -76,7 +76,7 @@ namespace Deportes_WPF.Vista
             }
             else
             {
-                //0: nombre, 1: carrera, 2: semestre, 3: fallas, 4: codigo, 5: dia1, 6: dia2, 7: dia3, 8: hora1, 9: hora2, 10: hora3
+                //0: nombre, 1: carrera, 2: semestre, 3: fallas, 4: codigo, 5:dia1,hora1,dia2,hora2,dia3,hora3
                 List<string> lista = entorno.asistencia(Convert.ToInt32(codigo));
 
                 if (lista.Capacity > 0)
