@@ -55,5 +55,21 @@ namespace AlphaSport.Vista
             main.Show();
             this.Hide();
         }
+
+        private void bt1_Click(object sender, RoutedEventArgs e)
+        {
+            Window prestar = new Prestar();
+
+            prestar.Show();
+            this.Hide();
+        }
+
+        private void bt2_Click(object sender, RoutedEventArgs e)
+        {
+            Window prestados = new ConsultarPrestamos();
+
+            prestados.Show();
+            this.Hide();
+        }
     }
 }

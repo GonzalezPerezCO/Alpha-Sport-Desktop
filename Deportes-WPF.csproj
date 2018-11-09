@@ -123,6 +123,9 @@
     <Compile Include="Vista\Asistencia.xaml.cs">
       <DependentUpon>Asistencia.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Vista\ConsultarPrestamos.xaml.cs">
+      <DependentUpon>ConsultarPrestamos.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Cupos.xaml.cs">
       <DependentUpon>Cupos.xaml</DependentUpon>
     </Compile>
@@ -134,6 +137,9 @@
     </Compile>
     <Compile Include="Vista\Main.xaml.cs">
       <DependentUpon>Main.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Prestar.xaml.cs">
+      <DependentUpon>Prestar.xaml</DependentUpon>
     </Compile>
     <Compile Include="Vista\TablaImplementos.xaml.cs">
       <DependentUpon>TablaImplementos.xaml</DependentUpon>
@@ -155,6 +161,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Vista\ConsultarPrestamos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Vista\Cupos.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -168,6 +178,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Vista\Main.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vista\Prestar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

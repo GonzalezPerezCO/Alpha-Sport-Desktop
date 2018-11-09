@@ -38,3 +38,8 @@ C:\Users\manue\source\repos\Epic-Sport-_Deportes\obj\Debug\Vista\Main.baml
 C:\Users\manue\source\repos\Epic-Sport-_Deportes\obj\Debug\Vista\Main.g.cs
 C:\Users\manue\source\repos\Epic-Sport-_Deportes\obj\Debug\Vista\TablaImplementos.g.cs
 C:\Users\manue\source\repos\Epic-Sport-_Deportes\obj\Debug\Vista\TablaImplementos.baml
+C:\Users\manue\source\repos\Epic-Sport-_Deportes\obj\Debug\Deportes-WPF.csprojAssemblyReference.cache
+C:\Users\manue\source\repos\Epic-Sport-_Deportes\obj\Debug\Vista\ConsultarPrestamos.g.cs
+C:\Users\manue\source\repos\Epic-Sport-_Deportes\obj\Debug\Vista\Prestar.g.cs
+C:\Users\manue\source\repos\Epic-Sport-_Deportes\obj\Debug\Vista\ConsultarPrestamos.baml
+C:\Users\manue\source\repos\Epic-Sport-_Deportes\obj\Debug\Vista\Prestar.baml
