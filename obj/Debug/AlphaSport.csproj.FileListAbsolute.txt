@@ -42,3 +42,4 @@ C:\Users\manue\source\repos\Epic-Sport-_Deportes\obj\Debug\GonzalezPerezCO.exe.m
 C:\Users\manue\source\repos\Epic-Sport-_Deportes\obj\Debug\GonzalezPerezCO.application
 C:\Users\manue\source\repos\Epic-Sport-_Deportes\obj\Debug\GonzalezPerezCO.exe
 C:\Users\manue\source\repos\Epic-Sport-_Deportes\obj\Debug\GonzalezPerezCO.pdb
+C:\Users\manue\source\repos\Epic-Sport-_Deportes\obj\Debug\AlphaSport.csprojAssemblyReference.cache
