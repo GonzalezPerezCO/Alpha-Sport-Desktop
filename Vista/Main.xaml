@@ -4,11 +4,23 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="Main" Width="1440" Height="900">
+        Title="Main" Width="1440" Height="900" Closed="Window_Closed" Closing="Window_Closing">
     <Grid>
-        <Button x:Name="btn1" Content="Button" HorizontalAlignment="Center" VerticalAlignment="Center" Width="480" Height="869" Margin="0,0,952,0" Background="#FFECDADA"/>
-        <Button x:Name="btn2" Content="Button" HorizontalAlignment="Center" VerticalAlignment="Center" Width="480" Height="869" Margin="476,0" Click="Button_Click" Background="#FFEE8F8F"/>
-        <Button x:Name="btn3" Content="Button" HorizontalAlignment="Center" VerticalAlignment="Center" Width="480" Height="869" Margin="956,0,-4,0" Background="#FFD18A8A"/>
+        <Button x:Name="btn1" Content="Gimnasio" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Center" Width="480" Height="869" Margin="0,0,952,0" FontSize="48" FontWeight="Bold" MouseEnter="btn1_MouseEnter" MouseLeave="btn1_MouseLeave">
+            <Button.Background>
+                <ImageBrush Stretch="UniformToFill" ImageSource="/GonzalezPerezCO;component/Recursos/gym.jpg" Opacity="0.7"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btn2" Content="Deportes" HorizontalAlignment="Center" VerticalAlignment="Center" Width="480" Height="869" Margin="476,0" Click="Button_Click" FontSize="48" FontWeight="Bold">
+            <Button.Background>
+                <ImageBrush Stretch="UniformToFill" ImageSource="/GonzalezPerezCO;component/Recursos/deportes.jpg" Opacity="0.7"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btn3" Content="Casilleros" HorizontalAlignment="Center" VerticalAlignment="Center" Width="480" Height="869" Margin="956,0,-4,0" FontSize="48" FontWeight="Bold">
+            <Button.Background>
+                <ImageBrush Stretch="UniformToFill" ImageSource="/GonzalezPerezCO;component/Recursos/casilleros.jpg" Opacity="0.7"/>
+            </Button.Background>
+        </Button>
 
         <Label x:Name="lab1" Content="Nombre del Proyecto" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="473,30,481,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="36" Width="478"/>
 

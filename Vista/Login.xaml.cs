@@ -7,6 +7,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using AlphaSport.Vista;
 using Deportes_WPF.Controller;
 
 namespace Deportes_WPF
@@ -38,10 +39,13 @@ namespace Deportes_WPF
             {
                 if (entorno.login(email, password))
                 {                  
+                    //Window tabla = new TablaInscritos();                    
+                    //tabla.Show();
+                    //this.Hide();
 
-                    Window tabla = new TablaInscritos();
-                    
-                    tabla.Show();
+                    Window ventana = new Main();
+
+                    ventana.Show();
                     this.Hide();
                 }
                 else

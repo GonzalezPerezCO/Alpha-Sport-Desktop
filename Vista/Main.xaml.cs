@@ -33,5 +33,32 @@ namespace AlphaSport.Vista
         {
 
         }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void btn1_MouseEnter(object sender, MouseEventArgs e)
+        {   /*         
+            ImageBrush imgBrush = new ImageBrush();
+            imgBrush.ImageSource = new BitmapImage(new Uri(@"/Recursos/gym.jpg", UriKind.RelativeOrAbsolute));
+            btn1.Background = imgBrush;
+            */
+        }
+
+        private void btn1_MouseLeave(object sender, MouseEventArgs e)
+        {
+            /*
+             * ImageBrush imgBrush = new ImageBrush();            
+            imgBrush.ImageSource = new BitmapImage(new Uri(@"/Recursos/gym.jpg", UriKind.RelativeOrAbsolute));
+            btn1.Background = imgBrush;          
+             */
+        }
     }
 }

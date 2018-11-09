@@ -34,6 +34,5 @@ C:\Users\manue\source\repos\Epic-Sport-_Deportes\obj\Debug\GonzalezPerezCO.appli
 C:\Users\manue\source\repos\Epic-Sport-_Deportes\obj\Debug\Deportes-WPF.csproj.CopyComplete
 C:\Users\manue\source\repos\Epic-Sport-_Deportes\obj\Debug\GonzalezPerezCO.exe
 C:\Users\manue\source\repos\Epic-Sport-_Deportes\obj\Debug\GonzalezPerezCO.pdb
-C:\Users\manue\source\repos\Epic-Sport-_Deportes\obj\Debug\Deportes-WPF.csprojAssemblyReference.cache
 C:\Users\manue\source\repos\Epic-Sport-_Deportes\obj\Debug\Vista\Main.baml
 C:\Users\manue\source\repos\Epic-Sport-_Deportes\obj\Debug\Vista\Main.g.cs
