@@ -15,7 +15,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\manue\source\repos\Epic-Sport-_Deportes\OneClick\</PublishUrl>
+    <PublishUrl>C:\Users\manue\source\repos\PGR-Alpha-Sport\OnecClick\</PublishUrl>
     <Install>false</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -30,8 +30,8 @@
     <ProductName>Alpha Sport</ProductName>
     <PublisherName>Alpha Sport</PublisherName>
     <SuiteName>Alpha Sport</SuiteName>
-    <ApplicationRevision>3</ApplicationRevision>
-    <ApplicationVersion>3.0.1.%2a</ApplicationVersion>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>3.1.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
