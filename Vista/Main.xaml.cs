@@ -78,7 +78,9 @@ namespace AlphaSport.Vista
 
         private void btn3_Click(object sender, RoutedEventArgs e)
         {
-
+            Window casilleros  = new Casilleros();
+            casilleros.Show();
+            this.Hide();
         }
     }
 }

@@ -86,6 +86,8 @@ namespace Deportes_WPF.Vista
                     lab11.Content = lista[2];
                     lab8.Content = lista[3];
 
+                    separarDias(lista);  // descompone la posicion 5 y agrega los 6 elementos que se necesitan en el orden que se necesitan
+
                     Debug.WriteLine("**** For :" + lista.Count);
                     // mostrar horario con tabla
                     DataTable tabla = entorno.horarioEstudiante(Convert.ToInt32(codigo));
@@ -99,6 +101,13 @@ namespace Deportes_WPF.Vista
                     // -- fin
                     Debug.WriteLine("<<<<<<<<<<<<< datos hora: " + diaActual + "a las  " +horaActual);
 
+
+                    foreach (var item in lista)
+                    {
+                        Debug.WriteLine("<<<< Lista: " + item);
+                    }
+
+
                     string mensaje = "";
                     // campo 5,6 y 7 con dias, 8,9,10 son las horas
                     for (int i= 5; i <= 7; i++)
@@ -106,7 +115,7 @@ namespace Deportes_WPF.Vista
                         Debug.WriteLine("<<<<<<<<<<<<< datos: " + lista[i]);
 
                         if (lista[i] == diaActual || codigo == "2095112") {
-                            if (lista[i + 3] == horaActual || lista[i + 3] == "0")
+                            if (lista[i + 3] == horaActual || lista[i + 3] == "0") // es 0 para que 2095112 muestre este mensaje
                             {
                                 mensaje = "Franja Horaria para registrar: " + diaActual + " - " + horaActual + ":00.";
                                 bt4.IsEnabled = true;
@@ -121,7 +130,7 @@ namespace Deportes_WPF.Vista
                         
                     }
                     
-                    if(mensaje =="") mensaje = "El estudiante no tiene un horario para el Gimnasio.";
+                    if(mensaje =="") mensaje = "El estudiante no tiene este dia asignado: " + diaActual + " - " + horaActual + ":00.";
 
                     lab6.Content = mensaje;
                 }
@@ -132,6 +141,71 @@ namespace Deportes_WPF.Vista
                     
                 }
 
+            }
+
+        }
+
+        private void separarDias(List<string> lista)
+        {
+            // cambiar posicion 5 de lista: "d1,h1,d2,h2,d3,h3" por ["d1","d2","d3","h1","h2","h3"]
+
+            string cadena = lista[5];
+            lista.RemoveAt(5);
+
+            if (cadena == "" || cadena == "N/A" || cadena.Length == 0)
+            {
+                lista.Add("N/A"); //d1
+                lista.Add("N/A"); //d2
+                lista.Add("N/A"); //d3
+
+                lista.Add("N/A"); //h1
+                lista.Add("N/A"); //h2
+                lista.Add("N/A"); //h3
+            }
+            
+            else
+            {
+                string[] separadas;
+                separadas = cadena.Split(',');
+
+                Debug.WriteLine("<<< separadas:");
+                foreach (var item in separadas)
+                {
+                    Debug.WriteLine("<< " + item);
+                }
+
+                if (separadas.Length == 2 && separadas.Length > 0)
+                {
+                    lista.Add(separadas[0]);
+                    lista.Add("N/A"); //d2
+                    lista.Add("N/A"); //d3
+
+                    lista.Add(separadas[1]);
+                    lista.Add("N/A"); //h2
+                    lista.Add("N/A"); //h3
+
+                }
+                else if (separadas.Length == 4 && separadas.Length > 2)
+                {
+                    lista.Add(separadas[0]);
+                    lista.Add(separadas[2]);
+                    lista.Add("N/A"); //d3
+
+                    lista.Add(separadas[1]);
+                    lista.Add(separadas[3]);
+                    lista.Add("N/A"); //h3
+
+                }
+                else
+                {   
+                    lista.Add(separadas[0]); //d1
+                    lista.Add(separadas[2]); //d2
+                    lista.Add(separadas[4]); //d3
+
+                    lista.Add(separadas[1]); //h1
+                    lista.Add(separadas[3]); //h2
+                    lista.Add(separadas[5]); //h3
+                }
             }
 
         }

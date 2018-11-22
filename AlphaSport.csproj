@@ -30,7 +30,7 @@
     <ProductName>Alpha Sport</ProductName>
     <PublisherName>Alpha Sport</PublisherName>
     <SuiteName>Alpha Sport</SuiteName>
-    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationRevision>3</ApplicationRevision>
     <ApplicationVersion>3.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -56,7 +56,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>alpha.ico</ApplicationIcon>
+    <ApplicationIcon>Recursos\alpha.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>true</SignManifests>
@@ -123,6 +123,12 @@
     <Compile Include="Vista\Asistencia.xaml.cs">
       <DependentUpon>Asistencia.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Casilleros.xaml.cs">
+      <DependentUpon>Casilleros.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\ConsultarCasillero.xaml.cs">
+      <DependentUpon>ConsultarCasillero.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Vista\ConsultarPrestamos.xaml.cs">
       <DependentUpon>ConsultarPrestamos.xaml</DependentUpon>
     </Compile>
@@ -141,6 +147,9 @@
     <Compile Include="Vista\Prestar.xaml.cs">
       <DependentUpon>Prestar.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Vista\RegistroCasillero.xaml.cs">
+      <DependentUpon>RegistroCasillero.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Vista\TablaImplementos.xaml.cs">
       <DependentUpon>TablaImplementos.xaml</DependentUpon>
     </Compile>
@@ -158,6 +167,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Vista\Asistencia.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vista\Casilleros.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vista\ConsultarCasillero.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -182,6 +199,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Vista\Prestar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vista\RegistroCasillero.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -250,12 +271,12 @@
     <Resource Include="Recursos\escuela_fondo.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="alpha.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Recursos\casilleros.jpg" />
     <Resource Include="Recursos\deportes.jpg" />
     <Resource Include="Recursos\gym.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recursos\alpha.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
