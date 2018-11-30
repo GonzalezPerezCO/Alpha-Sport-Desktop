@@ -24,6 +24,7 @@
             </Button.Background>
         </Button>
         <Button x:Name="bt5" Content="Menú principal" Grid.Column="2" HorizontalAlignment="Right" Margin="0,794,16,0" VerticalAlignment="Top" Width="130" RenderTransformOrigin="0.52,2.5" FontWeight="Bold" Height="48" Background="#FFFFDA33" Click="bt5_Click"/>
+        <Image HorizontalAlignment="Left" Height="233" Margin="10,0,0,0" VerticalAlignment="Bottom" Width="350" Source="/GonzalezPerezCO;component/Recursos/sistemas.jpg" Grid.ColumnSpan="2"/>
 
     </Grid>
 </Window>

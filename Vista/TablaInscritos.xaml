@@ -48,6 +48,7 @@
                 <SolidColorBrush Color="#FFFFDA33"/>
             </Button.Background>
         </Button>
+        <Image HorizontalAlignment="Left" Height="233" Margin="10,0,0,0" VerticalAlignment="Bottom" Width="350" Source="/GonzalezPerezCO;component/Recursos/sistemas.jpg" Grid.ColumnSpan="3"/>
 
     </Grid>
 </Window>

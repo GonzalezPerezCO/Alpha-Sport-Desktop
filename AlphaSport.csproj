@@ -30,7 +30,7 @@
     <ProductName>Alpha Sport</ProductName>
     <PublisherName>Alpha Sport</PublisherName>
     <SuiteName>Alpha Sport</SuiteName>
-    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationRevision>5</ApplicationRevision>
     <ApplicationVersion>3.1.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -277,6 +277,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Recursos\alpha.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recursos\sistemas.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

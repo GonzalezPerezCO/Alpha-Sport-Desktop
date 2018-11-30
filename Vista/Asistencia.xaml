@@ -36,8 +36,9 @@
         <Label x:Name="lab8" Content="0" HorizontalContentAlignment="Left" HorizontalAlignment="Center" Margin="378,416,941,0" VerticalAlignment="Top" RenderTransformOrigin="0.355,-0.212" FontSize="24" Width="39"/>
         <DataGrid x:Name="dtgrid1" HorizontalAlignment="Center" Height="85" Margin="468,416,522,0" VerticalAlignment="Top" Width="368" FontSize="16" IsReadOnly="True"/>
         <Label x:Name="lab9" Content="Carrera:" HorizontalAlignment="Center" Margin="263,284,994,0" VerticalAlignment="Top" FontSize="22" FontWeight="Bold"/>
-        <Label x:Name="lab10" Content="Desconocida" HorizontalContentAlignment="Left" HorizontalAlignment="Center" Margin="378,284,642,0" VerticalAlignment="Top" RenderTransformOrigin="0.355,-0.212" FontSize="24" Width="338"/>
-        <Label x:Name="lab11" Content="0" HorizontalContentAlignment="Left" HorizontalAlignment="Center" Margin="788,284,522,0" VerticalAlignment="Top" RenderTransformOrigin="0.355,-0.212" FontSize="24" Width="48" FontWeight="Bold"/>
+        <Label x:Name="lab10" Content="Desconocida" HorizontalContentAlignment="Left" HorizontalAlignment="Center" Margin="417,284,677,0" VerticalAlignment="Top" RenderTransformOrigin="0.355,-0.212" FontSize="24" Width="338"/>
+        <Label x:Name="lab11" Content="0" HorizontalContentAlignment="Left" HorizontalAlignment="Center" Margin="895,284,489,0" VerticalAlignment="Top" RenderTransformOrigin="0.355,-0.212" FontSize="24" Width="48" FontWeight="Bold"/>
+        <Label x:Name="lab7_Copy" Content="Semestre:" HorizontalAlignment="Center" Margin="761,283,542,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Width="129"/>
 
 
     </Grid>
