@@ -115,7 +115,7 @@ namespace Deportes_WPF.Controller
         public DataTable horarioEstudiante(int codigo)
         {
             Debug.WriteLine("MOSTRAR TABLA HORARIO ESTUDIANTE");
-            string query = "select  dia1 as Dia1, hora1 as Hora1, dia2 as Dia2, hora2 as Hora2, dia3 as Dia3, hora3 as Hora3 from testudiantes INNER JOIN thorarios on testudiantes.email = thorarios.email where testudiantes.codigo ="+codigo+ " Limit 1;";
+            string query = "SELECT GROUP_CONCAT(dia, ',', hora) as horario from testudiantes INNER JOIN thorarios on testudiantes.codigo = "+codigo+" and testudiantes.email = thorarios.email GROUP by nombre;";
             DataTable dt = connection.mostrarTabla(query);
             Debug.WriteLine("RECIBIR READER EN TABLE");
 

@@ -60,8 +60,14 @@ namespace Deportes_WPF.Vista
             lab11.Content = "Desconocido";
             lab8.Content = "0";
 
-            dtgrid1.ItemsSource = null;
-            
+            txt8.Content = "Dia 1";
+            txt9.Content = "Dia 2";
+            txt10.Content = "Dia 3";
+            txt11.Content = "N/A";
+            txt12.Content = "N/A";
+            txt13.Content = "N/A";
+
+
             txt1.Text = "";
             txt1.Focus();
         }
@@ -89,24 +95,27 @@ namespace Deportes_WPF.Vista
                     separarDias(lista);  // descompone la posicion 5 y agrega los 6 elementos que se necesitan en el orden que se necesitan
 
                     Debug.WriteLine("**** For :" + lista.Count);
-                    // mostrar horario con tabla
-                    DataTable tabla = entorno.horarioEstudiante(Convert.ToInt32(codigo));
-                    dtgrid1.ItemsSource = tabla.DefaultView;                         
-                    // -- fin
-
+                    
                     // calcular dia y hora actual
                     DateTime dt = DateTime.Now;
                     string diaActual = aEspanol(dt.DayOfWeek.ToString());
                     string horaActual = dt.Hour.ToString(); ;
                     // -- fin
                     Debug.WriteLine("<<<<<<<<<<<<< datos hora: " + diaActual + "a las  " +horaActual);
-
+                                       
 
                     foreach (var item in lista)
                     {
                         Debug.WriteLine("<<<< Lista: " + item);
                     }
 
+                    // mostrar horario
+                    txt8.Content = lista[5];
+                    txt9.Content = lista[6];
+                    txt10.Content = lista[7];
+                    txt11.Content = lista[8];
+                    txt12.Content = lista[9];
+                    txt13.Content = lista[10];
 
                     string mensaje = "";
                     // campo 5,6 y 7 con dias, 8,9,10 son las horas
@@ -125,7 +134,7 @@ namespace Deportes_WPF.Vista
                                 Debug.WriteLine("<<<<<<<<<<<<< día no asignado");
                                 mensaje = "El estudiante no tiene asignada esta franja horaria: " + diaActual + " - " + horaActual + ":00.";                               
                             }
-                            bt5.IsEnabled = true;
+                            //bt5.IsEnabled = true;
                         }
                         
                     }
@@ -265,17 +274,17 @@ namespace Deportes_WPF.Vista
             botonesEstado(false);
         }
 
-        private void bt5_Click(object sender, RoutedEventArgs e)
+        /*private void bt5_Click(object sender, RoutedEventArgs e)
         {            
             MessageBox.Show("Asistencia Rechazada");
             limpiar();
             botonesEstado(false);
-        }
+        }*/
 
         private void botonesEstado(bool estado) {
             Debug.WriteLine("Mostrar botones 5 y 6 = "+estado);
             bt4.IsEnabled = estado;
-            bt5.IsEnabled = estado;            
+            //bt5.IsEnabled = estado;            
         }
     }
 }
