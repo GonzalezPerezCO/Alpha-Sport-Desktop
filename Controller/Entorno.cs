@@ -78,6 +78,12 @@ namespace Deportes_WPF.Controller
             return connection.asistenciaReader(query);
         }
 
+        public List<string> buscarCasillero(int codigo)
+        {
+            string query = "SELECT CONCAT(nombre, ' ', apellido), codigo, id_cas , prestado, ingreso, salida, tcasilleroXestu.observaciones  FROM tcasilleroXestu INNER JOIN testudiantes on testudiantes.codigo = " + codigo+" and testudiantes.email = tcasilleroXestu.email;";
+            return connection.buscarCasilleroReader(query);
+        }
+
         public void agregarEstudiante(string nombre, string apellido, int codigo, string carrera, int semestre, string email, string observacion)
         {
             string query = "call addEstudFull('" + nombre + "', '" + apellido + "', " + codigo + ", '" + carrera + "', " + semestre + ", '" + email + "', '" + observacion + "');";

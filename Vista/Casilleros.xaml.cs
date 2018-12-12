@@ -31,50 +31,51 @@ namespace AlphaSport.Vista
             entorno = Entorno.GetInstance();
             lab1.Content = entorno.PROYECTO;
 
+            codigo.Focus();
             colorButtons();
         }
 
         private void colorButtons() {            
-            Btn1.Background = Brushes.Yellow;
-            Btn2.Background = Brushes.Yellow;
-            Btn3.Background = Brushes.Yellow;
-            Btn4.Background = Brushes.Yellow;
-            Btn5.Background = Brushes.Yellow;
-            Btn6.Background = Brushes.Yellow;
-            Btn7.Background = Brushes.Yellow;
-            Btn8.Background = Brushes.Yellow;
-            Btn9.Background = Brushes.Yellow;
-            Btn10.Background = Brushes.Yellow;
-            Btn11.Background = Brushes.Yellow;
-            Btn12.Background = Brushes.Yellow;
-            Btn13.Background = Brushes.Yellow;
-            Btn14.Background = Brushes.Yellow;
-            Btn15.Background = Brushes.Yellow;
-            Btn16.Background = Brushes.Yellow;
-            Btn17.Background = Brushes.Yellow;
-            Btn18.Background = Brushes.Yellow;
-            Btn19.Background = Brushes.Yellow;
-            Btn20.Background = Brushes.Yellow;
-            Btn21.Background = Brushes.Yellow;
-            Btn22.Background = Brushes.Yellow;
-            Btn23.Background = Brushes.Yellow;
-            Btn24.Background = Brushes.Yellow;
-            Btn25.Background = Brushes.Yellow;
-            Btn26.Background = Brushes.Yellow;
-            Btn27.Background = Brushes.Yellow;
-            Btn28.Background = Brushes.Yellow;
-            Btn29.Background = Brushes.Yellow;
-            Btn30.Background = Brushes.Yellow;
-            Btn31.Background = Brushes.Yellow;
-            Btn32.Background = Brushes.Yellow;
-            Btn33.Background = Brushes.Yellow;
-            Btn34.Background = Brushes.Yellow;
-            Btn35.Background = Brushes.Yellow;
-            Btn36.Background = Brushes.Yellow;
-            Btn37.Background = Brushes.Yellow;
-            Btn38.Background = Brushes.Yellow;
-            Btn39.Background = Brushes.Yellow;
-            Btn40.Background = Brushes.Yellow;
+            Btn1.Background = Brushes.HotPink;
+            Btn2.Background = Brushes.HotPink;
+            Btn3.Background = Brushes.HotPink;
+            Btn4.Background = Brushes.HotPink;
+            Btn5.Background = Brushes.HotPink;
+            Btn6.Background = Brushes.HotPink;
+            Btn7.Background = Brushes.HotPink;
+            Btn8.Background = Brushes.HotPink;
+            Btn9.Background = Brushes.HotPink;
+            Btn10.Background = Brushes.HotPink;
+            Btn11.Background = Brushes.HotPink;
+            Btn12.Background = Brushes.HotPink;
+            Btn13.Background = Brushes.HotPink;
+            Btn14.Background = Brushes.HotPink;
+            Btn15.Background = Brushes.HotPink;
+            Btn16.Background = Brushes.HotPink;
+            Btn17.Background = Brushes.HotPink;
+            Btn18.Background = Brushes.HotPink;
+            Btn19.Background = Brushes.HotPink;
+            Btn20.Background = Brushes.HotPink;
+            Btn21.Background = Brushes.HotPink;
+            Btn22.Background = Brushes.HotPink;
+            Btn23.Background = Brushes.HotPink;
+            Btn24.Background = Brushes.HotPink;
+            Btn25.Background = Brushes.HotPink;
+            Btn26.Background = Brushes.HotPink;
+            Btn27.Background = Brushes.HotPink;
+            Btn28.Background = Brushes.HotPink;
+            Btn29.Background = Brushes.HotPink;
+            Btn30.Background = Brushes.HotPink;
+            Btn31.Background = Brushes.HotPink;
+            Btn32.Background = Brushes.HotPink;
+            Btn33.Background = Brushes.HotPink;
+            Btn34.Background = Brushes.HotPink;
+            Btn35.Background = Brushes.HotPink;
+            Btn36.Background = Brushes.HotPink;
+            Btn37.Background = Brushes.HotPink;
+            Btn38.Background = Brushes.HotPink;
+            Btn39.Background = Brushes.HotPink;
+            Btn40.Background = Brushes.HotPink;
 
             Btn41.Background = Brushes.DodgerBlue;
             Btn42.Background = Brushes.DodgerBlue;
@@ -146,6 +147,49 @@ namespace AlphaSport.Vista
 
             main.Show();
             this.Hide();
+        }
+
+        private void Btn1_Click(object sender, RoutedEventArgs e)
+        {
+            if (codigo.Text == "")
+            {
+                MessageBox.Show("Escriba un código para buscar!");
+            }
+            else
+            {   
+                // Lista: 0:nombre, 1:codigo, 2:casillero
+                List<string> lista = entorno.buscarCasillero(Convert.ToInt32(codigo.Text));
+
+                if (lista.Capacity > 0)
+                {
+                    MessageBox.Show("Asignado a: " + lista[0] + ".\n" + "Código: " + lista[1] + ".\n" + "Casillero: " + lista[2] + ".\n" + "Entrada: " + lista[4] + ".\n" + "Salida: " + lista[5] + ".");
+                }
+                else
+                {
+                    MessageBox.Show("No se encontraron coincidencias.");
+                }   
+            }
+
+        }
+
+        private void Btn1_Click_1(object sender, RoutedEventArgs e)
+        {
+            List<string> lista = entorno.buscarCasillero(Convert.ToInt32(codigo.Text));
+
+            if (lista.Capacity > 0)
+            {
+                // caso para mostrar datos del prestamo
+
+                MessageBox.Show("Asignado a: " + lista[0] + ".\n" + "Código: " + lista[1] + ".\n" + "Casillero: " + lista[2] + ".\n"+"Entrada: "+lista[4] + ".\n" + "Salida: " +lista[5]+".");
+            }
+            else
+            {
+                // caso para agregar el prestamo
+
+                MessageBox.Show("No se encontraron coincidencias.");
+            }
+
+
         }
     }
 }

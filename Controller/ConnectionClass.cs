@@ -106,6 +106,51 @@ namespace Deportes_WPF.Controller
             return result;
         }
 
+
+        internal List<string> buscarCasilleroReader(string query)
+        {
+            reader = null;
+            List<string> result = new List<string>();
+
+            Debug.WriteLine(" ----   QUERY READER OPEN CONNECTION buscar casillero reader");
+
+            this.OpenConnection();
+
+            cmd = new MySqlCommand(query, connection);
+
+            try
+            {
+                Debug.WriteLine(" ----   RESULT QERY TRY recibido buscar casillero reader: " + query);
+                reader = cmd.ExecuteReader();
+
+                // consulta retorna: nombre, codigo, casillero, prestado, ingreso, salida, obervaciones
+                while (reader.Read())
+                {
+                    if (reader.GetString(0) != null) { result.Add(reader.GetString(0)); } else { result.Add("N/A"); }
+                    if (reader.GetString(1) != null) { result.Add(reader.GetString(1)); } else { result.Add("N/A"); }
+                    if (reader.GetString(2) != null) { result.Add(reader.GetString(2)); } else { result.Add("N/A"); }
+                    if (reader.GetString(3) != null) { result.Add(reader.GetString(3)); } else { result.Add("N/A"); }
+                    result.Add(reader.GetMySqlDateTime(4).ToString());
+                    result.Add(reader.GetMySqlDateTime(5).ToString());
+                    if (reader.GetString(6) != null) { result.Add(reader.GetString(6)); } else { result.Add("N/A"); }
+                }
+
+                Debug.WriteLine(" ----   RESULT QERY READER buscar casillero reader: ");
+                foreach (var item in result)
+                {
+                    Debug.WriteLine(" ---- " + item.ToString());
+                }
+            }
+            catch (MySqlException ex)
+            {
+                Debug.WriteLine(" ----   CATCH QERY READER buscar casillero reader: " + ex);
+            }
+
+            this.CloseConnection();
+
+            return result;
+        }
+
         //Execute query return Table
         public DataTable mostrarTabla(string query) {
             
