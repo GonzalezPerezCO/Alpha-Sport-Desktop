@@ -15,21 +15,21 @@ using System.Windows.Shapes;
 namespace AlphaSport.Vista
 {
     /// <summary>
-    /// Lógica de interacción para RegistroCasillero.xaml
+    /// Lógica de interacción para Historialcasilleros.xaml
     /// </summary>
-    public partial class RegistroCasillero : Window
+    public partial class Historialcasilleros : Window
     {
-        public RegistroCasillero()
+        public Historialcasilleros()
         {
             InitializeComponent();
         }
 
-        private void Window_Closed(object sender, EventArgs e)
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             Application.Current.Shutdown();
         }
 
-        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        private void Window_Closed(object sender, EventArgs e)
         {
             Application.Current.Shutdown();
         }

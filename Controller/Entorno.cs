@@ -112,7 +112,7 @@ namespace Deportes_WPF.Controller
             return dt;
         }
 
-        public DataTable horarioEstudiante(int codigo)
+        /*public DataTable horarioEstudiante(int codigo)
         {
             Debug.WriteLine("MOSTRAR TABLA HORARIO ESTUDIANTE");
             string query = "SELECT GROUP_CONCAT(dia, ',', hora) as horario from testudiantes INNER JOIN thorarios on testudiantes.codigo = "+codigo+" and testudiantes.email = thorarios.email GROUP by nombre;";
@@ -120,7 +120,7 @@ namespace Deportes_WPF.Controller
             Debug.WriteLine("RECIBIR READER EN TABLE");
 
             return dt;
-        }
+        }*/
 
         public DataTable mostrarCupos()
         {

@@ -34,8 +34,7 @@ namespace AlphaSport.Vista
             colorButtons();
         }
 
-        private void colorButtons() {
-            Btn0.Background = Brushes.Yellow;
+        private void colorButtons() {            
             Btn1.Background = Brushes.Yellow;
             Btn2.Background = Brushes.Yellow;
             Btn3.Background = Brushes.Yellow;
@@ -75,8 +74,8 @@ namespace AlphaSport.Vista
             Btn37.Background = Brushes.Yellow;
             Btn38.Background = Brushes.Yellow;
             Btn39.Background = Brushes.Yellow;
+            Btn40.Background = Brushes.Yellow;
 
-            Btn40.Background = Brushes.DodgerBlue;
             Btn41.Background = Brushes.DodgerBlue;
             Btn42.Background = Brushes.DodgerBlue;
             Btn43.Background = Brushes.DodgerBlue;
@@ -116,6 +115,7 @@ namespace AlphaSport.Vista
             Btn77.Background = Brushes.DodgerBlue;
             Btn78.Background = Brushes.DodgerBlue;
             Btn79.Background = Brushes.DodgerBlue;
+            Btn80.Background = Brushes.DodgerBlue;
         }
 
 

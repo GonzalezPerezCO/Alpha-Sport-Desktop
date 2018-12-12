@@ -22,7 +22,9 @@
                 <Button Name="btn1" Content="enviar" Margin="60 10" Foreground="Black" Background="LightGray" Click="btn1_Click" ></Button>
             </StackPanel>
         </Border>
-        <Label x:Name="lab1" Content="Nombre del Proyecto" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="36"  Height="Auto" Margin="-333,-145,-339,0" Width="972" />
-        <Label x:Name="lab2" Content="Periodo Académico" HorizontalContentAlignment="Right" Foreground="White" HorizontalAlignment="Left" Height="37" Margin="445,530,-460,-267" VerticalAlignment="Top" Width="315" FontWeight="Bold" FontSize="20"/>
+        <Label x:Name="lab1" Content="Nombre del Proyecto" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="48"  Height="Auto" Margin="-333,-145,-339,0" Width="972" />
+        <Label x:Name="lab2" Content="Periodo Académico" HorizontalContentAlignment="Right" Foreground="White" HorizontalAlignment="Right" Height="37" Margin="531,-260,-546,0" VerticalAlignment="Top" Width="315" FontWeight="Bold" FontSize="20"/>
+        <Image HorizontalAlignment="Left" Height="98" Margin="636,488,-565,-286" VerticalAlignment="Top" Width="229" Source="/GonzalezPerezCO;component/Recursos/escuela_ing.jpg"/>
+        <Image HorizontalAlignment="Left" Height="122" Margin="-564,460,0,-282" VerticalAlignment="Top" Width="207" Source="/GonzalezPerezCO;component/Recursos/sistemas.jpg"/>
     </Grid>
 </Window>
