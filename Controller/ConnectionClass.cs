@@ -123,7 +123,7 @@ namespace Deportes_WPF.Controller
                 Debug.WriteLine(" ----   RESULT QERY TRY recibido buscar casillero reader: " + query);
                 reader = cmd.ExecuteReader();
 
-                // consulta retorna: nombre, codigo, casillero, prestado, ingreso, salida, obervaciones
+                // consulta retorna: nombre, codigo, casillero, prestado, ingreso, salida, observaciones
                 while (reader.Read())
                 {
                     if (reader.GetString(0) != null) { result.Add(reader.GetString(0)); } else { result.Add("N/A"); }

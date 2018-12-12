@@ -90,7 +90,8 @@ namespace Deportes_WPF.Controller
             connection.queryAddEstuFull(query);
         }
 
-        public string fallas(int codigo) {
+        public string fallas(int codigo)
+        {
             string query = "UPDATE testudiantes SET fallas = fallas+1 WHERE codigo="+codigo+ "; SELECT fallas from testudiantes WHERE codigo="+codigo+"; ";
             string result;
             List<string> lista = connection.querySumarAsistencia(query);

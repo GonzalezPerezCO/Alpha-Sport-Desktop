@@ -162,7 +162,7 @@ namespace AlphaSport.Vista
 
                 if (lista.Capacity > 0)
                 {
-                    MessageBox.Show("Asignado a: " + lista[0] + ".\n" + "Código: " + lista[1] + ".\n" + "Casillero: " + lista[2] + ".\n" + "Entrada: " + lista[4] + ".\n" + "Salida: " + lista[5] + ".");
+                    MessageBox.Show("Asignado a: " + lista[0] + ".\n" + "Código: " + lista[1] + ".\n" + "Casillero: " + lista[2] + ".\n" + "Entrada: " + lista[4] + ".");
                 }
                 else
                 {
@@ -174,13 +174,14 @@ namespace AlphaSport.Vista
 
         private void Btn1_Click_1(object sender, RoutedEventArgs e)
         {
+            // consulta retorna: nombre, codigo, casillero, prestado, ingreso, salida, observaciones
             List<string> lista = entorno.buscarCasillero(Convert.ToInt32(codigo.Text));
 
             if (lista.Capacity > 0)
             {
                 // caso para mostrar datos del prestamo
 
-                MessageBox.Show("Asignado a: " + lista[0] + ".\n" + "Código: " + lista[1] + ".\n" + "Casillero: " + lista[2] + ".\n"+"Entrada: "+lista[4] + ".\n" + "Salida: " +lista[5]+".");
+                MessageBox.Show("Asignado a: " + lista[0] + ".\n" + "Código: " + lista[1] + ".\n" + "Casillero: " + lista[2] + ".\n"+"Entrada: "+lista[4] + ".");
             }
             else
             {
