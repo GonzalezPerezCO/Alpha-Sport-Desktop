@@ -250,6 +250,45 @@ namespace Deportes_WPF.Controller
             return result;
         }
 
+        //Execute query return Array casilleors disponibles
+        public List<string> listaUnicaReader(string query)
+        {
+
+            reader = null;
+            List<string> result = new List<string>();
+
+            Debug.WriteLine(" ----   QUERY READER OPEN CONNECTION casilleors disponibles reader");
+
+            this.OpenConnection();
+
+            cmd = new MySqlCommand(query, connection);
+
+            try
+            {
+                Debug.WriteLine(" ----   RESULT QERY TRY recibido casilleors disponibles reader: " + query);
+                reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    result.Add(reader.GetString(0));
+                }
+
+                Debug.WriteLine(" ----   RESULT QERY READER casilleors disponibles reader: ");
+                foreach (var item in result)
+                {
+                    Debug.WriteLine(" ---- " + item.ToString());
+                }
+            }
+            catch (MySqlException ex)
+            {
+                Debug.WriteLine(" ----   CATCH QERY READER casilleors disponibles reader: " + ex);
+            }
+
+            this.CloseConnection();
+
+            return result;
+        }
+
 
         //Query statament one string
         public List<string> querySumarAsistencia(string query)

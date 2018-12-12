@@ -308,5 +308,12 @@ namespace AlphaSport.Vista
                 MessageBox.Show("Esta disponible este casillero.");
             }
         }
+
+        private void Prestamo_Click(object sender, RoutedEventArgs e)
+        {
+            Window prestamos = new ventanaPrestamosCas();
+            prestamos.Show();
+            //this.Hide();
+        }
     }
 }

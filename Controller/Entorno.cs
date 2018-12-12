@@ -78,6 +78,12 @@ namespace Deportes_WPF.Controller
             return connection.asistenciaReader(query);
         }
 
+        public List<string> disponiblesCasilleros()
+        {
+            string query = "SELECT GROUP_CONCAT(id) FROM tcasilleros WHERE disponible = 1";
+            return connection.listaUnicaReader(query);
+        }
+
         public List<string> buscarCasillero(int codigo)
         {
             string query = "SELECT CONCAT(nombre, ' ', apellido), codigo, id_cas , prestado, ingreso, salida, tcasilleroXestu.observaciones  FROM tcasilleroXestu INNER JOIN testudiantes on testudiantes.codigo = " + codigo+" and testudiantes.email = tcasilleroXestu.email;";
