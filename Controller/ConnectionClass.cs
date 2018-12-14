@@ -106,48 +106,29 @@ namespace Deportes_WPF.Controller
             return result;
         }
 
-
-        internal List<string> buscarCasilleroReader(string query)
+        //Buscar estudiante
+        public bool buscarEstudiante(int codigo)
         {
-            reader = null;
-            List<string> result = new List<string>();
+            bool result = false;
 
-            Debug.WriteLine(" ----   QUERY READER OPEN CONNECTION buscar casillero reader");
+            string queryEstu = "select codigo from testudiantes where codigo= " + codigo + ";";
+
+            Debug.WriteLine(" ----  BUSCAR ESTUDIANTE");
 
             this.OpenConnection();
 
-            cmd = new MySqlCommand(query, connection);
+            cmd = new MySqlCommand(queryEstu, connection);
+            reader = cmd.ExecuteReader();
 
-            try
+
+            if (reader.Read())
             {
-                Debug.WriteLine(" ----   RESULT QERY TRY recibido buscar casillero reader: " + query);
-                reader = cmd.ExecuteReader();
-
-                // consulta retorna: nombre, codigo, casillero, prestado, ingreso, salida, observaciones
-                while (reader.Read())
-                {
-                    if (reader.GetString(0) != null) { result.Add(reader.GetString(0)); } else { result.Add("N/A"); }
-                    if (reader.GetString(1) != null) { result.Add(reader.GetString(1)); } else { result.Add("N/A"); }
-                    if (reader.GetString(2) != null) { result.Add(reader.GetString(2)); } else { result.Add("N/A"); }
-                    if (reader.GetString(3) != null) { result.Add(reader.GetString(3)); } else { result.Add("N/A"); }
-                    result.Add(reader.GetMySqlDateTime(4).ToString());
-                    result.Add(reader.GetMySqlDateTime(5).ToString());
-                    if (reader.GetString(6) != null) { result.Add(reader.GetString(6)); } else { result.Add("N/A"); }
-                }
-
-                Debug.WriteLine(" ----   RESULT QERY READER buscar casillero reader: ");
-                foreach (var item in result)
-                {
-                    Debug.WriteLine(" ---- " + item.ToString());
-                }
+                result = true;
+                Debug.WriteLine(" ----   result: " + result.ToString());
             }
-            catch (MySqlException ex)
-            {
-                Debug.WriteLine(" ----   CATCH QERY READER buscar casillero reader: " + ex);
-            }
-
             this.CloseConnection();
 
+            Debug.WriteLine(" ----   result: retorna");
             return result;
         }
 
@@ -186,8 +167,8 @@ namespace Deportes_WPF.Controller
             return dt;
         }
 
-        //Login
-        public void queryAddEstuFull(string query)
+        //execute one query
+        public void queryExecute(string query)
         {
             Debug.WriteLine(" ----   Query add estu full");
             this.OpenConnection();
@@ -197,6 +178,89 @@ namespace Deportes_WPF.Controller
             this.CloseConnection();
 
             Debug.WriteLine(" ----   FIN; Query add estu full");            
+        }
+
+        public List<string> buscarCasilleroReader(string query)
+        {
+            reader = null;
+            List<string> result = new List<string>();
+
+            Debug.WriteLine(" ----   QUERY READER OPEN CONNECTION buscar_casillero reader");
+
+            this.OpenConnection();
+
+            cmd = new MySqlCommand(query, connection);
+
+            try
+            {
+                Debug.WriteLine(" ----   RESULT QERY TRY recibido buscar_casillero reader: " + query);
+                reader = cmd.ExecuteReader();
+
+                // Lista: nombre, codigo, casillero, disponible{0:no, 1:si}, entrada, salida
+
+                while (reader.Read())
+                {
+                    if (reader.GetString(0) != null) { result.Add(reader.GetString(0)); } else { result.Add("N/A"); }
+                    if (reader.GetString(1) != null) { result.Add(Convert.ToString(reader.GetString(1))); } else { result.Add("0"); }
+                    if (reader.GetString(2) != null) { result.Add(Convert.ToString(reader.GetString(2))); } else { result.Add("0"); }
+                    if (reader.GetString(3) != null) { result.Add(Convert.ToString(reader.GetBoolean(3))); } else { result.Add("0"); }
+                    result.Add(reader.GetMySqlDateTime(4).ToString());
+                    result.Add(reader.GetMySqlDateTime(5).ToString());
+                }
+
+                Debug.WriteLine(" ----   RESULT QERY READER buscar_casillero reader: ");
+                foreach (var item in result)
+                {
+                    Debug.WriteLine(" ---- " + item.ToString());
+                }
+            }
+            catch (MySqlException ex)
+            {
+                Debug.WriteLine(" ----   CATCH QERY READER buscar_casillero reader: " + ex);
+            }
+
+            this.CloseConnection();
+
+            return result;
+        }
+
+
+        public List<string> casillerosDisponiblesReader(string query)
+        {
+            reader = null;
+            List<string> result = new List<string>();
+
+            Debug.WriteLine(" ----   QUERY READER OPEN CONNECTION casilleros_disp reader");
+
+            this.OpenConnection();
+
+            cmd = new MySqlCommand(query, connection);
+
+            try
+            {
+                Debug.WriteLine(" ----   RESULT QERY TRY recibido casilleros_disp reader: " + query);
+                reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    if (reader.GetString(0) != null) { result.Add(reader.GetString(0)); } else { result.Add("N/A"); }
+
+                }
+
+                Debug.WriteLine(" ----   RESULT QERY READER casilleros_disp reader: ");
+                foreach (var item in result)
+                {
+                    Debug.WriteLine(" ---- " + item.ToString());
+                }
+            }
+            catch (MySqlException ex)
+            {
+                Debug.WriteLine(" ----   CATCH QERY READER casilleros_disp reader: " + ex);
+            }
+
+            this.CloseConnection();
+
+            return result;
         }
 
 

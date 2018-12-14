@@ -2,6 +2,7 @@
 using Deportes_WPF.Controller;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,20 +24,30 @@ namespace AlphaSport.Vista
     {
 
         private Entorno entorno;
+        private List<Button> botones; // lista de bontones
+        private List<string> infoBotones; // lista de datos botones {0:id_c, 1:diposnible, 2:seccion} 
 
 
         public Casilleros()
-        {   
+        {
             InitializeComponent();
             entorno = Entorno.GetInstance();
             lab1.Content = entorno.PROYECTO;
+            //listaBotones();
 
+            actualizarColores();
             codigo.Focus();
+        }
+
+        private void actualizarColores()
+        {
+            List<string> infoBotones = entorno.infoCasilleros();
+            separarIdSeccion(infoBotones);
             colorButtons();
         }
 
-        private void colorButtons() {  
-            
+        private void colorButtons()
+        {
 
             Btn1.Background = Brushes.HotPink;
             Btn2.Background = Brushes.HotPink;
@@ -119,11 +130,10 @@ namespace AlphaSport.Vista
             Btn78.Background = Brushes.DodgerBlue;
             Btn79.Background = Brushes.DodgerBlue;
             Btn80.Background = Brushes.DodgerBlue;
+        }
 
-            /*
-             
-             List<Button> botones = new List<Button>();
-            
+        private void listaBotones()
+        {
             botones.Add(Btn1);
             botones.Add(Btn2);
             botones.Add(Btn3);
@@ -164,7 +174,7 @@ namespace AlphaSport.Vista
             botones.Add(Btn38);
             botones.Add(Btn39);
             botones.Add(Btn40);
-                    
+
             botones.Add(Btn41);
             botones.Add(Btn42);
             botones.Add(Btn43);
@@ -205,17 +215,8 @@ namespace AlphaSport.Vista
             botones.Add(Btn78);
             botones.Add(Btn79);
             botones.Add(Btn80);
-
-            for (int i = 0; i < 40; i++)
-            {
-                // aca colocar para revisar el estado de todos
-            }
-             
-             */
-
         }
-
-
+               
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -243,20 +244,49 @@ namespace AlphaSport.Vista
 
             main.Show();
             this.Hide();
-        }       
+        }
+
+
+        private void separarIdSeccion(List<string> lista)
+        {
+            // cambiar posicion 5 de lista: "d1,h1,d2,h2,d3,h3" por ["d1","d2","d3","h1","h2","h3"]
+
+            string cadena = lista[0];
+
+            lista = new List<string>();
+
+
+            string[] separadas = cadena.Split(',');
+
+            foreach (var item in separadas)
+            {
+                lista.Add(item);
+            }
+
+            for (int i = 0; i < lista.Count; i++)
+            {
+                Debug.WriteLine("<<< " + i + " sep ID SECCION: " + lista[i]);
+            }
+
+        }
 
         private void Buscar_Click(object sender, RoutedEventArgs e)
         {
+
+            actualizarColores();
+
+
             if (codigo.Text == "")
             {
                 MessageBox.Show("Escriba un código para buscar!");
             }
             else
             {
-                // Lista: 0:nombre, 1:codigo, 2:casillero
-                List<string> lista = entorno.buscarCasillero(Convert.ToInt32(codigo.Text));
+                // Lista: nombre, codigo, casillero, disponible{0:no, 1:si}, entrada, salida
+                List<string> lista = entorno.buscarCasilleroEstu(Convert.ToInt32(codigo.Text));
 
-                if (lista.Capacity > 0)
+
+                if (lista.Count > 0)
                 {
                     cambiarEstado(Btn1, true, false);
                     MessageBox.Show("Asignado a: " + lista[0] + ".\n" + "Código: " + lista[1] + ".\n" + "Casillero: " + lista[2] + ".\n" + "Entrada: " + lista[4] + ".");
@@ -267,9 +297,11 @@ namespace AlphaSport.Vista
                     MessageBox.Show("No se encontraron coincidencias.");
                 }
             }
+
         }
 
-        private void cambiarEstado(Button btn, bool genero, bool disp) {
+        private void cambiarEstado(Button btn, bool genero, bool disp)
+        {
             // boton, genero: true F y false M, disponible True o false
 
             if (disp)
@@ -290,30 +322,33 @@ namespace AlphaSport.Vista
 
         }
 
-        private void Btn1_Click(object sender, RoutedEventArgs e)
+        private void Prestamo_Click(object sender, RoutedEventArgs e)
         {
-            // consulta retorna: nombre, codigo, casillero, prestado, ingreso, salida, observaciones
-            List<string> lista = entorno.buscarCasilleroID(1);
+            ventanaPrestamosCas prestamos = ventanaPrestamosCas.GetInstance();            
+            //this.Hide();
+            prestamos.Show();
+            //this.Hide();
+        }
 
-            if (lista.Capacity > 0)
+        private void eventoClick(object sender, RoutedEventArgs e)
+        {
+            Button objeto = e.Source as Button;
+            // Lista: nombre, codigo, casillero, disponible{0:no, 1:si}, entrada, salida            
+            List<string> lista = entorno.buscarCasilleroID(Convert.ToInt32(objeto.Tag));
+
+            if (lista.Count > 0)
             {
                 // caso para mostrar datos del prestamo
-                cambiarEstado(Btn1, true, false);
+                cambiarEstado(objeto, true, false);
                 MessageBox.Show("Asignado a: " + lista[0] + ".\n" + "Código: " + lista[1] + ".\n" + "Casillero: " + lista[2] + ".\n" + "Entrada: " + lista[4] + ".");
             }
             else
             {
                 // caso para agregar el prestamo
-                cambiarEstado(Btn1, true, true);
+                cambiarEstado(objeto, true, true);
                 MessageBox.Show("Esta disponible este casillero.");
             }
         }
 
-        private void Prestamo_Click(object sender, RoutedEventArgs e)
-        {
-            Window prestamos = new ventanaPrestamosCas();
-            prestamos.Show();
-            //this.Hide();
-        }
     }
 }

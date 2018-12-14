@@ -85,7 +85,7 @@ namespace Deportes_WPF.Vista
                 //0: nombre, 1: carrera, 2: semestre, 3: fallas, 4: codigo, 5: dia1,hora1,dia2,hora2,dia3,hora3
                 List<string> lista = entorno.asistencia(Convert.ToInt32(codigo));
 
-                if (lista.Capacity > 0)
+                if (lista.Count > 0)
                 {
                     separarDias(lista);  // descompone la posicion 5 y agrega los 6 elementos que se necesitan en el orden que se necesitan     
 

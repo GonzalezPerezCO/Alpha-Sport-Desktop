@@ -80,26 +80,44 @@ namespace Deportes_WPF.Controller
 
         public List<string> disponiblesCasilleros()
         {
-            string query = "SELECT GROUP_CONCAT(id) FROM tcasilleros WHERE disponible = 1";
+            string query = "SELECT GROUP_CONCAT(id_c) FROM tcasilleros WHERE disponible = 1";
             return connection.listaUnicaReader(query);
         }
 
-        public List<string> buscarCasillero(int codigo)
+        public List<string> buscarCasilleroEstu(int codigo)
         {
-            string query = "SELECT CONCAT(nombre, ' ', apellido), codigo, id_cas , prestado, ingreso, salida, tcasilleroXestu.observaciones  FROM tcasilleroXestu INNER JOIN testudiantes on testudiantes.codigo = " + codigo+" and testudiantes.email = tcasilleroXestu.email;";
+            string query = "SELECT CONCAT(nombre, ' ', apellido), tcasilleros.codigo, id_c , disponible, entrada, salida FROM tcasilleros JOIN testudiantes on testudiantes.codigo =  tcasilleros.codigo WHERE tcasilleros.codigo = "+codigo+ " LIMIT 1;";
             return connection.buscarCasilleroReader(query);
         }
 
-        public List<string> buscarCasilleroID(int codigo)
+        public List<string> buscarCasilleroID(int casillero)
         {
-            string query = "SELECT CONCAT(nombre, ' ', apellido), codigo, id_cas , prestado, ingreso, salida, tcasilleroXestu.observaciones FROM tcasilleroXestu INNER JOIN testudiantes on testudiantes.email = tcasilleroXestu.email WHERE id_cas="+codigo+";";
+            string query = "SELECT CONCAT(nombre, ' ', apellido), tcasilleros.codigo, id_c , disponible, entrada, salida FROM tcasilleros JOIN testudiantes on testudiantes.codigo =  tcasilleros.codigo WHERE tcasilleros.id_c = "+casillero+" LIMIT 1;";
             return connection.buscarCasilleroReader(query);
+        }
+
+        public List<string> infoCasilleros()
+        {
+            string query = "SELECT GROUP_CONCAT(id_c, ',', disponible, ',', seccion) FROM tcasilleros WHERE disponible = 1";
+            return connection.casillerosDisponiblesReader(query);
+        }
+
+        public void agregarEstudianteCasillero(int casillero, int codigo)
+        {
+            string query = "UPDATE tcasilleros SET disponible = 0, codigo = "+codigo+", entrada =  NOW() WHERE id_c = "+casillero+";";
+            connection.queryExecute(query);
+        }
+
+        public void quitarEstudianteCasillero(int codigo)
+        {
+            string query = "UPDATE tcasilleros SET disponible = 1, codigo = NULL, entrada = '2018-01-01 00:00:00', salida = '2018-01-01 00:00:00' WHERE codigo = " + codigo + ";";
+            connection.queryExecute(query);
         }
 
         public void agregarEstudiante(string nombre, string apellido, int codigo, string carrera, int semestre, string email, string observacion)
         {
             string query = "call addEstudFull('" + nombre + "', '" + apellido + "', " + codigo + ", '" + carrera + "', " + semestre + ", '" + email + "', '" + observacion + "');";
-            connection.queryAddEstuFull(query);
+            connection.queryExecute(query);
         }
 
         public string fallas(int codigo)
@@ -151,8 +169,8 @@ namespace Deportes_WPF.Controller
             return dt;
         }       
 
-        public bool buscarEstudiante() {
-            return false;
+        public bool buscarEstudiante(int codigo) {
+            return connection.buscarEstudiante(codigo);
         }
         
         public bool cambiarHorario()

@@ -23,18 +23,30 @@ namespace AlphaSport.Vista
     {
 
         private Entorno entorno;
+        private static ventanaPrestamosCas instance = null;
 
 
-        public ventanaPrestamosCas()
+        private ventanaPrestamosCas()
         {
             InitializeComponent();
             entorno = Entorno.GetInstance();
+
+            codigo.Focus();
 
             List<string> lista = separarIds(entorno.disponiblesCasilleros());
 
             cmbox.ItemsSource = lista;
 
         }
+
+        public static ventanaPrestamosCas GetInstance()
+        {
+            if (instance == null)
+                instance = new ventanaPrestamosCas();
+
+            return instance;
+        }
+
 
         private void Window_Closed(object sender, EventArgs e)
         {
@@ -46,11 +58,7 @@ namespace AlphaSport.Vista
             Application.Current.Shutdown();
         }
 
-        private void disponibles() {
-
-        }
-
-        private List<string> separarIds(List<string> lista)
+         private List<string> separarIds(List<string> lista)
         {
             // a,b,c,...,x
 
@@ -65,9 +73,55 @@ namespace AlphaSport.Vista
                 Debug.WriteLine("<< id a lista: "+item);
             }
 
-
-
             return result;
+        }
+
+        private void Btn1_Click(object sender, RoutedEventArgs e)
+        {
+            if (codigo.Text == "")
+            {
+                MessageBox.Show("Ingrese un número de carnet!");
+            }
+            else
+            {
+                // Lista: nombre, codigo, casillero, disponible{0:no, 1:si}, entrada, salida
+                int codigoEs = Convert.ToInt32(codigo.Text);
+                int codigoCas = Convert.ToInt32(cmbox.SelectedValue);
+                List<string> busCod = entorno.buscarCasilleroEstu(codigoEs);
+                bool estudiante = entorno.buscarEstudiante(codigoEs); // false: no existe en testudiantes
+
+                if (busCod.Count != 0)
+                {
+                    MessageBox.Show("Estudiante encontrado! Casillero liberado.");
+                    Debug.WriteLine("<<< Prestamo liberado: codigoEst = " + codigoEs + ".");
+                    entorno.quitarEstudianteCasillero(codigoEs);
+                
+                }
+                else if (!estudiante)
+                {
+                    MessageBox.Show("Estudiante no encontrado!");
+                }
+                else if (estudiante)
+                {
+                    entorno.agregarEstudianteCasillero(codigoCas, codigoEs);
+                    Debug.WriteLine("<<< Prestamo: id_c = " + codigoCas + ", codigoEst = " + codigoEs + ".");
+                    MessageBox.Show("Casillero asignado!");
+                }
+
+                limpiar();
+            }
+    
+        }
+
+        private void Btn2_Click(object sender, RoutedEventArgs e)
+        {
+            limpiar();           
+        }
+
+        private void limpiar() {
+            codigo.Text = "";
+            cmbox.SelectedValue = null;
+            this.Hide();
         }
     }
 }
