@@ -98,7 +98,8 @@ namespace Deportes_WPF.Controller
 
         public List<string> infoCasilleros()
         {
-            string query = "SELECT GROUP_CONCAT(id_c, ',', disponible, ',', seccion) FROM tcasilleros WHERE disponible = 1";
+            // unico string con: id_c, disponible, seccion
+            string query = "SELECT GROUP_CONCAT(id_c, ',', disponible, ',', seccion) FROM tcasilleros ORDER by id_c;";
             return connection.casillerosDisponiblesReader(query);
         }
 
