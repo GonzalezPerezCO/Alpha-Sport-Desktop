@@ -140,6 +140,8 @@ namespace AlphaSport.Vista
         }
 
         private void ocultar() {
+            Casilleros casilleros = Casilleros.GetInstance();
+            casilleros.Show();
             this.Hide();
         }
 

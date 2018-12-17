@@ -24,11 +24,12 @@ namespace AlphaSport.Vista
     {
 
         private Entorno entorno;
+        private static Casilleros instance;
         private List<Button> botones = new List<Button>();     // lista de bontones
         private List<List<string>> infoBotonez = new List<List<string>>(); // lista de datos botones {0:id_c, 1:diposnible, 2:seccion} 
 
 
-        public Casilleros()
+        private Casilleros()
         {
             InitializeComponent();
             entorno = Entorno.GetInstance();
@@ -39,7 +40,15 @@ namespace AlphaSport.Vista
 
             codigo.Focus();
         }
-        
+
+        public static Casilleros GetInstance()
+        {
+            if (instance == null)
+                instance = new Casilleros();
+
+            return instance;
+        }
+
         private void listaBotones()
         {
             botones.Add(Btn1);
@@ -248,10 +257,9 @@ namespace AlphaSport.Vista
         
         private void Prestamo_Click(object sender, RoutedEventArgs e)
         {
-            ventanaPrestamosCas prestamos = ventanaPrestamosCas.GetInstance();            
-            //this.Hide();
+            ventanaPrestamosCas prestamos = ventanaPrestamosCas.GetInstance();                        
             prestamos.Show();
-            //this.Hide();
+            this.Hide();
         }
 
         private void eventoClick(object sender, RoutedEventArgs e)
