@@ -134,6 +134,9 @@ namespace AlphaSport.Vista
 
         private void listaBotones()
         {
+            botones = new List<Button>();
+            infoBotones = new List<string>();
+
             botones.Add(Btn1);
             botones.Add(Btn2);
             botones.Add(Btn3);
@@ -288,25 +291,29 @@ namespace AlphaSport.Vista
 
                 if (lista.Count > 0)
                 {
-                    cambiarEstado(Btn1, true, false);
+                    cambiarEstado(Btn1, false);
                     MessageBox.Show("Asignado a: " + lista[0] + ".\n" + "Código: " + lista[1] + ".\n" + "Casillero: " + lista[2] + ".\n" + "Entrada: " + lista[4] + ".");
                 }
                 else
                 {
-                    cambiarEstado(Btn1, true, true);
+                    cambiarEstado(Btn1, true);
                     MessageBox.Show("No se encontraron coincidencias.");
                 }
             }
 
         }
 
-        private void cambiarEstado(Button btn, bool genero, bool disp)
+        private void cambiarEstado(Button btn, bool disp)
         {
-            // boton, genero: true F y false M, disponible True o false
+            // boton, disponible True o false            
+            // en TAG: genero: m y h
+
+                                 // [0]id_button, [1]genero
+            string[] tagButton = Convert.ToString(btn.Tag).Split(',');            
 
             if (disp)
             {
-                if (genero)
+                if (tagButton[1]=="m")
                 {
                     btn.Background = Brushes.HotPink;
                 }
@@ -333,22 +340,26 @@ namespace AlphaSport.Vista
         private void eventoClick(object sender, RoutedEventArgs e)
         {
             Button objeto = e.Source as Button;
-            // Lista: nombre, codigo, casillero, disponible{0:no, 1:si}, entrada, salida            
-            List<string> lista = entorno.buscarCasilleroID(Convert.ToInt32(objeto.Tag));
+            // Lista: nombre, codigo, casillero, disponible{0:no, 1:si}, entrada, salida  
+
+                                                // [0]id_button, [1]genero
+            string[] tagButton = Convert.ToString(objeto.Tag).Split(',');
+            List<string> lista = entorno.buscarCasilleroID(Convert.ToInt32(tagButton[0]));
 
             if (lista.Count > 0)
             {
                 // caso para mostrar datos del prestamo
-                cambiarEstado(objeto, true, false);
+                cambiarEstado(objeto, false);
                 MessageBox.Show("Asignado a: " + lista[0] + ".\n" + "Código: " + lista[1] + ".\n" + "Casillero: " + lista[2] + ".\n" + "Entrada: " + lista[4] + ".");
             }
             else
             {
                 // caso para agregar el prestamo
-                cambiarEstado(objeto, true, true);
+                cambiarEstado(objeto, true);
                 MessageBox.Show("Esta disponible este casillero.");
             }
-        }
+        }      
+
 
     }
 }

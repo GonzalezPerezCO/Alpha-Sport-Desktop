@@ -24,7 +24,7 @@ namespace AlphaSport.Vista
 
         private Entorno entorno;
         private static ventanaPrestamosCas instance = null;
-
+        private static List<string> lista = new List<string>();
 
         private ventanaPrestamosCas()
         {
@@ -33,11 +33,9 @@ namespace AlphaSport.Vista
 
             codigo.Focus();
 
-            List<string> lista = separarIds(entorno.disponiblesCasilleros());
-
-            cmbox.ItemsSource = lista;
-
-        }
+            lista = separarIds(entorno.disponiblesCasilleros());
+            actualizarListaDisp();
+        }        
 
         public static ventanaPrestamosCas GetInstance()
         {
@@ -58,7 +56,7 @@ namespace AlphaSport.Vista
             Application.Current.Shutdown();
         }
 
-         private List<string> separarIds(List<string> lista)
+        private List<string> separarIds(List<string> lista)
         {
             // a,b,c,...,x
 
@@ -70,7 +68,7 @@ namespace AlphaSport.Vista
             foreach (var item in separadas)
             {
                 result.Add(item);
-                Debug.WriteLine("<< id a lista: "+item);
+                Debug.WriteLine("<< id a lista: " + item);
             }
 
             return result;
@@ -92,10 +90,19 @@ namespace AlphaSport.Vista
 
                 if (busCod.Count != 0)
                 {
-                    MessageBox.Show("Estudiante encontrado! Casillero liberado.");
-                    Debug.WriteLine("<<< Prestamo liberado: codigoEst = " + codigoEs + ".");
-                    entorno.quitarEstudianteCasillero(codigoEs);
-                
+                    if (cmbox.SelectedItem != null)
+                    {
+                        MessageBox.Show("El estudiante ya tiene un casillero asignado!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Estudiante encontrado! Casillero liberado.");
+                        Debug.WriteLine("<<< Prestamo liberado: codigoEst = " + codigoEs + ".");
+                        entorno.quitarEstudianteCasillero(codigoEs);
+                        actualizarListaDisp();
+                    }
+
+
                 }
                 else if (!estudiante)
                 {
@@ -103,25 +110,44 @@ namespace AlphaSport.Vista
                 }
                 else if (estudiante)
                 {
-                    entorno.agregarEstudianteCasillero(codigoCas, codigoEs);
-                    Debug.WriteLine("<<< Prestamo: id_c = " + codigoCas + ", codigoEst = " + codigoEs + ".");
-                    MessageBox.Show("Casillero asignado!");
+                    if (cmbox.Text == "")
+                    {
+                        MessageBox.Show("Agregue un casillero primero.");
+                    }
+                    else
+                    {
+                        entorno.agregarEstudianteCasillero(codigoCas, codigoEs);
+                        Debug.WriteLine("<<< Prestamo: id_c = " + codigoCas + ", codigoEst = " + codigoEs + ".");
+                        MessageBox.Show("Casillero asignado!");
+                        actualizarListaDisp();
+                    }
                 }
-
-                limpiar();
             }
-    
+
+            limpiar();
         }
 
         private void Btn2_Click(object sender, RoutedEventArgs e)
         {
-            limpiar();           
+            limpiar();
+            ocultar();
         }
 
         private void limpiar() {
             codigo.Text = "";
             cmbox.SelectedValue = null;
+            //this.Hide();
+        }
+
+        private void ocultar() {
             this.Hide();
+        }
+
+        private void actualizarListaDisp()
+        {
+            lista = separarIds(entorno.disponiblesCasilleros());
+            cmbox.ItemsSource = lista;
+            ocultar();
         }
     }
 }
