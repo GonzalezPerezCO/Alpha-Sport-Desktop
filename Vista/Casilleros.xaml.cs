@@ -25,7 +25,7 @@ namespace AlphaSport.Vista
 
         private Entorno entorno;
         private List<Button> botones = new List<Button>();     // lista de bontones
-        private List<string> infoBotones = new List<string>(); // lista de datos botones {0:id_c, 1:diposnible, 2:seccion} 
+        private List<List<string>> infoBotonez = new List<List<string>>(); // lista de datos botones {0:id_c, 1:diposnible, 2:seccion} 
 
 
         public Casilleros()
@@ -127,29 +127,45 @@ namespace AlphaSport.Vista
 
         public void actualizarColores()
         {
-            string[] tagButton = null;
-            
-            infoBotones = separarIdSeccion(entorno.infoCasilleros());  // lista: [i+0]id_c,  [i+1]disponible, [i+2]seccion  
+            string[] tagButton = null; infoBotonez = null;
+
+            infoBotonez = separarIdSeccion(entorno.infoCasilleros());  // lista: en pos [i] esta [0]disponible, [1]seccion  
+
+            List<string> disponibles = infoBotonez[0];
+            List<string> secciones = infoBotonez[1];
+
+
+            Debug.WriteLine("tamaños: disponibles =" + disponibles.Count + " , secciones= " + secciones.Count);
 
             for (int i = 0; i < botones.Count; i++)
             {
                 tagButton = Convert.ToString(botones[i].Tag).Split(','); // convertir a string[id_c, seccion]
 
-                if (infoBotones[i + 1] == "0")
+                Debug.WriteLine(" ------- i=" + i);
+                Debug.WriteLine("disponible= X"+ ", seccion= "+tagButton[1]);                
+                Debug.WriteLine("disponible= " + disponibles[i]+ ", seccion= "+ secciones[i]);
+
+                if (disponibles[i] == "False")
                 {
-                    botones[i].Background = Brushes.LightGray;                    
+                    botones[i].Background = Brushes.LightGray;
+                    Debug.WriteLine("*** if == False");
                 }
                 else
                 {
-                    if (infoBotones[i+2] == "mujeres")
+                    if (secciones[i] == "mujeres")
                     {
                         botones[i].Background = Brushes.HotPink;
+                        Debug.WriteLine("**** mujeres");
                     }
                     else
                     {
                         botones[i].Background = Brushes.DodgerBlue;
+                        Debug.WriteLine("**** NO mujeres");
                     }
+                    
                 }
+
+                Debug.WriteLine(" -------------------------------");
             }
         }
 
@@ -181,27 +197,27 @@ namespace AlphaSport.Vista
         }
 
 
-        private List<string> separarIdSeccion(List<string> entrada)
+        private List<List<string>> separarIdSeccion(List<List<string>> entrada)
         {
-            // lista: [i+0]id_c,  [i+1]disponible, [i+2]seccion
-            string cadena = entrada[0];
+            // lista[0]: [0]disponible, 
+            // lista[1]: [0]seccion
+            List<string> cadenaDisp = entrada[0];
+            List<string> cadenaSecc = entrada[1];
 
-            List<string> lista = new List<string>();
+            List<List<string>> lista = new List<List<string>>();            
 
-            string[] separadas = cadena.Split(',');
-
-            foreach (var item in separadas)
-            {
-                lista.Add(item);
-            }
+            lista.Add(cadenaDisp);
+            lista.Add(cadenaSecc);
 
             for (int i = 0; i < lista.Count; i++)
             {
-                Debug.WriteLine("<<< " + i + " sep ID SECCION: " + lista[i]);
+                for (int j = 0; j < lista[i].Count; j++)
+                {
+                    Debug.WriteLine(" << i= "+i +", j="+j+" valor= "+lista[i][j]);
+                }
             }
 
             return lista;
-
         }
 
         private void Buscar_Click(object sender, RoutedEventArgs e)
@@ -229,32 +245,7 @@ namespace AlphaSport.Vista
 
         }
 
-        private void cambiarEstado(Button btn, bool disp)
-        {
-            // boton, disponible True o false            
-            // en TAG: genero: m y h
-
-                                 // [0]id_button, [2]genero
-            string[] tagButton = Convert.ToString(btn.Tag).Split(',');            
-
-            if (disp)
-            {
-                if (tagButton[1]=="m")
-                {
-                    btn.Background = Brushes.HotPink;
-                }
-                else
-                {
-                    btn.Background = Brushes.DodgerBlue;
-                }
-            }
-            else
-            {
-                btn.Background = Brushes.LightGray;
-            }
-
-        }
-
+        
         private void Prestamo_Click(object sender, RoutedEventArgs e)
         {
             ventanaPrestamosCas prestamos = ventanaPrestamosCas.GetInstance();            
@@ -272,6 +263,8 @@ namespace AlphaSport.Vista
             string[] tagButton = Convert.ToString(objeto.Tag).Split(',');
             List<string> lista = entorno.buscarCasilleroID(Convert.ToInt32(tagButton[0]));
 
+
+
             if (lista.Count > 0)
             {
                 // caso para mostrar datos del prestamo                
@@ -280,7 +273,7 @@ namespace AlphaSport.Vista
             else
             {
                 // caso para agregar el prestamo                
-                MessageBox.Show("Esta disponible este casillero.");
+                MessageBox.Show("El casillero "+tagButton[0]+" disponible este casillero.");
             }
         }
 

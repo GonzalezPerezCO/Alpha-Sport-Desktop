@@ -208,7 +208,7 @@ namespace Deportes_WPF.Controller
                     result.Add(reader.GetMySqlDateTime(5).ToString());
                 }
 
-                Debug.WriteLine(" ----   RESULT QERY READER buscar_casillero reader: ");
+                Debug.WriteLine(" ----   RESULT QERY READER buscar_casillero reader: tamaño "+result.Count);
                 foreach (var item in result)
                 {
                     Debug.WriteLine(" ---- " + item.ToString());
@@ -225,30 +225,33 @@ namespace Deportes_WPF.Controller
         }
 
 
-        public List<string> casillerosDisponiblesReader(string query)
+        public List<List<string>> casillerosDisponiblesReader(string queryDisp, string querySecc)
         {
             reader = null;
-            List<string> result = new List<string>();
+            List<List<string>> result = new List<List<string>>();
+
+            List<string> disp = new List<string>();
+            List<string> secc = new List<string>();
 
             Debug.WriteLine(" ----   QUERY READER OPEN CONNECTION casilleros_disp reader");
 
             this.OpenConnection();
 
-            cmd = new MySqlCommand(query, connection);
+            cmd = new MySqlCommand(queryDisp, connection);
 
             try
             {
-                Debug.WriteLine(" ----   RESULT QERY TRY recibido casilleros_disp reader: " + query);
+                Debug.WriteLine(" ----   RESULT QERY TRY recibido casilleros_disp reader: " + queryDisp);
                 reader = cmd.ExecuteReader();
 
                 while (reader.Read())
                 {
-                    if (reader.GetString(0) != null) { result.Add(reader.GetString(0)); } else { result.Add("N/A"); }
+                   disp.Add(reader.GetString(0));
 
                 }
 
                 Debug.WriteLine(" ----   RESULT QERY READER casilleros_disp reader: ");
-                foreach (var item in result)
+                foreach (var item in disp)
                 {
                     Debug.WriteLine(" ---- " + item.ToString());
                 }
@@ -259,6 +262,44 @@ namespace Deportes_WPF.Controller
             }
 
             this.CloseConnection();
+            this.OpenConnection();
+
+            cmd = new MySqlCommand(querySecc, connection);
+
+            try
+            {
+                Debug.WriteLine(" ----   RESULT QERY TRY recibido casilleros_disp reader: " + querySecc);
+                reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    secc.Add(reader.GetString(0));
+
+                }
+
+                Debug.WriteLine(" ----   RESULT QERY READER casilleros_disp reader: ");
+                foreach (var item in secc)
+                {
+                    Debug.WriteLine(" ---- " + item.ToString());
+                }
+            }
+            catch (MySqlException ex)
+            {
+                Debug.WriteLine(" ----   CATCH QERY READER casilleros_disp reader: " + ex);
+            }
+
+            this.CloseConnection();
+
+            result.Add(disp);
+            result.Add(secc);
+
+            foreach (var item in result)
+            {
+                foreach (var item2 in item)
+                {
+                    Debug.WriteLine("<<<< Info result: "+item2);
+                }
+            }
 
             return result;
         }

@@ -96,11 +96,12 @@ namespace Deportes_WPF.Controller
             return connection.buscarCasilleroReader(query);
         }
 
-        public List<string> infoCasilleros()
+        public List<List<string>> infoCasilleros()
         {
             // unico string con: id_c, disponible, seccion
-            string query = "SELECT GROUP_CONCAT(id_c, ',', disponible, ',', seccion) FROM tcasilleros ORDER by id_c;";
-            return connection.casillerosDisponiblesReader(query);
+            string queryDisp = "SELECT disponible FROM tcasilleros ORDER by id_c;";
+            string querySecc = "SELECT seccion FROM tcasilleros ORDER by id_c;";
+            return connection.casillerosDisponiblesReader(queryDisp, querySecc);
         }
 
         public void agregarEstudianteCasillero(int casillero, int codigo)
