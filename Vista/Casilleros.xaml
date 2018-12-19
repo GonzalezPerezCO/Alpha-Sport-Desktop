@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Casilleros" Width="1440" Height="900" 
         WindowState="Maximized"
-        WindowStyle="SingleBorderWindow" Closed="Window_Closed" Closing="Window_Closing">
+        WindowStyle="SingleBorderWindow" Closed="Window_Closed" Closing="Window_Closing" MouseEnter="Window_MouseEnter">
     <Grid Margin="0,10,0,671" HorizontalAlignment="Center" VerticalAlignment="Center">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="71*"/>
@@ -15,8 +15,8 @@
         </Grid.ColumnDefinitions>
         <Label x:Name="lab1" Content="Nombre del Proyecto" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="391,29,528,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="36" Grid.Column="1"/>
         <Label x:Name="lab2" Content="Disponibilidad de casilleros" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="414,134,558,0" VerticalAlignment="Top" RenderTransformOrigin="-0.013,-0.288" FontWeight="Bold" FontSize="24" Grid.Column="1"/>
-        <Button x:Name="bt5" Content="Menú principal" HorizontalAlignment="Right" Margin="0,794,16,-654" VerticalAlignment="Top" Width="130" RenderTransformOrigin="0.52,2.5" FontWeight="Bold" Height="48" Background="#FFFFDA33" Click="bt5_Click" Grid.Column="1"/>
-        <Grid HorizontalAlignment="Center" Height="583" Margin="83,196,0,-591" VerticalAlignment="Center" Width="1272" Grid.ColumnSpan="2">
+        <Button x:Name="bt5" Content="Menú principal" HorizontalAlignment="Right" Margin="0,794,16,-654" VerticalAlignment="Bottom" Width="130" RenderTransformOrigin="0.52,2.5" FontWeight="Bold" Height="48" Background="#FFFFDA33" Click="bt5_Click" Grid.Column="1"/>
+        <Grid HorizontalAlignment="Left" Height="583" Margin="20,186,140,-581" VerticalAlignment="Center" Width="1272" Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*" />
                 <ColumnDefinition Width="1*" />
@@ -39,87 +39,90 @@
                 <RowDefinition Height="58*" />
                 <RowDefinition Height="59*" />
             </Grid.RowDefinitions>
-            <Button x:Name="Btn0" Grid.Row ="0" Grid.Column="0">Casillero 1</Button>
-            <Button x:Name="Btn1" Grid.Row ="0" Grid.Column="1">Casillero 2</Button>
-            <Button x:Name="Btn2" Grid.Row ="0" Grid.Column="2">Casillero 3</Button>
-            <Button x:Name="Btn3" Grid.Row ="0" Grid.Column="3">Casillero 4</Button>
-            <Button x:Name="Btn4" Grid.Row ="0" Grid.Column="4">Casillero 5</Button>
-            <Button x:Name="Btn5" Grid.Row ="0" Grid.Column="5">Casillero 6</Button>
-            <Button x:Name="Btn6" Grid.Row ="0" Grid.Column="6">Casillero 7</Button>
-            <Button x:Name="Btn7" Grid.Row ="0" Grid.Column="7">Casillero 8</Button>
-            <Button x:Name="Btn8" Grid.Row ="1" Grid.Column="0">Casillero 9</Button>
-            <Button x:Name="Btn9" Grid.Row ="1" Grid.Column="1">Casillero 10</Button>            
-            <Button x:Name="Btn10" Grid.Row ="1" Grid.Column="2">Casillero 11</Button>
-            <Button x:Name="Btn11" Grid.Row ="1" Grid.Column="3">Casillero 12</Button>
-            <Button x:Name="Btn12" Grid.Row ="1" Grid.Column="4">Casillero 13</Button>
-            <Button x:Name="Btn13" Grid.Row ="1" Grid.Column="5">Casillero 14</Button>
-            <Button x:Name="Btn14" Grid.Row ="1" Grid.Column="6">Casillero 15</Button>
-            <Button x:Name="Btn15" Grid.Row ="1" Grid.Column="7">Casillero 16</Button>
-            <Button x:Name="Btn16" Grid.Row ="2" Grid.Column="0">Casillero 17</Button>
-            <Button x:Name="Btn17" Grid.Row ="2" Grid.Column="1">Casillero 18</Button>
-            <Button x:Name="Btn18" Grid.Row ="2" Grid.Column="2">Casillero 19</Button>
-            <Button x:Name="Btn19" Grid.Row ="2" Grid.Column="3">Casillero 20</Button>
-            <Button x:Name="Btn20" Grid.Row ="2" Grid.Column="4">Casillero 21</Button>
-            <Button x:Name="Btn21" Grid.Row ="2" Grid.Column="5">Casillero 22</Button>
-            <Button x:Name="Btn22" Grid.Row ="2" Grid.Column="6">Casillero 23</Button>
-            <Button x:Name="Btn23" Grid.Row ="2" Grid.Column="7">Casillero 24</Button>
-            <Button x:Name="Btn24" Grid.Row ="3" Grid.Column="0">Casillero 25</Button>
-            <Button x:Name="Btn25" Grid.Row ="3" Grid.Column="1">Casillero 26</Button>
-            <Button x:Name="Btn26" Grid.Row ="3" Grid.Column="2">Casillero 27</Button>
-            <Button x:Name="Btn27" Grid.Row ="3" Grid.Column="3">Casillero 28</Button>
-            <Button x:Name="Btn28" Grid.Row ="3" Grid.Column="4">Casillero 29</Button>
-            <Button x:Name="Btn29" Grid.Row ="3" Grid.Column="5">Casillero 30</Button>
-            <Button x:Name="Btn30" Grid.Row ="3" Grid.Column="6">Casillero 31</Button>
-            <Button x:Name="Btn31" Grid.Row ="3" Grid.Column="7">Casillero 32</Button>
-            <Button x:Name="Btn32" Grid.Row ="4" Grid.Column="0">Casillero 33</Button>
-            <Button x:Name="Btn33" Grid.Row ="4" Grid.Column="1">Casillero 34</Button>
-            <Button x:Name="Btn34" Grid.Row ="4" Grid.Column="2">Casillero 35</Button>
-            <Button x:Name="Btn35" Grid.Row ="4" Grid.Column="3">Casillero 36</Button>
-            <Button x:Name="Btn36" Grid.Row ="4" Grid.Column="4">Casillero 37</Button>
-            <Button x:Name="Btn37" Grid.Row ="4" Grid.Column="5">Casillero 38</Button>
-            <Button x:Name="Btn38" Grid.Row ="4" Grid.Column="6">Casillero 39</Button>
-            <Button x:Name="Btn39" Grid.Row ="4" Grid.Column="7">Casillero 40</Button>
-            <Button x:Name="Btn40" Grid.Row ="5" Grid.Column="0">Casillero 41</Button>
-            <Button x:Name="Btn41" Grid.Row ="5" Grid.Column="1">Casillero 42</Button>
-            <Button x:Name="Btn42" Grid.Row ="5" Grid.Column="2">Casillero 43</Button>
-            <Button x:Name="Btn43" Grid.Row ="5" Grid.Column="3">Casillero 44</Button>
-            <Button x:Name="Btn44" Grid.Row ="5" Grid.Column="4">Casillero 45</Button>
-            <Button x:Name="Btn45" Grid.Row ="5" Grid.Column="5">Casillero 46</Button>
-            <Button x:Name="Btn46" Grid.Row ="5" Grid.Column="6">Casillero 47</Button>
-            <Button x:Name="Btn47" Grid.Row ="5" Grid.Column="7">Casillero 48</Button>
-            <Button x:Name="Btn48" Grid.Row ="6" Grid.Column="0">Casillero 49</Button>
-            <Button x:Name="Btn49" Grid.Row ="6" Grid.Column="1">Casillero 50</Button>
-            <Button x:Name="Btn50" Grid.Row ="6" Grid.Column="2">Casillero 51</Button>
-            <Button x:Name="Btn51" Grid.Row ="6" Grid.Column="3">Casillero 52</Button>
-            <Button x:Name="Btn52" Grid.Row ="6" Grid.Column="4">Casillero 53</Button>
-            <Button x:Name="Btn53" Grid.Row ="6" Grid.Column="5">Casillero 54</Button>
-            <Button x:Name="Btn54" Grid.Row ="6" Grid.Column="6">Casillero 55</Button>
-            <Button x:Name="Btn55" Grid.Row ="6" Grid.Column="7">Casillero 56</Button>
-            <Button x:Name="Btn56" Grid.Row ="7" Grid.Column="0">Casillero 57</Button>
-            <Button x:Name="Btn57" Grid.Row ="7" Grid.Column="1">Casillero 58</Button>
-            <Button x:Name="Btn58" Grid.Row ="7" Grid.Column="2">Casillero 59</Button>
-            <Button x:Name="Btn59" Grid.Row ="7" Grid.Column="3">Casillero 60</Button>
-            <Button x:Name="Btn60" Grid.Row ="7" Grid.Column="4">Casillero 61</Button>
-            <Button x:Name="Btn61" Grid.Row ="7" Grid.Column="5">Casillero 62</Button>
-            <Button x:Name="Btn62" Grid.Row ="7" Grid.Column="6">Casillero 63</Button>
-            <Button x:Name="Btn63" Grid.Row ="7" Grid.Column="7">Casillero 64</Button>
-            <Button x:Name="Btn64" Grid.Row ="8" Grid.Column="0">Casillero 65</Button>
-            <Button x:Name="Btn65" Grid.Row ="8" Grid.Column="1">Casillero 66</Button>
-            <Button x:Name="Btn66" Grid.Row ="8" Grid.Column="2">Casillero 67</Button>
-            <Button x:Name="Btn67" Grid.Row ="8" Grid.Column="3">Casillero 68</Button>
-            <Button x:Name="Btn68" Grid.Row ="8" Grid.Column="4">Casillero 69</Button>
-            <Button x:Name="Btn69" Grid.Row ="8" Grid.Column="5">Casillero 70</Button>
-            <Button x:Name="Btn70" Grid.Row ="8" Grid.Column="6">Casillero 71</Button>
-            <Button x:Name="Btn71" Grid.Row ="8" Grid.Column="7">Casillero 72</Button>
-            <Button x:Name="Btn72" Grid.Row ="9" Grid.Column="0">Casillero 73</Button>
-            <Button x:Name="Btn73" Grid.Row ="9" Grid.Column="1">Casillero 74</Button>
-            <Button x:Name="Btn74" Grid.Row ="9" Grid.Column="2">Casillero 75</Button>
-            <Button x:Name="Btn75" Grid.Row ="9" Grid.Column="3">Casillero 76</Button>
-            <Button x:Name="Btn76" Grid.Row ="9" Grid.Column="4">Casillero 77</Button>
-            <Button x:Name="Btn77" Grid.Row ="9" Grid.Column="5">Casillero 78</Button>
-            <Button x:Name="Btn78" Grid.Row ="9" Grid.Column="6">Casillero 79</Button>
-            <Button x:Name="Btn79" Grid.Row ="9" Grid.Column="7">Casillero 80</Button>
+            <Button x:Name="Btn1" Grid.Row ="0" Grid.Column="0" Click="eventoClick" Tag="1,m" >Casillero 1</Button>
+            <Button x:Name="Btn2" Grid.Row ="0" Grid.Column="1" Click="eventoClick" Tag="2,m">Casillero 2</Button>
+            <Button x:Name="Btn3" Grid.Row ="0" Grid.Column="2" Click="eventoClick" Tag="3,m">Casillero 3</Button>
+            <Button x:Name="Btn4" Grid.Row ="0" Grid.Column="3" Click="eventoClick" Tag="4,m">Casillero 4</Button>
+            <Button x:Name="Btn5" Grid.Row ="0" Grid.Column="4" Click="eventoClick" Tag="5,m">Casillero 5</Button>
+            <Button x:Name="Btn6" Grid.Row ="0" Grid.Column="5" Click="eventoClick" Tag="6,m">Casillero 6</Button>
+            <Button x:Name="Btn7" Grid.Row ="0" Grid.Column="6" Click="eventoClick" Tag="7,m">Casillero 7</Button>
+            <Button x:Name="Btn8" Grid.Row ="0" Grid.Column="7" Click="eventoClick" Tag="8,m">Casillero 8</Button>
+            <Button x:Name="Btn9" Grid.Row ="1" Grid.Column="0" Click="eventoClick" Tag="9,m">Casillero 9</Button>
+            <Button x:Name="Btn10" Grid.Row ="1" Grid.Column="1" Click="eventoClick" Tag="10,m">Casillero 10</Button>
+            <Button x:Name="Btn11" Grid.Row ="1" Grid.Column="2" Click="eventoClick" Tag="11,m">Casillero 11</Button>
+            <Button x:Name="Btn12" Grid.Row ="1" Grid.Column="3" Click="eventoClick" Tag="12,m">Casillero 12</Button>
+            <Button x:Name="Btn13" Grid.Row ="1" Grid.Column="4" Click="eventoClick" Tag="13,m">Casillero 13</Button>
+            <Button x:Name="Btn14" Grid.Row ="1" Grid.Column="5" Click="eventoClick" Tag="14,m">Casillero 14</Button>
+            <Button x:Name="Btn15" Grid.Row ="1" Grid.Column="6" Click="eventoClick" Tag="15,m">Casillero 15</Button>
+            <Button x:Name="Btn16" Grid.Row ="1" Grid.Column="7" Click="eventoClick" Tag="16,m">Casillero 16</Button>
+            <Button x:Name="Btn17" Grid.Row ="2" Grid.Column="0" Click="eventoClick" Tag="17,m">Casillero 17</Button>
+            <Button x:Name="Btn18" Grid.Row ="2" Grid.Column="1" Click="eventoClick" Tag="18,m">Casillero 18</Button>
+            <Button x:Name="Btn19" Grid.Row ="2" Grid.Column="2" Click="eventoClick" Tag="19,m">Casillero 19</Button>
+            <Button x:Name="Btn20" Grid.Row ="2" Grid.Column="3" Click="eventoClick" Tag="20,m">Casillero 20</Button>
+            <Button x:Name="Btn21" Grid.Row ="2" Grid.Column="4" Click="eventoClick" Tag="21,m">Casillero 21</Button>
+            <Button x:Name="Btn22" Grid.Row ="2" Grid.Column="5" Click="eventoClick" Tag="22,m">Casillero 22</Button>
+            <Button x:Name="Btn23" Grid.Row ="2" Grid.Column="6" Click="eventoClick" Tag="23,m">Casillero 23</Button>
+            <Button x:Name="Btn24" Grid.Row ="2" Grid.Column="7" Click="eventoClick" Tag="24,m">Casillero 24</Button>
+            <Button x:Name="Btn25" Grid.Row ="3" Grid.Column="0" Click="eventoClick" Tag="25,m">Casillero 25</Button>
+            <Button x:Name="Btn26" Grid.Row ="3" Grid.Column="1" Click="eventoClick" Tag="26,m">Casillero 26</Button>
+            <Button x:Name="Btn27" Grid.Row ="3" Grid.Column="2" Click="eventoClick" Tag="27,m">Casillero 27</Button>
+            <Button x:Name="Btn28" Grid.Row ="3" Grid.Column="3" Click="eventoClick" Tag="28,m">Casillero 28</Button>
+            <Button x:Name="Btn29" Grid.Row ="3" Grid.Column="4" Click="eventoClick" Tag="29,m">Casillero 29</Button>
+            <Button x:Name="Btn30" Grid.Row ="3" Grid.Column="5" Click="eventoClick" Tag="30,m">Casillero 30</Button>
+            <Button x:Name="Btn31" Grid.Row ="3" Grid.Column="6" Click="eventoClick" Tag="31,m">Casillero 31</Button>
+            <Button x:Name="Btn32" Grid.Row ="3" Grid.Column="7" Click="eventoClick" Tag="32,m">Casillero 32</Button>
+            <Button x:Name="Btn33" Grid.Row ="4" Grid.Column="0" Click="eventoClick" Tag="33,m">Casillero 33</Button>
+            <Button x:Name="Btn34" Grid.Row ="4" Grid.Column="1" Click="eventoClick" Tag="34,m">Casillero 34</Button>
+            <Button x:Name="Btn35" Grid.Row ="4" Grid.Column="2" Click="eventoClick" Tag="35,m">Casillero 35</Button>
+            <Button x:Name="Btn36" Grid.Row ="4" Grid.Column="3" Click="eventoClick" Tag="36,m">Casillero 36</Button>
+            <Button x:Name="Btn37" Grid.Row ="4" Grid.Column="4" Click="eventoClick" Tag="37,m">Casillero 37</Button>
+            <Button x:Name="Btn38" Grid.Row ="4" Grid.Column="5" Click="eventoClick" Tag="38,m">Casillero 38</Button>
+            <Button x:Name="Btn39" Grid.Row ="4" Grid.Column="6" Click="eventoClick" Tag="39,m">Casillero 39</Button>
+            <Button x:Name="Btn40" Grid.Row ="4" Grid.Column="7" Click="eventoClick" Tag="40,m">Casillero 40</Button>
+            <Button x:Name="Btn41" Grid.Row ="5" Grid.Column="0" Click="eventoClick" Tag="41,h">Casillero 41</Button>
+            <Button x:Name="Btn42" Grid.Row ="5" Grid.Column="1" Click="eventoClick" Tag="42,h">Casillero 42</Button>
+            <Button x:Name="Btn43" Grid.Row ="5" Grid.Column="2" Click="eventoClick" Tag="43,h">Casillero 43</Button>
+            <Button x:Name="Btn44" Grid.Row ="5" Grid.Column="3" Click="eventoClick" Tag="44,h">Casillero 44</Button>
+            <Button x:Name="Btn45" Grid.Row ="5" Grid.Column="4" Click="eventoClick" Tag="45,h">Casillero 45</Button>
+            <Button x:Name="Btn46" Grid.Row ="5" Grid.Column="5" Click="eventoClick" Tag="46,h">Casillero 46</Button>
+            <Button x:Name="Btn47" Grid.Row ="5" Grid.Column="6" Click="eventoClick" Tag="47,h">Casillero 47</Button>
+            <Button x:Name="Btn48" Grid.Row ="5" Grid.Column="7" Click="eventoClick" Tag="48,h">Casillero 48</Button>
+            <Button x:Name="Btn49" Grid.Row ="6" Grid.Column="0" Click="eventoClick" Tag="49,h">Casillero 49</Button>
+            <Button x:Name="Btn50" Grid.Row ="6" Grid.Column="1" Click="eventoClick" Tag="50,h">Casillero 50</Button>
+            <Button x:Name="Btn51" Grid.Row ="6" Grid.Column="2" Click="eventoClick" Tag="51,h">Casillero 51</Button>
+            <Button x:Name="Btn52" Grid.Row ="6" Grid.Column="3" Click="eventoClick" Tag="52,h">Casillero 52</Button>
+            <Button x:Name="Btn53" Grid.Row ="6" Grid.Column="4" Click="eventoClick" Tag="53,h">Casillero 53</Button>
+            <Button x:Name="Btn54" Grid.Row ="6" Grid.Column="5" Click="eventoClick" Tag="54,h">Casillero 54</Button>
+            <Button x:Name="Btn55" Grid.Row ="6" Grid.Column="6" Click="eventoClick" Tag="55,h">Casillero 55</Button>
+            <Button x:Name="Btn56" Grid.Row ="6" Grid.Column="7" Click="eventoClick" Tag="56,h">Casillero 56</Button>
+            <Button x:Name="Btn57" Grid.Row ="7" Grid.Column="0" Click="eventoClick" Tag="57,h">Casillero 57</Button>
+            <Button x:Name="Btn58" Grid.Row ="7" Grid.Column="1" Click="eventoClick" Tag="58,h">Casillero 58</Button>
+            <Button x:Name="Btn59" Grid.Row ="7" Grid.Column="2" Click="eventoClick" Tag="59,h">Casillero 59</Button>
+            <Button x:Name="Btn60" Grid.Row ="7" Grid.Column="3" Click="eventoClick" Tag="60,h">Casillero 60</Button>
+            <Button x:Name="Btn61" Grid.Row ="7" Grid.Column="4" Click="eventoClick" Tag="61,h">Casillero 61</Button>
+            <Button x:Name="Btn62" Grid.Row ="7" Grid.Column="5" Click="eventoClick" Tag="62,h">Casillero 62</Button>
+            <Button x:Name="Btn63" Grid.Row ="7" Grid.Column="6" Click="eventoClick" Tag="63,h">Casillero 63</Button>
+            <Button x:Name="Btn64" Grid.Row ="7" Grid.Column="7" Click="eventoClick" Tag="64,h">Casillero 64</Button>
+            <Button x:Name="Btn65" Grid.Row ="8" Grid.Column="0" Click="eventoClick" Tag="65,h">Casillero 65</Button>
+            <Button x:Name="Btn66" Grid.Row ="8" Grid.Column="1" Click="eventoClick" Tag="66,h">Casillero 66</Button>
+            <Button x:Name="Btn67" Grid.Row ="8" Grid.Column="2" Click="eventoClick" Tag="67,h">Casillero 67</Button>
+            <Button x:Name="Btn68" Grid.Row ="8" Grid.Column="3" Click="eventoClick" Tag="68,h">Casillero 68</Button>
+            <Button x:Name="Btn69" Grid.Row ="8" Grid.Column="4" Click="eventoClick" Tag="69,h">Casillero 69</Button>
+            <Button x:Name="Btn70" Grid.Row ="8" Grid.Column="5" Click="eventoClick" Tag="70,h">Casillero 70</Button>
+            <Button x:Name="Btn71" Grid.Row ="8" Grid.Column="6" Click="eventoClick" Tag="71,h">Casillero 71</Button>
+            <Button x:Name="Btn72" Grid.Row ="8" Grid.Column="7" Click="eventoClick" Tag="72,h">Casillero 72</Button>
+            <Button x:Name="Btn73" Grid.Row ="9" Grid.Column="0" Click="eventoClick" Tag="73,h">Casillero 73</Button>
+            <Button x:Name="Btn74" Grid.Row ="9" Grid.Column="1" Click="eventoClick" Tag="74,h">Casillero 74</Button>
+            <Button x:Name="Btn75" Grid.Row ="9" Grid.Column="2" Click="eventoClick" Tag="75,h">Casillero 75</Button>
+            <Button x:Name="Btn76" Grid.Row ="9" Grid.Column="3" Click="eventoClick" Tag="76,h">Casillero 76</Button>
+            <Button x:Name="Btn77" Grid.Row ="9" Grid.Column="4" Click="eventoClick" Tag="77,h">Casillero 77</Button>
+            <Button x:Name="Btn78" Grid.Row ="9" Grid.Column="5" Click="eventoClick" Tag="78,h">Casillero 78</Button>
+            <Button x:Name="Btn79" Grid.Row ="9" Grid.Column="6" Click="eventoClick" Tag="79,h">Casillero 79</Button>
+            <Button x:Name="Btn80" Grid.Row ="9" Grid.Column="7" Click="eventoClick" Tag="80,h">Casillero 80</Button>
         </Grid>
+        <Button x:Name="buscar" Content="Buscar" HorizontalAlignment="Right" Margin="0,121,233,47" Width="89" Grid.Column="1" Background="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}" Click="Buscar_Click" VerticalAlignment="Center"/>
+        <TextBox x:Name="codigo" Grid.Column="1" HorizontalAlignment="Right" Height="34" Margin="0,82,16,72" TextWrapping="Wrap" VerticalAlignment="Center" Width="306" FontWeight="Bold" FontSize="18" MaxLines="1" TextOptions.TextHintingMode="Fixed"/>
+        <Button x:Name="prestamo" Content="Prestamos" HorizontalAlignment="Right" Margin="0,121,16,47" Width="89" Grid.Column="1" Background="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}" Click="Prestamo_Click" VerticalAlignment="Center"/>
 
     </Grid>
 

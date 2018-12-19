@@ -15,7 +15,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\manue\source\repos\PGR-Alpha-Sport\OnecClick\</PublishUrl>
+    <PublishUrl>C:\Users\manue\source\repos\PGR-Alpha-Sport\OneClick\</PublishUrl>
     <Install>false</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -30,8 +30,8 @@
     <ProductName>Alpha Sport</ProductName>
     <PublisherName>Alpha Sport</PublisherName>
     <SuiteName>Alpha Sport</SuiteName>
-    <ApplicationRevision>5</ApplicationRevision>
-    <ApplicationVersion>3.1.1.%2a</ApplicationVersion>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>3.5.10.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -126,14 +126,14 @@
     <Compile Include="Vista\Casilleros.xaml.cs">
       <DependentUpon>Casilleros.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Vista\ConsultarCasillero.xaml.cs">
-      <DependentUpon>ConsultarCasillero.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Vista\ConsultarPrestamos.xaml.cs">
       <DependentUpon>ConsultarPrestamos.xaml</DependentUpon>
     </Compile>
     <Compile Include="Vista\Cupos.xaml.cs">
       <DependentUpon>Cupos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Historialcasilleros.xaml.cs">
+      <DependentUpon>Historialcasilleros.xaml</DependentUpon>
     </Compile>
     <Compile Include="Vista\Horarios.xaml.cs">
       <DependentUpon>Horarios.xaml</DependentUpon>
@@ -147,9 +147,6 @@
     <Compile Include="Vista\Prestar.xaml.cs">
       <DependentUpon>Prestar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Vista\RegistroCasillero.xaml.cs">
-      <DependentUpon>RegistroCasillero.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Vista\TablaImplementos.xaml.cs">
       <DependentUpon>TablaImplementos.xaml</DependentUpon>
     </Compile>
@@ -162,6 +159,9 @@
     </Compile>
     <Compile Include="Controller\ConnectionClass.cs" />
     <Compile Include="Controller\Entorno.cs" />
+    <Compile Include="Vista\ventanaPrestamosCas.xaml.cs">
+      <DependentUpon>ventanaPrestamosCas.xaml</DependentUpon>
+    </Compile>
     <Page Include="Vista\agregarEstud.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -174,15 +174,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Vista\ConsultarCasillero.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Vista\ConsultarPrestamos.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Vista\Cupos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vista\Historialcasilleros.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -202,10 +202,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Vista\RegistroCasillero.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Vista\TablaImplementos.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -213,6 +209,10 @@
     <Page Include="Vista\TablaInscritos.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Vista\ventanaPrestamosCas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -277,6 +277,10 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Recursos\alpha.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recursos\escuela_ing.jpg" />
+    <Resource Include="Recursos\escuela_ing.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Recursos\sistemas.jpg" />

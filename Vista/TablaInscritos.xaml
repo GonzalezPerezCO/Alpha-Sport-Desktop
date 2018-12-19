@@ -19,7 +19,6 @@
             <ColumnDefinition Width="10*"/>
             <ColumnDefinition Width="6*"/>
         </Grid.ColumnDefinitions>
-        <Image HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" Source="/Recursos/fit.ico" Grid.ColumnSpan="2"/>
         <DataGrid x:Name="dtgrid1" Height="597" Margin="119,130,198,0" VerticalAlignment="Top" IsReadOnly="True" Grid.Column="2" HorizontalAlignment="Center" Width="630" Grid.ColumnSpan="2"/>
         <Label x:Name="lab1" Content="Nombre del Proyecto" Grid.Column="2" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,15,72,0" VerticalAlignment="Top" RenderTransformOrigin="4.868,0.577" FontSize="36" FontWeight="Bold" Grid.ColumnSpan="2" Width="927"/>
         <Label x:Name="lab2" Content="Estudiantes Inscritos" Grid.Column="2" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="318,84,387,0" VerticalAlignment="Top" RenderTransformOrigin="4.868,0.577" FontSize="24" FontWeight="Bold" Grid.ColumnSpan="2"/>
@@ -48,7 +47,6 @@
                 <SolidColorBrush Color="#FFFFDA33"/>
             </Button.Background>
         </Button>
-        <Image HorizontalAlignment="Left" Height="233" Margin="10,0,0,0" VerticalAlignment="Bottom" Width="350" Source="/GonzalezPerezCO;component/Recursos/sistemas.jpg" Grid.ColumnSpan="3"/>
 
     </Grid>
 </Window>

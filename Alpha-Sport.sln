@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28010.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlphaSport", "AlphaSport.csproj", "{EE98DBDA-6BB1-47D0-BA0A-8B6D3B4D9FCA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest-AlphaSport", "UnitTest-AlphaSport\UnitTest-AlphaSport.csproj", "{46B776B8-B32E-49D9-8360-BB5BC5E82C0C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{EE98DBDA-6BB1-47D0-BA0A-8B6D3B4D9FCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE98DBDA-6BB1-47D0-BA0A-8B6D3B4D9FCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE98DBDA-6BB1-47D0-BA0A-8B6D3B4D9FCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46B776B8-B32E-49D9-8360-BB5BC5E82C0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46B776B8-B32E-49D9-8360-BB5BC5E82C0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46B776B8-B32E-49D9-8360-BB5BC5E82C0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46B776B8-B32E-49D9-8360-BB5BC5E82C0C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

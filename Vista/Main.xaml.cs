@@ -75,12 +75,6 @@ namespace AlphaSport.Vista
             tabla.Show();
             this.Hide();
         }
-
-        private void btn3_Click(object sender, RoutedEventArgs e)
-        {
-            Window casilleros  = new Casilleros();
-            casilleros.Show();
-            this.Hide();
-        }
+                
     }
 }

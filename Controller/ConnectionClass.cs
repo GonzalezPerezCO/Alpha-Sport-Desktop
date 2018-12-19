@@ -106,6 +106,32 @@ namespace Deportes_WPF.Controller
             return result;
         }
 
+        //Buscar estudiante
+        public bool buscarEstudiante(int codigo)
+        {
+            bool result = false;
+
+            string queryEstu = "select codigo from testudiantes where codigo= " + codigo + ";";
+
+            Debug.WriteLine(" ----  BUSCAR ESTUDIANTE");
+
+            this.OpenConnection();
+
+            cmd = new MySqlCommand(queryEstu, connection);
+            reader = cmd.ExecuteReader();
+
+
+            if (reader.Read())
+            {
+                result = true;
+                Debug.WriteLine(" ----   result: " + result.ToString());
+            }
+            this.CloseConnection();
+
+            Debug.WriteLine(" ----   result: retorna");
+            return result;
+        }
+
         //Execute query return Table
         public DataTable mostrarTabla(string query) {
             
@@ -141,8 +167,8 @@ namespace Deportes_WPF.Controller
             return dt;
         }
 
-        //Login
-        public void queryAddEstuFull(string query)
+        //execute one query
+        public void queryExecute(string query)
         {
             Debug.WriteLine(" ----   Query add estu full");
             this.OpenConnection();
@@ -152,6 +178,130 @@ namespace Deportes_WPF.Controller
             this.CloseConnection();
 
             Debug.WriteLine(" ----   FIN; Query add estu full");            
+        }
+
+        public List<string> buscarCasilleroReader(string query)
+        {
+            reader = null;
+            List<string> result = new List<string>();
+
+            Debug.WriteLine(" ----   QUERY READER OPEN CONNECTION buscar_casillero reader");
+
+            this.OpenConnection();
+
+            cmd = new MySqlCommand(query, connection);
+
+            try
+            {
+                Debug.WriteLine(" ----   RESULT QERY TRY recibido buscar_casillero reader: " + query);
+                reader = cmd.ExecuteReader();
+
+                // Lista: nombre, codigo, casillero, disponible{0:no, 1:si}, entrada, salida
+
+                while (reader.Read())
+                {
+                    if (reader.GetString(0) != null) { result.Add(reader.GetString(0)); } else { result.Add("N/A"); }
+                    if (reader.GetString(1) != null) { result.Add(Convert.ToString(reader.GetString(1))); } else { result.Add("0"); }
+                    if (reader.GetString(2) != null) { result.Add(Convert.ToString(reader.GetString(2))); } else { result.Add("0"); }
+                    if (reader.GetString(3) != null) { result.Add(Convert.ToString(reader.GetBoolean(3))); } else { result.Add("0"); }
+                    result.Add(reader.GetMySqlDateTime(4).ToString());
+                    result.Add(reader.GetMySqlDateTime(5).ToString());
+                }
+
+                Debug.WriteLine(" ----   RESULT QERY READER buscar_casillero reader: tamaño "+result.Count);
+                foreach (var item in result)
+                {
+                    Debug.WriteLine(" ---- " + item.ToString());
+                }
+            }
+            catch (MySqlException ex)
+            {
+                Debug.WriteLine(" ----   CATCH QERY READER buscar_casillero reader: " + ex);
+            }
+
+            this.CloseConnection();
+
+            return result;
+        }
+
+
+        public List<List<string>> casillerosDisponiblesReader(string queryDisp, string querySecc)
+        {
+            reader = null;
+            List<List<string>> result = new List<List<string>>();
+
+            List<string> disp = new List<string>();
+            List<string> secc = new List<string>();
+
+            Debug.WriteLine(" ----   QUERY READER OPEN CONNECTION casilleros_disp reader");
+
+            this.OpenConnection();
+
+            cmd = new MySqlCommand(queryDisp, connection);
+
+            try
+            {
+                Debug.WriteLine(" ----   RESULT QERY TRY recibido casilleros_disp reader: " + queryDisp);
+                reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                   disp.Add(reader.GetString(0));
+
+                }
+
+                Debug.WriteLine(" ----   RESULT QERY READER casilleros_disp reader: ");
+                foreach (var item in disp)
+                {
+                    Debug.WriteLine(" ---- " + item.ToString());
+                }
+            }
+            catch (MySqlException ex)
+            {
+                Debug.WriteLine(" ----   CATCH QERY READER casilleros_disp reader: " + ex);
+            }
+
+            this.CloseConnection();
+            this.OpenConnection();
+
+            cmd = new MySqlCommand(querySecc, connection);
+
+            try
+            {
+                Debug.WriteLine(" ----   RESULT QERY TRY recibido casilleros_disp reader: " + querySecc);
+                reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    secc.Add(reader.GetString(0));
+
+                }
+
+                Debug.WriteLine(" ----   RESULT QERY READER casilleros_disp reader: ");
+                foreach (var item in secc)
+                {
+                    Debug.WriteLine(" ---- " + item.ToString());
+                }
+            }
+            catch (MySqlException ex)
+            {
+                Debug.WriteLine(" ----   CATCH QERY READER casilleros_disp reader: " + ex);
+            }
+
+            this.CloseConnection();
+
+            result.Add(disp);
+            result.Add(secc);
+
+            foreach (var item in result)
+            {
+                foreach (var item2 in item)
+                {
+                    Debug.WriteLine("<<<< Info result: "+item2);
+                }
+            }
+
+            return result;
         }
 
 
@@ -198,6 +348,45 @@ namespace Deportes_WPF.Controller
             catch (MySqlException ex)
             {
                 Debug.WriteLine(" ----   CATCH QERY READER asistencia reader: " + ex);
+            }
+
+            this.CloseConnection();
+
+            return result;
+        }
+
+        //Execute query return Array casilleors disponibles
+        public List<string> listaUnicaReader(string query)
+        {
+
+            reader = null;
+            List<string> result = new List<string>();
+
+            Debug.WriteLine(" ----   QUERY READER OPEN CONNECTION casilleors disponibles reader");
+
+            this.OpenConnection();
+
+            cmd = new MySqlCommand(query, connection);
+
+            try
+            {
+                Debug.WriteLine(" ----   RESULT QERY TRY recibido casilleors disponibles reader: " + query);
+                reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    result.Add(reader.GetString(0));
+                }
+
+                Debug.WriteLine(" ----   RESULT QERY READER casilleors disponibles reader: ");
+                foreach (var item in result)
+                {
+                    Debug.WriteLine(" ---- " + item.ToString());
+                }
+            }
+            catch (MySqlException ex)
+            {
+                Debug.WriteLine(" ----   CATCH QERY READER casilleors disponibles reader: " + ex);
             }
 
             this.CloseConnection();

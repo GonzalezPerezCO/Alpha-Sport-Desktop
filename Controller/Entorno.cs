@@ -78,13 +78,52 @@ namespace Deportes_WPF.Controller
             return connection.asistenciaReader(query);
         }
 
+        public List<string> disponiblesCasilleros()
+        {
+            string query = "SELECT GROUP_CONCAT(id_c) FROM tcasilleros WHERE disponible = 1";
+            return connection.listaUnicaReader(query);
+        }
+
+        public List<string> buscarCasilleroEstu(int codigo)
+        {
+            string query = "SELECT CONCAT(nombre, ' ', apellido), tcasilleros.codigo, id_c , disponible, entrada, salida FROM tcasilleros JOIN testudiantes on testudiantes.codigo =  tcasilleros.codigo WHERE tcasilleros.codigo = "+codigo+ " LIMIT 1;";
+            return connection.buscarCasilleroReader(query);
+        }
+
+        public List<string> buscarCasilleroID(int casillero)
+        {
+            string query = "SELECT CONCAT(nombre, ' ', apellido), tcasilleros.codigo, id_c , disponible, entrada, salida FROM tcasilleros JOIN testudiantes on testudiantes.codigo =  tcasilleros.codigo WHERE tcasilleros.id_c = "+casillero+" LIMIT 1;";
+            return connection.buscarCasilleroReader(query);
+        }
+
+        public List<List<string>> infoCasilleros()
+        {
+            // unico string con: id_c, disponible, seccion
+            string queryDisp = "SELECT disponible FROM tcasilleros ORDER by id_c;";
+            string querySecc = "SELECT seccion FROM tcasilleros ORDER by id_c;";
+            return connection.casillerosDisponiblesReader(queryDisp, querySecc);
+        }
+
+        public void agregarEstudianteCasillero(int casillero, int codigo)
+        {
+            string query = "UPDATE tcasilleros SET disponible = 0, codigo = "+codigo+", entrada =  NOW() WHERE id_c = "+casillero+";";
+            connection.queryExecute(query);
+        }
+
+        public void quitarEstudianteCasillero(int codigo)
+        {
+            string query = "UPDATE tcasilleros SET disponible = 1, codigo = NULL, entrada = '2018-01-01 00:00:00', salida = '2018-01-01 00:00:00' WHERE codigo = " + codigo + ";";
+            connection.queryExecute(query);
+        }
+
         public void agregarEstudiante(string nombre, string apellido, int codigo, string carrera, int semestre, string email, string observacion)
         {
             string query = "call addEstudFull('" + nombre + "', '" + apellido + "', " + codigo + ", '" + carrera + "', " + semestre + ", '" + email + "', '" + observacion + "');";
-            connection.queryAddEstuFull(query);
+            connection.queryExecute(query);
         }
 
-        public string fallas(int codigo) {
+        public string fallas(int codigo)
+        {
             string query = "UPDATE testudiantes SET fallas = fallas+1 WHERE codigo="+codigo+ "; SELECT fallas from testudiantes WHERE codigo="+codigo+"; ";
             string result;
             List<string> lista = connection.querySumarAsistencia(query);
@@ -112,15 +151,15 @@ namespace Deportes_WPF.Controller
             return dt;
         }
 
-        public DataTable horarioEstudiante(int codigo)
+        /*public DataTable horarioEstudiante(int codigo)
         {
             Debug.WriteLine("MOSTRAR TABLA HORARIO ESTUDIANTE");
-            string query = "select  dia1 as Dia1, hora1 as Hora1, dia2 as Dia2, hora2 as Hora2, dia3 as Dia3, hora3 as Hora3 from testudiantes INNER JOIN thorarios on testudiantes.email = thorarios.email where testudiantes.codigo ="+codigo+ " Limit 1;";
+            string query = "SELECT GROUP_CONCAT(dia, ',', hora) as horario from testudiantes INNER JOIN thorarios on testudiantes.codigo = "+codigo+" and testudiantes.email = thorarios.email GROUP by nombre;";
             DataTable dt = connection.mostrarTabla(query);
             Debug.WriteLine("RECIBIR READER EN TABLE");
 
             return dt;
-        }
+        }*/
 
         public DataTable mostrarCupos()
         {
@@ -132,8 +171,8 @@ namespace Deportes_WPF.Controller
             return dt;
         }       
 
-        public bool buscarEstudiante() {
-            return false;
+        public bool buscarEstudiante(int codigo) {
+            return connection.buscarEstudiante(codigo);
         }
         
         public bool cambiarHorario()

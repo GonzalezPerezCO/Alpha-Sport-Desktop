@@ -2,6 +2,7 @@
 using Deportes_WPF.Controller;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,102 +24,159 @@ namespace AlphaSport.Vista
     {
 
         private Entorno entorno;
+        private static Casilleros instance;
+        private List<Button> botones = new List<Button>();     // lista de bontones
+        private List<List<string>> infoBotonez = new List<List<string>>(); // lista de datos botones {0:id_c, 1:diposnible, 2:seccion} 
 
 
-        public Casilleros()
-        {   
+        private Casilleros()
+        {
             InitializeComponent();
             entorno = Entorno.GetInstance();
             lab1.Content = entorno.PROYECTO;
 
-            colorButtons();
+            listaBotones();
+            actualizarColores(); // Btn1.Background = Brushes.HotPink; Btn41.Background = Brushes.DodgerBlue;
+
+            codigo.Focus();
         }
 
-        private void colorButtons() {
-            Btn0.Background = Brushes.Yellow;
-            Btn1.Background = Brushes.Yellow;
-            Btn2.Background = Brushes.Yellow;
-            Btn3.Background = Brushes.Yellow;
-            Btn4.Background = Brushes.Yellow;
-            Btn5.Background = Brushes.Yellow;
-            Btn6.Background = Brushes.Yellow;
-            Btn7.Background = Brushes.Yellow;
-            Btn8.Background = Brushes.Yellow;
-            Btn9.Background = Brushes.Yellow;
-            Btn10.Background = Brushes.Yellow;
-            Btn11.Background = Brushes.Yellow;
-            Btn12.Background = Brushes.Yellow;
-            Btn13.Background = Brushes.Yellow;
-            Btn14.Background = Brushes.Yellow;
-            Btn15.Background = Brushes.Yellow;
-            Btn16.Background = Brushes.Yellow;
-            Btn17.Background = Brushes.Yellow;
-            Btn18.Background = Brushes.Yellow;
-            Btn19.Background = Brushes.Yellow;
-            Btn20.Background = Brushes.Yellow;
-            Btn21.Background = Brushes.Yellow;
-            Btn22.Background = Brushes.Yellow;
-            Btn23.Background = Brushes.Yellow;
-            Btn24.Background = Brushes.Yellow;
-            Btn25.Background = Brushes.Yellow;
-            Btn26.Background = Brushes.Yellow;
-            Btn27.Background = Brushes.Yellow;
-            Btn28.Background = Brushes.Yellow;
-            Btn29.Background = Brushes.Yellow;
-            Btn30.Background = Brushes.Yellow;
-            Btn31.Background = Brushes.Yellow;
-            Btn32.Background = Brushes.Yellow;
-            Btn33.Background = Brushes.Yellow;
-            Btn34.Background = Brushes.Yellow;
-            Btn35.Background = Brushes.Yellow;
-            Btn36.Background = Brushes.Yellow;
-            Btn37.Background = Brushes.Yellow;
-            Btn38.Background = Brushes.Yellow;
-            Btn39.Background = Brushes.Yellow;
+        public static Casilleros GetInstance()
+        {
+            if (instance == null)
+                instance = new Casilleros();
 
-            Btn40.Background = Brushes.DodgerBlue;
-            Btn41.Background = Brushes.DodgerBlue;
-            Btn42.Background = Brushes.DodgerBlue;
-            Btn43.Background = Brushes.DodgerBlue;
-            Btn44.Background = Brushes.DodgerBlue;
-            Btn45.Background = Brushes.DodgerBlue;
-            Btn46.Background = Brushes.DodgerBlue;
-            Btn47.Background = Brushes.DodgerBlue;
-            Btn48.Background = Brushes.DodgerBlue;
-            Btn49.Background = Brushes.DodgerBlue;
-            Btn50.Background = Brushes.DodgerBlue;
-            Btn51.Background = Brushes.DodgerBlue;
-            Btn52.Background = Brushes.DodgerBlue;
-            Btn53.Background = Brushes.DodgerBlue;
-            Btn54.Background = Brushes.DodgerBlue;
-            Btn55.Background = Brushes.DodgerBlue;
-            Btn56.Background = Brushes.DodgerBlue;
-            Btn57.Background = Brushes.DodgerBlue;
-            Btn58.Background = Brushes.DodgerBlue;
-            Btn59.Background = Brushes.DodgerBlue;
-            Btn60.Background = Brushes.DodgerBlue;
-            Btn61.Background = Brushes.DodgerBlue;
-            Btn62.Background = Brushes.DodgerBlue;
-            Btn63.Background = Brushes.DodgerBlue;
-            Btn64.Background = Brushes.DodgerBlue;
-            Btn65.Background = Brushes.DodgerBlue;
-            Btn66.Background = Brushes.DodgerBlue;
-            Btn67.Background = Brushes.DodgerBlue;
-            Btn68.Background = Brushes.DodgerBlue;
-            Btn69.Background = Brushes.DodgerBlue;
-            Btn70.Background = Brushes.DodgerBlue;
-            Btn71.Background = Brushes.DodgerBlue;
-            Btn72.Background = Brushes.DodgerBlue;
-            Btn73.Background = Brushes.DodgerBlue;
-            Btn74.Background = Brushes.DodgerBlue;
-            Btn75.Background = Brushes.DodgerBlue;
-            Btn76.Background = Brushes.DodgerBlue;
-            Btn77.Background = Brushes.DodgerBlue;
-            Btn78.Background = Brushes.DodgerBlue;
-            Btn79.Background = Brushes.DodgerBlue;
+            return instance;
         }
 
+        private void listaBotones()
+        {
+            botones.Add(Btn1);
+            botones.Add(Btn2);
+            botones.Add(Btn3);
+            botones.Add(Btn4);
+            botones.Add(Btn5);
+            botones.Add(Btn6);
+            botones.Add(Btn7);
+            botones.Add(Btn8);
+            botones.Add(Btn9);
+            botones.Add(Btn10);
+            botones.Add(Btn11);
+            botones.Add(Btn12);
+            botones.Add(Btn13);
+            botones.Add(Btn14);
+            botones.Add(Btn15);
+            botones.Add(Btn16);
+            botones.Add(Btn17);
+            botones.Add(Btn18);
+            botones.Add(Btn19);
+            botones.Add(Btn20);
+            botones.Add(Btn21);
+            botones.Add(Btn22);
+            botones.Add(Btn23);
+            botones.Add(Btn24);
+            botones.Add(Btn25);
+            botones.Add(Btn26);
+            botones.Add(Btn27);
+            botones.Add(Btn28);
+            botones.Add(Btn29);
+            botones.Add(Btn30);
+            botones.Add(Btn31);
+            botones.Add(Btn32);
+            botones.Add(Btn33);
+            botones.Add(Btn34);
+            botones.Add(Btn35);
+            botones.Add(Btn36);
+            botones.Add(Btn37);
+            botones.Add(Btn38);
+            botones.Add(Btn39);
+            botones.Add(Btn40);
 
+            botones.Add(Btn41);
+            botones.Add(Btn42);
+            botones.Add(Btn43);
+            botones.Add(Btn44);
+            botones.Add(Btn45);
+            botones.Add(Btn46);
+            botones.Add(Btn47);
+            botones.Add(Btn48);
+            botones.Add(Btn49);
+            botones.Add(Btn50);
+            botones.Add(Btn51);
+            botones.Add(Btn52);
+            botones.Add(Btn53);
+            botones.Add(Btn54);
+            botones.Add(Btn55);
+            botones.Add(Btn56);
+            botones.Add(Btn57);
+            botones.Add(Btn58);
+            botones.Add(Btn59);
+            botones.Add(Btn60);
+            botones.Add(Btn61);
+            botones.Add(Btn62);
+            botones.Add(Btn63);
+            botones.Add(Btn64);
+            botones.Add(Btn65);
+            botones.Add(Btn66);
+            botones.Add(Btn67);
+            botones.Add(Btn68);
+            botones.Add(Btn69);
+            botones.Add(Btn70);
+            botones.Add(Btn71);
+            botones.Add(Btn72);
+            botones.Add(Btn73);
+            botones.Add(Btn74);
+            botones.Add(Btn75);
+            botones.Add(Btn76);
+            botones.Add(Btn77);
+            botones.Add(Btn78);
+            botones.Add(Btn79);
+            botones.Add(Btn80);
+        }
+
+        public void actualizarColores()
+        {
+            string[] tagButton = null; infoBotonez = null;
+
+            infoBotonez = separarIdSeccion(entorno.infoCasilleros());  // lista: en pos [i] esta [0]disponible, [1]seccion  
+
+            List<string> disponibles = infoBotonez[0];
+            List<string> secciones = infoBotonez[1];
+
+
+            Debug.WriteLine("tamaños: disponibles =" + disponibles.Count + " , secciones= " + secciones.Count);
+
+            for (int i = 0; i < botones.Count; i++)
+            {
+                tagButton = Convert.ToString(botones[i].Tag).Split(','); // convertir a string[id_c, seccion]
+
+                Debug.WriteLine(" ------- i=" + i);
+                Debug.WriteLine("disponible= X"+ ", seccion= "+tagButton[1]);                
+                Debug.WriteLine("disponible= " + disponibles[i]+ ", seccion= "+ secciones[i]);
+
+                if (disponibles[i] == "False")
+                {
+                    botones[i].Background = Brushes.LightGray;
+                    Debug.WriteLine("*** if == False");
+                }
+                else
+                {
+                    if (secciones[i] == "mujeres")
+                    {
+                        botones[i].Background = Brushes.HotPink;
+                        Debug.WriteLine("**** mujeres");
+                    }
+                    else
+                    {
+                        botones[i].Background = Brushes.DodgerBlue;
+                        Debug.WriteLine("**** NO mujeres");
+                    }
+                    
+                }
+
+                Debug.WriteLine(" -------------------------------");
+            }
+        }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -126,7 +184,6 @@ namespace AlphaSport.Vista
 
             tabla.Show();
             this.Hide();
-
         }
 
 
@@ -146,6 +203,91 @@ namespace AlphaSport.Vista
 
             main.Show();
             this.Hide();
+        }
+
+
+        private List<List<string>> separarIdSeccion(List<List<string>> entrada)
+        {
+            // lista[0]: [0]disponible, 
+            // lista[1]: [0]seccion
+            List<string> cadenaDisp = entrada[0];
+            List<string> cadenaSecc = entrada[1];
+
+            List<List<string>> lista = new List<List<string>>();            
+
+            lista.Add(cadenaDisp);
+            lista.Add(cadenaSecc);
+
+            for (int i = 0; i < lista.Count; i++)
+            {
+                for (int j = 0; j < lista[i].Count; j++)
+                {
+                    Debug.WriteLine(" << i= "+i +", j="+j+" valor= "+lista[i][j]);
+                }
+            }
+
+            return lista;
+        }
+
+        private void Buscar_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (codigo.Text == "")
+            {
+                MessageBox.Show("Escriba un código para buscar!");
+            }
+            else
+            {
+                // Lista: nombre, codigo, casillero, disponible{0:no, 1:si}, entrada, salida
+                List<string> lista = entorno.buscarCasilleroEstu(Convert.ToInt32(codigo.Text));
+
+
+                if (lista.Count > 0)
+                {
+                    MessageBox.Show("Asignado a: " + lista[0] + ".\n" + "Código: " + lista[1] + ".\n" + "Casillero: " + lista[2] + ".\n" + "Entrada: " + lista[4] + ".");
+                }
+                else
+                {                    
+                    MessageBox.Show("No se encontraron coincidencias.");
+                }
+            }
+
+        }
+
+        
+        private void Prestamo_Click(object sender, RoutedEventArgs e)
+        {
+            ventanaPrestamosCas prestamos = ventanaPrestamosCas.GetInstance();                        
+            prestamos.Show();
+            this.Hide();
+        }
+
+        private void eventoClick(object sender, RoutedEventArgs e)
+        {
+            Button objeto = e.Source as Button;
+            // Lista: nombre, codigo, casillero, disponible{0:no, 1:si}, entrada, salida  
+
+                                                // [0]id_butto, [2]genero
+            string[] tagButton = Convert.ToString(objeto.Tag).Split(',');
+            List<string> lista = entorno.buscarCasilleroID(Convert.ToInt32(tagButton[0]));
+
+
+
+            if (lista.Count > 0)
+            {
+                // caso para mostrar datos del prestamo                
+                MessageBox.Show("Asignado a: " + lista[0] + ".\n" + "Código: " + lista[1] + ".\n" + "Casillero: " + lista[2] + ".\n" + "Entrada: " + lista[4] + ".");
+            }
+            else
+            {
+                // caso para agregar el prestamo                
+                MessageBox.Show("El casillero "+tagButton[0]+" disponible este casillero.");
+            }
+        }
+
+        private void Window_MouseEnter(object sender, MouseEventArgs e)
+        {
+            actualizarColores();
         }
     }
 }
