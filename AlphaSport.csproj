@@ -30,8 +30,8 @@
     <ProductName>Alpha Sport</ProductName>
     <PublisherName>Alpha Sport</PublisherName>
     <SuiteName>Alpha Sport</SuiteName>
-    <ApplicationRevision>4</ApplicationRevision>
-    <ApplicationVersion>3.5.9.%2a</ApplicationVersion>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>3.5.10.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
