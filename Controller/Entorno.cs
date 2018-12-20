@@ -144,7 +144,7 @@ namespace Deportes_WPF.Controller
         public DataTable tablaImplementos()
         {
             Debug.WriteLine("MOSTRAR TABLA INSCRITOS");
-            string query = "select nombre, cantidad from timplementos;";
+            string query = "SELECT nombre as NOMBRE, codigo as CODIGO, cantidad as CANTIDAD, disponibles as DISPONIBLES, prestados as PRESTADOS, no_devueltos as PERDIDOS FROM  timplementos;";
             DataTable dt = connection.mostrarTabla(query);
             Debug.WriteLine("RECIBIR READER EN TABLE IMPLEMENTOS");
 

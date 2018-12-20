@@ -14,7 +14,7 @@
             <ColumnDefinition Width="1061*"/>
             <ColumnDefinition Width="196*"/>
         </Grid.ColumnDefinitions>
-        <DataGrid x:Name="dtgrid1" Height="710" Margin="390,135,390,0" VerticalAlignment="Top" IsReadOnly="True" Grid.Column="1" HorizontalAlignment="Center" Width="280" FontSize="18"/>
+        <DataGrid x:Name="dtgrid1" Height="710" Margin="166,135,162,0" VerticalAlignment="Top" IsReadOnly="True" Grid.Column="1" HorizontalAlignment="Center" Width="732" FontSize="18"/>
         <Label x:Name="lab1" Content="Nombre del Proyecto" Grid.Column="1" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="74,15,59,0" VerticalAlignment="Top" RenderTransformOrigin="4.868,0.577" FontSize="36" FontWeight="Bold" Width="927"/>
         <Label x:Name="lab2" Content="Implementos Deportivos" Grid.Column="1" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="362,88,345,0" VerticalAlignment="Top" RenderTransformOrigin="4.868,0.577" FontSize="24" FontWeight="Bold" Width="353"/>
         <Button x:Name="bt1" Content="Prestar" Grid.Column="2" Margin="0,44,16,0" VerticalAlignment="Top" Width="130" HorizontalAlignment="Right" Background="#FFFFDA33" Click="bt1_Click"/>
