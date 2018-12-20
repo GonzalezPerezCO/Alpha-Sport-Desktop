@@ -18,9 +18,10 @@
 - Si, el estudiante no acepta el reglamento, no debe poder crear horario.
 
 ## DEPORTES
-
+- Si, el estudiante tiene un implemento prestado, no debe poder pedir otro
+- Si, el estudiante no tiene implementos registrados, puede pedir prestado de una categoría.
 
 
 ## CASILLEROS
-Si, el estudiante tiene un casillero registrado, no debe poder registrar otro.
-Si, el estudiante no tiene casillero registrado, puede elegir uno de la sección de hombres.
+- Si, el estudiante tiene un casillero registrado, no debe poder registrar otro.
+- Si, el estudiante no tiene casillero registrado, puede elegir uno de la sección de hombres.
