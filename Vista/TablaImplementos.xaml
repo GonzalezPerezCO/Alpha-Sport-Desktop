@@ -5,26 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AlphaSport.Vista"
         mc:Ignorable="d"
-        Title="TablaImplementos" Width="1440" Height="900"
-        WindowState="Maximized"
-        WindowStyle="SingleBorderWindow" Closed="Window_Closed" Closing="Window_Closing">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="176*"/>
-            <ColumnDefinition Width="1061*"/>
-            <ColumnDefinition Width="196*"/>
-        </Grid.ColumnDefinitions>
-        <DataGrid x:Name="dtgrid1" Height="710" Margin="166,135,162,0" VerticalAlignment="Top" IsReadOnly="True" Grid.Column="1" HorizontalAlignment="Center" Width="732" FontSize="18"/>
-        <Label x:Name="lab1" Content="Nombre del Proyecto" Grid.Column="1" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="74,15,59,0" VerticalAlignment="Top" RenderTransformOrigin="4.868,0.577" FontSize="36" FontWeight="Bold" Width="927"/>
+        Width="1600" Height="860"
+        WindowState="Maximized" WindowStartupLocation="CenterScreen"
+        WindowStyle="None" Closed="Window_Closed" Closing="Window_Closing">
+    <Grid Background="#FF314257">
+        <DataGrid x:Name="dtgrid1" Height="661" Margin="226.472,163,220.528,0" VerticalAlignment="Top" IsReadOnly="True" Grid.Column="1" HorizontalAlignment="Center" Width="732" FontSize="18"/>
+        <Label x:Name="lab1" Content="Nombre del Proyecto" Grid.Column="1" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="131.472,18,119.528,0" VerticalAlignment="Top" RenderTransformOrigin="4.868,0.577" FontSize="36" FontWeight="Bold" Width="928"/>
         <Label x:Name="lab2" Content="Implementos Deportivos" Grid.Column="1" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="362,88,345,0" VerticalAlignment="Top" RenderTransformOrigin="4.868,0.577" FontSize="24" FontWeight="Bold" Width="353"/>
-        <Button x:Name="bt1" Content="Prestar" Grid.Column="2" Margin="0,44,16,0" VerticalAlignment="Top" Width="130" HorizontalAlignment="Right" Background="#FFFFDA33" Click="bt1_Click"/>
-        <Button x:Name="bt2" Content="Ver prestamos" Grid.Column="2" HorizontalAlignment="Right" Margin="0,83,16,0" VerticalAlignment="Top" Width="130" RenderTransformOrigin="0.52,2.5" FontWeight="Bold" Click="bt2_Click">
+        <Button x:Name="bt1" Content="Prestar" Grid.Column="2" Margin="0,238,17.276,0" VerticalAlignment="Top" Width="130" HorizontalAlignment="Right" Background="#FFFFDA33" Click="bt1_Click"/>
+        <Button x:Name="bt2" Content="Ver prestamos" Grid.Column="2" HorizontalAlignment="Right" Margin="0,277,17.276,0" VerticalAlignment="Top" Width="130" RenderTransformOrigin="0.52,2.5" FontWeight="Bold" Click="bt2_Click">
             <Button.Background>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.MenuHighlightColorKey}}"/>
             </Button.Background>
         </Button>
-        <Button x:Name="bt5" Content="Menú principal" Grid.Column="2" HorizontalAlignment="Right" Margin="0,794,16,0" VerticalAlignment="Top" Width="130" RenderTransformOrigin="0.52,2.5" FontWeight="Bold" Height="48" Background="#FFFFDA33" Click="bt5_Click"/>
-        <Button x:Name="bt3" Content="Casilleros" Grid.Column="2" Margin="0,135,16,0" VerticalAlignment="Top" Width="130" HorizontalAlignment="Right" Background="#FFFFDA33" Click="Bt3_Click"/>
-
+        <Button x:Name="bt5" Content="Menú principal" Grid.Column="2" HorizontalAlignment="Right" Margin="0,738,10.276,0" VerticalAlignment="Top" Width="130" RenderTransformOrigin="0.52,2.5" FontWeight="Bold" Height="48" Background="#FFFFDA33" Click="bt5_Click"/>
+        <Button x:Name="bt3" Content="Casilleros" Grid.Column="2" Margin="0,329,17.276,0" VerticalAlignment="Top" Width="130" HorizontalAlignment="Right" Background="#FFFFDA33" Click="Bt3_Click"/>
+        <DockPanel HorizontalAlignment="Left" LastChildFill="False" Width="190" Background="#FF1A2028"/>
     </Grid>
 </Window>

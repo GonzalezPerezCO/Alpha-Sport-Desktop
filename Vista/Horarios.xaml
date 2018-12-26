@@ -3,11 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Deportes_WPF.Vista"
         mc:Ignorable="d"
-        Title="Horarios" Width="1440" Height="900"
-        WindowState="Maximized"
-        WindowStyle="SingleBorderWindow" Closed="Window_Closed" Closing="Window_Closing">
+        Width="1600" Height="860"
+        WindowState="Maximized" WindowStartupLocation="CenterScreen"
+        WindowStyle="None" Closed="Window_Closed" Closing="Window_Closing">
     <Grid>
         <Label x:Name="lab1" Content="Nombre del Proyecto" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="485,22,502,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="36"/>
         <Label x:Name="lab2" Content="Horario Estudiante" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="561,112,575,0" VerticalAlignment="Top" RenderTransformOrigin="-0.013,-0.288" FontWeight="Bold" FontSize="24"/>
