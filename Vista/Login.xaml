@@ -4,9 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="Login" Width="1440" Height="900" FontSize="14" Closing="Window_Closing" Closed="Window_Closed" 
-        WindowState="Maximized"
-        WindowStyle="SingleBorderWindow">
+        Width="1600" Height="860" FontSize="14" Closing="Window_Closing" Closed="Window_Closed" 
+        WindowState="Maximized" WindowStartupLocation="CenterScreen"
+        WindowStyle="None">
     <Window.Background>
         <ImageBrush ImageSource="/Recursos/escuela_fondo.jpg" Opacity="0.5" Stretch="UniformToFill" TileMode="Tile"/>
     </Window.Background>
@@ -22,9 +22,16 @@
                 <Button Name="btn1" Content="enviar" Margin="60 10" Foreground="Black" Background="LightGray" Click="btn1_Click" ></Button>
             </StackPanel>
         </Border>
+<<<<<<< HEAD
         <Label x:Name="lab1" Content="Nombre del Proyecto" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="48"  Height="Auto" Margin="-333,-145,-339,0" Width="972" />
         <Label x:Name="lab2" Content="Periodo Académico" HorizontalContentAlignment="Right" Foreground="White" HorizontalAlignment="Right" Height="37" Margin="531,-260,-546,0" VerticalAlignment="Top" Width="315" FontWeight="Bold" FontSize="20"/>
         <Image HorizontalAlignment="Left" Height="98" Margin="636,488,-565,-286" VerticalAlignment="Top" Width="229" Source="/GonzalezPerezCO;component/Recursos/escuela_ing.jpg"/>
         <Image HorizontalAlignment="Left" Height="122" Margin="-564,460,0,-282" VerticalAlignment="Top" Width="207" Source="/GonzalezPerezCO;component/Recursos/sistemas.jpg"/>
+=======
+        <Label x:Name="lab1" Content="Nombre del Proyecto" HorizontalAlignment="Right" HorizontalContentAlignment="Center" VerticalAlignment="Top" FontWeight="Bold" FontSize="48"  Height="Auto" Margin="-333,-145,-339,0" Width="972" Foreground="{DynamicResource {x:Static SystemColors.MenuBarBrushKey}}" />
+        <Label x:Name="lab2" Content="Periodo Académico" HorizontalContentAlignment="Right" Foreground="White" HorizontalAlignment="Right" Height="37" Margin="531,-260,-546,0" VerticalAlignment="Top" Width="315" FontWeight="Bold" FontSize="20"/>
+        <Image HorizontalAlignment="Right" Height="98" Margin="0,0,-645,-265" VerticalAlignment="Bottom" Width="229" Source="/GonzalezPerezCO;component/Recursos/escuela_ing.jpg"/>
+        <Image HorizontalAlignment="Right" Height="122"  VerticalAlignment="Bottom" Width="207" Source="/GonzalezPerezCO;component/Recursos/sistemas.jpg" Margin="-649,0,742,-265"/>
+>>>>>>> master
     </Grid>
 </Window>

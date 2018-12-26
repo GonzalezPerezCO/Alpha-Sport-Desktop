@@ -79,5 +79,12 @@ namespace AlphaSport.Vista
             this.Hide();
         }
 
+<<<<<<< HEAD
+=======
+        private void ButtonFechar_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+>>>>>>> master
     }
 }

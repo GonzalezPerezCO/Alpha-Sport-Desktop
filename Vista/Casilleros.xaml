@@ -3,11 +3,16 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:AlphaSport.Vista"
         mc:Ignorable="d"
+<<<<<<< HEAD
         Title="Casilleros" Width="1440" Height="900" 
         WindowState="Maximized"
         WindowStyle="SingleBorderWindow" Closed="Window_Closed" Closing="Window_Closing" MouseEnter="Window_MouseEnter">
+=======
+        Width="1600" Height="860" 
+        WindowState="Maximized" WindowStartupLocation="CenterScreen"
+        WindowStyle="None" Closed="Window_Closed" Closing="Window_Closing" MouseEnter="Window_MouseEnter">
+>>>>>>> master
     <Grid Margin="0,10,0,671" HorizontalAlignment="Center" VerticalAlignment="Center">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="71*"/>

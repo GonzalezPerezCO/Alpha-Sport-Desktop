@@ -3,11 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:AlphaSport.Vista"
         mc:Ignorable="d"
-        Title="ConsultarPrestamos"  Width="1440" Height="900"
-        WindowState="Maximized"
-        WindowStyle="SingleBorderWindow" Closed="Window_Closed" Closing="Window_Closing" >
+        Width="1600" Height="860"
+        WindowState="Maximized" WindowStartupLocation="CenterScreen"
+        WindowStyle="None" Closed="Window_Closed" Closing="Window_Closing" >
     <Grid>
         <Button x:Name="btn1" Content="volver" HorizontalAlignment="Right" Margin="0,28,10,0" VerticalAlignment="Top" Width="74" Click="btn1_Click"/>
         <Button x:Name="btn2" Content="nuevo" HorizontalAlignment="Right" Margin="0,68,10,0" VerticalAlignment="Top" Width="74" Click="btn2_Click"/>
