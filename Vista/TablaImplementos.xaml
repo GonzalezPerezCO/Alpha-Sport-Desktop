@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Width="1600" Height="860"
         WindowState="Maximized" WindowStartupLocation="CenterScreen"
@@ -12,16 +13,36 @@
         <StackPanel VerticalAlignment="Top">
             <Grid Background="#FF0069C0" Height="10"/>
             <Grid Margin="5">
-                
-                
+                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                    <TextBlock Text="Design com WPF" VerticalAlignment="Center" FontSize="20" FontFamily="Champagne &amp; Limousines" Margin="20 0"/>
+                    <Button Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Gray">
+                        <materialDesign:PackIcon Kind="FacebookBox"/>
+                    </Button>
+                    <Button Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Gray">
+                        <materialDesign:PackIcon Kind="TwitterBox"/>
+                    </Button>
+                    <Button Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Gray">
+                        <materialDesign:PackIcon Kind="GithubBox"/>
+                    </Button>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10 0">
+                    <Button Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Gray">
+                        <materialDesign:PackIcon Kind="BellOutline"/>
+                    </Button>
+                    <Button Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Gray" Margin="0 0 10 0">
+                        <materialDesign:PackIcon Kind="Settings"/>
+                    </Button>
+                    <Button x:Name="ButtonFechar" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Gray" Click="ButtonFechar_Click">
+                        <materialDesign:PackIcon Kind="Power"/>
+                    </Button>
+                </StackPanel>
             </Grid>
-
         </StackPanel>
-        
+
         <DockPanel HorizontalAlignment="Left" LastChildFill="False" Width="190" Background="#FF1A2028"/>
         <DataGrid x:Name="dtgrid1" Height="661" Margin="226.472,163,220.528,0" VerticalAlignment="Top" IsReadOnly="True" Grid.Column="1" HorizontalAlignment="Center" Width="732" FontSize="18"/>
-        <Label x:Name="lab1" Content="Nombre del Proyecto" Grid.Column="1" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="131.472,18,119.528,0" VerticalAlignment="Top" RenderTransformOrigin="4.868,0.577" FontSize="36" FontWeight="Bold" Width="928"/>
-        <Label x:Name="lab2" Content="Implementos Deportivos" Grid.Column="1" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="362,88,345,0" VerticalAlignment="Top" RenderTransformOrigin="4.868,0.577" FontSize="24" FontWeight="Bold" Width="353"/>
+        <Label x:Name="lab1" Content="Nombre del Proyecto" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="328,100,336,0" VerticalAlignment="Top" RenderTransformOrigin="4.868,0.577" FontSize="36" FontWeight="Bold" Width="928"/>
+        <Label x:Name="lab2" Content="Implementos Deportivos" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="618,170,621,0" VerticalAlignment="Top" RenderTransformOrigin="4.868,0.577" FontSize="24" FontWeight="Bold" Width="353"/>
         <Button x:Name="bt1" Content="Prestar" Margin="0,319,1427,0" VerticalAlignment="Top" Width="130" HorizontalAlignment="Right" Background="#FFFFDA33" Click="bt1_Click"/>
         <Button x:Name="bt2" Content="Ver prestamos" HorizontalAlignment="Right" Margin="0,358,1427,0" VerticalAlignment="Top" Width="130" RenderTransformOrigin="0.52,2.5" FontWeight="Bold" Click="bt2_Click">
             <Button.Background>
