@@ -8,36 +8,7 @@
         Width="1600" Height="860"
         WindowState="Maximized" WindowStartupLocation="CenterScreen"
         WindowStyle="None" Closed="Window_Closed" Closing="Window_Closing">
-    <Grid Background="#FFEEEEEE">
-
-        <StackPanel VerticalAlignment="Top">
-            <Grid Background="#FF0069C0" Height="10"/>
-            <Grid Margin="5">
-                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
-                    <TextBlock Text="Design com WPF" VerticalAlignment="Center" FontSize="20" FontFamily="Champagne &amp; Limousines" Margin="20 0"/>
-                    <Button Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Gray">
-                        <materialDesign:PackIcon Kind="FacebookBox"/>
-                    </Button>
-                    <Button Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Gray">
-                        <materialDesign:PackIcon Kind="TwitterBox"/>
-                    </Button>
-                    <Button Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Gray">
-                        <materialDesign:PackIcon Kind="GithubBox"/>
-                    </Button>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10 0">
-                    <Button Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Gray">
-                        <materialDesign:PackIcon Kind="BellOutline"/>
-                    </Button>
-                    <Button Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Gray" Margin="0 0 10 0">
-                        <materialDesign:PackIcon Kind="Settings"/>
-                    </Button>
-                    <Button x:Name="ButtonFechar" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Gray" Click="ButtonFechar_Click">
-                        <materialDesign:PackIcon Kind="Power"/>
-                    </Button>
-                </StackPanel>
-            </Grid>
-        </StackPanel>
+    <Grid Background="#FFEEEEEE">       
 
         <DockPanel HorizontalAlignment="Left" LastChildFill="False" Width="190" Background="#FF1A2028"/>
         <DataGrid x:Name="dtgrid1" Height="661" Margin="226.472,163,220.528,0" VerticalAlignment="Top" IsReadOnly="True" Grid.Column="1" HorizontalAlignment="Center" Width="732" FontSize="18"/>
