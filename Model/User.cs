@@ -9,7 +9,7 @@ using System.Threading.Tasks;
  * */
 namespace Deportes_WPF.Model
 {
-    class User
+    internal class User
     {
         private string email;
         private string nombre;

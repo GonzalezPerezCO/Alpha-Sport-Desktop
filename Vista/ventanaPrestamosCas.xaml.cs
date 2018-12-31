@@ -86,7 +86,7 @@ namespace AlphaSport.Vista
                 int codigoEs = Convert.ToInt32(codigo.Text);
                 int codigoCas = Convert.ToInt32(cmbox.SelectedValue);
                 List<string> busCod = entorno.buscarCasilleroEstu(codigoEs);
-                bool estudiante = entorno.buscarEstudiante(codigoEs); // false: no existe en testudiantes
+                bool estudiante = entorno.buscarEstudiante(codigoEs, ""); // false: no existe en testudiantes
 
                 if (busCod.Count != 0)
                 {

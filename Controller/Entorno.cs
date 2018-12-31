@@ -17,7 +17,7 @@ namespace Deportes_WPF.Controller
      * CONSULTAR: CUPOS, HORARIOS, ESTUDIANTES
      * 
      * */
-    class Entorno
+    internal class Entorno
     {
 
         public readonly string PROYECTO = "Alpha Sport";
@@ -52,8 +52,6 @@ namespace Deportes_WPF.Controller
 
             ventana.Hide();
             login.Show();
-
-            // falta usar en las venatnas
         }
 
         public bool login(string email, string password) {
@@ -177,8 +175,8 @@ namespace Deportes_WPF.Controller
             return dt;
         }       
 
-        public bool buscarEstudiante(int codigo) {
-            return connection.buscarEstudiante(codigo);
+        public bool buscarEstudiante(int codigo, string email) {
+            return connection.buscarEstudiante(codigo, email);
         }
         
         public bool cambiarHorario()

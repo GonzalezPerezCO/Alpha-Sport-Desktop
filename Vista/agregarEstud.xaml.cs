@@ -89,17 +89,28 @@ namespace Deportes_WPF.Vista
                 MessageBox.Show("Llene todos los campos para poder continuar.");
             }
             else {
-                string nombres = txt1.Text;
-                string apellidos = txt2.Text;
-                string codigo = txt3.Text;
-                string documento = txt8.Text;
-                string carrera = Convert.ToString(cmbox.SelectedValue);
-                string semestre = txt5.Text;
+
+                int codigo = Convert.ToInt32(txt3.Text);
                 string email = txt6.Text;
-                string obs = txt7.Text;
-                entorno.agregarEstudiante(nombres, apellidos, Convert.ToInt32(codigo), Convert.ToInt32(documento), carrera, Convert.ToInt32(semestre), email, obs);
-                MessageBox.Show("El estudiante "+nombres+" "+apellidos+" fue agregado.");
-                limpiar();
+                
+                bool existe = entorno.buscarEstudiante(codigo, email);
+
+                if (!existe)
+                {
+                    string nombres = txt1.Text;
+                    string apellidos = txt2.Text;                    
+                    int documento = Convert.ToInt32(txt8.Text);
+                    string carrera = Convert.ToString(cmbox.SelectedValue);
+                    int semestre = Convert.ToInt32(txt5.Text);
+                    string obs = txt7.Text;
+                    entorno.agregarEstudiante(nombres, apellidos, codigo, documento, carrera, semestre, email, obs);
+                    MessageBox.Show("El estudiante " + nombres + " " + apellidos + " fue agregado.");
+                    limpiar();
+                }
+                else
+                {
+                    MessageBox.Show("El estudiante ya existe!");
+                }
             }
          
         }

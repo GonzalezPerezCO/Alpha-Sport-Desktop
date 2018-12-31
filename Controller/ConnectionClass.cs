@@ -3,14 +3,18 @@ using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using Deportes_WPF.Model;
 using MySql.Data.MySqlClient;
 
+using Microsoft.Win32.SafeHandles;
+using System.Runtime.InteropServices;
+
 namespace Deportes_WPF.Controller
 {
-    class ConnectionClass
+    internal class ConnectionClass : IDisposable
     {
         private static ConnectionClass instance = null;
 
@@ -26,6 +30,41 @@ namespace Deportes_WPF.Controller
 
         private MySqlCommand cmd;
         private MySqlDataReader reader;
+                
+        private bool disposed = false; // Flag: Has Dispose already been called?
+        
+        public void Dispose()
+        {   
+            Dispose(true); // Dispose of unmanaged resources.            
+            GC.SuppressFinalize(this); // Suppress finalization.
+        }
+
+        // Protected implementation of Dispose pattern.
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposed)
+            {
+                return;
+            }
+
+            if (disposing)
+            {
+                instance.Dispose();
+                connection.Dispose();
+                cmd.Dispose();
+                reader.Dispose();
+            }
+
+            connectionString = null;
+            disposed = true;
+        }
+
+        ~ConnectionClass()
+        {
+            Dispose(false);
+        }
+
+        // https://canyouhearthebits.wordpress.com/2008/08/08/como-implementar-correctamente-idisposable/
 
         private ConnectionClass()
         {
@@ -107,11 +146,11 @@ namespace Deportes_WPF.Controller
         }
 
         //Buscar estudiante
-        public bool buscarEstudiante(int codigo)
+        public bool buscarEstudiante(int codigo, string email)
         {
             bool result = false;
 
-            string queryEstu = "select codigo from testudiantes where codigo= " + codigo + ";";
+            string queryEstu = "SELECT id_e FROM testudiantes WHERE codigo = " + codigo + " OR email = '" + email + "';";
 
             Debug.WriteLine(" ----  BUSCAR ESTUDIANTE");
 
@@ -558,6 +597,6 @@ namespace Deportes_WPF.Controller
         public string getPeriodo() {
             return "Periodo Académico";
         }
-
+        
     }
 }

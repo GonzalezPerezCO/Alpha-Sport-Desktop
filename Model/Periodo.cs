@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Deportes_WPF.Model
 {
-    class Periodo
+    internal class Periodo
     {
         private int id;
         private string nombre;
