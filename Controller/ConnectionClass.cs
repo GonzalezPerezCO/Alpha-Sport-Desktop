@@ -65,6 +65,7 @@ namespace Deportes_WPF.Controller
         }
 
         // https://canyouhearthebits.wordpress.com/2008/08/08/como-implementar-correctamente-idisposable/
+        // https://docs.microsoft.com/en-us/dotnet/standard/garbage-collection/implementing-dispose
 
         private ConnectionClass()
         {
