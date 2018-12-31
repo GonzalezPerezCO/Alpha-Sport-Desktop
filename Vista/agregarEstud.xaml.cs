@@ -1,6 +1,7 @@
 ﻿using Deportes_WPF.Controller;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,15 +23,40 @@ namespace Deportes_WPF.Vista
     {
 
         private Entorno entorno;
+        private static List<string> carreras;
 
         public agregarEstud()
         {
             InitializeComponent();
             entorno = Entorno.GetInstance();
             lab1.Content = entorno.PROYECTO;
+            prepararCarreras();
             limpiar();
             botonesEstado(true);
+        }
 
+        private List<string> separarIds(List<string> lista)
+        {
+            // a,b,c,...,x
+
+            List<string> result = new List<string>();
+
+            string[] separadas;
+            separadas = lista[0].Split(',');
+
+            foreach (var item in separadas)
+            {
+                result.Add(item);
+                Debug.WriteLine("<< id a lista: " + item);
+            }
+
+            return result;
+        }
+
+        private void prepararCarreras()
+        {
+            carreras = separarIds(entorno.carreras());
+            cmbox.ItemsSource = carreras;
         }
 
         private void Window_Closed(object sender, EventArgs e)
@@ -58,7 +84,7 @@ namespace Deportes_WPF.Vista
 
         private void btn3_Click(object sender, RoutedEventArgs e)
         {
-            if (txt1.Text == "" || txt2.Text == "" || txt3.Text == "" || txt4.Text == "" || txt5.Text == "" || txt6.Text == "")
+            if (txt1.Text == "" || txt2.Text == "" || txt3.Text == "" || cmbox.SelectedItem != null || txt5.Text == "" || txt6.Text == "")
             {
                 MessageBox.Show("Llene todos los campos para poder continuar.");
             }
@@ -66,11 +92,12 @@ namespace Deportes_WPF.Vista
                 string nombres = txt1.Text;
                 string apellidos = txt2.Text;
                 string codigo = txt3.Text;
-                string carrera = txt4.Text;
+                string documento = txt8.Text;
+                string carrera = Convert.ToString(cmbox.SelectedValue);
                 string semestre = txt5.Text;
                 string email = txt6.Text;
                 string obs = txt7.Text;
-                entorno.agregarEstudiante(nombres, apellidos, Convert.ToInt32(codigo), carrera, Convert.ToInt32(semestre), email, obs);
+                entorno.agregarEstudiante(nombres, apellidos, Convert.ToInt32(codigo), Convert.ToInt32(documento), carrera, Convert.ToInt32(semestre), email, obs);
                 MessageBox.Show("El estudiante "+nombres+" "+apellidos+" fue agregado.");
                 limpiar();
             }
@@ -94,10 +121,11 @@ namespace Deportes_WPF.Vista
             txt1.Text = "";
             txt2.Text = "";
             txt3.Text = "";
-            txt4.Text = "";
+            cmbox.SelectedValue = null;
             txt5.Text = "";
             txt6.Text = "";
             txt7.Text = "";
+            txt8.Text = "";
         }
     }
 }

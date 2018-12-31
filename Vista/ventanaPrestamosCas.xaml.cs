@@ -150,6 +150,6 @@ namespace AlphaSport.Vista
             lista = separarIds(entorno.disponiblesCasilleros());
             cmbox.ItemsSource = lista;
             ocultar();
-        }
+        }        
     }
 }

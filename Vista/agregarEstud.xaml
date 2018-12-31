@@ -8,36 +8,32 @@
         WindowState="Maximized" WindowStartupLocation="CenterScreen"
         WindowStyle="None" Closed="Window_Closed" Closing="Window_Closing">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="355*"/>
-            <ColumnDefinition Width="749*"/>
-            <ColumnDefinition Width="248*"/>
-            <ColumnDefinition Width="80*"/>
-        </Grid.ColumnDefinitions>
         <Label x:Name="lab1" Content="Nombre del Proyecto" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="47,7,47,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="36" Width="1338" Grid.ColumnSpan="4"/>
         <Label x:Name="lab2" Content="Agregar Estudiante al Gimnasio" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="176,112,209,0" VerticalAlignment="Top" RenderTransformOrigin="-0.013,-0.288" FontWeight="Bold" FontSize="24" Grid.Column="1"/>
-        <Button x:Name="btn1" Content="Volver" HorizontalAlignment="Right" Margin="0,128,33,0" VerticalAlignment="Top" Width="76" Grid.Column="2" Click="btn1_Click" Grid.ColumnSpan="2"/>
-        <Button x:Name="btn3" Content="Guardar" HorizontalAlignment="Center" Margin="175,679,472,0" VerticalAlignment="Top" Width="102" FontWeight="Bold" FontSize="16" Height="43" Click="btn3_Click" IsEnabled="False" Grid.Column="1">
+        <Button x:Name="btn1" Content="Volver" HorizontalAlignment="Right" Margin="0,97,49,0" VerticalAlignment="Top" Width="76" Click="btn1_Click"/>
+        <Button x:Name="btn3" Content="Guardar" HorizontalAlignment="Center" Margin="596,0,894,48" VerticalAlignment="Bottom" Width="102" FontWeight="Bold" FontSize="16" Height="43" Click="btn3_Click">
             <Button.Background>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.MenuHighlightColorKey}}"/>
             </Button.Background>
         </Button>
-        <Button x:Name="btn4" Content="Cancelar" HorizontalAlignment="Center" Margin="477,679,170,0" VerticalAlignment="Top" Width="102" FontWeight="Bold" FontSize="16" Height="43" Background="#FFD36D19" Click="btn4_Click" Grid.Column="1"/>
-        <Label x:Name="lab3" Content="Nombres" HorizontalAlignment="Center" Margin="169,202,484,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" Grid.Column="1"/>
-        <TextBox x:Name="txt1" HorizontalAlignment="Center" Height="37" HorizontalContentAlignment="Left" Margin="337,206,218,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="194" FontSize="20" Grid.Column="1"/>
-        <Label x:Name="lab4" Content="Apellidos" HorizontalAlignment="Center" Margin="169,244,482,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" Grid.Column="1"/>
-        <TextBox x:Name="txt2" HorizontalAlignment="Center" Height="37" HorizontalContentAlignment="Left" Margin="337,248,218,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="194" FontSize="20" Grid.Column="1"/>
-        <Label x:Name="lab5" Content="Código" HorizontalAlignment="Center" Margin="169,286,504,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" RenderTransformOrigin="0.182,0.378" Grid.Column="1"/>
-        <TextBox x:Name="txt3" HorizontalAlignment="Center" Height="37" HorizontalContentAlignment="Left" Margin="337,290,218,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="194" FontSize="20" Grid.Column="1"/>
-        <Label x:Name="lab6" Content="Carrera" HorizontalAlignment="Center" Margin="169,328,502,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" Grid.Column="1"/>
-        <TextBox x:Name="txt4" HorizontalAlignment="Center" Height="37" HorizontalContentAlignment="Left" Margin="337,332,218,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="194" FontSize="20" Grid.Column="1"/>
-        <Label x:Name="lab7" Content="Semestre" HorizontalAlignment="Center" Margin="169,370,484,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" Grid.Column="1"/>
-        <TextBox x:Name="txt5" HorizontalAlignment="Center" Height="37" HorizontalContentAlignment="Left" Margin="337,374,218,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="194" FontSize="20" Grid.Column="1"/>
-        <Label x:Name="lab8" Content="Email" HorizontalAlignment="Center" Margin="169,416,520,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" Grid.Column="1"/>
-        <TextBox x:Name="txt6" HorizontalAlignment="Center" Height="37" HorizontalContentAlignment="Left" Margin="337,416,218,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="194" FontSize="20" Grid.Column="1"/>
-        <Label x:Name="lab10" Content="Observaciones" HorizontalAlignment="Center" Margin="269,506,312,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" Width="168" Grid.Column="1"/>
-        <TextBox x:Name="txt7" HorizontalAlignment="Center" Height="117" HorizontalContentAlignment="Left" Margin="175,543,216,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="358" FontSize="20" Grid.Column="1"/>
-        <Button x:Name="btn2" Content="Limpiar" HorizontalAlignment="Right" Margin="0,170,33,0" VerticalAlignment="Top" Width="76" Grid.Column="2" Click="btn2_Click" Grid.ColumnSpan="2"/>
+        <Button x:Name="btn4" Content="Cancelar" HorizontalAlignment="Center" Margin="898,0,592,48" VerticalAlignment="Bottom" Width="102" FontWeight="Bold" FontSize="16" Height="43" Background="#FFD36D19" Click="btn4_Click"/>
+        <Label x:Name="lab3" Content="Nombres" HorizontalAlignment="Center" Margin="276,229,1220,586" VerticalAlignment="Center" FontWeight="Bold" FontSize="20"/>
+        <TextBox x:Name="txt1" HorizontalAlignment="Center" Height="37" HorizontalContentAlignment="Left" Margin="444,229,824,586" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Width="324" FontSize="20" CharacterCasing="Upper"/>
+        <Label x:Name="lab4" Content="Apellidos" HorizontalAlignment="Center" Margin="277,280,1217,535" VerticalAlignment="Center" FontWeight="Bold" FontSize="20"/>
+        <TextBox x:Name="txt2" HorizontalAlignment="Center" Height="38" HorizontalContentAlignment="Left" Margin="442,280,826,534" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Width="324" FontSize="20" CharacterCasing="Upper"/>
+        <Label x:Name="lab5" Content="Código" HorizontalAlignment="Center" Margin="277,330,1238,485" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" RenderTransformOrigin="0.182,0.378"/>
+        <TextBox x:Name="txt3" HorizontalAlignment="Center" Height="36" HorizontalContentAlignment="Left" Margin="442,330,826,486" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Width="324" FontSize="20" CharacterCasing="Upper"/>
+        <Label x:Name="lab6" Content="Carrera" HorizontalAlignment="Center" Margin="828,225,686,590" VerticalAlignment="Center" FontWeight="Bold" FontSize="20"/>
+        <Label x:Name="lab7" Content="Semestre" HorizontalAlignment="Center" Margin="828,276,668,539" VerticalAlignment="Center" FontWeight="Bold" FontSize="20"/>
+        <TextBox x:Name="txt5" HorizontalAlignment="Center" Height="38" HorizontalContentAlignment="Left" Margin="994,276,244,538" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Width="354" FontSize="20" CharacterCasing="Upper"/>
+        <Label x:Name="lab8" Content="Email" HorizontalAlignment="Center" Margin="829,330,703,485" VerticalAlignment="Center" FontWeight="Bold" FontSize="20"/>
+        <TextBox x:Name="txt6" HorizontalAlignment="Center" Height="36" HorizontalContentAlignment="Left" Margin="994,330,244,486" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Width="354" FontSize="20" CharacterCasing="Upper"/>
+        <Label x:Name="lab10" Content="Observaciones" HorizontalAlignment="Center" Margin="699,498,725,318" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" Width="168"/>
+        <TextBox x:Name="txt7" HorizontalAlignment="Center" Height="142" HorizontalContentAlignment="Left" Margin="276,560,244,150" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Width="1072" FontSize="20" CharacterCasing="Upper" AcceptsReturn="True" AcceptsTab="True"/>
+        <Button x:Name="btn2" Content="Limpiar" HorizontalAlignment="Right" Margin="0,139,49,0" VerticalAlignment="Top" Width="76" Click="btn2_Click"/>
+        <Label x:Name="lab9" Content="Documento" HorizontalAlignment="Center" Margin="277,392,1180,424" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" RenderTransformOrigin="0.182,0.378" Width="135"/>
+        <TextBox x:Name="txt8" HorizontalAlignment="Center" Height="36" HorizontalContentAlignment="Left" Margin="444,392,824,424" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Width="324" FontSize="20" CharacterCasing="Upper"/>
+        <ComboBox x:Name="cmbox" HorizontalAlignment="Center" Margin="994,229,244,596" VerticalAlignment="Center" Width="354" Height="27"/>
 
     </Grid>
 </Window>

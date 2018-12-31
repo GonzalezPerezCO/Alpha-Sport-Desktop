@@ -84,6 +84,12 @@ namespace Deportes_WPF.Controller
             return connection.listaUnicaReader(query);
         }
 
+        public List<string> carreras()
+        {
+            string query = "SELECT GROUP_CONCAT(carrera) FROM tcarreras;";
+            return connection.listaUnicaReader(query);
+        }
+
         public List<string> buscarCasilleroEstu(int codigo)
         {
             string query = "SELECT CONCAT(nombre, ' ', apellido), tcasilleros.codigo, id_c , disponible, entrada, salida FROM tcasilleros JOIN testudiantes on testudiantes.codigo =  tcasilleros.codigo WHERE tcasilleros.codigo = "+codigo+ " LIMIT 1;";
@@ -116,9 +122,9 @@ namespace Deportes_WPF.Controller
             connection.queryExecute(query);
         }
 
-        public void agregarEstudiante(string nombre, string apellido, int codigo, string carrera, int semestre, string email, string observacion)
+        public void agregarEstudiante(string nombre, string apellido, int codigo, int documento, string carrera, int semestre, string email, string observacion)
         {
-            string query = "call addEstudFull('" + nombre + "', '" + apellido + "', " + codigo + ", '" + carrera + "', " + semestre + ", '" + email + "', '" + observacion + "');";
+            string query = "call addEstudFull('" + nombre + "', '" + apellido + "', " + codigo + ", " + documento + ", '" + carrera + "', " + semestre + ", '" + email + "', '" + observacion + "');";
             connection.queryExecute(query);
         }
 
