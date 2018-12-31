@@ -122,6 +122,7 @@ namespace Deportes_WPF.Controller
 
         public void agregarEstudiante(string nombre, string apellido, int codigo, int documento, string carrera, int semestre, string email, string observacion)
         {
+            // nombres, apellidos, codigo, documento, carrera, semestre, email, obs
             string query = "call addEstudFull('" + nombre + "', '" + apellido + "', " + codigo + ", " + documento + ", '" + carrera + "', " + semestre + ", '" + email + "', '" + observacion + "');";
             connection.queryExecute(query);
         }

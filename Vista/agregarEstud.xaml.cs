@@ -84,7 +84,7 @@ namespace Deportes_WPF.Vista
 
         private void btn3_Click(object sender, RoutedEventArgs e)
         {
-            if (txt1.Text == "" || txt2.Text == "" || txt3.Text == "" || cmbox.SelectedItem != null || txt5.Text == "" || txt6.Text == "")
+            if (txt1.Text == "" || txt2.Text == "" || txt3.Text == "" || cmbox.SelectedItem == null || txt5.Text == "" || txt6.Text == "")
             {
                 MessageBox.Show("Llene todos los campos para poder continuar.");
             }
