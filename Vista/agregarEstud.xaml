@@ -33,7 +33,7 @@
         <Button x:Name="btn2" Content="Limpiar" HorizontalAlignment="Right" Margin="0,139,49,0" VerticalAlignment="Top" Width="76" Click="btn2_Click"/>
         <Label x:Name="lab9" Content="Documento:" HorizontalAlignment="Center" Margin="277,392,1180,424" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" RenderTransformOrigin="0.182,0.378" Width="135"/>
         <TextBox x:Name="txt8" HorizontalAlignment="Center" Height="36" Margin="416,392,852,424" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Width="324" FontSize="20" CharacterCasing="Upper" MaxLines="1" MaxLength="10" VerticalContentAlignment="Center"/>
-        <ComboBox x:Name="cmbox" HorizontalAlignment="Center" Margin="910,229,217,596" VerticalAlignment="Center" Width="465" Height="27"/>
+        <ComboBox x:Name="cmbox" HorizontalAlignment="Center" Margin="910,229,217,592" VerticalAlignment="Center" Width="465" Height="31" FontSize="20"/>
 
     </Grid>
 </Window>
