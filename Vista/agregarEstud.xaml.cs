@@ -89,27 +89,35 @@ namespace Deportes_WPF.Vista
                 MessageBox.Show("Llene todos los campos para poder continuar.");
             }
             else {
-
-                int codigo = Convert.ToInt32(txt3.Text);
-                string email = txt6.Text;
-                
-                bool existe = entorno.buscarEstudiante(codigo, email);
-
-                if (!existe)
+                // validación de tipo de dato correcto, que los numericos sean numeros
+               
+                if (!int.TryParse(txt3.Text, out int abc) || !int.TryParse(txt8.Text, out int def) || !int.TryParse(txt5.Text, out int ghi))
                 {
-                    string nombres = txt1.Text;
-                    string apellidos = txt2.Text;                    
-                    int documento = Convert.ToInt32(txt8.Text);
-                    string carrera = Convert.ToString(cmbox.SelectedValue);
-                    int semestre = Convert.ToInt32(txt5.Text);
-                    string obs = txt7.Text;
-                    entorno.agregarEstudiante(nombres, apellidos, codigo, documento, carrera, semestre, email, obs);
-                    MessageBox.Show("El estudiante " + nombres + " " + apellidos + " fue agregado.");
-                    limpiar();
+                    MessageBox.Show("Hay campos númericos con texto, ");
                 }
                 else
                 {
-                    MessageBox.Show("El estudiante ya existe!");
+                    int codigo = Convert.ToInt32(txt3.Text);
+                    string email = txt6.Text;
+
+                    bool existe = entorno.buscarEstudiante(codigo, email);
+
+                    if (!existe)
+                    {
+                        string nombres = txt1.Text;
+                        string apellidos = txt2.Text;
+                        int documento = Convert.ToInt32(txt8.Text);
+                        string carrera = Convert.ToString(cmbox.SelectedValue);
+                        int semestre = Convert.ToInt32(txt5.Text);
+                        string obs = txt7.Text;
+                        entorno.agregarEstudiante(nombres, apellidos, codigo, documento, carrera, semestre, email, obs);
+                        MessageBox.Show("El estudiante " + nombres + " " + apellidos + " fue agregado.");
+                        limpiar();
+                    }
+                    else
+                    {
+                        MessageBox.Show("El estudiante ya existe!");
+                    }
                 }
             }
          
