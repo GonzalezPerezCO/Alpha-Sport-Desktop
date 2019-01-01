@@ -245,9 +245,9 @@ namespace Deportes_WPF.Vista
                 case "Sunday":
                     dia = "Domingo";
                     break;
-                //default:
-                    //dia = "N/A";
-                    //break;
+                default:
+                    dia = "N/A";
+                    break;
             }
 
             return dia;
@@ -272,19 +272,11 @@ namespace Deportes_WPF.Vista
             }
             MessageBox.Show("Asistencia registrada");
             botonesEstado(false);
-        }
-
-        /*private void bt5_Click(object sender, RoutedEventArgs e)
-        {            
-            MessageBox.Show("Asistencia Rechazada");
-            limpiar();
-            botonesEstado(false);
-        }*/
+        }        
 
         private void botonesEstado(bool estado) {
             Debug.WriteLine("Mostrar botones 5 y 6 = "+estado);
-            bt4.IsEnabled = estado;
-            //bt5.IsEnabled = estado;            
+            bt4.IsEnabled = estado;       
         }
     }
 }

@@ -42,7 +42,7 @@
         <Label x:Name="txt11" Content="0" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="373,616,1166,186" VerticalAlignment="Center" RenderTransformOrigin="0.355,-0.212" FontSize="24" Width="53" Height="50" VerticalContentAlignment="Center"/>
         <Label x:Name="txt12" Content="0" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="502,616,1034,186" VerticalAlignment="Center" RenderTransformOrigin="0.355,-0.212" FontSize="24" Width="56" Height="50" VerticalContentAlignment="Center"/>
         <Label x:Name="txt13" Content="0" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="637,616,898,186" VerticalAlignment="Center" RenderTransformOrigin="0.355,-0.212" FontSize="24" Width="57" Height="50" VerticalContentAlignment="Center"/>
-        <Label Content="Horario" HorizontalAlignment="Center" Margin="336,518,1078,298" VerticalAlignment="Center" FontWeight="Bold" FontSize="22" RenderTransformOrigin="-1.103,0.704" Height="36" Width="178"/>
+        <Label Content="Horario:" HorizontalAlignment="Center" Margin="336,518,1078,298" VerticalAlignment="Center" FontWeight="Bold" FontSize="22" RenderTransformOrigin="-1.103,0.704" Height="36" Width="178"/>
 
 
     </Grid>
