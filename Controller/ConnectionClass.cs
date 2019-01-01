@@ -147,7 +147,7 @@ namespace Deportes_WPF.Controller
         }
 
         //Buscar estudiante
-        public bool buscarEstudiante(int codigo, string email)
+        public bool buscarEstudiante(UInt32 codigo, string email)
         {
             bool result = false;
 

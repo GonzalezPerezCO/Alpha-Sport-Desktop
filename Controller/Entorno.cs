@@ -120,7 +120,7 @@ namespace Deportes_WPF.Controller
             connection.queryExecute(query);
         }
 
-        public void agregarEstudiante(string nombre, string apellido, int codigo, int documento, string carrera, int semestre, string email, string observacion)
+        public void agregarEstudiante(string nombre, string apellido, UInt32 codigo, UInt32 documento, string carrera, UInt32 semestre, string email, string observacion)
         {
             // nombres, apellidos, codigo, documento, carrera, semestre, email, obs
             string query = "call addEstudFull('" + nombre + "', '" + apellido + "', " + codigo + ", " + documento + ", '" + carrera + "', " + semestre + ", '" + email + "', '" + observacion + "');";
@@ -176,7 +176,7 @@ namespace Deportes_WPF.Controller
             return dt;
         }       
 
-        public bool buscarEstudiante(int codigo, string email) {
+        public bool buscarEstudiante(UInt32 codigo, string email) {
             return connection.buscarEstudiante(codigo, email);
         }
         

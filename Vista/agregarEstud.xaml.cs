@@ -93,11 +93,11 @@ namespace Deportes_WPF.Vista
                
                 if (!int.TryParse(txt3.Text, out int abc) || !int.TryParse(txt8.Text, out int def) || !int.TryParse(txt5.Text, out int ghi))
                 {
-                    MessageBox.Show("Hay campos númericos con texto, ");
+                    MessageBox.Show("Hay campos númericos con texto. Escriba solo numéros en el Código, el Documento y en el Semestre.");
                 }
                 else
                 {
-                    int codigo = Convert.ToInt32(txt3.Text);
+                    UInt32 codigo = Convert.ToUInt32(txt3.Text);
                     string email = txt6.Text.TrimStart().TrimEnd();
 
                     bool existe = entorno.buscarEstudiante(codigo, email);
@@ -106,9 +106,9 @@ namespace Deportes_WPF.Vista
                     {
                         string nombres = txt1.Text.TrimStart().TrimEnd();
                         string apellidos = txt2.Text.TrimStart().TrimEnd();
-                        int documento = Convert.ToInt32(txt8.Text);
+                        UInt32 documento = Convert.ToUInt32(txt8.Text);
                         string carrera = Convert.ToString(cmbox.SelectedValue).TrimStart().TrimEnd();
-                        int semestre = Convert.ToInt32(txt5.Text);
+                        UInt32 semestre = Convert.ToUInt32(txt5.Text);
                         string obs = txt7.Text.TrimStart().TrimEnd();
                         entorno.agregarEstudiante(nombres, apellidos, codigo, documento, carrera, semestre, email, obs);
                         MessageBox.Show("El estudiante " + nombres + " " + apellidos + " fue agregado.");
