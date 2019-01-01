@@ -98,18 +98,18 @@ namespace Deportes_WPF.Vista
                 else
                 {
                     int codigo = Convert.ToInt32(txt3.Text);
-                    string email = txt6.Text;
+                    string email = txt6.Text.TrimStart().TrimEnd();
 
                     bool existe = entorno.buscarEstudiante(codigo, email);
 
                     if (!existe)
                     {
-                        string nombres = txt1.Text;
-                        string apellidos = txt2.Text;
+                        string nombres = txt1.Text.TrimStart().TrimEnd();
+                        string apellidos = txt2.Text.TrimStart().TrimEnd();
                         int documento = Convert.ToInt32(txt8.Text);
-                        string carrera = Convert.ToString(cmbox.SelectedValue);
+                        string carrera = Convert.ToString(cmbox.SelectedValue).TrimStart().TrimEnd();
                         int semestre = Convert.ToInt32(txt5.Text);
-                        string obs = txt7.Text;
+                        string obs = txt7.Text.TrimStart().TrimEnd();
                         entorno.agregarEstudiante(nombres, apellidos, codigo, documento, carrera, semestre, email, obs);
                         MessageBox.Show("El estudiante " + nombres + " " + apellidos + " fue agregado.");
                         limpiar();
