@@ -7,7 +7,7 @@
     <ProjectGuid>{EE98DBDA-6BB1-47D0-BA0A-8B6D3B4D9FCA}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>AlphaSport</RootNamespace>
-    <AssemblyName>GonzalezPerezCO</AssemblyName>
+    <AssemblyName>AlphaSport</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -27,11 +27,11 @@
     <MapFileExtensions>true</MapFileExtensions>
     <SupportUrl>https://github.com/GonzalezPerezCO/Epic-Sport-_Deportes</SupportUrl>
     <ErrorReportUrl>https://github.com/GonzalezPerezCO</ErrorReportUrl>
-    <ProductName>Alpha Sport</ProductName>
-    <PublisherName>Alpha Sport</PublisherName>
-    <SuiteName>Alpha Sport</SuiteName>
-    <ApplicationRevision>8</ApplicationRevision>
-    <ApplicationVersion>3.6.1.%2a</ApplicationVersion>
+    <ProductName>SISTEMA DE GESTIÓN DE RECURSOS DEPORTIVOS DE LA ESCUELA</ProductName>
+    <PublisherName>AlphaSport</PublisherName>
+    <SuiteName>SISTEMA DE GESTIÓN DE RECURSOS DEPORTIVOS</SuiteName>
+    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationVersion>3.7.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>

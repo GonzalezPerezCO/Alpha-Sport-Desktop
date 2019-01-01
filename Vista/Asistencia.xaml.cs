@@ -245,9 +245,9 @@ namespace Deportes_WPF.Vista
                 case "Sunday":
                     dia = "Domingo";
                     break;
-                default:
-                    dia = "N/A";
-                    break;
+                //default:  // NO ESA NECESARIO PORQUÉ YA ESTA COMTEMPLADO EN LA LECTURA DEL QUERY
+                    //dia = "N/A";
+                    //break;
             }
 
             return dia;
