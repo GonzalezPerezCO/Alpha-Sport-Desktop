@@ -32,11 +32,11 @@
         <Label x:Name="txt13" Content="0" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="791,582,737,228" VerticalAlignment="Center" RenderTransformOrigin="0.355,-0.212" FontSize="24" Width="64" VerticalContentAlignment="Center"/>
         <Label Content="Horario:" HorizontalAlignment="Center" Margin="450,486,964,330" VerticalAlignment="Center" FontWeight="Bold" FontSize="22" RenderTransformOrigin="-1.103,0.704" Height="36" Width="178"/>
         <Button x:Name="bt4" Content="Enviar Horario" HorizontalAlignment="Center" Margin="445,656,699,148" VerticalAlignment="Center" Width="448" RenderTransformOrigin="0.541,4.1" Click="click_bt1" Height="48" FontWeight="Bold" Background="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" FontSize="22"/>
-        <ComboBox x:Name="cmbx1" HorizontalAlignment="Center" Margin="960,556,512,274" VerticalAlignment="Center" Width="120" VerticalContentAlignment="Center"/>
-        <ComboBox x:Name="cmbx2" HorizontalAlignment="Center" Margin="1142,556,330,274" VerticalAlignment="Center" Width="120" VerticalContentAlignment="Center"/>
-        <ComboBox x:Name="cmbx3" HorizontalAlignment="Center" Margin="1340,556,132,274" VerticalAlignment="Center" Width="120" VerticalContentAlignment="Center"/>
-        <ComboBox x:Name="cmbx4" HorizontalAlignment="Center" Margin="960,616,512,214" VerticalAlignment="Center" Width="120" VerticalContentAlignment="Center"/>
-        <ComboBox x:Name="cmbx5" HorizontalAlignment="Center" Margin="1142,616,330,214" VerticalAlignment="Center" Width="120" VerticalContentAlignment="Center"/>
-        <ComboBox x:Name="cmbx6" HorizontalAlignment="Center" Margin="1340,616,132,214" VerticalAlignment="Center" Width="120" VerticalContentAlignment="Center"/>
+        <ComboBox x:Name="cmbx1" HorizontalAlignment="Center" Margin="960,556,512,274" VerticalAlignment="Center" Width="120" VerticalContentAlignment="Center" FontSize="18" FontWeight="Bold"/>
+        <ComboBox x:Name="cmbx2" HorizontalAlignment="Center" Margin="1142,556,330,274" VerticalAlignment="Center" Width="120" VerticalContentAlignment="Center" FontSize="18" FontWeight="Bold"/>
+        <ComboBox x:Name="cmbx3" HorizontalAlignment="Center" Margin="1340,556,132,274" VerticalAlignment="Center" Width="120" VerticalContentAlignment="Center" FontSize="18" FontWeight="Bold"/>
+        <ComboBox x:Name="cmbx4" HorizontalAlignment="Center" Margin="960,616,512,214" VerticalAlignment="Center" Width="120" VerticalContentAlignment="Center" FontSize="18"/>
+        <ComboBox x:Name="cmbx5" HorizontalAlignment="Center" Margin="1142,616,330,214" VerticalAlignment="Center" Width="120" VerticalContentAlignment="Center" FontSize="18"/>
+        <ComboBox x:Name="cmbx6" HorizontalAlignment="Center" Margin="1340,616,132,214" VerticalAlignment="Center" Width="120" VerticalContentAlignment="Center" FontSize="18"/>
     </Grid>
 </Window>
