@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 /**
  * CLASE PARA TENER EL USER DEL ADMIN PARA CONTROLAR EL LOGIN
  * */
-namespace Deportes_WPF.Model
+namespace AlphaSport.Model
 {
     internal class User
     {

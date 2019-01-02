@@ -1,4 +1,4 @@
-﻿using Deportes_WPF.Controller;
+﻿using AlphaSport.Controller;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -15,7 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Deportes_WPF.Vista
+namespace AlphaSport.Vista
 {
     /// <summary>
     /// Lógica de interacción para Horarios.xaml

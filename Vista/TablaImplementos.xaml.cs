@@ -1,4 +1,4 @@
-﻿using Deportes_WPF.Controller;
+﻿using AlphaSport.Controller;
 using System;
 using System.Collections.Generic;
 using System.Data;

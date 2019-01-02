@@ -8,9 +8,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using AlphaSport.Vista;
-using Deportes_WPF.Controller;
+using AlphaSport.Controller;
 
-namespace Deportes_WPF
+namespace AlphaSport
 {
     
     public  partial class Login : Window

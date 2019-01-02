@@ -1,5 +1,5 @@
-﻿using Deportes_WPF;
-using Deportes_WPF.Controller;
+﻿using AlphaSport;
+using AlphaSport.Controller;
 using System;
 using System.Collections.Generic;
 using System.Linq;

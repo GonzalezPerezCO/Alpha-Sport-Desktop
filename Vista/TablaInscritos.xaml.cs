@@ -15,10 +15,10 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using AlphaSport.Vista;
-using Deportes_WPF.Controller;
-using Deportes_WPF.Vista;
+using AlphaSport.Controller;
+using AlphaSport.Vista;
 
-namespace Deportes_WPF
+namespace AlphaSport
 {
     /// <summary>
     /// Lógica de interacción para MainWindow.xaml

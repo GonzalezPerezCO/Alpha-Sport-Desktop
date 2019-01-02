@@ -6,13 +6,13 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
-using Deportes_WPF.Model;
+using AlphaSport.Model;
 using MySql.Data.MySqlClient;
 
 using Microsoft.Win32.SafeHandles;
 using System.Runtime.InteropServices;
 
-namespace Deportes_WPF.Controller
+namespace AlphaSport.Controller
 {
     internal class ConnectionClass : IDisposable
     {

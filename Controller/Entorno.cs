@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Deportes_WPF.Model;
+using AlphaSport.Model;
 using System.Diagnostics;
 using System.Data;
 using System.Windows;
 
 // using R_Connection = Deportes_WPF.Controller.ConnectionClass;
 
-namespace Deportes_WPF.Controller
+namespace AlphaSport.Controller
 {
     /**
      * CLASE PARA TENER PERIODO

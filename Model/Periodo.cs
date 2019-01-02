@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Deportes_WPF.Model
+namespace AlphaSport.Model
 {
     internal class Periodo
     {
