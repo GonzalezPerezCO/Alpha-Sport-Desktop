@@ -21,10 +21,10 @@ namespace Deportes_WPF.Controller
         private MySqlConnection connection;
         private string connectionString;
 
-        private readonly string server = "estudiantes.is.escuelaing.edu.co";
-        private readonly string database = "deportes";
+        private readonly string server = "estudiantes.is.server.com";
+        private readonly string database = "deportesserver";
         private readonly string user = "deportes";
-        private readonly string password = "deportes20182";
+        private readonly string password = "deportes20182server";
         private readonly string port = "3306";         
         private readonly string sslM = "none";
 
