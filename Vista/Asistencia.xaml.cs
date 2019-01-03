@@ -47,8 +47,7 @@ namespace AlphaSport.Vista
 
         private void btn2_Click(object sender, RoutedEventArgs e)
         {
-            limpiar();
-            
+            limpiar();            
         }
 
         private void limpiar()
@@ -57,7 +56,7 @@ namespace AlphaSport.Vista
             botonesEstado(false);
             lab6.Content = "Ingrese el código del estudiante y realice la busqueda";
             lab10.Content = "0";
-            lab11.Content = "Desconocido";
+            lab11.Content = "-";
             lab8.Content = "0";
 
             txt8.Content = "Dia 1";
@@ -67,6 +66,12 @@ namespace AlphaSport.Vista
             txt12.Content = "N/A";
             txt13.Content = "N/A";
 
+            cmbx1.SelectedValue = "N/A";
+            cmbx2.SelectedValue = "N/A";
+            cmbx3.SelectedValue = "N/A";
+            cmbx4.SelectedValue = "N/A";
+            cmbx5.SelectedValue = "N/A";
+            cmbx6.SelectedValue = "N/A";
 
             txt1.Text = "";
             txt1.Focus();
