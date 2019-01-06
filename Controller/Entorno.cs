@@ -82,6 +82,12 @@ namespace AlphaSport.Controller
             return connection.listaUnicaReader(query);
         }
 
+        public List<string> cupos()
+        {
+            string query = "SELECT GROUP_CONCAT(id,',',Lunes,',',Martes,',',Miercoles,',',Jueves,',',Viernes) FROM tcupos LIMIT 1;";
+            return connection.listaUnicaReader(query);
+        }
+
         public List<string> carreras()
         {
             string query = "SELECT GROUP_CONCAT(carrera) FROM tcarreras;";

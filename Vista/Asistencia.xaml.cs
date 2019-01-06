@@ -26,6 +26,7 @@ namespace AlphaSport.Vista
         private Entorno entorno;
 
         private string codigo;
+        private static List<List<string>> lista = new List<List<string>>();
 
         public Asistencia()
         {
@@ -34,6 +35,9 @@ namespace AlphaSport.Vista
             lab1.Content = entorno.PROYECTO;
             botonesEstado(false);
             lab6.Content = "Ingrese el código del estudiante y realice la busqueda";
+
+            lista = separarIds(entorno.cupos());
+
             txt1.Focus();
         }       
 
@@ -258,6 +262,28 @@ namespace AlphaSport.Vista
             return dia;
         }
 
+        private List<List<string>> separarIds(List<string> lista)
+        {
+            // a,b,c,...,x
+
+            List<List<string>> result = new List<List<string>>();
+
+            string[] separadas;
+            separadas = lista[0].Split(',');
+
+            // Matriz de 9 filas X 6 columnas (días)
+            for (int i = 0; i < 9; i++)
+            {
+                for (int j = 0; j < 6; j++)
+                {
+                    result.Add(item);
+                    Debug.WriteLine("<< id a lista: " + item);
+                }
+            }
+
+            return result;
+        }
+
         private void Window_Closed(object sender, EventArgs e)
         {
             Application.Current.Shutdown();
@@ -282,6 +308,12 @@ namespace AlphaSport.Vista
         private void botonesEstado(bool estado) {
             Debug.WriteLine("Mostrar botones 5 y 6 = "+estado);
             bt4.IsEnabled = estado;       
+        }
+
+        private void Bt1_Click(object sender, RoutedEventArgs e)
+        {
+            lista = separarIds(entorno.disponiblesCasilleros());
+            cmbox.ItemsSource = lista;
         }
     }
 }
