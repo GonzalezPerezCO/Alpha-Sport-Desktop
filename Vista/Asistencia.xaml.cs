@@ -328,7 +328,7 @@ namespace AlphaSport.Vista
         }
 
         private void MostrarCupos() {
-            dtgrid1.ItemsSource = cuposL.Select(x => new { Value = x }).ToList();           
+                                    
         }
     }
 }
