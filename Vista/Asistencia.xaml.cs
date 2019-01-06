@@ -26,7 +26,7 @@ namespace AlphaSport.Vista
         private Entorno entorno;
 
         private string codigo;
-        private static List<List<string>> cuposL = new List<List<string>>();
+        private static List<string> cuposL = new List<string>();
         private static List<Label> labelsY = new List<Label>();
 
         public Asistencia()
@@ -264,30 +264,21 @@ namespace AlphaSport.Vista
             return dia;
         }
 
-        private List<List<string>> separarIds(List<string> lista)
+        private List<string> separarIds(List<string> lista)
         {
             // a,b,c,...,x  ==> {id, Lunes, Martes, Miercoles, Jueves, Viernes}
 
-            List<List<string>> result = new List<List<string>>();
+            List<string> result = new List<string>();
 
             string[] separadas;
             separadas = lista[0].Split(',');
-            List<string> item = new List<string>();
-            int k = 0;            
 
-            // Matriz de 9 filas X 6 columnas (días)
-            for (int i = 0; i < 9; i++)
+            foreach (var item in separadas)
             {
-                for (int j = 0; j < 6; j++)
-                {
-                    item.Add(separadas[k]);
-                    Debug.WriteLine("<< k: "+ k +" a lista: " + separadas[k]);
-                    k++;
-                }
-
-                result.Add(item);                
+                result.Add(item);
+                Debug.WriteLine("<< a lista: " + item);
             }
-
+           
             return result;
         }
 
@@ -331,19 +322,21 @@ namespace AlphaSport.Vista
 
         private void MostrarCupos()
         {
-            labY0.Content = cuposL[0];
-            labY1.Content = cuposL[1];
-            labY2.Content = cuposL[2];
-            labY3.Content = cuposL[3];
-            labY4.Content = cuposL[4];
-            labY5.Content = cuposL[5];
+            labY0.Content = cuposL[0][0];
+            labY1.Content = cuposL[0][1];
+            labY2.Content = cuposL[0][2];
+            labY3.Content = cuposL[0][3];
+            labY4.Content = cuposL[0][4];
+            labY5.Content = cuposL[0][5];
 
-            labY6.Content = cuposL[6];
-            labY7.Content = cuposL[7];
-            labY8.Content = cuposL[8];
-            labY9.Content = cuposL[9];
-            labY10.Content = cuposL[10];
-            labY11.Content = cuposL[11];
+            labY6.Content = cuposL[1][0];
+            labY7.Content = cuposL[1][1];
+            labY8.Content = cuposL[1][2];
+            labY9.Content = cuposL[1][3];
+            labY10.Content = cuposL[1][4];
+            labY10.Content = cuposL[1][5];
+            labY10.Content = cuposL[1][6];
+            labY11.Content = cuposL[11][7];
 
             labY12.Content = cuposL[12];
             labY13.Content = cuposL[13];
