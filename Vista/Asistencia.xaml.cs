@@ -58,12 +58,12 @@ namespace AlphaSport.Vista
 
         private void limpiar()
         {
-            lab5.Content = "Nombres y Apellidos";
+            lab5.Content = "---";
             botonesEstado(false);
-            lab6.Content = "Ingrese el código del estudiante y realice la busqueda";
-            lab10.Content = "0";
-            lab11.Content = "-";
-            lab8.Content = "0";
+            lab6.Content = "---";
+            lab10.Content = "---";
+            lab11.Content = "--";
+            lab8.Content = "--";
 
             txt8.Content = "Dia 1";
             txt9.Content = "Dia 2";
@@ -89,7 +89,7 @@ namespace AlphaSport.Vista
 
             if (codigo == "")
             {
-                MessageBox.Show("No hay codigo del estudiante");
+                MessageBox.Show("El código del estudiante es incorrecto!");
             }
             else
             {
@@ -278,7 +278,7 @@ namespace AlphaSport.Vista
                 result.Add(item);
                 Debug.WriteLine("<< a lista: " + item);
             }
-           
+            Debug.WriteLine("<< size : " + result.Count());
             return result;
         }
 
@@ -322,21 +322,19 @@ namespace AlphaSport.Vista
 
         private void MostrarCupos()
         {
-            labY0.Content = cuposL[0][0];
-            labY1.Content = cuposL[0][1];
-            labY2.Content = cuposL[0][2];
-            labY3.Content = cuposL[0][3];
-            labY4.Content = cuposL[0][4];
-            labY5.Content = cuposL[0][5];
+            labY0.Content = cuposL[0];
+            labY1.Content = cuposL[1];
+            labY2.Content = cuposL[2];
+            labY3.Content = cuposL[3];
+            labY4.Content = cuposL[4];
+            labY5.Content = cuposL[5];
 
-            labY6.Content = cuposL[1][0];
-            labY7.Content = cuposL[1][1];
-            labY8.Content = cuposL[1][2];
-            labY9.Content = cuposL[1][3];
-            labY10.Content = cuposL[1][4];
-            labY10.Content = cuposL[1][5];
-            labY10.Content = cuposL[1][6];
-            labY11.Content = cuposL[11][7];
+            labY6.Content = cuposL[6];
+            labY7.Content = cuposL[7];
+            labY8.Content = cuposL[8];
+            labY9.Content = cuposL[9];
+            labY10.Content = cuposL[10];
+            labY11.Content = cuposL[11];
 
             labY12.Content = cuposL[12];
             labY13.Content = cuposL[13];
@@ -365,6 +363,27 @@ namespace AlphaSport.Vista
             labY33.Content = cuposL[33];
             labY34.Content = cuposL[34];
             labY35.Content = cuposL[35];
+
+            labY36.Content = cuposL[36];
+            labY37.Content = cuposL[37];
+            labY38.Content = cuposL[38];
+            labY39.Content = cuposL[39];
+            labY40.Content = cuposL[40];
+            labY41.Content = cuposL[41];
+
+            labY42.Content = cuposL[42];
+            labY43.Content = cuposL[43];
+            labY44.Content = cuposL[44];
+            labY45.Content = cuposL[45];
+            labY46.Content = cuposL[46];
+            labY47.Content = cuposL[47];
+
+            labY48.Content = cuposL[48];
+            labY49.Content = cuposL[49];
+            labY50.Content = cuposL[50];
+            labY51.Content = cuposL[51];
+            labY52.Content = cuposL[52];
+            labY53.Content = cuposL[53];
         }
 
         private void IniciarLabelsY() {
@@ -409,7 +428,29 @@ namespace AlphaSport.Vista
             labelsY.Add(labY32);
             labelsY.Add(labY33);
             labelsY.Add(labY34);
-            labelsY.Add(labY35);
+            labelsY.Add(labY35);    
+            
+            // -----
+            labelsY.Add(labY36);
+            labelsY.Add(labY37);
+            labelsY.Add(labY38);
+            labelsY.Add(labY39);
+            labelsY.Add(labY40);
+            labelsY.Add(labY41);
+            // -----
+            labelsY.Add(labY42);
+            labelsY.Add(labY43);
+            labelsY.Add(labY44);
+            labelsY.Add(labY45);
+            labelsY.Add(labY46);
+            labelsY.Add(labY47);
+            // -----
+            labelsY.Add(labY48);
+            labelsY.Add(labY49);
+            labelsY.Add(labY50);
+            labelsY.Add(labY51);
+            labelsY.Add(labY52);
+            labelsY.Add(labY53);
         }
     }
 }
