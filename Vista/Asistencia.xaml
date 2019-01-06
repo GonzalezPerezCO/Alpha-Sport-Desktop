@@ -8,7 +8,7 @@
         WindowState="Maximized" WindowStartupLocation="CenterScreen"
         WindowStyle="None">
     <Grid>
-        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="302" Margin="1272,131,0,0" Stroke="Black" VerticalAlignment="Top" Width="301"/>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Right" Height="302" Margin="0,134,19,416" Stroke="Black" VerticalAlignment="Center" Width="301"/>
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Center" Height="112" Margin="336,487,837,253" Stroke="Black" VerticalAlignment="Center" Width="419"/>
         <Button x:Name="btn1" Content="volver" HorizontalAlignment="Right" Margin="0,28,10,0" VerticalAlignment="Top" Width="74" Click="btn1_Click"/>
         <Button x:Name="btn2" Content="nuevo" HorizontalAlignment="Right" Margin="0,68,10,0" VerticalAlignment="Top" Width="74" Click="btn2_Click"/>

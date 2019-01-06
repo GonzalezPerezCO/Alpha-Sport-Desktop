@@ -87,7 +87,7 @@ namespace AlphaSport.Vista
         {
             codigo = txt1.Text;
 
-            if (codigo == "")
+            if (codigo == "" || (!int.TryParse(txt1.Text, out int abc)) )
             {
                 MessageBox.Show("El código del estudiante es incorrecto!");
             }
