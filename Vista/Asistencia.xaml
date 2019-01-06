@@ -49,6 +49,11 @@
         <ComboBox x:Name="cmbx5" HorizontalAlignment="Center" Margin="1090,544,348,278" VerticalAlignment="Center" Width="154" FontSize="18" VerticalContentAlignment="Center"/>
         <ComboBox x:Name="cmbx6" HorizontalAlignment="Center" Margin="1282,544,156,278" VerticalAlignment="Center" Width="154" FontSize="18" VerticalContentAlignment="Center"/>
         <Button x:Name="bt1" Content="Enviar" HorizontalAlignment="Center" Margin="1286,602,156,192" VerticalAlignment="Center" Width="150" Height="58" FontWeight="Bold" FontSize="20" Click="Bt1_Click" RenderTransformOrigin="0.653,0.525"/>
-        <DataGrid x:Name="dtgrid1" HorizontalAlignment="Center" Height="136" Margin="1150,316,123,400" VerticalAlignment="Center" Width="319" IsReadOnly="True"/>
+        <Label x:Name="labX1" Content="Hora" HorizontalAlignment="Center" Margin="900,335,604,475" VerticalAlignment="Center" FontSize="16" FontWeight="Bold" Width="88" VerticalContentAlignment="Center" Height="42"/>
+        <Label x:Name="labX2" Content="Lunes" HorizontalAlignment="Center" Margin="991,335,513,475" VerticalAlignment="Center" FontSize="16" FontWeight="Bold" Width="88" VerticalContentAlignment="Center" Height="42"/>
+        <Label x:Name="labX3" Content="Martes" HorizontalAlignment="Center" Margin="1082,335,422,475" VerticalAlignment="Center" FontSize="16" FontWeight="Bold" Width="88" VerticalContentAlignment="Center" Height="42" RenderTransformOrigin="-0.371,0.607"/>
+        <Label x:Name="labX4" Content="Miercoles" HorizontalAlignment="Center" Margin="1172,335,332,475" VerticalAlignment="Center" FontSize="16" FontWeight="Bold" Width="88" VerticalContentAlignment="Center" Height="42" RenderTransformOrigin="-0.243,0.607"/>
+        <Label x:Name="labX5" Content="Jueves" HorizontalAlignment="Center" Margin="1263,335,241,475" VerticalAlignment="Center" FontSize="16" FontWeight="Bold" Width="88" VerticalContentAlignment="Center" Height="42" RenderTransformOrigin="0.108,0.571"/>
+        <Label x:Name="labX6" Content="Viernes" HorizontalAlignment="Center" Margin="1354,335,150,475" VerticalAlignment="Center" FontSize="16" FontWeight="Bold" Width="88" VerticalContentAlignment="Center" Height="42"/>
     </Grid>
 </Window>
