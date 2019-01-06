@@ -48,6 +48,7 @@
         <ComboBox x:Name="cmbx4" HorizontalAlignment="Center" Margin="896,544,542,278" VerticalAlignment="Center" Width="154" FontSize="18" VerticalContentAlignment="Center"/>
         <ComboBox x:Name="cmbx5" HorizontalAlignment="Center" Margin="1090,544,348,278" VerticalAlignment="Center" Width="154" FontSize="18" VerticalContentAlignment="Center"/>
         <ComboBox x:Name="cmbx6" HorizontalAlignment="Center" Margin="1282,544,156,278" VerticalAlignment="Center" Width="154" FontSize="18" VerticalContentAlignment="Center"/>
-        <Button x:Name="bt1" Content="Buscar" HorizontalAlignment="Center" Margin="1231,602,211,192" VerticalAlignment="Center" Width="150" Height="58" FontWeight="Bold" FontSize="20" Click="Bt1_Click" RenderTransformOrigin="0.653,0.525"/>
+        <Button x:Name="bt1" Content="Enviar" HorizontalAlignment="Center" Margin="1286,602,156,192" VerticalAlignment="Center" Width="150" Height="58" FontWeight="Bold" FontSize="20" Click="Bt1_Click" RenderTransformOrigin="0.653,0.525"/>
+        <DataGrid x:Name="dtgrid1" HorizontalAlignment="Center" Height="136" Margin="1150,316,123,400" VerticalAlignment="Center" Width="319" IsReadOnly="True"/>
     </Grid>
 </Window>

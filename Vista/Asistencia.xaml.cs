@@ -26,7 +26,7 @@ namespace AlphaSport.Vista
         private Entorno entorno;
 
         private string codigo;
-        private static List<List<string>> lista = new List<List<string>>();
+        private static List<List<string>> cuposL = new List<List<string>>();
 
         public Asistencia()
         {
@@ -36,7 +36,7 @@ namespace AlphaSport.Vista
             botonesEstado(false);
             lab6.Content = "Ingrese el código del estudiante y realice la busqueda";
 
-            lista = separarIds(entorno.cupos());
+            ActualizarCmbox(); // por dentro: MostrarCupos();
 
             txt1.Focus();
         }       
@@ -264,21 +264,26 @@ namespace AlphaSport.Vista
 
         private List<List<string>> separarIds(List<string> lista)
         {
-            // a,b,c,...,x
+            // a,b,c,...,x  ==> {id, Lunes, Martes, Miercoles, Jueves, Viernes}
 
             List<List<string>> result = new List<List<string>>();
 
             string[] separadas;
             separadas = lista[0].Split(',');
+            List<string> item = new List<string>();
+            int k = 0;            
 
             // Matriz de 9 filas X 6 columnas (días)
             for (int i = 0; i < 9; i++)
             {
                 for (int j = 0; j < 6; j++)
                 {
-                    result.Add(item);
-                    Debug.WriteLine("<< id a lista: " + item);
+                    item.Add(separadas[k]);
+                    Debug.WriteLine("<< k: "+ k +" a lista: " + separadas[k]);
+                    k++;
                 }
+
+                result.Add(item);                
             }
 
             return result;
@@ -312,8 +317,18 @@ namespace AlphaSport.Vista
 
         private void Bt1_Click(object sender, RoutedEventArgs e)
         {
-            lista = separarIds(entorno.disponiblesCasilleros());
-            cmbox.ItemsSource = lista;
+            cuposL = separarIds(entorno.cupos());
+            ActualizarCmbox();
+        }
+
+        private void ActualizarCmbox()
+        {
+            cuposL = separarIds(entorno.cupos());
+            MostrarCupos();
+        }
+
+        private void MostrarCupos() {
+            dtgrid1.ItemsSource = cuposL.Select(x => new { Value = x }).ToList();           
         }
     }
 }
