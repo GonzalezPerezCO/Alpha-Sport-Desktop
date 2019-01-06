@@ -27,6 +27,7 @@ namespace AlphaSport.Vista
 
         private string codigo;
         private static List<List<string>> cuposL = new List<List<string>>();
+        private static List<Label> labelsY = new List<Label>();
 
         public Asistencia()
         {
@@ -36,6 +37,7 @@ namespace AlphaSport.Vista
             botonesEstado(false);
             lab6.Content = "Ingrese el código del estudiante y realice la busqueda";
 
+            IniciarLabelsY();
             ActualizarCmbox(); // por dentro: MostrarCupos();
 
             txt1.Focus();
@@ -327,8 +329,94 @@ namespace AlphaSport.Vista
             MostrarCupos();
         }
 
-        private void MostrarCupos() {
-                                    
+        private void MostrarCupos()
+        {
+            labY0.Content = cuposL[0];
+            labY1.Content = cuposL[1];
+            labY2.Content = cuposL[2];
+            labY3.Content = cuposL[3];
+            labY4.Content = cuposL[4];
+            labY5.Content = cuposL[5];
+
+            labY6.Content = cuposL[6];
+            labY7.Content = cuposL[7];
+            labY8.Content = cuposL[8];
+            labY9.Content = cuposL[9];
+            labY10.Content = cuposL[10];
+            labY11.Content = cuposL[11];
+
+            labY12.Content = cuposL[12];
+            labY13.Content = cuposL[13];
+            labY14.Content = cuposL[14];
+            labY15.Content = cuposL[15];
+            labY16.Content = cuposL[16];
+            labY17.Content = cuposL[17];
+
+            labY18.Content = cuposL[18];
+            labY19.Content = cuposL[19];
+            labY20.Content = cuposL[20];
+            labY21.Content = cuposL[21];
+            labY22.Content = cuposL[22];
+            labY23.Content = cuposL[23];
+
+            labY24.Content = cuposL[24];
+            labY25.Content = cuposL[25];
+            labY26.Content = cuposL[26];
+            labY27.Content = cuposL[27];
+            labY28.Content = cuposL[28];
+            labY29.Content = cuposL[29];
+
+            labY30.Content = cuposL[30];
+            labY31.Content = cuposL[31];
+            labY32.Content = cuposL[32];
+            labY33.Content = cuposL[33];
+            labY34.Content = cuposL[34];
+            labY35.Content = cuposL[35];
+        }
+
+        private void IniciarLabelsY() {
+            // agregar Labels que muestran el horario
+            labelsY.Add(labY0);
+            labelsY.Add(labY1);
+            labelsY.Add(labY2);
+            labelsY.Add(labY3);
+            labelsY.Add(labY4);
+            labelsY.Add(labY5);
+            // -----
+            labelsY.Add(labY6);
+            labelsY.Add(labY7);
+            labelsY.Add(labY8);
+            labelsY.Add(labY9);
+            labelsY.Add(labY10);
+            labelsY.Add(labY11);
+            // -----
+            labelsY.Add(labY12);
+            labelsY.Add(labY13);
+            labelsY.Add(labY14);
+            labelsY.Add(labY15);
+            labelsY.Add(labY16);
+            labelsY.Add(labY17);
+            // -----
+            labelsY.Add(labY18);
+            labelsY.Add(labY19);
+            labelsY.Add(labY20);
+            labelsY.Add(labY21);
+            labelsY.Add(labY22);
+            labelsY.Add(labY23);
+            // -----
+            labelsY.Add(labY24);
+            labelsY.Add(labY25);
+            labelsY.Add(labY26);
+            labelsY.Add(labY27);
+            labelsY.Add(labY28);
+            labelsY.Add(labY29);
+            // -----
+            labelsY.Add(labY30);
+            labelsY.Add(labY31);
+            labelsY.Add(labY32);
+            labelsY.Add(labY33);
+            labelsY.Add(labY34);
+            labelsY.Add(labY35);
         }
     }
 }
