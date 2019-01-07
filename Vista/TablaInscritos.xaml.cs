@@ -38,7 +38,7 @@ namespace AlphaSport
 
         public void mostrarTabla()
         {
-           DataTable dt = entorno.tablaInscritos();           
+           DataTable dt = entorno.TablaInscritos();           
            dtgrid1.ItemsSource = dt.DefaultView;           
         }
 

@@ -34,7 +34,7 @@ namespace AlphaSport.Vista
 
         public void mostrarTabla()
         {
-            DataTable dt = entorno.mostrarCupos();
+            DataTable dt = entorno.MostrarCupos();
 
             dtgrid1.ItemsSource = dt.DefaultView;
 

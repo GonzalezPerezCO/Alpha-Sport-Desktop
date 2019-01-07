@@ -53,10 +53,10 @@ namespace AlphaSport.Vista
 
         private void Btn2_Click(object sender, RoutedEventArgs e)
         {
-            limpiar();            
+            Limpiar();            
         }
 
-        private void limpiar()
+        private void Limpiar()
         {
             lab5.Content = "---";
             BotonesEstado(false);
@@ -94,7 +94,7 @@ namespace AlphaSport.Vista
             else
             {
                 //0: nombre, 1: carrera, 2: semestre, 3: fallas, 4: codigo, 5:dia1,hora1,dia2,hora2,dia3,hora3
-                List<string> lista = entorno.asistencia(Convert.ToInt32(codigo));
+                List<string> lista = entorno.Asistencia(Convert.ToInt32(codigo));
 
                 if (lista.Count > 0)
                 {
@@ -292,11 +292,11 @@ namespace AlphaSport.Vista
             Application.Current.Shutdown();
         }
 
-        private void bt4_Click(object sender, RoutedEventArgs e)
+        private void Bt4_Click(object sender, RoutedEventArgs e)
         {
             if (codigo == "2095112")
             {
-              lab8.Content = entorno.fallas(Convert.ToInt32(codigo));
+              lab8.Content = entorno.Fallas(Convert.ToInt32(codigo));
 
             }
             MessageBox.Show("Asistencia registrada");
@@ -310,13 +310,13 @@ namespace AlphaSport.Vista
 
         private void Bt1_Click(object sender, RoutedEventArgs e)
         {
-            cuposL = SepararIds(entorno.cupos());
+            cuposL = SepararIds(entorno.Cupos());
             ActualizarCmbox();
         }
 
         private void ActualizarCmbox()
         {
-            cuposL = SepararIds(entorno.cupos());
+            cuposL = SepararIds(entorno.Cupos());
             MostrarCupos();
         }
 
@@ -454,6 +454,8 @@ namespace AlphaSport.Vista
         }
 
         private void MostrarHorarioEstudiante() {
+
+            entorno.CambiarHorario();
         }
     }
 }

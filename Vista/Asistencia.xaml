@@ -24,7 +24,7 @@
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightColorKey}}"/>
             </Label.Background>
         </Label>
-        <Button x:Name="bt4" Content="Permitir" HorizontalAlignment="Center" Margin="422,0,440,10" VerticalAlignment="Bottom" Width="570" Height="38" FontWeight="Bold" FontSize="16" Click="bt4_Click">
+        <Button x:Name="bt4" Content="Permitir" HorizontalAlignment="Center" Margin="422,0,440,10" VerticalAlignment="Bottom" Width="570" Height="38" FontWeight="Bold" FontSize="16" Click="Bt4_Click">
             <Button.Background>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.MenuHighlightColorKey}}"/>
             </Button.Background>

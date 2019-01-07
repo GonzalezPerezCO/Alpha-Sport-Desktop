@@ -33,7 +33,7 @@ namespace AlphaSport.Vista
 
         public void mostrarTabla()
         {
-            DataTable dt = entorno.tablaImplementos();
+            DataTable dt = entorno.TablaImplementos();
             dtgrid1.ItemsSource = dt.DefaultView;
         }
 

@@ -33,7 +33,7 @@ namespace AlphaSport.Vista
 
             codigo.Focus();
 
-            lista = separarIds(entorno.disponiblesCasilleros());
+            lista = separarIds(entorno.DisponiblesCasilleros());
             actualizarListaDisp();
         }        
 
@@ -85,8 +85,8 @@ namespace AlphaSport.Vista
                 // Lista: nombre, codigo, casillero, disponible{0:no, 1:si}, entrada, salida
                 int codigoEs = Convert.ToInt32(codigo.Text);
                 int codigoCas = Convert.ToInt32(cmbox.SelectedValue);
-                List<string> busCod = entorno.buscarCasilleroEstu(codigoEs);
-                bool estudiante = entorno.buscarEstudiante( Convert.ToUInt32(codigoEs), ""); // false: no existe en testudiantes
+                List<string> busCod = entorno.BuscarCasilleroEstu(codigoEs);
+                bool estudiante = entorno.BuscarEstudiante( Convert.ToUInt32(codigoEs), ""); // false: no existe en testudiantes
 
                 if (busCod.Count != 0)
                 {
@@ -98,7 +98,7 @@ namespace AlphaSport.Vista
                     {
                         MessageBox.Show("Estudiante encontrado! Casillero liberado.");
                         Debug.WriteLine("<<< Prestamo liberado: codigoEst = " + codigoEs + ".");
-                        entorno.quitarEstudianteCasillero(codigoEs);
+                        entorno.QuitarEstudianteCasillero(codigoEs);
                         actualizarListaDisp();
                     }
 
@@ -116,7 +116,7 @@ namespace AlphaSport.Vista
                     }
                     else
                     {
-                        entorno.agregarEstudianteCasillero(codigoCas, codigoEs);
+                        entorno.AgregarEstudianteCasillero(codigoCas, codigoEs);
                         Debug.WriteLine("<<< Prestamo: id_c = " + codigoCas + ", codigoEst = " + codigoEs + ".");
                         MessageBox.Show("Casillero asignado!");
                         actualizarListaDisp();
@@ -147,7 +147,7 @@ namespace AlphaSport.Vista
 
         private void actualizarListaDisp()
         {
-            lista = separarIds(entorno.disponiblesCasilleros());
+            lista = separarIds(entorno.DisponiblesCasilleros());
             cmbox.ItemsSource = lista;
             ocultar();
         }        

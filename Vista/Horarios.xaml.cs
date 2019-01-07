@@ -83,7 +83,7 @@ namespace AlphaSport.Vista
             else
             {
                 //0: nombre, 1: carrera, 2: semestre, 3: fallas, 4: codigo, 5: dia1,hora1,dia2,hora2,dia3,hora3
-                List<string> lista = entorno.asistencia(Convert.ToInt32(codigo));
+                List<string> lista = entorno.Asistencia(Convert.ToInt32(codigo));
 
                 if (lista.Count > 0)
                 {

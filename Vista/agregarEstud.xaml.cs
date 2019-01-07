@@ -30,12 +30,12 @@ namespace AlphaSport.Vista
             InitializeComponent();
             entorno = Entorno.GetInstance();
             lab1.Content = entorno.PROYECTO;
-            prepararCarreras();
-            limpiar();
-            botonesEstado(true);
+            PrepararCarreras();
+            Limpiar();
+            BotonesEstado(true);
         }
 
-        private List<string> separarIds(List<string> lista)
+        private List<string> SepararIds(List<string> lista)
         {
             // a,b,c,...,x
 
@@ -53,9 +53,9 @@ namespace AlphaSport.Vista
             return result;
         }
 
-        private void prepararCarreras()
+        private void PrepararCarreras()
         {
-            carreras = separarIds(entorno.carreras());
+            carreras = SepararIds(entorno.Carreras());
             cmbox.ItemsSource = carreras;
         }
 
@@ -69,7 +69,7 @@ namespace AlphaSport.Vista
             Application.Current.Shutdown();
         }
 
-        private void btn1_Click(object sender, RoutedEventArgs e)
+        private void Btn1_Click(object sender, RoutedEventArgs e)
         {
             Window inscritos = new TablaInscritos();
 
@@ -77,12 +77,12 @@ namespace AlphaSport.Vista
             this.Hide();
         }
 
-        private void btn2_Click(object sender, RoutedEventArgs e)
+        private void Btn2_Click(object sender, RoutedEventArgs e)
         {
-            limpiar();
+            Limpiar();
         }
 
-        private void btn3_Click(object sender, RoutedEventArgs e)
+        private void Btn3_Click(object sender, RoutedEventArgs e)
         {
             if (txt1.Text == "" || txt2.Text == "" || txt3.Text == "" || cmbox.SelectedItem == null || txt5.Text == "" || txt6.Text == "")
             {
@@ -100,7 +100,7 @@ namespace AlphaSport.Vista
                     UInt32 codigo = Convert.ToUInt32(txt3.Text);
                     string email = txt6.Text.TrimStart().TrimEnd();
 
-                    bool existe = entorno.buscarEstudiante(codigo, email);
+                    bool existe = entorno.BuscarEstudiante(codigo, email);
 
                     if (!existe)
                     {
@@ -110,9 +110,9 @@ namespace AlphaSport.Vista
                         string carrera = Convert.ToString(cmbox.SelectedValue).TrimStart().TrimEnd();
                         UInt32 semestre = Convert.ToUInt32(txt5.Text);
                         string obs = txt7.Text.TrimStart().TrimEnd();
-                        entorno.agregarEstudiante(nombres, apellidos, codigo, documento, carrera, semestre, email, obs);
+                        entorno.AgregarEstudiante(nombres, apellidos, codigo, documento, carrera, semestre, email, obs);
                         MessageBox.Show("El estudiante " + nombres + " " + apellidos + " fue agregado.");
-                        limpiar();
+                        Limpiar();
                     }
                     else
                     {
@@ -123,7 +123,7 @@ namespace AlphaSport.Vista
          
         }
 
-        private void btn4_Click(object sender, RoutedEventArgs e)
+        private void Btn4_Click(object sender, RoutedEventArgs e)
         {
             Window inscritos = new TablaInscritos();
 
@@ -131,12 +131,12 @@ namespace AlphaSport.Vista
             this.Hide();
         }
 
-        public void botonesEstado(bool estado) {
+        public void BotonesEstado(bool estado) {
             btn3.IsEnabled = estado;
             btn4.IsEnabled = estado;
         }
 
-        public void limpiar() {
+        public void Limpiar() {
             txt1.Text = "";
             txt2.Text = "";
             txt3.Text = "";

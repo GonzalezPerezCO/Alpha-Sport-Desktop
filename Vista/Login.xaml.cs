@@ -37,7 +37,7 @@ namespace AlphaSport
             }
             else
             {
-                if (entorno.login(email, password))
+                if (entorno.Login(email, password))
                 {       
                     Window ventana = new Main();
 

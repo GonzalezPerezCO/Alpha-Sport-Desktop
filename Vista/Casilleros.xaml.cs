@@ -138,7 +138,7 @@ namespace AlphaSport.Vista
         {
             string[] tagButton = null; infoBotonez = null;
 
-            infoBotonez = separarIdSeccion(entorno.infoCasilleros());  // lista: en pos [i] esta [0]disponible, [1]seccion  
+            infoBotonez = separarIdSeccion(entorno.InfoCasilleros());  // lista: en pos [i] esta [0]disponible, [1]seccion  
 
             List<string> disponibles = infoBotonez[0];
             List<string> secciones = infoBotonez[1];
@@ -239,7 +239,7 @@ namespace AlphaSport.Vista
             else
             {
                 // Lista: nombre, codigo, casillero, disponible{0:no, 1:si}, entrada, salida
-                List<string> lista = entorno.buscarCasilleroEstu(Convert.ToInt32(codigo.Text));
+                List<string> lista = entorno.BuscarCasilleroEstu(Convert.ToInt32(codigo.Text));
 
 
                 if (lista.Count > 0)
@@ -269,7 +269,7 @@ namespace AlphaSport.Vista
 
                                                 // [0]id_butto, [2]genero
             string[] tagButton = Convert.ToString(objeto.Tag).Split(',');
-            List<string> lista = entorno.buscarCasilleroID(Convert.ToInt32(tagButton[0]));
+            List<string> lista = entorno.BuscarCasilleroID(Convert.ToInt32(tagButton[0]));
 
 
 

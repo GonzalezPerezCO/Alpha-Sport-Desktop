@@ -10,13 +10,13 @@
     <Grid>
         <Label x:Name="lab1" Content="Nombre del Proyecto" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="47,7,47,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="36" Width="1338" Grid.ColumnSpan="4"/>
         <Label x:Name="lab2" Content="Agregar Estudiante al Gimnasio" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="176,112,209,0" VerticalAlignment="Top" RenderTransformOrigin="-0.013,-0.288" FontWeight="Bold" FontSize="24" Grid.Column="1"/>
-        <Button x:Name="btn1" Content="Volver" HorizontalAlignment="Right" Margin="0,97,49,0" VerticalAlignment="Top" Width="76" Click="btn1_Click"/>
-        <Button x:Name="btn3" Content="Guardar" HorizontalAlignment="Center" Margin="596,0,894,48" VerticalAlignment="Bottom" Width="102" FontWeight="Bold" FontSize="16" Height="43" Click="btn3_Click">
+        <Button x:Name="btn1" Content="Volver" HorizontalAlignment="Right" Margin="0,97,49,0" VerticalAlignment="Top" Width="76" Click="Btn1_Click"/>
+        <Button x:Name="btn3" Content="Guardar" HorizontalAlignment="Center" Margin="596,0,894,48" VerticalAlignment="Bottom" Width="102" FontWeight="Bold" FontSize="16" Height="43" Click="Btn3_Click">
             <Button.Background>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.MenuHighlightColorKey}}"/>
             </Button.Background>
         </Button>
-        <Button x:Name="btn4" Content="Cancelar" HorizontalAlignment="Center" Margin="898,0,592,48" VerticalAlignment="Bottom" Width="102" FontWeight="Bold" FontSize="16" Height="43" Background="#FFD36D19" Click="btn4_Click"/>
+        <Button x:Name="btn4" Content="Cancelar" HorizontalAlignment="Center" Margin="898,0,592,48" VerticalAlignment="Bottom" Width="102" FontWeight="Bold" FontSize="16" Height="43" Background="#FFD36D19" Click="Btn4_Click"/>
         <Label x:Name="lab3" Content="Nombres:" HorizontalAlignment="Center" Margin="276,229,1217,586" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" Width="99"/>
         <TextBox x:Name="txt1" HorizontalAlignment="Center" Height="37" Margin="416,229,852,586" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Width="324" FontSize="20" CharacterCasing="Upper" MaxLines="1" MaxLength="100" VerticalContentAlignment="Center"/>
         <Label x:Name="lab4" Content="Apellidos:" HorizontalAlignment="Center" Margin="277,280,1204,535" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" Width="111"/>
@@ -30,7 +30,7 @@
         <TextBox x:Name="txt6" HorizontalAlignment="Center" Height="36" Margin="910,330,217,486" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Width="465" FontSize="20" CharacterCasing="Upper" MaxLines="1" MaxLength="100" VerticalContentAlignment="Center"/>
         <Label x:Name="lab10" Content="Observaciones" HorizontalAlignment="Center" Margin="699,498,725,318" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" Width="168"/>
         <TextBox x:Name="txt7" HorizontalAlignment="Center" Height="142" HorizontalContentAlignment="Left" Margin="276,560,244,150" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Width="1072" FontSize="20" CharacterCasing="Upper" AcceptsReturn="True" AcceptsTab="True" MaxLength="300"/>
-        <Button x:Name="btn2" Content="Limpiar" HorizontalAlignment="Right" Margin="0,139,49,0" VerticalAlignment="Top" Width="76" Click="btn2_Click"/>
+        <Button x:Name="btn2" Content="Limpiar" HorizontalAlignment="Right" Margin="0,139,49,0" VerticalAlignment="Top" Width="76" Click="Btn2_Click"/>
         <Label x:Name="lab9" Content="Documento:" HorizontalAlignment="Center" Margin="277,392,1180,424" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" RenderTransformOrigin="0.182,0.378" Width="135"/>
         <TextBox x:Name="txt8" HorizontalAlignment="Center" Height="36" Margin="416,392,852,424" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Width="324" FontSize="20" CharacterCasing="Upper" MaxLines="1" MaxLength="10" VerticalContentAlignment="Center"/>
         <ComboBox x:Name="cmbox" HorizontalAlignment="Center" Margin="910,229,217,592" VerticalAlignment="Center" Width="465" Height="31" FontSize="20"/>
