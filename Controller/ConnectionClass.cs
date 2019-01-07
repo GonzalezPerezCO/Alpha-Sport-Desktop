@@ -121,7 +121,7 @@ namespace AlphaSport.Controller
         }
 
         //Login
-        public User loginConnection(string email, string password) {
+        public User LoginConnection(string email, string password) {
             
             User result = null;
 
@@ -147,7 +147,7 @@ namespace AlphaSport.Controller
         }
 
         //Buscar estudiante
-        public bool buscarEstudiante(UInt32 codigo, string email)
+        public bool BuscarEstudiante(UInt32 codigo, string email)
         {
             bool result = false;
 
@@ -173,7 +173,7 @@ namespace AlphaSport.Controller
         }
 
         //Execute query return Table
-        public DataTable mostrarTabla(string query) {
+        public DataTable MostrarTabla(string query) {
             
             reader = null;
             DataTable dt = new DataTable();
@@ -208,7 +208,7 @@ namespace AlphaSport.Controller
         }
 
         //execute one query
-        public void queryExecute(string query)
+        public void QueryExecute(string query)
         {
             Debug.WriteLine(" ----   Query add estu full");
             this.OpenConnection();
@@ -220,7 +220,7 @@ namespace AlphaSport.Controller
             Debug.WriteLine(" ----   FIN; Query add estu full");            
         }
 
-        public List<string> buscarCasilleroReader(string query)
+        public List<string> BuscarCasilleroReader(string query)
         {
             reader = null;
             List<string> result = new List<string>();
@@ -264,8 +264,12 @@ namespace AlphaSport.Controller
             return result;
         }
 
+        public void CambiarHorario(int hora, string dia, string email)
+        {
+            
+        }
 
-        public List<List<string>> casillerosDisponiblesReader(string queryDisp, string querySecc)
+        public List<List<string>> CasillerosDisponiblesReader(string queryDisp, string querySecc)
         {
             reader = null;
             List<List<string>> result = new List<List<string>>();
@@ -346,7 +350,7 @@ namespace AlphaSport.Controller
 
 
         //Execute query return Array Asistencia datos
-        public List<string> asistenciaReader(string query)
+        public List<string> AsistenciaReader(string query)
         {
 
             reader = null;
@@ -396,7 +400,7 @@ namespace AlphaSport.Controller
         }
 
         //Execute query return Array casilleors disponibles
-        public List<string> listaUnicaReader(string query)
+        public List<string> ListaUnicaReader(string query)
         {
 
             reader = null;
@@ -436,7 +440,7 @@ namespace AlphaSport.Controller
 
 
         //Query statament one string
-        public List<string> querySumarAsistencia(string query)
+        public List<string> QuerySumarAsistencia(string query)
         {
             reader = null;
             List<string> result = new List<string>();
@@ -502,13 +506,15 @@ namespace AlphaSport.Controller
 
             //Open connection
             this.OpenConnection();
-           
+
             //create mysql command
-            MySqlCommand cmd = new MySqlCommand();
-            //Assign the query using CommandText
-            cmd.CommandText = query;
-            //Assign the connection using Connection
-            cmd.Connection = connection;
+            MySqlCommand cmd = new MySqlCommand
+            {
+                //Assign the query using CommandText
+                CommandText = query,
+                //Assign the connection using Connection
+                Connection = connection
+            };
 
             //Execute query
             cmd.ExecuteNonQuery();
@@ -595,7 +601,7 @@ namespace AlphaSport.Controller
             return Count;         
         }
 
-        public string getPeriodo() {
+        public string GetPeriodo() {
             return "Periodo Académico";
         }
         

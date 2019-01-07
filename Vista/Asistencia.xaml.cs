@@ -311,6 +311,7 @@ namespace AlphaSport.Vista
         private void Bt1_Click(object sender, RoutedEventArgs e)
         {
             cuposL = SepararIds(entorno.Cupos());
+            MostrarHorarioEstudiante();
             ActualizarCmbox();
         }
 
@@ -454,8 +455,7 @@ namespace AlphaSport.Vista
         }
 
         private void MostrarHorarioEstudiante() {
-
-            entorno.CambiarHorario();
+            entorno.CambiarHorario(9,"Lunes", "MANUEL.PEREZ-E@MAIL.ESCUELAING.EDU.CO");
         }
     }
 }
