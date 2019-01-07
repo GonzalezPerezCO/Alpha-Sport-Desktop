@@ -455,7 +455,17 @@ namespace AlphaSport.Vista
         }
 
         private void MostrarHorarioEstudiante() {
-            entorno.CambiarHorario(9,"Lunes", "MANUEL.PEREZ-E@MAIL.ESCUELAING.EDU.CO");
+
+            string result = entorno.CambiarHorario(9,"Lunes", "MANUEL.PEREZ-E@MAIL.ESCUELAING.EDU.CO");
+
+            if (result == "")
+            {
+                MessageBox.Show("Agregado correctamnente!");
+            }
+            else
+            {
+                MessageBox.Show(result);
+            }
         }
     }
 }

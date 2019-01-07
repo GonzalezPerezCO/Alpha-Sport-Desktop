@@ -186,10 +186,9 @@ namespace AlphaSport.Controller
             return connection.BuscarEstudiante(codigo, email);
         }
         
-        public bool CambiarHorario(int hora, string dia, string email)
+        public string CambiarHorario(int hora, string dia, string email)
         {
-            connection.CambiarHorario(hora, dia, email);
-            return false;
+            return connection.CambiarHorario(hora, dia, email);
         }
 
         public User GetUser() {

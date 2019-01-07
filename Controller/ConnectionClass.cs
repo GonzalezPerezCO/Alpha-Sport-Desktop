@@ -264,9 +264,34 @@ namespace AlphaSport.Controller
             return result;
         }
 
-        public void CambiarHorario(int hora, string dia, string email)
+        public string CambiarHorario(int hora, string dia, string email)
         {
+            string result = "";
+
+            string queryEstu = "call addHorario("+hora+", '"+dia+"', '"+email+"')";
+
+            Debug.WriteLine(" ----  ADD_HORARIO");
+
+            this.OpenConnection();
+
+            cmd = new MySqlCommand(queryEstu, connection);
+
+            try
+            {
+                reader = cmd.ExecuteReader();
+            }
+            catch (MySqlException ex)
+            {
+                Debug.WriteLine("<<< catch : "+ ex.Message);
+                result = ex.Message;
+            }
+
             
+            this.CloseConnection();
+
+            Debug.WriteLine(" ----   ADD_HORARIO result: retorna");
+
+            return result;
         }
 
         public List<List<string>> CasillerosDisponiblesReader(string queryDisp, string querySecc)
