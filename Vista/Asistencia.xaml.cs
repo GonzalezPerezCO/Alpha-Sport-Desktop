@@ -34,7 +34,7 @@ namespace AlphaSport.Vista
             InitializeComponent();
             entorno = Entorno.GetInstance();
             lab1.Content = entorno.PROYECTO;
-            botonesEstado(false);
+            BotonesEstado(false);
             lab6.Content = "Ingrese el código del estudiante y realice la busqueda";
 
             IniciarLabelsY();
@@ -43,7 +43,7 @@ namespace AlphaSport.Vista
             txt1.Focus();
         }       
 
-        private void btn1_Click(object sender, RoutedEventArgs e)
+        private void Btn1_Click(object sender, RoutedEventArgs e)
         {
             Window tabla = new TablaInscritos();
 
@@ -51,7 +51,7 @@ namespace AlphaSport.Vista
             this.Hide();
         }
 
-        private void btn2_Click(object sender, RoutedEventArgs e)
+        private void Btn2_Click(object sender, RoutedEventArgs e)
         {
             limpiar();            
         }
@@ -59,7 +59,7 @@ namespace AlphaSport.Vista
         private void limpiar()
         {
             lab5.Content = "---";
-            botonesEstado(false);
+            BotonesEstado(false);
             lab6.Content = "---";
             lab10.Content = "---";
             lab11.Content = "--";
@@ -83,7 +83,7 @@ namespace AlphaSport.Vista
             txt1.Focus();
         }
 
-        private void bt3_Click(object sender, RoutedEventArgs e)
+        private void Bt3_Click(object sender, RoutedEventArgs e)
         {
             codigo = txt1.Text;
 
@@ -103,13 +103,13 @@ namespace AlphaSport.Vista
                     lab11.Content = lista[2];
                     lab8.Content = lista[3];
 
-                    separarDias(lista);  // descompone la posicion 5 y agrega los 6 elementos que se necesitan en el orden que se necesitan
+                    SepararDias(lista);  // descompone la posicion 5 y agrega los 6 elementos que se necesitan en el orden que se necesitan
 
                     Debug.WriteLine("**** For :" + lista.Count);
                     
                     // calcular dia y hora actual
                     DateTime dt = DateTime.Now;
-                    string diaActual = aEspanol(dt.DayOfWeek.ToString());
+                    string diaActual = AEspanol(dt.DayOfWeek.ToString());
                     string horaActual = dt.Hour.ToString(); ;
                     // -- fin
                     Debug.WriteLine("<<<<<<<<<<<<< datos hora: " + diaActual + "a las  " +horaActual);
@@ -165,7 +165,7 @@ namespace AlphaSport.Vista
 
         }
 
-        private void separarDias(List<string> lista)
+        private void SepararDias(List<string> lista)
         {
             // cambiar posicion 5 de lista: "d1,h1,d2,h2,d3,h3" por ["d1","d2","d3","h1","h2","h3"]
 
@@ -230,7 +230,7 @@ namespace AlphaSport.Vista
 
         }
 
-        private string aEspanol(string day) {
+        private string AEspanol(string day) {
             string dia = "";
 
             switch (day)
@@ -264,7 +264,7 @@ namespace AlphaSport.Vista
             return dia;
         }
 
-        private List<string> separarIds(List<string> lista)
+        private List<string> SepararIds(List<string> lista)
         {
             // a,b,c,...,x  ==> {id, Lunes, Martes, Miercoles, Jueves, Viernes}
 
@@ -300,23 +300,23 @@ namespace AlphaSport.Vista
 
             }
             MessageBox.Show("Asistencia registrada");
-            botonesEstado(false);
+            BotonesEstado(false);
         }        
 
-        private void botonesEstado(bool estado) {
+        private void BotonesEstado(bool estado) {
             Debug.WriteLine("Mostrar botones 5 y 6 = "+estado);
             bt4.IsEnabled = estado;       
         }
 
         private void Bt1_Click(object sender, RoutedEventArgs e)
         {
-            cuposL = separarIds(entorno.cupos());
+            cuposL = SepararIds(entorno.cupos());
             ActualizarCmbox();
         }
 
         private void ActualizarCmbox()
         {
-            cuposL = separarIds(entorno.cupos());
+            cuposL = SepararIds(entorno.cupos());
             MostrarCupos();
         }
 
@@ -451,6 +451,9 @@ namespace AlphaSport.Vista
             labelsY.Add(labY51);
             labelsY.Add(labY52);
             labelsY.Add(labY53);
+        }
+
+        private void MostrarHorarioEstudiante() {
         }
     }
 }
