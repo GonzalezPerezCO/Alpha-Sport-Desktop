@@ -109,7 +109,7 @@ namespace AlphaSport.Vista
                     
                     // calcular dia y hora actual
                     DateTime dt = DateTime.Now;
-                    string diaActual = AEspanol(dt.DayOfWeek.ToString());
+                    string diaActual = AEspanol(dt.DayOfWeek.ToString().ToUpper());
                     string horaActual = dt.Hour.ToString(); ;
                     // -- fin
                     Debug.WriteLine("<<<<<<<<<<<<< datos hora: " + diaActual + "a las  " +horaActual);
@@ -235,26 +235,26 @@ namespace AlphaSport.Vista
 
             switch (day)
             {
-                case "Monday":
-                    dia = "Lunes";
+                case "MONDAY":
+                    dia = "LUNES";
                     break;
-                case "Tuesday":
-                    dia = "Martes";
+                case "TUESDAY":
+                    dia = "MARTES";
                     break;
-                case "Wednesday":
-                    dia = "Miercoles";
+                case "WEDNESDAY":
+                    dia = "MIERCOLES";
                     break;
-                case "Thursday":
-                    dia = "Jueves";
+                case "THURSDAY":
+                    dia = "JUEVES";
                     break;
-                case "Friday":
-                    dia = "Viernes";
+                case "FRIDAY":
+                    dia = "VIERNES";
                     break;
-                case "Saturday":
-                    dia = "Sabado";
+                case "SATURDAY":
+                    dia = "SABADO";
                     break;
-                case "Sunday":
-                    dia = "Domingo";
+                case "SUNDAY":
+                    dia = "DOMINGO";
                     break;
                 //default:  // NO ESA NECESARIO PORQUÉ YA ESTA COMTEMPLADO EN LA LECTURA DEL QUERY
                     //dia = "N/A";
