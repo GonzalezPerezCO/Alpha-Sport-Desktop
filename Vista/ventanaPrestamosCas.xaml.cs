@@ -33,8 +33,8 @@ namespace AlphaSport.Vista
 
             codigo.Focus();
 
-            lista = separarIds(entorno.DisponiblesCasilleros());
-            actualizarListaDisp();
+            lista = SepararIds(entorno.DisponiblesCasilleros());
+            ActualizarListaDisp();
         }        
 
         public static ventanaPrestamosCas GetInstance()
@@ -56,7 +56,7 @@ namespace AlphaSport.Vista
             Application.Current.Shutdown();
         }
 
-        private List<string> separarIds(List<string> lista)
+        private List<string> SepararIds(List<string> lista)
         {
             // a,b,c,...,x
 
@@ -99,7 +99,7 @@ namespace AlphaSport.Vista
                         MessageBox.Show("Estudiante encontrado! Casillero liberado.");
                         Debug.WriteLine("<<< Prestamo liberado: codigoEst = " + codigoEs + ".");
                         entorno.QuitarEstudianteCasillero(codigoEs);
-                        actualizarListaDisp();
+                        ActualizarListaDisp();
                     }
 
 
@@ -119,37 +119,37 @@ namespace AlphaSport.Vista
                         entorno.AgregarEstudianteCasillero(codigoCas, codigoEs);
                         Debug.WriteLine("<<< Prestamo: id_c = " + codigoCas + ", codigoEst = " + codigoEs + ".");
                         MessageBox.Show("Casillero asignado!");
-                        actualizarListaDisp();
+                        ActualizarListaDisp();
                     }
                 }
             }
 
-            limpiar();
+            Limpiar();
         }
 
         private void Btn2_Click(object sender, RoutedEventArgs e)
         {
-            limpiar();
-            ocultar();
+            Limpiar();
+            Ocultar();
         }
 
-        private void limpiar() {
+        private void Limpiar() {
             codigo.Text = "";
             cmbox.SelectedValue = null;
             //this.Hide();
         }
 
-        private void ocultar() {
+        private void Ocultar() {
             Casilleros casilleros = Casilleros.GetInstance();
             casilleros.Show();
             this.Hide();
         }
 
-        private void actualizarListaDisp()
+        private void ActualizarListaDisp()
         {
-            lista = separarIds(entorno.DisponiblesCasilleros());
+            lista = SepararIds(entorno.DisponiblesCasilleros());
             cmbox.ItemsSource = lista;
-            ocultar();
+            Ocultar();
         }        
     }
 }
