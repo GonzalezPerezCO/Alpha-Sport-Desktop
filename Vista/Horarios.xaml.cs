@@ -116,6 +116,7 @@ namespace AlphaSport.Vista
                     txt5.Content = lista[1];
                     txt6.Content = lista[2];
                     txt7.Content = lista[3];
+
                     txt8.Content = lista[5];
                     txt9.Content = lista[6];
                     txt10.Content = lista[7];
@@ -129,6 +130,18 @@ namespace AlphaSport.Vista
 
                     //0: nombre, 1: carrera, 2: semestre, 3: fallas, 4: codigo
                     lista = entorno.DatosEstudiante(Convert.ToInt32(codigo));
+
+                    txt4.Content = lista[0];
+                    txt5.Content = lista[1];
+                    txt6.Content = lista[2];
+                    txt7.Content = lista[3];
+
+                    txt8.Content = "Día 1";
+                    txt9.Content = "Día 2";
+                    txt10.Content = "Día 3";
+                    txt11.Content = "N/A";
+                    txt12.Content = "N/A";
+                    txt13.Content = "N/A";
                 }
             }
         }
