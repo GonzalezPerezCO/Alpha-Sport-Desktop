@@ -73,7 +73,7 @@ namespace AlphaSport.Vista
             cmbx5.SelectedValue = null;
             cmbx6.SelectedValue = null;
 
-
+            bt_mod.IsEnabled = false;
             txt3.Focus();
         }
 
@@ -93,8 +93,9 @@ namespace AlphaSport.Vista
         private void Click_bt3(object sender, RoutedEventArgs e)
         {
             codigo = txt3.Text;
+            Limpiar();
 
-            if (codigo == "" || (!UInt32.TryParse(txt3.Text, out UInt32 abc)))
+            if (codigo == "" || (!UInt32.TryParse(codigo, out UInt32 abc)))
             {
                 MessageBox.Show("El código del estudiante es incorrecto!");
             }
@@ -125,6 +126,8 @@ namespace AlphaSport.Vista
                     txt11.Content = lista[8];
                     txt12.Content = lista[9];
                     txt13.Content = lista[10];
+
+                    bt_mod.IsEnabled = true;
                 }
                 else if (buscarEstudiante && lista.Count == 0)
                 {
@@ -144,16 +147,18 @@ namespace AlphaSport.Vista
                         txt6.Content = lista[2];
                         txt7.Content = lista[3];
 
-                        txt8.Content = "Día 1";
-                        txt9.Content = "Día 2";
-                        txt10.Content = "Día 3";
+                        txt8.Content = "N/A";
+                        txt9.Content = "N/A";
+                        txt10.Content = "N/A";
                         txt11.Content = "N/A";
                         txt12.Content = "N/A";
                         txt13.Content = "N/A";
+
+                        bt_mod.IsEnabled = true;
                     }
                 }                
                 else
-                {
+                {   
                     MessageBox.Show("No esta registrado en la Base de Datos de Deportes!");
                 }               
             }
