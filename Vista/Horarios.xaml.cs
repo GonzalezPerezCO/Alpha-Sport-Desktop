@@ -126,15 +126,15 @@ namespace AlphaSport.Vista
 
                     txt4.Content = lista[0];
                     txt5.Content = lista[1];
-                    txt6.Content = lista[2];
-                    txt7.Content = lista[3];
+                    txt6.Content = lista[3];
+                    txt7.Content = lista[4];
 
-                    txt8.Content = lista[5];
-                    txt9.Content = lista[6];
-                    txt10.Content = lista[7];
-                    txt11.Content = lista[8];
-                    txt12.Content = lista[9];
-                    txt13.Content = lista[10];
+                    txt8.Content = lista[6];
+                    txt9.Content = lista[7];
+                    txt10.Content = lista[8];
+                    txt11.Content = lista[9];
+                    txt12.Content = lista[10];
+                    txt13.Content = lista[11];
 
                     DesactivarTxt3_codigo();
                 }

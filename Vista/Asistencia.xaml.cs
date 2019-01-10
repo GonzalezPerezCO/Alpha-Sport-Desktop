@@ -84,15 +84,15 @@ namespace AlphaSport.Vista
             {
                 //0: nombre, 1: carrera, 2: semestre, 3: email, 4: fallas, 5: codigo, 6:dia1,hora1,dia2,hora2,dia3,hora3
                 List<string> lista = entorno.Asistencia(Convert.ToInt32(codigo));
-
+                
                 if (lista.Count > 0)
                 {
                     lab5.Content = lista[0];
                     lab10.Content = lista[1];
-                    lab11.Content = lista[2];
-                    lab8.Content = lista[3];
+                    lab11.Content = lista[3];
+                    lab8.Content = lista[4];
 
-                    SepararDias(lista);  // descompone la posicion 5 y agrega los 6 elementos que se necesitan en el orden que se necesitan
+                    SepararDias(lista);  // descompone la posicion 6 y agrega los 6 elementos que se necesitan en el orden que se necesitan
 
                     Debug.WriteLine("**** For :" + lista.Count);
                     
@@ -110,12 +110,12 @@ namespace AlphaSport.Vista
                     }
 
                     // mostrar horario
-                    txt8.Content = lista[5];
-                    txt9.Content = lista[6];
-                    txt10.Content = lista[7];
-                    txt11.Content = lista[8];
-                    txt12.Content = lista[9];
-                    txt13.Content = lista[10];
+                    txt8.Content = lista[6];
+                    txt9.Content = lista[7];
+                    txt10.Content = lista[8];
+                    txt11.Content = lista[9];
+                    txt12.Content = lista[10];
+                    txt13.Content = lista[11];
 
                     string mensaje = "";
                     // campo 5,6 y 7 con dias, 8,9,10 son las horas
