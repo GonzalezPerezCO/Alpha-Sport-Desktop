@@ -28,6 +28,8 @@ namespace AlphaSport.Vista
         private string codigo;
         private static List<string> cuposL = new List<string>();
         private static List<Label> labelsY = new List<Label>();
+        private readonly List<string> DIAS = new List<string> { "LUNES", "MARTES", "MIERCOLES", "JUEVES", "VIERNES" };
+        private readonly List<int> HORAS = new List<int> {8, 9, 10, 11, 12, 13, 14, 15, 16, 17};
 
         public Asistencia()
         {
@@ -36,7 +38,7 @@ namespace AlphaSport.Vista
             lab1.Content = entorno.PROYECTO;
             BotonesEstado(false);
             lab6.Content = "Ingrese el código del estudiante y realice la busqueda";
-
+            
             IniciarLabelsY();
             ActualizarCmbox(); // por dentro: MostrarCupos();
 
@@ -319,6 +321,15 @@ namespace AlphaSport.Vista
         {
             cuposL = SepararIds(entorno.Cupos());
             MostrarCupos();
+
+            // --- inicializar Cmbox
+            cmbx1.ItemsSource = DIAS;
+            cmbx2.ItemsSource = DIAS;
+            cmbx3.ItemsSource = DIAS;
+
+            cmbx4.ItemsSource = HORAS;
+            cmbx5.ItemsSource = HORAS;
+            cmbx6.ItemsSource = HORAS;
         }
 
         private void MostrarCupos()
