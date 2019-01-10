@@ -26,10 +26,7 @@ namespace AlphaSport.Vista
         private Entorno entorno;
 
         private string codigo;
-        private static List<string> cuposL = new List<string>();
-        private static List<Label> labelsY = new List<Label>();
-        private readonly List<string> DIAS = new List<string> { "LUNES", "MARTES", "MIERCOLES", "JUEVES", "VIERNES" };
-        private readonly List<string> HORAS = new List<string> {"N/A", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17"};
+        
 
         public Asistencia()
         {
@@ -37,11 +34,7 @@ namespace AlphaSport.Vista
             entorno = Entorno.GetInstance();
             lab1.Content = entorno.PROYECTO;
             BotonesEstado(false);
-            lab6.Content = "Ingrese el código del estudiante y realice la busqueda.";
-            
-            IniciarLabelsY(); // crear Lista de Labels para mostrar cupos
-            MostrarCupos(); // mostar cupos disponibles
-            ActualizarCmbox(); // inicializa los Cmbox
+            lab6.Content = "Ingrese el código del estudiante y realice la busqueda.";           
 
             txt1.Focus();
         }       
@@ -74,13 +67,6 @@ namespace AlphaSport.Vista
             txt11.Content = "N/A";
             txt12.Content = "N/A";
             txt13.Content = "N/A";
-
-            cmbx1.SelectedValue = "N/A";
-            cmbx2.SelectedValue = "N/A";
-            cmbx3.SelectedValue = "N/A";
-            cmbx4.SelectedValue = "N/A";
-            cmbx5.SelectedValue = "N/A";
-            cmbx6.SelectedValue = "N/A";
 
             txt1.Text = "";
             txt1.Focus();
@@ -267,24 +253,6 @@ namespace AlphaSport.Vista
             return dia;
         }
 
-        private List<string> SepararIds(List<string> lista)
-        {
-            // a,b,c,...,x  ==> {id, Lunes, Martes, Miercoles, Jueves, Viernes}
-
-            List<string> result = new List<string>();
-
-            string[] separadas;
-            separadas = lista[0].Split(',');
-
-            foreach (var item in separadas)
-            {
-                result.Add(item);
-                Debug.WriteLine("<< a lista: " + item);
-            }
-            Debug.WriteLine("<< size : " + result.Count());
-            return result;
-        }
-
         private void Window_Closed(object sender, EventArgs e)
         {
             Application.Current.Shutdown();
@@ -309,173 +277,6 @@ namespace AlphaSport.Vista
         private void BotonesEstado(bool estado) {
             Debug.WriteLine("Mostrar botones 5 y 6 = "+estado);
             bt4.IsEnabled = estado;       
-        }
-
-        private void Bt1_Click(object sender, RoutedEventArgs e)
-        {
-            cuposL = SepararIds(entorno.Cupos());
-            MostrarHorarioEstudiante();
-            ActualizarCmbox();
-        }
-
-        private void ActualizarCmbox()
-        {
-            cmbx1.ItemsSource = DIAS;
-            cmbx2.ItemsSource = DIAS;
-            cmbx3.ItemsSource = DIAS;
-
-            cmbx4.ItemsSource = HORAS;
-            cmbx5.ItemsSource = HORAS;
-            cmbx6.ItemsSource = HORAS;
-        }
-
-        private void MostrarCupos()
-        {
-            cuposL = SepararIds(entorno.Cupos());            
-
-            labY0.Content = cuposL[0];
-            labY1.Content = cuposL[1];
-            labY2.Content = cuposL[2];
-            labY3.Content = cuposL[3];
-            labY4.Content = cuposL[4];
-            labY5.Content = cuposL[5];
-
-            labY6.Content = cuposL[6];
-            labY7.Content = cuposL[7];
-            labY8.Content = cuposL[8];
-            labY9.Content = cuposL[9];
-            labY10.Content = cuposL[10];
-            labY11.Content = cuposL[11];
-
-            labY12.Content = cuposL[12];
-            labY13.Content = cuposL[13];
-            labY14.Content = cuposL[14];
-            labY15.Content = cuposL[15];
-            labY16.Content = cuposL[16];
-            labY17.Content = cuposL[17];
-
-            labY18.Content = cuposL[18];
-            labY19.Content = cuposL[19];
-            labY20.Content = cuposL[20];
-            labY21.Content = cuposL[21];
-            labY22.Content = cuposL[22];
-            labY23.Content = cuposL[23];
-
-            labY24.Content = cuposL[24];
-            labY25.Content = cuposL[25];
-            labY26.Content = cuposL[26];
-            labY27.Content = cuposL[27];
-            labY28.Content = cuposL[28];
-            labY29.Content = cuposL[29];
-
-            labY30.Content = cuposL[30];
-            labY31.Content = cuposL[31];
-            labY32.Content = cuposL[32];
-            labY33.Content = cuposL[33];
-            labY34.Content = cuposL[34];
-            labY35.Content = cuposL[35];
-
-            labY36.Content = cuposL[36];
-            labY37.Content = cuposL[37];
-            labY38.Content = cuposL[38];
-            labY39.Content = cuposL[39];
-            labY40.Content = cuposL[40];
-            labY41.Content = cuposL[41];
-
-            labY42.Content = cuposL[42];
-            labY43.Content = cuposL[43];
-            labY44.Content = cuposL[44];
-            labY45.Content = cuposL[45];
-            labY46.Content = cuposL[46];
-            labY47.Content = cuposL[47];
-
-            labY48.Content = cuposL[48];
-            labY49.Content = cuposL[49];
-            labY50.Content = cuposL[50];
-            labY51.Content = cuposL[51];
-            labY52.Content = cuposL[52];
-            labY53.Content = cuposL[53];
-        }
-
-        private void IniciarLabelsY() {
-            // agregar Labels que muestran el horario
-            labelsY.Add(labY0);
-            labelsY.Add(labY1);
-            labelsY.Add(labY2);
-            labelsY.Add(labY3);
-            labelsY.Add(labY4);
-            labelsY.Add(labY5);
-            // -----
-            labelsY.Add(labY6);
-            labelsY.Add(labY7);
-            labelsY.Add(labY8);
-            labelsY.Add(labY9);
-            labelsY.Add(labY10);
-            labelsY.Add(labY11);
-            // -----
-            labelsY.Add(labY12);
-            labelsY.Add(labY13);
-            labelsY.Add(labY14);
-            labelsY.Add(labY15);
-            labelsY.Add(labY16);
-            labelsY.Add(labY17);
-            // -----
-            labelsY.Add(labY18);
-            labelsY.Add(labY19);
-            labelsY.Add(labY20);
-            labelsY.Add(labY21);
-            labelsY.Add(labY22);
-            labelsY.Add(labY23);
-            // -----
-            labelsY.Add(labY24);
-            labelsY.Add(labY25);
-            labelsY.Add(labY26);
-            labelsY.Add(labY27);
-            labelsY.Add(labY28);
-            labelsY.Add(labY29);
-            // -----
-            labelsY.Add(labY30);
-            labelsY.Add(labY31);
-            labelsY.Add(labY32);
-            labelsY.Add(labY33);
-            labelsY.Add(labY34);
-            labelsY.Add(labY35);    
-            
-            // -----
-            labelsY.Add(labY36);
-            labelsY.Add(labY37);
-            labelsY.Add(labY38);
-            labelsY.Add(labY39);
-            labelsY.Add(labY40);
-            labelsY.Add(labY41);
-            // -----
-            labelsY.Add(labY42);
-            labelsY.Add(labY43);
-            labelsY.Add(labY44);
-            labelsY.Add(labY45);
-            labelsY.Add(labY46);
-            labelsY.Add(labY47);
-            // -----
-            labelsY.Add(labY48);
-            labelsY.Add(labY49);
-            labelsY.Add(labY50);
-            labelsY.Add(labY51);
-            labelsY.Add(labY52);
-            labelsY.Add(labY53);
-        }
-
-        private void MostrarHorarioEstudiante() {
-
-            string result = entorno.CambiarHorario(9,"Lunes", "MANUEL.PEREZ-E@MAIL.ESCUELAING.EDU.CO");
-
-            if (result == "")
-            {
-                MessageBox.Show("Agregado correctamnente!");
-            }
-            else
-            {
-                MessageBox.Show(result);
-            }
         }
     }
 }
