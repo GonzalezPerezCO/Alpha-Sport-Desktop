@@ -103,15 +103,40 @@ namespace AlphaSport.Vista
                 //0: nombre, 1: carrera, 2: semestre, 3: fallas, 4: codigo, 5: dia1,hora1,dia2,hora2,dia3,hora3
                 List<string> lista = entorno.Asistencia(Convert.ToInt32(codigo));
 
-                if (entorno.BuscarEstudiante(Convert.ToUInt32(codigo), ""))
+                bool buscarEstudiante = entorno.BuscarEstudiante(Convert.ToUInt32(codigo), "");
+
+                if (buscarEstudiante && lista.Count > 0)
                 {
+                    SepararDias(lista);  // descompone la posicion 5 y agrega los 6 elementos que se necesitan en el orden que se necesitan     
+
+                    foreach (var item in lista)
+                    {
+                        Debug.WriteLine("<<<< Lista horario: " + item);
+                    }
+
+                    txt4.Content = lista[0];
+                    txt5.Content = lista[1];
+                    txt6.Content = lista[2];
+                    txt7.Content = lista[3];
+
+                    txt8.Content = lista[5];
+                    txt9.Content = lista[6];
+                    txt10.Content = lista[7];
+                    txt11.Content = lista[8];
+                    txt12.Content = lista[9];
+                    txt13.Content = lista[10];
+                }
+                else if (buscarEstudiante && lista.Count == 0)
+                {
+                    //0: nombre, 1: carrera, 2: semestre, 3: fallas, 4: codigo
+                    lista = entorno.DatosEstudiante(Convert.ToInt32(codigo));
+
+                    MessageBox.Show("No esta registrado el Estudiante en el Gimnasio!");
                     if (lista.Count > 0)
                     {
-                        SepararDias(lista);  // descompone la posicion 5 y agrega los 6 elementos que se necesitan en el orden que se necesitan     
-
                         foreach (var item in lista)
                         {
-                            Debug.WriteLine("<<<< Lista horario: " + item);
+                            Debug.WriteLine("<<<< Lista datos estu: " + item);
                         }
 
                         txt4.Content = lista[0];
@@ -119,45 +144,18 @@ namespace AlphaSport.Vista
                         txt6.Content = lista[2];
                         txt7.Content = lista[3];
 
-                        txt8.Content = lista[5];
-                        txt9.Content = lista[6];
-                        txt10.Content = lista[7];
-                        txt11.Content = lista[8];
-                        txt12.Content = lista[9];
-                        txt13.Content = lista[10];
+                        txt8.Content = "Día 1";
+                        txt9.Content = "Día 2";
+                        txt10.Content = "Día 3";
+                        txt11.Content = "N/A";
+                        txt12.Content = "N/A";
+                        txt13.Content = "N/A";
                     }
-                    else
-                    {
-                        MessageBox.Show("No esta registrado el Estudiante en el Gimnasio!");
-
-                        //0: nombre, 1: carrera, 2: semestre, 3: fallas, 4: codigo
-                        lista = entorno.DatosEstudiante(Convert.ToInt32(codigo));
-
-                        if (lista.Count > 0)
-                        {
-                            foreach (var item in lista)
-                            {
-                                Debug.WriteLine("<<<< Lista datos estu: " + item);
-                            }
-
-                            txt4.Content = lista[0];
-                            txt5.Content = lista[1];
-                            txt6.Content = lista[2];
-                            txt7.Content = lista[3];
-
-                            txt8.Content = "Día 1";
-                            txt9.Content = "Día 2";
-                            txt10.Content = "Día 3";
-                            txt11.Content = "N/A";
-                            txt12.Content = "N/A";
-                            txt13.Content = "N/A";
-                        }                        
-                    }
-                }
+                }                
                 else
                 {
-                    MessageBox.Show("El estudiante no esta en la base de datos de Deportes.");
-                }
+                    MessageBox.Show("No esta registrado en la Base de Datos de Deportes!");
+                }               
             }
         }
 
