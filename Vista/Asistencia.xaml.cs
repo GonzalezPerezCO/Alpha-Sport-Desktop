@@ -29,7 +29,7 @@ namespace AlphaSport.Vista
         private static List<string> cuposL = new List<string>();
         private static List<Label> labelsY = new List<Label>();
         private readonly List<string> DIAS = new List<string> { "LUNES", "MARTES", "MIERCOLES", "JUEVES", "VIERNES" };
-        private readonly List<int> HORAS = new List<int> {8, 9, 10, 11, 12, 13, 14, 15, 16, 17};
+        private readonly List<string> HORAS = new List<string> {"N/A", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17"};
 
         public Asistencia()
         {
@@ -37,10 +37,11 @@ namespace AlphaSport.Vista
             entorno = Entorno.GetInstance();
             lab1.Content = entorno.PROYECTO;
             BotonesEstado(false);
-            lab6.Content = "Ingrese el código del estudiante y realice la busqueda";
+            lab6.Content = "Ingrese el código del estudiante y realice la busqueda.";
             
-            IniciarLabelsY();
-            ActualizarCmbox(); // por dentro: MostrarCupos();
+            IniciarLabelsY(); // crear Lista de Labels para mostrar cupos
+            MostrarCupos(); // mostar cupos disponibles
+            ActualizarCmbox(); // inicializa los Cmbox
 
             txt1.Focus();
         }       
@@ -319,10 +320,6 @@ namespace AlphaSport.Vista
 
         private void ActualizarCmbox()
         {
-            cuposL = SepararIds(entorno.Cupos());
-            MostrarCupos();
-
-            // --- inicializar Cmbox
             cmbx1.ItemsSource = DIAS;
             cmbx2.ItemsSource = DIAS;
             cmbx3.ItemsSource = DIAS;
@@ -334,6 +331,8 @@ namespace AlphaSport.Vista
 
         private void MostrarCupos()
         {
+            cuposL = SepararIds(entorno.Cupos());            
+
             labY0.Content = cuposL[0];
             labY1.Content = cuposL[1];
             labY2.Content = cuposL[2];
