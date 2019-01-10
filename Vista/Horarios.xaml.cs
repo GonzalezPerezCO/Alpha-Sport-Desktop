@@ -96,7 +96,7 @@ namespace AlphaSport.Vista
 
             if (codigo == "" || (!int.TryParse(txt3.Text, out int abc)))
             {
-                MessageBox.Show("El código del estudiante es incorrecto o no se encuentra registrado!");
+                MessageBox.Show("El código del estudiante es incorrecto!");
             }
             else
             {
@@ -122,6 +122,10 @@ namespace AlphaSport.Vista
                     txt11.Content = lista[8];
                     txt12.Content = lista[9];
                     txt13.Content = lista[10];
+                }
+                else
+                {
+                    MessageBox.Show("No esta registrado el Estudiante en el Gimnasio!");
                 }
             }
         }

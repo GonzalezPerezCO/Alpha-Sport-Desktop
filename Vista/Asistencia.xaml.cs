@@ -78,7 +78,7 @@ namespace AlphaSport.Vista
 
             if (codigo == "" || (!int.TryParse(txt1.Text, out int abc)) )
             {
-                MessageBox.Show("El código del estudiante es incorrecto o no esta registrado!");
+                MessageBox.Show("El código del estudiante es incorrecto!");
             }
             else
             {
