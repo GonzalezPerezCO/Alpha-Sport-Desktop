@@ -24,7 +24,7 @@
         </Border>
         <Label x:Name="lab1" Content="Nombre del Proyecto" HorizontalAlignment="Right" HorizontalContentAlignment="Center" VerticalAlignment="Top" FontWeight="Bold" FontSize="48"  Height="Auto" Margin="-333,-145,-339,0" Width="972" Foreground="{DynamicResource {x:Static SystemColors.MenuBarBrushKey}}" />
         <Label x:Name="lab2" Content="Periodo Académico" HorizontalContentAlignment="Right" Foreground="White" HorizontalAlignment="Right" Height="37" Margin="531,-260,-546,0" VerticalAlignment="Top" Width="315" FontWeight="Bold" FontSize="20"/>
-        <Image HorizontalAlignment="Right" Height="98" Margin="0,0,-645,-265" VerticalAlignment="Bottom" Width="229" Source="/GonzalezPerezCO;component/Recursos/escuela_ing.jpg"/>
-        <Image HorizontalAlignment="Right" Height="122"  VerticalAlignment="Bottom" Width="207" Source="/GonzalezPerezCO;component/Recursos/sistemas.jpg" Margin="-649,0,742,-265"/>
+        <Image HorizontalAlignment="Right" Height="98" Margin="0,0,-645,-275" VerticalAlignment="Bottom" Width="229" Source="/GonzalezPerezCO;component/Recursos/escuela_ing.jpg"/>
+        <Image HorizontalAlignment="Left" Height="122"  VerticalAlignment="Bottom" Width="206" Source="/GonzalezPerezCO;component/Recursos/sistemas.jpg" Margin="-650,0,0,-287"/>
     </Grid>
 </Window>
