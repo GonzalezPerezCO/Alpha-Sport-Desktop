@@ -424,6 +424,50 @@ namespace AlphaSport.Controller
             return result;
         }
 
+        //Execute query return Array Datos Estudiante
+        public List<string> DatosEstuReader(string query)
+        {
+
+            reader = null;
+            List<string> result = new List<string>();
+
+            Debug.WriteLine(" ----   QUERY READER OPEN CONNECTION Datos_Estudiante reader");
+
+            this.OpenConnection();
+
+            cmd = new MySqlCommand(query, connection);
+
+            try
+            {
+                Debug.WriteLine(" ----   RESULT QERY TRY recibido Datos_Estudiante  reader: " + query);
+                reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    if (reader.GetString(0) != null) { result.Add(reader.GetString(0)); } else { result.Add("N/A"); }
+                    if (reader.GetString(1) != null) { result.Add(reader.GetString(1)); } else { result.Add("N/A"); }
+                    if (reader.GetString(2) != null) { result.Add(Convert.ToString(reader.GetString(2))); } else { result.Add("0"); }
+                    if (reader.GetString(3) != null) { result.Add(Convert.ToString(reader.GetString(3))); } else { result.Add("0"); }
+                    if (reader.GetString(4) != null) { result.Add(Convert.ToString(reader.GetString(4))); } else { result.Add("0"); }
+                }
+
+                Debug.WriteLine(" ----   RESULT QERY READER Datos_Estudiante  reader: ");
+                foreach (var item in result)
+                {
+                    Debug.WriteLine(" ---- " + item.ToString());
+                }
+            }
+            catch (MySqlException ex)
+            {
+                Debug.WriteLine(" ----   CATCH QERY READER Datos_Estudiante  reader: " + ex);
+            }
+
+            this.CloseConnection();
+
+            return result;
+        }
+
+
         //Execute query return Array casilleors disponibles
         public List<string> ListaUnicaReader(string query)
         {

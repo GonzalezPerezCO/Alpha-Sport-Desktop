@@ -76,6 +76,12 @@ namespace AlphaSport.Controller
             return connection.AsistenciaReader(query);
         }
 
+        public List<string> DatosEstudiante(int codigo)
+        {
+            string query = "SELECT CONCAT(nombre, ' ', apellido) As nombre, carrera, semestre, fallas, codigo from testudiantes WHERE codigo = "+codigo+";";
+            return connection.DatosEstuReader(query);
+        }
+
         public List<string> DisponiblesCasilleros()
         {
             string query = "SELECT GROUP_CONCAT(id_c) FROM tcasilleros WHERE disponible = 1";

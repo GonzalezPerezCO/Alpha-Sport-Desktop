@@ -126,6 +126,9 @@ namespace AlphaSport.Vista
                 else
                 {
                     MessageBox.Show("No esta registrado el Estudiante en el Gimnasio!");
+
+                    //0: nombre, 1: carrera, 2: semestre, 3: fallas, 4: codigo
+                    lista = entorno.DatosEstudiante(Convert.ToInt32(codigo));
                 }
             }
         }
