@@ -54,6 +54,7 @@ namespace AlphaSport.Vista
         }            
              
         private void Limpiar() {
+            
             txt3.Text = "";
             txt4.Content = "------";
             txt5.Content = "------";
@@ -74,6 +75,7 @@ namespace AlphaSport.Vista
             cmbx6.SelectedValue = null;
 
             bt_mod.IsEnabled = false;
+            txt3.IsEnabled = true;
             txt3.Focus();
         }
 
@@ -127,6 +129,7 @@ namespace AlphaSport.Vista
                     txt12.Content = lista[9];
                     txt13.Content = lista[10];
 
+                    txt3.IsEnabled = false;
                     bt_mod.IsEnabled = true;
                 }
                 else if (buscarEstudiante && lista.Count == 0)
@@ -154,6 +157,7 @@ namespace AlphaSport.Vista
                         txt12.Content = "N/A";
                         txt13.Content = "N/A";
 
+                        txt3.IsEnabled = false;
                         bt_mod.IsEnabled = true;
                     }
                 }                
@@ -256,7 +260,6 @@ namespace AlphaSport.Vista
 
         private void MostrarHorarioEstudiante()
         {
-
             string result = entorno.CambiarHorario(9, "Lunes", "MANUEL.PEREZ-E@MAIL.ESCUELAING.EDU.CO");
 
             if (result == "")
