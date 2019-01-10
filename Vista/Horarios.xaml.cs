@@ -74,9 +74,14 @@ namespace AlphaSport.Vista
             cmbx5.SelectedValue = null;
             cmbx6.SelectedValue = null;
 
+            DesactivarTxt3_codigo();
+            txt3.Focus();
+        }
+
+        private void DesactivarTxt3_codigo()
+        {
             bt_mod.IsEnabled = false;
             txt3.IsEnabled = true;
-            txt3.Focus();
         }
 
         private void Click_bt2(object sender, RoutedEventArgs e)
@@ -129,8 +134,7 @@ namespace AlphaSport.Vista
                     txt12.Content = lista[9];
                     txt13.Content = lista[10];
 
-                    txt3.IsEnabled = false;
-                    bt_mod.IsEnabled = true;
+                    DesactivarTxt3_codigo();
                 }
                 else if (buscarEstudiante && lista.Count == 0)
                 {
@@ -157,8 +161,7 @@ namespace AlphaSport.Vista
                         txt12.Content = "N/A";
                         txt13.Content = "N/A";
 
-                        txt3.IsEnabled = false;
-                        bt_mod.IsEnabled = true;
+                        DesactivarTxt3_codigo();
                     }
                 }                
                 else
