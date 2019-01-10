@@ -82,7 +82,7 @@ namespace AlphaSport.Vista
             }
             else
             {
-                //0: nombre, 1: carrera, 2: semestre, 3: fallas, 4: codigo, 5:dia1,hora1,dia2,hora2,dia3,hora3
+                //0: nombre, 1: carrera, 2: semestre, 3: email, 4: fallas, 5: codigo, 6:dia1,hora1,dia2,hora2,dia3,hora3
                 List<string> lista = entorno.Asistencia(Convert.ToInt32(codigo));
 
                 if (lista.Count > 0)
@@ -156,10 +156,10 @@ namespace AlphaSport.Vista
 
         private void SepararDias(List<string> lista)
         {
-            // cambiar posicion 5 de lista: "d1,h1,d2,h2,d3,h3" por ["d1","d2","d3","h1","h2","h3"]
+            // cambiar posicion 6 de lista: "d1,h1,d2,h2,d3,h3" por ["d1","d2","d3","h1","h2","h3"]
 
-            string cadena = lista[5];
-            lista.RemoveAt(5);
+            string cadena = lista[6];
+            lista.RemoveAt(6);
 
             if (cadena == "" || cadena == "N/A" || cadena.Length == 0)
             {

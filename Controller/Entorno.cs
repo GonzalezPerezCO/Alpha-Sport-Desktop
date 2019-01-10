@@ -72,13 +72,13 @@ namespace AlphaSport.Controller
 
         public List<string> Asistencia(int codigo)
         {
-            string query = "SELECT CONCAT(nombre, ' ', apellido) As nombre, carrera, semestre, fallas, testudiantes.codigo as codigo, GROUP_CONCAT(dia, ',', hora) as horario from testudiantes INNER JOIN thorarios on testudiantes.codigo = "+codigo+" and testudiantes.email = thorarios.email GROUP by nombre;";
+            string query = "SELECT CONCAT(nombre, ' ', apellido) As nombre, carrera, email, semestre, fallas, testudiantes.codigo as codigo, GROUP_CONCAT(dia, ',', hora) as horario from testudiantes INNER JOIN thorarios on testudiantes.codigo = "+codigo+" and testudiantes.email = thorarios.email GROUP by nombre;";
             return connection.AsistenciaReader(query);
         }
 
         public List<string> DatosEstudiante(int codigo)
         {
-            string query = "SELECT CONCAT(nombre, ' ', apellido) As nombre, carrera, semestre, fallas, codigo from testudiantes WHERE codigo = "+codigo+";";
+            string query = "SELECT CONCAT(nombre, ' ', apellido) As nombre, carrera, email, semestre, fallas, codigo from testudiantes WHERE codigo = "+codigo+";";
             return connection.DatosEstuReader(query);
         }
 
