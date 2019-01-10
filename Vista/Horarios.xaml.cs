@@ -55,8 +55,8 @@ namespace AlphaSport.Vista
              
         private void Limpiar() {
             txt3.Text = "";
-            txt4.Content = "---";
-            txt5.Content = "---";
+            txt4.Content = "------";
+            txt5.Content = "------";
             txt6.Content = "--";
             txt7.Content = "--";
             txt8.Content = "Dia 1";
@@ -90,13 +90,13 @@ namespace AlphaSport.Vista
             Limpiar();
         }
 
-        private void click_bt3(object sender, RoutedEventArgs e)
+        private void Click_bt3(object sender, RoutedEventArgs e)
         {
             codigo = txt3.Text;
 
-            if (codigo == "")
+            if (codigo == "" || (!int.TryParse(txt3.Text, out int abc)))
             {
-                MessageBox.Show("No hay codigo del estudiante");
+                MessageBox.Show("El código del estudiante es incorrecto o no se encuentra registrado!");
             }
             else
             {

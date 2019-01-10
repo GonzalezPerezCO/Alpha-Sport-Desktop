@@ -54,10 +54,10 @@ namespace AlphaSport.Vista
 
         private void Limpiar()
         {
-            lab5.Content = "---";
+            lab5.Content = "------";
             BotonesEstado(false);
-            lab6.Content = "---";
-            lab10.Content = "---";
+            lab6.Content = "------";
+            lab10.Content = "------";
             lab11.Content = "--";
             lab8.Content = "--";
 
@@ -78,7 +78,7 @@ namespace AlphaSport.Vista
 
             if (codigo == "" || (!int.TryParse(txt1.Text, out int abc)) )
             {
-                MessageBox.Show("El código del estudiante es incorrecto!");
+                MessageBox.Show("El código del estudiante es incorrecto o no esta registrado!");
             }
             else
             {

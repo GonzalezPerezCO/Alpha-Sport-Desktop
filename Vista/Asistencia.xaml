@@ -15,8 +15,8 @@
         <Label x:Name="lab2" Content="Asistencia Estudiantes" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="549,124,550,0" VerticalAlignment="Top" RenderTransformOrigin="-0.013,-0.288" FontWeight="Bold" FontSize="24"/>
         <Label x:Name="lab3" Content="Nombre:" HorizontalAlignment="Center" Margin="336,294,1155,515" VerticalAlignment="Center" FontSize="22" FontWeight="Bold" Height="43"/>
         <Label x:Name="lab4" Content="Código:" HorizontalAlignment="Center" Margin="336,242,1159,558" VerticalAlignment="Center" FontSize="24" FontWeight="Bold" Height="52"/>
-        <Label x:Name="lab5" Content="-" HorizontalAlignment="Center" Margin="480,292,562,508" VerticalAlignment="Center" RenderTransformOrigin="0.355,-0.212" FontSize="24" Width="550" Height="52" VerticalContentAlignment="Center"/>
-        <TextBox x:Name="txt1" HorizontalAlignment="Center" Height="44"  Margin="480,242,974,566" TextWrapping="Wrap" VerticalAlignment="Center" Width="138" FontSize="24" MaxLength="10" MaxLines="1" VerticalContentAlignment="Center" Text="-"/>
+        <Label x:Name="lab5" Content="------" HorizontalAlignment="Center" Margin="480,292,562,508" VerticalAlignment="Center" RenderTransformOrigin="0.355,-0.212" FontSize="24" Width="550" Height="52" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="txt1" HorizontalAlignment="Center" Height="44"  Margin="480,242,974,566" TextWrapping="Wrap" VerticalAlignment="Center" Width="138" FontSize="24" MaxLength="10" MaxLines="1" VerticalContentAlignment="Center"/>
         <Button x:Name="bt3" Content="Buscar" HorizontalAlignment="Center" Margin="865,234,577,560" VerticalAlignment="Center" Width="150" Height="58" FontWeight="Bold" FontSize="20" Click="Bt3_Click" RenderTransformOrigin="0.653,0.525"/>
         <Label x:Name="lab6" Content="aceptado" HorizontalContentAlignment="Left" HorizontalAlignment="Center" Margin="336,0,396,81" VerticalAlignment="Bottom" Width="860" Height="91" FontSize="18">
             <Label.Background>
@@ -31,7 +31,7 @@
         <Label x:Name="lab7" Content="Fallas:" HorizontalAlignment="Center" Margin="622,444,892,370" VerticalAlignment="Center" FontSize="24" FontWeight="Bold" Height="38"/>
         <Label x:Name="lab8" Content="--" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="717,444,837,370" VerticalAlignment="Center" RenderTransformOrigin="0.355,-0.212" FontSize="24" Width="38" Height="38" Foreground="Red" FontWeight="Bold" VerticalContentAlignment="Center"/>
         <Label x:Name="lab9" Content="Carrera:" HorizontalAlignment="Center" Margin="336,342,1166,464" VerticalAlignment="Center" FontSize="22" FontWeight="Bold" Height="46"/>
-        <Label x:Name="lab10" Content="-" HorizontalAlignment="Center" Margin="480,335,774,464" VerticalAlignment="Center" RenderTransformOrigin="0.355,-0.212" FontSize="24" Width="338" Height="53" VerticalContentAlignment="Center"/>
+        <Label x:Name="lab10" Content="------" HorizontalAlignment="Center" Margin="480,335,774,464" VerticalAlignment="Center" RenderTransformOrigin="0.355,-0.212" FontSize="24" Width="338" Height="53" VerticalContentAlignment="Center"/>
         <Label x:Name="lab11" Content="--" HorizontalAlignment="Center" Margin="480,376,1064,424" VerticalAlignment="Center" RenderTransformOrigin="0.355,-0.212" FontSize="24" Width="48" FontWeight="Bold" Height="52" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
         <Label x:Name="lab12" Content="Semestre:" HorizontalAlignment="Center" Margin="336,381,1128,419" VerticalAlignment="Center" FontSize="24" FontWeight="Bold" Width="128" Height="52"/>
         <Label x:Name="txt8" Content="Dia 1" HorizontalAlignment="Center" Margin="373,502,1101,308" VerticalAlignment="Center" FontSize="22" FontWeight="Bold" Width="118" VerticalContentAlignment="Center" Height="42"/>
