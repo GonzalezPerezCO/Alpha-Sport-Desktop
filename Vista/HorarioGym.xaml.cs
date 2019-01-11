@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AlphaSport.Controller;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,13 @@ namespace AlphaSport.Vista
     /// </summary>
     public partial class HorarioGym : Window
     {
+        private Entorno entorno;
+
         public HorarioGym()
         {
             InitializeComponent();
+            entorno = Entorno.GetInstance();
+            lab1.Content = entorno.PROYECTO;
         }
 
         private void Window_Closed(object sender, EventArgs e)

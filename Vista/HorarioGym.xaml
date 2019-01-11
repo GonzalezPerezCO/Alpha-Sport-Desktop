@@ -6,11 +6,14 @@
         xmlns:local="clr-namespace:AlphaSport.Vista"
         mc:Ignorable="d"
         Title="HorarioGym" 
-         Width="1600" Height="860"
+        Width="1600" Height="860"
         WindowState="Maximized" WindowStartupLocation="CenterScreen"
-        WindowStyle="None" Closed="Window_Closed" Closing="Window_Closing"
-        >
+        WindowStyle="None" Closed="Window_Closed" Closing="Window_Closing">
     <Grid>
-        
+        <Label x:Name="lab1" Content="Nombre del Proyecto" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="602,22,619,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="36"/>
+        <Label x:Name="lab2" Content="Horario Estudiante" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="678,112,692,0" VerticalAlignment="Top" RenderTransformOrigin="-0.013,-0.288" FontWeight="Bold" FontSize="24"/>
+        <Button x:Name="bt1" Content="Nuevo" HorizontalAlignment="Right" Margin="0,196,31,0" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.541,4.1" Click="Click_bt1"/>
+        <Button x:Name="bt2" Content="Volver" HorizontalAlignment="Right" Margin="0,157,31,0" VerticalAlignment="Top" Width="74" Click="Click_bt2"/>
+
     </Grid>
 </Window>
