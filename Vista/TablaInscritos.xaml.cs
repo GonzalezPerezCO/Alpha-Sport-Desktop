@@ -32,17 +32,17 @@ namespace AlphaSport
             InitializeComponent();
             entorno = Entorno.GetInstance();
             lab1.Content = entorno.PROYECTO;
-            mostrarTabla();
+            MostrarTabla();
         }
 
 
-        public void mostrarTabla()
+        public void MostrarTabla()
         {
            DataTable dt = entorno.TablaInscritos();           
            dtgrid1.ItemsSource = dt.DefaultView;           
         }
 
-        private void bt1_Click(object sender, RoutedEventArgs e)
+        private void Bt1_Click(object sender, RoutedEventArgs e)
         {
             Window asistencia = new Asistencia();
 
@@ -50,7 +50,7 @@ namespace AlphaSport
             this.Hide();            
         }        
 
-        private void bt2_Click(object sender, RoutedEventArgs e)
+        private void Bt2_Click(object sender, RoutedEventArgs e)
         {
             Window cupos = new Cupos();
 
@@ -58,7 +58,7 @@ namespace AlphaSport
             this.Hide();            
         }              
 
-        private void bt3_Click(object sender, RoutedEventArgs e)
+        private void Bt3_Click(object sender, RoutedEventArgs e)
         {
             Window agregar = new agregarEstud();
                         
@@ -66,7 +66,7 @@ namespace AlphaSport
             this.Hide();
         }
 
-        private void bt4_Click(object sender, RoutedEventArgs e)
+        private void Bt4_Click(object sender, RoutedEventArgs e)
         {
             Window horario = new Horarios();
             
@@ -74,7 +74,7 @@ namespace AlphaSport
             this.Hide();
         }
 
-        private void bt5_Click(object sender, RoutedEventArgs e)
+        private void Bt5_Click(object sender, RoutedEventArgs e)
         {
             Window main = new Main();
 

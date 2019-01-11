@@ -38,5 +38,18 @@ namespace AlphaSport.Vista
         {
             Application.Current.Shutdown();
         }
+
+        private void Bt5_Click(object sender, RoutedEventArgs e)
+        {
+            Window main = new Main();
+
+            main.Show();
+            this.Hide();
+        }
+
+        private void Click_bt1(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
