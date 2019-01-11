@@ -11,22 +11,22 @@
         <DataGrid x:Name="dtgrid1" Height="597" Margin="448,222,514,0" VerticalAlignment="Top" IsReadOnly="True" HorizontalAlignment="Center" Width="630"/>
         <Label x:Name="lab1" Content="Nombre del Proyecto" Grid.Column="2" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,15,72,0" VerticalAlignment="Top" RenderTransformOrigin="4.868,0.577" FontSize="36" FontWeight="Bold" Grid.ColumnSpan="2" Width="927"/>
         <Label x:Name="lab2" Content="Estudiantes Inscritos" Grid.Column="2" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="318,84,387,0" VerticalAlignment="Top" RenderTransformOrigin="4.868,0.577" FontSize="24" FontWeight="Bold" Grid.ColumnSpan="2"/>
-        <Button x:Name="bt1" Content="Asistencia" Grid.Column="3" Margin="478,44,0,0" VerticalAlignment="Top" Width="130" Click="Bt1_Click" Grid.ColumnSpan="4" HorizontalAlignment="Right">
+        <Button x:Name="bt1" Content="Asistencia" Margin="0,44,10,0" VerticalAlignment="Top" Width="130" Click="Bt1_Click" HorizontalAlignment="Right">
             <Button.Background>
                 <SolidColorBrush Color="#FFFFDA33"/>
             </Button.Background>
         </Button>
-        <Button x:Name="bt2" Content="Ver Cupos" Grid.Column="3" HorizontalAlignment="Right" Margin="478,83,0,0" VerticalAlignment="Top" Width="130" Click="Bt2_Click" Grid.ColumnSpan="4" RenderTransformOrigin="0.52,2.5" FontWeight="Bold">
+        <Button x:Name="bt2" Content="Ver Cupos" HorizontalAlignment="Right" Margin="0,83,10,0" VerticalAlignment="Top" Width="130" Click="Bt2_Click" RenderTransformOrigin="0.52,2.5" FontWeight="Bold">
             <Button.Background>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.MenuHighlightColorKey}}"/>
             </Button.Background>
         </Button>
-        <Button x:Name="bt3" Content="Agregar Estudiante" Grid.Column="4" HorizontalAlignment="Right" Margin="15,120,0,0" VerticalAlignment="Top" Width="130" Click="Bt3_Click" Grid.ColumnSpan="3" RenderTransformOrigin="0.52,2.5" FontWeight="Bold">
+        <Button x:Name="bt3" Content="Agregar Estudiante" HorizontalAlignment="Right" Margin="0,120,10,0" VerticalAlignment="Top" Width="130" Click="Bt3_Click" RenderTransformOrigin="0.52,2.5" FontWeight="Bold">
             <Button.Background>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.MenuHighlightColorKey}}"/>
             </Button.Background>
         </Button>
-        <Button x:Name="bt4" Content="Ver Horario" Grid.Column="4" HorizontalAlignment="Right" Margin="0,165,0,0" VerticalAlignment="Top" Width="130" Click="Bt4_Click" Grid.ColumnSpan="3" RenderTransformOrigin="0.52,2.5" FontWeight="Bold">
+        <Button x:Name="bt4" Content="Ver Horario" HorizontalAlignment="Right" Margin="0,165,10,0" VerticalAlignment="Top" Width="130" Click="Bt4_Click" RenderTransformOrigin="0.52,2.5" FontWeight="Bold">
             <Button.Background>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.MenuHighlightColorKey}}"/>
             </Button.Background>
@@ -36,7 +36,7 @@
                 <SolidColorBrush Color="#FFFFDA33"/>
             </Button.Background>
         </Button>
-        <Button x:Name="bt1_Copy" Content="Actualizar tabla de cupos" HorizontalAlignment="Center" Margin="587,165,574,0" VerticalAlignment="Top" Width="431" FontWeight="Bold" FontSize="16" Click="Bt1_Click">
+        <Button x:Name="bt6" Content="Gimnasio" HorizontalAlignment="Right" Margin="0,236,10,0" VerticalAlignment="Top" Width="130" Click="Bt6_Click" RenderTransformOrigin="0.52,2.5" FontWeight="Bold">
             <Button.Background>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.MenuHighlightColorKey}}"/>
             </Button.Background>

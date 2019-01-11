@@ -27,6 +27,13 @@ namespace AlphaSport.Vista
             InitializeComponent();
             entorno = Entorno.GetInstance();
             lab1.Content = entorno.PROYECTO;
+            MostrarTabla();
+        }
+
+        public void MostrarTabla()
+        {
+            System.Data.DataTable dt = entorno.TablaHorarioGym("LUNES");
+            dtgrid1.ItemsSource = dt.DefaultView;
         }
 
         private void Window_Closed(object sender, EventArgs e)

@@ -91,5 +91,13 @@ namespace AlphaSport
         {
             Application.Current.Shutdown();
         }
+
+        private void Bt6_Click(object sender, RoutedEventArgs e)
+        {
+            Window horarioGym = new HorarioGym();
+
+            horarioGym.Show();
+            this.Hide();
+        }
     }
 }
