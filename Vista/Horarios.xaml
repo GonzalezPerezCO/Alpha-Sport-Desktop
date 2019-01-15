@@ -13,7 +13,7 @@
         <Label x:Name="lab2" Content="Horario Estudiante" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="561,112,575,0" VerticalAlignment="Top" RenderTransformOrigin="-0.013,-0.288" FontWeight="Bold" FontSize="24"/>
         <Button x:Name="bt1" Content="Nuevo" HorizontalAlignment="Right" Margin="0,196,31,0" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.541,4.1" Click="Click_bt1"/>
         <Label x:Name="_2" Content="Código:" HorizontalAlignment="Center" Margin="447,237,1048,573" VerticalAlignment="Center" FontSize="24" FontWeight="Bold" RenderTransformOrigin="0.299,0.512"/>
-        <TextBox x:Name="txt3" HorizontalAlignment="Center" Height="31"  Margin="565,244,737,577" TextWrapping="Wrap" VerticalAlignment="Center" Width="290" FontSize="24" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="txt3" HorizontalAlignment="Center" Height="31"  Margin="565,244,737,577" TextWrapping="Wrap" VerticalAlignment="Center" Width="290" FontSize="24" VerticalContentAlignment="Center" MaxLines="1" MaxLength="11"/>
         <Label x:Name="lab4" Content="Nombre:" HorizontalAlignment="Center" Margin="447,281,1044,532" VerticalAlignment="Center" FontSize="22" FontWeight="Bold" VerticalContentAlignment="Center"/>
         <Label x:Name="txt4" Content="------" HorizontalAlignment="Center" Margin="580,281,462,529" VerticalAlignment="Center" RenderTransformOrigin="0.355,-0.212" FontSize="24" Width="550" VerticalContentAlignment="Center"/>
         <Label x:Name="lab5" Content="Carrera:" HorizontalAlignment="Center" Margin="447,330,1054,483" VerticalAlignment="Center" FontSize="22" FontWeight="Bold" VerticalContentAlignment="Center"/>
