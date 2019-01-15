@@ -106,7 +106,7 @@ namespace AlphaSport.Vista
                     {
                         string nombres = txt1.Text.TrimStart().TrimEnd();
                         string apellidos = txt2.Text.TrimStart().TrimEnd();
-                        UInt32 documento = Convert.ToUInt32(txt8.Text);
+                        UInt64 documento = Convert.ToUInt64(txt8.Text);
                         string carrera = Convert.ToString(cmbox.SelectedValue).TrimStart().TrimEnd();
                         UInt32 semestre = Convert.ToUInt32(txt5.Text);
                         string obs = txt7.Text.TrimStart().TrimEnd();
