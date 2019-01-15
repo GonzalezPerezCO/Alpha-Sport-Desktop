@@ -28,9 +28,7 @@ namespace AlphaSport.Vista
 
 
         private static List<string> cuposL = new List<string>();
-        private static List<Label> labelsY = new List<Label>();
-        private readonly List<string> DIAS = new List<string> { "LUNES", "MARTES", "MIERCOLES", "JUEVES", "VIERNES" };
-        private readonly List<string> HORAS = new List<string> { "N/A", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17" };
+        private static List<Label> labelsY = new List<Label>();        
 
         public Horarios()
         {
@@ -281,13 +279,13 @@ namespace AlphaSport.Vista
 
         private void ActualizarCmbox()
         {        
-            cmbx1.ItemsSource = DIAS;
-            cmbx2.ItemsSource = DIAS;
-            cmbx3.ItemsSource = DIAS;
+            cmbx1.ItemsSource = entorno.DIAS;
+            cmbx2.ItemsSource = entorno.DIAS;
+            cmbx3.ItemsSource = entorno.DIAS;
 
-            cmbx4.ItemsSource = HORAS;
-            cmbx5.ItemsSource = HORAS;
-            cmbx6.ItemsSource = HORAS;
+            cmbx4.ItemsSource = entorno.HORAS;
+            cmbx5.ItemsSource = entorno.HORAS;
+            cmbx6.ItemsSource = entorno.HORAS;
         }
 
         private void MostrarCupos()

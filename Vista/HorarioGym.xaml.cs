@@ -22,17 +22,28 @@ namespace AlphaSport.Vista
     {
         private Entorno entorno;
 
+        private string diaActual;
+        private List<string> datosFechaActual = new List<string>();
+
         public HorarioGym()
         {
             InitializeComponent();
             entorno = Entorno.GetInstance();
             lab1.Content = entorno.PROYECTO;
+
+            cmbx1.ItemsSource = entorno.DIAS;
+
+            datosFechaActual = entorno.CalcularHoy();
+            diaActual = datosFechaActual[0];
+
+            cmbx1.SelectedItem = diaActual;
+
             MostrarTabla();
         }
 
         public void MostrarTabla()
-        {
-            System.Data.DataTable dt = entorno.TablaHorarioGym("LUNES");
+        {   
+            System.Data.DataTable dt = entorno.TablaHorarioGym(cmbx1.SelectedItem.ToString());
             dtgrid1.ItemsSource = dt.DefaultView;
         }
 
@@ -57,6 +68,11 @@ namespace AlphaSport.Vista
         private void Click_bt1(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Cmbx1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            MostrarTabla();
         }
     }
 }

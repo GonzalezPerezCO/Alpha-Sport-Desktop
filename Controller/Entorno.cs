@@ -25,6 +25,9 @@ namespace AlphaSport.Controller
         public readonly string DEPORTES = "Alpha Sport: Sistema de Deportes";
         public string PERIODO = "Periodo Académico";
 
+        public readonly List<string> DIAS = new List<string> { "LUNES", "MARTES", "MIERCOLES", "JUEVES", "VIERNES" };
+        public readonly List<string> HORAS = new List<string> { "N/A", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17" };
+
         private static Entorno instance = null;
         private ConnectionClass connection;
         private User user;
@@ -94,19 +97,19 @@ namespace AlphaSport.Controller
             switch (day)
             {
                 case "MONDAY":
-                    dia = "LUNES";
+                    dia = DIAS[0];
                     break;
                 case "TUESDAY":
-                    dia = "MARTES";
+                    dia = DIAS[1];
                     break;
                 case "WEDNESDAY":
-                    dia = "MIERCOLES";
+                    dia = DIAS[2];
                     break;
                 case "THURSDAY":
-                    dia = "JUEVES";
+                    dia = DIAS[3];
                     break;
                 case "FRIDAY":
-                    dia = "VIERNES";
+                    dia = DIAS[4];
                     break;
                 case "SATURDAY":
                     dia = "SABADO";
@@ -114,9 +117,9 @@ namespace AlphaSport.Controller
                 case "SUNDAY":
                     dia = "DOMINGO";
                     break;
-                    //default:  // NO ESA NECESARIO PORQUÉ YA ESTA COMTEMPLADO EN LA LECTURA DEL QUERY
-                    //dia = "N/A";
-                    //break;
+                default:  // NO ESA NECESARIO PORQUÉ YA ESTA COMTEMPLADO EN LA LECTURA DEL QUERY
+                    dia = "N/A";
+                    break;
             }
 
             return dia;
