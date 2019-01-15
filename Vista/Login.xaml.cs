@@ -26,7 +26,7 @@ namespace AlphaSport
             txt1.Focus();
         }
 
-        private void btn1_Click(object sender, RoutedEventArgs e)
+        private void Btn1_Click(object sender, RoutedEventArgs e)
         {            
             string email = txt1.Text;
             string password = txt2.Password.ToString();

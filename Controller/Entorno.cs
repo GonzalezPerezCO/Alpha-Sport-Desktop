@@ -70,13 +70,13 @@ namespace AlphaSport.Controller
 
         }
 
-        public List<string> Asistencia(int codigo)
+        public List<string> Asistencia(UInt64 codigo)
         {
             string query = "SELECT CONCAT(nombre, ' ', apellido) As nombre, carrera, testudiantes.email as email, semestre, fallas, testudiantes.codigo as codigo, GROUP_CONCAT(dia, ',', hora) as horario from testudiantes INNER JOIN thorarios on testudiantes.codigo = "+codigo+" and testudiantes.email = thorarios.email GROUP by nombre;";
             return connection.AsistenciaReader(query);
         }
 
-        public List<string> DatosEstudiante(int codigo)
+        public List<string> DatosEstudiante(UInt64 codigo)
         {
             string query = "SELECT CONCAT(nombre, ' ', apellido) As nombre, carrera, email, semestre, fallas, codigo from testudiantes WHERE codigo = "+codigo+";";
             return connection.DatosEstuReader(query);
@@ -100,7 +100,7 @@ namespace AlphaSport.Controller
             return connection.ListaUnicaReader(query);
         }
 
-        public List<string> BuscarCasilleroEstu(int codigo)
+        public List<string> BuscarCasilleroEstu(UInt64 codigo)
         {
             string query = "SELECT CONCAT(nombre, ' ', apellido), tcasilleros.codigo, id_c , disponible, entrada, salida FROM tcasilleros JOIN testudiantes on testudiantes.codigo =  tcasilleros.codigo WHERE tcasilleros.codigo = "+codigo+ " LIMIT 1;";
             return connection.BuscarCasilleroReader(query);
@@ -120,26 +120,26 @@ namespace AlphaSport.Controller
             return connection.CasillerosDisponiblesReader(queryDisp, querySecc);
         }
 
-        public void AgregarEstudianteCasillero(int casillero, int codigo)
+        public void AgregarEstudianteCasillero(int casillero, UInt64 codigo)
         {
             string query = "UPDATE tcasilleros SET disponible = 0, codigo = "+codigo+", entrada =  NOW() WHERE id_c = "+casillero+";";
             connection.QueryExecute(query);
         }
 
-        public void QuitarEstudianteCasillero(int codigo)
+        public void QuitarEstudianteCasillero(UInt64 codigo)
         {
             string query = "UPDATE tcasilleros SET disponible = 1, codigo = NULL, entrada = '2018-01-01 00:00:00', salida = '2018-01-01 00:00:00' WHERE codigo = " + codigo + ";";
             connection.QueryExecute(query);
         }
 
-        public void AgregarEstudiante(string nombre, string apellido, UInt32 codigo, UInt32 documento, string carrera, UInt32 semestre, string email, string observacion)
+        public void AgregarEstudiante(string nombre, string apellido, UInt64 codigo, UInt64 documento, string carrera, UInt32 semestre, string email, string observacion)
         {
             // nombres, apellidos, codigo, documento, carrera, semestre, email, obs
             string query = "call addEstudFull('" + nombre + "', '" + apellido + "', " + codigo + ", " + documento + ", '" + carrera + "', " + semestre + ", '" + email + "', '" + observacion + "');";
             connection.QueryExecute(query);
         }
 
-        public string Fallas(int codigo)
+        public string Fallas(UInt64 codigo)
         {
             string query = "UPDATE testudiantes SET fallas = fallas+1 WHERE codigo="+codigo+ "; SELECT fallas from testudiantes WHERE codigo="+codigo+"; ";
             string result;
@@ -198,7 +198,7 @@ namespace AlphaSport.Controller
             return dt;
         }       
 
-        public bool BuscarEstudiante(UInt32 codigo, string email) {
+        public bool BuscarEstudiante(UInt64 codigo, string email) {
             return connection.BuscarEstudiante(codigo, email);
         }
         

@@ -147,7 +147,7 @@ namespace AlphaSport.Controller
         }
 
         //Buscar estudiante
-        public bool BuscarEstudiante(UInt32 codigo, string email)
+        public bool BuscarEstudiante(UInt64 codigo, string email)
         {
             bool result = false;
 

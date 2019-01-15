@@ -76,14 +76,14 @@ namespace AlphaSport.Vista
 
         private void Btn1_Click(object sender, RoutedEventArgs e)
         {
-            if (codigo.Text == "")
+            if (codigo.Text == "" || !UInt64.TryParse(codigo.Text, out UInt64 abc))
             {
-                MessageBox.Show("Ingrese un número de carnet!");
+                MessageBox.Show("Ingrese un número de carnet valido!");
             }
             else
             {
                 // Lista: nombre, codigo, casillero, disponible{0:no, 1:si}, entrada, salida
-                int codigoEs = Convert.ToInt32(codigo.Text);
+                UInt64 codigoEs = Convert.ToUInt64(codigo.Text);
                 int codigoCas = Convert.ToInt32(cmbox.SelectedValue);
                 List<string> busCod = entorno.BuscarCasilleroEstu(codigoEs);
                 bool estudiante = entorno.BuscarEstudiante( Convert.ToUInt32(codigoEs), ""); // false: no existe en testudiantes

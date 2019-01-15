@@ -105,16 +105,16 @@ namespace AlphaSport.Vista
             codigo = txt3.Text;
             Limpiar();
 
-            if (codigo == "" || (!UInt32.TryParse(codigo, out UInt32 abc)))
+            if (codigo == "" || (!UInt64.TryParse(codigo, out UInt64 abc)))
             {
-                MessageBox.Show("El código del estudiante es incorrecto!");
+                MessageBox.Show("Ingrese un codigo valido!");
             }
             else
             {
                 //0: nombre, 1: carrera, 2: semestre, 3: email, 4: fallas, 5: codigo, 6: dia1,hora1,dia2,hora2,dia3,hora3
-                List<string> lista = entorno.Asistencia(Convert.ToInt32(codigo));
+                List<string> lista = entorno.Asistencia(Convert.ToUInt64(codigo));
 
-                bool buscarEstudiante = entorno.BuscarEstudiante(Convert.ToUInt32(codigo), "");
+                bool buscarEstudiante = entorno.BuscarEstudiante(Convert.ToUInt64(codigo), "");
 
                 if (buscarEstudiante && lista.Count > 0)
                 {
@@ -142,7 +142,7 @@ namespace AlphaSport.Vista
                 else if (buscarEstudiante && lista.Count == 0)
                 {
                     //0: nombre, 1: carrera, 2: semestre, 3: fallas, 4: codigo
-                    lista = entorno.DatosEstudiante(Convert.ToInt32(codigo));
+                    lista = entorno.DatosEstudiante(Convert.ToUInt64(codigo));
 
                     MessageBox.Show("No esta registrado el Estudiante en el Gimnasio!");
                     if (lista.Count > 0)

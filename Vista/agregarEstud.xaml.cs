@@ -91,13 +91,13 @@ namespace AlphaSport.Vista
             else {
                 // validación de tipo de dato correcto, que los numericos sean numeros
                
-                if (!int.TryParse(txt3.Text, out int abc) || !int.TryParse(txt8.Text, out int def) || !int.TryParse(txt5.Text, out int ghi))
+                if (!UInt64.TryParse(txt3.Text, out UInt64 abc) || !UInt64.TryParse(txt8.Text, out UInt64 def) || !UInt32.TryParse(txt5.Text, out UInt32 ghi))
                 {
                     MessageBox.Show("Hay campos númericos con texto. Escriba solo numéros en el Código, el Documento y en el Semestre.");
                 }
                 else
                 {
-                    UInt32 codigo = Convert.ToUInt32(txt3.Text);
+                    UInt64 codigo = Convert.ToUInt64(txt3.Text);
                     string email = txt6.Text.TrimStart().TrimEnd();
 
                     bool existe = entorno.BuscarEstudiante(codigo, email);

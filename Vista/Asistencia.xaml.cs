@@ -76,14 +76,14 @@ namespace AlphaSport.Vista
         {
             codigo = txt1.Text;
 
-            if (codigo == "" || (!int.TryParse(txt1.Text, out int abc)) )
+            if (codigo == "" || (!UInt64.TryParse(codigo, out UInt64 abc)) )
             {
                 MessageBox.Show("El código del estudiante es incorrecto!");
             }
             else
             {
                 //0: nombre, 1: carrera, 2: semestre, 3: email, 4: fallas, 5: codigo, 6:dia1,hora1,dia2,hora2,dia3,hora3
-                List<string> lista = entorno.Asistencia(Convert.ToInt32(codigo));
+                List<string> lista = entorno.Asistencia(Convert.ToUInt64(codigo));
                 
                 if (lista.Count > 0)
                 {
@@ -267,7 +267,7 @@ namespace AlphaSport.Vista
         {
             if (codigo == "2095112")
             {
-              lab8.Content = entorno.Fallas(Convert.ToInt32(codigo));
+              lab8.Content = entorno.Fallas(Convert.ToUInt64(codigo));
 
             }
             MessageBox.Show("Asistencia registrada");

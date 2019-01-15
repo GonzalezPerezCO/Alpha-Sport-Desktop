@@ -35,8 +35,8 @@ namespace AlphaSport.Vista
             entorno = Entorno.GetInstance();
             lab1.Content = entorno.PROYECTO;
 
-            listaBotones();
-            actualizarColores(); // Btn1.Background = Brushes.HotPink; Btn41.Background = Brushes.DodgerBlue;
+            ListaBotones();
+            ActualizarColores(); // Btn1.Background = Brushes.HotPink; Btn41.Background = Brushes.DodgerBlue;
 
             codigo.Focus();
         }
@@ -49,7 +49,7 @@ namespace AlphaSport.Vista
             return instance;
         }
 
-        private void listaBotones()
+        private void ListaBotones()
         {
             botones.Add(Btn1);
             botones.Add(Btn2);
@@ -134,11 +134,11 @@ namespace AlphaSport.Vista
             botones.Add(Btn80);
         }
 
-        public void actualizarColores()
+        public void ActualizarColores()
         {
             string[] tagButton = null; infoBotonez = null;
 
-            infoBotonez = separarIdSeccion(entorno.InfoCasilleros());  // lista: en pos [i] esta [0]disponible, [1]seccion  
+            infoBotonez = SepararIdSeccion(entorno.InfoCasilleros());  // lista: en pos [i] esta [0]disponible, [1]seccion  
 
             List<string> disponibles = infoBotonez[0];
             List<string> secciones = infoBotonez[1];
@@ -197,7 +197,7 @@ namespace AlphaSport.Vista
             Application.Current.Shutdown();
         }
 
-        private void bt5_Click(object sender, RoutedEventArgs e)
+        private void Bt5_Click(object sender, RoutedEventArgs e)
         {
             Window main = new Main();
 
@@ -206,17 +206,18 @@ namespace AlphaSport.Vista
         }
 
 
-        private List<List<string>> separarIdSeccion(List<List<string>> entrada)
+        private List<List<string>> SepararIdSeccion(List<List<string>> entrada)
         {
             // lista[0]: [0]disponible, 
             // lista[1]: [0]seccion
             List<string> cadenaDisp = entrada[0];
             List<string> cadenaSecc = entrada[1];
 
-            List<List<string>> lista = new List<List<string>>();            
-
-            lista.Add(cadenaDisp);
-            lista.Add(cadenaSecc);
+            List<List<string>> lista = new List<List<string>>
+            {
+                cadenaDisp,
+                cadenaSecc
+            };
 
             for (int i = 0; i < lista.Count; i++)
             {
@@ -232,14 +233,14 @@ namespace AlphaSport.Vista
         private void Buscar_Click(object sender, RoutedEventArgs e)
         {
 
-            if (codigo.Text == "")
+            if (codigo.Text == "" || !UInt64.TryParse(codigo.Text, out UInt64 abc))
             {
                 MessageBox.Show("Escriba un código para buscar!");
             }
             else
             {
                 // Lista: nombre, codigo, casillero, disponible{0:no, 1:si}, entrada, salida
-                List<string> lista = entorno.BuscarCasilleroEstu(Convert.ToInt32(codigo.Text));
+                List<string> lista = entorno.BuscarCasilleroEstu(Convert.ToUInt64(codigo.Text));
 
 
                 if (lista.Count > 0)
@@ -262,7 +263,7 @@ namespace AlphaSport.Vista
             this.Hide();
         }
 
-        private void eventoClick(object sender, RoutedEventArgs e)
+        private void EventoClick(object sender, RoutedEventArgs e)
         {
             Button objeto = e.Source as Button;
             // Lista: nombre, codigo, casillero, disponible{0:no, 1:si}, entrada, salida  
@@ -287,7 +288,7 @@ namespace AlphaSport.Vista
 
         private void Window_MouseEnter(object sender, MouseEventArgs e)
         {
-            actualizarColores();
+            ActualizarColores();
         }
     }
 }
