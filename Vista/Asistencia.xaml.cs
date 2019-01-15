@@ -95,14 +95,11 @@ namespace AlphaSport.Vista
                     SepararDias(lista);  // descompone la posicion 6 y agrega los 6 elementos que se necesitan en el orden que se necesitan
 
                     Debug.WriteLine("**** For :" + lista.Count);
-                    
-                    // calcular dia y hora actual
-                    DateTime dt = DateTime.Now;
-                    string diaActual = AEspanol(dt.DayOfWeek.ToString().ToUpper());
-                    string horaActual = dt.Hour.ToString(); ;
-                    // -- fin
-                    Debug.WriteLine("<<<<<<<<<<<<< datos hora: " + diaActual + "a las  " +horaActual);
-                                       
+
+                    List<string> datosFechaActual = entorno.CalcularHoy();
+
+                    string diaActual = datosFechaActual[0];
+                    string horaActual = datosFechaActual[1];
 
                     foreach (var item in lista)
                     {
@@ -217,40 +214,6 @@ namespace AlphaSport.Vista
                 }
             }
 
-        }
-
-        private string AEspanol(string day) {
-            string dia = "";
-
-            switch (day)
-            {
-                case "MONDAY":
-                    dia = "LUNES";
-                    break;
-                case "TUESDAY":
-                    dia = "MARTES";
-                    break;
-                case "WEDNESDAY":
-                    dia = "MIERCOLES";
-                    break;
-                case "THURSDAY":
-                    dia = "JUEVES";
-                    break;
-                case "FRIDAY":
-                    dia = "VIERNES";
-                    break;
-                case "SATURDAY":
-                    dia = "SABADO";
-                    break;
-                case "SUNDAY":
-                    dia = "DOMINGO";
-                    break;
-                //default:  // NO ESA NECESARIO PORQUÉ YA ESTA COMTEMPLADO EN LA LECTURA DEL QUERY
-                    //dia = "N/A";
-                    //break;
-            }
-
-            return dia;
         }
 
         private void Window_Closed(object sender, EventArgs e)

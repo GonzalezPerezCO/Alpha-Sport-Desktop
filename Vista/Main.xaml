@@ -8,12 +8,12 @@
         WindowState="Maximized" WindowStartupLocation="CenterScreen"
         WindowStyle="None">
     <Grid>
-        <Button x:Name="btn1" Content="Gimnasio" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Center" Width="794" Height="868" Margin="0,-8,798,-8" FontSize="48" FontWeight="Bold" MouseEnter="btn1_MouseEnter" MouseLeave="btn1_MouseLeave" Click="btn1_Click">
+        <Button x:Name="btn1" Content="Gimnasio" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Center" Width="794" Height="892" Margin="0,0,798,0" FontSize="48" FontWeight="Bold" MouseEnter="btn1_MouseEnter" MouseLeave="btn1_MouseLeave" Click="btn1_Click">
             <Button.Background>
                 <ImageBrush Stretch="UniformToFill" ImageSource="/GonzalezPerezCO;component/Recursos/gym.jpg" Opacity="0.7"/>
             </Button.Background>
         </Button>
-        <Button x:Name="btn2" Content="Deportes" HorizontalAlignment="Center" VerticalAlignment="Center" Width="798" Height="868" Margin="794,-8,0,-8" FontSize="48" FontWeight="Bold" Click="btn2_Click">
+        <Button x:Name="btn2" Content="Deportes" HorizontalAlignment="Center" VerticalAlignment="Center" Width="798" Height="892" Margin="794,0,0,0" FontSize="48" FontWeight="Bold" Click="btn2_Click">
             <Button.Background>
                 <ImageBrush Stretch="UniformToFill" ImageSource="/GonzalezPerezCO;component/Recursos/deportes.jpg" Opacity="0.7"/>
             </Button.Background>

@@ -70,6 +70,58 @@ namespace AlphaSport.Controller
 
         }
 
+        public List<string> CalcularHoy()
+        {
+            List<string> res = new List<string>();
+
+            // calcular dia y hora actual
+            DateTime dt = DateTime.Now;
+            string diaActual = AEspanol(dt.DayOfWeek.ToString().ToUpper());
+            string horaActual = dt.Hour.ToString(); ;
+            // -- fin
+            Debug.WriteLine("<<<<<<<<<<<<< datos hora: " + diaActual + "a las  " + horaActual);
+
+            res.Add(diaActual);
+            res.Add(horaActual);
+
+            return res; // diaActual y horaActual
+        }
+
+        private string AEspanol(string day)
+        {
+            string dia = "";
+
+            switch (day)
+            {
+                case "MONDAY":
+                    dia = "LUNES";
+                    break;
+                case "TUESDAY":
+                    dia = "MARTES";
+                    break;
+                case "WEDNESDAY":
+                    dia = "MIERCOLES";
+                    break;
+                case "THURSDAY":
+                    dia = "JUEVES";
+                    break;
+                case "FRIDAY":
+                    dia = "VIERNES";
+                    break;
+                case "SATURDAY":
+                    dia = "SABADO";
+                    break;
+                case "SUNDAY":
+                    dia = "DOMINGO";
+                    break;
+                    //default:  // NO ESA NECESARIO PORQUÉ YA ESTA COMTEMPLADO EN LA LECTURA DEL QUERY
+                    //dia = "N/A";
+                    //break;
+            }
+
+            return dia;
+        }
+
         public List<string> Asistencia(UInt64 codigo)
         {
             string query = "SELECT CONCAT(nombre, ' ', apellido) As nombre, carrera, testudiantes.email as email, semestre, fallas, testudiantes.codigo as codigo, GROUP_CONCAT(dia, ',', hora) as horario from testudiantes INNER JOIN thorarios on testudiantes.codigo = "+codigo+" and testudiantes.email = thorarios.email GROUP by nombre;";
