@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Width="1600" Height="860"
+        Width="1600" Height="900"
         WindowState="Maximized" WindowStartupLocation="CenterScreen"
         WindowStyle="None" Closed="Window_Closed" Closing="Window_Closing">
     <Grid Background="#FFEEEEEE">       

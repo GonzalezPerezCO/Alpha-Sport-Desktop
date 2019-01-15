@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:AlphaSport.Vista"
         mc:Ignorable="d"
         Title="HorarioGym" 
-        Width="1600" Height="860"
+        Width="1600" Height="900"
         WindowState="Maximized" WindowStartupLocation="CenterScreen"
         WindowStyle="None" Closed="Window_Closed" Closing="Window_Closing">
     <Grid>
