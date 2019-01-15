@@ -28,11 +28,11 @@ namespace AlphaSport.Vista
             InitializeComponent();
             entorno = Entorno.GetInstance();
             lab1.Content = entorno.PROYECTO;
-            mostrarTabla();
+            MostrarTabla();
 
         }
 
-        public void mostrarTabla()
+        public void MostrarTabla()
         {
             DataTable dt = entorno.MostrarCupos();
 
@@ -40,9 +40,9 @@ namespace AlphaSport.Vista
 
         }
 
-        private void bt1_Click(object sender, RoutedEventArgs e)
+        private void Bt1_Click(object sender, RoutedEventArgs e)
         {
-            mostrarTabla();
+            MostrarTabla();
         }
 
         private void Window_Closed(object sender, EventArgs e)

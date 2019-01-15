@@ -84,16 +84,16 @@ namespace AlphaSport.Vista
 
         private void Btn3_Click(object sender, RoutedEventArgs e)
         {
-            if (txt1.Text == "" || txt2.Text == "" || txt3.Text == "" || cmbox.SelectedItem == null || txt5.Text == "" || txt6.Text == "")
+            if (txt1.Text == "" || txt2.Text == "" || txt3.Text == "" || cmbox.SelectedItem == null || txt5.Text == "" || txt6.Text == "" || txt9.Text == "")
             {
                 MessageBox.Show("Llene todos los campos para poder continuar.");
             }
             else {
                 // validación de tipo de dato correcto, que los numericos sean numeros
                
-                if (!UInt64.TryParse(txt3.Text, out UInt64 abc) || !UInt64.TryParse(txt8.Text, out UInt64 def) || !UInt32.TryParse(txt5.Text, out UInt32 ghi))
+                if (!UInt64.TryParse(txt3.Text, out UInt64 abc) || !UInt64.TryParse(txt8.Text, out UInt64 def) || !UInt32.TryParse(txt5.Text, out UInt32 ghi) || !UInt32.TryParse(txt9.Text, out UInt32 jkl))
                 {
-                    MessageBox.Show("Hay campos númericos con texto. Escriba solo numéros en el Código, el Documento y en el Semestre.");
+                    MessageBox.Show("Hay campos númericos con texto. Escriba solo numéros en el Código, el Documento, Reverva y en el Semestre.");
                 }
                 else
                 {
@@ -106,11 +106,12 @@ namespace AlphaSport.Vista
                     {
                         string nombres = txt1.Text.TrimStart().TrimEnd();
                         string apellidos = txt2.Text.TrimStart().TrimEnd();
+                        UInt32 reserva = Convert.ToUInt32(txt9.Text);
                         UInt64 documento = Convert.ToUInt64(txt8.Text);
                         string carrera = Convert.ToString(cmbox.SelectedValue).TrimStart().TrimEnd();
                         UInt32 semestre = Convert.ToUInt32(txt5.Text);
                         string obs = txt7.Text.TrimStart().TrimEnd();
-                        entorno.AgregarEstudiante(nombres, apellidos, codigo, documento, carrera, semestre, email, obs);
+                        entorno.AgregarEstudiante(nombres, apellidos, reserva, codigo, documento, carrera, semestre, email, obs);
                         MessageBox.Show("El estudiante " + nombres + " " + apellidos + " fue agregado.");
                         Limpiar();
                     }
@@ -145,6 +146,7 @@ namespace AlphaSport.Vista
             txt6.Text = "";
             txt7.Text = "";
             txt8.Text = "";
+            txt9.Text = "";
         }
     }
 }

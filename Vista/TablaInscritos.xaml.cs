@@ -99,5 +99,10 @@ namespace AlphaSport
             horarioGym.Show();
             this.Hide();
         }
+
+        private void Bt7_Click(object sender, RoutedEventArgs e)
+        {
+            MostrarTabla();
+        }
     }
 }

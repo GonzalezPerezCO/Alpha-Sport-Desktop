@@ -16,6 +16,5 @@
         <DataGrid x:Name="dtgrid1" HorizontalAlignment="Center" Height="599" Margin="357,243,341,10" VerticalAlignment="Center" Width="894" FontSize="18" IsReadOnly="True"/>
         <Button x:Name="bt5" Content="Menú principal" HorizontalAlignment="Right" Margin="0,0,10,10" VerticalAlignment="Bottom" Width="130" RenderTransformOrigin="0.52,2.5" FontWeight="Bold" Height="48" Click="Bt5_Click" Background="#FFFFDA33"/>
         <ComboBox x:Name="cmbx1" HorizontalAlignment="Center" Margin="659,196,675,663" VerticalAlignment="Center" Width="258" FontSize="18" FontWeight="Bold" SelectionChanged="Cmbx1_SelectionChanged" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-
     </Grid>
 </Window>

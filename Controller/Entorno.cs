@@ -187,10 +187,10 @@ namespace AlphaSport.Controller
             connection.QueryExecute(query);
         }
 
-        public void AgregarEstudiante(string nombre, string apellido, UInt64 codigo, UInt64 documento, string carrera, UInt32 semestre, string email, string observacion)
+        public void AgregarEstudiante(string nombre, string apellido, UInt32 reserva, UInt64 codigo, UInt64 documento, string carrera, UInt32 semestre, string email, string observacion)
         {
             // nombres, apellidos, codigo, documento, carrera, semestre, email, obs
-            string query = "call addEstudFull('" + nombre + "', '" + apellido + "', " + codigo + ", " + documento + ", '" + carrera + "', " + semestre + ", '" + email + "', '" + observacion + "');";
+            string query = "call addEstudFull('" + nombre + "', '" + apellido + "', "+ reserva + ", " + codigo + ", " + documento + ", '" + carrera + "', " + semestre + ", '" + email + "', '" + observacion + "');";
             connection.QueryExecute(query);
         }
 
@@ -206,7 +206,7 @@ namespace AlphaSport.Controller
         public DataTable TablaInscritos()
         {
             Debug.WriteLine("MOSTRAR TABLA INSCRITOS");
-            string query = "select nombre, apellido, codigo, carrera, semestre from testudiantes;";
+            string query = "SELECT reserva AS RESERVA, documento AS DOCUMENTO, nombre AS NOMBRES, apellido AS APELLIDOS, codigo AS CODIGO, carrera as CARRERA, semestre AS SEM from testudiantes;";
             DataTable dt = connection.MostrarTabla(query);
             Debug.WriteLine("RECIBIR READER EN TABLE INSCRITOS");
 
@@ -216,7 +216,7 @@ namespace AlphaSport.Controller
         public DataTable TablaHorarioGym(string dia)
         {
             Debug.WriteLine("MOSTRAR TABLA HORARIO_GYM");
-            string query = "SELECT hora as HORA, codigo as CODIGO,  CONCAT(nombre, ' ', apellido) As NOMBRE, carrera as CARRERA, semestre as SEMESTRE, fallas as FALLAS FROM testudiantes INNER JOIN thorarios on testudiantes.email = thorarios.email   WHERE dia = '"+dia+"' ORDER by hora;";
+            string query = "SELECT hora as TURNO, codigo as CODIGO,  CONCAT(nombre, ' ', apellido) As NOMBRE, carrera as CARRERA, semestre as SEMESTRE, fallas as FALLAS FROM testudiantes INNER JOIN thorarios on testudiantes.email = thorarios.email   WHERE dia = '"+dia+"' ORDER by hora;";
             DataTable dt = connection.MostrarTabla(query);
             Debug.WriteLine("RECIBIR READER EN TABLE HORARIO_GYM");
 
