@@ -148,6 +148,11 @@ namespace AlphaSport.Vista
             txt8.Text = "";
             txt9.Text = "";
         }
+
+        private void Chbx_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
 
