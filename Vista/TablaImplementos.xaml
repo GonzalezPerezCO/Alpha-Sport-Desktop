@@ -11,7 +11,7 @@
     <Grid Background="#FFEEEEEE">       
 
         <DockPanel HorizontalAlignment="Left" LastChildFill="False" Width="190" Background="#FF1A2028"/>
-        <DataGrid x:Name="dtgrid1" Height="661" Margin="226.472,163,220.528,0" VerticalAlignment="Top" IsReadOnly="True" Grid.Column="1" HorizontalAlignment="Center" Width="732" FontSize="18"/>
+        <DataGrid x:Name="dtgrid1" Height="661" Margin="226.472,163,220.528,0" VerticalAlignment="Top" IsReadOnly="True" Grid.Column="1" HorizontalAlignment="Center" Width="732" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <Label x:Name="lab1" Content="Nombre del Proyecto" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="328,100,336,0" VerticalAlignment="Top" RenderTransformOrigin="4.868,0.577" FontSize="36" FontWeight="Bold" Width="928"/>
         <Label x:Name="lab2" Content="Implementos Deportivos" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="618,170,621,0" VerticalAlignment="Top" RenderTransformOrigin="4.868,0.577" FontSize="24" FontWeight="Bold" Width="353"/>
         <Button x:Name="bt1" Content="Prestar" Margin="0,319,1427,0" VerticalAlignment="Top" Width="130" HorizontalAlignment="Right" Background="#FFFFDA33" Click="bt1_Click"/>

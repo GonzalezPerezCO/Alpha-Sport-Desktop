@@ -102,7 +102,7 @@ namespace AlphaSport.Vista
 
                     bool existe = entorno.BuscarEstudiante(codigo, email);
 
-                    if (!existe)
+                    if (!existe) // sino esta creado
                     {
                         string nombres = txt1.Text.TrimStart().TrimEnd();
                         string apellidos = txt2.Text.TrimStart().TrimEnd();
@@ -111,7 +111,9 @@ namespace AlphaSport.Vista
                         string carrera = Convert.ToString(cmbox.SelectedValue).TrimStart().TrimEnd();
                         UInt32 semestre = Convert.ToUInt32(txt5.Text);
                         string obs = txt7.Text.TrimStart().TrimEnd();
-                        entorno.AgregarEstudiante(nombres, apellidos, reserva, codigo, documento, carrera, semestre, email, obs);
+                        bool examen = chbx.IsChecked ?? false;
+
+                        entorno.AgregarEstudiante(nombres, apellidos, reserva, codigo, documento, carrera, semestre, email, obs, examen);
                         MessageBox.Show("El estudiante " + nombres + " " + apellidos + " fue agregado.");
                         Limpiar();
                     }
@@ -147,11 +149,7 @@ namespace AlphaSport.Vista
             txt7.Text = "";
             txt8.Text = "";
             txt9.Text = "";
-        }
-
-        private void Chbx_Checked(object sender, RoutedEventArgs e)
-        {
-
+            chbx.IsChecked = false;
         }
     }
 }

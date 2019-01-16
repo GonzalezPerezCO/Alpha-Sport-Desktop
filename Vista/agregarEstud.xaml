@@ -28,7 +28,7 @@
         <TextBox x:Name="txt5" HorizontalAlignment="Center" Height="38" Margin="910,276,618,538" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Width="64" FontSize="20" CharacterCasing="Upper" MaxLines="1" MaxLength="2" VerticalContentAlignment="Center"/>
         <Label x:Name="lab8" Content="Email:" HorizontalAlignment="Center" Margin="781,330,751,485" VerticalAlignment="Center" FontWeight="Bold" FontSize="20"/>
         <TextBox x:Name="txt6" HorizontalAlignment="Center" Height="36" Margin="910,330,217,486" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Width="465" FontSize="20" CharacterCasing="Upper" MaxLines="1" MaxLength="100" VerticalContentAlignment="Center"/>
-        <Label x:Name="lab10" Content="Observaciones" HorizontalAlignment="Center" Margin="699,498,725,318" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" Width="168"/>
+        <Label x:Name="lab10" Content="Observaciones" HorizontalAlignment="Center" Margin="708,538,716,317" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" Width="168"/>
         <TextBox x:Name="txt7" HorizontalAlignment="Center" Height="142" HorizontalContentAlignment="Left" Margin="276,560,244,150" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Width="1072" FontSize="20" CharacterCasing="Upper" AcceptsReturn="True" AcceptsTab="True" MaxLength="300"/>
         <Button x:Name="btn2" Content="Limpiar" HorizontalAlignment="Right" Margin="0,139,49,0" VerticalAlignment="Top" Width="76" Click="Btn2_Click"/>
         <Label x:Name="lab9" Content="Documento:" HorizontalAlignment="Center" Margin="277,386,1180,430" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" RenderTransformOrigin="0.182,0.378" Width="135"/>

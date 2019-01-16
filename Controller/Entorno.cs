@@ -187,10 +187,10 @@ namespace AlphaSport.Controller
             connection.QueryExecute(query);
         }
 
-        public void AgregarEstudiante(string nombre, string apellido, UInt32 reserva, UInt64 codigo, UInt64 documento, string carrera, UInt32 semestre, string email, string observacion)
+        public void AgregarEstudiante(string nombre, string apellido, UInt32 reserva, UInt64 codigo, UInt64 documento, string carrera, UInt32 semestre, string email, string observacion, bool examen)
         {
             // nombres, apellidos, codigo, documento, carrera, semestre, email, obs
-            string query = "call addEstudFull('" + nombre + "', '" + apellido + "', "+ reserva + ", " + codigo + ", " + documento + ", '" + carrera + "', " + semestre + ", '" + email + "', '" + observacion + "');";
+            string query = "call addEstudFull('" + nombre + "', '" + apellido + "', "+ reserva + ", " + codigo + ", " + documento + ", '" + carrera + "', " + semestre + ", '" + email + "', '" + observacion + "', "+examen+" );";
             connection.QueryExecute(query);
         }
 
@@ -206,7 +206,7 @@ namespace AlphaSport.Controller
         public DataTable TablaInscritos()
         {
             Debug.WriteLine("MOSTRAR TABLA INSCRITOS");
-            string query = "SELECT reserva AS RESERVA, documento AS DOCUMENTO, nombre AS NOMBRES, apellido AS APELLIDOS, codigo AS CODIGO, carrera as CARRERA, semestre AS SEM from testudiantes;";
+            string query = "SELECT reserva AS RESERVA, documento AS DOCUMENTO, nombre AS NOMBRES, apellido AS APELLIDOS, codigo AS CODIGO, carrera as CARRERA, semestre AS SEM, examen AS EXAM from testudiantes;";
             DataTable dt = connection.MostrarTabla(query);
             Debug.WriteLine("RECIBIR READER EN TABLE INSCRITOS");
 
