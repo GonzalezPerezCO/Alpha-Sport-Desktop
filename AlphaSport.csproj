@@ -30,7 +30,7 @@
     <ProductName>SISTEMA DE GESTIÓN DE RECURSOS DEPORTIVOS DE LA ESCUELA</ProductName>
     <PublisherName>AlphaSport</PublisherName>
     <SuiteName>SISTEMA DE GESTIÓN DE RECURSOS DEPORTIVOS</SuiteName>
-    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationRevision>4</ApplicationRevision>
     <ApplicationVersion>3.8.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
