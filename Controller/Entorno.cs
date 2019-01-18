@@ -194,9 +194,10 @@ namespace AlphaSport.Controller
             connection.QueryExecute(query);
         }
 
-        public string Fallas(UInt64 codigo)
+        public string Fallas(UInt64 codigo, string concepto, string mensaje)
         {
-            string query = "UPDATE testudiantes SET fallas = fallas+1 WHERE codigo="+codigo+ "; SELECT fallas from testudiantes WHERE codigo="+codigo+"; ";
+            //string query = "UPDATE testudiantes SET fallas = fallas+1 WHERE codigo="+codigo+ "; SELECT fallas from testudiantes WHERE codigo="+codigo+"; ";
+            string query = "call falla/asistencia("+codigo+", '"+concepto+"', '"+mensaje+ "'); SELECT fallas from testudiantes WHERE codigo=" + codigo + "; ";
             string result;
             List<string> lista = connection.QuerySumarAsistencia(query);
             result = lista[0];

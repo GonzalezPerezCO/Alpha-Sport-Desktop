@@ -230,15 +230,17 @@ namespace AlphaSport.Vista
         {
             if (codigo == "2095112")
             {
-              lab8.Content = entorno.Fallas(Convert.ToUInt64(codigo));
+              lab8.Content = entorno.Fallas(Convert.ToUInt64(codigo), "ASISTENCIA", "Asistencia estudiantes.");
 
             }
+            entorno.Fallas(Convert.ToUInt64(codigo), "ASISTENCIA", "Asistencia estudiantes.");
+
             MessageBox.Show("Asistencia registrada");
-            BotonesEstado(false);
+            BotonesEstado(true);
         }        
 
         private void BotonesEstado(bool estado) {
-            Debug.WriteLine("Mostrar botones 5 y 6 = "+estado);
+            Debug.WriteLine("Mostrar botone btn4 = "+estado);
             bt4.IsEnabled = estado;       
         }
     }
