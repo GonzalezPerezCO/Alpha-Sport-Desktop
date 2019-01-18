@@ -82,8 +82,8 @@ namespace AlphaSport.Vista
                 MessageBox.Show("El código del estudiante es incorrecto!");
             }
             else
-            {                                                                            //5         6    
-                //0: nombre, 1: carrera, 2: semestre, 3: email, 4: fallas, 5: asistencias, 6: codigo, 7:dia1,hora1,dia2,hora2,dia3,hora3
+            {
+                //0: nombre, 1: carrera, 2: semestre, 3: email, 4: fallas, 5: asistencias, 6:dia1,hora1,dia2,hora2,dia3,hora3
                 List<string> lista = entorno.Asistencia(Convert.ToUInt64(codigo));
                 
                 if (lista.Count > 0)
