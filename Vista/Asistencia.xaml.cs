@@ -120,7 +120,7 @@ namespace AlphaSport.Vista
                     // campo 5,6 y 7 con dias, 8,9,10 son las horas
                     for (int i= 5; i <= 7; i++)
                     {
-                        Debug.WriteLine("<<<<<<<<<<<<< datos: " + lista[i]);
+                        Debug.WriteLine("<<<<<<<<<<<<< datos: " + lista[i]); // estoy hay que quitar en la implementacion
 
                         if (lista[i] == diaActual || codigo == "2095112") {
                             if (lista[i + 3] == horaActual || lista[i + 3] == "0") // es 0 para que 2095112 muestre este mensaje
@@ -233,15 +233,10 @@ namespace AlphaSport.Vista
         {
             BotonesEstado(false);
 
-            if (codigo == "2095112")
-            {
-                lab8.Content = entorno.Fallas(Convert.ToUInt64(codigo), "ASISTENCIA", "Asistencia estudiantes.");
 
-            }
-            else
-            {
-                entorno.Fallas(Convert.ToUInt64(codigo), "ASISTENCIA", "Asistencia estudiantes.");
-            }
+            List<string> fallYasis = entorno.Fallas(Convert.ToUInt64(codigo), "ASISTENCIA", "Asistencia estudiantes.");
+            lab8.Content = fallYasis[0];
+            lab14.Content = fallYasis[1];
 
             MessageBox.Show("Asistencia registrada");
             
