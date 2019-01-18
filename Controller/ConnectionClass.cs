@@ -516,7 +516,7 @@ namespace AlphaSport.Controller
             reader = null;
             List<string> result = new List<string>();
 
-            Debug.WriteLine(" ----   QUERY OPEN CONNECTION statament sumar");
+            Debug.WriteLine(" ----   QUERY OPEN CONNECTION statament FALLAS_ASISTENCIAS");
 
             this.OpenConnection();
 
@@ -524,14 +524,15 @@ namespace AlphaSport.Controller
 
             try
             {
-                Debug.WriteLine(" ----   RESULT QERY TRY statament sumar: " + query);
+                Debug.WriteLine(" ----   RESULT QERY TRY statament FALLAS_ASISTENCIAS: " + query);
                 reader = cmd.ExecuteReader();
 
                 while (reader.Read())
                 {
-                    result.Add(Convert.ToString(reader.GetString(0)));                    
+                    if (reader.GetString(0) != null) { result.Add(Convert.ToString(reader.GetString(0))); } else { result.Add("0"); }
+                    if (reader.GetString(1) != null) { result.Add(Convert.ToString(reader.GetString(1))); } else { result.Add("0"); }
                 }
-                Debug.WriteLine(" ----   RESULT QERY statament sumar: ");
+                Debug.WriteLine(" ----   RESULT QERY statament FALLAS_ASISTENCIAS: ");
                 foreach (var item in result)
                 {
                     Debug.WriteLine(" ---- " + item.ToString());
@@ -541,7 +542,7 @@ namespace AlphaSport.Controller
             }
             catch (MySqlException ex)
             {
-                Debug.WriteLine(" ----   CATCH QERY statament sumar: " + ex);
+                Debug.WriteLine(" ----   CATCH QERY statament FALLAS_ASISTENCIAS: " + ex);
             }
 
             this.CloseConnection();

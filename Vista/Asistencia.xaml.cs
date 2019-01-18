@@ -60,7 +60,7 @@ namespace AlphaSport.Vista
             lab10.Content = "------";
             lab11.Content = "--";
             lab8.Content = "--";
-            lab14.Content = "--";
+            lab14.Content = "---";
 
             txt8.Content = "Dia 1";
             txt9.Content = "Dia 2";
