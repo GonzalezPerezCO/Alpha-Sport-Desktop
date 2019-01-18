@@ -33,9 +33,7 @@ namespace AlphaSport.Vista
             InitializeComponent();
             entorno = Entorno.GetInstance();
             lab1.Content = entorno.PROYECTO;
-            lab6.Content = "Ingrese el código del estudiante y realice la busqueda.";           
-
-            txt1.Focus();
+            lab6.Content = "Ingrese el código del estudiante y realice la busqueda.";               
         }       
 
         private void Btn1_Click(object sender, RoutedEventArgs e)
@@ -62,6 +60,7 @@ namespace AlphaSport.Vista
             lab10.Content = "------";
             lab11.Content = "--";
             lab8.Content = "--";
+            lab14.Content = "--";
 
             txt8.Content = "Dia 1";
             txt9.Content = "Dia 2";
@@ -83,8 +82,8 @@ namespace AlphaSport.Vista
                 MessageBox.Show("El código del estudiante es incorrecto!");
             }
             else
-            {
-                //0: nombre, 1: carrera, 2: semestre, 3: email, 4: fallas, 5: codigo, 6:dia1,hora1,dia2,hora2,dia3,hora3
+            {                                                                            //5         6    
+                //0: nombre, 1: carrera, 2: semestre, 3: email, 4: fallas, 5: asistencias, 6: codigo, 7:dia1,hora1,dia2,hora2,dia3,hora3
                 List<string> lista = entorno.Asistencia(Convert.ToUInt64(codigo));
                 
                 if (lista.Count > 0)
@@ -93,6 +92,7 @@ namespace AlphaSport.Vista
                     lab10.Content = lista[1];
                     lab11.Content = lista[3];
                     lab8.Content = lista[4];
+                    lab14.Content = lista[5];
 
                     SepararDias(lista);  // descompone la posicion 6 y agrega los 6 elementos que se necesitan en el orden que se necesitan
 

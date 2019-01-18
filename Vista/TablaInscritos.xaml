@@ -8,7 +8,7 @@
         WindowState="Maximized" WindowStartupLocation="CenterScreen"
         WindowStyle="None">
     <Grid>
-        <DataGrid x:Name="dtgrid1" Height="597" Margin="380,222,436,0" VerticalAlignment="Top" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Width="776"/>
+        <DataGrid x:Name="dtgrid1" Height="597" Margin="336,222,392,0" VerticalAlignment="Top" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Width="864"/>
         <Label x:Name="lab1" Content="Nombre del Proyecto" Grid.Column="2" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,15,72,0" VerticalAlignment="Top" RenderTransformOrigin="4.868,0.577" FontSize="36" FontWeight="Bold" Grid.ColumnSpan="2" Width="927"/>
         <Label x:Name="lab2" Content="Estudiantes Inscritos" Grid.Column="2" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="318,84,387,0" VerticalAlignment="Top" RenderTransformOrigin="4.868,0.577" FontSize="24" FontWeight="Bold" Grid.ColumnSpan="2"/>
         <Button x:Name="bt1" Content="Asistencia" Margin="0,44,10,0" VerticalAlignment="Top" Width="130" Click="Bt1_Click" HorizontalAlignment="Right">
@@ -41,7 +41,7 @@
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.MenuHighlightColorKey}}"/>
             </Button.Background>
         </Button>
-        <Button x:Name="bt7" Content="Actualizar tabla de cupos" HorizontalAlignment="Center" Margin="380,192,436,0" VerticalAlignment="Top" Width="776" FontWeight="Bold" FontSize="16" Click="Bt7_Click">
+        <Button x:Name="bt7" Content="Actualizar tabla de cupos" HorizontalAlignment="Center" Margin="336,192,392,0" VerticalAlignment="Top" Width="864" FontWeight="Bold" FontSize="16" Click="Bt7_Click">
             <Button.Background>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.MenuHighlightColorKey}}"/>
             </Button.Background>
