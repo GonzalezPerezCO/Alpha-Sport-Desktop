@@ -217,7 +217,7 @@ namespace AlphaSport.Controller
         public DataTable TablaHorarioGym(string dia)
         {
             Debug.WriteLine("MOSTRAR TABLA HORARIO_GYM");
-            string query = "SELECT hora as TURNO, codigo as CODIGO,  CONCAT(nombre, ' ', apellido) As NOMBRE, carrera as CARRERA, semestre as SEMESTRE, fallas as FALLAS FROM testudiantes INNER JOIN thorarios on testudiantes.email = thorarios.email   WHERE dia = '"+dia+"' ORDER by hora;";
+            string query = "SELECT hora AS TURNO, codigo AS CODIGO,  CONCAT(nombre, ' ', apellido) AS NOMBRE, carrera AS CARRERA, semestre AS SEMESTRE, fallas AS FALLAS, asistencias AS ASIST FROM testudiantes INNER JOIN thorarios on testudiantes.email = thorarios.email   WHERE dia = '"+dia+"' ORDER by hora;";
             DataTable dt = connection.MostrarTabla(query);
             Debug.WriteLine("RECIBIR READER EN TABLE HORARIO_GYM");
 
