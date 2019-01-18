@@ -51,6 +51,9 @@ namespace AlphaSport.Vista
             Limpiar();            
         }
 
+        /// <summary>
+        /// Limpia los campos a Default y activa/desactiva campos.
+        /// </summary>
         private void Limpiar()
         {
             lab5.Content = "------";
@@ -123,14 +126,15 @@ namespace AlphaSport.Vista
                             if (lista[i + 3] == horaActual || lista[i + 3] == "0") // es 0 para que 2095112 muestre este mensaje
                             {
                                 mensaje = "Franja Horaria para registrar: " + diaActual + " - " + horaActual + ":00.";
-                                bt4.IsEnabled = true;
+
+                                BotonesEstado(true);
                             }
                             else
                             {
                                 Debug.WriteLine("<<<<<<<<<<<<< día no asignado");
                                 mensaje = "El estudiante no tiene asignada esta franja horaria: " + diaActual + " - " + horaActual + ":00.";                               
                             }
-                            //bt5.IsEnabled = true;
+
                         }
                         
                     }
@@ -243,8 +247,13 @@ namespace AlphaSport.Vista
             
         }        
 
+        /// <summary>
+        /// Deshabilita la Busqueda y activa la Asistencia , y VS. Mantiendolos contrarios obligar a usar limpiar y evitar cambios en el código.
+        /// </summary>
+        /// <param name="estado">el valor que tomarán los botones</param>
         private void BotonesEstado(bool estado) {
             Debug.WriteLine("Mostrar botone btn4 = "+estado);
+            bt3.IsEnabled = !estado;
             bt4.IsEnabled = estado;       
         }
     }
