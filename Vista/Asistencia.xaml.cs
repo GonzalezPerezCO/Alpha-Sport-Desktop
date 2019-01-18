@@ -33,7 +33,6 @@ namespace AlphaSport.Vista
             InitializeComponent();
             entorno = Entorno.GetInstance();
             lab1.Content = entorno.PROYECTO;
-            BotonesEstado(false);
             lab6.Content = "Ingrese el código del estudiante y realice la busqueda.";           
 
             txt1.Focus();
@@ -228,15 +227,20 @@ namespace AlphaSport.Vista
 
         private void Bt4_Click(object sender, RoutedEventArgs e)
         {
+            BotonesEstado(false);
+
             if (codigo == "2095112")
             {
-              lab8.Content = entorno.Fallas(Convert.ToUInt64(codigo), "ASISTENCIA", "Asistencia estudiantes.");
+                lab8.Content = entorno.Fallas(Convert.ToUInt64(codigo), "ASISTENCIA", "Asistencia estudiantes.");
 
             }
-            entorno.Fallas(Convert.ToUInt64(codigo), "ASISTENCIA", "Asistencia estudiantes.");
+            else
+            {
+                entorno.Fallas(Convert.ToUInt64(codigo), "ASISTENCIA", "Asistencia estudiantes.");
+            }
 
             MessageBox.Show("Asistencia registrada");
-            BotonesEstado(true);
+            
         }        
 
         private void BotonesEstado(bool estado) {
