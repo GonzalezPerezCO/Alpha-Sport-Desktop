@@ -74,8 +74,7 @@ namespace AlphaSport.Vista
             cmbx4.SelectedValue = null;
             cmbx5.SelectedValue = null;
             cmbx6.SelectedValue = null;
-
-            // bt_mod , txt3
+            
             EstadosBotones(false);
             txt3.Focus();
         }
