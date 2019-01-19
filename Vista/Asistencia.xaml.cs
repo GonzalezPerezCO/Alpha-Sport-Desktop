@@ -31,9 +31,11 @@ namespace AlphaSport.Vista
         public Asistencia()
         {
             InitializeComponent();
-            entorno = Entorno.GetInstance();
+            entorno = Entorno.GetInstance();            
             lab1.Content = entorno.PROYECTO;
-            lab6.Content = "Ingrese el código del estudiante y realice la busqueda.";               
+            lab6.Content = "Ingrese el código del estudiante y realice la busqueda.";
+
+            Limpiar();
         }       
 
         private void Btn1_Click(object sender, RoutedEventArgs e)
@@ -240,14 +242,15 @@ namespace AlphaSport.Vista
 
             MessageBox.Show("Asistencia registrada");
             
-        }        
+        }
 
         /// <summary>
-        /// Deshabilita la Busqueda y activa la Asistencia , y VS. Mantiendolos contrarios obligar a usar limpiar y evitar cambios en el código.
+        /// Deshabilita la Busqueda y el campo de codigo, activa la Asistencia , y VS. Mantiendolos contrarios para obligar a usar limpiar y evitar cambios en el código.
         /// </summary>
-        /// <param name="estado">el valor que tomarán los botones</param>
+        /// <param name="estado"></param>
         private void BotonesEstado(bool estado) {
             Debug.WriteLine("Mostrar botone btn4 = "+estado);
+            txt1.IsEnabled = !estado;
             bt3.IsEnabled = !estado;
             bt4.IsEnabled = estado;       
         }
