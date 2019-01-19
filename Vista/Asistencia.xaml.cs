@@ -33,7 +33,6 @@ namespace AlphaSport.Vista
             InitializeComponent();
             entorno = Entorno.GetInstance();            
             lab1.Content = entorno.PROYECTO;
-            lab6.Content = "Ingrese el código del estudiante y realice la busqueda.";
 
             Limpiar();
         }       
@@ -58,7 +57,7 @@ namespace AlphaSport.Vista
         {
             lab5.Content = "------";
             BotonesEstado(false);
-            lab6.Content = "------";
+            lab6.Content = "Ingrese el código del estudiante y realice la busqueda.";
             lab10.Content = "------";
             lab11.Content = "--";
             lab8.Content = "--";
