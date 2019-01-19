@@ -84,7 +84,7 @@ namespace AlphaSport.Vista
             }
             else
             {
-                //0: nombre, 1: carrera, 2: semestre, 3: email, 4: fallas, 5: asistencias, 6:dia1,hora1,dia2,hora2,dia3,hora3
+                //0: nombre, 1: carrera, 2: email, 3: semestre, 4:  fallas, 5: asistencias, 6: dia1,hora1,dia2,hora2,dia3,hora3
                 List<string> lista = entorno.Asistencia(Convert.ToUInt64(codigo));
                 
                 if (lista.Count > 0)
