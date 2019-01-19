@@ -80,6 +80,10 @@ namespace AlphaSport.Vista
             txt3.Focus();
         }
 
+        /// <summary>
+        /// Cambia la visibilidad del input de codigo y el boton buscar manteniendolos contrarios al boton de modificar horario.
+        /// </summary>
+        /// <param name="estado">estado que tomarán los botones</param>
         private void EstadosBotones(bool estado)
         {   
             bt3.IsEnabled = !estado;
