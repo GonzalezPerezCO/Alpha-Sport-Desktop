@@ -60,6 +60,7 @@ namespace AlphaSport.Vista
             txt5.Content = "------";
             txt6.Content = "--";
             txt7.Content = "--";
+            txt14.Content = "---";
             txt8.Content = "Dia 1";
             txt9.Content = "Dia 2";
             txt10.Content = "Dia 3";
@@ -75,14 +76,15 @@ namespace AlphaSport.Vista
             cmbx6.SelectedValue = null;
 
             // bt_mod , txt3
-            DesactivarTxt3_codigo(false, true);
+            EstadosBotones(false);
             txt3.Focus();
         }
 
-        private void DesactivarTxt3_codigo(bool bool_m, bool bool_tx3)
-        {
-            bt_mod.IsEnabled = bool_m;
-            txt3.IsEnabled = bool_tx3;
+        private void EstadosBotones(bool estado)
+        {   
+            bt3.IsEnabled = !estado;
+            txt3.IsEnabled = !estado;
+            bt_mod.IsEnabled = estado;
         }
 
         private void Click_bt2(object sender, RoutedEventArgs e)
@@ -109,7 +111,7 @@ namespace AlphaSport.Vista
             }
             else
             {
-                //0: nombre, 1: carrera, 2: semestre, 3: email, 4: fallas, 5: codigo, 6: dia1,hora1,dia2,hora2,dia3,hora3
+                //0: nombre, 1: carrera, 2: semestre, 3: email, 4: fallas, 5: asistencias, 6: dia1,hora1,dia2,hora2,dia3,hora3
                 List<string> lista = entorno.Asistencia(Convert.ToUInt64(codigo));
 
                 bool buscarEstudiante = entorno.BuscarEstudiante(Convert.ToUInt64(codigo), "");
@@ -127,6 +129,7 @@ namespace AlphaSport.Vista
                     txt5.Content = lista[1];
                     txt6.Content = lista[3];
                     txt7.Content = lista[4];
+                    txt14.Content = lista[5];
 
                     txt8.Content = lista[6];
                     txt9.Content = lista[7];
@@ -135,7 +138,7 @@ namespace AlphaSport.Vista
                     txt12.Content = lista[10];
                     txt13.Content = lista[11];
 
-                    DesactivarTxt3_codigo(true, false);
+                    EstadosBotones(true);
                 }
                 else if (buscarEstudiante && lista.Count == 0)
                 {
@@ -162,7 +165,7 @@ namespace AlphaSport.Vista
                         txt12.Content = "N/A";
                         txt13.Content = "N/A";
 
-                        DesactivarTxt3_codigo(true, false);
+                        EstadosBotones(true);
                     }
                 }                
                 else
