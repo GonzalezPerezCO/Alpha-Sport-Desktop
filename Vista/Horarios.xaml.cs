@@ -23,9 +23,12 @@ namespace AlphaSport.Vista
     public partial class Horarios : Window
     {
         private Entorno entorno;
+
         private static string codigo;
         private static string email;
-
+        private static List<string> diasInscritos = new List<string>();
+        private static List<string> horasInscritos = new List<string>();
+        
         private static List<string> cuposL = new List<string>();
         private static List<Label> labelsY = new List<Label>();        
 
@@ -73,6 +76,9 @@ namespace AlphaSport.Vista
             cmbx4.SelectedValue = null;
             cmbx5.SelectedValue = null;
             cmbx6.SelectedValue = null;
+
+            diasInscritos = new List<string>();
+            horasInscritos = new List<string>();
 
             EstadoCmboxDias(false);
             EstadoCmboxHoras(false);
@@ -316,8 +322,18 @@ namespace AlphaSport.Vista
             {
                 if (cmbx4.SelectedValue != null)
                 {
+                    bool es_int = UInt32.TryParse(cmbx4.SelectedValue.ToString(), out UInt32 abc); // se puede convertir a Int (dia de la semana)
+
+                    if (es_int) // es un dia de la semana -> modificar horario
+                    { }
+                    else // es N/A -> borrar horario
+                    { }
 
                 }
+            }
+            else
+            {
+                MessageBox.Show("Selección invalida!");
             }
 
 
