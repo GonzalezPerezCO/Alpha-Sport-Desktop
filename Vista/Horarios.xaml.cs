@@ -83,16 +83,16 @@ namespace AlphaSport.Vista
 
         private void EstadoCmboxDias(bool estado)
         {
-            cmbx1.IsEnabled = false;
-            cmbx2.IsEnabled = false;
-            cmbx3.IsEnabled = false;
+            cmbx1.IsEnabled = estado;
+            cmbx2.IsEnabled = estado;
+            cmbx3.IsEnabled = estado;
         }
 
         private void EstadoCmboxHoras(bool estado)
         {
-            cmbx4.IsEnabled = false;
-            cmbx5.IsEnabled = false;
-            cmbx6.IsEnabled = false;
+            cmbx4.IsEnabled = estado;
+            cmbx5.IsEnabled = estado;
+            cmbx6.IsEnabled = estado;
         }
 
         /// <summary>
@@ -160,6 +160,7 @@ namespace AlphaSport.Vista
                     txt13.Content = lista[11];
 
                     EstadosBotones(true);
+                    EstadoCmboxDias(true);
                 }
                 else if (buscarEstudiante && lista.Count == 0)
                 {
