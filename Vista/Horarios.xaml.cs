@@ -284,7 +284,7 @@ namespace AlphaSport.Vista
             ModificarHorario();
             cuposL = SepararIds(entorno.Cupos());           
 
-            ActualizarCmbox();
+            //ActualizarCmbox();
         }
 
         /// <summary>
@@ -304,13 +304,13 @@ namespace AlphaSport.Vista
 
             // declaración de variables
             string dia1 = "";
-            int hora1 = -1;
+            int hora1 = 0;
 
             string dia2 = "";
-            int hora2 = -1;
+            int hora2 = 0;
 
             string dia3 = "";
-            int hora3 = -1;
+            int hora3 = 0;
 
             //verificacion de valores {1-4, 2-5, 3-6}
             if (cmbx1.SelectedValue != null)
