@@ -496,7 +496,7 @@ namespace AlphaSport.Vista
         {
             ComboBox cmboxSelected = e.Source as ComboBox;
             string tag = cmboxSelected.Tag.ToString();
-            MessageBox.Show(tag);
+            
             if (tag == "1")
             {
                 cmbx4.IsEnabled = true;
