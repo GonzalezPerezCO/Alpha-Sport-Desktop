@@ -283,7 +283,6 @@ namespace AlphaSport.Vista
         {
             ModificarHorario();
             cuposL = SepararIds(entorno.Cupos());           
-
             //ActualizarCmbox();
         }
 
