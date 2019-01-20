@@ -496,18 +496,18 @@ namespace AlphaSport.Vista
         {
             ComboBox cmboxSelected = e.Source as ComboBox;
             string tag = cmboxSelected.Tag.ToString();
-
+            MessageBox.Show(tag);
             if (tag == "1")
             {
-                cmbx4.IsEnabled = false;
+                cmbx4.IsEnabled = true;
             }
             else if (tag == "2")
             {
-                cmbx5.IsEnabled = false;
+                cmbx5.IsEnabled = true;
             }
             else if (tag == "3")
             {
-                cmbx6.IsEnabled = false;
+                cmbx6.IsEnabled = true;
             }
             else
             {
