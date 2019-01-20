@@ -495,6 +495,24 @@ namespace AlphaSport.Vista
         private void SeleccionCmbx(object sender, SelectionChangedEventArgs e)
         {
             ComboBox cmboxSelected = e.Source as ComboBox;
+            string tag = cmboxSelected.Tag.ToString();
+
+            if (tag == "1")
+            {
+                cmbx4.IsEnabled = false;
+            }
+            else if (tag == "2")
+            {
+                cmbx5.IsEnabled = false;
+            }
+            else if (tag == "3")
+            {
+                cmbx6.IsEnabled = false;
+            }
+            else
+            {
+                MessageBox.Show("Ha ocurrido un error! tag no encontrado Horarios.xaml.cs");
+            }
         }
     }
 }
