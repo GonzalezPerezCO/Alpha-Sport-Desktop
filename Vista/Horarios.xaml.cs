@@ -52,8 +52,8 @@ namespace AlphaSport.Vista
             Application.Current.Shutdown();
         }            
              
-        private void Limpiar() {
-            
+        private void Limpiar()
+        {   
             txt3.Text = "";
             txt4.Content = "------";
             txt5.Content = "------";
