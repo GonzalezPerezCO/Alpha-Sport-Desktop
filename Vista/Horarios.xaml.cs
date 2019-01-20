@@ -26,7 +26,6 @@ namespace AlphaSport.Vista
         private static string codigo;
         private static string email;
 
-
         private static List<string> cuposL = new List<string>();
         private static List<Label> labelsY = new List<Label>();        
 
@@ -74,9 +73,26 @@ namespace AlphaSport.Vista
             cmbx4.SelectedValue = null;
             cmbx5.SelectedValue = null;
             cmbx6.SelectedValue = null;
-            
+
+            EstadoCmboxDias(false);
+            EstadoCmboxHoras(false);
+
             EstadosBotones(false);
             txt3.Focus();
+        }
+
+        private void EstadoCmboxDias(bool estado)
+        {
+            cmbx1.IsEnabled = false;
+            cmbx2.IsEnabled = false;
+            cmbx3.IsEnabled = false;
+        }
+
+        private void EstadoCmboxHoras(bool estado)
+        {
+            cmbx4.IsEnabled = false;
+            cmbx5.IsEnabled = false;
+            cmbx6.IsEnabled = false;
         }
 
         /// <summary>
@@ -127,6 +143,8 @@ namespace AlphaSport.Vista
                     {
                         Debug.WriteLine("<<<< Lista horario: " + item);
                     }
+
+                    email = lista[2];
 
                     txt4.Content = lista[0];
                     txt5.Content = lista[1];
@@ -262,20 +280,59 @@ namespace AlphaSport.Vista
 
         private void Bt_mod_Click(object sender, RoutedEventArgs e)
         {
-            MostrarHorarioEstudiante();
+            ModificarHorario();
             cuposL = SepararIds(entorno.Cupos());           
 
             ActualizarCmbox();
         }
 
-       
-        private void MostrarHorarioEstudiante()
+        /// <summary>
+        /// MOFICA O ELIMINA UNO DE LOS DIAS DEL HORARIO DEL ESTUDIANTE
+        /// </summary>
+        /// <param name="dia">DIA DE LA SEMANA</param>
+        /// <param name="hora">HORA DEL DIA DE LA SEMANA</param>
+        /// <returns></returns>
+        private string Modifica_dia_hora(string dia, int hora)
         {
-            //int hora =
-            //int dia;
-            string email;
+            return "";
+        }
+       
+        private void ModificarHorario()
+        {
+            string mensajeR = ""; // mensaje principal
 
-            string result = entorno.CambiarHorario(9, "Lunes", "MANUEL.PEREZ-E@MAIL.ESCUELAING.EDU.CO");
+            // declaración de variables
+            string dia1 = "";
+            int hora1 = -1;
+
+            string dia2 = "";
+            int hora2 = -1;
+
+            string dia3 = "";
+            int hora3 = -1;
+
+            //verificacion de valores {1-4, 2-5, 3-6}
+            if (cmbx1.SelectedValue != null)
+            {
+                if (cmbx4.SelectedValue != null)
+                {
+
+                }
+            }
+
+
+
+
+            dia1 = Convert.ToString(cmbx1.SelectedValue);
+            hora1 = Convert.ToInt32(cmbx4.SelectedValue);
+
+            dia2 = Convert.ToString(cmbx1.SelectedValue);
+            hora2 = Convert.ToInt32(cmbx4.SelectedValue);
+
+            dia3 = Convert.ToString(cmbx1.SelectedValue);
+            hora3 = Convert.ToInt32(cmbx4.SelectedValue);
+
+            string result = entorno.CambiarHorario(hora1, dia1, email);
 
             if (result == "")
             {

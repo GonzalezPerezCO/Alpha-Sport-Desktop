@@ -90,7 +90,7 @@ namespace AlphaSport.Vista
 
                 if (busCod.Count != 0)
                 {
-                    if (cmbox.SelectedItem != null)
+                    if (cmbox.SelectedValue != null)
                     {
                         MessageBox.Show("El estudiante ya tiene un casillero asignado!");
                     }
