@@ -491,5 +491,10 @@ namespace AlphaSport.Vista
             labelsY.Add(labY52);
             labelsY.Add(labY53);
         }
+
+        private void SeleccionCmbx(object sender, SelectionChangedEventArgs e)
+        {
+            ComboBox cmboxSelected = e.Source as ComboBox;
+        }
     }
 }
