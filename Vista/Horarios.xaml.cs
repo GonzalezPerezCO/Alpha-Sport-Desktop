@@ -513,6 +513,9 @@ namespace AlphaSport.Vista
             {
                 MessageBox.Show("Ha ocurrido un error! tag no encontrado Horarios.xaml.cs");
             }
+
+            EstadoCmboxDias(false);
+            EstadoCmboxHoras(false);
         }
     }
 }
