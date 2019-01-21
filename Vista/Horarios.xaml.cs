@@ -28,7 +28,9 @@ namespace AlphaSport.Vista
         private string email;
         private List<string> diasInscritos = new List<string>();
         private List<string> horasInscritos = new List<string>();
-        
+        private List<string> diasModifi = new List<string>();
+        private List<string> horasModifi = new List<string>();
+
         private List<string> cuposL = new List<string>();
         private List<Label> labelsY = new List<Label>();        
 
@@ -98,6 +100,8 @@ namespace AlphaSport.Vista
 
             diasInscritos = new List<string>();
             horasInscritos = new List<string>();
+            diasModifi = new List<string>();
+            horasModifi = new List<string>();
 
             EstadoCmboxDias(false);
             EstadoCmboxHoras(false);
@@ -195,6 +199,16 @@ namespace AlphaSport.Vista
                     horasInscritos.Add(lista[10]);
                     horasInscritos.Add(lista[11]);
 
+                    foreach (var item in diasInscritos)
+                    {
+                        Debug.WriteLine("--- IN dias inscritos: "+item);
+                    }
+
+                    foreach (var item in diasInscritos)
+                    {
+                        Debug.WriteLine("--- IN horas inscritos: " + item);
+                    }
+
                     //CAMBIAR ESTADO DE LOS BOTONES
                     EstadosBotones(true);
                     EstadoCmboxDias(true);
@@ -236,6 +250,16 @@ namespace AlphaSport.Vista
                         horasInscritos.Add("N/A");
                         horasInscritos.Add("N/A");
                         horasInscritos.Add("N/A");
+
+                        foreach (var item in diasInscritos)
+                        {
+                            Debug.WriteLine("--- NE dias inscritos: " + item);
+                        }
+
+                        foreach (var item in diasInscritos)
+                        {
+                            Debug.WriteLine("--- NE horas inscritos: " + item);
+                        }
 
                         //CAMBIAR ESTADO DE LOS BOTONES
                         EstadosBotones(true);
@@ -337,7 +361,7 @@ namespace AlphaSport.Vista
 
         private void Bt_mod_Click(object sender, RoutedEventArgs e)
         {
-            //ModificarHorario();
+            ModificarHorario();
             cuposL = SepararIds(entorno.Cupos());           
             //ActualizarCmbox();
         }
@@ -356,6 +380,11 @@ namespace AlphaSport.Vista
         private void ModificarHorario()
         {
             string mensajeR = ""; // mensaje principal
+
+            // DETERMINAR QUE SI CAMBIA EL DIA
+
+
+
 
             // declaración de variables
             string dia1 = "";
