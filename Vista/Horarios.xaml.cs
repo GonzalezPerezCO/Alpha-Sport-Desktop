@@ -188,6 +188,7 @@ namespace AlphaSport.Vista
 
                     EstadosBotones(true);
                     EstadoCmboxDias(true);
+                    EstadoCmboxHoras(false);
                 }
                 else if (buscarEstudiante && lista.Count == 0)
                 {
