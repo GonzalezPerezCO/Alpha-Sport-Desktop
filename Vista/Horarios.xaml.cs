@@ -45,6 +45,25 @@ namespace AlphaSport.Vista
             Limpiar();
         }
 
+        /// <summary>
+        /// COLOCA LOS VALORES DE DIAS Y HORAS DEL HORARIO DEL ESTUDIANTE EN LOS COMBOBOX
+        /// </summary>
+        /// <param name="dia1">DIA DE LA SEMANA</param>
+        /// <param name="dia2">DIA DE LA SEMANA</param>
+        /// <param name="dia3">DIA DE LA SEMANA</param>
+        /// <param name="hora1">HORA DE LA SEMANA</param>
+        /// <param name="hora2">HORA DE LA SEMANA</param>
+        /// <param name="hora3">HORA DE LA SEMANA</param>
+        private void HorarioCmbox(string dia1, string dia2, string dia3, string hora1, string hora2, string hora3)
+        {
+            cmbx1.SelectedValue = dia1;
+            cmbx2.SelectedValue = dia2;
+            cmbx3.SelectedValue = dia3;
+            cmbx4.SelectedValue = hora1;
+            cmbx5.SelectedValue = hora2;
+            cmbx6.SelectedValue = hora3;
+        }
+
         private void Window_Closed(object sender, EventArgs e)
         {
             Application.Current.Shutdown();
@@ -164,6 +183,8 @@ namespace AlphaSport.Vista
                     txt11.Content = lista[9];
                     txt12.Content = lista[10];
                     txt13.Content = lista[11];
+
+                    HorarioCmbox(lista[6], lista[7], lista[8], lista[9], lista[10], lista[11]); // mostrar el horario en los Cmbox
 
                     EstadosBotones(true);
                     EstadoCmboxDias(true);
