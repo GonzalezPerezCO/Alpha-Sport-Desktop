@@ -217,6 +217,7 @@ namespace AlphaSport.Vista
                         txt5.Content = lista[1];
                         txt6.Content = lista[3];
                         txt7.Content = lista[4];
+                        txt14.Content = lista[5];
 
                         txt8.Content = "N/A";
                         txt9.Content = "N/A";
@@ -245,7 +246,8 @@ namespace AlphaSport.Vista
                     }
                 }                
                 else
-                {   
+                {
+                    Limpiar();
                     MessageBox.Show("No esta registrado en la Base de Datos de Deportes!");
                 }               
             }
