@@ -111,14 +111,14 @@ namespace AlphaSport.Controller
                 case "FRIDAY":
                     dia = DIAS[4];
                     break;
-                case "SATURDAY":
+                /*case "SATURDAY":  // NO FUNCIONA PORQUE NO HAY DÍAS DE GIMNASIO LOS SABADOS Y DOMINGOS
                     dia = "SABADO";
                     break;
                 case "SUNDAY":
                     dia = "DOMINGO";
-                    break;
+                    break;*/
                 default:  // NO ESA NECESARIO PORQUÉ YA ESTA COMTEMPLADO EN LA LECTURA DEL QUERY
-                    dia = "N/A";
+                    dia = "LUNES";
                     break;
             }
 

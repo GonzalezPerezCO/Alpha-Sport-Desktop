@@ -1,6 +1,8 @@
 ﻿using AlphaSport.Controller;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,7 +32,7 @@ namespace AlphaSport.Vista
             InitializeComponent();
             entorno = Entorno.GetInstance();
             lab1.Content = entorno.PROYECTO;
-
+           
             cmbx1.ItemsSource = entorno.DIAS;
 
             datosFechaActual = entorno.CalcularHoy();
@@ -43,7 +45,7 @@ namespace AlphaSport.Vista
 
         public void MostrarTabla()
         {   
-            System.Data.DataTable dt = entorno.TablaHorarioGym(cmbx1.SelectedItem.ToString());
+            DataTable dt = entorno.TablaHorarioGym(cmbx1.SelectedItem.ToString());
             dtgrid1.ItemsSource = dt.DefaultView;
         }
 

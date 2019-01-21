@@ -287,7 +287,7 @@ namespace AlphaSport.Vista
 
         private void Bt_mod_Click(object sender, RoutedEventArgs e)
         {
-            ModificarHorario();
+            //ModificarHorario();
             cuposL = SepararIds(entorno.Cupos());           
             //ActualizarCmbox();
         }
@@ -514,23 +514,23 @@ namespace AlphaSport.Vista
             
             if (tag == "1")
             {
+                Debug.WriteLine("tag 1");
                 cmbx4.IsEnabled = true;
             }
             else if (tag == "2")
             {
+                Debug.WriteLine("tag 1");
                 cmbx5.IsEnabled = true;
             }
             else if (tag == "3")
             {
+                Debug.WriteLine("tag 1");
                 cmbx6.IsEnabled = true;
             }
             else
             {
                 MessageBox.Show("Ha ocurrido un error! tag no encontrado Horarios.xaml.cs");
-            }
-
-            EstadoCmboxDias(false);
-            EstadoCmboxHoras(false);
+            }           
         }
     }
 }
