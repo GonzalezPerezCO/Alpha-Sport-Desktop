@@ -201,12 +201,12 @@ namespace AlphaSport.Vista
 
                     foreach (var item in diasInscritos)
                     {
-                        Debug.WriteLine("--- IN dias inscritos: "+item);
+                        Debug.WriteLine("--- IN dias inscritos: "+ item + " email: " + email);
                     }
 
                     foreach (var item in diasInscritos)
                     {
-                        Debug.WriteLine("--- IN horas inscritos: " + item);
+                        Debug.WriteLine("--- IN horas inscritos: " + item + " email: " + email);
                     }
 
                     //CAMBIAR ESTADO DE LOS BOTONES
@@ -226,6 +226,8 @@ namespace AlphaSport.Vista
                         {
                             Debug.WriteLine("<<<< Lista datos estu: " + item);
                         }
+
+                        email = lista[2]; // GUARDA EMAIL
 
                         txt4.Content = lista[0];
                         txt5.Content = lista[1];
@@ -253,12 +255,12 @@ namespace AlphaSport.Vista
 
                         foreach (var item in diasInscritos)
                         {
-                            Debug.WriteLine("--- NE dias inscritos: " + item);
+                            Debug.WriteLine("--- NE dias inscritos: " + item + " email: "+email);
                         }
 
                         foreach (var item in diasInscritos)
                         {
-                            Debug.WriteLine("--- NE horas inscritos: " + item);
+                            Debug.WriteLine("--- NE horas inscritos: " + item + " email: " + email);
                         }
 
                         //CAMBIAR ESTADO DE LOS BOTONES
@@ -361,8 +363,8 @@ namespace AlphaSport.Vista
 
         private void Bt_mod_Click(object sender, RoutedEventArgs e)
         {
-            ModificarHorario();
-            cuposL = SepararIds(entorno.Cupos());           
+            //ModificarHorario();
+            //cuposL = SepararIds(entorno.Cupos());
             //ActualizarCmbox();
         }
 
