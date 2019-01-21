@@ -24,13 +24,13 @@ namespace AlphaSport.Vista
     {
         private Entorno entorno;
 
-        private static string codigo;
-        private static string email;
-        private static List<string> diasInscritos = new List<string>();
-        private static List<string> horasInscritos = new List<string>();
+        private string codigo;
+        private string email;
+        private List<string> diasInscritos = new List<string>();
+        private List<string> horasInscritos = new List<string>();
         
-        private static List<string> cuposL = new List<string>();
-        private static List<Label> labelsY = new List<Label>();        
+        private List<string> cuposL = new List<string>();
+        private List<Label> labelsY = new List<Label>();        
 
         public Horarios()
         {
@@ -169,7 +169,7 @@ namespace AlphaSport.Vista
                         Debug.WriteLine("<<<< Lista horario: " + item);
                     }
 
-                    email = lista[2];
+                    email = lista[2]; // GUARDA EMAIL
 
                     txt4.Content = lista[0];
                     txt5.Content = lista[1];
@@ -186,6 +186,7 @@ namespace AlphaSport.Vista
 
                     HorarioCmbox(lista[6], lista[7], lista[8], lista[9], lista[10], lista[11]); // mostrar el horario en los Cmbox
 
+                    // LLENAR LISTA DE DATOS DIAS Y HORAS
                     diasInscritos.Add(lista[6]);
                     diasInscritos.Add(lista[7]);
                     diasInscritos.Add(lista[8]);
@@ -194,6 +195,7 @@ namespace AlphaSport.Vista
                     horasInscritos.Add(lista[10]);
                     horasInscritos.Add(lista[11]);
 
+                    //CAMBIAR ESTADO DE LOS BOTONES
                     EstadosBotones(true);
                     EstadoCmboxDias(true);
                     EstadoCmboxHoras(false);
