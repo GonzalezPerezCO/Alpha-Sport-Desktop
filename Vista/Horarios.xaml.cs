@@ -186,6 +186,14 @@ namespace AlphaSport.Vista
 
                     HorarioCmbox(lista[6], lista[7], lista[8], lista[9], lista[10], lista[11]); // mostrar el horario en los Cmbox
 
+                    diasInscritos.Add(lista[6]);
+                    diasInscritos.Add(lista[7]);
+                    diasInscritos.Add(lista[8]);
+
+                    horasInscritos.Add(lista[9]);
+                    horasInscritos.Add(lista[10]);
+                    horasInscritos.Add(lista[11]);
+
                     EstadosBotones(true);
                     EstadoCmboxDias(true);
                     EstadoCmboxHoras(false);
@@ -216,6 +224,8 @@ namespace AlphaSport.Vista
                         txt13.Content = "N/A";
 
                         EstadosBotones(true);
+
+                        // PARA CREAR HORARIO DE ESTUDIANTE SIN REGISTRO
                     }
                 }                
                 else
