@@ -443,7 +443,7 @@ namespace AlphaSport.Controller
                 Debug.WriteLine(" ----   RESULT QERY TRY recibido Datos_Estudiante  reader: " + query);
                 reader = cmd.ExecuteReader();
 
-                while (reader.Read())
+                while (reader.Read()) //0: nombre, 1: carrera, 2: email, 3: semestre, 4: fallas, 5: asistencias, 6: codigo
                 {
                     if (reader.GetString(0) != null) { result.Add(reader.GetString(0)); } else { result.Add("N/A"); }
                     if (reader.GetString(1) != null) { result.Add(reader.GetString(1)); } else { result.Add("N/A"); }
@@ -451,6 +451,7 @@ namespace AlphaSport.Controller
                     if (reader.GetString(3) != null) { result.Add(Convert.ToString(reader.GetString(3))); } else { result.Add("0"); }
                     if (reader.GetString(4) != null) { result.Add(Convert.ToString(reader.GetString(4))); } else { result.Add("0"); }
                     if (reader.GetString(5) != null) { result.Add(Convert.ToString(reader.GetString(5))); } else { result.Add("0"); }
+                    if (reader.GetString(6) != null) { result.Add(Convert.ToString(reader.GetString(6))); } else { result.Add("0"); }
                 }
 
                 Debug.WriteLine(" ----   RESULT QERY READER Datos_Estudiante  reader: ");

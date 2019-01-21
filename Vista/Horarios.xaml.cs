@@ -201,8 +201,8 @@ namespace AlphaSport.Vista
                     EstadoCmboxHoras(false);
                 }
                 else if (buscarEstudiante && lista.Count == 0)
-                {
-                    //0: nombre, 1: carrera, 2: semestre, 3: fallas, 4: codigo
+                {   
+                    //0: nombre, 1: carrera, 2: email, 3: semestre, 4: fallas, 5: asistencias, 6: codigo
                     lista = entorno.DatosEstudiante(Convert.ToUInt64(codigo));
 
                     MessageBox.Show("No esta registrado el Estudiante en el Gimnasio!");
@@ -215,8 +215,8 @@ namespace AlphaSport.Vista
 
                         txt4.Content = lista[0];
                         txt5.Content = lista[1];
-                        txt6.Content = lista[2];
-                        txt7.Content = lista[3];
+                        txt6.Content = lista[3];
+                        txt7.Content = lista[4];
 
                         txt8.Content = "N/A";
                         txt9.Content = "N/A";
@@ -225,7 +225,21 @@ namespace AlphaSport.Vista
                         txt12.Content = "N/A";
                         txt13.Content = "N/A";
 
+                        HorarioCmbox(null, null, null, "N/A", "N/A", "N/A"); // mostrar el horario en los Cmbox
+
+                        // LLENAR LISTA DE DATOS DIAS Y HORAS
+                        diasInscritos.Add("N/A");
+                        diasInscritos.Add("N/A");
+                        diasInscritos.Add("N/A");
+
+                        horasInscritos.Add("N/A");
+                        horasInscritos.Add("N/A");
+                        horasInscritos.Add("N/A");
+
+                        //CAMBIAR ESTADO DE LOS BOTONES
                         EstadosBotones(true);
+                        EstadoCmboxDias(true);
+                        EstadoCmboxHoras(false);
 
                         // PARA CREAR HORARIO DE ESTUDIANTE SIN REGISTRO
                     }

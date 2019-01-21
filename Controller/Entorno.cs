@@ -133,7 +133,7 @@ namespace AlphaSport.Controller
 
         public List<string> DatosEstudiante(UInt64 codigo)
         {
-            string query = "SELECT CONCAT(nombre, ' ', apellido) As nombre, carrera, email, semestre, fallas, codigo from testudiantes WHERE codigo = "+codigo+";";
+            string query = "SELECT CONCAT(nombre, ' ', apellido) As nombre, carrera, email, semestre, fallas, asistencias, codigo from testudiantes WHERE codigo = "+codigo+";";
             return connection.DatosEstuReader(query);
         }
 
