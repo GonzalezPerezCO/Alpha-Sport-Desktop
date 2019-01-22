@@ -23,5 +23,15 @@ namespace AlphaSport.Vista
         {
             InitializeComponent();
         }
+
+        private void Btn1_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Btn2_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
