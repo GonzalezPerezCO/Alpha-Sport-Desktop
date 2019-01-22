@@ -17,9 +17,9 @@ namespace AlphaSport.Vista
     /// <summary>
     /// Lógica de interacción para ventanaPrestamosImpl.xaml
     /// </summary>
-    public partial class ventanaPrestamosImpl : Window
+    public partial class VentanaPrestamosImpl : Window
     {
-        public ventanaPrestamosImpl()
+        public VentanaPrestamosImpl()
         {
             InitializeComponent();
         }
