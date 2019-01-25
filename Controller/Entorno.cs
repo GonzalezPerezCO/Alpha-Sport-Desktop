@@ -143,7 +143,7 @@ namespace AlphaSport.Controller
             return connection.ListaUnicaReader(query);
         }
 
-        public List<string> Implementos_disponiblesSigla(string sigla)
+        public List<string> Implementos_disponiblesSigla()
         {
             string query = "SELECT disponibles FROM timplementos  WHERE sigla = sigla_i ORDER by id_i;";
             return connection.ListaUnicaReader(query);
