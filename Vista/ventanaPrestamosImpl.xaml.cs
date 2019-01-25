@@ -124,6 +124,12 @@ namespace AlphaSport.Vista
             cmbox_Cant.IsEnabled = true;
         }
 
+        private void Cmbox_Cant_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            cantidad = Convert.ToUInt32(cmbox_Cant.SelectedValue.ToString());
+            cmbox_Sigla.IsEnabled = false;
+        }
+
         private void Limpiar()
         {
             codigo.Text = "";
@@ -140,10 +146,11 @@ namespace AlphaSport.Vista
             // capturar datos
             // sigla en Cmbox_Sigla_SelectionChanged()
             codigoEs = Convert.ToUInt64(codigo.Text);
-            cantidad = Convert.ToUInt32(cmbox_Cant.SelectedValue.ToString());
+            // cant sigla en Cmbox_Cant_SelectionChanged()
 
             ActualizarCmbxSiglas();
             cmbox_Sigla.IsEnabled = true;
         }
+        
     }
 }
