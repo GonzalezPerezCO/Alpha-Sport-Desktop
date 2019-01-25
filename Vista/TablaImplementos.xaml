@@ -14,12 +14,7 @@
         <DataGrid x:Name="dtgrid1" Height="661" Margin="226.472,163,220.528,0" VerticalAlignment="Top" IsReadOnly="True" Grid.Column="1" HorizontalAlignment="Center" Width="732" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <Label x:Name="lab1" Content="Nombre del Proyecto" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="330,24,334,0" VerticalAlignment="Top" RenderTransformOrigin="4.868,0.577" FontSize="36" FontWeight="Bold" Width="928"/>
         <Label x:Name="lab2" Content="Implementos Deportivos" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="620,94,619,0" VerticalAlignment="Top" RenderTransformOrigin="4.868,0.577" FontSize="24" FontWeight="Bold" Width="353"/>
-        <Button x:Name="bt1" Content="Prestar" Margin="0,319,1427,0" VerticalAlignment="Top" Width="130" HorizontalAlignment="Right" Background="#FFFFDA33" Click="Bt1_Click"/>
-        <Button x:Name="bt2" Content="Ver prestamos" HorizontalAlignment="Right" Margin="0,358,1427,0" VerticalAlignment="Top" Width="130" RenderTransformOrigin="0.52,2.5" FontWeight="Bold" Click="Bt2_Click">
-            <Button.Background>
-                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.MenuHighlightColorKey}}"/>
-            </Button.Background>
-        </Button>
+        <Button x:Name="bt1" Content="Prestamos" Margin="0,319,1427,0" VerticalAlignment="Top" Width="130" HorizontalAlignment="Right" Background="#FFFFDA33" Click="Bt1_Click"/>
         <Button x:Name="bt5" Content="Menú principal" Grid.Column="2" HorizontalAlignment="Right" Margin="0,738,10.276,0" VerticalAlignment="Top" Width="130" RenderTransformOrigin="0.52,2.5" FontWeight="Bold" Height="48" Background="#FFFFDA33" Click="Bt5_Click"/>
         <Button x:Name="bt3" Content="Casilleros" Margin="0,410,1427,0" VerticalAlignment="Top" Width="130" HorizontalAlignment="Right" Background="#FFFFDA33" Click="Bt3_Click"/>
     </Grid>

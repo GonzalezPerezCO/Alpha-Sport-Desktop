@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AlphaSport.Controller;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,24 @@ namespace AlphaSport.Vista
     /// </summary>
     public partial class PrestamosImpl : Window
     {
-        public PrestamosImpl()
+
+        private Entorno entorno;
+        private static PrestamosImpl instance;
+
+
+        private PrestamosImpl()
         {
             InitializeComponent();
+            entorno = Entorno.GetInstance();
+            lab1.Content = entorno.PROYECTO;
+        }
+
+        public static PrestamosImpl GetInstance()
+        {
+            if (instance == null)
+                instance = new PrestamosImpl();
+
+            return instance;
         }
 
         private void Window_Closed(object sender, EventArgs e)
@@ -32,6 +48,28 @@ namespace AlphaSport.Vista
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             Application.Current.Shutdown();
+        }
+
+        private void Bt1_Click(object sender, RoutedEventArgs e)
+        {
+            VentanaPrestamosImpl ventaPrestamos = VentanaPrestamosImpl.GetInstance();
+            ventaPrestamos.Show();
+            this.Hide();
+        }
+
+        private void Bt5_Click(object sender, RoutedEventArgs e)
+        {
+            Main main = new Main();
+            main.Show();
+            this.Hide();
+        }
+
+        private void Bt2_Click(object sender, RoutedEventArgs e)
+        {
+            TablaImplementos implementos = new TablaImplementos();
+            implementos.Show();
+            this.Hide();
+
         }
     }
 }
