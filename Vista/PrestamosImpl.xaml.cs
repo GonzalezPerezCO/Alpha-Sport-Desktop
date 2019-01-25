@@ -60,7 +60,7 @@ namespace AlphaSport.Vista
             this.Hide();
         }
 
-        private void Bt5_Click(object sender, RoutedEventArgs e)
+        private void Bt3_Click(object sender, RoutedEventArgs e)
         {
             Main main = new Main();
             main.Show();
@@ -90,5 +90,7 @@ namespace AlphaSport.Vista
         {
             MostrarTabla();
         }
+
+        
     }
 }

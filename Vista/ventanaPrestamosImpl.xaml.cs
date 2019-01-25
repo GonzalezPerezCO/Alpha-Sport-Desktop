@@ -145,13 +145,20 @@ namespace AlphaSport.Vista
 
         private void Btn3_Click(object sender, RoutedEventArgs e)
         {
-            // capturar datos
-            // sigla en Cmbox_Sigla_SelectionChanged()
-            codigoEs = Convert.ToUInt64(codigo.Text);
-            // cant sigla en Cmbox_Cant_SelectionChanged()
-            codigo.IsEnabled = false;
-            ActualizarCmbxSiglas();
-            cmbox_Sigla.IsEnabled = true;
+            // capturar datos y validar
+
+            if (codigo.Text == "" || !UInt64.TryParse(codigo.Text, out UInt64 abc))
+            {
+                MessageBox.Show("El código no es valido!");
+            }
+            else
+            {
+                codigoEs = Convert.ToUInt64(codigo.Text);
+
+                codigo.IsEnabled = false;
+                ActualizarCmbxSiglas();
+                cmbox_Sigla.IsEnabled = true;
+            }
         }
 
         private void Btn4_Click(object sender, RoutedEventArgs e)
