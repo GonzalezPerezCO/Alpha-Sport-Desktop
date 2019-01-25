@@ -37,7 +37,6 @@ namespace AlphaSport.Vista
             dtgrid1.ItemsSource = dt.DefaultView;
         }
 
-
         private void Window_Closed(object sender, EventArgs e)
         {
             Application.Current.Shutdown();
@@ -58,9 +57,9 @@ namespace AlphaSport.Vista
 
         private void Bt1_Click(object sender, RoutedEventArgs e)
         {
-            //Window prestar = new Prestar();
+            Window ventanaPrestamos = new VentanaPrestamosImpl();
 
-            //prestar.Show();
+            ventanaPrestamos.Show();
             this.Hide();
         }
 

@@ -258,7 +258,7 @@ namespace AlphaSport.Vista
         
         private void Prestamo_Click(object sender, RoutedEventArgs e)
         {
-            ventanaPrestamosCas prestamos = ventanaPrestamosCas.GetInstance();                        
+            VentanaPrestamosCas prestamos = VentanaPrestamosCas.GetInstance();                        
             prestamos.Show();
             this.Hide();
         }

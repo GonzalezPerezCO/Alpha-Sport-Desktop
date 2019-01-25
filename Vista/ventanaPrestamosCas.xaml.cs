@@ -19,14 +19,14 @@ namespace AlphaSport.Vista
     /// <summary>
     /// Lógica de interacción para ventanaPrestamosCas.xaml
     /// </summary>
-    public partial class ventanaPrestamosCas : Window
+    public partial class VentanaPrestamosCas : Window
     {
 
         private Entorno entorno;
-        private static ventanaPrestamosCas instance = null;
+        private static VentanaPrestamosCas instance = null;
         private static List<string> lista = new List<string>();
 
-        private ventanaPrestamosCas()
+        private VentanaPrestamosCas()
         {
             InitializeComponent();
             entorno = Entorno.GetInstance();
@@ -37,10 +37,10 @@ namespace AlphaSport.Vista
             ActualizarListaDisp();
         }        
 
-        public static ventanaPrestamosCas GetInstance()
+        public static VentanaPrestamosCas GetInstance()
         {
             if (instance == null)
-                instance = new ventanaPrestamosCas();
+                instance = new VentanaPrestamosCas();
 
             return instance;
         }
