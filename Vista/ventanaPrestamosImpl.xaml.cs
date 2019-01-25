@@ -27,6 +27,8 @@ namespace AlphaSport.Vista
         private List<int> listaCantDisponibles; // lista de disponibles de una sigla
 
         private string siglaSelect;
+        private UInt64 codigoEs;
+        private UInt32 cantidad;
 
         private VentanaPrestamosImpl()
         {
@@ -37,6 +39,8 @@ namespace AlphaSport.Vista
             listaCantDisponibles = new List<int>();
 
             siglaSelect = "";
+            codigoEs = 0;
+            cantidad = 0;
 
             Limpiar();
 
@@ -114,8 +118,7 @@ namespace AlphaSport.Vista
         }
 
         private void Cmbox_Sigla_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            siglaSelect = cmbox_Sigla.ToString();
+        {   
             ActualizarCmbxDisponibles();
             cmbox_Cant.IsEnabled = true;
         }
@@ -126,8 +129,21 @@ namespace AlphaSport.Vista
             cmbox_Sigla.SelectedValue = null;
             cmbox_Cant.SelectedValue = null;
             cmbox_Cant.IsEnabled = false;
+            cmbox_Sigla.IsEnabled = false;
 
             codigo.Focus();
+        }
+
+        private void Btn3_Click(object sender, RoutedEventArgs e)
+        {
+            // capturar datos
+
+            siglaSelect = cmbox_Sigla.SelectedValue.ToString();
+            codigoEs = Convert.ToUInt64(codigo.Text);
+            cantidad = Convert.ToUInt32(cmbox_Cant.SelectedValue.ToString());
+
+            ActualizarCmbxSiglas();
+            cmbox_Sigla.IsEnabled = true;
         }
     }
 }
