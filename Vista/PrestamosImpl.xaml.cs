@@ -148,7 +148,7 @@ namespace AlphaSport.Vista
                     {
                         if (paso == 1)
                         {
-                            mensaje = mensaje + "\n Se prestó: \n sigla:" + datosPrestamo[i];
+                            mensaje = mensaje + "Se prestó: \n sigla: " + datosPrestamo[i];
                         }
                         else if (paso == 2)
                         {
@@ -160,7 +160,7 @@ namespace AlphaSport.Vista
                         }
                         else
                         {
-                            mensaje = mensaje + "\n Fecha: " + datosPrestamo[i];
+                            mensaje = mensaje + "\n Fecha: " + datosPrestamo[i] + "\n"+ "\n";
                             paso = 0;
                         }
 
