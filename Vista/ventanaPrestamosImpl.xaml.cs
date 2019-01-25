@@ -135,6 +135,7 @@ namespace AlphaSport.Vista
             codigo.Text = "";
             cmbox_Sigla.SelectedValue = null;
             cmbox_Cant.SelectedValue = null;
+            codigo.IsEnabled = true;
             cmbox_Cant.IsEnabled = false;
             cmbox_Sigla.IsEnabled = false;
 
@@ -147,10 +148,14 @@ namespace AlphaSport.Vista
             // sigla en Cmbox_Sigla_SelectionChanged()
             codigoEs = Convert.ToUInt64(codigo.Text);
             // cant sigla en Cmbox_Cant_SelectionChanged()
-
+            codigo.IsEnabled = false;
             ActualizarCmbxSiglas();
             cmbox_Sigla.IsEnabled = true;
         }
-        
+
+        private void Btn4_Click(object sender, RoutedEventArgs e)
+        {
+            Limpiar();
+        }
     }
 }
