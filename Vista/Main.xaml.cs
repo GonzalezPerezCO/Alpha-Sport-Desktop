@@ -45,7 +45,7 @@ namespace AlphaSport.Vista
             Application.Current.Shutdown();
         }
 
-        private void btn1_MouseEnter(object sender, MouseEventArgs e)
+        private void Btn1_MouseEnter(object sender, MouseEventArgs e)
         {   /*         
             ImageBrush imgBrush = new ImageBrush();
             imgBrush.ImageSource = new BitmapImage(new Uri(@"/Recursos/gym.jpg", UriKind.RelativeOrAbsolute));
@@ -53,7 +53,7 @@ namespace AlphaSport.Vista
             */
         }
 
-        private void btn1_MouseLeave(object sender, MouseEventArgs e)
+        private void Btn1_MouseLeave(object sender, MouseEventArgs e)
         {
             /*
              * ImageBrush imgBrush = new ImageBrush();            
@@ -62,7 +62,7 @@ namespace AlphaSport.Vista
              */
         }
 
-        private void btn1_Click(object sender, RoutedEventArgs e)
+        private void Btn1_Click(object sender, RoutedEventArgs e)
         {
             Window tabla = new TablaInscritos();                    
             tabla.Show();
