@@ -145,7 +145,7 @@ namespace AlphaSport.Controller
 
         public List<string> PrestamosEstudiante(UInt64 codigo)
         {
-            string query = "SELECT GROUP_CONCAT(sigla, prestados, observacion, entrada) FROM tprestamos WHERE codigo = "+codigo+" ORDER BY codigo;";
+            string query = "SELECT GROUP_CONCAT(sigla,',',prestados,',',observacion,',',entrada) FROM tprestamos WHERE codigo = "+codigo+" ORDER BY codigo;";
             return connection.ListaUnicaReader(query);
         }
 
