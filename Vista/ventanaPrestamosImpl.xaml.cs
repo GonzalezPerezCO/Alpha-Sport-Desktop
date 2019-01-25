@@ -23,10 +23,16 @@ namespace AlphaSport.Vista
         private Entorno entorno;
         private static VentanaPrestamosImpl instance = null;
 
+        private List<string> listaDisponibles;
+        private List<string> listaCantDisponibles;
+
         private VentanaPrestamosImpl()
         {
             InitializeComponent();
             entorno = Entorno.GetInstance();
+
+            listaDisponibles = new List<string>();
+            listaCantDisponibles = new List<string>();
         }
 
         public static VentanaPrestamosImpl GetInstance()
@@ -42,6 +48,11 @@ namespace AlphaSport.Vista
             PrestamosImpl prestamos = PrestamosImpl.GetInstance();
             prestamos.Show();
             this.Hide();
+        }
+
+        private void ActualizarDisponibles()
+        {
+
         }
 
         private void Btn1_Click(object sender, RoutedEventArgs e)
