@@ -143,6 +143,12 @@ namespace AlphaSport.Controller
             return connection.ListaUnicaReader(query);
         }
 
+        public List<string> PrestamosEstudiante(UInt64 codigo)
+        {
+            string query = "SELECT GROUP_CONCAT(sigla, prestados, observacion, entrada) FROM tprestamos WHERE codigo = "+codigo+" ORDER BY codigo;";
+            return connection.ListaUnicaReader(query);
+        }
+
         public List<string> Implementos_disponiblesSigla()
         {
             string query = "SELECT sigla FROM timplementos  WHERE disponibles > 0 ORDER by id_i;";

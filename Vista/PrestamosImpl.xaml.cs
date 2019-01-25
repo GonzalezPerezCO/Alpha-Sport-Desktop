@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,12 +26,15 @@ namespace AlphaSport.Vista
         private Entorno entorno;
         private static PrestamosImpl instance;
 
+        private UInt64 codigoEs;
+
 
         private PrestamosImpl()
         {
             InitializeComponent();
             entorno = Entorno.GetInstance();
             lab1.Content = entorno.PROYECTO;
+            Limpiar();
 
             MostrarTabla();
         }
@@ -41,6 +45,12 @@ namespace AlphaSport.Vista
                 instance = new PrestamosImpl();
 
             return instance;
+        }
+
+        private void Limpiar()
+        {
+            codigoEs = 0;
+            codigo.Focus();
         }
 
         private void Window_Closed(object sender, EventArgs e)
@@ -83,14 +93,86 @@ namespace AlphaSport.Vista
 
         private void Bt4_Click(object sender, RoutedEventArgs e)
         {
+            Limpiar();
             MostrarTabla();
         }
 
         private void Grid_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
+            Limpiar();
             MostrarTabla();
         }
 
-        
+        private List<string> SepararLista(List<string> lista)
+        {
+            // a,b,c,...,x
+
+            List<string> result = new List<string>();
+
+            string[] separadas;
+            separadas = lista[0].Split(',');
+
+            foreach (var item in separadas)
+            {
+                result.Add(item);
+                Debug.WriteLine("<< Prestamo a lista: " + item);
+            }
+
+            return result;
+        }
+
+        private void Bt5_Click(object sender, RoutedEventArgs e)
+        {
+            if (codigo.Text == "" || !UInt64.TryParse(codigo.Text, out UInt64 abc))
+            {
+                MessageBox.Show("El código no es valido!");
+            }
+            else
+            {
+                codigoEs = Convert.ToUInt64(codigo.Text.ToString());
+                string mensaje = "";
+
+                List<string> datosPrestamo = entorno.PrestamosEstudiante(codigoEs);
+
+                if (datosPrestamo.Count == 0)
+                {
+                    mensaje = "El estudiante no tiene prestamos pendientes!";
+                    MessageBox.Show(mensaje);
+                }
+                else
+                {
+                    datosPrestamo = SepararLista(datosPrestamo);
+                    int paso = 1; // ".\n"
+
+                    for (int i = 0; i < datosPrestamo.Count; i++)
+                    {
+                        if (paso == 1)
+                        {
+                            mensaje = mensaje + "\n Se prestó: \n sigla:" + datosPrestamo[i];
+                        }
+                        else if (paso == 2)
+                        {
+                            mensaje = mensaje + "\n Cantidad: " + datosPrestamo[i];
+                        }
+                        else if (paso == 3)
+                        {
+                            mensaje = mensaje + "\n Observaciones: " + datosPrestamo[i];
+                        }
+                        else
+                        {
+                            mensaje = mensaje + "\n Fecha: " + datosPrestamo[i];
+                            paso = 0;
+                        }
+
+                        paso += 1;
+
+                    }
+
+                    MessageBox.Show(mensaje);
+
+                }
+
+            }
+        }
     }
 }
