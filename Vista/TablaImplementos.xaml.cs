@@ -28,10 +28,10 @@ namespace AlphaSport.Vista
             InitializeComponent();
             entorno = Entorno.GetInstance();
             lab1.Content = entorno.PROYECTO;
-            mostrarTabla();
+            MostrarTabla();
         }
 
-        public void mostrarTabla()
+        public void MostrarTabla()
         {
             DataTable dt = entorno.TablaImplementos();
             dtgrid1.ItemsSource = dt.DefaultView;
@@ -56,7 +56,7 @@ namespace AlphaSport.Vista
             this.Hide();
         }
 
-        private void bt1_Click(object sender, RoutedEventArgs e)
+        private void Bt1_Click(object sender, RoutedEventArgs e)
         {
             //Window prestar = new Prestar();
 
@@ -64,7 +64,7 @@ namespace AlphaSport.Vista
             this.Hide();
         }
 
-        private void bt2_Click(object sender, RoutedEventArgs e)
+        private void Bt2_Click(object sender, RoutedEventArgs e)
         {
             Window prestados = new ConsultarPrestamos();
 
