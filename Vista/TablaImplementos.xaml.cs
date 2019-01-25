@@ -61,15 +61,7 @@ namespace AlphaSport.Vista
             prestamos.Show();
             this.Hide();
         }
-
-        private void Bt2_Click(object sender, RoutedEventArgs e)
-        {
-            Window prestados = new ConsultarPrestamos();
-
-            prestados.Show();
-            this.Hide();
-        }
-
+                
         private void Bt3_Click(object sender, RoutedEventArgs e)
         {
             Window casilleros = Casilleros.GetInstance();

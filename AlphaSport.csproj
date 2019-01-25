@@ -132,9 +132,6 @@
     <Compile Include="Vista\Casilleros.xaml.cs">
       <DependentUpon>Casilleros.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Vista\ConsultarPrestamos.xaml.cs">
-      <DependentUpon>ConsultarPrestamos.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Vista\Cupos.xaml.cs">
       <DependentUpon>Cupos.xaml</DependentUpon>
     </Compile>
@@ -183,10 +180,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Vista\Casilleros.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Vista\ConsultarPrestamos.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
