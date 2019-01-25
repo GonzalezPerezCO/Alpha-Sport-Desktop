@@ -39,8 +39,8 @@ namespace AlphaSport.Vista
 
         private void Ocultar()
         {
-            Casilleros casilleros = Casilleros.GetInstance();
-            casilleros.Show();
+            PrestamosImpl prestamos = PrestamosImpl.GetInstance();
+            prestamos.Show();
             this.Hide();
         }
 

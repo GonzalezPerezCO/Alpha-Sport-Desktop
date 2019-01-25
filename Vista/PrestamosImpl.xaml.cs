@@ -85,5 +85,10 @@ namespace AlphaSport.Vista
         {
             MostrarTabla();
         }
+
+        private void Grid_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            MostrarTabla();
+        }
     }
 }
