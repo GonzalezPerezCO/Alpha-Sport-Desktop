@@ -23,7 +23,7 @@ namespace AlphaSport.Vista
         private Entorno entorno;
         private static VentanaPrestamosImpl instance = null;
 
-        public VentanaPrestamosImpl()
+        private VentanaPrestamosImpl()
         {
             InitializeComponent();
             entorno = Entorno.GetInstance();
@@ -37,14 +37,21 @@ namespace AlphaSport.Vista
             return instance;
         }
 
+        private void Ocultar()
+        {
+            Casilleros casilleros = Casilleros.GetInstance();
+            casilleros.Show();
+            this.Hide();
+        }
+
         private void Btn1_Click(object sender, RoutedEventArgs e)
         {
-
+            Ocultar();
         }
 
         private void Btn2_Click(object sender, RoutedEventArgs e)
         {
-
+            Ocultar();
         }
 
         private void Window_Closed(object sender, EventArgs e)

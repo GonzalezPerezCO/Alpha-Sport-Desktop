@@ -119,7 +119,7 @@ namespace AlphaSport.Vista
                         entorno.AgregarEstudianteCasillero(codigoCas, codigoEs);
                         Debug.WriteLine("<<< Prestamo: id_c = " + codigoCas + ", codigoEst = " + codigoEs + ".");
                         MessageBox.Show("Casillero asignado!");
-                        ActualizarListaDisp();
+                        ActualizarListaDisp(); // actualiza lista y oculta esta ventana
                     }
                 }
             }
