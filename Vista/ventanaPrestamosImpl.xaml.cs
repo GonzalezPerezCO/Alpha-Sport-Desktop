@@ -118,7 +118,8 @@ namespace AlphaSport.Vista
         }
 
         private void Cmbox_Sigla_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {   
+        {
+            siglaSelect = cmbox_Sigla.SelectedValue.ToString();
             ActualizarCmbxDisponibles();
             cmbox_Cant.IsEnabled = true;
         }
@@ -137,8 +138,7 @@ namespace AlphaSport.Vista
         private void Btn3_Click(object sender, RoutedEventArgs e)
         {
             // capturar datos
-
-            siglaSelect = cmbox_Sigla.SelectedValue.ToString();
+            // sigla en Cmbox_Sigla_SelectionChanged()
             codigoEs = Convert.ToUInt64(codigo.Text);
             cantidad = Convert.ToUInt32(cmbox_Cant.SelectedValue.ToString());
 
