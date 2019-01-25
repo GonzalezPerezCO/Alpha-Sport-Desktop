@@ -125,6 +125,7 @@ namespace AlphaSport.Vista
             codigo.Text = "";
             cmbox_Sigla.SelectedValue = null;
             cmbox_Cant.SelectedValue = null;
+            cmbox_Cant.IsEnabled = false;
 
             codigo.Focus();
         }
