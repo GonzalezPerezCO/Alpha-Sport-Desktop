@@ -143,6 +143,13 @@ namespace AlphaSport.Controller
             return connection.ListaUnicaReader(query);
         }
 
+        public List<string> Implementos_disponiblesCantidades()
+        {
+            string query = "SELECT GROUP_CONCAT(sigla, disponibles) FROM timplementos ORDER by id_i;";
+            return connection.ListaUnicaReader(query);
+        }
+        
+
         public List<string> Cupos()
         {
             string query = "SELECT GROUP_CONCAT(id,',',Lunes,',',Martes,',',Miercoles,',',Jueves,',',Viernes) FROM tcupos LIMIT 1;";
