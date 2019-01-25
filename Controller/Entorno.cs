@@ -222,6 +222,24 @@ namespace AlphaSport.Controller
             return result;
         }
 
+        public List<string> AddImplemento(UInt64 codigo, string concepto, string mensaje)
+        {   
+            string query = "CALL fallaYasistencia(" + codigo + ", '" + concepto + "', '" + mensaje + "'); SELECT fallas, asistencias from testudiantes WHERE codigo=" + codigo + "; ";
+
+            List<string> result = connection.QuerySumarAsistencia(query);
+
+            return result;
+        }
+
+        public List<string> DevuelveImplemento(UInt64 codigo, string concepto, string mensaje)
+        {   
+            string query = "CALL fallaYasistencia(" + codigo + ", '" + concepto + "', '" + mensaje + "'); SELECT fallas, asistencias from testudiantes WHERE codigo=" + codigo + "; ";
+
+            List<string> result = connection.QuerySumarAsistencia(query);
+
+            return result;
+        }
+
         public DataTable TablaInscritos()
         {
             Debug.WriteLine("MOSTRAR TABLA INSCRITOS");

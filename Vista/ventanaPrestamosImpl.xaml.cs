@@ -98,6 +98,7 @@ namespace AlphaSport.Vista
 
         private void Btn2_Click(object sender, RoutedEventArgs e)
         {
+            Limpiar();
             Ocultar();
         }
 
