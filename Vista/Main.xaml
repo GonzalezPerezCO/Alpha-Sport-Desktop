@@ -13,7 +13,7 @@
                 <ImageBrush Stretch="UniformToFill" ImageSource="/GonzalezPerezCO;component/Recursos/gym.jpg" Opacity="0.7"/>
             </Button.Background>
         </Button>
-        <Button x:Name="btn2" Content="Deportes" HorizontalAlignment="Center" VerticalAlignment="Center" Width="798" Height="892" Margin="794,0,0,0" FontSize="48" FontWeight="Bold" Click="btn2_Click">
+        <Button x:Name="btn2" Content="Deportes" HorizontalAlignment="Center" VerticalAlignment="Center" Width="798" Height="892" Margin="794,0,0,0" FontSize="48" FontWeight="Bold" Click="Btn2_Click">
             <Button.Background>
                 <ImageBrush Stretch="UniformToFill" ImageSource="/GonzalezPerezCO;component/Recursos/deportes.jpg" Opacity="0.7"/>
             </Button.Background>

@@ -69,9 +69,9 @@ namespace AlphaSport.Vista
             this.Hide();
         }
 
-        private void btn2_Click(object sender, RoutedEventArgs e)
+        private void Btn2_Click(object sender, RoutedEventArgs e)
         {
-            Window tabla = new TablaImplementos();
+            TablaImplementos tabla = TablaImplementos.GetInstance();
             tabla.Show();
             this.Hide();
         }
