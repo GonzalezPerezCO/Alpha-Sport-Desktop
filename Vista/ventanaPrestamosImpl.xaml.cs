@@ -29,6 +29,7 @@ namespace AlphaSport.Vista
         private string siglaSelect;
         private UInt64 codigoEs;
         private UInt32 cantidad;
+        private string observacion;
 
         private VentanaPrestamosImpl()
         {
@@ -36,11 +37,7 @@ namespace AlphaSport.Vista
             entorno = Entorno.GetInstance();
 
             listaDisponibles = new List<string>();
-            listaCantDisponibles = new List<int>();
-
-            siglaSelect = "";
-            codigoEs = 0;
-            cantidad = 0;
+            listaCantDisponibles = new List<int>();            
 
             Limpiar();
 
@@ -72,6 +69,11 @@ namespace AlphaSport.Vista
             cmbox_Cant.ItemsSource = Listar(entorno.Implementos_dispCabtidad_sigla(siglaSelect));
         }
 
+        private void ActualizarCmbxDevolucion()
+        {
+            cmbox_Cant.ItemsSource = Listar(entorno.Implementos_dispPrestamo_sigla(siglaSelect, codigoEs));
+        }
+
         /// <summary>
         /// Conla cantidad de disponibles de una Impl deportivo por su sigla, genera una lista de 1 hasta esa cantidad
         /// </summary>
@@ -93,6 +95,19 @@ namespace AlphaSport.Vista
 
         private void Btn1_Click(object sender, RoutedEventArgs e)
         {
+            bool esDevolver = chbox.IsChecked ?? false;
+            observacion = obs1.Text;
+            string mensaje = ""; // mensaje para mostrar al terminar o fallar
+
+            if (!esDevolver) // caso de prestamo
+            {
+                mensaje = entorno.AddImplementoPrestamo(siglaSelect, codigoEs, cantidad, observacion);
+            }
+            else
+            {
+                mensaje = entorno.DevuelveImplementoPrestamo(siglaSelect, codigoEs, cantidad);
+            }
+
             Ocultar();
         }
 
@@ -121,18 +136,23 @@ namespace AlphaSport.Vista
         private void Cmbox_Sigla_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             siglaSelect = cmbox_Sigla.SelectedValue.ToString();
-            ActualizarCmbxDisponibles();
-            cmbox_Cant.IsEnabled = true;
+            chbox.IsEnabled = true;
         }
 
         private void Cmbox_Cant_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            chbox.IsEnabled = false;
+
             cantidad = Convert.ToUInt32(cmbox_Cant.SelectedValue.ToString());
-            cmbox_Sigla.IsEnabled = false;
         }
 
         private void Limpiar()
         {
+            siglaSelect = "";
+            codigoEs = 0;
+            cantidad = 0;
+            observacion = "";
+
             codigo.Text = "";
             cmbox_Sigla.SelectedValue = null;
             cmbox_Cant.SelectedValue = null;
@@ -140,6 +160,12 @@ namespace AlphaSport.Vista
             codigo.IsEnabled = true;
             cmbox_Cant.IsEnabled = false;
             cmbox_Sigla.IsEnabled = false;
+
+            chbox.IsEnabled = false;
+            chbox.IsChecked = false;
+
+            obs1.Text = "";
+            obs1.IsEnabled = false;
 
             codigo.Focus();
         }
@@ -165,6 +191,23 @@ namespace AlphaSport.Vista
         private void Btn4_Click(object sender, RoutedEventArgs e)
         {
             Limpiar();
+        }
+
+        private void Chbox_Checked(object sender, RoutedEventArgs e)
+        {
+            obs1.IsEnabled = true;
+            cmbox_Cant.IsEnabled = true;
+
+            bool esDevolver = chbox.IsChecked ?? false;
+
+            if (!esDevolver) // caso prestamo
+            {
+                ActualizarCmbxDisponibles();
+            }
+            else
+            {
+                ActualizarCmbxDevolucion();
+            }
         }
     }
 }

@@ -294,6 +294,62 @@ namespace AlphaSport.Controller
             return result;
         }
 
+        public string AddImplementoPrestamo(string query)
+        {
+            string result = "";
+
+            Debug.WriteLine(" ----  ADD_IMPL_PRESTAMO");
+
+            this.OpenConnection();
+
+            cmd = new MySqlCommand(query, connection);
+
+            try
+            {
+                reader = cmd.ExecuteReader();
+            }
+            catch (MySqlException ex)
+            {
+                Debug.WriteLine("<<< catch : " + ex.Message);
+                result = ex.Message;
+            }
+
+
+            this.CloseConnection();
+
+            Debug.WriteLine(" ----   ADD_IMPL_PRESTAMO result: retorna");
+
+            return result;
+        }
+
+        public string DevuelveImplementoPrestamo(string query)
+        {
+            string result = "";
+
+            Debug.WriteLine(" ----  DEVUELVE_IMPL_PRESTAMO");
+
+            this.OpenConnection();
+
+            cmd = new MySqlCommand(query, connection);
+
+            try
+            {
+                reader = cmd.ExecuteReader();
+            }
+            catch (MySqlException ex)
+            {
+                Debug.WriteLine("<<< catch : " + ex.Message);
+                result = ex.Message;
+            }
+
+
+            this.CloseConnection();
+
+            Debug.WriteLine(" ----   DEVUELVE_IMPL_PRESTAMO result: retorna");
+
+            return result;
+        }
+
         public List<List<string>> CasillerosDisponiblesReader(string queryDisp, string querySecc)
         {
             reader = null;

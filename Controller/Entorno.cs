@@ -160,7 +160,13 @@ namespace AlphaSport.Controller
             string query = "SELECT disponibles FROM timplementos  WHERE sigla = '" + sigla + "' ORDER by id_i;";
             return connection.ListaUnicaReader(query);
         }
-                
+
+        public List<string> Implementos_dispPrestamo_sigla(string sigla, UInt64 codigo)
+        {
+            string query = "SELECT prestados FROM tprestamos  WHERE sigla = '"+sigla+"' AND codigo = "+codigo+";";
+            return connection.ListaUnicaReader(query);
+        }
+
         public List<string> Cupos()
         {
             string query = "SELECT GROUP_CONCAT(id,',',Lunes,',',Martes,',',Miercoles,',',Jueves,',',Viernes) FROM tcupos LIMIT 1;";
@@ -222,20 +228,20 @@ namespace AlphaSport.Controller
             return result;
         }
 
-        public List<string> AddImplemento(UInt64 codigo, string concepto, string mensaje)
-        {   
-            string query = "CALL fallaYasistencia(" + codigo + ", '" + concepto + "', '" + mensaje + "'); SELECT fallas, asistencias from testudiantes WHERE codigo=" + codigo + "; ";
+        public string AddImplementoPrestamo(string sigla, UInt64 codigo, UInt32 cantidad, string obs)
+        {
+            string query = "CALL addImplemento('"+sigla+"',"+codigo+","+cantidad+",'"+obs+"');";
 
-            List<string> result = connection.QuerySumarAsistencia(query);
+            string result = connection.AddImplementoPrestamo(query);
 
-            return result;
+            return result; 
         }
 
-        public List<string> DevuelveImplemento(UInt64 codigo, string concepto, string mensaje)
-        {   
-            string query = "CALL fallaYasistencia(" + codigo + ", '" + concepto + "', '" + mensaje + "'); SELECT fallas, asistencias from testudiantes WHERE codigo=" + codigo + "; ";
+        public string DevuelveImplementoPrestamo(string sigla, UInt64 codigo, UInt32 cantidad)
+        {
+            string query = "CALL devuelveImple('"+sigla+"',"+codigo+","+cantidad+");";
 
-            List<string> result = connection.QuerySumarAsistencia(query);
+            string result = connection.DevuelveImplementoPrestamo(query);
 
             return result;
         }
