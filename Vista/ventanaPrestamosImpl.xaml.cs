@@ -23,8 +23,8 @@ namespace AlphaSport.Vista
         private Entorno entorno;
         private static VentanaPrestamosImpl instance = null;
 
-        private List<string> listaDisponibles;
-        private List<string> listaCantDisponibles;
+        private List<string> listaDisponibles; // lista de disponibles por sigla
+        private List<string> listaCantDisponibles; // lista de disponibles de una sigla
 
         private VentanaPrestamosImpl()
         {
@@ -48,11 +48,12 @@ namespace AlphaSport.Vista
             PrestamosImpl prestamos = PrestamosImpl.GetInstance();
             prestamos.Show();
             this.Hide();
-        }
+        }  
 
-        private void ActualizarDisponibles()
+        private void ActualizarCmbx()
         {
-
+            cmbox_Sigla.ItemsSource = listaDisponibles;
+            cmbox_Cant.ItemsSource = listaCantDisponibles;
         }
 
         private void Btn1_Click(object sender, RoutedEventArgs e)
