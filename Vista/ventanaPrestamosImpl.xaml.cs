@@ -34,7 +34,7 @@ namespace AlphaSport.Vista
             entorno = Entorno.GetInstance();
 
             listaDisponibles = new List<string>();
-            listaCantDisponibles = new List<string>();
+            listaCantDisponibles = new List<int>();
 
             siglaSelect = "";
 
@@ -68,9 +68,14 @@ namespace AlphaSport.Vista
             cmbox_Cant.ItemsSource = Listar(entorno.Implementos_dispCabtidad_sigla(siglaSelect));
         }
 
-        private List<string> Listar(List<string> lista)
+        /// <summary>
+        /// Conla cantidad de disponibles de una Impl deportivo por su sigla, genera una lista de 1 hasta esa cantidad
+        /// </summary>
+        /// <param name="lista">lista de resultado query</param>
+        /// <returns></returns>
+        private List<int> Listar(List<string> lista)
         {
-            List<string> sucesion = new List<string>();
+            List<int> sucesion = new List<int>();
 
             int maximo = Convert.ToInt32(lista[0]);
 

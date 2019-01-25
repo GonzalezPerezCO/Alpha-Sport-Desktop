@@ -18,6 +18,6 @@
         <Label Content="Codigo Impl Deportivo" HorizontalAlignment="Left" Margin="47,173,0,0" VerticalAlignment="Top" Width="200" FontSize="18" Grid.ColumnSpan="2"/>
         <Label Content="Cantidad" HorizontalAlignment="Left" Margin="50,173,0,0" VerticalAlignment="Top" Width="200" FontSize="18" Grid.Column="1"/>
         <ComboBox x:Name="cmbox_Cant" HorizontalAlignment="Right" Margin="0,226,88,320" VerticalAlignment="Center" Width="122" Height="46" FontSize="18" RenderTransformOrigin="1.034,0.603" Grid.Column="1"/>
-        <ComboBox x:Name="cmbox_Sigla" HorizontalAlignment="Right" Margin="0,226,63,320" VerticalAlignment="Center" Width="122" Height="46" FontSize="18" RenderTransformOrigin="1.034,0.603"/>
+        <ComboBox x:Name="cmbox_Sigla" HorizontalAlignment="Right" Margin="0,226,63,320" VerticalAlignment="Center" Width="122" Height="46" FontSize="18" RenderTransformOrigin="1.034,0.603" SelectionChanged="Cmbox_Sigla_SelectionChanged"/>
     </Grid>
 </Window>
