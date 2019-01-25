@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AlphaSport.Controller;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,21 @@ namespace AlphaSport.Vista
     /// </summary>
     public partial class VentanaPrestamosImpl : Window
     {
+        private Entorno entorno;
+        private static VentanaPrestamosImpl instance = null;
+
         public VentanaPrestamosImpl()
         {
             InitializeComponent();
+            entorno = Entorno.GetInstance();
+        }
+
+        public static VentanaPrestamosImpl GetInstance()
+        {
+            if (instance == null)
+                instance = new VentanaPrestamosImpl();
+
+            return instance;
         }
 
         private void Btn1_Click(object sender, RoutedEventArgs e)

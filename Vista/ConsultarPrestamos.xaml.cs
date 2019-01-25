@@ -34,14 +34,14 @@ namespace AlphaSport.Vista
             Application.Current.Shutdown();
         }
 
-        private void btn1_Click(object sender, RoutedEventArgs e)
+        private void Btn1_Click(object sender, RoutedEventArgs e)
         {
-            Window tabla = new TablaImplementos();
+            TablaImplementos tabla = TablaImplementos.GetInstance();
             tabla.Show();
             this.Hide();
         }
 
-        private void btn2_Click(object sender, RoutedEventArgs e)
+        private void Btn2_Click(object sender, RoutedEventArgs e)
         {
 
         }

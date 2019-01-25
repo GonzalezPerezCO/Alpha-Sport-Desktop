@@ -22,13 +22,22 @@ namespace AlphaSport.Vista
     public partial class TablaImplementos : Window
     {
         private Entorno entorno;
+        private static TablaImplementos instance;
 
-        public TablaImplementos()
+        private TablaImplementos()
         {
             InitializeComponent();
             entorno = Entorno.GetInstance();
             lab1.Content = entorno.PROYECTO;
             MostrarTabla();
+        }
+
+        public static TablaImplementos GetInstance()
+        {
+            if (instance == null)
+                instance = new TablaImplementos();
+
+            return instance;
         }
 
         public void MostrarTabla()
@@ -57,8 +66,8 @@ namespace AlphaSport.Vista
 
         private void Bt1_Click(object sender, RoutedEventArgs e)
         {
-            Window ventanaPrestamos = new VentanaPrestamosImpl();
 
+            VentanaPrestamosImpl ventanaPrestamos = VentanaPrestamosImpl.GetInstance();
             ventanaPrestamos.Show();
             this.Hide();
         }
