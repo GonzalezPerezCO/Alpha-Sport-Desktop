@@ -24,7 +24,9 @@ namespace AlphaSport.Vista
         private static VentanaPrestamosImpl instance = null;
 
         private List<string> listaDisponibles; // lista de disponibles por sigla
-        private List<string> listaCantDisponibles; // lista de disponibles de una sigla
+        private List<int> listaCantDisponibles; // lista de disponibles de una sigla
+
+        private string siglaSelect;
 
         private VentanaPrestamosImpl()
         {
@@ -33,6 +35,12 @@ namespace AlphaSport.Vista
 
             listaDisponibles = new List<string>();
             listaCantDisponibles = new List<string>();
+
+            siglaSelect = "";
+
+            Limpiar();
+
+            ActualizarCmbxSiglas();
         }
 
         public static VentanaPrestamosImpl GetInstance()
@@ -50,10 +58,28 @@ namespace AlphaSport.Vista
             this.Hide();
         }  
 
-        private void ActualizarCmbx()
+        private void ActualizarCmbxSiglas()
         {
-            cmbox_Sigla.ItemsSource = listaDisponibles;
-            cmbox_Cant.ItemsSource = listaCantDisponibles;
+            cmbox_Sigla.ItemsSource = entorno.Implementos_disponiblesSigla();
+        }
+
+        private void ActualizarCmbxDisponibles()
+        {
+            cmbox_Cant.ItemsSource = Listar(entorno.Implementos_dispCabtidad_sigla(siglaSelect));
+        }
+
+        private List<string> Listar(List<string> lista)
+        {
+            List<string> sucesion = new List<string>();
+
+            int maximo = Convert.ToInt32(lista[0]);
+
+            for (int i = 1; i <= maximo; i++)
+            {
+                sucesion.Add(i);
+            }
+
+            return sucesion;
         }
 
         private void Btn1_Click(object sender, RoutedEventArgs e)
@@ -74,6 +100,28 @@ namespace AlphaSport.Vista
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             Application.Current.Shutdown();
+        }
+
+        private void Window_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            Limpiar();
+            ActualizarCmbxSiglas();
+        }
+
+        private void Cmbox_Sigla_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            siglaSelect = cmbox_Sigla.ToString();
+            ActualizarCmbxDisponibles();
+            cmbox_Cant.IsEnabled = true;
+        }
+
+        private void Limpiar()
+        {
+            codigo.Text = "";
+            cmbox_Sigla.SelectedValue = null;
+            cmbox_Cant.SelectedValue = null;
+
+            codigo.Focus();
         }
     }
 }
