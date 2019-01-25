@@ -207,7 +207,7 @@ namespace AlphaSport.Controller
         public DataTable TablaInscritos()
         {
             Debug.WriteLine("MOSTRAR TABLA INSCRITOS");
-            string query = "SELECT sigla AS SIGLA, codigo AS CODIGO, prestados AS CANT, entrada AS Entrada, observacion AS Observaciones FROM tprestamos;";
+            string query = "SELECT reserva AS RESERVA, documento AS DOCUMENTO, nombre AS NOMBRES, apellido AS APELLIDOS, codigo AS CODIGO, carrera as CARRERA, semestre AS SEM, examen AS EXAM from testudiantes;";
             DataTable dt = connection.MostrarTabla(query);
             Debug.WriteLine("RECIBIR READER EN TABLE INSCRITOS");
 
@@ -217,7 +217,7 @@ namespace AlphaSport.Controller
         public DataTable TablaPrestamos()
         {
             Debug.WriteLine("MOSTRAR TABLA PRESTAMOS");
-            string query = "";
+            string query = "SELECT sigla AS SIGLA, codigo AS CODIGO, prestados AS CANT, entrada AS Entrada, observacion AS Observaciones FROM tprestamos;";
             DataTable dt = connection.MostrarTabla(query);
             Debug.WriteLine("RECIBIR READER EN TABLE INSCRITOS");
 

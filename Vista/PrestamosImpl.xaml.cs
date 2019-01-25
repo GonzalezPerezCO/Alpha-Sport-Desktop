@@ -35,7 +35,7 @@ namespace AlphaSport.Vista
             MostrarTabla();
         }
 
-    public static PrestamosImpl GetInstance()
+        public static PrestamosImpl GetInstance()
         {
             if (instance == null)
                 instance = new PrestamosImpl();
