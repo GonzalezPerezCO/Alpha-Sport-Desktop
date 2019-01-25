@@ -14,6 +14,12 @@
         <Button x:Name="Bt1" Content="Prestamos" Margin="0,319,1427,0" VerticalAlignment="Top" Width="130" HorizontalAlignment="Right" Background="#FFFFDA33" Click="Bt1_Click"/>
         <Button x:Name="Bt2" Content="Volver" HorizontalAlignment="Right" Margin="0,157,31,0" VerticalAlignment="Top" Width="74" Click="Bt2_Click"/>
         <Button x:Name="Bt3" Content="Menú principal" HorizontalAlignment="Right" Margin="0,738,10.276,0" VerticalAlignment="Top" Width="130" RenderTransformOrigin="0.52,2.5" FontWeight="Bold" Height="48" Background="#FFFFDA33" Click="Bt5_Click"/>
+        <DataGrid x:Name="dtgrid1" Height="597" Margin="336,222,392,0" VerticalAlignment="Top" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Width="864"/>
+        <Button x:Name="Bt4" Content="Actualizar tabla de cupos" HorizontalAlignment="Center" Margin="336,192,392,0" VerticalAlignment="Top" Width="864" FontWeight="Bold" FontSize="16" Click="Bt4_Click">
+            <Button.Background>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.MenuHighlightColorKey}}"/>
+            </Button.Background>
+        </Button>
 
     </Grid>
 </Window>

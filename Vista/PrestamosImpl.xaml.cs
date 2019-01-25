@@ -1,6 +1,7 @@
 ﻿using AlphaSport.Controller;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,9 +31,11 @@ namespace AlphaSport.Vista
             InitializeComponent();
             entorno = Entorno.GetInstance();
             lab1.Content = entorno.PROYECTO;
+
+            MostrarTabla();
         }
 
-        public static PrestamosImpl GetInstance()
+    public static PrestamosImpl GetInstance()
         {
             if (instance == null)
                 instance = new PrestamosImpl();
@@ -70,6 +73,17 @@ namespace AlphaSport.Vista
             implementos.Show();
             this.Hide();
 
+        }
+
+        private void MostrarTabla()
+        {
+            DataTable dt = entorno.TablaPrestamos();
+            dtgrid1.ItemsSource = dt.DefaultView;
+        }
+
+        private void Bt4_Click(object sender, RoutedEventArgs e)
+        {
+            MostrarTabla();
         }
     }
 }
