@@ -58,9 +58,9 @@ namespace AlphaSport.Vista
 
         private void bt1_Click(object sender, RoutedEventArgs e)
         {
-            Window prestar = new Prestar();
+            //Window prestar = new Prestar();
 
-            prestar.Show();
+            //prestar.Show();
             this.Hide();
         }
 
