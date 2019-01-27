@@ -119,9 +119,9 @@
             <Button x:Name="Btn79" Grid.Row ="9" Grid.Column="6" Click="EventoClick" Tag="79,h">Casillero 79</Button>
             <Button x:Name="Btn80" Grid.Row ="9" Grid.Column="7" Click="EventoClick" Tag="80,h">Casillero 80</Button>
         </Grid>
-        <Button x:Name="buscar" Content="Buscar" HorizontalAlignment="Right" Margin="0,121,232.866,25" Width="89" Grid.Column="1" Background="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}" Click="Buscar_Click" VerticalAlignment="Center" Height="25"/>
-        <TextBox x:Name="codigo" Grid.Column="1" HorizontalAlignment="Right" Height="56" Margin="0,52,15.866,63" TextWrapping="Wrap" VerticalAlignment="Center" Width="306" FontWeight="Bold" FontSize="18" MaxLines="1" MaxLength="11" TextOptions.TextHintingMode="Fixed"/>
-        <Button x:Name="prestamo" Content="Prestamos" HorizontalAlignment="Right" Margin="0,121,15.866,25" Width="89" Grid.Column="1" Background="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}" Click="Prestamo_Click" VerticalAlignment="Center" Height="25"/>
+        <Button x:Name="buscar" Content="Buscar" HorizontalAlignment="Right" Margin="0,148,-47.134,15" Width="89" Grid.Column="1" Background="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}" Click="Buscar_Click" VerticalAlignment="Center" Height="25" RenderTransformOrigin="2.107,-1.14"/>
+        <TextBox x:Name="codigo" Grid.Column="1" HorizontalAlignment="Right" Height="27" Margin="0,146,68.866,15" TextWrapping="Wrap" VerticalAlignment="Center" Width="134" FontWeight="Bold" FontSize="18" MaxLines="1" MaxLength="11" TextOptions.TextHintingMode="Fixed" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Button x:Name="prestamo" Content="Prestamos" HorizontalAlignment="Right" Margin="0,461,-34.134,-298" Width="89" Grid.Column="1" Background="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}" Click="Prestamo_Click" VerticalAlignment="Center" Height="25"/>
 
     </Grid>
 
