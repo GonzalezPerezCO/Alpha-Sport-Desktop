@@ -293,61 +293,7 @@ namespace AlphaSport.Controller
 
             return result;
         }
-
-        public List<string> AddImplementoPrestamo(string query)
-        {
-            List<string> result = new List<string>(); ;
-
-            Debug.WriteLine(" ----  ADD_IMPL_PRESTAMO");
-
-            this.OpenConnection();
-
-            cmd = new MySqlCommand(query, connection);
-
-            try
-            {
-                reader = cmd.ExecuteReader();
-            }
-            catch (MySqlException ex)
-            {
-                Debug.WriteLine("<<< catch : " + ex.Message);
-                result.Add(ex.Message);
-            }
-
-            this.CloseConnection();
-
-            Debug.WriteLine(" ----   ADD_IMPL_PRESTAMO result: retorna");
-
-            return result;
-        }
-
-        public List<string> DevuelveImplementoPrestamo(string query)
-        {
-            List<string> result = new List<string>();
-
-            Debug.WriteLine(" ----  DEVUELVE_IMPL_PRESTAMO");
-
-            this.OpenConnection();
-
-            cmd = new MySqlCommand(query, connection);
-
-            try
-            {
-                reader = cmd.ExecuteReader();
-            }
-            catch (MySqlException ex)
-            {
-                Debug.WriteLine("<<< catch : " + ex.Message);
-                result.Add(ex.Message);
-            }
-
-
-            this.CloseConnection();
-
-            Debug.WriteLine(" ----   DEVUELVE_IMPL_PRESTAMO result: retorna");
-
-            return result;
-        }
+        
 
         public List<List<string>> CasillerosDisponiblesReader(string queryDisp, string querySecc)
         {
@@ -533,7 +479,7 @@ namespace AlphaSport.Controller
             reader = null;
             List<string> result = new List<string>();
 
-            Debug.WriteLine(" ----   QUERY READER OPEN CONNECTION casilleors disponibles reader");
+            Debug.WriteLine(" ----   QUERY READER OPEN CONNECTION ListaUnicaReader reader");
 
             this.OpenConnection();
 
@@ -541,7 +487,7 @@ namespace AlphaSport.Controller
 
             try
             {
-                Debug.WriteLine(" ----   RESULT QERY TRY recibido casilleors disponibles reader: " + query);
+                Debug.WriteLine(" ----   RESULT QERY TRY recibido ListaUnicaReader disponibles reader: " + query);
                 reader = cmd.ExecuteReader();
 
                 while (reader.Read())
@@ -549,7 +495,7 @@ namespace AlphaSport.Controller
                     result.Add(reader.GetString(0));
                 }
 
-                Debug.WriteLine(" ----   RESULT QERY READER casilleors disponibles reader: ");
+                Debug.WriteLine(" ----   RESULT QERY READER ListaUnicaReader disponibles reader: ");
                 foreach (var item in result)
                 {
                     Debug.WriteLine(" ---- " + item.ToString());
@@ -557,7 +503,7 @@ namespace AlphaSport.Controller
             }
             catch (MySqlException ex)
             {
-                Debug.WriteLine(" ----   CATCH QERY READER casilleors disponibles reader: " + ex);
+                Debug.WriteLine(" ----   CATCH QERY READER ListaUnicaReader disponibles reader: " + ex);
                 result.Add("ERROR");
                 result.Add(ex.Message);
             }

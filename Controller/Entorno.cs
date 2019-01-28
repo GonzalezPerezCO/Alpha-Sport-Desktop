@@ -247,7 +247,7 @@ namespace AlphaSport.Controller
         {
             string query = "CALL addImplemento('"+sigla+"',"+codigo+","+cantidad+",'"+obs+"');";
 
-            List<string> result = connection.AddImplementoPrestamo(query);
+            List<string> result = connection.ListaUnicaReader(query);
 
             return result; 
         }
@@ -256,7 +256,7 @@ namespace AlphaSport.Controller
         {
             string query = "CALL devuelveImple('"+sigla+"',"+codigo+","+cantidad+");";
 
-            List<string> result = connection.DevuelveImplementoPrestamo(query);
+            List<string> result = connection.ListaUnicaReader(query);
 
             return result;
         }

@@ -110,22 +110,25 @@ namespace AlphaSport.Vista
         }
 
         private void Btn1_Click(object sender, RoutedEventArgs e)
-        {   
-            
+        {               
             List<string> lista = new List<string>();
+
+            if (obs1.Text == null || obs1.Text == "") obs1.Text = "nada";
+
+            observacion = obs1.Text;
 
             if (valor_pres) // caso prestamo
             {
                 lista = entorno.AddImplementoPrestamo(siglaSelect, codigoEs, cantidad, observacion);
 
-                if (lista[0] == entorno.ERRORSQL)
+                if (lista.Count != 0 && lista[0] == entorno.ERRORSQL)
                 {
-                    cmbox_Sigla.ItemsSource = null;
                     if (this.IsVisible) MessageBox.Show(lista[1]);
+                    Limpiar();
                 }
                 else
                 {
-                    cmbox_Sigla.ItemsSource = lista;
+                    Ocultar();
 
                 }
             }
@@ -134,18 +137,17 @@ namespace AlphaSport.Vista
                 lista = entorno.DevuelveImplementoPrestamo(siglaSelect, codigoEs, cantidad);
 
                 if (lista[0] == entorno.ERRORSQL)
-                {
-                    cmbox_Sigla.ItemsSource = null;
+                {                   
                     if (this.IsVisible) MessageBox.Show(lista[1]);
+                    Limpiar();
                 }
                 else
                 {
-                    cmbox_Sigla.ItemsSource = lista;
+                    Ocultar();
                 }
 
             }
-
-            Ocultar();
+            
         }
 
         private void Btn2_Click(object sender, RoutedEventArgs e)
@@ -181,7 +183,7 @@ namespace AlphaSport.Vista
             {
                 lista = entorno.Implementos_dispCabtidad_sigla(siglaSelect);
 
-                if (lista[0] == entorno.ERRORSQL)
+                if (lista.Count!=0 && lista[0] == entorno.ERRORSQL)
                 {
                     cmbox_Cant.ItemsSource = null;
                     if (this.IsVisible) MessageBox.Show(lista[1]);
@@ -195,7 +197,7 @@ namespace AlphaSport.Vista
             {
                 lista = entorno.Implementos_dispPrestamo_sigla(siglaSelect, codigoEs);
 
-                if (lista[0] == entorno.ERRORSQL)
+                if (lista.Count != 0 && lista[0] == entorno.ERRORSQL)
                 {
                     cmbox_Cant.ItemsSource = null;
                     if (this.IsVisible) MessageBox.Show(lista[1]);
@@ -211,7 +213,8 @@ namespace AlphaSport.Vista
 
         private void Cmbox_Cant_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            cantidad = Convert.ToUInt32(cmbox_Cant.SelectedValue.ToString());
+            Debug.WriteLine("<<< cantidad cmbx: "+ cmbox_Cant.SelectedValue.ToString());
+            cantidad = Convert.ToUInt32(cmbox_Cant.SelectedValue.ToString());            
 
             if (valor_pres) { obs1.IsEnabled = true; }
 
