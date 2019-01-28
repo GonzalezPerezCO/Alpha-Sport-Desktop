@@ -103,12 +103,11 @@ namespace AlphaSport.Vista
         }
 
         private void Btn1_Click(object sender, RoutedEventArgs e)
-        {
-            
-            observacion = obs1.Text;
+        {   
             string mensaje = ""; // mensaje para mostrar al terminar o fallar
+            valor_pres = chbox_pres.IsChecked ?? false;
 
-            if (!esDevolver) // caso de prestamo
+            if (valor_pres) // caso de prestamo
             {
                 mensaje = entorno.AddImplementoPrestamo(siglaSelect, codigoEs, cantidad, observacion);
             }
@@ -163,10 +162,10 @@ namespace AlphaSport.Vista
             observacion = "";
 
             codigo.Text = "";
+            codigo.IsEnabled = true;
             cmbox_Sigla.SelectedValue = null;
             cmbox_Cant.SelectedValue = null;
-
-            codigo.IsEnabled = true;
+                        
             cmbox_Cant.IsEnabled = false;
             cmbox_Sigla.IsEnabled = false;
 
@@ -179,7 +178,7 @@ namespace AlphaSport.Vista
             obs1.IsEnabled = false;
 
             codigo.Focus();
-            //bool esDevolver = chbox.IsChecked ?? false;
+            //bool variable = chbox.IsChecked ?? false;
         }
 
         private void Btn3_Click(object sender, RoutedEventArgs e)
