@@ -150,6 +150,7 @@ namespace AlphaSport.Vista
 
             if (lista[0] == entorno.ERRORSQL)
             {
+                cmbox.ItemsSource = new List<string>();
                 MessageBox.Show(lista[1]);
             }
             else 
