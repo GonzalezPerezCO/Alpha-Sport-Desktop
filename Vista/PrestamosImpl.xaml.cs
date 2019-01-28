@@ -129,12 +129,13 @@ namespace AlphaSport.Vista
             }
             else
             {
+                codigo.Text = "";
                 codigoEs = Convert.ToUInt64(codigo.Text.ToString());
                 string mensaje = "";
 
                 List<string> datosPrestamo = entorno.PrestamosEstudiante(codigoEs);
 
-                if (datosPrestamo.Count == 0)
+                if (datosPrestamo[0] == entorno.ERRORSQL)
                 {
                     mensaje = "El estudiante no tiene prestamos pendientes!";
                     MessageBox.Show(mensaje);

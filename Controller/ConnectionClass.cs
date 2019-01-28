@@ -559,6 +559,8 @@ namespace AlphaSport.Controller
             catch (MySqlException ex)
             {
                 Debug.WriteLine(" ----   CATCH QERY READER casilleors disponibles reader: " + ex);
+                result.Add("ERROR");
+                result.Add(ex.Message);
             }
 
             this.CloseConnection();

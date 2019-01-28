@@ -25,8 +25,11 @@ namespace AlphaSport.Controller
         public readonly string DEPORTES = "Alpha Sport: Sistema de Deportes";
         public string PERIODO = "Periodo Académico";
 
+        public readonly string ERRORSQL = "ERROR"; // para buscar error en result{ERROR, mensaje}
+
         public readonly List<string> DIAS = new List<string> { "LUNES", "MARTES", "MIERCOLES", "JUEVES", "VIERNES" };
         public readonly List<string> HORAS = new List<string> { "N/A", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17" };
+
 
         private static Entorno instance = null;
         private ConnectionClass connection;
