@@ -171,8 +171,10 @@ namespace AlphaSport.Vista
             cmbox_Sigla.IsEnabled = false;
 
             chbox_pres.IsEnabled = false;
+            chbox_pres.IsChecked = true;
+            chbox_dev.IsEnabled = false;            
             chbox_dev.IsChecked = false;
-            valor_pres = false;
+            valor_pres = true;
             valor_dev = false;
 
             obs1.Text = "";
@@ -219,37 +221,15 @@ namespace AlphaSport.Vista
                 valor_pres = chbox_pres.IsChecked ?? false;
                 chbox_dev.IsChecked = !valor_pres;
                 valor_dev = !valor_pres;
-                Debug.WriteLine("<< pres_PCH: pres = " + valor_pres + " ,dev= " + valor_dev);
+                Debug.WriteLine("<< pres: pres = " + valor_pres + ", dev= " + valor_dev);
             }
             else
             {
                 valor_dev = chbox_dev.IsChecked ?? false;
                 chbox_pres.IsChecked = !valor_dev;
                 valor_pres = !valor_dev;
-                Debug.WriteLine("<< dev_PCH: pres = " + valor_pres + " ,dev= " + valor_dev);
+                Debug.WriteLine("<< dev: pres = " + valor_pres + ", dev= " + valor_dev);
             }            
-        }
-
-        private void Chbox_Unchecked(object sender, RoutedEventArgs e)
-        {
-            CheckBox chk = (CheckBox)sender;
-
-            string name = chk.Name;
-
-            if (name == "chbox_pres")
-            {
-                valor_pres = chbox_pres.IsChecked ?? false;
-                chbox_dev.IsChecked = !valor_pres;
-                valor_dev = !valor_pres;
-                Debug.WriteLine("<< pres_UCH: pres = " + valor_pres + " ,dev= " + valor_dev);
-            }
-            else
-            {
-                valor_dev = chbox_dev.IsChecked ?? false;
-                chbox_pres.IsChecked = !valor_dev;
-                valor_pres = !valor_dev;
-                Debug.WriteLine("<< dev_UCH: pres = " + valor_pres + " ,dev= " + valor_dev);
-            }
-        }
+        }        
     }
 }
