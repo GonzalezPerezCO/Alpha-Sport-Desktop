@@ -61,7 +61,16 @@ namespace AlphaSport.Vista
 
         private void ActualizarCmbxSiglas()
         {
-            cmbox_Sigla.ItemsSource = entorno.Implementos_disponiblesSigla();
+            List<string> lista = entorno.Implementos_disponiblesSigla();
+            if (lista[0]==entorno.ERRORSQL)
+            {
+                cmbox_Sigla.ItemsSource = new List<string>();
+                if(this.IsVisible) MessageBox.Show(lista[1]);
+            }
+            else
+            {
+                cmbox_Sigla.ItemsSource = lista;
+            }
         }
 
         private void ActualizarCmbxDisponibles()
