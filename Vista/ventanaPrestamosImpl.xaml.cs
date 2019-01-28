@@ -52,7 +52,7 @@ namespace AlphaSport.Vista
         {
             PrestamosImpl prestamos = PrestamosImpl.GetInstance();
             prestamos.Show();
-            this.Hide();
+            this.Hide();            
         }
 
         private void ActualizarCmbxSiglas()
@@ -140,18 +140,19 @@ namespace AlphaSport.Vista
 
                 if (lista.Count != 0 && lista[0] == entorno.ERRORSQL)
                 {
-                    if (this.IsVisible) MessageBox.Show(lista[1]);
+                    //if (this.IsVisible) MessageBox.Show(lista[1]);
+                    MessageBox.Show(lista[1]);
                     Limpiar();
                 }
                 else if (lista.Count != 0 && lista[0] == entorno.INFOSQL)
-                {
-                    Limpiar();
+                {   
                     Ocultar();
+                    Limpiar();
                 }
                 else
-                {
-                    Limpiar();
+                {   
                     Ocultar();
+                    Limpiar();
                 }
 
             }
@@ -159,9 +160,9 @@ namespace AlphaSport.Vista
         }
 
         private void Btn2_Click(object sender, RoutedEventArgs e)
-        {
-            Limpiar();
+        {   
             Ocultar();
+            Limpiar();
         }
 
         private void Window_Closed(object sender, EventArgs e)
@@ -175,7 +176,7 @@ namespace AlphaSport.Vista
         }       
 
         private void Cmbox_Sigla_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
+        {            
             if (this.IsVisible) {
                 siglaSelect = cmbox_Sigla.SelectedValue.ToString();
                 List<string> lista = new List<string>();
@@ -190,7 +191,7 @@ namespace AlphaSport.Vista
                     if (lista.Count != 0 && lista[0] == entorno.ERRORSQL)
                     {
                         cmbox_Cant.ItemsSource = new List<string>();
-                        if (this.IsVisible) MessageBox.Show(lista[1]);
+                        MessageBox.Show(lista[1]);
                     }
                     else
                     {
@@ -204,7 +205,7 @@ namespace AlphaSport.Vista
                     if (lista.Count != 0 && lista[0] == entorno.ERRORSQL)
                     {
                         cmbox_Cant.ItemsSource = new List<string>();
-                        if (this.IsVisible) MessageBox.Show(lista[1]);
+                        MessageBox.Show(lista[1]);
                     }
                     else
                     {
@@ -244,8 +245,8 @@ namespace AlphaSport.Vista
             obs1.Text = "";
             codigo.IsEnabled = true;
 
-            cmbox_Sigla.SelectedValue = null;
-            cmbox_Cant.SelectedValue = null;
+            //cmbox_Sigla.SelectedValue = null; para evitar SelectionChange
+            //cmbox_Cant.SelectedValue = null;
                         
             cmbox_Cant.IsEnabled = false;
             cmbox_Sigla.IsEnabled = false;
