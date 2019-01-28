@@ -274,7 +274,7 @@ namespace AlphaSport.Controller
         public DataTable TablaPrestamos()
         {
             Debug.WriteLine("MOSTRAR TABLA PRESTAMOS");
-            string query = "SELECT sigla AS SIGLA, codigo AS CODIGO, prestados AS CANT, entrada AS Entrada, observacion AS Observaciones FROM tprestamos;";
+            string query = "SELECT nombre AS ImplDepor, sigla AS SIGLA, codigo AS CODIGO, prestados AS CANT, entrada AS Entrada, observacion AS Observaciones FROM tprestamos;";
             DataTable dt = connection.MostrarTabla(query);
             Debug.WriteLine("RECIBIR READER EN TABLE INSCRITOS");
 
