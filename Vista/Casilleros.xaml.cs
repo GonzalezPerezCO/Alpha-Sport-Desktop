@@ -290,5 +290,10 @@ namespace AlphaSport.Vista
         {
             ActualizarColores();
         }
+
+        private void Window_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            ActualizarColores();
+        }
     }
 }

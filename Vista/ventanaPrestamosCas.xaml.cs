@@ -33,7 +33,7 @@ namespace AlphaSport.Vista
 
             codigo.Focus();
 
-            lista = SepararIds(entorno.DisponiblesCasilleros());
+            //lista = SepararIds(entorno.DisponiblesCasilleros());
             ActualizarListaDisp();
         }        
 
@@ -44,7 +44,6 @@ namespace AlphaSport.Vista
 
             return instance;
         }
-
 
         private void Window_Closed(object sender, EventArgs e)
         {
@@ -147,8 +146,16 @@ namespace AlphaSport.Vista
 
         private void ActualizarListaDisp()
         {
-            lista = SepararIds(entorno.DisponiblesCasilleros());
-            cmbox.ItemsSource = lista;
+            lista = entorno.DisponiblesCasilleros();
+
+            if (lista[0] == entorno.ERRORSQL)
+            {
+                MessageBox.Show(lista[1]);
+            }
+            else 
+            {   lista = SepararIds(lista);
+                cmbox.ItemsSource = lista;                
+            }
             Ocultar();
         }        
     }

@@ -142,7 +142,7 @@ namespace AlphaSport.Controller
 
         public List<string> DisponiblesCasilleros()
         {
-            string query = "SELECT GROUP_CONCAT(id_c) FROM tcasilleros WHERE disponible = 1";
+            string query = "CALL casillerosDisponibles();";
             return connection.ListaUnicaReader(query);
         }
 
