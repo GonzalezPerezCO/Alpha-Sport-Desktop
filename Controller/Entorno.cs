@@ -148,9 +148,8 @@ namespace AlphaSport.Controller
 
         public List<string> PrestamosEstudiante(UInt64 codigo)
         {
-            string query1 = "CALL validarEstudianteDeportes("+codigo+", '','');";
-            string query2 = "SELECT GROUP_CONCAT(sigla,',',prestados,',',observacion,',',entrada) FROM tprestamos WHERE codigo = 2095112 ORDER BY codigo;";
-            return connection.ListaUnicaReader(query1+' '+query2);
+            string query = "CALL devuelveImplPendiente(" + codigo + ")";
+            return connection.ListaUnicaReader(query);
         }
 
         public List<string> Implementos_disponiblesSigla()
