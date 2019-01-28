@@ -33,7 +33,6 @@ namespace AlphaSport.Vista
 
             codigo.Focus();
 
-            //lista = SepararIds(entorno.DisponiblesCasilleros());
             ActualizarListaDisp();
         }        
 
@@ -157,7 +156,12 @@ namespace AlphaSport.Vista
             {   lista = SepararIds(lista);
                 cmbox.ItemsSource = lista;                
             }
-            Ocultar();
-        }        
+            //Ocultar();
+        }
+
+        private void Window_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            ActualizarListaDisp();
+        }
     }
 }
