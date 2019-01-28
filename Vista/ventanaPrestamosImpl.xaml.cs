@@ -209,7 +209,7 @@ namespace AlphaSport.Vista
             Limpiar();
         }
 
-        private void Chbox_Checked(object sender, RoutedEventArgs e)
+        private void Chbox_Click(object sender, RoutedEventArgs e)
         {
 
             CheckBox chk = (CheckBox)sender;
