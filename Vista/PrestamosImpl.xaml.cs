@@ -137,7 +137,7 @@ namespace AlphaSport.Vista
 
                 if (datosPrestamo[0] == entorno.ERRORSQL)
                 {
-                    mensaje = "El estudiante no tiene prestamos pendientes!";
+                    mensaje = datosPrestamo[1];
                     MessageBox.Show(mensaje);
                 }
                 else
