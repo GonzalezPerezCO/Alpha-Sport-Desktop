@@ -282,7 +282,7 @@ namespace AlphaSport.Vista
             else
             {
                 // caso para agregar el prestamo                
-                MessageBox.Show("El casillero "+tagButton[0]+" disponible este casillero.");
+                MessageBox.Show("El casillero esta "+tagButton[0]+" disponible este casillero.");
             }
         }
 
