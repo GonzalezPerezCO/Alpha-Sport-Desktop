@@ -495,7 +495,7 @@ namespace AlphaSport.Controller
                     result.Add(reader.GetString(0));
                 }
 
-                Debug.WriteLine(" ----   RESULT QERY READER ListaUnicaReader disponibles reader: ");
+                Debug.WriteLine(" ----   RESULT QERY READER ListaUnicaReader disponibles reader: tamaño = " +result.Count);
                 foreach (var item in result)
                 {
                     Debug.WriteLine(" ---- " + item.ToString());

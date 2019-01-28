@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         Title="ventanaPrestamosImpl" 
-        WindowStyle="None"  Height="600" Width="500" Closed="Window_Closed" Closing="Window_Closing" IsVisibleChanged="Window_IsVisibleChanged">
+        WindowStyle="None"  Height="600" Width="500" Closed="Window_Closed" Closing="Window_Closing">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="8*"/>

@@ -65,7 +65,7 @@ namespace AlphaSport.Vista
 
                 if (lista[0] == entorno.ERRORSQL)
                 {
-                    cmbox_Sigla.ItemsSource = null;
+                    cmbox_Sigla.ItemsSource = new List<string>(); ;
                     if (this.IsVisible) MessageBox.Show(lista[1]);                    
                 }
                 else
@@ -80,7 +80,7 @@ namespace AlphaSport.Vista
 
                 if (lista[0] == entorno.ERRORSQL)
                 {
-                    cmbox_Sigla.ItemsSource = null;
+                    cmbox_Sigla.ItemsSource = new List<string>(); ;
                     if (this.IsVisible) MessageBox.Show(lista[1]);
                 }
                 else
@@ -128,6 +128,7 @@ namespace AlphaSport.Vista
                 }
                 else
                 {
+                    Limpiar();
                     Ocultar();
 
                 }
@@ -143,6 +144,7 @@ namespace AlphaSport.Vista
                 }
                 else
                 {
+                    Limpiar();
                     Ocultar();
                 }
 
@@ -164,12 +166,7 @@ namespace AlphaSport.Vista
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             Application.Current.Shutdown();
-        }
-
-        private void Window_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
-        {
-            Limpiar();
-        }
+        }       
 
         private void Cmbox_Sigla_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -185,7 +182,7 @@ namespace AlphaSport.Vista
 
                 if (lista.Count!=0 && lista[0] == entorno.ERRORSQL)
                 {
-                    cmbox_Cant.ItemsSource = null;
+                    cmbox_Cant.ItemsSource = new List<string>();
                     if (this.IsVisible) MessageBox.Show(lista[1]);
                 }
                 else
@@ -199,7 +196,7 @@ namespace AlphaSport.Vista
 
                 if (lista.Count != 0 && lista[0] == entorno.ERRORSQL)
                 {
-                    cmbox_Cant.ItemsSource = null;
+                    cmbox_Cant.ItemsSource = new List<string>();
                     if (this.IsVisible) MessageBox.Show(lista[1]);
                 }
                 else
@@ -270,7 +267,7 @@ namespace AlphaSport.Vista
 
                 if (lista.Count != 0 && lista[0] == entorno.ERRORSQL)
                 {
-                    codigoEs = 0;
+                    Limpiar();
                     if (this.IsVisible) MessageBox.Show(lista[1]);
                 }
                 else
