@@ -222,6 +222,8 @@ namespace AlphaSport.Vista
 
         private void Limpiar()
         {
+            btn3.IsEnabled = true;
+
             siglaSelect = "";
             codigoEs = 0;
             cantidad = 0;
@@ -274,6 +276,7 @@ namespace AlphaSport.Vista
                 }
                 else
                 {
+                    btn3.IsEnabled = false;
                     codigo.IsEnabled = false;
                     chbox_pres.IsEnabled = true;
                     chbox_dev.IsEnabled = true;
