@@ -24,9 +24,6 @@ namespace AlphaSport.Vista
         private Entorno entorno;
         private static VentanaPrestamosImpl instance = null;
 
-        private List<string> listaDisponibles; // lista de disponibles por sigla
-        private List<int> listaCantDisponibles; // lista de disponibles de una sigla
-
         private string siglaSelect;
         private UInt64 codigoEs;
         private UInt32 cantidad;
@@ -41,8 +38,6 @@ namespace AlphaSport.Vista
             entorno = Entorno.GetInstance();                       
 
             Limpiar();
-
-            ActualizarCmbxSiglas();
         }
 
         public static VentanaPrestamosImpl GetInstance()
@@ -139,7 +134,6 @@ namespace AlphaSport.Vista
         private void Window_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
             Limpiar();
-            ActualizarCmbxSiglas();
         }
 
         private void Cmbox_Sigla_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -154,9 +148,6 @@ namespace AlphaSport.Vista
 
         private void Limpiar()
         {
-            listaDisponibles = new List<string>();
-            listaCantDisponibles = new List<int>();
-
             siglaSelect = "";
             codigoEs = 0;
             cantidad = 0;
@@ -211,9 +202,7 @@ namespace AlphaSport.Vista
 
         private void Chbox_Click(object sender, RoutedEventArgs e)
         {
-
             CheckBox chk = (CheckBox)sender;
-
             string name = chk.Name;
 
             if (name == "chbox_pres")
