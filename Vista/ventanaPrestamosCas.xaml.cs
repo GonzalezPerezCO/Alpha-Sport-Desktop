@@ -32,8 +32,6 @@ namespace AlphaSport.Vista
             entorno = Entorno.GetInstance();
 
             codigo.Focus();
-
-            //ActualizarListaDisp();
         }        
 
         public static VentanaPrestamosCas GetInstance()
@@ -150,7 +148,7 @@ namespace AlphaSport.Vista
             if (lista[0] == entorno.ERRORSQL)
             {
                 cmbox.ItemsSource = new List<string>();
-                MessageBox.Show(lista[1]);
+                if(this.IsVisible) MessageBox.Show(lista[1]);
             }
             else 
             {   lista = SepararIds(lista);
