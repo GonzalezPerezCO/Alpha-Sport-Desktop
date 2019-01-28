@@ -155,6 +155,9 @@ namespace AlphaSport.Vista
             siglaSelect = cmbox_Sigla.SelectedValue.ToString();
             List<string> lista = new List<string>();
 
+            chbox_pres.IsEnabled = false;
+            chbox_dev.IsEnabled = false;
+
             if (valor_pres) // caso de prestamo
             {
                 lista = entorno.Implementos_dispCabtidad_sigla(siglaSelect);
@@ -190,6 +193,8 @@ namespace AlphaSport.Vista
         private void Cmbox_Cant_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             cantidad = Convert.ToUInt32(cmbox_Cant.SelectedValue.ToString());
+
+            if (valor_pres) obs1.IsEnabled = true;
         }
 
         private void Limpiar()
@@ -200,7 +205,9 @@ namespace AlphaSport.Vista
             observacion = "";
 
             codigo.Text = "";
+            obs1.Text = "";
             codigo.IsEnabled = true;
+
             cmbox_Sigla.SelectedValue = null;
             cmbox_Cant.SelectedValue = null;
                         
@@ -226,7 +233,6 @@ namespace AlphaSport.Vista
         private void Btn3_Click(object sender, RoutedEventArgs e)
         {
             // capturar datos y validar
-
             if (codigo.Text == "" || !UInt64.TryParse(codigo.Text, out UInt64 abc))
             {
                 MessageBox.Show("El código no es valido!");
@@ -235,11 +241,22 @@ namespace AlphaSport.Vista
             {
                 codigoEs = Convert.ToUInt64(codigo.Text);
 
-                codigo.IsEnabled = false;
-                chbox_pres.IsEnabled = true;
-                chbox_dev.IsEnabled = true;
-                
-                ActualizarCmbxSiglas();
+                List<string> lista = new List<string>();
+                lista = entorno.ValidarEstudianteDeportes(codigoEs, "",0);
+
+                if (lista.Count != 0 && lista[0] == entorno.ERRORSQL)
+                {
+                    codigoEs = 0;
+                    if (this.IsVisible) MessageBox.Show(lista[1]);
+                }
+                else
+                {
+                    codigo.IsEnabled = false;
+                    chbox_pres.IsEnabled = true;
+                    chbox_dev.IsEnabled = true;
+
+                    ActualizarCmbxSiglas();
+                }
             }
         }
 
