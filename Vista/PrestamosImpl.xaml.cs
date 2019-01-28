@@ -123,28 +123,30 @@ namespace AlphaSport.Vista
 
         private void Bt5_Click(object sender, RoutedEventArgs e)
         {
+            string mensaje = "";
+
             if (codigo.Text == "" || !UInt64.TryParse(codigo.Text, out UInt64 abc))
             {
-                MessageBox.Show("El código no es valido!");
+                mensaje = "El código no es valido!";
             }
             else
-            {
+            {   
+                codigoEs = Convert.ToUInt64(codigo.Text);
                 codigo.Text = "";
-                codigoEs = Convert.ToUInt64(codigo.Text.ToString());
-                string mensaje = "";
 
                 List<string> datosPrestamo = entorno.PrestamosEstudiante(codigoEs);
 
                 if (datosPrestamo[0] == entorno.ERRORSQL)
                 {
                     mensaje = datosPrestamo[1];
-                    MessageBox.Show(mensaje);
+                    //MessageBox.Show(mensaje);
                 }
                 else
                 {
                     datosPrestamo = SepararLista(datosPrestamo);
                     int paso = 1; // ".\n"
 
+                    // toma los elementos y los representa como un parrafo
                     for (int i = 0; i < datosPrestamo.Count; i++)
                     {
                         if (paso == 1)
@@ -168,10 +170,8 @@ namespace AlphaSport.Vista
                         paso += 1;
 
                     }
-
-                    MessageBox.Show(mensaje);
-
                 }
+                MessageBox.Show(mensaje);
 
             }
         }
