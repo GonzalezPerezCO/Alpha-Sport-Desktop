@@ -38,18 +38,20 @@ namespace AlphaSport.Vista
             entorno = Entorno.GetInstance();                       
 
             Limpiar();
+            Debug.WriteLine("<<< CONSTRUCTOR");
         }
 
         public static VentanaPrestamosImpl GetInstance()
         {
             if (instance == null)
                 instance = new VentanaPrestamosImpl();
-
+            Debug.WriteLine("<<< INSTANCIA");
             return instance;
         }
 
         private void Ocultar()
         {
+            Debug.WriteLine("<<< OCULTAR");
             PrestamosImpl prestamos = PrestamosImpl.GetInstance();
             prestamos.Show();
             this.Hide();            
@@ -57,6 +59,7 @@ namespace AlphaSport.Vista
 
         private void ActualizarCmbxSiglas()
         {
+            Debug.WriteLine("<<< ActualizarCmbxSiglas ");
             List<string> lista = new List<string>();
 
             if (valor_pres) // caso prestamo
@@ -97,6 +100,7 @@ namespace AlphaSport.Vista
         /// <returns></returns>
         private List<int> Listar(List<string> lista)
         {
+            Debug.WriteLine("<<< LISTAR ");
             List<int> sucesion = new List<int>();
 
             int maximo = Convert.ToInt32(lista[0]);
@@ -110,7 +114,8 @@ namespace AlphaSport.Vista
         }
 
         private void Btn1_Click(object sender, RoutedEventArgs e)
-        {               
+        {
+            Debug.WriteLine("<<< Btn1_Click ");
             List<string> lista = new List<string>();
 
             if (obs1.Text == null || obs1.Text == "") obs1.Text = "nada";
@@ -160,7 +165,8 @@ namespace AlphaSport.Vista
         }
 
         private void Btn2_Click(object sender, RoutedEventArgs e)
-        {   
+        {
+            Debug.WriteLine("<<< Btn2_Click ");
             Ocultar();
             Limpiar();
         }
@@ -176,7 +182,8 @@ namespace AlphaSport.Vista
         }       
 
         private void Cmbox_Sigla_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {            
+        {
+            Debug.WriteLine("<<< Cmbox_Sigla_SelectionChanged ");
             if (this.IsVisible) {
                 siglaSelect = cmbox_Sigla.SelectedValue.ToString();
                 List<string> lista = new List<string>();
@@ -218,7 +225,8 @@ namespace AlphaSport.Vista
         }
 
         private void Cmbox_Cant_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {    //cantidad = Convert.ToUInt32(cmbox_Cant.SelectedValue.ToString());
+        {
+            Debug.WriteLine("<<< Cmbox_Cant_SelectionChanged ");
 
             if (this.IsVisible)
             {
@@ -233,7 +241,7 @@ namespace AlphaSport.Vista
 
         private void Limpiar()
         {
-            Debug.WriteLine("<<< LIMPIAR(),");
+            Debug.WriteLine("<<< LIMPIAR");
             btn3.IsEnabled = true;
 
             siglaSelect = "";
@@ -245,8 +253,8 @@ namespace AlphaSport.Vista
             obs1.Text = "";
             codigo.IsEnabled = true;
 
-            //cmbox_Sigla.SelectedValue = null; para evitar SelectionChange
-            //cmbox_Cant.SelectedValue = null;
+            cmbox_Sigla.SelectedValue = null;
+            cmbox_Cant.SelectedValue = null;
                         
             cmbox_Cant.IsEnabled = false;
             cmbox_Sigla.IsEnabled = false;
@@ -269,6 +277,7 @@ namespace AlphaSport.Vista
 
         private void Btn3_Click(object sender, RoutedEventArgs e)
         {
+            Debug.WriteLine("<<< Btn3_Click ");
             // capturar datos y validar
             if (codigo.Text == "" || !UInt64.TryParse(codigo.Text, out UInt64 abc))
             {
@@ -300,11 +309,13 @@ namespace AlphaSport.Vista
 
         private void Btn4_Click(object sender, RoutedEventArgs e)
         {
+            Debug.WriteLine("<<< Btn4_Click ");
             Limpiar();
         }
 
         private void Chbox_Click(object sender, RoutedEventArgs e)
         {
+            Debug.WriteLine("<<< Chbox_Click ");
             CheckBox chk = (CheckBox)sender;
             string name = chk.Name;
 
