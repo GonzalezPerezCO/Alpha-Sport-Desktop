@@ -209,13 +209,15 @@ namespace AlphaSport.Vista
         }
 
         private void Cmbox_Cant_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            Debug.WriteLine("<<< cantidad cmbx: "+ cmbox_Cant.SelectedValue.ToString());
-            cantidad = Convert.ToUInt32(cmbox_Cant.SelectedValue.ToString());            
+        {            
+            if (this.IsVisible)
+            {
+                cantidad = Convert.ToUInt32(cmbox_Cant.SelectedValue.ToString());
 
-            if (valor_pres) { obs1.IsEnabled = true; }
+                if (valor_pres) { obs1.IsEnabled = true; }
 
-            btn1.IsEnabled = true;
+                btn1.IsEnabled = true;
+            }
         }
 
         private void Limpiar()
@@ -276,7 +278,7 @@ namespace AlphaSport.Vista
                     chbox_pres.IsEnabled = true;
                     chbox_dev.IsEnabled = true;
 
-                    ActualizarCmbxSiglas();
+                    //ActualizarCmbxSiglas();
                 }
             }
         }
