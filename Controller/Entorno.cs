@@ -148,19 +148,25 @@ namespace AlphaSport.Controller
 
         public List<string> PrestamosEstudiante(UInt64 codigo)
         {
-            string query = "CALL devuelveImplPendiente(" + codigo + ")";
+            string query = "CALL devuelveImplPendiente(" + codigo + ");";
             return connection.ListaUnicaReader(query);
         }
 
         public List<string> Implementos_disponiblesSigla()
         {
-            string query = "devuelveImplDisponiglesSigla();";
+            string query = "CALL devuelveImplDisponiglesSigla();";
+            return connection.ListaUnicaReader(query);
+        }
+
+        public List<string> Implementos_disponiblesCodigo(UInt64 codigo)
+        {
+            string query = "CALL devuelveImplPendienteLista("+codigo+");";
             return connection.ListaUnicaReader(query);
         }
 
         public List<string> Implementos_dispCabtidad_sigla(string sigla)
         {
-            string query = "SELECT disponibles FROM timplementos  WHERE sigla = '" + sigla + "' ORDER by id_i;";
+            string query = "CALL devuelveCantidadImplSigla('"+sigla+"');";
             return connection.ListaUnicaReader(query);
         }
 

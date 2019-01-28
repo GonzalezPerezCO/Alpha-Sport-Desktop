@@ -53,31 +53,45 @@ namespace AlphaSport.Vista
             PrestamosImpl prestamos = PrestamosImpl.GetInstance();
             prestamos.Show();
             this.Hide();
-        }  
+        }
 
         private void ActualizarCmbxSiglas()
         {
-            List<string> lista = entorno.Implementos_disponiblesSigla();
-            if (lista[0]==entorno.ERRORSQL)
-            {
-                cmbox_Sigla.ItemsSource = new List<string>();
-                if(this.IsVisible) MessageBox.Show(lista[1]);
-            }
-            else
-            {
-                cmbox_Sigla.ItemsSource = lista;
-            }
-        }
+            List<string> lista = new List<string>();
 
-        private void ActualizarCmbxDisponibles()
-        {
-            cmbox_Cant.ItemsSource = Listar(entorno.Implementos_dispCabtidad_sigla(siglaSelect));
-        }
+            if (valor_pres) // caso prestamo
+            {
+                lista = entorno.Implementos_disponiblesSigla();
 
-        private void ActualizarCmbxDevolucion()
-        {
-            cmbox_Cant.ItemsSource = Listar(entorno.Implementos_dispPrestamo_sigla(siglaSelect, codigoEs));
-        }
+                if (lista[0] == entorno.ERRORSQL)
+                {
+                    cmbox_Sigla.ItemsSource = null;
+                    if (this.IsVisible) MessageBox.Show(lista[1]);                    
+                }
+                else
+                {
+                    cmbox_Sigla.ItemsSource = lista;
+
+                }
+            }
+            else  // caso devolucion
+            {
+                lista = entorno.Implementos_disponiblesCodigo(codigoEs);
+
+                if (lista[0] == entorno.ERRORSQL)
+                {
+                    cmbox_Sigla.ItemsSource = null;
+                    if (this.IsVisible) MessageBox.Show(lista[1]);
+                }
+                else
+                {
+                    cmbox_Sigla.ItemsSource = lista;
+                }
+
+            }
+
+            
+        }       
 
         /// <summary>
         /// Conla cantidad de disponibles de una Impl deportivo por su sigla, genera una lista de 1 hasta esa cantidad
@@ -138,7 +152,39 @@ namespace AlphaSport.Vista
 
         private void Cmbox_Sigla_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            siglaSelect = cmbox_Sigla.SelectedValue.ToString();           
+            siglaSelect = cmbox_Sigla.SelectedValue.ToString();
+            List<string> lista = new List<string>();
+
+            if (valor_pres) // caso de prestamo
+            {
+                lista = entorno.Implementos_dispCabtidad_sigla(siglaSelect);
+
+                if (lista[0] == entorno.ERRORSQL)
+                {
+                    cmbox_Cant.ItemsSource = null;
+                    if (this.IsVisible) MessageBox.Show(lista[1]);
+                }
+                else
+                {
+                    cmbox_Cant.ItemsSource = Listar(lista);
+                }                
+            }
+            else // caso devolucion
+            {
+                lista = entorno.Implementos_dispPrestamo_sigla(siglaSelect, codigoEs);
+
+                if (lista[0] == entorno.ERRORSQL)
+                {
+                    cmbox_Cant.ItemsSource = null;
+                    if (this.IsVisible) MessageBox.Show(lista[1]);
+                }
+                else
+                {
+                    cmbox_Cant.ItemsSource = Listar(lista);
+                }                
+            }
+
+            cmbox_Cant.IsEnabled = true;
         }
 
         private void Cmbox_Cant_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -162,14 +208,16 @@ namespace AlphaSport.Vista
             cmbox_Sigla.IsEnabled = false;
 
             chbox_pres.IsEnabled = false;
-            chbox_pres.IsChecked = true;
+            chbox_pres.IsChecked = false;
             chbox_dev.IsEnabled = false;            
             chbox_dev.IsChecked = false;
-            valor_pres = true;
+            valor_pres = false;
             valor_dev = false;
 
             obs1.Text = "";
             obs1.IsEnabled = false;
+
+            btn1.IsEnabled = false;
 
             codigo.Focus();
             //bool variable = chbox.IsChecked ?? false;
@@ -218,7 +266,10 @@ namespace AlphaSport.Vista
                 chbox_pres.IsChecked = !valor_dev;
                 valor_pres = !valor_dev;
                 Debug.WriteLine("<< dev: pres = " + valor_pres + ", dev= " + valor_dev);
-            }            
+            }
+
+            cmbox_Sigla.IsEnabled = true;
+            ActualizarCmbxSiglas();
         }        
     }
 }
