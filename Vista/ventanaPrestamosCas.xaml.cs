@@ -33,7 +33,7 @@ namespace AlphaSport.Vista
 
             codigo.Focus();
 
-            ActualizarListaDisp();
+            //ActualizarListaDisp();
         }        
 
         public static VentanaPrestamosCas GetInstance()
