@@ -294,9 +294,9 @@ namespace AlphaSport.Controller
             return result;
         }
 
-        public string AddImplementoPrestamo(string query)
+        public List<string> AddImplementoPrestamo(string query)
         {
-            string result = "";
+            List<string> result = new List<string>(); ;
 
             Debug.WriteLine(" ----  ADD_IMPL_PRESTAMO");
 
@@ -311,9 +311,8 @@ namespace AlphaSport.Controller
             catch (MySqlException ex)
             {
                 Debug.WriteLine("<<< catch : " + ex.Message);
-                result = ex.Message;
+                result.Add(ex.Message);
             }
-
 
             this.CloseConnection();
 
@@ -322,9 +321,9 @@ namespace AlphaSport.Controller
             return result;
         }
 
-        public string DevuelveImplementoPrestamo(string query)
+        public List<string> DevuelveImplementoPrestamo(string query)
         {
-            string result = "";
+            List<string> result = new List<string>();
 
             Debug.WriteLine(" ----  DEVUELVE_IMPL_PRESTAMO");
 
@@ -339,7 +338,7 @@ namespace AlphaSport.Controller
             catch (MySqlException ex)
             {
                 Debug.WriteLine("<<< catch : " + ex.Message);
-                result = ex.Message;
+                result.Add(ex.Message);
             }
 
 

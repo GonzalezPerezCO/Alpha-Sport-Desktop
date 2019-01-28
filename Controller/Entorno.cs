@@ -243,20 +243,20 @@ namespace AlphaSport.Controller
             return result;
         }
 
-        public string AddImplementoPrestamo(string sigla, UInt64 codigo, UInt32 cantidad, string obs)
+        public List<string> AddImplementoPrestamo(string sigla, UInt64 codigo, UInt32 cantidad, string obs)
         {
             string query = "CALL addImplemento('"+sigla+"',"+codigo+","+cantidad+",'"+obs+"');";
 
-            string result = connection.AddImplementoPrestamo(query);
+            List<string> result = connection.AddImplementoPrestamo(query);
 
             return result; 
         }
 
-        public string DevuelveImplementoPrestamo(string sigla, UInt64 codigo, UInt32 cantidad)
+        public List<string> DevuelveImplementoPrestamo(string sigla, UInt64 codigo, UInt32 cantidad)
         {
             string query = "CALL devuelveImple('"+sigla+"',"+codigo+","+cantidad+");";
 
-            string result = connection.DevuelveImplementoPrestamo(query);
+            List<string> result = connection.DevuelveImplementoPrestamo(query);
 
             return result;
         }

@@ -87,10 +87,7 @@ namespace AlphaSport.Vista
                 {
                     cmbox_Sigla.ItemsSource = lista;
                 }
-
-            }
-
-            
+            }            
         }       
 
         /// <summary>
@@ -114,16 +111,38 @@ namespace AlphaSport.Vista
 
         private void Btn1_Click(object sender, RoutedEventArgs e)
         {   
-            string mensaje = ""; // mensaje para mostrar al terminar o fallar
-            valor_pres = chbox_pres.IsChecked ?? false;
+            
+            List<string> lista = new List<string>();
 
-            if (valor_pres) // caso de prestamo
+            if (valor_pres) // caso prestamo
             {
-                mensaje = entorno.AddImplementoPrestamo(siglaSelect, codigoEs, cantidad, observacion);
+                lista = entorno.AddImplementoPrestamo(siglaSelect, codigoEs, cantidad, observacion);
+
+                if (lista[0] == entorno.ERRORSQL)
+                {
+                    cmbox_Sigla.ItemsSource = null;
+                    if (this.IsVisible) MessageBox.Show(lista[1]);
+                }
+                else
+                {
+                    cmbox_Sigla.ItemsSource = lista;
+
+                }
             }
-            else
+            else  // caso devolucion
             {
-                mensaje = entorno.DevuelveImplementoPrestamo(siglaSelect, codigoEs, cantidad);
+                lista = entorno.DevuelveImplementoPrestamo(siglaSelect, codigoEs, cantidad);
+
+                if (lista[0] == entorno.ERRORSQL)
+                {
+                    cmbox_Sigla.ItemsSource = null;
+                    if (this.IsVisible) MessageBox.Show(lista[1]);
+                }
+                else
+                {
+                    cmbox_Sigla.ItemsSource = lista;
+                }
+
             }
 
             Ocultar();
@@ -194,7 +213,9 @@ namespace AlphaSport.Vista
         {
             cantidad = Convert.ToUInt32(cmbox_Cant.SelectedValue.ToString());
 
-            if (valor_pres) obs1.IsEnabled = true;
+            if (valor_pres) { obs1.IsEnabled = true; }
+
+            btn1.IsEnabled = true;
         }
 
         private void Limpiar()
