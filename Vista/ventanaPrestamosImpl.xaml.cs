@@ -1,6 +1,7 @@
 ﻿using AlphaSport.Controller;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -192,6 +193,10 @@ namespace AlphaSport.Vista
             else
             {
                 codigoEs = Convert.ToUInt64(codigo.Text);
+
+                codigo.IsEnabled = false;
+                chbox_pres.IsEnabled = true;
+                chbox_dev.IsEnabled = true;
                 
                 ActualizarCmbxSiglas();
             }
@@ -202,14 +207,49 @@ namespace AlphaSport.Vista
             Limpiar();
         }
 
-        private void Chbox_Checked_pres(object sender, RoutedEventArgs e)
+        private void Chbox_Checked(object sender, RoutedEventArgs e)
         {
 
+            CheckBox chk = (CheckBox)sender;
+
+            string name = chk.Name;
+
+            if (name == "chbox_pres")
+            {
+                valor_pres = chbox_pres.IsChecked ?? false;
+                chbox_dev.IsChecked = !valor_pres;
+                valor_dev = !valor_pres;
+                Debug.WriteLine("<< pres_PCH: pres = " + valor_pres + " ,dev= " + valor_dev);
+            }
+            else
+            {
+                valor_dev = chbox_dev.IsChecked ?? false;
+                chbox_pres.IsChecked = !valor_dev;
+                valor_pres = !valor_dev;
+                Debug.WriteLine("<< dev_PCH: pres = " + valor_pres + " ,dev= " + valor_dev);
+            }            
         }
 
-        private void Chbox_Checked_dev(object sender, RoutedEventArgs e)
+        private void Chbox_Unchecked(object sender, RoutedEventArgs e)
         {
+            CheckBox chk = (CheckBox)sender;
 
+            string name = chk.Name;
+
+            if (name == "chbox_pres")
+            {
+                valor_pres = chbox_pres.IsChecked ?? false;
+                chbox_dev.IsChecked = !valor_pres;
+                valor_dev = !valor_pres;
+                Debug.WriteLine("<< pres_UCH: pres = " + valor_pres + " ,dev= " + valor_dev);
+            }
+            else
+            {
+                valor_dev = chbox_dev.IsChecked ?? false;
+                chbox_pres.IsChecked = !valor_dev;
+                valor_pres = !valor_dev;
+                Debug.WriteLine("<< dev_UCH: pres = " + valor_pres + " ,dev= " + valor_dev);
+            }
         }
     }
 }
