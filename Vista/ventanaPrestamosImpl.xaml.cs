@@ -31,13 +31,13 @@ namespace AlphaSport.Vista
         private UInt32 cantidad;
         private string observacion;
 
+        private bool valor_pres; // chbox prestamo
+        private bool valor_dev; // chbox devolucion
+
         private VentanaPrestamosImpl()
         {
             InitializeComponent();
-            entorno = Entorno.GetInstance();
-
-            listaDisponibles = new List<string>();
-            listaCantDisponibles = new List<int>();            
+            entorno = Entorno.GetInstance();                       
 
             Limpiar();
 
@@ -104,7 +104,7 @@ namespace AlphaSport.Vista
 
         private void Btn1_Click(object sender, RoutedEventArgs e)
         {
-            bool esDevolver = chbox.IsChecked ?? false;
+            
             observacion = obs1.Text;
             string mensaje = ""; // mensaje para mostrar al terminar o fallar
 
@@ -144,19 +144,19 @@ namespace AlphaSport.Vista
 
         private void Cmbox_Sigla_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            siglaSelect = cmbox_Sigla.SelectedValue.ToString();
-            chbox.IsEnabled = true;
+            siglaSelect = cmbox_Sigla.SelectedValue.ToString();           
         }
 
         private void Cmbox_Cant_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            chbox.IsEnabled = false;
-
             cantidad = Convert.ToUInt32(cmbox_Cant.SelectedValue.ToString());
         }
 
         private void Limpiar()
         {
+            listaDisponibles = new List<string>();
+            listaCantDisponibles = new List<int>();
+
             siglaSelect = "";
             codigoEs = 0;
             cantidad = 0;
@@ -170,13 +170,16 @@ namespace AlphaSport.Vista
             cmbox_Cant.IsEnabled = false;
             cmbox_Sigla.IsEnabled = false;
 
-            chbox.IsEnabled = false;
-            chbox.IsChecked = false;
+            chbox_pres.IsEnabled = false;
+            chbox_dev.IsChecked = false;
+            valor_pres = false;
+            valor_dev = false;
 
             obs1.Text = "";
             obs1.IsEnabled = false;
 
             codigo.Focus();
+            //bool esDevolver = chbox.IsChecked ?? false;
         }
 
         private void Btn3_Click(object sender, RoutedEventArgs e)
@@ -190,10 +193,8 @@ namespace AlphaSport.Vista
             else
             {
                 codigoEs = Convert.ToUInt64(codigo.Text);
-
-                codigo.IsEnabled = false;
+                
                 ActualizarCmbxSiglas();
-                cmbox_Sigla.IsEnabled = true;
             }
         }
 
@@ -202,21 +203,14 @@ namespace AlphaSport.Vista
             Limpiar();
         }
 
-        private void Chbox_Checked(object sender, RoutedEventArgs e)
+        private void Chbox_Checked_pres(object sender, RoutedEventArgs e)
         {
-            obs1.IsEnabled = true;
-            cmbox_Cant.IsEnabled = true;
 
-            bool esDevolver = chbox.IsChecked ?? false;
+        }
 
-            if (!esDevolver) // caso prestamo
-            {
-                ActualizarCmbxDisponibles();
-            }
-            else
-            {
-                ActualizarCmbxDevolucion();
-            }
+        private void Chbox_Checked_dev(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
