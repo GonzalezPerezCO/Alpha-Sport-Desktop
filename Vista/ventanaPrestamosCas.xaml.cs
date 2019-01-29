@@ -81,10 +81,37 @@ namespace AlphaSport.Vista
                 // Lista: nombre, codigo, casillero, disponible{0:no, 1:si}, entrada, salida
                 UInt64 codigoEs = Convert.ToUInt64(codigo.Text);
                 int codigoCas = Convert.ToInt32(cmbox.SelectedValue);
-                List<string> busCod = entorno.BuscarCasilleroEstu(codigoEs);
-                bool estudiante = entorno.BuscarEstudiante( Convert.ToUInt64(codigoEs), ""); // false: no existe en testudiantes
 
-                if (busCod.Count != 0)
+                List<string> busCod = entorno.BuscarCasilleroEstu(codigoEs);
+                bool estudiante = entorno.BuscarEstudiante(Convert.ToUInt64(codigoEs), ""); // false: no existe en testudiantes
+
+                if (busCod.Count != 0 && busCod[0] == entorno.INFOSQL) // cuando si esta pero no tiene casillero
+                {
+                    MessageBox.Show(busCod[1]);
+                }
+                else if (busCod.Count != 0 && busCod[0] == entorno.ERRORSQL) // cuando el estudiante no existe
+                {
+                    if (cmbox.Text == "")
+                    {
+                        MessageBox.Show("Agregue un casillero primero.");
+                    }
+                    else
+                    {
+                        entorno.AgregarEstudianteCasillero(codigoCas, codigoEs);
+                        ActualizarListaDisp(); // actualiza lista y oculta esta ventana
+                        Debug.WriteLine("<<< Prestamo: id_c = " + codigoCas + ", codigoEst = " + codigoEs + ".");
+                        MessageBox.Show("Casillero asignado!");
+                    }
+                }
+                else
+                {
+                    entorno.QuitarEstudianteCasillero(codigoEs);
+                    ActualizarListaDisp();
+                    MessageBox.Show("Estudiante encontrado! Casillero liberado.");
+                    Debug.WriteLine("<<< Prestamo liberado: codigoEst = " + codigoEs + ".");
+                } 
+
+                /*if (busCod.Count != 0)
                 {
                     if (cmbox.SelectedValue != null)
                     {
@@ -97,8 +124,6 @@ namespace AlphaSport.Vista
                         entorno.QuitarEstudianteCasillero(codigoEs);
                         ActualizarListaDisp();
                     }
-
-
                 }
                 else if (!estudiante)
                 {
@@ -117,7 +142,7 @@ namespace AlphaSport.Vista
                         MessageBox.Show("Casillero asignado!");
                         ActualizarListaDisp(); // actualiza lista y oculta esta ventana
                     }
-                }
+                }*/
             }
 
             Limpiar();
