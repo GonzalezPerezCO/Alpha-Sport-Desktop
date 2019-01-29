@@ -87,10 +87,6 @@ namespace AlphaSport.Vista
 
                 if (busCod.Count != 0 && busCod[0] == entorno.INFOSQL) // cuando si esta pero no tiene casillero
                 {
-                    MessageBox.Show(busCod[1]);
-                }
-                else if (busCod.Count != 0 && busCod[0] == entorno.ERRORSQL) // cuando el estudiante no existe
-                {
                     if (cmbox.Text == "")
                     {
                         MessageBox.Show("Agregue un casillero primero.");
@@ -102,6 +98,10 @@ namespace AlphaSport.Vista
                         Debug.WriteLine("<<< Prestamo: id_c = " + codigoCas + ", codigoEst = " + codigoEs + ".");
                         MessageBox.Show("Casillero asignado!");
                     }
+                }
+                else if (busCod.Count != 0 && busCod[0] == entorno.ERRORSQL) // cuando el estudiante no existe
+                {
+                    MessageBox.Show(busCod[1]);
                 }
                 else
                 {
