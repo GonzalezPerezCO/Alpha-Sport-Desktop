@@ -242,9 +242,9 @@ namespace AlphaSport.Vista
                 // Lista: nombre, codigo, casillero, disponible{0:no, 1:si}, entrada, salida
                 List<string> lista = entorno.BuscarCasilleroEstu(Convert.ToUInt64(codigo.Text));
 
-                if (lista.Count != 0 && lista[0]== entorno.ERRORSQL || lista[0] == entorno.INFOSQL )
+                if (lista.Count != 0 && (lista[0]== entorno.ERRORSQL || lista[0] == entorno.INFOSQL ))
                 {
-                    
+                    MessageBox.Show(lista[1]);
                 }
                 else
                 {
