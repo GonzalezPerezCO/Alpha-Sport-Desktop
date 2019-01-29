@@ -186,5 +186,15 @@ namespace AlphaSport.Vista
         {
             ActualizarListaDisp();
         }
+
+        private void Window_Closed_1(object sender, EventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void Window_Closing_1(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }
