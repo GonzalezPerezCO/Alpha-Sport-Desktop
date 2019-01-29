@@ -25,7 +25,6 @@
         <TextBox x:Name="txt3" HorizontalAlignment="Center" Height="36" Margin="414,330,854,486" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Width="324" FontSize="20" CharacterCasing="Upper" MaxLines="1" MaxLength="11" VerticalContentAlignment="Center"/>
         <Label x:Name="lab6" Content="Carrera:" HorizontalAlignment="Center" Margin="780,225,734,590" VerticalAlignment="Center" FontWeight="Bold" FontSize="20"/>
         <Label x:Name="lab7" Content="Semestre:" HorizontalAlignment="Center" Margin="780,276,716,539" VerticalAlignment="Center" FontWeight="Bold" FontSize="20"/>
-        <TextBox x:Name="txt5" HorizontalAlignment="Center" Height="38" Margin="910,276,618,538" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Width="64" FontSize="20" CharacterCasing="Upper" MaxLines="1" MaxLength="2" VerticalContentAlignment="Center"/>
         <Label x:Name="lab8" Content="Email:" HorizontalAlignment="Center" Margin="781,330,751,485" VerticalAlignment="Center" FontWeight="Bold" FontSize="20"/>
         <TextBox x:Name="txt6" HorizontalAlignment="Center" Height="36" Margin="910,330,217,486" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Width="465" FontSize="20" CharacterCasing="Upper" MaxLines="1" MaxLength="100" VerticalContentAlignment="Center"/>
         <Label x:Name="lab10" Content="Observaciones" HorizontalAlignment="Center" Margin="708,538,716,317" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" Width="168"/>
@@ -37,6 +36,7 @@
         <Label x:Name="lab11" Content="Reserva:" HorizontalAlignment="Center" Margin="780,406,707,450" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" RenderTransformOrigin="0.182,0.378" Width="105"/>
         <TextBox x:Name="txt9" HorizontalAlignment="Center" Height="36" Margin="910,406,358,450" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Width="324" FontSize="20" CharacterCasing="Upper" MaxLines="1" MaxLength="9" VerticalContentAlignment="Center"/>
         <CheckBox x:Name="chbx" Content="Examen médico" HorizontalAlignment="Center" Margin="1070,306,324,560" VerticalAlignment="Center" FontSize="20" FontWeight="Bold" Width="198" />
+        <ComboBox x:Name="cmbox_semestre" HorizontalAlignment="Center" Margin="910,301,592,559" VerticalAlignment="Center" Width="90" Height="32" FontSize="20"/>
 
     </Grid>
 </Window>

@@ -30,7 +30,7 @@ namespace AlphaSport.Vista
             InitializeComponent();
             entorno = Entorno.GetInstance();
             lab1.Content = entorno.PROYECTO;
-            PrepararCarreras();
+            PrepararCarrerasTYsemestre();
             Limpiar();
             BotonesEstado(true);
         }
@@ -53,7 +53,7 @@ namespace AlphaSport.Vista
             return result;
         }
 
-        private void PrepararCarreras()
+        private void PrepararCarrerasTYsemestre()
         {
             List<string> lista = entorno.Carreras();
             
@@ -64,6 +64,8 @@ namespace AlphaSport.Vista
             }
             carreras = SepararIds(lista);
             cmbox.ItemsSource = carreras;
+
+            cmbox_semestre.ItemsSource = new List<UInt32>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
         }
 
         private void Window_Closed(object sender, EventArgs e)
@@ -91,14 +93,14 @@ namespace AlphaSport.Vista
 
         private void Btn3_Click(object sender, RoutedEventArgs e)
         {
-            if (txt1.Text == "" || txt2.Text == "" || txt3.Text == "" || cmbox.SelectedItem == null || txt5.Text == "" || txt6.Text == "" || txt9.Text == "")
+            if (txt1.Text == "" || txt2.Text == "" || txt3.Text == "" || cmbox.SelectedItem == null || cmbox_semestre.SelectedValue == null || txt6.Text == "" || txt9.Text == "")
             {
                 MessageBox.Show("Llene todos los campos para poder continuar.");
             }
             else {
                 // validación de tipo de dato correcto, que los numericos sean numeros
                
-                if (!UInt64.TryParse(txt3.Text, out UInt64 abc) || !UInt64.TryParse(txt8.Text, out UInt64 def) || !UInt32.TryParse(txt5.Text, out UInt32 ghi) || !UInt32.TryParse(txt9.Text, out UInt32 jkl))
+                if (!UInt64.TryParse(txt3.Text, out UInt64 abc) || !UInt64.TryParse(txt8.Text, out UInt64 def) || !UInt32.TryParse(txt9.Text, out UInt32 jkl))
                 {
                     MessageBox.Show("Hay campos númericos con texto. Escriba solo numéros en el Código, el Documento, Reverva y en el Semestre.");
                 }
@@ -116,7 +118,7 @@ namespace AlphaSport.Vista
                         UInt32 reserva = Convert.ToUInt32(txt9.Text);
                         UInt64 documento = Convert.ToUInt64(txt8.Text);
                         string carrera = Convert.ToString(cmbox.SelectedValue).TrimStart().TrimEnd();
-                        UInt32 semestre = Convert.ToUInt32(txt5.Text);
+                        UInt32 semestre = Convert.ToUInt32(cmbox_semestre.SelectedValue.ToString());
                         string obs = txt7.Text.TrimStart().TrimEnd();
                         bool examen = chbx.IsChecked ?? false;
 
@@ -151,7 +153,7 @@ namespace AlphaSport.Vista
             txt2.Text = "";
             txt3.Text = "";
             cmbox.SelectedValue = null;
-            txt5.Text = "";
+            cmbox_semestre.SelectedValue = null;
             txt6.Text = "";
             txt7.Text = "";
             txt8.Text = "";
