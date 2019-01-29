@@ -139,9 +139,14 @@ namespace AlphaSport.Vista
                 lista = entorno.DevuelveImplementoPrestamo(siglaSelect, codigoEstu, cantidad);
 
                 if (lista.Count != 0 && lista[0] == entorno.ERRORSQL)
-                {                   
+                {
                     if (this.IsVisible) MessageBox.Show(lista[1]);
                     Limpiar();
+                }
+                else if (lista.Count != 0 && lista[0] == entorno.INFOSQL)
+                {
+                    Limpiar();
+                    Ocultar();
                 }
                 else
                 {
