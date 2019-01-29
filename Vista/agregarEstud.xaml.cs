@@ -108,7 +108,19 @@ namespace AlphaSport.Vista
                 {
                     UInt64 codigo = Convert.ToUInt64(txt3.Text);
                     string email = txt6.Text.TrimStart().TrimEnd();
+                    string nombres = txt1.Text.TrimStart().TrimEnd();
+                    string apellidos = txt2.Text.TrimStart().TrimEnd();
+                    UInt32 reserva = Convert.ToUInt32(txt9.Text);
+                    UInt64 documento = Convert.ToUInt64(txt8.Text);
+                    string carrera = Convert.ToString(cmbox.SelectedValue).TrimStart().TrimEnd();
+                    UInt32 semestre = Convert.ToUInt32(cmbox_semestre.SelectedValue.ToString());
+                    string obs = txt7.Text.TrimStart().TrimEnd();
+                    bool examen = chbx.IsChecked ?? false;
 
+
+
+
+                    /*
                     bool existe = entorno.BuscarEstudiante(codigo, email);
 
                     if (!existe) // sino esta creado
@@ -129,7 +141,7 @@ namespace AlphaSport.Vista
                     else
                     {
                         MessageBox.Show("El estudiante ya existe!");
-                    }
+                    }*/
                 }
             }
          
