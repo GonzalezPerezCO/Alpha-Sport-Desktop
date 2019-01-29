@@ -129,9 +129,9 @@ namespace AlphaSport.Vista
                     Limpiar();
                 }
                 else
-                {
-                    Limpiar();
+                {   
                     Ocultar();
+                    Limpiar();
                 }
             }
             else  // caso devolucion

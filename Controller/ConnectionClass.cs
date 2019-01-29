@@ -504,7 +504,17 @@ namespace AlphaSport.Controller
             catch (MySqlException ex)
             {
                 Debug.WriteLine(" ----   CATCH QERY READER ListaUnicaReader disponibles reader: " + ex);
-                result.Add("ERROR");
+
+                if (ex.Message.Contains("INFO"))
+                {
+                    result.Add("INFO");
+                    Debug.WriteLine(" ---- CONTAINS INFO");
+                }
+                else
+                {
+                    result.Add("ERROR");
+                    Debug.WriteLine(" ---- CONTAINS ERROR");
+                }
                 result.Add(ex.Message);
             }
 
