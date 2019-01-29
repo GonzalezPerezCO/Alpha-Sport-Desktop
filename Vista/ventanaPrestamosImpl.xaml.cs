@@ -118,7 +118,7 @@ namespace AlphaSport.Vista
             Debug.WriteLine("<<< Btn1_Click ");
             List<string> lista = new List<string>();
 
-            if (obs1.Text == null || obs1.Text == "") obs1.Text = "nada";
+            if (obs1.Text == null || obs1.Text == "") obs1.Text = "N/A";
 
             observacion = obs1.Text;
 
@@ -143,19 +143,22 @@ namespace AlphaSport.Vista
             {
                 lista = entorno.DevuelveImplementoPrestamo(siglaSelect, codigoEstu, cantidad);
 
-                if (lista.Count != 0 && (lista[0] == entorno.ERRORSQL || lista[0] == entorno.INFOSQL))
+                if (lista.Count != 0 && (lista[0] == entorno.ERRORSQL))
                 {
+                    Debug.WriteLine("<<< Btn1_Click - if ");
                     //if (this.IsVisible) MessageBox.Show(lista[1]);
                     MessageBox.Show(lista[1]);
                     Limpiar();
                 }
                 else if (lista.Count != 0 && lista[0] == entorno.INFOSQL)
-                {   
+                {
+                    Debug.WriteLine("<<< Btn1_Click  -else if");
                     Ocultar();
                     Limpiar();
                 }
                 else
-                {   
+                {
+                    Debug.WriteLine("<<< Btn1_Click -else");
                     Ocultar();
                     Limpiar();
                 }
@@ -242,6 +245,9 @@ namespace AlphaSport.Vista
         private void Limpiar()
         {
             Debug.WriteLine("<<< LIMPIAR");
+
+            btn1.IsEnabled = false;
+
             btn3.IsEnabled = true;
 
             siglaSelect = "";
@@ -268,8 +274,6 @@ namespace AlphaSport.Vista
 
             obs1.Text = "";
             obs1.IsEnabled = false;
-
-            btn1.IsEnabled = false;
 
             codigo.Focus();
             //bool variable = chbox.IsChecked ?? false;
