@@ -25,7 +25,7 @@ namespace AlphaSport.Vista
         private static VentanaPrestamosImpl instance = null;
 
         private string siglaSelect;
-        private UInt64 codigoEs;
+        private UInt64 codigoEstu;
         private UInt32 cantidad;
         private string observacion;
 
@@ -76,7 +76,7 @@ namespace AlphaSport.Vista
             }
             else  // caso devolucion
             {
-                lista = entorno.Implementos_disponiblesCodigo(codigoEs);
+                lista = entorno.Implementos_disponiblesCodigo(codigoEstu);
 
                 if (lista[0] == entorno.ERRORSQL)
                 {
@@ -121,7 +121,7 @@ namespace AlphaSport.Vista
 
             if (valor_pres) // caso prestamo
             {
-                lista = entorno.AddImplementoPrestamo(siglaSelect, codigoEs, cantidad, observacion);
+                lista = entorno.AddImplementoPrestamo(siglaSelect, codigoEstu, cantidad, observacion);
 
                 if (lista.Count != 0 && lista[0] == entorno.ERRORSQL)
                 {
@@ -136,7 +136,7 @@ namespace AlphaSport.Vista
             }
             else  // caso devolucion
             {
-                lista = entorno.DevuelveImplementoPrestamo(siglaSelect, codigoEs, cantidad);
+                lista = entorno.DevuelveImplementoPrestamo(siglaSelect, codigoEstu, cantidad);
 
                 if (lista.Count != 0 && lista[0] == entorno.ERRORSQL)
                 {                   
@@ -171,61 +171,67 @@ namespace AlphaSport.Vista
 
         private void Cmbox_Sigla_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            siglaSelect = cmbox_Sigla.SelectedValue.ToString();
-            List<string> lista = new List<string>();
+            if (this.IsVisible) {
+                siglaSelect = cmbox_Sigla.SelectedValue.ToString();
+                List<string> lista = new List<string>();
 
-            chbox_pres.IsEnabled = false;
-            chbox_dev.IsEnabled = false;
+                chbox_pres.IsEnabled = false;
+                chbox_dev.IsEnabled = false;
 
-            if (valor_pres) // caso de prestamo
-            {
-                lista = entorno.Implementos_dispCabtidad_sigla(siglaSelect);
-
-                if (lista.Count!=0 && lista[0] == entorno.ERRORSQL)
+                if (valor_pres) // caso de prestamo
                 {
-                    cmbox_Cant.ItemsSource = new List<string>();
-                    if (this.IsVisible) MessageBox.Show(lista[1]);
+                    lista = entorno.Implementos_dispCabtidad_sigla(siglaSelect);
+
+                    if (lista.Count != 0 && lista[0] == entorno.ERRORSQL)
+                    {
+                        cmbox_Cant.ItemsSource = new List<string>();
+                        if (this.IsVisible) MessageBox.Show(lista[1]);
+                    }
+                    else
+                    {
+                        cmbox_Cant.ItemsSource = Listar(lista);
+                    }
                 }
-                else
+                else // caso devolucion
                 {
-                    cmbox_Cant.ItemsSource = Listar(lista);
-                }                
-            }
-            else // caso devolucion
-            {
-                lista = entorno.Implementos_dispPrestamo_sigla(siglaSelect, codigoEs);
+                    lista = entorno.Implementos_dispPrestamo_sigla(siglaSelect, codigoEstu);
 
-                if (lista.Count != 0 && lista[0] == entorno.ERRORSQL)
-                {
-                    cmbox_Cant.ItemsSource = new List<string>();
-                    if (this.IsVisible) MessageBox.Show(lista[1]);
+                    if (lista.Count != 0 && lista[0] == entorno.ERRORSQL)
+                    {
+                        cmbox_Cant.ItemsSource = new List<string>();
+                        if (this.IsVisible) MessageBox.Show(lista[1]);
+                    }
+                    else
+                    {
+                        cmbox_Cant.ItemsSource = Listar(lista);
+                    }
                 }
-                else
-                {
-                    cmbox_Cant.ItemsSource = Listar(lista);
-                }                
-            }
 
-            cmbox_Cant.IsEnabled = true;
+                cmbox_Cant.IsEnabled = true;
+            }
         }
 
         private void Cmbox_Cant_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {    //cantidad = Convert.ToUInt32(cmbox_Cant.SelectedValue.ToString());
 
-            if (valor_pres)
+            if (this.IsVisible)
             {
-                obs1.IsEnabled = true;
-            }
+                if (valor_pres)
+                {
+                    obs1.IsEnabled = true;
+                }
 
-            btn1.IsEnabled = true;
+                btn1.IsEnabled = true;
+            }            
         }
 
         private void Limpiar()
         {
+            Debug.WriteLine("<<< LIMPIAR(),");
             btn3.IsEnabled = true;
 
             siglaSelect = "";
-            codigoEs = 0;
+            codigoEstu = 0;
             cantidad = 0;
             observacion = "";
 
@@ -264,10 +270,10 @@ namespace AlphaSport.Vista
             }
             else
             {
-                codigoEs = Convert.ToUInt64(codigo.Text);
+                codigoEstu = Convert.ToUInt64(codigo.Text);
 
                 List<string> lista = new List<string>();
-                lista = entorno.ValidarEstudianteDeportes(codigoEs, "",0);
+                lista = entorno.ValidarEstudianteDeportes(codigoEstu, "",0);
 
                 if (lista.Count != 0 && lista[0] == entorno.ERRORSQL)
                 {

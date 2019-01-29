@@ -172,6 +172,7 @@ namespace AlphaSport.Controller
 
         public List<string> Implementos_dispPrestamo_sigla(string sigla, UInt64 codigo)
         {
+            Debug.WriteLine("<<< RECIBE: " +sigla+" y " +codigo);
             string query = "CALL devuelveCantidadImplSiglaCodigo('"+sigla+"', "+codigo+");";
             return connection.ListaUnicaReader(query);
         }
