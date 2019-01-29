@@ -66,7 +66,7 @@ namespace AlphaSport.Vista
             {
                 lista = entorno.Implementos_disponiblesSigla();
 
-                if (lista[0] == entorno.ERRORSQL)
+                if (lista.Count != 0 && (lista[0] == entorno.ERRORSQL || lista[0] == entorno.INFOSQL))
                 {
                     cmbox_Sigla.ItemsSource = new List<string>(); ;
                     if (this.IsVisible) MessageBox.Show(lista[1]);                    
@@ -81,7 +81,7 @@ namespace AlphaSport.Vista
             {
                 lista = entorno.Implementos_disponiblesCodigo(codigoEstu);
 
-                if (lista[0] == entorno.ERRORSQL)
+                if (lista.Count != 0 && (lista[0] == entorno.ERRORSQL || lista[0] == entorno.INFOSQL))
                 {
                     cmbox_Sigla.ItemsSource = new List<string>(); ;
                     if (this.IsVisible) MessageBox.Show(lista[1]);
@@ -195,7 +195,7 @@ namespace AlphaSport.Vista
                 {
                     lista = entorno.Implementos_dispCabtidad_sigla(siglaSelect);
 
-                    if (lista.Count != 0 && lista[0] == entorno.ERRORSQL)
+                    if (lista.Count != 0 && (lista[0] == entorno.ERRORSQL || lista[0] == entorno.INFOSQL))
                     {
                         cmbox_Cant.ItemsSource = new List<string>();
                         MessageBox.Show(lista[1]);
@@ -209,7 +209,7 @@ namespace AlphaSport.Vista
                 {
                     lista = entorno.Implementos_dispPrestamo_sigla(siglaSelect, codigoEstu);
 
-                    if (lista.Count != 0 && lista[0] == entorno.ERRORSQL)
+                    if (lista.Count != 0 && (lista[0] == entorno.ERRORSQL || lista[0] == entorno.INFOSQL))
                     {
                         cmbox_Cant.ItemsSource = new List<string>();
                         MessageBox.Show(lista[1]);
@@ -290,7 +290,7 @@ namespace AlphaSport.Vista
                 List<string> lista = new List<string>();
                 lista = entorno.ValidarEstudianteDeportes(codigoEstu, "",0);
 
-                if (lista.Count != 0 && lista[0] == entorno.ERRORSQL)
+                if (lista.Count != 0 && (lista[0] == entorno.ERRORSQL || lista[0] == entorno.INFOSQL))
                 {
                     Limpiar();
                     if (this.IsVisible) MessageBox.Show(lista[1]);

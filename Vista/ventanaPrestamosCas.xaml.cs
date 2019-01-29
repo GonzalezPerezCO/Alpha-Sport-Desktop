@@ -169,7 +169,7 @@ namespace AlphaSport.Vista
         {
             lista = entorno.DisponiblesCasilleros();
 
-            if (lista[0] == entorno.ERRORSQL)
+            if (lista.Count != 0 && (lista[0] == entorno.ERRORSQL || lista[0] == entorno.INFOSQL))
             {
                 cmbox.ItemsSource = new List<string>();
                 if(this.IsVisible) MessageBox.Show(lista[1]);

@@ -454,7 +454,15 @@ namespace AlphaSport.Vista
 
         private void MostrarCupos()
         {
-            cuposL = SepararIds(entorno.Cupos());
+            List<string> lista = entorno.Cupos();
+
+            if (lista.Count != 0 && (lista[0] == entorno.ERRORSQL || lista[0] == entorno.INFOSQL))
+            {
+                MessageBox.Show("Error critico leyendo la base de datos!"+"\n"+"Contacte con el administrador " + lista[1]);
+                Application.Current.Shutdown();
+            }
+
+            cuposL = SepararIds(lista);
 
             labY0.Content = cuposL[0];
             labY1.Content = cuposL[1];
