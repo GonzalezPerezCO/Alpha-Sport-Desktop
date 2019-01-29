@@ -178,7 +178,7 @@ namespace AlphaSport.Controller
             reader = null;
             DataTable dt = new DataTable();
 
-            Debug.WriteLine(" ----   QUERY TABLE OPEN CONNECTION");
+            Debug.WriteLine(" ----   QUERY TABLE OPEN CONNECTION : "+ query);
 
             this.OpenConnection();
             
