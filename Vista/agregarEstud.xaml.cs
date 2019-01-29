@@ -19,13 +19,13 @@ namespace AlphaSport.Vista
     /// <summary>
     /// Lógica de interacción para agregarEstud.xaml
     /// </summary>
-    public partial class agregarEstud : Window
+    public partial class AgregarEstud : Window
     {
 
         private Entorno entorno;
         private static List<string> carreras;
 
-        public agregarEstud()
+        public AgregarEstud()
         {
             InitializeComponent();
             entorno = Entorno.GetInstance();
@@ -106,18 +106,28 @@ namespace AlphaSport.Vista
                 }
                 else
                 {
-                    UInt64 codigo = Convert.ToUInt64(txt3.Text);
-                    string email = txt6.Text.TrimStart().TrimEnd();
                     string nombres = txt1.Text.TrimStart().TrimEnd();
                     string apellidos = txt2.Text.TrimStart().TrimEnd();
                     UInt32 reserva = Convert.ToUInt32(txt9.Text);
+                    UInt64 codigo = Convert.ToUInt64(txt3.Text);
                     UInt64 documento = Convert.ToUInt64(txt8.Text);
                     string carrera = Convert.ToString(cmbox.SelectedValue).TrimStart().TrimEnd();
                     UInt32 semestre = Convert.ToUInt32(cmbox_semestre.SelectedValue.ToString());
+                    string email = txt6.Text.TrimStart().TrimEnd();                    
                     string obs = txt7.Text.TrimStart().TrimEnd();
                     bool examen = chbx.IsChecked ?? false;
 
+                    List<string> lista = entorno.AgregarEstudiante(nombres, apellidos, reserva, codigo, documento, carrera, semestre, email, obs, examen);
 
+                    if (lista.Count != 0 && (lista[0]==entorno.ERRORSQL || lista[0] == entorno.INFOSQL))
+                    {
+                        MessageBox.Show(lista[1]);
+                    }
+                    else
+                    {
+                        MessageBox.Show("El estudiante " + nombres + " " + apellidos + " fue agregado.");
+                        Limpiar();
+                    }
 
 
                     /*

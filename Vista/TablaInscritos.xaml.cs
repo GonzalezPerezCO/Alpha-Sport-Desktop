@@ -60,7 +60,7 @@ namespace AlphaSport
 
         private void Bt3_Click(object sender, RoutedEventArgs e)
         {
-            Window agregar = new agregarEstud();
+            Window agregar = new AgregarEstud();
                         
             agregar.Show();
             this.Hide();
