@@ -235,21 +235,20 @@ namespace AlphaSport.Vista
 
             if (codigo.Text == "" || !UInt64.TryParse(codigo.Text, out UInt64 abc))
             {
-                MessageBox.Show("Escriba un código para buscar!");
+                MessageBox.Show("Codigo no valido!");
             }
             else
             {
                 // Lista: nombre, codigo, casillero, disponible{0:no, 1:si}, entrada, salida
                 List<string> lista = entorno.BuscarCasilleroEstu(Convert.ToUInt64(codigo.Text));
 
-
-                if (lista.Count > 0)
+                if (lista.Count != 0 && lista[0]== entorno.ERRORSQL || lista[0] == entorno.INFOSQL )
                 {
-                    MessageBox.Show("Asignado a: " + lista[0] + ".\n" + "Código: " + lista[1] + ".\n" + "Casillero: " + lista[2] + ".\n" + "Entrada: " + lista[4] + ".");
+                    
                 }
                 else
-                {                    
-                    MessageBox.Show("No se encontraron coincidencias.");
+                {
+                    MessageBox.Show("Asignado a: " + lista[0] + ".\n" + "Código: " + lista[1] + ".\n" + "Casillero: " + lista[2] + ".\n" + "Entrada: " + lista[4] + ".");
                 }
             }
 
@@ -274,15 +273,14 @@ namespace AlphaSport.Vista
 
 
 
-            if (lista.Count > 0)
+            if (lista.Count != 0 && (lista[0]==entorno.ERRORSQL || lista[0]==entorno.INFOSQL)) 
             {
                 // caso para mostrar datos del prestamo                
-                MessageBox.Show("Asignado a: " + lista[0] + ".\n" + "Código: " + lista[1] + ".\n" + "Casillero: " + lista[2] + ".\n" + "Entrada: " + lista[4] + ".");
+                MessageBox.Show(lista[1]);
             }
             else
             {
-                // caso para agregar el prestamo                
-                MessageBox.Show("El casillero esta "+tagButton[0]+" disponible este casillero.");
+                MessageBox.Show("Asignado a: " + lista[0] + ".\n" + "Código: " + lista[1] + ".\n" + "Casillero: " + lista[2] + ".\n" + "Entrada: " + lista[4] + ".");
             }
         }
 

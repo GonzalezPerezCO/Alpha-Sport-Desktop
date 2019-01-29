@@ -198,13 +198,13 @@ namespace AlphaSport.Controller
 
         public List<string> BuscarCasilleroEstu(UInt64 codigo)
         {
-            string query = "SELECT CONCAT(nombre, ' ', apellido), tcasilleros.codigo, id_c , disponible, entrada, salida FROM tcasilleros JOIN testudiantes on testudiantes.codigo =  tcasilleros.codigo WHERE tcasilleros.codigo = "+codigo+ " LIMIT 1;";
+            string query = "CALL listaCasilleroCodigo("+codigo+")";
             return connection.BuscarCasilleroReader(query);
         }
 
         public List<string> BuscarCasilleroID(int casillero)
         {
-            string query = "SELECT CONCAT(nombre, ' ', apellido), tcasilleros.codigo, id_c , disponible, entrada, salida FROM tcasilleros JOIN testudiantes on testudiantes.codigo =  tcasilleros.codigo WHERE tcasilleros.id_c = "+casillero+" LIMIT 1;";
+            string query = "CALL listaCasilleroCodigoCas("+casillero+");";
             return connection.BuscarCasilleroReader(query);
         }
 

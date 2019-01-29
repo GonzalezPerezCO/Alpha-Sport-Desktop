@@ -257,6 +257,18 @@ namespace AlphaSport.Controller
             catch (MySqlException ex)
             {
                 Debug.WriteLine(" ----   CATCH QERY READER buscar_casillero reader: " + ex);
+
+                if (ex.Message.Contains("INFO"))
+                {
+                    result.Add("INFO");
+                    Debug.WriteLine(" ---- CONTAINS INFO");
+                }
+                else
+                {
+                    result.Add("ERROR");
+                    Debug.WriteLine(" ---- CONTAINS ERROR");
+                }
+                result.Add(ex.Message);
             }
 
             this.CloseConnection();
