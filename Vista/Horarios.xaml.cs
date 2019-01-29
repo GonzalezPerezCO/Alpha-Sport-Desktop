@@ -458,7 +458,7 @@ namespace AlphaSport.Vista
 
             if (lista.Count != 0 && (lista[0] == entorno.ERRORSQL || lista[0] == entorno.INFOSQL))
             {
-                MessageBox.Show("Error critico leyendo la base de datos!"+"\n"+"Contacte con el administrador " + lista[1]);
+                MessageBox.Show("Error critico leyendo la base de datos!"+"\n"+"Contacte con el administrador:"+"\n"+ lista[1]);
                 Application.Current.Shutdown();
             }
 

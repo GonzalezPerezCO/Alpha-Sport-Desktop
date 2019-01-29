@@ -128,7 +128,7 @@ namespace AlphaSport.Vista
             {
                 lista = entorno.AddImplementoPrestamo(siglaSelect, codigoEstu, cantidad, observacion);
 
-                if (lista.Count != 0 && lista[0] == entorno.ERRORSQL)
+                if (lista.Count != 0 && (lista[0] == entorno.ERRORSQL || lista[0] == entorno.INFOSQL))
                 {
                     if (this.IsVisible) MessageBox.Show(lista[1]);
                     Limpiar();
@@ -143,7 +143,7 @@ namespace AlphaSport.Vista
             {
                 lista = entorno.DevuelveImplementoPrestamo(siglaSelect, codigoEstu, cantidad);
 
-                if (lista.Count != 0 && lista[0] == entorno.ERRORSQL)
+                if (lista.Count != 0 && (lista[0] == entorno.ERRORSQL || lista[0] == entorno.INFOSQL))
                 {
                     //if (this.IsVisible) MessageBox.Show(lista[1]);
                     MessageBox.Show(lista[1]);

@@ -55,7 +55,14 @@ namespace AlphaSport.Vista
 
         private void PrepararCarreras()
         {
-            carreras = SepararIds(entorno.Carreras());
+            List<string> lista = entorno.Carreras();
+            
+            if (lista.Count != 0 && (lista[0] == entorno.ERRORSQL || lista[0] == entorno.INFOSQL))
+            {
+                MessageBox.Show("Error critico leyendo la base de datos!" + "\n" + "Contacte con el administrador " + lista[1]);
+                Application.Current.Shutdown();
+            }
+            carreras = SepararIds(lista);
             cmbox.ItemsSource = carreras;
         }
 
