@@ -136,7 +136,7 @@ namespace AlphaSport.Vista
 
                 List<string> datosPrestamo = entorno.PrestamosEstudiante(codigoEs);
 
-                if (datosPrestamo[0] == entorno.ERRORSQL)
+                if (datosPrestamo[0] == entorno.ERRORSQL || datosPrestamo[0] == entorno.INFOSQL)
                 {
                     mensaje = datosPrestamo[1];
                     //MessageBox.Show(mensaje);
@@ -163,7 +163,7 @@ namespace AlphaSport.Vista
                         }
                         else
                         {
-                            mensaje = mensaje + "\n Fecha: " + datosPrestamo[i] + "\n"+ "\n";
+                            mensaje = mensaje + "\n Fecha: " + datosPrestamo[i] + "\n" + "\n";
                             paso = 0;
                         }
 
