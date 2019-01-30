@@ -36,6 +36,11 @@ namespace AlphaSport.Vista
             return instance;
         }
 
+        private void Limpiar()
+        {
+
+        }
+
         private void Btn4_Click(object sender, RoutedEventArgs e)
         {
 
@@ -48,12 +53,20 @@ namespace AlphaSport.Vista
 
         private void Btn1_Click(object sender, RoutedEventArgs e)
         {
+            Limpiar();
+            Ocultar();
+        }
 
+        private void Ocultar() {
+            TablaImplementos tablaImpl = TablaImplementos.GetInstance();
+            tablaImpl.Show();
+            this.Hide();
         }
 
         private void Btn2_Click(object sender, RoutedEventArgs e)
         {
-
+            Limpiar();
+            Ocultar();
         }
 
         private void Chbox_Click(object sender, RoutedEventArgs e)
