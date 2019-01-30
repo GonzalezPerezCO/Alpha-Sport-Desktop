@@ -1,0 +1,27 @@
+﻿<Window x:Class="AlphaSport.Vista.ventanaEliminarImpl"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AlphaSport.Vista"
+        mc:Ignorable="d"
+        Title="ventanaEliminarImpl" 
+        WindowStyle="None"  Height="600" Width="500" Closed="Window_Closed" Closing="Window_Closing">
+    <Grid>
+        <Label Content="Número de carnet" HorizontalAlignment="Left" Margin="23,35,0,0" VerticalAlignment="Top" Width="166" FontSize="18" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label Content="Impl Deportivo" HorizontalAlignment="Left" Margin="23,272,0,0" VerticalAlignment="Top" Width="137" FontSize="18" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="45"/>
+        <Label Content="Cantidad" HorizontalAlignment="Right" Margin="0,272,30,275" VerticalAlignment="Center" Width="122" FontSize="18" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="45"/>
+        <ComboBox x:Name="cmbox_Sigla" HorizontalAlignment="Left" Margin="23,322,0,0" VerticalAlignment="Top" Width="174" Height="33" FontSize="18" RenderTransformOrigin="1.034,0.603" SelectionChanged="Cmbox_Sigla_SelectionChanged" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Button x:Name="btn4" Content="nuevo" HorizontalAlignment="Right" Margin="0,10,10,0" VerticalAlignment="Top" Width="74" Click="Btn4_Click" FontSize="18" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" RenderTransformOrigin="0.704,0.163"/>
+        <CheckBox x:Name="chbox_dev" Content="Devolución" HorizontalAlignment="Right" Margin="0,191,21,357" VerticalAlignment="Center" RenderTransformOrigin="-2.579,0.164" FontWeight="Bold" FontSize="18" Height="44" Width="159" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False" Click="Chbox_Click"/>
+        <CheckBox x:Name="chbox_pres" Content="Prestamo" HorizontalAlignment="Left" Margin="23,188,0,356" VerticalAlignment="Center" RenderTransformOrigin="-1.439,5.154" FontWeight="Bold" FontSize="18" Height="48" Width="159" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False" Click="Chbox_Click"/>
+        <TextBox x:Name="obs1" HorizontalAlignment="Left" Height="77" Margin="10,0,0,62" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="472" FontWeight="Bold" FontSize="18" MaxLines="1" MaxLength="500" TextOptions.TextHintingMode="Fixed" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" RenderTransformOrigin="1.256,4.501"/>
+        <Label Content="Observaciones:" HorizontalAlignment="Left" Margin="10,0,0,144" VerticalAlignment="Bottom" Width="138" FontSize="18" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="codigo" HorizontalAlignment="Left" Height="42" Margin="23,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" FontWeight="Bold" FontSize="18" MaxLines="1" MaxLength="11" TextOptions.TextHintingMode="Fixed" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" RenderTransformOrigin="0.328,0.581"/>
+        <Button x:Name="btn3" Content="Buscar" HorizontalAlignment="Right" Margin="0,86,30,0" VerticalAlignment="Top" Width="150" Height="42" FontWeight="Bold" FontSize="18" Click="Btn3_Click" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Button x:Name="btn2" Content="Cancelar" HorizontalAlignment="Right" Margin="0,0,10,10" Width="212" VerticalAlignment="Bottom" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Height="34" FontSize="18" Click="Btn2_Click" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <ComboBox x:Name="cmbox_Cant" HorizontalAlignment="Right" Margin="0,322,30,237" VerticalAlignment="Center" Width="122" Height="33" FontSize="18" RenderTransformOrigin="1.034,0.603" SelectionChanged="Cmbox_Cant_SelectionChanged" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Button x:Name="btn1" Content="Agregar" HorizontalAlignment="Left" Margin="10,0,0,10" Width="212" VerticalAlignment="Bottom" Background="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" Height="34" FontSize="18" Click="Btn1_Click" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+    </Grid>
+</Window>
