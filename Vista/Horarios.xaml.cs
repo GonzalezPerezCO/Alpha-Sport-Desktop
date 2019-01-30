@@ -154,7 +154,7 @@ namespace AlphaSport.Vista
         }
 
         private void Click_bt1(object sender, RoutedEventArgs e)
-        {
+        {   
             Limpiar();
         }
 
