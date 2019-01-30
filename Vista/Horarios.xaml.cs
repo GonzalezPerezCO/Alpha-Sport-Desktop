@@ -282,11 +282,20 @@ namespace AlphaSport.Vista
                         {
                             Debug.WriteLine("--- NE horas inscritos: " + item + " email: " + email);
                         }
-
+                       
                         //CAMBIAR ESTADO DE LOS BOTONES
-                        EstadosBotones(true);
-                        EstadoCmboxDias(true);
-                        EstadoCmboxHoras(false);
+                        if (bloqueadoEstu)
+                        {
+                            EstadosBotones(false);
+                            EstadoCmboxDias(false);
+                            EstadoCmboxHoras(false);
+                        }
+                        else
+                        {
+                            EstadosBotones(true);
+                            EstadoCmboxDias(true);
+                            EstadoCmboxHoras(false);
+                        }
 
                         // PARA CREAR HORARIO DE ESTUDIANTE SIN REGISTRO
                     }
