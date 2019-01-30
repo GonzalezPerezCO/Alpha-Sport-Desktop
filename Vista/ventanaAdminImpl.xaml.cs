@@ -26,6 +26,7 @@ namespace AlphaSport.Vista
         private string nombreIn;
         private string siglaIn;
         private UInt32 cantidadIn;
+        private bool nuevoImpl;
 
         private VentanaAdminImpl()
         {
@@ -45,13 +46,14 @@ namespace AlphaSport.Vista
             nombreIn = "";
             siglaIn = "";
             cantidadIn = 0;
+            nuevoImpl = false;
 
-            chbox_eliminar.IsChecked = true;
+            chbox_nuevo.IsChecked = true;
             input_sigla_nueva.Text = "";
             input_nombre.Text = "";
             input_sigla.Text = "";
 
-            chbox_nuevo.IsChecked = true;
+            chbox_eliminar.IsChecked = true;
             cmbox_Sigla.SelectedValue = false;
 
             btn1.IsEnabled = false;
@@ -68,7 +70,8 @@ namespace AlphaSport.Vista
         }
 
         private void Btn1_Click(object sender, RoutedEventArgs e)
-        {
+        {            
+
             Limpiar();
             Ocultar();
         }
@@ -85,11 +88,6 @@ namespace AlphaSport.Vista
             Ocultar();
         }
 
-        private void Chbox_Click(object sender, RoutedEventArgs e)
-        {
-            cmbox_Sigla.ItemsSource = entorno.Implementos_disponiblesSigla();
-        }
-
         private void Cmbox_Sigla_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
@@ -103,6 +101,19 @@ namespace AlphaSport.Vista
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             Application.Current.Shutdown();
+        }
+
+        private void Chbox_Click_nuevo(object sender, RoutedEventArgs e)
+        {
+            nuevoImpl = true;
+            chbox_eliminar.IsEnabled = false;
+        }
+
+        private void Chbox_Click_eliminar(object sender, RoutedEventArgs e)
+        {
+            nuevoImpl = false;
+            chbox_nuevo.IsEnabled = false;
+            //cmbox_Sigla.ItemsSource = entorno.Implementos_disponiblesSigla();
         }
     }
 }

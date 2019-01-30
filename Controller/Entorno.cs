@@ -186,6 +186,18 @@ namespace AlphaSport.Controller
             return connection.ListaUnicaReader(query);
         }
 
+        public List<string> Nuevo_Implemento(string nombre, string sigla, UInt32 cantidad)
+        {
+            string query = "CALL NewImpl('"+nombre+"', '"+sigla+"', "+ cantidad + ");";
+            return connection.ListaUnicaReader(query);
+        }
+
+        public List<string> Eliminar_Implemento(string sigla)
+        {
+            string query = "CALL eliminarImpl('" + sigla+"');";
+            return connection.ListaUnicaReader(query);
+        }
+
         public List<string> EliminarHorario(string email)
         {
             string query = "CALL eliminarHorarioEstudiante('"+email+"');";
