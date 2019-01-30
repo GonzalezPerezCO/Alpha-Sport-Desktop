@@ -49,12 +49,14 @@ namespace AlphaSport.Vista
             cantidadIn = 0;
             nuevoImpl = false;
 
-            chbox_nuevo.IsChecked = true;
+            chbox_nuevo.IsEnabled = true;
+            chbox_nuevo.IsChecked = false;
             input_sigla_nueva.Text = "";
             input_nombre.Text = "";
             input_sigla.Text = "";
 
-            chbox_eliminar.IsChecked = true;
+            chbox_nuevo.IsEnabled = true;
+            chbox_eliminar.IsChecked = false;
             cmbox_Sigla.SelectedValue = false;
 
             btn1.IsEnabled = false;
