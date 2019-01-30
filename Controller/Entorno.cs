@@ -94,7 +94,7 @@ namespace AlphaSport.Controller
         {
             Debug.WriteLine("####### TAREA DE INACTIVIDAD #######");
 
-            int timerTime = 1; // en minutos
+            int timerTime = 3; // en minutos
             var timer = new DispatcherTimer
              (
              TimeSpan.FromMinutes(timerTime),
