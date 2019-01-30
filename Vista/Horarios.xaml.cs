@@ -633,13 +633,18 @@ namespace AlphaSport.Vista
                 mensaje = lista[1];
             }
             else
-            {
-                cuposL = SepararIds(entorno.Cupos());
-                ActualizarCmbox();
+            {   
                 mensaje = "Horario Eliminado!";
             }
 
-            MessageBox.Show(mensaje);            
+
+            MessageBox.Show(mensaje);
+
+            // regresa a la ventana
+            Window tabla = new TablaInscritos();
+
+            tabla.Show();
+            this.Hide();
         }
     }
 }
