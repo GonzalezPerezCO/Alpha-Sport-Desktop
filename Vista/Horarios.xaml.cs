@@ -680,9 +680,8 @@ namespace AlphaSport.Vista
 
             MessageBox.Show(mensaje);
 
-            // regresa a la ventana
+            // regresa a la ventana anterior
             Window tabla = new TablaInscritos();
-
             tabla.Show();
             this.Hide();
         }
@@ -690,19 +689,27 @@ namespace AlphaSport.Vista
         private void Click_bt5(object sender, RoutedEventArgs e)
         {
             string mensaje = "desbloquear";
+            if (bloqueadoEstu) mensaje = "bloquear";            
 
-            if (bloqueadoEstu) mensaje = "bloquear";
-            
-
-            if (MessageBox.Show("Desea "+mensaje+" el estudiante?", mensaje+" a "+codigo, MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.No)
-            { // NO
-                
-            }
-            else
+            if (MessageBox.Show("Desea "+mensaje+" el estudiante?", mensaje+" a "+codigo, MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
             { // SI
-                
+                if (bloqueadoEstu)
+                {
+                    entorno.BloquearEstudiante(codigo);
+                    bloqueadoEstu = false;
+                }
+                else
+                {
+                    entorno.DesBloquearEstudiante(codigo);
+                    bloqueadoEstu = true;
+                }
             }
 
+            
+            // regresa a la ventana anterior
+            Window tabla = new TablaInscritos();
+            tabla.Show();
+            this.Hide();
 
         }
     }
