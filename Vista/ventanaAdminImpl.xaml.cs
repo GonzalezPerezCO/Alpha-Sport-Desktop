@@ -18,20 +18,20 @@ namespace AlphaSport.Vista
     /// <summary>
     /// Lógica de interacción para ventanaAdminImpl.xaml
     /// </summary>
-    public partial class ventanaAdminImpl : Window
+    public partial class VentanaAdminImpl : Window
     {
         private Entorno entorno;
-        private static ventanaAdminImpl instance;
+        private static VentanaAdminImpl instance;
 
-        private ventanaAdminImpl()
+        private VentanaAdminImpl()
         {
             InitializeComponent();
         }
 
-        public static ventanaAdminImpl GetInstance()
+        public static VentanaAdminImpl GetInstance()
         {
             if (instance == null)
-                instance = new ventanaAdminImpl();
+                instance = new VentanaAdminImpl();
 
             return instance;
         }
