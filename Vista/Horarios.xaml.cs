@@ -171,6 +171,7 @@ namespace AlphaSport.Vista
                 if (bloqueado.Count != 0 && (bloqueado[0] == entorno.ERRORSQL || lista[0] == entorno.INFOSQL))
                 {
                     bloqueadoEstu = true;
+                    MessageBox.Show(bloqueado[1]);
                 }                
                 
                 bool buscarEstudiante = entorno.BuscarEstudiante(codigo, "");
