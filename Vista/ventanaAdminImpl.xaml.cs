@@ -31,6 +31,7 @@ namespace AlphaSport.Vista
         private VentanaAdminImpl()
         {
             InitializeComponent();
+            Limpiar();
         }
 
         public static VentanaAdminImpl GetInstance()
