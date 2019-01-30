@@ -680,10 +680,7 @@ namespace AlphaSport.Vista
 
             MessageBox.Show(mensaje);
 
-            // regresa a la ventana anterior
-            Window tabla = new TablaInscritos();
-            tabla.Show();
-            this.Hide();
+            Click_bt2(new object(), new RoutedEventArgs());
         }
 
         private void Click_bt5(object sender, RoutedEventArgs e)
@@ -704,15 +701,9 @@ namespace AlphaSport.Vista
                     entorno.BloquearEstudiante(codigo);
                     bloqueadoEstu = false;
                 }
-            }
+            }          
 
-            
-            // regresa a la ventana anterior
-            //Window tabla = new TablaInscritos();
-            //tabla.Show();
-            //this.Hide();
-
-            Click_bt4(new object(), new RoutedEventArgs());
+            Click_bt2(new object(), new RoutedEventArgs());
 
         }
     }
