@@ -107,8 +107,8 @@ namespace AlphaSport.Vista
 
             EstadoCmboxDias(false);
             EstadoCmboxHoras(false);
-
             EstadosBotones(false);
+            
             txt3.Focus();
         }
 
@@ -136,6 +136,7 @@ namespace AlphaSport.Vista
             txt3.IsEnabled = !estado;
             bt_mod.IsEnabled = estado;
             bt4.IsEnabled = estado;
+            bt5.IsEnabled = estado;
         }
 
         private void Click_bt2(object sender, RoutedEventArgs e)
