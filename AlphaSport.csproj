@@ -168,9 +168,6 @@
     <Compile Include="Vista\venatanNuevoImpl.xaml.cs">
       <DependentUpon>venatanNuevoImpl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Vista\ventanaEliminarImpl.xaml.cs">
-      <DependentUpon>ventanaEliminarImpl.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Vista\ventanaPrestamosCas.xaml.cs">
       <DependentUpon>ventanaPrestamosCas.xaml</DependentUpon>
     </Compile>
@@ -226,10 +223,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Vista\venatanNuevoImpl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Vista\ventanaEliminarImpl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
