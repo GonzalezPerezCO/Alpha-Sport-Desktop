@@ -23,6 +23,10 @@ namespace AlphaSport.Vista
         private Entorno entorno;
         private static VentanaAdminImpl instance;
 
+        private string nombreIn;
+        private string siglaIn;
+        private UInt32 cantidadIn;
+
         private VentanaAdminImpl()
         {
             InitializeComponent();
@@ -38,7 +42,19 @@ namespace AlphaSport.Vista
 
         private void Limpiar()
         {
+            nombreIn = "";
+            siglaIn = "";
+            cantidadIn = 0;
 
+            chbox_eliminar.IsChecked = false;
+            chbox_nuevo.IsChecked = false;
+
+            input_nombre.Text = "";
+            cmbox_Sigla.SelectedValue = false;
+
+            input_sigla.Text = "";
+
+            btn1.IsEnabled = false;
         }
 
         private void Btn4_Click(object sender, RoutedEventArgs e)
