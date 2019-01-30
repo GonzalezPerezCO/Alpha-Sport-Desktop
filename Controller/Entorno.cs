@@ -198,6 +198,12 @@ namespace AlphaSport.Controller
             return connection.ListaUnicaReader(query);
         }
 
+        public List<string> EstuBloqueado(UInt64 codigo)
+        {
+            string query = "CALL estudianteBloqueado("+codigo+");";
+            return connection.ListaUnicaReader(query);
+        }
+
         public List<string> DesBloquearEstudiante(UInt64 codigo)
         {
             string query = "BloquearEstudianteCodigo("+codigo+");";
