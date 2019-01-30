@@ -151,15 +151,16 @@ namespace AlphaSport.Vista
 
         private void Click_bt3(object sender, RoutedEventArgs e)
         {
+            string varIn = txt3.Text;
             Limpiar();
 
-            if (txt3.Text == "" || (!UInt64.TryParse(txt3.Text, out UInt64 abc)))
+            if (varIn == "" || (!UInt64.TryParse(varIn, out UInt64 abc)))
             {
-                MessageBox.Show("Ingrese un codigo valido!");
+                MessageBox.Show("Ingrese un codigo valido!");                
             }
             else
             {
-                codigo = Convert.ToUInt64(txt3.Text);
+                codigo = Convert.ToUInt64(varIn);
                 //0: nombre, 1: carrera, 2: email, 3: semestre, 4:  fallas, 5: asistencias, 6: dia1,hora1,dia2,hora2,dia3,hora3
                 List<string> lista = entorno.Asistencia(codigo);
 
