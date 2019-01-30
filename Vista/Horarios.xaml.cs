@@ -684,13 +684,13 @@ namespace AlphaSport.Vista
             if (bloqueadoEstu) mensaje = "bloquear";
             
 
-            if (MessageBox.Show("Desea "+mensaje+" el estudiante?", "ADMIN", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.No)
-            {
-                MessageBox.Show("si");
+            if (MessageBox.Show("Desea "+mensaje+" el estudiante?", mensaje+" a "+codigo, MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.No)
+            { // NO
+                
             }
             else
-            {
-                MessageBox.Show("si");
+            { // SI
+                
             }
 
 
