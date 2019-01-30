@@ -708,9 +708,11 @@ namespace AlphaSport.Vista
 
             
             // regresa a la ventana anterior
-            Window tabla = new TablaInscritos();
-            tabla.Show();
-            this.Hide();
+            //Window tabla = new TablaInscritos();
+            //tabla.Show();
+            //this.Hide();
+
+            Click_bt4(new object(), new RoutedEventArgs());
 
         }
     }
