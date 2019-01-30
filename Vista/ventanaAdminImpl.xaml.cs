@@ -46,13 +46,13 @@ namespace AlphaSport.Vista
             siglaIn = "";
             cantidadIn = 0;
 
-            chbox_eliminar.IsChecked = false;
-            chbox_nuevo.IsChecked = false;
-
+            chbox_eliminar.IsChecked = true;
+            input_sigla_nueva.Text = "";
             input_nombre.Text = "";
-            cmbox_Sigla.SelectedValue = false;
-
             input_sigla.Text = "";
+
+            chbox_nuevo.IsChecked = true;
+            cmbox_Sigla.SelectedValue = false;
 
             btn1.IsEnabled = false;
         }
