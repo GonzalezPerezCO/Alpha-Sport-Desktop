@@ -92,6 +92,8 @@ namespace AlphaSport.Controller
         /// </summary>
         public void InactividadAppWPF()
         {
+            Debug.WriteLine("####### TAREA DE INACTIVIDAD #######");
+
             int timerTime = 1; // en minutos
             var timer = new DispatcherTimer
              (
