@@ -456,10 +456,7 @@ namespace AlphaSport.Vista
             else
             {
                 MessageBox.Show("Selección invalida!");
-            }
-
-
-
+            }        
 
             dia1 = Convert.ToString(cmbx1.SelectedValue);
             hora1 = Convert.ToInt32(cmbx4.SelectedValue);
