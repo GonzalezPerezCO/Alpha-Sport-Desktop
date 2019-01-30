@@ -688,20 +688,21 @@ namespace AlphaSport.Vista
 
         private void Click_bt5(object sender, RoutedEventArgs e)
         {
-            string mensaje = "desbloquear";
-            if (bloqueadoEstu) mensaje = "bloquear";            
+            
+            string mensaje = "bloquear";
+            if (bloqueadoEstu) mensaje = "desbloquear";            
 
             if (MessageBox.Show("Desea "+mensaje+" el estudiante?", mensaje+" a "+codigo, MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
             { // SI
                 if (bloqueadoEstu)
                 {
-                    entorno.BloquearEstudiante(codigo);
-                    bloqueadoEstu = false;
+                    entorno.DesBloquearEstudiante(codigo);
+                    bloqueadoEstu = true;
                 }
                 else
                 {
-                    entorno.DesBloquearEstudiante(codigo);
-                    bloqueadoEstu = true;
+                    entorno.BloquearEstudiante(codigo);
+                    bloqueadoEstu = false;
                 }
             }
 
