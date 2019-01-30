@@ -55,7 +55,7 @@ namespace AlphaSport.Vista
             input_nombre.Text = "";
             input_sigla.Text = "";
 
-            chbox_nuevo.IsEnabled = true;
+            chbox_eliminar.IsEnabled = true;
             chbox_eliminar.IsChecked = false;
             cmbox_Sigla.SelectedValue = false;
 
