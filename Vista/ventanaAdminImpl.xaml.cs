@@ -38,7 +38,7 @@ namespace AlphaSport.Vista
         {
             if (instance == null)
                 instance = new VentanaAdminImpl();
-
+           
             return instance;
         }
 
@@ -104,14 +104,28 @@ namespace AlphaSport.Vista
         private void Chbox_Click_nuevo(object sender, RoutedEventArgs e)
         {
             nuevoImpl = true;
-            chbox_eliminar.IsEnabled = false;
+            EstadoCamposEliminar(false);
         }
 
         private void Chbox_Click_eliminar(object sender, RoutedEventArgs e)
         {
             nuevoImpl = false;
-            chbox_nuevo.IsEnabled = false;
+            EstadoCamposNuevo(false);
             //cmbox_Sigla.ItemsSource = entorno.Implementos_disponiblesSigla();
+        }
+
+        private void EstadoCamposNuevo(bool estado)
+        {
+            chbox_nuevo.IsEnabled = estado;
+            input_sigla_nueva.IsEnabled = estado;
+            input_nombre.IsEnabled = estado;
+            input_sigla.IsEnabled = estado;
+        }
+
+        private void EstadoCamposEliminar(bool estado)
+        {
+            chbox_eliminar.IsEnabled = estado;
+            cmbox_Sigla.IsEnabled = estado;
         }
     }
 }
