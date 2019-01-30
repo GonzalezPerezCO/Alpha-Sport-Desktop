@@ -679,7 +679,21 @@ namespace AlphaSport.Vista
 
         private void Click_bt5(object sender, RoutedEventArgs e)
         {
+            string mensaje = "desbloquear";
+
+            if (bloqueadoEstu) mensaje = "bloquear";
             
+
+            if (MessageBox.Show("Desea "+mensaje+" el estudiante?", "ADMIN", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.No)
+            {
+                MessageBox.Show("si");
+            }
+            else
+            {
+                MessageBox.Show("si");
+            }
+
+
         }
     }
 }
