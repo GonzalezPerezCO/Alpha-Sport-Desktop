@@ -67,11 +67,6 @@ namespace AlphaSport.Vista
             Limpiar();
         }
 
-        private void Btn3_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void Btn1_Click(object sender, RoutedEventArgs e)
         {            
 
