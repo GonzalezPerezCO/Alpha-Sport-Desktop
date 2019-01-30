@@ -63,13 +63,16 @@ namespace AlphaSport.Vista
         {
             Window main = new Main();
 
-            main.Show();
+            main.Show();            
             this.Hide();
         }
 
         private void Click_bt1(object sender, RoutedEventArgs e)
         {
+            TablaInscritos tablaIns = new TablaInscritos();
 
+            tablaIns.Show();
+            this.Hide();
         }
 
         private void Cmbx1_SelectionChanged(object sender, SelectionChangedEventArgs e)
