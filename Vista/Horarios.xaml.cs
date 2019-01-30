@@ -108,8 +108,15 @@ namespace AlphaSport.Vista
             EstadoCmboxDias(false);
             EstadoCmboxHoras(false);
             EstadosBotones(false);
-            
+            EstadosInicio(true);
+
             txt3.Focus();
+        }
+
+        private void EstadosInicio(bool estado)
+        {
+            txt3.IsEnabled = estado;
+            bt5.IsEnabled = !estado;
         }
 
         private void EstadoCmboxDias(bool estado)
@@ -135,8 +142,7 @@ namespace AlphaSport.Vista
             bt3.IsEnabled = !estado;
             txt3.IsEnabled = !estado;
             bt_mod.IsEnabled = estado;
-            bt4.IsEnabled = estado;
-            bt5.IsEnabled = estado;
+            bt4.IsEnabled = estado;            
         }
 
         private void Click_bt2(object sender, RoutedEventArgs e)
@@ -164,6 +170,9 @@ namespace AlphaSport.Vista
             else
             {
                 codigo = Convert.ToUInt64(varIn);
+
+                EstadosInicio(false); // desactiva campo input, activa Bloqueos
+
                 //0: nombre, 1: carrera, 2: email, 3: semestre, 4:  fallas, 5: asistencias, 6: dia1,hora1,dia2,hora2,dia3,hora3
                 List<string> lista = entorno.Asistencia(codigo);
 
