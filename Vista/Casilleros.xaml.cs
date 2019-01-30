@@ -293,5 +293,13 @@ namespace AlphaSport.Vista
         {
             ActualizarColores();
         }
+
+        private void Click_volver(object sender, RoutedEventArgs e)
+        {
+            TablaImplementos tablaIns = new TablaImplementos();
+
+            tablaIns.Show();
+            this.Hide();
+        }
     }
 }
