@@ -81,12 +81,12 @@ namespace AlphaSport.Vista
 
         private void Window_Closed(object sender, EventArgs e)
         {
-            TablaImplementos.GetInstance();
+            Application.Current.Shutdown();
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            TablaImplementos.GetInstance();
+            Application.Current.Shutdown();
         }
     }
 }
