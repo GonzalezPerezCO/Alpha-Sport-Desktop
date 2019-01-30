@@ -101,5 +101,6 @@
         <Label x:Name="labY53" Content="0" HorizontalAlignment="Right" Margin="0,594,72,228" VerticalAlignment="Center" FontSize="14" Width="50" VerticalContentAlignment="Center" Height="30" HorizontalContentAlignment="Center"/>
         <Label x:Name="lab13" Content="Asistencias:" HorizontalAlignment="Center" Margin="701,496,750,358" VerticalAlignment="Center" FontSize="24" FontWeight="Bold" Height="38" Width="141"/>
         <Label x:Name="txt14" Content="---" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="842,496,694,358" VerticalAlignment="Center" RenderTransformOrigin="0.355,-0.212" FontSize="24" Width="56" Height="38" Foreground="#FF41C90E" FontWeight="Bold" VerticalContentAlignment="Center"/>
+        <Button x:Name="bt4" Content="Eliminar Horario" HorizontalAlignment="Center" Margin="445,690,695,162" VerticalAlignment="Center" Width="452" Height="40" FontWeight="Bold" FontSize="20" Click="Click_bt4"/>
     </Grid>
 </Window>

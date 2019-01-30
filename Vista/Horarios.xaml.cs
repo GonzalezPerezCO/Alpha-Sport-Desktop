@@ -133,6 +133,7 @@ namespace AlphaSport.Vista
             bt3.IsEnabled = !estado;
             txt3.IsEnabled = !estado;
             bt_mod.IsEnabled = estado;
+            bt4.IsEnabled = estado;
         }
 
         private void Click_bt2(object sender, RoutedEventArgs e)
@@ -620,6 +621,25 @@ namespace AlphaSport.Vista
             {
                 MessageBox.Show("Ha ocurrido un error! tag no encontrado Horarios.xaml.cs");
             }           
+        }
+
+        private void Click_bt4(object sender, RoutedEventArgs e)
+        {
+            List<string> lista = entorno.EliminarHorario(email);
+            string mensaje = "";
+
+            if (lista.Count != 0 && (lista[0] == entorno.ERRORSQL || lista[0] == entorno.INFOSQL))
+            {
+                mensaje = lista[1];
+            }
+            else
+            {
+                cuposL = SepararIds(entorno.Cupos());
+                ActualizarCmbox();
+                mensaje = "Horario Eliminado!";
+            }
+
+            MessageBox.Show(mensaje);            
         }
     }
 }

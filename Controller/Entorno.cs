@@ -186,6 +186,12 @@ namespace AlphaSport.Controller
             return connection.ListaUnicaReader(query);
         }
 
+        public List<string> EliminarHorario(string email)
+        {
+            string query = "CALL eliminarHorarioEstudiante('"+email+"');";
+            return connection.ListaUnicaReader(query);
+        }
+
         public List<string> Implementos_disponiblesCodigo(UInt64 codigo)
         {
             string query = "CALL devuelveImplPendienteLista("+codigo+");";
