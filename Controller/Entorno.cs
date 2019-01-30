@@ -102,7 +102,6 @@ namespace AlphaSport.Controller
              (s, e) => RestartAppWPF(),
              Application.Current.Dispatcher
              );
-
         }
 
         public List<string> CalcularHoy()

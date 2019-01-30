@@ -38,7 +38,9 @@ namespace AlphaSport
             else
             {
                 if (entorno.Login(email, password))
-                {       
+                {
+                    entorno.InactividadAppWPF(); // inactividad programada para Restart app
+
                     Window ventana = new Main();
 
                     ventana.Show();
