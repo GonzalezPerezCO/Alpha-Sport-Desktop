@@ -71,7 +71,7 @@ namespace AlphaSport.Vista
 
         private void Chbox_Click(object sender, RoutedEventArgs e)
         {
-
+            cmbox_Sigla.ItemsSource = entorno.Implementos_disponiblesSigla();
         }
 
         private void Cmbox_Sigla_SelectionChanged(object sender, SelectionChangedEventArgs e)
