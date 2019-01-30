@@ -296,7 +296,7 @@ namespace AlphaSport.Vista
 
         private void Click_volver(object sender, RoutedEventArgs e)
         {
-            TablaImplementos tablaIns = new TablaImplementos();
+            TablaImplementos tablaIns = TablaImplementos.GetInstance();
 
             tablaIns.Show();
             this.Hide();

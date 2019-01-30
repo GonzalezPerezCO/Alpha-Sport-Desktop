@@ -65,5 +65,15 @@ namespace AlphaSport.Vista
         {
 
         }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            TablaImplementos.GetInstance();
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            TablaImplementos.GetInstance();
+        }
     }
 }
