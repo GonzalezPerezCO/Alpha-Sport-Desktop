@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace AlphaSport.Vista
 {
     /// <summary>
-    /// Lógica de interacción para venatanNuevoImpl.xaml
+    /// Lógica de interacción para ventanaNuevoImpl.xaml
     /// </summary>
-    public partial class venatanNuevoImpl : Window
+    public partial class ventanaNuevoImpl : Window
     {
-        public venatanNuevoImpl()
+        public ventanaNuevoImpl()
         {
             InitializeComponent();
         }

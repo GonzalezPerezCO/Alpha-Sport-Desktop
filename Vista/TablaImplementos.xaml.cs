@@ -76,7 +76,9 @@ namespace AlphaSport.Vista
 
         private void Bt6_Click(object sender, RoutedEventArgs e)
         {
-
+            Window casilleros = Casilleros.GetInstance();
+            casilleros.Show();
+            this.IsEnabled = false;
         }
 
         private void Bt7_Click(object sender, RoutedEventArgs e)
