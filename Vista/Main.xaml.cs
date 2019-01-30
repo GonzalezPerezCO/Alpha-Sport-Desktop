@@ -74,7 +74,6 @@ namespace AlphaSport.Vista
             TablaImplementos tabla = new TablaImplementos();
             tabla.Show();
             this.Hide();
-        }
-                
+        }        
     }
 }

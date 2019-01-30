@@ -7,6 +7,7 @@ using AlphaSport.Model;
 using System.Diagnostics;
 using System.Data;
 using System.Windows;
+using System.Windows.Threading;
 
 // using R_Connection = Deportes_WPF.Controller.ConnectionClass;
 
@@ -74,6 +75,31 @@ namespace AlphaSport.Controller
             else {
                 return false;
             }
+
+        }
+
+        /// <summary>
+        /// Reinicia al applicacion
+        /// </summary>
+        public void RestartAppWPF()
+        {
+            System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
+            Application.Current.Shutdown();
+        }
+
+        /// <summary>
+        /// Mantiene como inactividad maxima en 5min y luego reinicia la applicacion
+        /// </summary>
+        public void InactividadAppWPF()
+        {
+            int timerTime = 1; // en minutos
+            var timer = new DispatcherTimer
+             (
+             TimeSpan.FromMinutes(timerTime),
+             DispatcherPriority.ApplicationIdle,// Or DispatcherPriority.SystemIdle
+             (s, e) => RestartAppWPF(),
+             Application.Current.Dispatcher
+             );
 
         }
 
