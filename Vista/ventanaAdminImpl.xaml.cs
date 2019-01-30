@@ -64,7 +64,7 @@ namespace AlphaSport.Vista
 
         private void Btn4_Click(object sender, RoutedEventArgs e)
         {
-
+            Limpiar();
         }
 
         private void Btn3_Click(object sender, RoutedEventArgs e)
