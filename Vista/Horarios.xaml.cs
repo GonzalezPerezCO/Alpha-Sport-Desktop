@@ -30,6 +30,7 @@ namespace AlphaSport.Vista
         private List<string> horasInscritos = new List<string>();
         private List<string> diasModifi = new List<string>();
         private List<string> horasModifi = new List<string>();
+        private bool bloqueadoEstu = false;
 
         private List<string> cuposL = new List<string>();
         private List<Label> labelsY = new List<Label>();        
@@ -102,6 +103,7 @@ namespace AlphaSport.Vista
             horasInscritos = new List<string>();
             diasModifi = new List<string>();
             horasModifi = new List<string>();
+            bloqueadoEstu = false;
 
             EstadoCmboxDias(false);
             EstadoCmboxHoras(false);
@@ -168,19 +170,81 @@ namespace AlphaSport.Vista
 
                 if (bloqueado.Count != 0 && (bloqueado[0] == entorno.ERRORSQL || lista[0] == entorno.INFOSQL))
                 {
-                    MessageBox.Show(bloqueado[1]);
-                }
-                else
+                    bloqueadoEstu = true;
+                }                
+                
+                bool buscarEstudiante = entorno.BuscarEstudiante(codigo, "");
+
+                if (buscarEstudiante && lista.Count > 0)
                 {
-                    bool buscarEstudiante = entorno.BuscarEstudiante(codigo, "");
+                    SepararDias(lista);  // descompone la posicion 5 y agrega los 6 elementos que se necesitan en el orden que se necesitan     
 
-                    if (buscarEstudiante && lista.Count > 0)
+                    foreach (var item in lista)
                     {
-                        SepararDias(lista);  // descompone la posicion 5 y agrega los 6 elementos que se necesitan en el orden que se necesitan     
+                        Debug.WriteLine("<<<< Lista horario: " + item);
+                    }
 
+                    email = lista[2]; // GUARDA EMAIL
+
+                    txt4.Content = lista[0];
+                    txt5.Content = lista[1];
+                    txt6.Content = lista[3];
+                    txt7.Content = lista[4];
+                    txt14.Content = lista[5];
+
+                    txt8.Content = lista[6];
+                    txt9.Content = lista[7];
+                    txt10.Content = lista[8];
+                    txt11.Content = lista[9];
+                    txt12.Content = lista[10];
+                    txt13.Content = lista[11];
+
+                    HorarioCmbox(lista[6], lista[7], lista[8], lista[9], lista[10], lista[11]); // mostrar el horario en los Cmbox
+
+                    // LLENAR LISTA DE DATOS DIAS Y HORAS
+                    diasInscritos.Add(lista[6]);
+                    diasInscritos.Add(lista[7]);
+                    diasInscritos.Add(lista[8]);
+
+                    horasInscritos.Add(lista[9]);
+                    horasInscritos.Add(lista[10]);
+                    horasInscritos.Add(lista[11]);
+
+                    foreach (var item in diasInscritos)
+                    {
+                        Debug.WriteLine("--- IN dias inscritos: " + item + " email: " + email);
+                    }
+
+                    foreach (var item in diasInscritos)
+                    {
+                        Debug.WriteLine("--- IN horas inscritos: " + item + " email: " + email);
+                    }
+
+                    //CAMBIAR ESTADO DE LOS BOTONES
+                    if (bloqueadoEstu)
+                    {
+                        EstadosBotones(false);
+                        EstadoCmboxDias(false);
+                        EstadoCmboxHoras(false);
+                    }
+                    else
+                    {
+                        EstadosBotones(true);
+                        EstadoCmboxDias(true);
+                        EstadoCmboxHoras(false);
+                    }
+                }
+                else if (buscarEstudiante && lista.Count == 0)
+                {
+                    //0: nombre, 1: carrera, 2: email, 3: semestre, 4: fallas, 5: asistencias, 6: codigo
+                    lista = entorno.DatosEstudiante(codigo);
+
+                    MessageBox.Show("No esta registrado el Estudiante en el Gimnasio!");
+                    if (lista.Count > 0)
+                    {
                         foreach (var item in lista)
                         {
-                            Debug.WriteLine("<<<< Lista horario: " + item);
+                            Debug.WriteLine("<<<< Lista datos estu: " + item);
                         }
 
                         email = lista[2]; // GUARDA EMAIL
@@ -191,103 +255,48 @@ namespace AlphaSport.Vista
                         txt7.Content = lista[4];
                         txt14.Content = lista[5];
 
-                        txt8.Content = lista[6];
-                        txt9.Content = lista[7];
-                        txt10.Content = lista[8];
-                        txt11.Content = lista[9];
-                        txt12.Content = lista[10];
-                        txt13.Content = lista[11];
+                        txt8.Content = "N/A";
+                        txt9.Content = "N/A";
+                        txt10.Content = "N/A";
+                        txt11.Content = "N/A";
+                        txt12.Content = "N/A";
+                        txt13.Content = "N/A";
 
-                        HorarioCmbox(lista[6], lista[7], lista[8], lista[9], lista[10], lista[11]); // mostrar el horario en los Cmbox
+                        HorarioCmbox(null, null, null, "N/A", "N/A", "N/A"); // mostrar el horario en los Cmbox
 
                         // LLENAR LISTA DE DATOS DIAS Y HORAS
-                        diasInscritos.Add(lista[6]);
-                        diasInscritos.Add(lista[7]);
-                        diasInscritos.Add(lista[8]);
+                        diasInscritos.Add("N/A");
+                        diasInscritos.Add("N/A");
+                        diasInscritos.Add("N/A");
 
-                        horasInscritos.Add(lista[9]);
-                        horasInscritos.Add(lista[10]);
-                        horasInscritos.Add(lista[11]);
+                        horasInscritos.Add("N/A");
+                        horasInscritos.Add("N/A");
+                        horasInscritos.Add("N/A");
 
                         foreach (var item in diasInscritos)
                         {
-                            Debug.WriteLine("--- IN dias inscritos: " + item + " email: " + email);
+                            Debug.WriteLine("--- NE dias inscritos: " + item + " email: " + email);
                         }
 
                         foreach (var item in diasInscritos)
                         {
-                            Debug.WriteLine("--- IN horas inscritos: " + item + " email: " + email);
+                            Debug.WriteLine("--- NE horas inscritos: " + item + " email: " + email);
                         }
 
                         //CAMBIAR ESTADO DE LOS BOTONES
                         EstadosBotones(true);
                         EstadoCmboxDias(true);
                         EstadoCmboxHoras(false);
+
+                        // PARA CREAR HORARIO DE ESTUDIANTE SIN REGISTRO
                     }
-                    else if (buscarEstudiante && lista.Count == 0)
-                    {
-                        //0: nombre, 1: carrera, 2: email, 3: semestre, 4: fallas, 5: asistencias, 6: codigo
-                        lista = entorno.DatosEstudiante(codigo);
-
-                        MessageBox.Show("No esta registrado el Estudiante en el Gimnasio!");
-                        if (lista.Count > 0)
-                        {
-                            foreach (var item in lista)
-                            {
-                                Debug.WriteLine("<<<< Lista datos estu: " + item);
-                            }
-
-                            email = lista[2]; // GUARDA EMAIL
-
-                            txt4.Content = lista[0];
-                            txt5.Content = lista[1];
-                            txt6.Content = lista[3];
-                            txt7.Content = lista[4];
-                            txt14.Content = lista[5];
-
-                            txt8.Content = "N/A";
-                            txt9.Content = "N/A";
-                            txt10.Content = "N/A";
-                            txt11.Content = "N/A";
-                            txt12.Content = "N/A";
-                            txt13.Content = "N/A";
-
-                            HorarioCmbox(null, null, null, "N/A", "N/A", "N/A"); // mostrar el horario en los Cmbox
-
-                            // LLENAR LISTA DE DATOS DIAS Y HORAS
-                            diasInscritos.Add("N/A");
-                            diasInscritos.Add("N/A");
-                            diasInscritos.Add("N/A");
-
-                            horasInscritos.Add("N/A");
-                            horasInscritos.Add("N/A");
-                            horasInscritos.Add("N/A");
-
-                            foreach (var item in diasInscritos)
-                            {
-                                Debug.WriteLine("--- NE dias inscritos: " + item + " email: " + email);
-                            }
-
-                            foreach (var item in diasInscritos)
-                            {
-                                Debug.WriteLine("--- NE horas inscritos: " + item + " email: " + email);
-                            }
-
-                            //CAMBIAR ESTADO DE LOS BOTONES
-                            EstadosBotones(true);
-                            EstadoCmboxDias(true);
-                            EstadoCmboxHoras(false);
-
-                            // PARA CREAR HORARIO DE ESTUDIANTE SIN REGISTRO
-                        }
-                    }
-                    else
-                    {
-                        Limpiar();
-                        MessageBox.Show("No esta registrado en la Base de Datos de Deportes!");
-                    }
-
-                }                               
+                }
+                else
+                {
+                    Limpiar();
+                    MessageBox.Show("No esta registrado en la Base de Datos de Deportes!");
+                }
+                                              
             }
         }
 
@@ -660,7 +669,7 @@ namespace AlphaSport.Vista
 
         private void Click_bt5(object sender, RoutedEventArgs e)
         {
-
+            
         }
     }
 }
