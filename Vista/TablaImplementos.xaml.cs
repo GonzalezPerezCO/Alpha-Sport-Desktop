@@ -85,7 +85,7 @@ namespace AlphaSport.Vista
 
         private void Bt6_Click(object sender, RoutedEventArgs e)
         {
-            VentanaAdminImpl ventanaAdmin = VentanaAdminImpl.GetInstance();
+            VentanaAddDelImpl ventanaAdmin = VentanaAddDelImpl.GetInstance();
             ventanaAdmin.Show();
             this.Hide();
         }

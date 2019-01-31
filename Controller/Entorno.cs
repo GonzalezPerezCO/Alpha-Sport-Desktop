@@ -182,6 +182,7 @@ namespace AlphaSport.Controller
 
         public List<string> Implementos_disponiblesSigla()
         {
+            Debug.WriteLine("///////// impl disponibles");
             string query = "CALL devuelveImplDisponiglesSigla();";
             return connection.ListaUnicaReader(query);
         }
