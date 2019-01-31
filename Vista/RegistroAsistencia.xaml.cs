@@ -1,5 +1,7 @@
-﻿using System;
+﻿using AlphaSport.Controller;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,9 +21,42 @@ namespace AlphaSport.Vista
     /// </summary>
     public partial class RegistroAsistencia : Window
     {
+        private Entorno entorno;
+
+
         public RegistroAsistencia()
         {
             InitializeComponent();
+            entorno = Entorno.GetInstance();
+            lab1.Content = entorno.PROYECTO;
+            MostrarTabla();
+        }
+
+        private void Bt7_Click(object sender, RoutedEventArgs e)
+        {
+            MostrarTabla();
+        }
+
+        public void MostrarTabla()
+        {
+            DataTable dt = entorno.TablaFallasAsistencia();
+            dtgrid1.ItemsSource = dt.DefaultView;
+        }
+
+        private void Click_bt2(object sender, RoutedEventArgs e)
+        {
+            TablaInscritos inscritos = new TablaInscritos();
+
+            inscritos.Show();
+            this.Hide();
+        }
+
+        private void Bt5_Click(object sender, RoutedEventArgs e)
+        {
+            Window main = new Main();
+
+            main.Show();
+            this.Hide();
         }
     }
 }
