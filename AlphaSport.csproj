@@ -153,6 +153,9 @@
     <Compile Include="Vista\PrestamosImpl.xaml.cs">
       <DependentUpon>PrestamosImpl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Vista\RegistroAsistencia.xaml.cs">
+      <DependentUpon>RegistroAsistencia.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Vista\TablaImplementos.xaml.cs">
       <DependentUpon>TablaImplementos.xaml</DependentUpon>
     </Compile>
@@ -211,6 +214,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Vista\PrestamosImpl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vista\RegistroAsistencia.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
