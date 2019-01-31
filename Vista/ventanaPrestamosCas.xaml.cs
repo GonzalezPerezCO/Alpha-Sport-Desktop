@@ -83,7 +83,7 @@ namespace AlphaSport.Vista
                 int codigoCas = Convert.ToInt32(cmbox.SelectedValue);
 
                 List<string> busCod = entorno.BuscarCasilleroEstu(codigoEs); // valida y devuelve datos si tiene casillero
-
+                Debug.WriteLine("<<<<<< ++++++ "+busCod[0] + busCod[1]);
                 if (busCod.Count != 0 && busCod[0] == entorno.INFOSQL) // cuando si esta pero no tiene casillero
                 {
                     if (cmbox.Text == "")
@@ -98,7 +98,7 @@ namespace AlphaSport.Vista
                         MessageBox.Show("Casillero asignado!");
                     }
                 }
-                else if (busCod.Count != 0 && busCod[0] == entorno.ERRORSQL) // cuando el estudiante no existe
+                else if (busCod.Count != 0 && busCod[0] == entorno.ERRORSQL) // cuando el estudiante no existe o presenta errores
                 {
                     MessageBox.Show(busCod[1]);
                 }

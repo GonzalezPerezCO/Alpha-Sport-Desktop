@@ -173,7 +173,7 @@ namespace AlphaSport.Vista
 
                 EstadosInicio(false); // desactiva campo input, activa Bloqueos
 
-                //0: nombre, 1: carrera, 2: email, 3: semestre, 4:  fallas, 5: asistencias, 6: dia1,hora1,dia2,hora2,dia3,hora3
+                //0: nombre, 1: carrera, 2: email, 3: semestre, 4:  fallas, 5: asistencias, 6: bloqueado, 7: dia1,hora1,dia2,hora2,dia3,hora3
                 List<string> lista = entorno.Asistencia(codigo);
 
                 List<string> bloqueado = entorno.EstuBloqueado(codigo);
@@ -188,7 +188,7 @@ namespace AlphaSport.Vista
 
                 if (buscarEstudiante && lista.Count > 0)
                 {
-                    SepararDias(lista);  // descompone la posicion 5 y agrega los 6 elementos que se necesitan en el orden que se necesitan     
+                    SepararDias(lista);  // descompone la posicion 7 y agrega los 6 elementos que se necesitan en el orden que se necesitan     
 
                     foreach (var item in lista)
                     {
@@ -322,10 +322,10 @@ namespace AlphaSport.Vista
 
         private void SepararDias(List<string> lista)
         {
-            // cambiar posicion 6 de lista: "d1,h1,d2,h2,d3,h3" por ["d1","d2","d3","h1","h2","h3"]
+            // cambiar posicion 7 de lista: "d1,h1,d2,h2,d3,h3" por ["d1","d2","d3","h1","h2","h3"]
 
-            string cadena = lista[6];
-            lista.RemoveAt(6);
+            string cadena = lista[7];
+            lista.RemoveAt(7);
 
             if (cadena == "" || cadena == "N/A" || cadena.Length == 0)
             {
