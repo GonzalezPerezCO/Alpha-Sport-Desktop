@@ -104,5 +104,13 @@ namespace AlphaSport
         {
             MostrarTabla();
         }
+
+        private void Bt8_Click(object sender, RoutedEventArgs e)
+        {
+            RegistroAsistencia registro = new RegistroAsistencia();
+
+            registro.Show();
+            this.Hide();
+        }
     }
 }
