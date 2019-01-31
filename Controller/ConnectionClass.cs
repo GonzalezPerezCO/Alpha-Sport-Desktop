@@ -413,7 +413,8 @@ namespace AlphaSport.Controller
                     if (reader.GetString(3) != null) { result.Add(Convert.ToString(reader.GetString(3))); } else { result.Add("0"); }
                     if (reader.GetString(4) != null) { result.Add(Convert.ToString(reader.GetString(4))); } else { result.Add("0"); }
                     if (reader.GetString(5) != null) { result.Add(Convert.ToString(reader.GetString(5))); } else { result.Add("0"); }
-                    if (reader.GetString(6) != null) { result.Add(reader.GetString(6)); } else { result.Add("N/A"); }
+                    if (reader.GetString(6) != null) { result.Add(Convert.ToString(reader.GetString(6))); } else { result.Add("0"); }
+                    if (reader.GetString(7) != null) { result.Add(reader.GetString(7)); } else { result.Add("N/A"); }
                     //if (reader.GetString(6) != null) { result.Add(reader.GetString(6)); } else { result.Add("N/A"); }
                     //if (reader.GetString(7) != null) { result.Add(reader.GetString(7)); } else { result.Add("N/A"); }
                     //if (reader.GetString(8) != null) { result.Add(Convert.ToString(reader.GetString(8))); } else { result.Add("0"); }

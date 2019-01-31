@@ -84,7 +84,7 @@ namespace AlphaSport.Vista
             }
             else
             {
-                //0: nombre, 1: carrera, 2: email, 3: semestre, 4:  fallas, 5: asistencias, 6: dia1,hora1,dia2,hora2,dia3,hora3
+                //0: nombre, 1: carrera, 2: email, 3: semestre, 4:  fallas, 5: asistencias, 6: bloqueo, 7: dia1,hora1,dia2,hora2,dia3,hora3
                 List<string> lista = entorno.Asistencia(Convert.ToUInt64(codigo));
                 
                 if (lista.Count > 0)
@@ -95,55 +95,65 @@ namespace AlphaSport.Vista
                     lab8.Content = lista[4];
                     lab14.Content = lista[5];
 
-                    SepararDias(lista);  // descompone la posicion 6 y agrega los 6 elementos que se necesitan en el orden que se necesitan
+                    bool bloqueadoEs = Convert.ToBoolean(lista[6]);
 
-                    Debug.WriteLine("**** For :" + lista.Count);
-
-                    List<string> datosFechaActual = entorno.CalcularHoy();
-
-                    string diaActual = datosFechaActual[0];
-                    string horaActual = datosFechaActual[1];
-
-                    foreach (var item in lista)
+                    if (!bloqueadoEs) // caso estudiante no bloqueado
                     {
-                        Debug.WriteLine("<<<< Lista: " + item);
-                    }
+                        SepararDias(lista);  // descompone la posicion 6 y agrega los 6 elementos que se necesitan en el orden que se necesitan
 
-                    // mostrar horario
-                    txt8.Content = lista[6];
-                    txt9.Content = lista[7];
-                    txt10.Content = lista[8];
-                    txt11.Content = lista[9];
-                    txt12.Content = lista[10];
-                    txt13.Content = lista[11];
+                        Debug.WriteLine("**** For :" + lista.Count);
 
-                    string mensaje = "";
-                    // campo 5,6 y 7 con dias, 8,9,10 son las horas
-                    for (int i= 5; i <= 7; i++)
-                    {
-                        Debug.WriteLine("<<<<<<<<<<<<< datos: " + lista[i]); // estoy hay que quitar en la implementacion
+                        List<string> datosFechaActual = entorno.CalcularHoy();
 
-                        if (lista[i] == diaActual /*|| codigo == "2095112"*/) {
-                            if (lista[i + 3] == horaActual /*|| lista[i + 3] == "0"*/) // es 0 para que 2095112 muestre este mensaje
+                        string diaActual = datosFechaActual[0];
+                        string horaActual = datosFechaActual[1];
+
+                        foreach (var item in lista)
+                        {
+                            Debug.WriteLine("<<<< Lista: " + item);
+                        }
+
+                        // mostrar horario
+                        txt8.Content = lista[7];
+                        txt9.Content = lista[8];
+                        txt10.Content = lista[9];
+                        txt11.Content = lista[10];
+                        txt12.Content = lista[11];
+                        txt13.Content = lista[12];
+
+                        string mensaje = "";
+                        // campo 5,6 y 7 con dias, 8,9,10 son las horas
+                        for (int i = 5; i <= 7; i++)
+                        {
+                            Debug.WriteLine("<<<<<<<<<<<<< datos: " + lista[i]); // estoy hay que quitar en la implementacion
+
+                            if (lista[i] == diaActual /*|| codigo == "2095112"*/)
                             {
-                                mensaje = "Franja Horaria para registrar: " + diaActual + " - " + horaActual + ":00.";
+                                if (lista[i + 3] == horaActual /*|| lista[i + 3] == "0"*/) // es 0 para que 2095112 muestre este mensaje
+                                {
+                                    mensaje = "Franja Horaria para registrar: " + diaActual + " - " + horaActual + ":00.";
 
-                               // BotonesEstado(true);
-                            }
-                            else
-                            {
-                                Debug.WriteLine("<<<<<<<<<<<<< día no asignado");
-                                mensaje = "El estudiante no tiene asignada esta franja horaria: " + diaActual + " - " + horaActual + ":00.";                               
+                                    // BotonesEstado(true);
+                                }
+                                else
+                                {
+                                    Debug.WriteLine("<<<<<<<<<<<<< día no asignado");
+                                    mensaje = "El estudiante no tiene asignada esta franja horaria: " + diaActual + " - " + horaActual + ":00.";
+                                }
+
                             }
 
                         }
-                        
-                    }
-                    
-                    if(mensaje =="") mensaje = "El estudiante no tiene este dia asignado: " + diaActual + " - " + horaActual + ":00.";
 
-                    lab6.Content = mensaje;
-                    BotonesEstado(true);
+                        if (mensaje == "") mensaje = "El estudiante no tiene este dia asignado: " + diaActual + " - " + horaActual + ":00.";
+
+                        lab6.Content = mensaje;
+                        BotonesEstado(true);
+                    }
+                    else
+                    {
+                        MessageBox.Show("El estudiante esta bloqueado"); 
+                    }
                 }
                 else
                 {
@@ -158,10 +168,10 @@ namespace AlphaSport.Vista
 
         private void SepararDias(List<string> lista)
         {
-            // cambiar posicion 6 de lista: "d1,h1,d2,h2,d3,h3" por ["d1","d2","d3","h1","h2","h3"]
+            // cambiar posicion 7 de lista: "d1,h1,d2,h2,d3,h3" por ["d1","d2","d3","h1","h2","h3"]
 
-            string cadena = lista[6];
-            lista.RemoveAt(6);
+            string cadena = lista[7];
+            lista.RemoveAt(7);
 
             if (cadena == "" || cadena == "N/A" || cadena.Length == 0)
             {
