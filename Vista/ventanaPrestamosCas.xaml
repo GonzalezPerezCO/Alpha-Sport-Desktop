@@ -10,12 +10,12 @@
             <ColumnDefinition Width="8*"/>
             <ColumnDefinition Width="9*"/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="btn1" Content="Agregar" HorizontalAlignment="Left" Margin="10,0,0,10" Width="222" VerticalAlignment="Bottom" Background="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" Height="34" FontSize="18" Click="Btn1_Click"/>
+        <Button x:Name="btn1" Content="Aceptar" HorizontalAlignment="Left" Margin="10,0,0,10" Width="222" VerticalAlignment="Bottom" Background="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" Height="34" FontSize="18" Click="Btn1_Click"/>
         <TextBox x:Name="codigo" HorizontalAlignment="Left" Height="45" Margin="47,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="383" FontWeight="Bold" FontSize="18" MaxLines="1" MaxLength="11" TextOptions.TextHintingMode="Fixed" Grid.ColumnSpan="2"/>
         <Label Content="Número de carnet" HorizontalAlignment="Left" Margin="47,56,0,0" VerticalAlignment="Top" Width="341" FontSize="18" Grid.ColumnSpan="2"/>
         <Label Content="Casillero No:" HorizontalAlignment="Left" Margin="55,272,0,274" VerticalAlignment="Center" FontWeight="Bold" Height="46" FontSize="18" Width="151"/>
         <ComboBox x:Name="cmbox" HorizontalAlignment="Right" Margin="0,272,110,274" VerticalAlignment="Center" Width="122" Height="46" FontSize="18" RenderTransformOrigin="1.034,0.603" Grid.Column="1"/>
-        <Button x:Name="btn2" Content="Cancelar" HorizontalAlignment="Left" Margin="28,0,0,10" Width="222" VerticalAlignment="Bottom" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Height="34" FontSize="18" Grid.Column="1" Click="Btn2_Click"/>
+        <Button x:Name="btn2" Content="Regresar" HorizontalAlignment="Left" Margin="28,0,0,10" Width="222" VerticalAlignment="Bottom" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Height="34" FontSize="18" Grid.Column="1" Click="Btn2_Click"/>
         <TextBlock HorizontalAlignment="Center"  VerticalAlignment="Bottom" Grid.ColumnSpan="2" Margin="47,0,62,115" Height="59" TextWrapping="Wrap" FontSize="18" Width="383" TextAlignment="Center"><Run Text="Sí, va a liberar el casillero, no tiene que seleccionar Casillero No."/></TextBlock>
     </Grid>
 </Window>

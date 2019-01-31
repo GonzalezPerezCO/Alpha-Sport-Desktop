@@ -11,12 +11,12 @@
         WindowStyle="None">
     <Grid IsVisibleChanged="Grid_IsVisibleChanged">
         <Label x:Name="lab1" Content="Nombre del Proyecto" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="330,24,334,0" VerticalAlignment="Top" RenderTransformOrigin="4.868,0.577" FontSize="36" FontWeight="Bold" Width="928"/>
-        <Label x:Name="lab2" Content="Prestamos Implementos Deportivos" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="503,112,508,0" VerticalAlignment="Top" RenderTransformOrigin="0.497,8.452" FontSize="24" FontWeight="Bold" Width="581"/>
+        <Label x:Name="lab2" Content="Préstamos Implementos Deportivos" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="503,112,508,0" VerticalAlignment="Top" RenderTransformOrigin="0.497,8.452" FontSize="24" FontWeight="Bold" Width="581"/>
         <Button x:Name="Bt1" Content="Prestar Impl Dep" Margin="0,106,10,0" VerticalAlignment="Top" Width="130" HorizontalAlignment="Right" Background="#FFFFDA33" Click="Bt1_Click"/>
-        <Button x:Name="Bt2" Content="Volver" HorizontalAlignment="Right" Margin="0,62,10,0" VerticalAlignment="Top" Width="74" Click="Bt2_Click"/>
+        <Button x:Name="Bt2" Content="Regresar" HorizontalAlignment="Right" Margin="0,62,10,0" VerticalAlignment="Top" Width="74" Click="Bt2_Click"/>
         <Button x:Name="Bt3" Content="Menú principal" HorizontalAlignment="Right" Margin="0,738,10.276,0" VerticalAlignment="Top" Width="130" RenderTransformOrigin="0.52,2.5" FontWeight="Bold" Height="48" Background="#FFFFDA33" Click="Bt3_Click"/>
         <DataGrid x:Name="dtgrid1" Height="598" Margin="434,256,440,0" VerticalAlignment="Top" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Width="718"/>
-        <Button x:Name="Bt4" Content="Actualizar tabla Prestamos" HorizontalAlignment="Center" Margin="434,226,440,0" VerticalAlignment="Top" Width="718" FontWeight="Bold" FontSize="16" Click="Bt4_Click">
+        <Button x:Name="Bt4" Content="Actualizar tabla Préstamos" HorizontalAlignment="Center" Margin="434,226,440,0" VerticalAlignment="Top" Width="718" FontWeight="Bold" FontSize="16" Click="Bt4_Click">
             <Button.Background>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.MenuHighlightColorKey}}"/>
             </Button.Background>

@@ -19,7 +19,7 @@
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.MenuHighlightColorKey}}"/>
             </Button.Background>
         </Button>
-        <Button x:Name="bt2" Content="Volver" HorizontalAlignment="Right" Margin="0,157,31,0" VerticalAlignment="Top" Width="74" Click="Click_bt2"/>
+        <Button x:Name="bt2" Content="Regresar" HorizontalAlignment="Right" Margin="0,157,31,0" VerticalAlignment="Top" Width="74" Click="Click_bt2"/>
 
     </Grid>
 </Window>

@@ -11,13 +11,13 @@
     <Grid>
         <Label x:Name="lab1" Content="Nombre del Proyecto" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="47,7,47,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="36" Width="1338" Grid.ColumnSpan="4"/>
         <Label x:Name="lab2" Content="Agregar Estudiante al Gimnasio" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="176,112,209,0" VerticalAlignment="Top" RenderTransformOrigin="-0.013,-0.288" FontWeight="Bold" FontSize="24" Grid.Column="1"/>
-        <Button x:Name="btn1" Content="Volver" HorizontalAlignment="Right" Margin="0,97,49,0" VerticalAlignment="Top" Width="76" Click="Btn1_Click"/>
+        <Button x:Name="btn1" Content="Regresar" HorizontalAlignment="Right" Margin="0,97,49,0" VerticalAlignment="Top" Width="76" Click="Btn1_Click"/>
         <Button x:Name="btn3" Content="Guardar" HorizontalAlignment="Center" Margin="596,0,894,48" VerticalAlignment="Bottom" Width="102" FontWeight="Bold" FontSize="16" Height="43" Click="Btn3_Click">
             <Button.Background>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.MenuHighlightColorKey}}"/>
             </Button.Background>
         </Button>
-        <Button x:Name="btn4" Content="Cancelar" HorizontalAlignment="Center" Margin="898,0,592,48" VerticalAlignment="Bottom" Width="102" FontWeight="Bold" FontSize="16" Height="43" Background="#FFD36D19" Click="Btn4_Click"/>
+        <Button x:Name="btn4" Content="Regresar" HorizontalAlignment="Center" Margin="898,0,592,48" VerticalAlignment="Bottom" Width="102" FontWeight="Bold" FontSize="16" Height="43" Background="#FFD36D19" Click="Btn4_Click"/>
         <Label x:Name="lab3" Content="Nombres:" HorizontalAlignment="Center" Margin="276,249,1204,606" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" Width="112"/>
         <TextBox x:Name="txt1" HorizontalAlignment="Center" Height="37" Margin="416,229,852,586" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Width="324" FontSize="20" CharacterCasing="Upper" MaxLines="1" MaxLength="100" VerticalContentAlignment="Center"/>
         <Label x:Name="lab4" Content="Apellidos:" HorizontalAlignment="Center" Margin="277,280,1204,535" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" Width="111"/>

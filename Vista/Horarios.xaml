@@ -24,7 +24,7 @@
         <Button x:Name="bt3" Content="Buscar" HorizontalAlignment="Center" Margin="980,244,462,568" VerticalAlignment="Center" Width="150" Height="40" FontWeight="Bold" FontSize="20" Click="Click_bt3"/>
         <Label x:Name="lab3" Content="Fallas:" HorizontalAlignment="Center" Margin="766,466,750,387" VerticalAlignment="Center" FontSize="22" FontWeight="Bold" Width="76" VerticalContentAlignment="Center"/>
         <Label x:Name="txt7" Content="--" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="842,469,695,387" VerticalAlignment="Center" RenderTransformOrigin="0.355,-0.212" FontSize="24" Width="55" Foreground="#FFF00505" FontWeight="Bold" VerticalContentAlignment="Center" Height="36"/>
-        <Button x:Name="bt2" Content="Volver" HorizontalAlignment="Right" Margin="0,157,31,0" VerticalAlignment="Top" Width="74" Click="Click_bt2"/>
+        <Button x:Name="bt2" Content="Regresar" HorizontalAlignment="Right" Margin="0,157,31,0" VerticalAlignment="Top" Width="74" Click="Click_bt2"/>
         <Label x:Name="txt8" Content="Dia 1" HorizontalAlignment="Center" Margin="467,552,1007,261" VerticalAlignment="Center" FontSize="22" FontWeight="Bold" Width="118" VerticalContentAlignment="Center"/>
         <Label x:Name="txt9" Content="Dia 2" HorizontalAlignment="Center" Margin="623,552,853,261" VerticalAlignment="Center" FontSize="22" FontWeight="Bold" Width="116" VerticalContentAlignment="Center" RenderTransformOrigin="1.009,2.487"/>
         <Label x:Name="txt10" Content="Dia 3" HorizontalAlignment="Center" Margin="791,552,683,261" VerticalAlignment="Center" FontSize="22" FontWeight="Bold" Width="118" VerticalContentAlignment="Center"/>
