@@ -1,6 +1,7 @@
 ﻿using AlphaSport.Controller;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,10 +33,12 @@ namespace AlphaSport.Vista
         {
             InitializeComponent();
             Limpiar();
+            Debug.WriteLine("******* 1");
         }
 
         public static VentanaAddDelImpl GetInstance()
         {
+            Debug.WriteLine("******* 2");
             if (instance == null)
                 instance = new VentanaAddDelImpl();
 
@@ -44,6 +47,7 @@ namespace AlphaSport.Vista
 
         private void Limpiar()
         {
+            Debug.WriteLine("******* 3");
             nombreIn = "";
             siglaIn = "";
             cantidadIn = 0;
@@ -53,13 +57,13 @@ namespace AlphaSport.Vista
             chbox_nuevo.IsEnabled = true;
             chbox_nuevo.IsChecked = false;
 
-            input_sigla_nueva.Text = "";
-            input_nombre.Text = "";
-            input_cantidad.Text = "";
+            inputSiglaNueva.Text = "";
+            inputNombre.Text = "";
+            inputCantidad.Text = "";
 
-            input_sigla_nueva.IsEnabled = false;
-            input_nombre.IsEnabled = false;
-            input_cantidad.IsEnabled = false;
+            inputSiglaNueva.IsEnabled = false;
+            inputNombre.IsEnabled = false;
+            inputCantidad.IsEnabled = false;
 
             // para eliminar
             chbox_eliminar.IsEnabled = true;
@@ -73,24 +77,28 @@ namespace AlphaSport.Vista
 
         private void Btn4_Click(object sender, RoutedEventArgs e)
         {
+            Debug.WriteLine("******* 4");
             Limpiar();
         }
 
+
         private void Btn1_Click(object sender, RoutedEventArgs e)
         {
+            Debug.WriteLine("******* 5");
 
             if (nuevoImpl) // caso impl nuevo
             {
                 //capturar datos
-                if (input_sigla_nueva.Text == "" || input_nombre.Text == "" || !UInt32.TryParse(input_cantidad.Text, out UInt32 abc))
+                if (inputSiglaNueva.Text == "" || inputNombre.Text == "" || !UInt32.TryParse(inputCantidad.Text, out UInt32 abc))
                 {
                     MessageBox.Show("Hay campos incorrectos, llene correctamente todos los campos!");
                 }
                 else
                 {
-                    nombreIn = input_nombre.Text.TrimStart().TrimEnd(); ;
-                    siglaIn = input_sigla_nueva.Text.TrimStart().TrimEnd(); ;
-                    cantidadIn = Convert.ToUInt32(input_cantidad.Text);
+                    nombreIn = inputNombre.Text.TrimStart().TrimEnd();
+                    siglaIn = inputSiglaNueva.Text.TrimStart().TrimEnd();
+
+                    cantidadIn = Convert.ToUInt32(inputCantidad.Text);
 
                     List<string> lista = entorno.Nuevo_Implemento(nombreIn, siglaIn, cantidadIn);
 
@@ -125,11 +133,13 @@ namespace AlphaSport.Vista
 
         private void ActualizarCmboxSiglas(List<string> lista)
         {
+            Debug.WriteLine("******* 6");
             cmbox_Sigla.ItemsSource = lista;
         }
 
         private void Ocultar()
         {
+            Debug.WriteLine("******* 7");
             TablaImplementos tablaImpl = TablaImplementos.GetInstance();
             tablaImpl.Show();
             this.Hide();
@@ -137,24 +147,28 @@ namespace AlphaSport.Vista
 
         private void Btn2_Click(object sender, RoutedEventArgs e)
         {
+            Debug.WriteLine("******* 8");
             Limpiar();
             Ocultar();
         }
 
         private void Cmbox_Sigla_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (this.IsEnabled) siglaIn = cmbox_Sigla.SelectedValue.ToString();
+            Debug.WriteLine("******* 9");
+            //if (this.IsEnabled)
+                siglaIn = cmbox_Sigla.SelectedValue.ToString();
         }
 
         private void Chbox_Click_nuevo(object sender, RoutedEventArgs e)
         {
+            Debug.WriteLine("******* 10");
             nuevoImpl = true;
             chbox_nuevo.IsEnabled = false;
             EstadoCamposEliminar(false);
 
-            input_nombre.IsEnabled = true;
-            input_sigla_nueva.IsEnabled = true;
-            input_cantidad.IsEnabled = true;
+            inputNombre.IsEnabled = true;
+            inputSiglaNueva.IsEnabled = true;
+            inputCantidad.IsEnabled = true;
 
             btn1.IsEnabled = true;
         }
@@ -162,20 +176,23 @@ namespace AlphaSport.Vista
 
         private void EstadoCamposNuevo(bool estado)
         {
+            Debug.WriteLine("******* 11");
             chbox_nuevo.IsEnabled = estado;
-            input_sigla_nueva.IsEnabled = estado;
-            input_nombre.IsEnabled = estado;
-            input_cantidad.IsEnabled = estado;
+            inputSiglaNueva.IsEnabled = estado;
+            inputNombre.IsEnabled = estado;
+            inputCantidad.IsEnabled = estado;
         }
 
         private void EstadoCamposEliminar(bool estado)
         {
+            Debug.WriteLine("******* 12");
             chbox_eliminar.IsEnabled = estado;
             cmbox_Sigla.IsEnabled = estado;
         }
 
         private void Chbox_Click_eliminar(object sender, RoutedEventArgs e)
         {
+            Debug.WriteLine("******* 13");
             nuevoImpl = false;
             EstadoCamposNuevo(false);
 
