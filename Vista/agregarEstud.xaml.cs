@@ -157,17 +157,8 @@ namespace AlphaSport.Vista
          
         }
 
-        private void Btn4_Click(object sender, RoutedEventArgs e)
-        {
-            Window inscritos = new TablaInscritos();
-
-            inscritos.Show();
-            this.Hide();
-        }
-
         public void BotonesEstado(bool estado) {
             btn3.IsEnabled = estado;
-            btn4.IsEnabled = estado;
         }
 
         public void Limpiar() {
