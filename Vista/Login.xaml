@@ -20,7 +20,7 @@
                 <TextBox Name="txt1" Foreground="Black" Background="LightGray" FontSize="18" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
                 <Label Content="Contraseña" Foreground="Black"></Label>
                 <PasswordBox Name="txt2" Foreground="Black" Background="LightGray" FontSize="18" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-                <Button Name="btn1" Content="enviar" Margin="60 10" Foreground="Black" Background="LightGray" Click="Btn1_Click" ></Button>
+                <Button Name="btn1" Content="Enviar" Margin="60 10" Foreground="Black" Background="LightGray" Click="Btn1_Click" ></Button>
             </StackPanel>
         </Border>
         <Label x:Name="lab1" Content="Nombre del Proyecto" HorizontalAlignment="Right" HorizontalContentAlignment="Center" VerticalAlignment="Top" FontWeight="Bold" FontSize="48"  Height="Auto" Margin="-333,-145,-339,0" Width="972" Foreground="{DynamicResource {x:Static SystemColors.MenuBarBrushKey}}" />
