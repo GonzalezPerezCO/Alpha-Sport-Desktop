@@ -46,6 +46,11 @@
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.MenuHighlightColorKey}}"/>
             </Button.Background>
         </Button>
+        <Button x:Name="bt8" Content="Registro Asistencia" HorizontalAlignment="Right" Margin="0,241,10,0" VerticalAlignment="Top" Width="130" Click="Bt8_Click" RenderTransformOrigin="0.52,2.5" FontWeight="Bold">
+            <Button.Background>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.MenuHighlightColorKey}}"/>
+            </Button.Background>
+        </Button>
 
     </Grid>
 </Window>
