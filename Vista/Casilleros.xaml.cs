@@ -239,8 +239,11 @@ namespace AlphaSport.Vista
             }
             else
             {
+
+                UInt64 codigoEs = Convert.ToUInt64(codigo.Text);
+                codigo.Text = "";
                 // Lista: nombre, codigo, casillero, disponible{0:no, 1:si}, entrada, salida
-                List<string> lista = entorno.BuscarCasilleroEstu(Convert.ToUInt64(codigo.Text));
+                List<string> lista = entorno.BuscarCasilleroEstu(codigoEs);
 
                 if (lista.Count != 0 && (lista[0]== entorno.ERRORSQL || lista[0] == entorno.INFOSQL ))
                 {
