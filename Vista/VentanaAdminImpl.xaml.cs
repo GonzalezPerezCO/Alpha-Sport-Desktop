@@ -25,14 +25,15 @@ namespace AlphaSport.Vista
         private Entorno entorno;
         private static VentanaAdminImpl instance;
 
-        private string nombreIn;
-        private string siglaIn;
-        private UInt32 cantidadIn;
-        private bool nuevoImpl;
+        private string nombreIn = "";
+        private string siglaIn = "";
+        private UInt32 cantidadIn = 0;
+        private bool nuevoImpl = false;
 
         private VentanaAdminImpl()
         {
             InitializeComponent();
+            Limpiar();
         }
 
         public static VentanaAdminImpl GetInstance()
@@ -149,7 +150,7 @@ namespace AlphaSport.Vista
         {
             Debug.WriteLine("******* 9");
             //if (this.IsEnabled)
-            siglaIn = cmboxSigla.SelectedValue.ToString();
+            //siglaIn = cmboxSigla.SelectedValue.ToString();
         }
 
         private void Btn1_Click(object sender, RoutedEventArgs e)
@@ -165,10 +166,11 @@ namespace AlphaSport.Vista
                 }
                 else
                 {
-                    nombreIn = inputNombre.Text.TrimStart().TrimEnd();
-                    siglaIn = inputSiglaNueva.Text.TrimStart().TrimEnd();
 
-                    cantidadIn = Convert.ToUInt32(inputCantidad.Text);
+                    //nombreIn = inputNombre.Text.TrimStart().TrimEnd();
+                    //siglaIn = inputSiglaNueva.Text.TrimStart().TrimEnd();
+                    
+                    cantidadIn = Convert.ToUInt32(inputCantidad.Text.ToString());
 
                     List<string> lista = entorno.Nuevo_Implemento(nombreIn, siglaIn, cantidadIn);
 

@@ -15,7 +15,7 @@
         <Grid Margin="12,240,10,246">
             <Label Content="Cantidad" Margin="270,11,47,61" Width="153" FontSize="18" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="34" RenderTransformOrigin="0.516,0.412" FontWeight="Bold"/>
             <Label Content="SIGLA" Margin="32,10,330,61" Width="108" FontSize="18" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="35" FontWeight="Bold" RenderTransformOrigin="0.765,0.571"/>
-            <TextBox x:Name="inputCantidad" BorderBrush="Black" Height="35" Margin="270,61,47,10" TextWrapping="Wrap" Width="153" CharacterCasing="Upper" MaxLength="10" MaxLines="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18"/>
+            <TextBox x:Name="inputCantidad" BorderBrush="Black" Height="35" Margin="270,61,47,10" TextWrapping="Wrap" Width="153" MaxLength="10" MaxLines="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18"/>
             <TextBox x:Name="inputSiglaNueva" BorderBrush="Black" Height="35" Margin="32,61,330,10" TextWrapping="Wrap" Width="108" CharacterCasing="Upper" MaxLength="5" MaxLines="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18"/>
         </Grid>
         <Grid Margin="12,130,8,376">
