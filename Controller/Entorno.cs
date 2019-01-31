@@ -83,8 +83,8 @@ namespace AlphaSport.Controller
         /// </summary>
         public void RestartAppWPF()
         {
-            System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
-            Application.Current.Shutdown();
+            //System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
+            //Application.Current.Shutdown();
         }
 
         /// <summary>
