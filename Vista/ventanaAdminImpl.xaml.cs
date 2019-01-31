@@ -53,7 +53,7 @@ namespace AlphaSport.Vista
             chbox_nuevo.IsChecked = false;
             input_sigla_nueva.Text = "";
             input_nombre.Text = "";
-            input_sigla.Text = "";
+            input_cantidad.Text = "";
 
             chbox_eliminar.IsEnabled = true;
             chbox_eliminar.IsChecked = false;
@@ -68,7 +68,38 @@ namespace AlphaSport.Vista
         }
 
         private void Btn1_Click(object sender, RoutedEventArgs e)
-        {            
+        {
+
+            if (nuevoImpl) // caso impl nuevo
+            {                
+                //capturar datos
+                if (input_sigla_nueva.Text == "" || input_nombre.Text == "" || UInt32.TryParse(input_cantidad.Text, out UInt32 abc))
+                {
+                    MessageBox.Show("Hay campos incorrectos, llene correctamente todos los campos!");
+                }
+                else
+                {
+                    nombreIn = input_nombre.Text.TrimStart().TrimEnd(); ;
+                    siglaIn = input_sigla_nueva.Text.TrimStart().TrimEnd(); ;
+                    cantidadIn = Convert.ToUInt32(input_cantidad.Text);
+
+                    List<string> lista = entorno.Nuevo_Implemento(nombreIn, siglaIn, cantidadIn);
+
+                    if (lista.Count != 0 && (lista[0] == entorno.ERRORSQL || lista[0] == entorno.INFOSQL))
+                    {
+                        MessageBox.Show(lista[1]);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Nuevo Impl Deportivo agregado correctamente!";
+                    }
+                    
+                }
+            }
+            else // caso eliminar impl
+            {
+                // List<string> lista = entorno.Implementos_disponiblesSigla();
+            }
 
             Limpiar();
             Ocultar();
@@ -119,7 +150,7 @@ namespace AlphaSport.Vista
             chbox_nuevo.IsEnabled = estado;
             input_sigla_nueva.IsEnabled = estado;
             input_nombre.IsEnabled = estado;
-            input_sigla.IsEnabled = estado;
+            input_cantidad.IsEnabled = estado;
         }
 
         private void EstadoCamposEliminar(bool estado)
