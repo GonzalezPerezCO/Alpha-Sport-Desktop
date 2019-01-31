@@ -123,12 +123,12 @@ namespace AlphaSport.Vista
                     {
                         Debug.WriteLine("<<<<<<<<<<<<< datos: " + lista[i]); // estoy hay que quitar en la implementacion
 
-                        if (lista[i] == diaActual || codigo == "2095112") {
-                            if (lista[i + 3] == horaActual || lista[i + 3] == "0") // es 0 para que 2095112 muestre este mensaje
+                        if (lista[i] == diaActual /*|| codigo == "2095112"*/) {
+                            if (lista[i + 3] == horaActual /*|| lista[i + 3] == "0"*/) // es 0 para que 2095112 muestre este mensaje
                             {
                                 mensaje = "Franja Horaria para registrar: " + diaActual + " - " + horaActual + ":00.";
 
-                                BotonesEstado(true);
+                               // BotonesEstado(true);
                             }
                             else
                             {
@@ -143,6 +143,7 @@ namespace AlphaSport.Vista
                     if(mensaje =="") mensaje = "El estudiante no tiene este dia asignado: " + diaActual + " - " + horaActual + ":00.";
 
                     lab6.Content = mensaje;
+                    BotonesEstado(true);
                 }
                 else
                 {
