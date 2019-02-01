@@ -58,7 +58,16 @@ namespace AlphaSport.Vista
 
         private void ActualizarCmbx()
         {
+            List<string> lista = entorno.Implementos_disponiblesSigla();
 
+            if (lista.Count != 0 && (lista[0] == entorno.INFOSQL || lista[0] == entorno.INFOSQL)) // cuando si esta pero no tiene casillero
+            {
+                MessageBox.Show(lista[1]);
+            }
+            else
+            {
+                cmbox1.ItemsSource = lista;
+            }
         }
 
         private bool CapturarDatos()
@@ -71,6 +80,8 @@ namespace AlphaSport.Vista
             }
             else
             {
+                ActualizarCmbx(); 
+
                 // Lista: nombre, codigo, casillero, disponible{0:no, 1:si}, entrada, salida
                 codigo = Convert.ToUInt64(text1.Text);
                 result = true;
@@ -82,8 +93,15 @@ namespace AlphaSport.Vista
         private void Btn1_Click(object sender, RoutedEventArgs e)
         {
             bool result = CapturarDatos();
-            if (result) {
-                MessageBox.Show(codigo.ToString());
+          
+
+            if (result)
+            {
+                MessageBox.Show("ok");
+            }
+            else
+            {
+                MessageBox.Show("error");
             }
             //Limpiar();
             //Ocultar();
