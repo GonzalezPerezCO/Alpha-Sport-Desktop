@@ -21,7 +21,7 @@ namespace AlphaSport
         {
             InitializeComponent();
             entorno = Entorno.GetInstance(); ;
-            //lab1.Content = entorno.PROYECTO;
+            ////lab1.Content = entorno.PROYECTO;
             lab2.Content = entorno.PERIODO;
             txt1.Focus();
         }

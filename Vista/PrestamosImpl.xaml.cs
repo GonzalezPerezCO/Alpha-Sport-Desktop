@@ -33,7 +33,7 @@ namespace AlphaSport.Vista
         {
             InitializeComponent();
             entorno = Entorno.GetInstance();
-            lab1.Content = entorno.PROYECTO;
+            //lab1.Content = entorno.PROYECTO;
             Limpiar();
 
             MostrarTabla();

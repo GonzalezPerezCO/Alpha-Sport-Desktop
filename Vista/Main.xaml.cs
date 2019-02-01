@@ -27,7 +27,7 @@ namespace AlphaSport.Vista
         {
             InitializeComponent();
             entorno = Entorno.GetInstance();
-            lab1.Content = entorno.PROYECTO;
+            //lab1.Content = entorno.PROYECTO;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

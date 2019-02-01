@@ -168,9 +168,6 @@
     </Compile>
     <Compile Include="Controller\ConnectionClass.cs" />
     <Compile Include="Controller\Entorno.cs" />
-    <Compile Include="Vista\VentanaAdminImpl.xaml.cs">
-      <DependentUpon>VentanaAdminImpl.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Vista\ventanaPrestamosCas.xaml.cs">
       <DependentUpon>ventanaPrestamosCas.xaml</DependentUpon>
     </Compile>
@@ -228,10 +225,6 @@
     <Page Include="Vista\TablaInscritos.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Vista\VentanaAdminImpl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Vista\ventanaPrestamosCas.xaml">
       <SubType>Designer</SubType>

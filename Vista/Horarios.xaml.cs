@@ -39,7 +39,7 @@ namespace AlphaSport.Vista
         {
             InitializeComponent();
             entorno = Entorno.GetInstance();
-            lab1.Content = entorno.PROYECTO;
+            //lab1.Content = entorno.PROYECTO;
 
             IniciarLabelsY(); // crear Lista de Labels para mostrar cupos
             // MostrarCupos(); // mostar cupos disponibles  HABILITAR CON BT4_CLICK PARA LA FUNCIONALIDAD

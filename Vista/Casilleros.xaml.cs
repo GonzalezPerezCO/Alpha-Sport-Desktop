@@ -33,7 +33,7 @@ namespace AlphaSport.Vista
         {
             InitializeComponent();
             entorno = Entorno.GetInstance();
-            lab1.Content = entorno.PROYECTO;
+            //lab1.Content = entorno.PROYECTO;
 
             ListaBotones();
             ActualizarColores(); // Btn1.Background = Brushes.HotPink; Btn41.Background = Brushes.DodgerBlue;
