@@ -19,8 +19,7 @@
                 <ImageBrush Stretch="UniformToFill" ImageSource="/GonzalezPerezCO;component/Recursos/deportes.jpg" Opacity="0.7"/>
             </Button.Background>
         </Button>
-
-        <Label x:Name="lab1" Content="Nombre del Proyecto" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="473,0,481,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="36" Width="478"/>
+        <Image HorizontalAlignment="Left" Width="538" Source="/GonzalezPerezCO;component/Recursos/LOGOS/arabe-azul.png" Margin="523,10,0,728" Stretch="None"/>
 
     </Grid>
 </Window>

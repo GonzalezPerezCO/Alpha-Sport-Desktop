@@ -10,7 +10,6 @@
         WindowState="Maximized" WindowStartupLocation="CenterScreen"
         WindowStyle="None">
     <Grid IsVisibleChanged="Grid_IsVisibleChanged">
-        <Label x:Name="lab1" Content="Nombre del Proyecto" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="330,24,334,0" VerticalAlignment="Top" RenderTransformOrigin="4.868,0.577" FontSize="36" FontWeight="Bold" Width="928"/>
         <Label x:Name="lab2" Content="Préstamos Implementos Deportivos" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="503,112,508,0" VerticalAlignment="Top" RenderTransformOrigin="0.497,8.452" FontSize="24" FontWeight="Bold" Width="581"/>
         <Button x:Name="Bt1" Content="Prestar Impl Dep" Margin="0,106,10,0" VerticalAlignment="Top" Width="130" HorizontalAlignment="Right" Background="#FFFFDA33" Click="Bt1_Click"/>
         <Button x:Name="Bt2" Content="Regresar" HorizontalAlignment="Right" Margin="0,62,10,0" VerticalAlignment="Top" Width="74" Click="Bt2_Click"/>
@@ -23,6 +22,7 @@
         </Button>
         <TextBox x:Name="codigo" HorizontalAlignment="Right" Height="32" Margin="0,226,170,634" TextWrapping="Wrap" VerticalAlignment="Center" Width="148" FontWeight="Bold" FontSize="18" MaxLines="1" MaxLength="11" TextOptions.TextHintingMode="Fixed" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
         <Button x:Name="Bt5" Content="Buscar" HorizontalAlignment="Right" Margin="0,226,10,635" VerticalAlignment="Center" Width="127" Height="31" FontWeight="Bold" FontSize="18" Click="Bt5_Click" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Image HorizontalAlignment="Left" Width="538" Source="/GonzalezPerezCO;component/Recursos/LOGOS/arabe-azul.png" Margin="528,0,0,738" Stretch="None"/>
 
     </Grid>
 </Window>

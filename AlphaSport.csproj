@@ -135,9 +135,6 @@
     <Compile Include="Vista\Cupos.xaml.cs">
       <DependentUpon>Cupos.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Historialcasilleros.xaml.cs">
-      <DependentUpon>Historialcasilleros.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Vista\HorarioGym.xaml.cs">
       <DependentUpon>HorarioGym.xaml</DependentUpon>
     </Compile>
@@ -187,10 +184,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Vista\Cupos.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Vista\Historialcasilleros.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
