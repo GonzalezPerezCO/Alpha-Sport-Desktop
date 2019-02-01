@@ -163,7 +163,10 @@ namespace AlphaSport.Vista
             {
                 Debug.WriteLine("<<< Chbox_Click NUEVO ");
                 nuevoImpl = true;
+
                 chbx_eliminar.IsChecked = false;
+                chbx_eliminar.IsEnabled = false;
+
                 selec = true;
 
             }
@@ -171,17 +174,17 @@ namespace AlphaSport.Vista
             {
                 Debug.WriteLine("<<< Chbox_Click ELIMINAR");
                 nuevoImpl = false;
+
                 chbx_nuevo.IsChecked = false;
+                chbx_nuevo.IsEnabled = false;
+
                 selec = true;
 
                 ActualizarCmbx();
             }
             else
             {
-                nuevoImpl = false;
-                chbx_nuevo.IsChecked = false;
-                chbx_eliminar.IsChecked = false;
-                selec = false;
+                Limpiar(); // limpia todo
             }
         }
 
