@@ -27,6 +27,7 @@ namespace AlphaSport.Vista
         private bool nuevoImpl; // si es o no un nuevo prestamo
         private UInt64 codigo; 
         private bool selec; // alguno chbox esta seleccionado
+        private string sigla;
 
         public VentanaAdminImpl()
         {
@@ -51,6 +52,7 @@ namespace AlphaSport.Vista
             nuevoImpl = false;
             codigo = 0;
             selec = false;
+            sigla = "";
 
             chbx_nuevo.IsChecked = false;
             chbx_eliminar.IsChecked = false;
@@ -62,20 +64,26 @@ namespace AlphaSport.Vista
 
         private void ActualizarCmbx()
         {
-            List<string> lista = entorno.Implementos_disponiblesSigla();
+            Debug.WriteLine("<<< ActualizarCmbox: s y nuevo = "+selec+ " y "+ nuevoImpl);
+            if (selec && !nuevoImpl) // seleccionado chbox y es Eliminar
+            {
+                List<string> lista = entorno.Implementos_disponiblesSigla();
 
-            if (lista.Count != 0 && (lista[0] == entorno.INFOSQL || lista[0] == entorno.INFOSQL)) // cuando si esta pero no tiene casillero
-            {
-                MessageBox.Show(lista[1]);
+                if (lista.Count != 0 && (lista[0] == entorno.INFOSQL || lista[0] == entorno.INFOSQL)) // cuando si esta pero no tiene casillero
+                {
+                    MessageBox.Show(lista[1]);
+                }
+                else
+                {
+                    cmbox1.ItemsSource = lista;
+                }
             }
-            else
-            {
-                cmbox1.ItemsSource = lista;
-            }
+            
         }
 
         private bool CapturarDatos()
         {
+            Debug.WriteLine("<<< CAPTURA ");
             bool result = false;
 
             if (text1.Text == "" || !UInt64.TryParse(text1.Text, out UInt64 abc))
@@ -84,9 +92,7 @@ namespace AlphaSport.Vista
             }
             else
             {
-                codigo = Convert.ToUInt64(text1.Text);
                 
-                if(selec && !nuevoImpl) ActualizarCmbx(); // seleccionado chbox y es Eliminar
 
                 result = true;
             }
@@ -131,16 +137,20 @@ namespace AlphaSport.Vista
 
             if (name == "chbx_nuevo")
             {
-                nuevoImpl = chbx_nuevo.IsChecked ?? false;
+                Debug.WriteLine("<<< Chbox_Click NUEVO ");
+                nuevoImpl = true;
                 chbx_eliminar.IsChecked = !nuevoImpl;
                 selec = true;
 
             }
             else if (name == "chbx_eliminar")
             {
-                nuevoImpl = chbx_eliminar.IsChecked ?? false;
+                Debug.WriteLine("<<< Chbox_Click ELIMINAR");
+                nuevoImpl = false;
                 chbx_nuevo.IsChecked = !nuevoImpl;
                 selec = true;
+
+                ActualizarCmbx();
             }
             else
             {
@@ -148,6 +158,21 @@ namespace AlphaSport.Vista
                 chbx_nuevo.IsChecked = false;
                 chbx_eliminar.IsChecked = false;
                 selec = false;
+            }
+        }
+
+        private void Cmbox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cmbox1.IsVisible)
+            {
+                if (cmbox1.SelectedValue != null)
+                {
+                    MessageBox.Show("no null");
+                }
+                else
+                {
+                    MessageBox.Show("null ;(");
+                }
             }
         }
     }
