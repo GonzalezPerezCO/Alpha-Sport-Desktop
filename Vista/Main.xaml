@@ -13,7 +13,7 @@
             <ImageBrush ImageSource="/GonzalezPerezCO;component/Recursos/LOGOS/binario.jpg" Stretch="UniformToFill" Opacity="0.685"/>
         </Grid.Background>
         <Image Width="925" HorizontalAlignment="Center"  VerticalAlignment="Top" Source="/GonzalezPerezCO;component/Recursos/LOGOS/azul-gigante.png" Margin="333,48,334,0" Stretch="None"/>
-        <Image Width="755" HorizontalAlignment="Right"  VerticalAlignment="Center" Source="/GonzalezPerezCO;component/Recursos/LOGOS/deportes-logo.png" Margin="0,424,0,362" Stretch="None" Height="106"/>
-        <Image Width="781" HorizontalAlignment="Left"  VerticalAlignment="Center" Source="/GonzalezPerezCO;component/Recursos/LOGOS/gimnasio-logo.png" Margin="0,424,0,362" Stretch="None" Height="106"/>
+        <Image Width="754" HorizontalAlignment="Center"  VerticalAlignment="Center" Source="/GonzalezPerezCO;component/Recursos/LOGOS/logo-deportes.png" Margin="828,426,10,360" Stretch="None" Height="106" MouseEnter="Btn2_Click"/>
+        <Image Width="630" HorizontalAlignment="Center"  VerticalAlignment="Center" Source="/GonzalezPerezCO;component/Recursos/LOGOS/logo-gimnasio.png" Margin="30,426,932,360" Stretch="None" Height="106"/>
     </Grid>
 </Window>

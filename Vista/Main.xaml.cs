@@ -62,14 +62,14 @@ namespace AlphaSport.Vista
              */
         }
 
-        private void Btn1_Click(object sender, RoutedEventArgs e)
+        private void Btn1_Click(object sender, MouseEventArgs e)
         {
-            Window tabla = new TablaInscritos();                    
+            Window tabla = new TablaInscritos();
             tabla.Show();
             this.Hide();
         }
 
-        private void Btn2_Click(object sender, RoutedEventArgs e)
+        private void Btn2_Click(object sender, MouseEventArgs e)
         {
             TablaImplementos tabla = TablaImplementos.GetInstance();
             tabla.Show();
