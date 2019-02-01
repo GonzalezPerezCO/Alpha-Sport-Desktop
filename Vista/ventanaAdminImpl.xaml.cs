@@ -58,6 +58,10 @@ namespace AlphaSport.Vista
             sigla = "";
             cantidad = 0;
 
+            text1.Text = "";
+            text2.Text = "";
+            text3.Text = "";
+
             chbx_nuevo.IsChecked = false;
             chbx_eliminar.IsChecked = false;
 
@@ -111,6 +115,12 @@ namespace AlphaSport.Vista
                     if (text1.Text == "" || text2.Text == "" || !UInt64.TryParse(text2.Text, out UInt64 abc) || text3.Text == "")
                     {
                         MessageBox.Show("Llene todos los campos correctamente para poder continuar.!");
+                    }
+                    else
+                    {
+                        nombre = text3.Text;
+                        sigla = text1.Text;
+                        cantidad = Convert.ToUInt32(text2.Text);
                     }
                 }
             }
@@ -202,6 +212,11 @@ namespace AlphaSport.Vista
                     MessageBox.Show("null ;(");
                 }
             }
+        }
+
+        private void Btn4_Click(object sender, RoutedEventArgs e)
+        {
+            Limpiar();
         }
     }
 }
