@@ -134,11 +134,13 @@ namespace AlphaSport.Vista
 
         private void Btn1_Click(object sender, RoutedEventArgs e)
         {
+            Debug.WriteLine("<<< RESULT >>> ");
             bool result = CapturarDatos();
             List<string> lista = new List<string>();
 
             if (result)
             {
+                Debug.WriteLine("++++ select y nuevo ="+selec + " y "+ nuevoImpl);
                 if (selec && nuevoImpl)
                 {
                     lista = entorno.Nuevo_Implemento(nombre, sigla, cantidad);
@@ -206,6 +208,13 @@ namespace AlphaSport.Vista
                 chbx_eliminar.IsChecked = false;
                 chbx_eliminar.IsEnabled = false;
 
+                chbx_nuevo.IsChecked = true;
+                chbx_nuevo.IsEnabled = false;
+
+                text1.IsEnabled = true;
+                text2.IsEnabled = true;
+                text3.IsEnabled = true;
+
                 selec = true;
 
             }
@@ -216,6 +225,9 @@ namespace AlphaSport.Vista
 
                 chbx_nuevo.IsChecked = false;
                 chbx_nuevo.IsEnabled = false;
+
+                chbx_eliminar.IsChecked = true;
+                chbx_eliminar.IsEnabled = false;
 
                 cmbox1.IsEnabled = true;
 
@@ -234,6 +246,7 @@ namespace AlphaSport.Vista
             if (cmbox1.IsVisible)
             {
                 sigla = cmbox1.SelectedValue.ToString();
+                btn1.IsEnabled = true;
             }
         }
 
