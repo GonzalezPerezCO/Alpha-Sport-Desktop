@@ -24,6 +24,7 @@ namespace AlphaSport.Vista
         private static VentanaAdminImpl instance = null;
 
         private bool nuevoImpl; // si es o no un nuevo prestamo
+        private UInt64 codigo;
 
         public VentanaAdminImpl()
         {
@@ -48,6 +49,7 @@ namespace AlphaSport.Vista
             text1.Text = "";
 
             nuevoImpl = false;
+            codigo = 0;
 
             cmbox1.SelectedValue = null;
 
@@ -59,7 +61,25 @@ namespace AlphaSport.Vista
 
         }
 
-        private void Btn1_Click(object sender, RoutedEventArgs e)
+        private bool CapturarDatos()
+        {
+            bool result = false;
+
+            if (text1.Text == "" || !UInt64.TryParse(text1.Text, out UInt64 abc))
+            {
+                MessageBox.Show("Ingrese un número de carnet valido!");
+            }
+            else
+            {
+                // Lista: nombre, codigo, casillero, disponible{0:no, 1:si}, entrada, salida
+                UInt64 codigoEs = Convert.ToUInt64(text1.Text);
+                result = true;
+            }
+
+            return result;
+        }
+
+            private void Btn1_Click(object sender, RoutedEventArgs e)
         {
             Limpiar();
             Ocultar();
