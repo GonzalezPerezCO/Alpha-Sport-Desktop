@@ -51,7 +51,7 @@
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.MenuHighlightColorKey}}"/>
             </Button.Background>
         </Button>
-        <Image Width="538" HorizontalAlignment="Center"  VerticalAlignment="Top" Source="/GonzalezPerezCO;component/Recursos/LOGOS/arabe-azul.png" Margin="528,10,526,0" Stretch="None"/>
+        <Image Width="692" HorizontalAlignment="Center"  VerticalAlignment="Top" Source="/GonzalezPerezCO;component/Recursos/LOGOS/azul.png" Margin="445,10,455,0" Stretch="None"/>
 
     </Grid>
 </Window>

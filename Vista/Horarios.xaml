@@ -10,7 +10,7 @@
         WindowStyle="None">
     <Grid>
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Center" Height="112" Margin="445,526,694,214" Stroke="Black" VerticalAlignment="Center" Width="453"/>
-        <Label x:Name="lab2" Content="Horario Estudiante" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="561,112,575,0" VerticalAlignment="Top" RenderTransformOrigin="-0.013,-0.288" FontWeight="Bold" FontSize="24"/>
+        <Label x:Name="lab2" Content="Horario Estudiante" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="678,82,692,0" VerticalAlignment="Top" RenderTransformOrigin="-0.013,-0.288" FontWeight="Bold" FontSize="24"/>
         <Button x:Name="bt1" Content="Nuevo" HorizontalAlignment="Right" Margin="0,196,31,0" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.541,4.1" Click="Click_bt1"/>
         <Label x:Name="_2" Content="Código:" HorizontalAlignment="Center" Margin="447,237,1048,573" VerticalAlignment="Center" FontSize="24" FontWeight="Bold" RenderTransformOrigin="0.299,0.512"/>
         <TextBox x:Name="txt3" HorizontalAlignment="Center" Height="31"  Margin="565,264,853,597" TextWrapping="Wrap" VerticalAlignment="Center" Width="174" FontSize="24" VerticalContentAlignment="Center" MaxLines="1" MaxLength="11" Text="-----------"/>
@@ -107,6 +107,6 @@
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HighlightColorKey}}"/>
             </Button.Background>
         </Button>
-        <Image Width="538" HorizontalAlignment="Center"  VerticalAlignment="Top" Source="/GonzalezPerezCO;component/Recursos/LOGOS/arabe-azul.png" Margin="523,10,531,0" Stretch="None"/>
+        <Image Width="688" HorizontalAlignment="Center"  VerticalAlignment="Top" Source="/GonzalezPerezCO;component/Recursos/LOGOS/azul.png" Margin="445,10,459,0" Stretch="None"/>
     </Grid>
 </Window>

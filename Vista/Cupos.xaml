@@ -9,7 +9,7 @@
         WindowState="Maximized" WindowStartupLocation="CenterScreen"
         WindowStyle="None">
     <Grid>
-        <Label x:Name="lab2" Content="Disponibilidad de Cupos Por Franja Horaria" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="430,134,431,0" VerticalAlignment="Top" RenderTransformOrigin="-0.013,-0.288" FontWeight="Bold" FontSize="24"/>
+        <Label x:Name="lab2" Content="Disponibilidad de Cupos Por Franja Horaria" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="547,103,548,0" VerticalAlignment="Top" RenderTransformOrigin="-0.013,-0.288" FontWeight="Bold" FontSize="24"/>
         <DataGrid x:Name="dtgrid1" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Height="357" Margin="466,300,461,0" VerticalAlignment="Top" Width="431" IsReadOnly="True" FontSize="18" VerticalContentAlignment="Center" />
         <Button x:Name="bt1" Content="Actualizar tabla de cupos" HorizontalAlignment="Center" Margin="466,270,461,0" VerticalAlignment="Top" Width="431" FontWeight="Bold" FontSize="16" Click="Bt1_Click">
             <Button.Background>
@@ -17,6 +17,6 @@
             </Button.Background>
         </Button>
         <Button Content="Regresar" HorizontalAlignment="Right" Margin="0,134,10,0" VerticalAlignment="Top" Width="74" Click="Button_Click"/>
-        <Image Width="538" HorizontalAlignment="Center"  VerticalAlignment="Top" Source="/GonzalezPerezCO;component/Recursos/LOGOS/arabe-azul.png" Margin="526,10,528,0" Stretch="None"/>
+        <Image Width="677" HorizontalAlignment="Center"  VerticalAlignment="Top" Source="/GonzalezPerezCO;component/Recursos/LOGOS/azul.png" Margin="462,10,453,0" Stretch="None"/>
     </Grid>
 </Window>

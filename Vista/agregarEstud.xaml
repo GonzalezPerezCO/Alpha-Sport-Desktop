@@ -36,7 +36,7 @@
         <TextBox x:Name="txt9" HorizontalAlignment="Center" Height="36" Margin="910,406,358,450" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Width="324" FontSize="20" CharacterCasing="Upper" MaxLines="1" MaxLength="9" VerticalContentAlignment="Center"/>
         <CheckBox x:Name="chbx" Content="Examen médico" HorizontalAlignment="Center" Margin="1070,306,324,560" VerticalAlignment="Center" FontSize="20" FontWeight="Bold" Width="198" />
         <ComboBox x:Name="cmbox_semestre" HorizontalAlignment="Center" Margin="910,301,592,559" VerticalAlignment="Center" Width="90" Height="32" FontSize="20"/>
-        <Image Width="538" HorizontalAlignment="Center"  VerticalAlignment="Top" Source="/GonzalezPerezCO;component/Recursos/LOGOS/arabe-azul.png" Margin="524,10,530,0" Stretch="None"/>
+        <Image Width="538" HorizontalAlignment="Center"  VerticalAlignment="Top" Source="/GonzalezPerezCO;component/Recursos/LOGOS/azul.png" Margin="524,10,530,0" Stretch="None"/>
 
     </Grid>
 </Window>

@@ -18,7 +18,7 @@
         <Button x:Name="bt3" Content="Casilleros" Margin="0,410,1427,0" VerticalAlignment="Top" Width="130" HorizontalAlignment="Right" Background="#FFFFDA33" Click="Bt3_Click"/>
         <Button x:Name="bt5" Content="Menú principal" Grid.Column="2" HorizontalAlignment="Right" Margin="0,738,10.276,0" VerticalAlignment="Top" Width="130" RenderTransformOrigin="0.52,2.5" FontWeight="Bold" Height="48" Background="#FFFFDA33" Click="Bt5_Click"/>
         <Button x:Name="bt6" Content="Administrar" Margin="0,324,10,0" VerticalAlignment="Top" Width="130" HorizontalAlignment="Right" Background="#FFFFDA33" Click="Bt6_Click"/>
-        <Image Width="538" HorizontalAlignment="Center"  VerticalAlignment="Top" Source="/GonzalezPerezCO;component/Recursos/LOGOS/arabe-azul.png" Margin="529,7,525,0" Stretch="None"/>
+        <Image Width="677" HorizontalAlignment="Center"  VerticalAlignment="Top" Source="/GonzalezPerezCO;component/Recursos/LOGOS/azul.png" Margin="455,10,460,0" Stretch="None"/>
         <Button x:Name="bt7" Content="Actualizar tabla Implementos Deportivos" HorizontalAlignment="Center" Margin="429,187,431,0" VerticalAlignment="Top" Width="732" FontWeight="Bold" FontSize="16" Click="Bt7_Click">
             <Button.Background>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.MenuHighlightColorKey}}"/>

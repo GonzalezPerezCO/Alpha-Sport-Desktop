@@ -44,6 +44,6 @@
         <Label Content="Mensaje:" HorizontalAlignment="Center" Margin="336,640,1078,172" VerticalAlignment="Center" FontWeight="Bold" FontSize="22" RenderTransformOrigin="-1.103,0.704" Height="40" Width="178"/>
         <Label x:Name="lab13" Content="Asistencias:" HorizontalAlignment="Center" Margin="640,464,811,390" VerticalAlignment="Center" FontSize="24" FontWeight="Bold" Height="38" Width="141"/>
         <Label x:Name="lab14" Content="---" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="786,464,748,390" VerticalAlignment="Center" RenderTransformOrigin="0.355,-0.212" FontSize="24" Width="58" Height="38" Foreground="#FF41C90E" FontWeight="Bold" VerticalContentAlignment="Center"/>
-        <Image Width="538" HorizontalAlignment="Center"  VerticalAlignment="Top" Source="/GonzalezPerezCO;component/Recursos/LOGOS/arabe-azul.png" Margin="517,10,537,0" Stretch="None"/>
+        <Image Width="538" HorizontalAlignment="Center"  VerticalAlignment="Top" Source="/GonzalezPerezCO;component/Recursos/LOGOS/azul.png" Margin="517,10,537,0" Stretch="None"/>
     </Grid>
 </Window>

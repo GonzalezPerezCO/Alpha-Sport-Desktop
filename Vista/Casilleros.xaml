@@ -123,7 +123,7 @@
         <TextBox x:Name="codigo" Grid.Column="1" HorizontalAlignment="Right" Height="27" Margin="0,146,68.866,15" TextWrapping="Wrap" VerticalAlignment="Center" Width="134" FontWeight="Bold" FontSize="18" MaxLines="1" MaxLength="11" TextOptions.TextHintingMode="Fixed" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
         <Button x:Name="prestamo" Content="Préstamos" Margin="1235.134,461,-34.134,-298" Grid.Column="1" Background="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}" Click="Prestamo_Click" VerticalAlignment="Center" Height="25"/>
         <Button x:Name="volver" Content="Regresar" HorizontalAlignment="Right" Margin="0,88,-47.134,0" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.541,4.1" Click="Click_volver" Grid.Column="1"/>
-        <Image Width="538" HorizontalAlignment="Center"  VerticalAlignment="Top" Source="/GonzalezPerezCO;component/Recursos/LOGOS/arabe-azul.png" Margin="314.134,0,437.866,0" Stretch="None" Grid.Column="1"/>
+        <Image Width="538" HorizontalAlignment="Center"  VerticalAlignment="Top" Source="/GonzalezPerezCO;component/Recursos/LOGOS/azul.png" Margin="314.134,0,437.866,0" Stretch="None" Grid.Column="1"/>
 
     </Grid>
 
