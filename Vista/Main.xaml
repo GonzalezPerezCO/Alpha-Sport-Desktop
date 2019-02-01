@@ -13,9 +13,7 @@
             <ImageBrush ImageSource="/GonzalezPerezCO;component/Recursos/LOGOS/binario.jpg" Stretch="UniformToFill" Opacity="0.685"/>
         </Grid.Background>
         <Image Width="925" HorizontalAlignment="Center"  VerticalAlignment="Top" Source="/GonzalezPerezCO;component/Recursos/LOGOS/azul-gigante.png" Margin="333,48,334,0" Stretch="None"/>
-        <Grid HorizontalAlignment="Left" Height="100" Margin="-577,1412,0,-620" VerticalAlignment="Top" Width="100"/>
-        <Button x:Name="btn2" Content="Deportes" HorizontalAlignment="Right" VerticalAlignment="Center" Width="789" Height="892" FontSize="48" FontWeight="Bold" Click="Btn2_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="btn1" Content="Gimnasio" HorizontalAlignment="Left" VerticalAlignment="Center" Width="798" Height="892" FontSize="48" FontWeight="Bold" Click="Btn1_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-
+        <Button x:Name="btn2" Content="Deportes" Width="789" Height="892" FontSize="48" FontWeight="Bold" Click="Btn2_Click" Background="{x:Null}" BorderBrush="{x:Null}" Margin="803,0,0,0"/>
+        <Button x:Name="btn1" Content="Gimnasio" Width="798" Height="892" FontSize="48" FontWeight="Bold" Click="Btn1_Click" Background="{x:Null}" BorderBrush="{x:Null}" Margin="0,0,794,0"/>
     </Grid>
 </Window>
