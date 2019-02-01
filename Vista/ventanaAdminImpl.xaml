@@ -6,21 +6,14 @@
         xmlns:local="clr-namespace:AlphaSport.Vista"
         mc:Ignorable="d"
         Title="ventanaAdminImpl"
-        WindowStyle="None"  Height="600" Width="500">
+        WindowStyle="None"  Height="600" Width="500" >
     <Grid>
         <Button x:Name="btn1" Content="Aceptar" HorizontalAlignment="Left" Margin="10,0,0,10" Width="222" VerticalAlignment="Bottom" Background="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" Height="34" FontSize="18" Click="Btn1_Click"/>
-        <TextBox x:Name="codigo" HorizontalAlignment="Left" Height="45" Margin="47,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="383" FontWeight="Bold" FontSize="18" MaxLines="1" MaxLength="11" TextOptions.TextHintingMode="Fixed"/>
+        <TextBox x:Name="text1" HorizontalAlignment="Left" Height="45" Margin="47,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="383" FontWeight="Bold" FontSize="18" MaxLines="1" MaxLength="11" TextOptions.TextHintingMode="Fixed"/>
         <Label Content="Número de carnet" HorizontalAlignment="Left" Margin="47,56,0,0" VerticalAlignment="Top" Width="341" FontSize="18"/>
         <Label Content="Casillero No:" HorizontalAlignment="Left" Margin="55,272,0,274" VerticalAlignment="Center" FontWeight="Bold" Height="46" FontSize="18" Width="151"/>
-        <ComboBox x:Name="cmbox" HorizontalAlignment="Right" Margin="0,272,110,274" VerticalAlignment="Center" Width="122" Height="46" FontSize="18" RenderTransformOrigin="1.034,0.603"/>
-        <Button x:Name="btn2" HorizontalAlignment="Left" Margin="260,0,0,10" Width="222" VerticalAlignment="Bottom" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Height="34" FontSize="18" Click="Btn2_Click">
-            <Button x:Name="bt7" Content="Actualizar tabla de cupos" HorizontalAlignment="Center" VerticalAlignment="Top" Width="864" FontWeight="Bold" FontSize="16" Click="Bt7_Click">
-                <Button.Background>
-                    <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.MenuHighlightColorKey}}"/>
-                </Button.Background>
-            </Button>
-        </Button>
-        <TextBlock HorizontalAlignment="Center"  VerticalAlignment="Bottom" Margin="47,0,62,115" Height="59" TextWrapping="Wrap" FontSize="18" Width="383" TextAlignment="Center"><Run Text="Sí, va a liberar el casillero, no tiene que seleccionar Casillero No."/></TextBlock>
+        <ComboBox x:Name="cmbox1" HorizontalAlignment="Right" Margin="0,272,110,274" VerticalAlignment="Center" Width="122" Height="46" FontSize="18" RenderTransformOrigin="1.034,0.603"/>
+        <Button x:Name="btn2" Content="Regresar" HorizontalAlignment="Left" Margin="260,0,0,10" Width="222" VerticalAlignment="Bottom" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Height="34" FontSize="18" Click="Btn2_Click"/>
 
     </Grid>
 </Window>

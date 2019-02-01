@@ -27,6 +27,7 @@ namespace AlphaSport.Vista
         {
             InitializeComponent();
             entorno = Entorno.GetInstance();
+            Limpiar();
         }
 
         public static VentanaAdminImpl GetInstance()
@@ -37,6 +38,11 @@ namespace AlphaSport.Vista
             return instance;
         }
 
+        private void Limpiar()
+        {
+            text1.Focus();
+        }
+
 
         private void Btn1_Click(object sender, RoutedEventArgs e)
         {
@@ -45,7 +51,9 @@ namespace AlphaSport.Vista
 
         private void Btn2_Click(object sender, RoutedEventArgs e)
         {
-
+            TablaImplementos impl = TablaImplementos.GetInstance();
+            impl.Show();
+            this.Hide();
         }
     }
 }
