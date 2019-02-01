@@ -72,17 +72,21 @@ namespace AlphaSport.Vista
             else
             {
                 // Lista: nombre, codigo, casillero, disponible{0:no, 1:si}, entrada, salida
-                UInt64 codigoEs = Convert.ToUInt64(text1.Text);
+                codigo = Convert.ToUInt64(text1.Text);
                 result = true;
             }
 
             return result;
         }
 
-            private void Btn1_Click(object sender, RoutedEventArgs e)
+        private void Btn1_Click(object sender, RoutedEventArgs e)
         {
-            Limpiar();
-            Ocultar();
+            bool result = CapturarDatos();
+            if (result) {
+                MessageBox.Show(codigo.ToString());
+            }
+            //Limpiar();
+            //Ocultar();
         }
 
         private void Btn2_Click(object sender, RoutedEventArgs e)
