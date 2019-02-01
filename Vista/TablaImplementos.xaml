@@ -10,14 +10,12 @@
         WindowState="Maximized" WindowStartupLocation="CenterScreen"
         WindowStyle="None">
     <Grid Background="#FFEEEEEE">
-
-        <DockPanel HorizontalAlignment="Left" LastChildFill="False" Width="190" Background="#FF1A2028"/>
         <DataGrid x:Name="dtgrid1" Height="661" Margin="429,217,431,0" VerticalAlignment="Top" IsReadOnly="True" HorizontalAlignment="Center" Width="732" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <Label x:Name="lab2" Content="Implementos Deportivos" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="618,116,621,0" VerticalAlignment="Top" RenderTransformOrigin="4.868,0.577" FontSize="24" FontWeight="Bold" Width="353"/>
-        <Button x:Name="bt1" Content="Préstamos" Margin="0,319,1427,0" VerticalAlignment="Top" Width="130" HorizontalAlignment="Right" Background="#FFFFDA33" Click="Bt1_Click"/>
-        <Button x:Name="bt3" Content="Casilleros" Margin="0,410,1427,0" VerticalAlignment="Top" Width="130" HorizontalAlignment="Right" Background="#FFFFDA33" Click="Bt3_Click"/>
+        <Button x:Name="bt1" Content="Préstamos" Margin="0,389,10,0" VerticalAlignment="Top" Width="130" HorizontalAlignment="Right" Background="#FFFFDA33" Click="Bt1_Click"/>
+        <Button x:Name="bt3" Content="Casilleros" Margin="0,588,10,0" VerticalAlignment="Top" Width="130" HorizontalAlignment="Right" Background="#FFFFDA33" Click="Bt3_Click"/>
         <Button x:Name="bt5" Content="Menú principal" Grid.Column="2" HorizontalAlignment="Right" Margin="0,738,10.276,0" VerticalAlignment="Top" Width="130" RenderTransformOrigin="0.52,2.5" FontWeight="Bold" Height="48" Background="#FFFFDA33" Click="Bt5_Click"/>
-        <Button x:Name="bt6" Content="Administrar" Margin="0,324,10,0" VerticalAlignment="Top" Width="130" HorizontalAlignment="Right" Background="#FFFFDA33" Click="Bt6_Click"/>
+        <Button x:Name="bt6" Content="Administrar" Margin="0,280,10,0" VerticalAlignment="Top" Width="130" HorizontalAlignment="Right" Background="#FFFFDA33" Click="Bt6_Click"/>
         <Image Width="677" HorizontalAlignment="Center"  VerticalAlignment="Top" Source="/GonzalezPerezCO;component/Recursos/LOGOS/azul.png" Margin="455,10,460,0" Stretch="None"/>
         <Button x:Name="bt7" Content="Actualizar tabla Implementos Deportivos" HorizontalAlignment="Center" Margin="429,187,431,0" VerticalAlignment="Top" Width="732" FontWeight="Bold" FontSize="16" Click="Bt7_Click">
             <Button.Background>

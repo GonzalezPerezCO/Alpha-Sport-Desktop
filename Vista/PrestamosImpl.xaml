@@ -9,7 +9,7 @@
         Width="1600" Height="900" Closed="Window_Closed" Closing="Window_Closing"
         WindowState="Maximized" WindowStartupLocation="CenterScreen"
         WindowStyle="None">
-    <Grid IsVisibleChanged="Grid_IsVisibleChanged">
+    <Grid Background="#FFEEEEEE">
         <Label x:Name="lab2" Content="Préstamos Implementos Deportivos" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="503,112,508,0" VerticalAlignment="Top" RenderTransformOrigin="0.497,8.452" FontSize="24" FontWeight="Bold" Width="581"/>
         <Button x:Name="Bt1" Content="Prestar Impl Dep" Margin="0,106,10,0" VerticalAlignment="Top" Width="130" HorizontalAlignment="Right" Background="#FFFFDA33" Click="Bt1_Click"/>
         <Button x:Name="Bt2" Content="Regresar" HorizontalAlignment="Right" Margin="0,62,10,0" VerticalAlignment="Top" Width="74" Click="Bt2_Click"/>

@@ -97,12 +97,6 @@ namespace AlphaSport.Vista
             MostrarTabla();
         }
 
-        private void Grid_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
-        {
-            Limpiar();
-            MostrarTabla();
-        }
-
         private List<string> SepararLista(List<string> lista)
         {
             // a,b,c,...,x

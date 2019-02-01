@@ -3,18 +3,19 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d"
+        mc:Ignorable="d"        
+        Background="#FFEEEEEE"
         
         Width="1600" Height="900" Closed="Window_Closed" Closing="Window_Closing"
         WindowState="Maximized" WindowStartupLocation="CenterScreen"
         WindowStyle="None" MouseEnter="Window_MouseEnter" IsVisibleChanged="Window_IsVisibleChanged">
-    <Grid Margin="0,10,0,671" HorizontalAlignment="Center" VerticalAlignment="Center">
+    <Grid Background="#FFEEEEEE" Margin="0,10,0,671" HorizontalAlignment="Center" VerticalAlignment="Center">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="71*"/>
             <ColumnDefinition Width="645*"/>
         </Grid.ColumnDefinitions>
-        <Label x:Name="lab2" Content="Disponibilidad de casilleros" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="424.134,104,547.866,0" VerticalAlignment="Top" RenderTransformOrigin="-0.013,-0.288" FontWeight="Bold" FontSize="24" Grid.Column="1"/>
-        <Button x:Name="bt5" Content="Menú principal" HorizontalAlignment="Right" Margin="0,794,16,-654" VerticalAlignment="Bottom" Width="130" RenderTransformOrigin="0.52,2.5" FontWeight="Bold" Height="48" Background="#FFFFDA33" Click="Bt5_Click" Grid.Column="1"/>
+        <Label x:Name="lab2" Content="Disponibilidad de casilleros" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="423.134,99,548.866,0" VerticalAlignment="Top" RenderTransformOrigin="-0.013,-0.288" FontWeight="Bold" FontSize="24" Grid.Column="1"/>
+        <Button x:Name="bt5" Content="Menú principal" HorizontalAlignment="Right" Margin="0,0,-59.134,-650" VerticalAlignment="Bottom" Width="130" RenderTransformOrigin="0.52,2.5" FontWeight="Bold" Height="48" Background="#FFFFDA33" Click="Bt5_Click" Grid.Column="1"/>
         <Grid HorizontalAlignment="Left" Height="583" Margin="20,186,140,-581" VerticalAlignment="Center" Width="1272" Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*" />
@@ -119,11 +120,11 @@
             <Button x:Name="Btn79" Grid.Row ="9" Grid.Column="6" Click="EventoClick" Tag="79,h">Casillero 79</Button>
             <Button x:Name="Btn80" Grid.Row ="9" Grid.Column="7" Click="EventoClick" Tag="80,h">Casillero 80</Button>
         </Grid>
-        <Button x:Name="buscar" Content="Buscar" Margin="1248.134,148,-47.134,15" Grid.Column="1" Background="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}" Click="Buscar_Click" VerticalAlignment="Center" Height="25" RenderTransformOrigin="2.107,-1.14"/>
-        <TextBox x:Name="codigo" Grid.Column="1" HorizontalAlignment="Right" Height="27" Margin="0,146,68.866,15" TextWrapping="Wrap" VerticalAlignment="Center" Width="134" FontWeight="Bold" FontSize="18" MaxLines="1" MaxLength="11" TextOptions.TextHintingMode="Fixed" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-        <Button x:Name="prestamo" Content="Préstamos" Margin="1235.134,461,-34.134,-298" Grid.Column="1" Background="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}" Click="Prestamo_Click" VerticalAlignment="Center" Height="25"/>
-        <Button x:Name="volver" Content="Regresar" HorizontalAlignment="Right" Margin="0,88,-47.134,0" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.541,4.1" Click="Click_volver" Grid.Column="1"/>
-        <Image Width="538" HorizontalAlignment="Center"  VerticalAlignment="Top" Source="/GonzalezPerezCO;component/Recursos/LOGOS/azul.png" Margin="314.134,0,437.866,0" Stretch="None" Grid.Column="1"/>
+        <Button x:Name="buscar" Content="Buscar" Margin="1247.134,348,-46.134,-186" Grid.Column="1" Background="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}" Click="Buscar_Click" VerticalAlignment="Center" Height="26" RenderTransformOrigin="2.107,-1.14"/>
+        <TextBox x:Name="codigo" Grid.Column="1" HorizontalAlignment="Right" Height="26" Margin="0,392,-59.134,-230" TextWrapping="Wrap" VerticalAlignment="Center" Width="134" FontWeight="Bold" FontSize="18" MaxLines="1" MaxLength="11" TextOptions.TextHintingMode="Fixed" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Button x:Name="prestamo" Content="Préstamos" Margin="1247.134,498,-46.134,-336" Grid.Column="1" Background="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}" Click="Prestamo_Click" VerticalAlignment="Center" Height="26"/>
+        <Button x:Name="volver" Content="Regresar" HorizontalAlignment="Right" Margin="0,10,-59.134,0" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.541,4.1" Click="Click_volver" Grid.Column="1"/>
+        <Image Width="672" HorizontalAlignment="Center"  VerticalAlignment="Top" Source="/GonzalezPerezCO;component/Recursos/LOGOS/azul.png" Margin="252.134,19,365.866,0" Stretch="None" Grid.Column="1"/>
 
     </Grid>
 

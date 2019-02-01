@@ -6,7 +6,7 @@
         mc:Ignorable="d"
         Title="ventanaPrestamosImpl" 
         WindowStyle="None"  Height="600" Width="500" Closed="Window_Closed" Closing="Window_Closing">
-    <Grid>
+    <Grid Background="#FFEEEEEE">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="8*"/>
             <ColumnDefinition Width="9*"/>

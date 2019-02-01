@@ -9,7 +9,7 @@
         Width="1600" Height="900" Closed="Window_Closed" Closing="Window_Closing"
         WindowState="Maximized" WindowStartupLocation="CenterScreen"
         WindowStyle="None">
-    <Grid>
+    <Grid Background="#FFEEEEEE">
         <DataGrid x:Name="dtgrid1" Height="597" Margin="314,222,368,0" VerticalAlignment="Top" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Width="910"/>
         <Label x:Name="lab2" Content="Asistencia del Gimnasio" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="615,126,620,0" VerticalAlignment="Top" RenderTransformOrigin="0.496,0.571" FontSize="24" FontWeight="Bold" Width="357"/>
         <Button x:Name="bt5" Content="Menú principal" HorizontalAlignment="Right" Margin="0,0,10,14" VerticalAlignment="Bottom" Width="130" RenderTransformOrigin="0.52,2.5" FontWeight="Bold" Height="48" Click="Bt5_Click" Background="#FFFFDA33"/>
