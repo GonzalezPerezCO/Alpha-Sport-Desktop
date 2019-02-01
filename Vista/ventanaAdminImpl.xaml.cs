@@ -59,6 +59,11 @@ namespace AlphaSport.Vista
 
             cmbox1.SelectedValue = null;
 
+            EstadoBotonesAlgunos(); // deshabilita algunos elementos
+            
+            chbx_nuevo.IsEnabled = true;
+            chbx_eliminar.IsEnabled = true;
+
             text1.Focus();
         }
 
@@ -79,6 +84,15 @@ namespace AlphaSport.Vista
                 }
             }
             
+        }
+
+        private void EstadoBotonesAlgunos()
+        {
+            text1.IsEnabled = false;
+            text2.IsEnabled = false;
+            text3.IsEnabled = false;
+            cmbox1.IsEnabled = false;
+            btn1.IsEnabled = false;
         }
 
         private bool CapturarDatos()
