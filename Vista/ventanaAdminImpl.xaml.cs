@@ -86,13 +86,26 @@ namespace AlphaSport.Vista
             Debug.WriteLine("<<< CAPTURA ");
             bool result = false;
 
-            if (text1.Text == "" || !UInt64.TryParse(text1.Text, out UInt64 abc))
+            if (selec && nuevoImpl)
             {
-                MessageBox.Show("Ingrese un número de carnet valido!");
+                if (text1.Text == "" || !UInt64.TryParse(text1.Text, out UInt64 abc))
+                {
+                    MessageBox.Show("Ingrese un número de carnet valido!");
+                }
+                else
+                {
+                    result = true;
+                }
+
+                result = true;
+            }
+            else if (selec && !nuevoImpl)
+            {
+                result = true;
             }
             else
             {
-                result = true;
+                result = false;
             }
 
             return result;
@@ -100,18 +113,17 @@ namespace AlphaSport.Vista
 
         private void Btn1_Click(object sender, RoutedEventArgs e)
         {
-            bool result = CapturarDatos();          
+            bool result = CapturarDatos();     
 
             if (result)
             {
-                MessageBox.Show("ok");
+                
             }
             else
             {
-                MessageBox.Show("error");
+                
             }
             //Limpiar();
-            //Ocultar();
         }
 
         private void Btn2_Click(object sender, RoutedEventArgs e)
