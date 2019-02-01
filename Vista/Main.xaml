@@ -9,20 +9,12 @@
         WindowState="Maximized" WindowStartupLocation="CenterScreen"
         WindowStyle="None">
     <Grid>
-        <Grid HorizontalAlignment="Left" Height="892" VerticalAlignment="Top" Width="788" Margin="806,0,-2,0">
-            <Grid.Background>
-                <ImageBrush ImageSource="/GonzalezPerezCO;component/Recursos/deportes.jpg" Opacity="0.7"/>
-            </Grid.Background>
-        </Grid>
-
-        <Grid HorizontalAlignment="Left" Height="892" VerticalAlignment="Top" Width="807" Margin="-1,0,0,0">
-            <Grid.Background>
-                <ImageBrush ImageSource="/GonzalezPerezCO;component/Recursos/gym.jpg" Opacity="0.7"/>
-            </Grid.Background>
-        </Grid>
-        <Button x:Name="btn2" Content="Deportes" HorizontalAlignment="Center" VerticalAlignment="Center" Width="716" Height="703" Margin="839,151,37,38" FontSize="48" FontWeight="Bold" Click="Btn2_Click" Background="{x:Null}"/>
+        <Grid.Background>
+            <ImageBrush ImageSource="/GonzalezPerezCO;component/Recursos/LOGOS/binario.jpg" Stretch="UniformToFill" Opacity="0.685"/>
+        </Grid.Background>
+        <Button x:Name="btn2" Content="Deportes" HorizontalAlignment="Right" VerticalAlignment="Center" Width="716" Height="703" Margin="0,65,27,124" FontSize="48" FontWeight="Bold" Click="Btn2_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
         <Image Width="925" HorizontalAlignment="Center"  VerticalAlignment="Top" Source="/GonzalezPerezCO;component/Recursos/LOGOS/azul-gigante.png" Margin="333,48,334,0" Stretch="None"/>
-        <Button x:Name="btn1" Content="Gimnasio" HorizontalAlignment="Center" VerticalAlignment="Center" Width="716" Height="703" Margin="44,156,832,33" FontSize="48" FontWeight="Bold" Click="Btn1_Click" Background="{x:Null}"/>
+        <Button x:Name="btn1" Content="Gimnasio" HorizontalAlignment="Left" VerticalAlignment="Center" Width="716" Height="703" Margin="0,65,0,124" FontSize="48" FontWeight="Bold" Click="Btn1_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
         <Grid HorizontalAlignment="Left" Height="100" Margin="-577,1412,0,-620" VerticalAlignment="Top" Width="100"/>
 
     </Grid>
