@@ -139,7 +139,39 @@ namespace AlphaSport.Vista
 
             if (result)
             {
-                lista = entorno.Nuevo_Implemento(nombre, sigla, cantidad);
+                if (selec && nuevoImpl)
+                {
+                    lista = entorno.Nuevo_Implemento(nombre, sigla, cantidad);
+
+                    if (lista.Count != 0 && (lista[0] == entorno.ERRORSQL || lista[0] == entorno.INFOSQL))
+                    {
+                        MessageBox.Show(lista[0]);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Implemento Deportivo Agregado!");
+
+                    }
+
+                }
+                else if (selec && !nuevoImpl)
+                {
+                    lista = entorno.Eliminar_Implemento(sigla);
+
+                    if (lista.Count != 0 && (lista[0] == entorno.ERRORSQL || lista[0] == entorno.INFOSQL))
+                    {
+                        MessageBox.Show(lista[0]);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Implemento Deportivo Eliminado!");
+
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Desconocido!!!");
+                }   
 
                 EstadoBotonesAlgunos(); // primero para evitar el Listener de Selection_Change_Cmbx
                 Limpiar();
