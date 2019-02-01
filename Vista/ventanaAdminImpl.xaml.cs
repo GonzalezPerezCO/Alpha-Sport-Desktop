@@ -103,6 +103,10 @@ namespace AlphaSport.Vista
             btn1.IsEnabled = false;
         }
 
+        /// <summary>
+        /// CAPTURAR DATOS SOLO PARA EL CASO DE NUEVO IMPL
+        /// </summary>
+        /// <returns></returns>
         private bool CapturarDatos()
         {
             Debug.WriteLine("<<< CAPTURA ");
@@ -140,7 +144,7 @@ namespace AlphaSport.Vista
             bool result = CapturarDatos();
             List<string> lista = new List<string>();
 
-            if (result)
+            if ((result && selec && nuevoImpl) || (selec && !nuevoImpl))
             {
                 Debug.WriteLine("++++ select y nuevo ="+selec + " y "+ nuevoImpl);
                 if (selec && nuevoImpl)
@@ -158,7 +162,7 @@ namespace AlphaSport.Vista
                     }
 
                 }
-                else if (selec && !nuevoImpl)
+                else if (!nuevoImpl)
                 {
                     lista = entorno.Eliminar_Implemento(sigla);
 
@@ -169,7 +173,6 @@ namespace AlphaSport.Vista
                     else
                     {
                         MessageBox.Show("Implemento Deportivo Eliminado!");
-
                     }
                 }
                 else
