@@ -87,5 +87,10 @@ namespace AlphaSport.Vista
         {
             VentanaAdminImpl ventana = VentanaAdminImpl.GetInstance();
         }
+
+        private void Bt7_Click(object sender, RoutedEventArgs e)
+        {
+            MostrarTabla();
+        }
     }
 }
