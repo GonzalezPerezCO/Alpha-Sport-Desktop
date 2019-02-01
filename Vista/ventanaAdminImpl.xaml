@@ -9,15 +9,17 @@
         WindowStyle="None"  Height="600" Width="500" >
     <Grid>
         <Button x:Name="btn1" Content="Aceptar" HorizontalAlignment="Left" Margin="10,0,0,10" Width="222" VerticalAlignment="Bottom" Background="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" Height="34" FontSize="18" Click="Btn1_Click"/>
-        <TextBox x:Name="text1" HorizontalAlignment="Left" Height="45" Margin="27,181,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" FontWeight="Bold" FontSize="18" MaxLines="1" MaxLength="5" TextOptions.TextHintingMode="Fixed" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-        <Label Content="SIGLA" HorizontalAlignment="Left" Margin="27,142,0,0" VerticalAlignment="Top" Width="93" FontSize="18" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-        <Label Content="Sigla Impl" HorizontalAlignment="Left" Margin="26,438,0,108" VerticalAlignment="Center" FontWeight="Bold" Height="46" FontSize="18" Width="104"/>
+        <TextBox x:Name="text1" HorizontalAlignment="Left" Height="45" Margin="27,268,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" FontWeight="Bold" FontSize="18" MaxLines="1" MaxLength="5" TextOptions.TextHintingMode="Fixed" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label Content="SIGLA" HorizontalAlignment="Left" Margin="27,229,0,0" VerticalAlignment="Top" Width="93" FontSize="18" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label Content="Sigla Impl" HorizontalAlignment="Left" Margin="27,438,0,108" VerticalAlignment="Center" FontWeight="Bold" Height="46" FontSize="18" Width="104"/>
         <ComboBox x:Name="cmbox1" HorizontalAlignment="Right" Margin="0,438,138,108" VerticalAlignment="Center" Width="122" Height="46" FontSize="18" RenderTransformOrigin="1.034,0.603" SelectionChanged="Cmbox1_SelectionChanged"/>
         <Button x:Name="btn2" Content="Regresar" HorizontalAlignment="Left" Margin="260,0,0,10" Width="222" VerticalAlignment="Bottom" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Height="34" FontSize="18" Click="Btn2_Click"/>
-        <CheckBox x:Name="chbx_nuevo" Content="Nuevo Impl" HorizontalAlignment="Left" Margin="10,15,0,541" VerticalAlignment="Top" Click="Chbox_Click" FontSize="18" FontWeight="Bold" Height="36" Width="131" VerticalContentAlignment="Center"/>
+        <CheckBox x:Name="chbx_nuevo" Content="Nuevo Impl" HorizontalAlignment="Left" Margin="27,28,0,0" VerticalAlignment="Top" Click="Chbox_Click" FontSize="18" FontWeight="Bold" Height="36" Width="131" VerticalContentAlignment="Center" RenderTransformOrigin="0.615,1.097"/>
         <CheckBox x:Name="chbx_eliminar" Content="Eliminar Impl" HorizontalAlignment="Left" Margin="10,324,0,232" VerticalAlignment="Center" Click="Chbox_Click" FontSize="18" FontWeight="Bold" Height="36" Width="131" VerticalContentAlignment="Center"/>
-        <TextBox x:Name="text2" HorizontalAlignment="Right" Height="46" Margin="306,181,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" FontWeight="Bold" FontSize="18" MaxLines="1" MaxLength="10" TextOptions.TextHintingMode="Fixed" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-        <Label Content="Cantidad" HorizontalAlignment="Right" Margin="306,142,0,0" VerticalAlignment="Top" Width="160" FontSize="18" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <TextBox x:Name="text2" HorizontalAlignment="Right" Height="46" Margin="0,268,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" FontWeight="Bold" FontSize="18" MaxLines="1" MaxLength="10" TextOptions.TextHintingMode="Fixed" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label Content="Cantidad" HorizontalAlignment="Right" Margin="0,229,0,0" VerticalAlignment="Top" Width="160" FontSize="18" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <TextBox x:Name="text3" HorizontalAlignment="Right" Height="46" Margin="0,123,94,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="274" FontWeight="Bold" FontSize="18" MaxLines="1" MaxLength="20" TextOptions.TextHintingMode="Fixed" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label Content="Nombre Nuevo Impl Deportivo" HorizontalAlignment="Right" Margin="0,83,94,0" VerticalAlignment="Top" Width="274" FontSize="18" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
 
     </Grid>
 </Window>
