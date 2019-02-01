@@ -27,7 +27,9 @@ namespace AlphaSport.Vista
         private bool nuevoImpl; // si es o no un nuevo prestamo
         private UInt64 codigo; 
         private bool selec; // alguno chbox esta seleccionado
+        private string nombre;
         private string sigla;
+        private UInt32 cantidad;
 
         public VentanaAdminImpl()
         {
@@ -52,7 +54,9 @@ namespace AlphaSport.Vista
             nuevoImpl = true;
             codigo = 0;
             selec = new bool();
+            nombre = "";
             sigla = "";
+            cantidad = 0;
 
             chbx_nuevo.IsChecked = false;
             chbx_eliminar.IsChecked = false;
@@ -100,26 +104,19 @@ namespace AlphaSport.Vista
             Debug.WriteLine("<<< CAPTURA ");
             bool result = false;
 
-            if (selec && nuevoImpl)
+            if (selec)
             {
-                if (text1.Text == "" || !UInt64.TryParse(text1.Text, out UInt64 abc))
+                if (selec && nuevoImpl) // el unico que campura datos es para Nuevo Implemento
                 {
-                    MessageBox.Show("Ingrese un número de carnet valido!");
+                    if (text1.Text == "" || text2.Text == "" || !UInt64.TryParse(text2.Text, out UInt64 abc) || text3.Text == "")
+                    {
+                        MessageBox.Show("Llene todos los campos correctamente para poder continuar.!");
+                    }
                 }
-                else
-                {
-                    result = true;
-                }
-
-                result = true;
-            }
-            else if (selec && !nuevoImpl)
-            {
-                result = true;
             }
             else
             {
-                result = false;
+                MessageBox.Show("Seleccion si desea Nuevo Implemento Deportivo o Eliminar un Implemento Deportivo.!");
             }
 
             return result;
@@ -127,11 +124,12 @@ namespace AlphaSport.Vista
 
         private void Btn1_Click(object sender, RoutedEventArgs e)
         {
-            bool result = CapturarDatos();     
+            bool result = CapturarDatos();
+            List<string> lista = new List<string>();
 
             if (result)
             {
-                
+                lista = entorno.Nuevo_Implemento(nombre, sigla, cantidad);
             }
             else
             {
@@ -150,6 +148,7 @@ namespace AlphaSport.Vista
         {
             TablaImplementos impl = TablaImplementos.GetInstance();
             impl.Show();
+            impl.MostrarTabla();
             this.Hide();
         }
 
