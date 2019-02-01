@@ -217,6 +217,8 @@ namespace AlphaSport.Vista
                 text2.IsEnabled = true;
                 text3.IsEnabled = true;
 
+                btn1.IsEnabled = true; // para Eliminar se activa en el Selection_Change_Cmbox
+
                 selec = true;
 
             }
