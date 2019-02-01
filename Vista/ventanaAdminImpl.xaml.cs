@@ -51,10 +51,10 @@ namespace AlphaSport.Vista
 
             nuevoImpl = true;
             codigo = 0;
-            selec = false;
+            selec = new bool();
             sigla = "";
 
-            chbx_nuevo.IsChecked = true;
+            chbx_nuevo.IsChecked = false;
             chbx_eliminar.IsChecked = false;
 
             cmbox1.SelectedValue = null;
@@ -177,6 +177,8 @@ namespace AlphaSport.Vista
 
                 chbx_nuevo.IsChecked = false;
                 chbx_nuevo.IsEnabled = false;
+
+                cmbox1.IsEnabled = true;
 
                 selec = true;
 
