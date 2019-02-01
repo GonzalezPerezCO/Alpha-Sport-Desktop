@@ -323,5 +323,8 @@
     <Resource Include="Recursos\LOGOS\azul.png" />
     <Resource Include="Recursos\LOGOS\negro.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recursos\LOGOS\jpg-arabe-negro.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
