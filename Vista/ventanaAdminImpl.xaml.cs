@@ -118,6 +118,8 @@ namespace AlphaSport.Vista
                     }
                     else
                     {
+                        result = true;
+
                         nombre = text3.Text;
                         sigla = text1.Text;
                         cantidad = Convert.ToUInt32(text2.Text);
