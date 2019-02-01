@@ -1,6 +1,7 @@
 ﻿using AlphaSport.Controller;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,7 +25,8 @@ namespace AlphaSport.Vista
         private static VentanaAdminImpl instance = null;
 
         private bool nuevoImpl; // si es o no un nuevo prestamo
-        private UInt64 codigo;
+        private UInt64 codigo; 
+        private bool selec; // alguno chbox esta seleccionado
 
         public VentanaAdminImpl()
         {
@@ -50,6 +52,10 @@ namespace AlphaSport.Vista
 
             nuevoImpl = false;
             codigo = 0;
+            selec = false;
+
+            chbx_nuevo.IsChecked = false;
+            chbx_eliminar.IsChecked = false;
 
             cmbox1.SelectedValue = null;
 
@@ -80,10 +86,10 @@ namespace AlphaSport.Vista
             }
             else
             {
-                ActualizarCmbx(); 
-
-                // Lista: nombre, codigo, casillero, disponible{0:no, 1:si}, entrada, salida
                 codigo = Convert.ToUInt64(text1.Text);
+                
+                if(selec && !nuevoImpl) ActualizarCmbx(); // seleccionado chbox y es Eliminar
+
                 result = true;
             }
 
@@ -92,8 +98,7 @@ namespace AlphaSport.Vista
 
         private void Btn1_Click(object sender, RoutedEventArgs e)
         {
-            bool result = CapturarDatos();
-          
+            bool result = CapturarDatos();          
 
             if (result)
             {
@@ -118,6 +123,34 @@ namespace AlphaSport.Vista
             TablaImplementos impl = TablaImplementos.GetInstance();
             impl.Show();
             this.Hide();
+        }
+
+        private void Chbox_Click(object sender, RoutedEventArgs e)
+        {
+            Debug.WriteLine("<<< Chbox_Click ");
+            CheckBox chk = (CheckBox)sender;
+            string name = chk.Name;
+
+            if (name == "chbx_nuevo")
+            {
+                nuevoImpl = chbx_nuevo.IsChecked ?? false;
+                chbx_eliminar.IsChecked = !nuevoImpl;
+                selec = true;
+
+            }
+            else if (name == "chbx_eliminar")
+            {
+                nuevoImpl = chbx_eliminar.IsChecked ?? false;
+                chbx_nuevo.IsChecked = !nuevoImpl;
+                selec = true;
+            }
+            else
+            {
+                nuevoImpl = false;
+                chbx_nuevo.IsChecked = false;
+                chbx_eliminar.IsChecked = false;
+                selec = false;
+            }
         }
     }
 }
