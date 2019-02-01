@@ -9,13 +9,14 @@
         WindowStyle="None"  Height="600" Width="500" >
     <Grid>
         <Button x:Name="btn1" Content="Aceptar" HorizontalAlignment="Left" Margin="10,0,0,10" Width="222" VerticalAlignment="Bottom" Background="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" Height="34" FontSize="18" Click="Btn1_Click"/>
-        <TextBox x:Name="text1" HorizontalAlignment="Left" Height="45" Margin="10,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" FontWeight="Bold" FontSize="18" MaxLines="1" MaxLength="11" TextOptions.TextHintingMode="Fixed" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="text1" HorizontalAlignment="Left" Height="45" Margin="10,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" FontWeight="Bold" FontSize="18" MaxLines="1" MaxLength="5" TextOptions.TextHintingMode="Fixed" VerticalContentAlignment="Center"/>
         <Label Content="Número de carnet" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="159" FontSize="18"/>
         <Label Content="Sigla Impl" HorizontalAlignment="Left" Margin="55,272,0,274" VerticalAlignment="Center" FontWeight="Bold" Height="46" FontSize="18" Width="103"/>
         <ComboBox x:Name="cmbox1" HorizontalAlignment="Right" Margin="0,272,110,274" VerticalAlignment="Center" Width="122" Height="46" FontSize="18" RenderTransformOrigin="1.034,0.603" SelectionChanged="Cmbox1_SelectionChanged"/>
         <Button x:Name="btn2" Content="Regresar" HorizontalAlignment="Left" Margin="260,0,0,10" Width="222" VerticalAlignment="Bottom" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Height="34" FontSize="18" Click="Btn2_Click"/>
         <CheckBox x:Name="chbx_nuevo" Content="Nuevo Impl" HorizontalAlignment="Left" Margin="38,166,0,390" VerticalAlignment="Center" Click="Chbox_Click" FontSize="18" FontWeight="Bold" Height="36" Width="131" VerticalContentAlignment="Center"/>
         <CheckBox x:Name="chbx_eliminar" Content="Eliminar Impl" HorizontalAlignment="Right" Margin="0,166,25,390" VerticalAlignment="Center" Click="Chbox_Click" FontSize="18" FontWeight="Bold" Height="36" Width="131" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="text2" HorizontalAlignment="Left" Height="46" Margin="55,438,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" FontWeight="Bold" FontSize="18" MaxLines="1" MaxLength="10" TextOptions.TextHintingMode="Fixed" VerticalContentAlignment="Center"/>
 
     </Grid>
 </Window>

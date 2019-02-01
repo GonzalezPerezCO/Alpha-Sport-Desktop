@@ -49,12 +49,12 @@ namespace AlphaSport.Vista
         {
             text1.Text = "";
 
-            nuevoImpl = false;
+            nuevoImpl = true;
             codigo = 0;
             selec = false;
             sigla = "";
 
-            chbx_nuevo.IsChecked = false;
+            chbx_nuevo.IsChecked = true;
             chbx_eliminar.IsChecked = false;
 
             cmbox1.SelectedValue = null;
@@ -92,8 +92,6 @@ namespace AlphaSport.Vista
             }
             else
             {
-                
-
                 result = true;
             }
 
@@ -139,7 +137,7 @@ namespace AlphaSport.Vista
             {
                 Debug.WriteLine("<<< Chbox_Click NUEVO ");
                 nuevoImpl = true;
-                chbx_eliminar.IsChecked = !nuevoImpl;
+                chbx_eliminar.IsChecked = false;
                 selec = true;
 
             }
@@ -147,7 +145,7 @@ namespace AlphaSport.Vista
             {
                 Debug.WriteLine("<<< Chbox_Click ELIMINAR");
                 nuevoImpl = false;
-                chbx_nuevo.IsChecked = !nuevoImpl;
+                chbx_nuevo.IsChecked = false;
                 selec = true;
 
                 ActualizarCmbx();
