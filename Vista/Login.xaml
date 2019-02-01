@@ -7,9 +7,9 @@
         
         Width="1600" Height="900" Closed="Window_Closed" Closing="Window_Closing"
         WindowState="Maximized" WindowStartupLocation="CenterScreen"
-        WindowStyle="None">
+        WindowStyle="None" Icon="/GonzalezPerezCO;component/Recursos/alpha.ico">
     <Window.Background>
-        <ImageBrush ImageSource="/Recursos/escuela_fondo.jpg" Opacity="0.5" Stretch="UniformToFill" TileMode="Tile"/>
+        <ImageBrush ImageSource="/GonzalezPerezCO;component/Recursos/otoño2.jpg" TileMode="Tile"/>
     </Window.Background>
     <Grid Height="300" Width="300" >
         <Border CornerRadius="20" Margin="20" Background="White">
@@ -23,7 +23,7 @@
                 <Button Name="btn1" Content="Enviar" Margin="60 10" Foreground="Black" Background="LightGray" Click="Btn1_Click" ></Button>
             </StackPanel>
         </Border>
-        <Label x:Name="lab1" Content="Nombre del Proyecto" HorizontalAlignment="Right" HorizontalContentAlignment="Center" VerticalAlignment="Top" FontWeight="Bold" FontSize="48"  Height="Auto" Margin="-333,-145,-339,0" Width="972" Foreground="{DynamicResource {x:Static SystemColors.MenuBarBrushKey}}" />
+        <Label x:Name="lab1" Content="Nombre del Proyecto" HorizontalAlignment="Right" HorizontalContentAlignment="Center" VerticalAlignment="Top" FontWeight="Bold" FontSize="48"  Height="Auto" Margin="-333,-145,-339,0" Width="972" Foreground="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}" />
         <Label x:Name="lab2" Content="Periodo Académico" HorizontalContentAlignment="Right" Foreground="White" HorizontalAlignment="Right" Height="37" Margin="531,-260,-546,0" VerticalAlignment="Top" Width="315" FontWeight="Bold" FontSize="20"/>
         <Image HorizontalAlignment="Right" Height="98" Margin="0,0,-646,-297" VerticalAlignment="Bottom" Width="230" Source="/GonzalezPerezCO;component/Recursos/escuela_ing.jpg"/>
         <Image HorizontalAlignment="Left" Height="122"  VerticalAlignment="Bottom" Width="206" Source="/GonzalezPerezCO;component/Recursos/sistemas.jpg" Margin="-646,0,0,-321"/>
