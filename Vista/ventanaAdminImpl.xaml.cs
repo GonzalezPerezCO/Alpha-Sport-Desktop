@@ -140,12 +140,10 @@ namespace AlphaSport.Vista
             if (result)
             {
                 lista = entorno.Nuevo_Implemento(nombre, sigla, cantidad);
+
+                EstadoBotonesAlgunos(); // primero para evitar el Listener de Selection_Change_Cmbx
+                Limpiar();
             }
-            else
-            {
-                
-            }
-            //Limpiar();
         }
 
         private void Btn2_Click(object sender, RoutedEventArgs e)
@@ -203,14 +201,7 @@ namespace AlphaSport.Vista
         {
             if (cmbox1.IsVisible)
             {
-                if (cmbox1.SelectedValue != null)
-                {
-                    MessageBox.Show("no null");
-                }
-                else
-                {
-                    MessageBox.Show("null ;(");
-                }
+                sigla = cmbox1.SelectedValue.ToString();
             }
         }
 
