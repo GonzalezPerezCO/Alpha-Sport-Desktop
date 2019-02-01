@@ -13,7 +13,7 @@
             <ImageBrush ImageSource="/GonzalezPerezCO;component/Recursos/LOGOS/binario.jpg" Stretch="UniformToFill" Opacity="0.685"/>
         </Grid.Background>
         <Image Width="925" HorizontalAlignment="Center"  VerticalAlignment="Top" Source="/GonzalezPerezCO;component/Recursos/LOGOS/azul-gigante.png" Margin="333,48,334,0" Stretch="None"/>
-        <Button x:Name="btn2" Content="Deportes" Width="789" Height="892" FontSize="48" FontWeight="Bold" Click="Btn2_Click" Background="{x:Null}" BorderBrush="{x:Null}" Margin="803,0,0,0"/>
-        <Button x:Name="btn1" Content="Gimnasio" Width="798" Height="892" FontSize="48" FontWeight="Bold" Click="Btn1_Click" Background="{x:Null}" BorderBrush="{x:Null}" Margin="0,0,794,0"/>
+        <Image Width="755" HorizontalAlignment="Right"  VerticalAlignment="Center" Source="/GonzalezPerezCO;component/Recursos/LOGOS/deportes-logo.png" Margin="0,424,0,362" Stretch="None" Height="106"/>
+        <Image Width="781" HorizontalAlignment="Left"  VerticalAlignment="Center" Source="/GonzalezPerezCO;component/Recursos/LOGOS/gimnasio-logo.png" Margin="0,424,0,362" Stretch="None" Height="106"/>
     </Grid>
 </Window>
