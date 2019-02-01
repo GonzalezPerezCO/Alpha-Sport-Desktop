@@ -33,8 +33,6 @@ namespace AlphaSport.Vista
             InitializeComponent();
             entorno = Entorno.GetInstance();
 
-            ActualizarCmbx();
-
             Limpiar();
         }
 
