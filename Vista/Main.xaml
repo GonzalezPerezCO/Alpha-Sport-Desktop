@@ -19,7 +19,7 @@
                 <ImageBrush Stretch="UniformToFill" ImageSource="/GonzalezPerezCO;component/Recursos/deportes.jpg" Opacity="0.7"/>
             </Button.Background>
         </Button>
-        <Image HorizontalAlignment="Left" Width="538" Source="/GonzalezPerezCO;component/Recursos/LOGOS/arabe-azul.png" Margin="523,10,0,728" Stretch="None"/>
+        <Image Width="538" HorizontalAlignment="Center"  VerticalAlignment="Top" Source="/GonzalezPerezCO;component/Recursos/LOGOS/arabe-azul.png" Margin="526,10,528,0" Stretch="None"/>
 
     </Grid>
 </Window>

@@ -10,7 +10,7 @@
         WindowStyle="None">
     <Grid>
         <DataGrid x:Name="dtgrid1" Height="597" Margin="336,222,392,0" VerticalAlignment="Top" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Width="864"/>
-        <Label x:Name="lab2" Content="Estudiantes Inscritos" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="647,109,704,0" VerticalAlignment="Top" RenderTransformOrigin="4.868,0.577" FontSize="24" FontWeight="Bold"/>
+        <Label x:Name="lab2" Content="Estudiantes Inscritos" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="671,109,680,0" VerticalAlignment="Top" RenderTransformOrigin="4.868,0.577" FontSize="24" FontWeight="Bold"/>
         <Button x:Name="bt1" Content="Asistencia" Margin="0,44,10,0" VerticalAlignment="Top" Width="130" Click="Bt1_Click" HorizontalAlignment="Right">
             <Button.Background>
                 <SolidColorBrush Color="#FFFFDA33"/>
@@ -51,7 +51,7 @@
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.MenuHighlightColorKey}}"/>
             </Button.Background>
         </Button>
-        <Image HorizontalAlignment="Left" Width="538" Source="/GonzalezPerezCO;component/Recursos/LOGOS/arabe-azul.png" Margin="528,0,0,738" Stretch="None"/>
+        <Image Width="538" HorizontalAlignment="Center"  VerticalAlignment="Top" Source="/GonzalezPerezCO;component/Recursos/LOGOS/arabe-azul.png" Margin="528,10,526,0" Stretch="None"/>
 
     </Grid>
 </Window>

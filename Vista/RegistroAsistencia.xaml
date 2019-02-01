@@ -19,7 +19,7 @@
             </Button.Background>
         </Button>
         <Button x:Name="bt2" Content="Regresar" HorizontalAlignment="Right" Margin="0,157,31,0" VerticalAlignment="Top" Width="74" Click="Click_bt2"/>
-        <Image HorizontalAlignment="Left" Width="538" Source="/GonzalezPerezCO;component/Recursos/LOGOS/arabe-azul.png" Margin="528,0,0,738" Stretch="None"/>
+        <Image Width="538" HorizontalAlignment="Center"  VerticalAlignment="Top" Source="/GonzalezPerezCO;component/Recursos/LOGOS/arabe-azul.png" Margin="529,10,525,0" Stretch="None"/>
 
     </Grid>
 </Window>

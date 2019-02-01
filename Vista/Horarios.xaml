@@ -103,6 +103,6 @@
         <Label x:Name="txt14" Content="---" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="842,496,694,358" VerticalAlignment="Center" RenderTransformOrigin="0.355,-0.212" FontSize="24" Width="56" Height="38" Foreground="#FF41C90E" FontWeight="Bold" VerticalContentAlignment="Center"/>
         <Button x:Name="bt4" Content="Eliminar Horario" HorizontalAlignment="Center" Margin="445,690,695,162" VerticalAlignment="Center" Width="452" Height="40" FontWeight="Bold" FontSize="20" Click="Click_bt4"/>
         <Button x:Name="bt5" Content="Bloquear Estudiante" HorizontalAlignment="Right" Margin="0,301,31,0" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.541,4.1" Click="Click_bt5"/>
-        <Image HorizontalAlignment="Left" Width="538" Source="/GonzalezPerezCO;component/Recursos/LOGOS/arabe-azul.png" Margin="528,0,0,738" Stretch="None"/>
+        <Image Width="538" HorizontalAlignment="Center"  VerticalAlignment="Top" Source="/GonzalezPerezCO;component/Recursos/LOGOS/arabe-azul.png" Margin="523,10,531,0" Stretch="None"/>
     </Grid>
 </Window>
