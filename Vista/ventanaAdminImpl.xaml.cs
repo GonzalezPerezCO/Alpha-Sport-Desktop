@@ -27,6 +27,9 @@ namespace AlphaSport.Vista
         {
             InitializeComponent();
             entorno = Entorno.GetInstance();
+
+            ActualizarCmbx();
+
             Limpiar();
         }
 
@@ -40,9 +43,14 @@ namespace AlphaSport.Vista
 
         private void Limpiar()
         {
+            text1.Text = "";
+            cmbox1.SelectedValue = null;
+
             text1.Focus();
         }
 
+        private void ActualizarCmbx() {
+        }
 
         private void Btn1_Click(object sender, RoutedEventArgs e)
         {
