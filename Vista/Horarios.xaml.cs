@@ -42,8 +42,8 @@ namespace AlphaSport.Vista
             lab1.Content = entorno.PROYECTO;
 
             IniciarLabelsY(); // crear Lista de Labels para mostrar cupos
-            MostrarCupos(); // mostar cupos disponibles
-            ActualizarCmbox(); // inicializa los Cmbox
+            // MostrarCupos(); // mostar cupos disponibles  HABILITAR CON BT4_CLICK PARA LA FUNCIONALIDAD
+            // ActualizarCmbox(); // inicializa los Cmbox HABILITAR CON BT4_CLICK PARA LA FUNCIONALIDAD
 
             Limpiar();
         }
@@ -480,7 +480,7 @@ namespace AlphaSport.Vista
         }
 
         private void ActualizarCmbox()
-        {        
+        {  
             cmbx1.ItemsSource = entorno.DIAS;
             cmbx2.ItemsSource = entorno.DIAS;
             cmbx3.ItemsSource = entorno.DIAS;
