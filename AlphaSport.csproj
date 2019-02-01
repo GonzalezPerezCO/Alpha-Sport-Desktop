@@ -165,9 +165,6 @@
     </Compile>
     <Compile Include="Controller\ConnectionClass.cs" />
     <Compile Include="Controller\Entorno.cs" />
-    <Compile Include="Vista\venatanAdminImpl.xaml.cs">
-      <DependentUpon>venatanAdminImpl.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Vista\ventanaPrestamosCas.xaml.cs">
       <DependentUpon>ventanaPrestamosCas.xaml</DependentUpon>
     </Compile>
@@ -219,10 +216,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Vista\TablaInscritos.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Vista\venatanAdminImpl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
