@@ -8,7 +8,7 @@
         
         Width="1600" Height="900" Closed="Window_Closed" Closing="Window_Closing"
         WindowState="Maximized" WindowStartupLocation="CenterScreen"
-        WindowStyle="None">
+        WindowStyle="None" ResizeMode="NoResize" >
     <Grid Background="#FFEEEEEE">
         <DataGrid x:Name="dtgrid1" Height="661" Margin="429,217,431,0" VerticalAlignment="Top" IsReadOnly="True" HorizontalAlignment="Center" Width="732" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <Label x:Name="lab2" Content="Implementos Deportivos" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="618,116,621,0" VerticalAlignment="Top" RenderTransformOrigin="4.868,0.577" FontSize="24" FontWeight="Bold" Width="353"/>

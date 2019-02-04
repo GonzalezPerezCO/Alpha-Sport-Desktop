@@ -7,7 +7,7 @@
         
         Width="1600" Height="900" Closed="Window_Closed" Closing="Window_Closing"
         WindowState="Maximized" WindowStartupLocation="CenterScreen"
-        WindowStyle="None">
+        WindowStyle="None" ResizeMode="NoResize" >
     <Grid Background="#FFEEEEEE">
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Center" Height="112" Margin="445,526,694,214" Stroke="Black" VerticalAlignment="Center" Width="453"/>
         <Label x:Name="lab2" Content="Horario Estudiante" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="678,82,692,0" VerticalAlignment="Top" RenderTransformOrigin="-0.013,-0.288" FontWeight="Bold" FontSize="24"/>

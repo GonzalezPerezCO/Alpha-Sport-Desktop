@@ -3,10 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:AlphaSport.Vista"
         mc:Ignorable="d"
         Title="ventanaAdminImpl"
-        WindowStyle="None"  Height="600" Width="500" >
+        WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Height="600" Width="500" >
     <Grid Background="#FFEEEEEE">
         <Button x:Name="btn1" Content="Aceptar" HorizontalAlignment="Left" Margin="10,0,0,10" Width="222" VerticalAlignment="Bottom" Background="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" Height="34" FontSize="18" Click="Btn1_Click"/>
         <TextBox x:Name="text1" CharacterCasing="Upper" HorizontalAlignment="Left" Height="45" Margin="27,268,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" FontWeight="Bold" FontSize="18" MaxLines="1" MaxLength="5" TextOptions.TextHintingMode="Fixed" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>

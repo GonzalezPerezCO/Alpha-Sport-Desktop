@@ -8,7 +8,7 @@
         
         Width="1600" Height="900" Closed="Window_Closed" Closing="Window_Closing"
         WindowState="Maximized" WindowStartupLocation="CenterScreen"
-        WindowStyle="None" MouseEnter="Window_MouseEnter" IsVisibleChanged="Window_IsVisibleChanged">
+        WindowStyle="None" ResizeMode="NoResize"  MouseEnter="Window_MouseEnter" IsVisibleChanged="Window_IsVisibleChanged">
     <Grid Background="#FFEEEEEE" Margin="0,10,0,671" HorizontalAlignment="Center" VerticalAlignment="Center">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="71*"/>

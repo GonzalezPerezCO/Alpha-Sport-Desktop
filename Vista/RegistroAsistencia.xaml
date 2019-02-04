@@ -8,7 +8,7 @@
        
         Width="1600" Height="900" Closed="Window_Closed" Closing="Window_Closing"
         WindowState="Maximized" WindowStartupLocation="CenterScreen"
-        WindowStyle="None">
+        WindowStyle="None" ResizeMode="NoResize" >
     <Grid Background="#FFEEEEEE">
         <DataGrid x:Name="dtgrid1" Height="597" Margin="301,218,295,0" VerticalAlignment="Top" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Width="996"/>
         <Label x:Name="lab2" Content="Asistencia General" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="623,90,612,0" VerticalAlignment="Top" RenderTransformOrigin="0.496,0.571" FontSize="24" FontWeight="Bold" Width="357"/>

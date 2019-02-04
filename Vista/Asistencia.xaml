@@ -7,7 +7,7 @@
         
         Width="1600" Height="900" Closed="Window_Closed" Closing="Window_Closing"
         WindowState="Maximized" WindowStartupLocation="CenterScreen"
-        WindowStyle="None">
+        WindowStyle="None" ResizeMode="NoResize" >
     <Grid Background="#FFEEEEEE">
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Center" Height="112" Margin="336,507,748,273" Stroke="Black" VerticalAlignment="Center" Width="508"/>
         <Button x:Name="btn1" Content="Regresar" HorizontalAlignment="Right" Margin="0,28,10,0" VerticalAlignment="Top" Width="74" Click="Btn1_Click"/>
