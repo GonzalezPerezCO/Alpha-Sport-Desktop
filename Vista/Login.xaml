@@ -9,7 +9,7 @@
         WindowState="Maximized" WindowStartupLocation="CenterScreen"
         WindowStyle="None" ResizeMode="NoResize" Icon="/GonzalezPerezCO;component/Recursos/alpha.ico">
     <Window.Background>
-        <ImageBrush ImageSource="/GonzalezPerezCO;component/Recursos/DSC_1591.jpg" TileMode="Tile"/>
+        <ImageBrush ImageSource="/GonzalezPerezCO;component/Recursos/DSC_1591.jpg" TileMode="Tile" Stretch="UniformToFill"/>
     </Window.Background>
     <Grid Height="300" Width="300" >
         <Border CornerRadius="20" Margin="20" Background="White">
