@@ -3,15 +3,20 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:AlphaSport.Vista"
         mc:Ignorable="d"
         Title="VentanaCreditos" 
-        WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Height="375" Width="500" Closed="Window_Closed" Closing="Window_Closing">
+        WindowStyle="None" ResizeMode="NoResize" Icon="/GonzalezPerezCO;component/Recursos/alpha.ico" WindowStartupLocation="CenterScreen" Height="500" Width="700" Closed="Window_Closed" Closing="Window_Closing">
     <Window.Background>
-        <ImageBrush ImageSource="/GonzalezPerezCO;component/Recursos/laura-converse-358339-unsplash.jpg" Stretch="UniformToFill"/>
+        <ImageBrush ImageSource="/GonzalezPerezCO;component/Recursos/bricks-brickwall-brickwork-1092364.jpg" Stretch="UniformToFill"/>
     </Window.Background>
     <Grid>
-       
-        
+        <Image  VerticalAlignment="Top" Source="/GonzalezPerezCO;component/Recursos/LOGOS/azul.png" Stretch="None" StretchDirection="UpOnly"/>
+        <Image  VerticalAlignment="Center" Source="/GonzalezPerezCO;component/Recursos/alpha.ico" StretchDirection="UpOnly" Margin="0,85,0,283" Stretch="None" Height="132"/>
+        <TextBlock x:Name="txt2" Foreground="Black" HorizontalAlignment="Center" Height="27" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="700" Background="{x:Null}" IsEnabled="true" TextAlignment="Center" FontWeight="Bold">
+            <Hyperlink NavigateUri="https://github.com/GonzalezPerezCO">
+              GitHub/GonzalezPerezCO
+            </Hyperlink>
+        </TextBlock>
+        <TextBlock x:Name="txt1" Foreground="Black" HorizontalAlignment="Center" Height="251" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="700" Background="{x:Null}" IsEnabled="true" TextAlignment="Center" FontWeight="Bold" Margin="0,0,0,32"/>
     </Grid>
 </Window>

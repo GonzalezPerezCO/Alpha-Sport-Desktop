@@ -8,7 +8,7 @@
         
         Width="1600" Height="900" Closed="Window_Closed" Closing="Window_Closing"
         WindowState="Maximized" WindowStartupLocation="CenterScreen"
-        WindowStyle="None" ResizeMode="NoResize" >
+        WindowStyle="None" ResizeMode="NoResize" Icon="/GonzalezPerezCO;component/Recursos/alpha.ico" >
     <Grid Background="#FFEEEEEE">
         <Label x:Name="lab2" Content="Asistencia Diaria" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="659,89,675,0" VerticalAlignment="Top" RenderTransformOrigin="-0.013,-0.288" FontWeight="Bold" FontSize="24" Width="258"/>
         <Button x:Name="bt1" Content="Regresar" HorizontalAlignment="Right" Margin="0,196,31,0" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.541,4.1" Click="Click_bt1"/>
