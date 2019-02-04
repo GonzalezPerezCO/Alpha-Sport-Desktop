@@ -85,7 +85,7 @@ namespace AlphaSport.Vista
 
         }
 
-        private void MostrarTabla()
+        public void MostrarTabla()
         {
             DataTable dt = entorno.TablaPrestamos();
             dtgrid1.ItemsSource = dt.DefaultView;

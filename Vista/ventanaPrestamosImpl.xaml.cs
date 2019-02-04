@@ -53,6 +53,7 @@ namespace AlphaSport.Vista
         {
             Debug.WriteLine("<<< OCULTAR");
             PrestamosImpl prestamos = PrestamosImpl.GetInstance();
+            prestamos.MostrarTabla();
             prestamos.Show();
             this.Hide();            
         }
