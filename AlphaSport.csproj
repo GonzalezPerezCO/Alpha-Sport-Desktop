@@ -288,10 +288,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Recursos\escuela_fondo.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Recursos\casilleros.jpg" />
     <Resource Include="Recursos\deportes.jpg" />
     <Resource Include="Recursos\gym.jpg" />
   </ItemGroup>
@@ -304,9 +300,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Recursos\sistemas.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Recursos\otoño2.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Recursos\LOGOS\arabe-azul.png" />
@@ -331,6 +324,9 @@
   <ItemGroup>
     <Resource Include="Recursos\LOGOS\logo-deportes.png" />
     <Resource Include="Recursos\LOGOS\logo-gimnasio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recursos\DSC_1591.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
