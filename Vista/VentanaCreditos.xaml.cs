@@ -27,7 +27,7 @@ namespace AlphaSport.Vista
         string nombre1 = "Directora de proyecto: \n Ing. CLAUDIA PATRICIA CASTAÑEDA BERMÚDEZ";
         string nombre2 = "JUAN FRANCISCO GONZÁLEZ ROJAS";
         string nombre3 = "MANUEL SERGIO PÉREZ ESPITIA";
-        string desarrollo = "El desarrollo hizo parte del proyecto SISTEMA DE GESTIÓN DE RECURSOS DEPORTIVOS DE LA ESCUELA (PGR)";
+        string desarrollo = "El desarrollo hizo parte del proyecto SISTEMA DE GESTIÓN DE RECURSOS DEPORTIVOS DE LA ESCUELA (PGR).";
         string apoyo = "Con el apoyo de la Decanatura de Ingeniería de Sistemas.";
         string fecha = "2018-i - 2019";
 
@@ -59,6 +59,11 @@ namespace AlphaSport.Vista
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             Application.Current.Shutdown();
+        }
+
+        private void Hyperlink_RequestNavigate(object sender, System.Windows.Navigation.RequestNavigateEventArgs e)
+        {
+
         }
     }
 }
