@@ -24,8 +24,11 @@
             </StackPanel>
         </Border>
         <Label x:Name="lab2" Content="Periodo Académico" HorizontalContentAlignment="Right" Foreground="White" HorizontalAlignment="Right" Height="37" Margin="531,-260,-546,0" VerticalAlignment="Top" Width="315" FontWeight="Bold" FontSize="20"/>
-        <Image HorizontalAlignment="Right" Height="98" Margin="0,0,-646,-297" VerticalAlignment="Bottom" Width="230" Source="/GonzalezPerezCO;component/Recursos/escuela_ing.jpg"/>
-        <Image HorizontalAlignment="Left" Width="206" Source="/GonzalezPerezCO;component/Recursos/sistemas.jpg" Margin="-646,499,0,-321"/>
+        
         <Image Width="968" HorizontalAlignment="Center"  VerticalAlignment="Top" Source="/GonzalezPerezCO;component/Recursos/LOGOS/azul-gigante.png" Margin="-337,-260,-331,0" Stretch="None"/>
+        <DockPanel Height="145" LastChildFill="False" Margin="-647,0,-646,-301" VerticalAlignment="Bottom" Width="1593">
+            <Image HorizontalAlignment="Right" Height="98" VerticalAlignment="Bottom" Width="230" Source="/GonzalezPerezCO;component/Recursos/escuela_ing.jpg"/>
+            <Image HorizontalAlignment="Left" Width="206" Source="/GonzalezPerezCO;component/Recursos/sistemas.jpg"/>
+        </DockPanel>
     </Grid>
 </Window>
