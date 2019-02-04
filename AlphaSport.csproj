@@ -299,9 +299,6 @@
     <Resource Include="Recursos\escuela_ing.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Recursos\sistemas.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Recursos\LOGOS\arabe-azul.png" />
     <Resource Include="Recursos\LOGOS\arabe-negro.png" />
     <Resource Include="Recursos\LOGOS\azul-claro.png" />
@@ -327,6 +324,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Recursos\DSC_1591.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recursos\sistemas.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

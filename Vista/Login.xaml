@@ -11,24 +11,38 @@
     <Window.Background>
         <ImageBrush ImageSource="/GonzalezPerezCO;component/Recursos/DSC_1591.jpg" TileMode="Tile" Stretch="UniformToFill"/>
     </Window.Background>
-    <Grid Height="300" Width="300" >
-        <Border CornerRadius="20" Margin="20" Background="White">
-            <StackPanel Margin="10">
-                <Label Content="Login" Foreground="Black" FontSize="25" HorizontalAlignment="Center"></Label>
-                <Separator></Separator>
-                <Label Content="Usuario" Foreground="Black"></Label>
-                <TextBox Name="txt1" Foreground="Black" Background="LightGray" FontSize="18" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-                <Label Content="Contraseña" Foreground="Black"></Label>
-                <PasswordBox Name="txt2" Foreground="Black" Background="LightGray" FontSize="18" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-                <Button Name="btn1" Content="Enviar" Margin="60 10" Foreground="Black" Background="LightGray" Click="Btn1_Click" ></Button>
-            </StackPanel>
-        </Border>
-        <Label x:Name="lab2" Content="Periodo Académico" HorizontalContentAlignment="Right" Foreground="White" HorizontalAlignment="Right" Height="37" Margin="531,-260,-546,0" VerticalAlignment="Top" Width="315" FontWeight="Bold" FontSize="20"/>
-        
-        <Image Width="968" HorizontalAlignment="Center"  VerticalAlignment="Top" Source="/GonzalezPerezCO;component/Recursos/LOGOS/azul-gigante.png" Margin="-337,-260,-331,0" Stretch="None"/>
-        <DockPanel Height="145" LastChildFill="False" Margin="-647,0,-646,-301" VerticalAlignment="Bottom" Width="1593">
-            <Image HorizontalAlignment="Right" Height="98" VerticalAlignment="Bottom" Width="230" Source="/GonzalezPerezCO;component/Recursos/escuela_ing.jpg"/>
-            <Image HorizontalAlignment="Left" Width="206" Source="/GonzalezPerezCO;component/Recursos/sistemas.jpg"/>
-        </DockPanel>
+    <Grid>
+        <Image Width="968" HorizontalAlignment="Center"  VerticalAlignment="Top" Source="/GonzalezPerezCO;component/Recursos/LOGOS/azul-gigante.png" Stretch="None"/>
+        <Grid Height="300" Width="300" >
+            <Border CornerRadius="20" Margin="20" Background="White">
+                <StackPanel Margin="10">
+                    <Label Content="Login" Foreground="Black" FontSize="25" HorizontalAlignment="Center"></Label>
+                    <Separator></Separator>
+                    <Label Content="Usuario" Foreground="Black"></Label>
+                    <TextBox Name="txt1" Foreground="Black" Background="LightGray" FontSize="18" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                    <Label Content="Contraseña" Foreground="Black"></Label>
+                    <PasswordBox Name="txt2" Foreground="Black" Background="LightGray" FontSize="18" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                    <Button Name="btn1" Content="Enviar" Margin="60 10" Foreground="Black" Background="LightGray" Click="Btn1_Click"></Button>
+                </StackPanel>
+            </Border>
+            <Label x:Name="lab2" Content="Periodo Académico" HorizontalContentAlignment="Right" Foreground="White" HorizontalAlignment="Right" Height="37" Margin="531,-260,-546,0" VerticalAlignment="Top" Width="315" FontWeight="Bold" FontSize="20"/>
+        </Grid>
+        <Grid VerticalAlignment="Bottom">
+            <Grid HorizontalAlignment="Left">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Image HorizontalAlignment="Left" Source="/GonzalezPerezCO;component/Recursos/sistemas.jpg"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+            <Grid HorizontalAlignment="Right">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Image HorizontalAlignment="Right" Source="/GonzalezPerezCO;component/Recursos/escuela_ing.jpg"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </Grid>
     </Grid>
+
 </Window>
