@@ -1,0 +1,17 @@
+﻿<Window x:Class="AlphaSport.Vista.VentanaCreditos"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AlphaSport.Vista"
+        mc:Ignorable="d"
+        Title="VentanaCreditos" 
+        WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Height="375" Width="500" Closed="Window_Closed" Closing="Window_Closing">
+    <Window.Background>
+        <ImageBrush ImageSource="/GonzalezPerezCO;component/Recursos/laura-converse-358339-unsplash.jpg" Stretch="UniformToFill"/>
+    </Window.Background>
+    <Grid>
+       
+        
+    </Grid>
+</Window>

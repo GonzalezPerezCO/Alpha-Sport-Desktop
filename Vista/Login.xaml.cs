@@ -63,5 +63,12 @@ namespace AlphaSport
         {
             Application.Current.Shutdown();
         }
+
+        private void Click_creditos(object sender, MouseButtonEventArgs e)
+        {
+            VentanaCreditos creditos = new VentanaCreditos();
+            creditos.Show();
+            this.Hide();
+        }
     }
 }
