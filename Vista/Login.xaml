@@ -43,7 +43,7 @@
                 </StackPanel>
             </Grid>
         </Grid>
-        <Button x:Name="salir" Content="SALIR" HorizontalAlignment="Left" VerticalAlignment="Top" Width="230" RenderTransformOrigin="0.453,-0.2" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" Click="Salir_Click" Margin="686,544,0,0"/>
+        <Button x:Name="salir" Content="SALIR" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="230" RenderTransformOrigin="0.453,-0.2" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" Click="Salir_Click" Margin="686,0,684,10"/>
     </Grid>
 
 </Window>
