@@ -53,7 +53,7 @@ namespace AlphaSport
                     bt9.Background = Brushes.Green;
                     activado = true;
 
-                    bt9.Content = "Desactivar Página Web";
+                    bt9.Content = "Deshabilitar WEB";
 
                 }
                 else
@@ -61,7 +61,7 @@ namespace AlphaSport
                     activado = false;
                     bt9.Background = Brushes.OrangeRed;
 
-                    bt9.Content = "Activar Página Web";
+                    bt9.Content = "Habilitar Página WEB";
                 }
             }            
         }
