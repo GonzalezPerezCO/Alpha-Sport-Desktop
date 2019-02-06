@@ -26,13 +26,15 @@ namespace AlphaSport
     public partial class TablaInscritos : Window
     {
         private Entorno entorno;
+        private bool activado;
 
         public TablaInscritos()
         {
             InitializeComponent();
             entorno = Entorno.GetInstance();
             //lab1.Content = entorno.PROYECTO;
-            ActualizarActivar();
+            
+            ActualizarActivar(); // actualiza el color del boton y el valor de "activado" de la pagina
             MostrarTabla();
         }
 
@@ -49,9 +51,11 @@ namespace AlphaSport
                 if (lista[0]=="true")
                 {
                     bt9.Background = Brushes.Blue;
+                    activado = true;
                 }
                 else
                 {
+                    activado = false;
                     bt9.Background = Brushes.OrangeRed;
                 }
             }            
@@ -138,7 +142,7 @@ namespace AlphaSport
         {
             string mensaje = "";
 
-            List<string> lista = entorno.ActivacionPaginaWEB(true);
+            List<string> lista = entorno.ActivacionPaginaWEB(!activado); // envi el valor contrario a activado 
 
             if (lista.Count != 0 && lista[0] == entorno.INFOSQL || lista[0] == entorno.ERRORSQL) // cuando si esta pero no tiene casillero
             {
@@ -146,7 +150,7 @@ namespace AlphaSport
             }
             else
             {
-
+                ActualizarActivar();
             }
         }
     }
