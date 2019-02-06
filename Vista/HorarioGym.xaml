@@ -16,5 +16,6 @@
         <Button x:Name="bt5" Content="Menú principal" HorizontalAlignment="Right" Margin="0,0,10,10" VerticalAlignment="Bottom" Width="130" RenderTransformOrigin="0.52,2.5" FontWeight="Bold" Height="48" Click="Bt5_Click" Background="#FFFFDA33"/>
         <ComboBox x:Name="cmbx1" HorizontalAlignment="Center" Margin="659,196,675,663" VerticalAlignment="Center" Width="258" FontSize="18" FontWeight="Bold" SelectionChanged="Cmbx1_SelectionChanged" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
         <Image Width="673" HorizontalAlignment="Center"  VerticalAlignment="Top" Source="/GonzalezPerezCO;component/Recursos/LOGOS/azul.png" Margin="446,10,473,0" Stretch="None"/>
+        <Button x:Name="salir" Content="SALIR" HorizontalAlignment="Left" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.453,-0.2" Background="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionBrushKey}}" FontWeight="Bold" FontSize="16" Click="Salir_Click"/>
     </Grid>
 </Window>

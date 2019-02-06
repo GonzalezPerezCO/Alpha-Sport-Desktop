@@ -169,5 +169,10 @@ namespace AlphaSport.Vista
 
             }
         }
+
+        private void Salir_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }

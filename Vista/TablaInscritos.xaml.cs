@@ -163,5 +163,10 @@ namespace AlphaSport
 
             MessageBox.Show(mensaje);
         }
+
+        private void Salir_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }

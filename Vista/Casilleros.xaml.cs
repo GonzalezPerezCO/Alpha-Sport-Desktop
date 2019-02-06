@@ -304,5 +304,10 @@ namespace AlphaSport.Vista
             tablaIns.Show();
             this.Hide();
         }
+
+        private void Salir_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }

@@ -22,5 +22,6 @@
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.MenuHighlightColorKey}}"/>
             </Button.Background>
         </Button>
+        <Button x:Name="salir" Content="SALIR" HorizontalAlignment="Left" Width="74" RenderTransformOrigin="0.453,-0.2" Background="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionBrushKey}}" FontWeight="Bold" FontSize="16" Click="Salir_Click" Margin="0,0,0,875"/>
     </Grid>
 </Window>

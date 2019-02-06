@@ -18,5 +18,6 @@
         </Button>
         <Button Content="Regresar" HorizontalAlignment="Right" Margin="0,134,10,0" VerticalAlignment="Top" Width="74" Click="Button_Click"/>
         <Image Width="677" HorizontalAlignment="Center"  VerticalAlignment="Top" Source="/GonzalezPerezCO;component/Recursos/LOGOS/azul.png" Margin="462,10,453,0" Stretch="None"/>
+        <Button x:Name="salir" Content="SALIR" HorizontalAlignment="Left" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.453,-0.2" Background="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionBrushKey}}" FontWeight="Bold" FontSize="16" Click="Salir_Click"/>
     </Grid>
 </Window>

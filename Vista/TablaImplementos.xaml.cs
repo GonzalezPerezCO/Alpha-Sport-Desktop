@@ -94,5 +94,10 @@ namespace AlphaSport.Vista
         {
             MostrarTabla();
         }
+
+        private void Salir_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }

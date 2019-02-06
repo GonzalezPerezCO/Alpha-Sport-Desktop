@@ -53,6 +53,7 @@
         </Button>
         <Image Width="692" HorizontalAlignment="Center"  VerticalAlignment="Top" Source="/GonzalezPerezCO;component/Recursos/LOGOS/azul.png" Margin="445,10,455,0" Stretch="None"/>
         <Button x:Name="bt9" HorizontalAlignment="Right" Margin="0,0,10,108" VerticalAlignment="Bottom" Width="130" RenderTransformOrigin="0.52,2.5" FontWeight="Bold" Height="48" Click="Bt9_Click" FontSize="11"/>
+        <Button x:Name="salir" Content="SALIR" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.453,-0.2" Background="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionBrushKey}}" FontWeight="Bold" FontSize="16" Click="Salir_Click"/>
 
     </Grid>
 </Window>
