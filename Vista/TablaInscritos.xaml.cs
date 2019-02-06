@@ -144,7 +144,7 @@ namespace AlphaSport
 
             List<string> lista = entorno.ActivacionPaginaWEB(!activado); // envi el valor contrario a activado 
 
-            if (lista.Count != 0 && lista[0] == entorno.INFOSQL || lista[0] == entorno.ERRORSQL) // cuando si esta pero no tiene casillero
+            if (lista.Count != 0 && (lista[0] == entorno.INFOSQL || lista[0] == entorno.ERRORSQL)) // cuando si esta pero no tiene casillero
             {
                 mensaje = lista[1];
             }
