@@ -48,7 +48,7 @@ namespace AlphaSport
             }
             else
             {
-                if (lista[0]=="true")
+                if( Convert.ToBoolean(lista[0]))
                 {
                     bt9.Background = Brushes.Blue;
                     activado = true;
