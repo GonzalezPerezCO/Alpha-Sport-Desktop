@@ -50,7 +50,7 @@ namespace AlphaSport
             {
                 if( Convert.ToBoolean(lista[0]))
                 {
-                    bt9.Background = Brushes.Blue;
+                    bt9.Background = Brushes.Green;
                     activado = true;
                 }
                 else
