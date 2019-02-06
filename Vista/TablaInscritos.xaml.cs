@@ -151,7 +151,12 @@ namespace AlphaSport
             else
             {
                 ActualizarActivar();
+
+                if (activado) { mensaje = "La página web de inscripciones fue activada!"; }
+                else { mensaje = "La página web de inscripciones fue desactivada!"; }
             }
+
+            MessageBox.Show(mensaje);
         }
     }
 }
