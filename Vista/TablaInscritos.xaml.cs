@@ -38,7 +38,23 @@ namespace AlphaSport
 
         private void ActualizarActivar()
         {
-            bt9.Background = Brushes.OrangeRed;
+            List<string> lista = entorno.EstadoPaginaWEB();
+
+            if (lista.Count != 0 && lista[0] == entorno.INFOSQL || lista[0] == entorno.ERRORSQL) // cuando si esta pero no tiene casillero
+            {
+                MessageBox.Show("Contacte con el admistrador: "+ lista[1]);
+            }
+            else
+            {
+                if (lista[0]=="true")
+                {
+                    bt9.Background = Brushes.Blue;
+                }
+                else
+                {
+                    bt9.Background = Brushes.OrangeRed;
+                }
+            }            
         }
 
         public void MostrarTabla()
