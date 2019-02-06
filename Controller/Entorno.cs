@@ -173,9 +173,9 @@ namespace AlphaSport.Controller
             string query = "CALL ESTADO_WEB();";
             return connection.ListaUnicaReader(query);
         }
-        public List<string> ActivacionPaginaWEB(bool activar)
+        public List<string> ActivacionPaginaWEB(Int16 activar)
         {
-            string query = "CALL ACTIVACION_WEB('"+activar+"');";
+            string query = "CALL ACTIVACION_WEB("+activar+");";
             return connection.ListaUnicaReader(query);
         }
 

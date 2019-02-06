@@ -142,7 +142,7 @@ namespace AlphaSport
         {
             string mensaje = "";
 
-            List<string> lista = entorno.ActivacionPaginaWEB(!activado); // envi el valor contrario a activado 
+            List<string> lista = entorno.ActivacionPaginaWEB( Convert.ToInt16(!activado) ); // envi el valor contrario a activado, convetir a int16
 
             if (lista.Count != 0 && (lista[0] == entorno.INFOSQL || lista[0] == entorno.ERRORSQL)) // cuando si esta pero no tiene casillero
             {
