@@ -32,9 +32,14 @@ namespace AlphaSport
             InitializeComponent();
             entorno = Entorno.GetInstance();
             //lab1.Content = entorno.PROYECTO;
+            ActualizarActivar();
             MostrarTabla();
         }
 
+        private void ActualizarActivar()
+        {
+            bt9.Background = Brushes.OrangeRed;
+        }
 
         public void MostrarTabla()
         {
@@ -116,6 +121,17 @@ namespace AlphaSport
         private void Bt9_Click(object sender, RoutedEventArgs e)
         {
             string mensaje = "";
+
+            List<string> lista = entorno.ActivacionPaginaWEB(true);
+
+            if (lista.Count != 0 && lista[0] == entorno.INFOSQL || lista[0] == entorno.ERRORSQL) // cuando si esta pero no tiene casillero
+            {
+                mensaje = lista[1];
+            }
+            else
+            {
+
+            }
         }
     }
 }

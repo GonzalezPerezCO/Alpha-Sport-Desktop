@@ -168,6 +168,12 @@ namespace AlphaSport.Controller
             return connection.DatosEstuReader(query);
         }
 
+        public List<string> ActivacionPaginaWEB(bool activar)
+        {
+            string query = "CALL ACTIVACION_WEB('"+activar+"');";
+            return connection.ListaUnicaReader(query);
+        }
+
         public List<string> DisponiblesCasilleros()
         {
             string query = "CALL casillerosDisponibles();";
