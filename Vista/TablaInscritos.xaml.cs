@@ -112,5 +112,10 @@ namespace AlphaSport
             registro.Show();
             this.Hide();
         }
+
+        private void Bt9_Click(object sender, RoutedEventArgs e)
+        {
+            string mensaje = "";
+        }
     }
 }
