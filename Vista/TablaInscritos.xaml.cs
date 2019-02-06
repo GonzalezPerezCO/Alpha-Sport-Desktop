@@ -52,11 +52,16 @@ namespace AlphaSport
                 {
                     bt9.Background = Brushes.Green;
                     activado = true;
+
+                    bt9.Content = "Desactivar Página Web";
+
                 }
                 else
                 {
                     activado = false;
                     bt9.Background = Brushes.OrangeRed;
+
+                    bt9.Content = "Activar Página Web";
                 }
             }            
         }
@@ -150,9 +155,9 @@ namespace AlphaSport
             }
             else
             {
-                ActualizarActivar();
+                ActualizarActivar();                
 
-                if (activado) { mensaje = "La página web de inscripciones fue activada!"; }
+                if (activado) { mensaje = "La página web de inscripciones fue activada!";}
                 else { mensaje = "La página web de inscripciones fue desactivada!"; }
             }
 

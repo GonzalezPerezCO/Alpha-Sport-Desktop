@@ -52,7 +52,7 @@
             </Button.Background>
         </Button>
         <Image Width="692" HorizontalAlignment="Center"  VerticalAlignment="Top" Source="/GonzalezPerezCO;component/Recursos/LOGOS/azul.png" Margin="445,10,455,0" Stretch="None"/>
-        <Button x:Name="bt9" Content="Web Activada/Desactivada" HorizontalAlignment="Right" Margin="0,0,10,108" VerticalAlignment="Bottom" Width="130" RenderTransformOrigin="0.52,2.5" FontWeight="Bold" Height="48" Click="Bt9_Click" Background="#2ECC71"/>
+        <Button x:Name="bt9" Content="" HorizontalAlignment="Right" Margin="0,0,10,108" VerticalAlignment="Bottom" Width="130" RenderTransformOrigin="0.52,2.5" FontWeight="Bold" Height="48" Click="Bt9_Click"/>
 
     </Grid>
 </Window>
