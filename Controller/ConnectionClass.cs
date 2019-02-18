@@ -485,7 +485,7 @@ namespace AlphaSport.Controller
         }
 
 
-        //Execute query return Array casilleors disponibles
+        //Execute generic query return Array
         public List<string> ListaUnicaReader(string query)
         {
 
@@ -500,7 +500,7 @@ namespace AlphaSport.Controller
 
             try
             {
-                Debug.WriteLine(" ----   RESULT QERY TRY recibido ListaUnicaReader disponibles reader: " + query);
+                Debug.WriteLine(" ----   RESULT QERY TRY recibido ListaUnicaReader ListaUnicaReader reader: " + query);
                 reader = cmd.ExecuteReader();
 
                 while (reader.Read())
@@ -508,7 +508,7 @@ namespace AlphaSport.Controller
                     if (reader.GetString(0) != null) result.Add(reader.GetString(0)); 
                 }
 
-                Debug.WriteLine(" ----   RESULT QERY READER ListaUnicaReader disponibles reader: tamaño = " +result.Count);
+                Debug.WriteLine(" ----   RESULT QERY READER ListaUnicaReader ListaUnicaReader reader: tamaño = " + result.Count);
                 foreach (var item in result)
                 {
                     Debug.WriteLine(" ---- " + item.ToString());
@@ -516,7 +516,7 @@ namespace AlphaSport.Controller
             }
             catch (MySqlException ex)
             {
-                Debug.WriteLine(" ----   CATCH QERY READER ListaUnicaReader disponibles reader: " + ex);
+                Debug.WriteLine(" ----   CATCH QERY READER ListaUnicaReader ListaUnicaReader reader: " + ex);
 
                 if (ex.Message.Contains("INFO"))
                 {
