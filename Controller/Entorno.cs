@@ -32,6 +32,9 @@ namespace AlphaSport.Controller
         public readonly List<string> DIAS = new List<string> { "LUNES", "MARTES", "MIERCOLES", "JUEVES", "VIERNES" };
         public readonly List<string> HORAS = new List<string> { "N/A", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17" };
 
+        public List<string> carreras = new List<string>();
+        public List<string> generos = new List<string>();
+        public List<string> semestres = new List<string>();
 
         private static Entorno instance = null;
         private ConnectionClass connection;
@@ -76,6 +79,13 @@ namespace AlphaSport.Controller
                 return false;
             }
 
+        }
+
+        public void DatosCmboxAgregarEstu()
+        {
+            carreras = Carreras();
+            generos = Generos();
+            semestres = Semestres();
         }
 
         /// <summary>
@@ -154,6 +164,24 @@ namespace AlphaSport.Controller
             }
 
             return dia;
+        }
+
+        public List<string> Generos()
+        {
+            string query = "CALL generos();";
+            return connection.ListaUnicaReader(query);
+        }
+
+        public List<string> Carreras()
+        {
+            string query = "CALL carreras();";
+            return connection.ListaUnicaReader(query);
+        }
+
+        public List<string> Semestres()
+        {
+            string query = "CALL semestres();";
+            return connection.ListaUnicaReader(query);
         }
 
         public List<string> Asistencia(UInt64 codigo)
@@ -293,24 +321,6 @@ namespace AlphaSport.Controller
         {
             string query = "UPDATE tcasilleros SET disponible = 1, codigo = NULL, entrada = '2018-01-01 00:00:00', salida = '2018-01-01 00:00:00' WHERE codigo = " + codigo + ";";
             connection.QueryExecute(query);
-        }
-
-        public List<string> Generos()
-        {
-            string query = "CALL generos();";
-            return connection.ListaUnicaReader(query);
-        }
-
-        public List<string> Carreras()
-        {
-            string query = "CALL carreras();";
-            return connection.ListaUnicaReader(query);
-        }
-
-        public List<string> Semestres()
-        {   
-            string query = "CALL semestres();";
-            return connection.ListaUnicaReader(query);
         }
 
         public List<string> AgregarEstudiante(string nombre, string apellido, string genero, string reserva, UInt64 codigo, UInt64 documento, string carrera, UInt32 semestre, string email, string observacion, bool examen)
