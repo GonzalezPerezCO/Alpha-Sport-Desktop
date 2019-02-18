@@ -63,7 +63,7 @@ namespace AlphaSport.Vista
                 Application.Current.Shutdown();
             }
             carreras = SepararIds(lista);
-            cmbox.ItemsSource = carreras;
+            cmbox_carrera.ItemsSource = carreras;
 
             cmbox_semestre.ItemsSource = new List<UInt32>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
         }
@@ -93,7 +93,7 @@ namespace AlphaSport.Vista
 
         private void Btn3_Click(object sender, RoutedEventArgs e)
         {
-            if (txt1.Text == "" || txt2.Text == "" || txt3.Text == "" || cmbox.SelectedItem == null || cmbox_semestre.SelectedValue == null || txt6.Text == ""  || !txt6.Text.Contains("@") || txt9.Text == "")
+            if (txt1.Text == "" || txt2.Text == "" || txt3.Text == "" || cmbox_genero.SelectedItem == null || cmbox_carrera.SelectedItem == null || cmbox_semestre.SelectedValue == null || txt6.Text == ""  || !txt6.Text.Contains("@") || txt9.Text == "")
             {
                 MessageBox.Show("Llene todos los campos correctamente para poder continuar.");
             }
@@ -108,11 +108,11 @@ namespace AlphaSport.Vista
                 {
                     string nombres = txt1.Text.TrimStart().TrimEnd();
                     string apellidos = txt2.Text.TrimStart().TrimEnd();
-                    string genero = 
+                    string genero = Convert.ToString(cmbox_genero.SelectedValue);
                     string reserva = txt9.Text.TrimStart().TrimEnd();
                     UInt64 codigo = Convert.ToUInt64(txt3.Text);
                     UInt64 documento = Convert.ToUInt64(txt8.Text);
-                    string carrera = Convert.ToString(cmbox.SelectedValue).TrimStart().TrimEnd();
+                    string carrera = Convert.ToString(cmbox_carrera.SelectedValue);
                     UInt32 semestre = Convert.ToUInt32(cmbox_semestre.SelectedValue.ToString());
                     string email = txt6.Text.TrimStart().TrimEnd();                    
                     string obs = txt7.Text.TrimStart().TrimEnd();
@@ -166,7 +166,8 @@ namespace AlphaSport.Vista
             txt1.Text = "";
             txt2.Text = "";
             txt3.Text = "";
-            cmbox.SelectedValue = null;
+            cmbox_genero.SelectedValue = null;
+            cmbox_carrera.SelectedValue = null;
             cmbox_semestre.SelectedValue = null;
             txt6.Text = "";
             txt7.Text = "";
