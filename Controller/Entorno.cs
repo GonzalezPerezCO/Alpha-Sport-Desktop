@@ -313,9 +313,9 @@ namespace AlphaSport.Controller
             return connection.ListaUnicaReader(query);
         }
 
-        public List<string> AgregarEstudiante(string nombre, string apellido, string reserva, UInt64 codigo, UInt64 documento, string carrera, UInt32 semestre, string email, string observacion, bool examen)
+        public List<string> AgregarEstudiante(string nombre, string apellido, string genero, string reserva, UInt64 codigo, UInt64 documento, string carrera, UInt32 semestre, string email, string observacion, bool examen)
         {
-            string query = "CALL addEstudFull('" + nombre + "', '" + apellido + "', '"+ reserva + "', " + codigo + ", " + documento + ", '" + carrera + "', " + semestre + ", '" + email + "', '" + observacion + "', "+examen+" );";
+            string query = "CALL addEstudFull('" + nombre + "', '" + apellido + "', '" + genero + "', '" + reserva + "', " + codigo + ", " + documento + ", '" + carrera + "', " + semestre + ", '" + email + "', '" + observacion + "', "+examen+" );";
 
             List<string> result = connection.ListaUnicaReader(query);
 

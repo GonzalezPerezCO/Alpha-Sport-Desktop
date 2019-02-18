@@ -136,7 +136,7 @@ namespace AlphaSport.Vista
                     string obs = txt7.Text.TrimStart().TrimEnd();
                     bool examen = chbx.IsChecked ?? false;
 
-                    List<string> lista = entorno.AgregarEstudiante(nombres, apellidos, reserva, codigo, documento, carrera, semestre, email, obs, examen);
+                    List<string> lista = entorno.AgregarEstudiante(nombres, apellidos, genero, reserva, codigo, documento, carrera, semestre, email, obs, examen);
 
                     if (lista.Count != 0 && (lista[0]==entorno.ERRORSQL || lista[0] == entorno.INFOSQL))
                     {
