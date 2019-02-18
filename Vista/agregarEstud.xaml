@@ -9,7 +9,7 @@
         WindowState="Maximized" WindowStartupLocation="CenterScreen"
         WindowStyle="None" ResizeMode="NoResize" Icon="/GonzalezPerezCO;component/Recursos/alpha.ico" >
     <Grid Background="#FFEEEEEE">
-        <Label x:Name="lab2" Content="Agregar Estudiante al Gimnasio" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="617,108,611,0" VerticalAlignment="Top" RenderTransformOrigin="-0.013,-0.288" FontWeight="Bold" FontSize="24"/>
+        <Label x:Name="lab2" Content="Agregar Estudiante al Gimnasio" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="613,108,622,0" VerticalAlignment="Top" RenderTransformOrigin="-0.013,-0.288" FontWeight="Bold" FontSize="24"/>
         <Button x:Name="btn1" Content="Regresar" HorizontalAlignment="Right" Margin="0,97,49,0" VerticalAlignment="Top" Width="76" Click="Btn1_Click"/>
         <Button x:Name="btn3" Content="Guardar" HorizontalAlignment="Center" Margin="686,0,680,48" VerticalAlignment="Bottom" Width="226" FontWeight="Bold" FontSize="16" Height="43" Click="Btn3_Click">
             <Button.Background>
@@ -36,7 +36,7 @@
         <TextBox x:Name="txt9" HorizontalAlignment="Center" Height="36" Margin="418,461,858,403" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Width="324" FontSize="20" CharacterCasing="Upper" MaxLines="1" MaxLength="20" VerticalContentAlignment="Center"/>
         <CheckBox x:Name="chbx" Content="Examen médico" HorizontalAlignment="Center" Margin="1074,269,328,605" VerticalAlignment="Center" FontSize="20" FontWeight="Bold" Width="198" />
         <ComboBox x:Name="cmbox_semestre" HorizontalAlignment="Center" Margin="914,264,596,604" VerticalAlignment="Center" Width="90" Height="32" FontSize="20"/>
-        <Image Width="681" HorizontalAlignment="Center"  VerticalAlignment="Top" Source="/GonzalezPerezCO;component/Recursos/LOGOS/azul.png" Margin="416,10,495,0" Stretch="None"/>
+        <Image Width="682" HorizontalAlignment="Center"  VerticalAlignment="Top" Source="/GonzalezPerezCO;component/Recursos/LOGOS/azul.png" Margin="454,10,464,0" Stretch="None"/>
         <Label x:Name="lab12" Content="Genero:" HorizontalAlignment="Center" Margin="781,299,736,564" VerticalAlignment="Center" FontWeight="Bold" FontSize="20"/>
         <ComboBox x:Name="cmbox_genero" HorizontalAlignment="Center" Margin="914,304,596,564" VerticalAlignment="Center" Width="90" Height="32" FontSize="20"/>
 

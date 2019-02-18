@@ -303,14 +303,12 @@ namespace AlphaSport.Controller
 
         public List<string> Carreras()
         {
-            //string query = "SELECT GROUP_CONCAT(carrera) FROM tcarreras;";
             string query = "CALL carreras();";
             return connection.ListaUnicaReader(query);
         }
 
         public List<string> Semestres()
-        {
-            //string query = "SELECT GROUP_CONCAT(carrera) FROM tcarreras;";
+        {   
             string query = "CALL semestres();";
             return connection.ListaUnicaReader(query);
         }
