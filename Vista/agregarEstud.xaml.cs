@@ -58,7 +58,8 @@ namespace AlphaSport.Vista
         {
             List<string> carreras = entorno.Carreras();
             List<string> generos = entorno.Generos();
-            
+            List<string> semestres = entorno.Semestres();
+
 
             if (carreras.Count != 0 && (carreras[0] == entorno.ERRORSQL || carreras[0] == entorno.INFOSQL))
             {
@@ -72,9 +73,17 @@ namespace AlphaSport.Vista
                 Application.Current.Shutdown();
             }
 
-            carreras = SepararIds(carreras);
+            if (semestres.Count != 0 && (semestres[0] == entorno.ERRORSQL || semestres[0] == entorno.INFOSQL))
+            {
+                MessageBox.Show("GET Semestres: Error critico leyendo la base de datos!" + "\n" + "Contacte con el administrador \n" + semestres[1]);
+                Application.Current.Shutdown();
+            }
+
+            //carreras = SepararIds(carreras);           
             cmbox_carrera.ItemsSource = carreras;
-            cmbox_semestre.ItemsSource = new List<UInt32>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            cmbox_genero.ItemsSource = generos;
+            //cmbox_semestre.ItemsSource = new List<UInt32>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            cmbox_semestre.ItemsSource = semestres;
         }
 
         private void Window_Closed(object sender, EventArgs e)
