@@ -113,18 +113,18 @@ namespace AlphaSport.Controller
         /// </summary>
         public void RestartAppWPF()
         {
-            //System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
-            //Application.Current.Shutdown();
+            System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
+            Application.Current.Shutdown();
         }
 
         /// <summary>
-        /// Mantiene como inactividad maxima en 5min y luego reinicia la applicacion
+        /// Mantiene como inactividad maxima en 45min y luego reinicia la applicacion
         /// </summary>
         public void InactividadAppWPF()
         {
             Debug.WriteLine("####### TAREA DE INACTIVIDAD #######");
 
-            int timerTime = 3; // en minutos
+            int timerTime = 45; // en minutos
             var timer = new DispatcherTimer
              (
              TimeSpan.FromMinutes(timerTime),
