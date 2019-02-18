@@ -93,9 +93,9 @@ namespace AlphaSport.Vista
 
         private void Btn3_Click(object sender, RoutedEventArgs e)
         {
-            if (txt1.Text == "" || txt2.Text == "" || txt3.Text == "" || cmbox.SelectedItem == null || cmbox_semestre.SelectedValue == null || txt6.Text == "" || txt9.Text == "")
+            if (txt1.Text == "" || txt2.Text == "" || txt3.Text == "" || cmbox.SelectedItem == null || cmbox_semestre.SelectedValue == null || txt6.Text == ""  || txt6.Text.Contains("@") || txt9.Text == "")
             {
-                MessageBox.Show("Llene todos los campos para poder continuar.");
+                MessageBox.Show("Llene todos los campos correctamente para poder continuar.");
             }
             else {
                 // validación de tipo de dato correcto, que los numericos sean numeros
