@@ -24,13 +24,14 @@ namespace AlphaSport.Vista
 
         private Entorno entorno;
         private static List<string> carreras;
+        private static List<string> generos;
 
         public AgregarEstud()
         {
             InitializeComponent();
             entorno = Entorno.GetInstance();
             //lab1.Content = entorno.PROYECTO;
-            PrepararCarrerasTYsemestre();
+            PrepararComboBox();
             Limpiar();
             BotonesEstado(true);
         }
@@ -53,7 +54,7 @@ namespace AlphaSport.Vista
             return result;
         }
 
-        private void PrepararCarrerasTYsemestre()
+        private void PrepararComboBox()
         {
             List<string> lista = entorno.Carreras();
             
