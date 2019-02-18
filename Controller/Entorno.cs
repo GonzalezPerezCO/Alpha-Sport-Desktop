@@ -43,6 +43,8 @@ namespace AlphaSport.Controller
         private Entorno() {
             connection = ConnectionClass.GetInstance();
             PERIODO = connection.GetPeriodo();
+
+            DatosCmboxAgregarEstu();
         }
 
 
@@ -86,6 +88,24 @@ namespace AlphaSport.Controller
             carreras = Carreras();
             generos = Generos();
             semestres = Semestres();
+
+            if (carreras.Count != 0 && (carreras[0] == ERRORSQL || carreras[0] == INFOSQL))
+            {
+                MessageBox.Show("GET Carreras: Error critico leyendo la base de datos!" + "\n" + "Contacte con el administrador \n" + carreras[1]);
+                Application.Current.Shutdown();
+            }
+
+            if (generos.Count != 0 && (generos[0] == ERRORSQL || generos[0] == INFOSQL))
+            {
+                MessageBox.Show("GET Generos: Error critico leyendo la base de datos!" + "\n" + "Contacte con el administrador \n" + generos[1]);
+                Application.Current.Shutdown();
+            }
+
+            if (semestres.Count != 0 && (semestres[0] == ERRORSQL || semestres[0] == INFOSQL))
+            {
+                MessageBox.Show("GET Semestres: Error critico leyendo la base de datos!" + "\n" + "Contacte con el administrador \n" + semestres[1]);
+                Application.Current.Shutdown();
+            }
         }
 
         /// <summary>

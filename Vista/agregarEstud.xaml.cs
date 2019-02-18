@@ -25,6 +25,7 @@ namespace AlphaSport.Vista
         private Entorno entorno;
         private static List<string> carreras;
         private static List<string> generos;
+        private static List<string> semestres;
 
         public AgregarEstud()
         {
@@ -55,34 +56,9 @@ namespace AlphaSport.Vista
         }*/
 
         private void PrepararComboBox()
-        {
-            List<string> carreras = entorno.Carreras();
-            List<string> generos = entorno.Generos();
-            List<string> semestres = entorno.Semestres();
-
-
-            if (carreras.Count != 0 && (carreras[0] == entorno.ERRORSQL || carreras[0] == entorno.INFOSQL))
-            {
-                MessageBox.Show("GET Carreras: Error critico leyendo la base de datos!" + "\n" + "Contacte con el administrador \n" + carreras[1]);
-                Application.Current.Shutdown();
-            }
-
-            if (generos.Count != 0 && (generos[0] == entorno.ERRORSQL || generos[0] == entorno.INFOSQL))
-            {
-                MessageBox.Show("GET Generos: Error critico leyendo la base de datos!" + "\n" + "Contacte con el administrador \n" + generos[1]);
-                Application.Current.Shutdown();
-            }
-
-            if (semestres.Count != 0 && (semestres[0] == entorno.ERRORSQL || semestres[0] == entorno.INFOSQL))
-            {
-                MessageBox.Show("GET Semestres: Error critico leyendo la base de datos!" + "\n" + "Contacte con el administrador \n" + semestres[1]);
-                Application.Current.Shutdown();
-            }
-
-            //carreras = SepararIds(carreras);           
+        {                
             cmbox_carrera.ItemsSource = carreras;
-            cmbox_genero.ItemsSource = generos;
-            //cmbox_semestre.ItemsSource = new List<UInt32>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            cmbox_genero.ItemsSource = generos;           
             cmbox_semestre.ItemsSource = semestres;
         }
 
