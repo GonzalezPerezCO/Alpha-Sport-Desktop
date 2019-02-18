@@ -22,21 +22,23 @@
         <TextBox x:Name="txt2" HorizontalAlignment="Center" Height="38" Margin="414,280,854,534" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Width="324" FontSize="20" CharacterCasing="Upper" MaxLines="1" MaxLength="100" VerticalContentAlignment="Center"/>
         <Label x:Name="lab5" Content="Código:" HorizontalAlignment="Center" Margin="277,330,1217,485" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" RenderTransformOrigin="0.182,0.378" Width="98"/>
         <TextBox x:Name="txt3" HorizontalAlignment="Center" Height="36" Margin="414,330,854,486" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Width="324" FontSize="20" CharacterCasing="Upper" MaxLines="1" MaxLength="11" VerticalContentAlignment="Center"/>
-        <Label x:Name="lab6" Content="Carrera:" HorizontalAlignment="Center" Margin="780,225,734,590" VerticalAlignment="Center" FontWeight="Bold" FontSize="20"/>
-        <Label x:Name="lab7" Content="Semestre:" HorizontalAlignment="Center" Margin="780,276,716,539" VerticalAlignment="Center" FontWeight="Bold" FontSize="20"/>
-        <Label x:Name="lab8" Content="Email:" HorizontalAlignment="Center" Margin="781,330,751,485" VerticalAlignment="Center" FontWeight="Bold" FontSize="20"/>
-        <TextBox x:Name="txt6" HorizontalAlignment="Center" Height="36" Margin="910,330,217,486" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Width="465" FontSize="20" CharacterCasing="Upper" MaxLines="1" MaxLength="100" VerticalContentAlignment="Center"/>
+        <Label x:Name="lab6" Content="Carrera:" HorizontalAlignment="Center" Margin="291,470,1225,393" VerticalAlignment="Center" FontWeight="Bold" FontSize="20"/>
+        <Label x:Name="lab7" Content="Semestre:" HorizontalAlignment="Center" Margin="781,259,717,604" VerticalAlignment="Center" FontWeight="Bold" FontSize="20"/>
+        <Label x:Name="lab8" Content="Email:" HorizontalAlignment="Center" Margin="782,354,752,510" VerticalAlignment="Center" FontWeight="Bold" FontSize="20"/>
+        <TextBox x:Name="txt6" HorizontalAlignment="Center" Height="36" Margin="914,354,221,510" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Width="465" FontSize="20" CharacterCasing="Upper" MaxLines="1" MaxLength="100" VerticalContentAlignment="Center"/>
         <Label x:Name="lab10" Content="Observaciones" HorizontalAlignment="Center" Margin="708,538,716,317" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" Width="168"/>
         <TextBox x:Name="txt7" HorizontalAlignment="Center" Height="142" HorizontalContentAlignment="Left" Margin="276,560,244,150" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Width="1072" FontSize="20" CharacterCasing="Upper" AcceptsReturn="True" AcceptsTab="True" MaxLength="300"/>
         <Button x:Name="btn2" Content="Limpiar" HorizontalAlignment="Right" Margin="0,139,49,0" VerticalAlignment="Top" Width="76" Click="Btn2_Click"/>
         <Label x:Name="lab9" Content="Documento:" HorizontalAlignment="Center" Margin="277,386,1180,430" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" RenderTransformOrigin="0.182,0.378" Width="135"/>
         <TextBox x:Name="txt8" HorizontalAlignment="Center" Height="36" Margin="416,386,852,430" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Width="324" FontSize="20" CharacterCasing="Upper" MaxLines="1" MaxLength="11" VerticalContentAlignment="Center"/>
-        <ComboBox x:Name="cmbox" HorizontalAlignment="Center" Margin="910,229,217,592" VerticalAlignment="Center" Width="465" Height="31" FontSize="20"/>
-        <Label x:Name="lab11" Content="Reserva:" HorizontalAlignment="Center" Margin="780,406,707,450" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" RenderTransformOrigin="0.182,0.378" Width="105"/>
-        <TextBox x:Name="txt9" HorizontalAlignment="Center" Height="36" Margin="910,406,358,450" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Width="324" FontSize="20" CharacterCasing="Upper" MaxLines="1" MaxLength="20" VerticalContentAlignment="Center"/>
-        <CheckBox x:Name="chbx" Content="Examen médico" HorizontalAlignment="Center" Margin="1070,306,324,560" VerticalAlignment="Center" FontSize="20" FontWeight="Bold" Width="198" />
-        <ComboBox x:Name="cmbox_semestre" HorizontalAlignment="Center" Margin="910,301,592,559" VerticalAlignment="Center" Width="90" Height="32" FontSize="20"/>
+        <ComboBox x:Name="cmbox" HorizontalAlignment="Center" Margin="424,474,711,395" VerticalAlignment="Center" Width="465" Height="31" FontSize="20"/>
+        <Label x:Name="lab11" Content="Reserva:" HorizontalAlignment="Center" Margin="784,410,711,454" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" RenderTransformOrigin="0.182,0.378" Width="105"/>
+        <TextBox x:Name="txt9" HorizontalAlignment="Center" Height="36" Margin="914,410,362,454" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Width="324" FontSize="20" CharacterCasing="Upper" MaxLines="1" MaxLength="20" VerticalContentAlignment="Center"/>
+        <CheckBox x:Name="chbx" Content="Examen médico" HorizontalAlignment="Center" Margin="1074,269,328,605" VerticalAlignment="Center" FontSize="20" FontWeight="Bold" Width="198" />
+        <ComboBox x:Name="cmbox_semestre" HorizontalAlignment="Center" Margin="914,264,596,604" VerticalAlignment="Center" Width="90" Height="32" FontSize="20"/>
         <Image Width="681" HorizontalAlignment="Center"  VerticalAlignment="Top" Source="/GonzalezPerezCO;component/Recursos/LOGOS/azul.png" Margin="416,10,495,0" Stretch="None"/>
+        <Label x:Name="lab12" Content="Genero:" HorizontalAlignment="Center" Margin="781,299,717,564" VerticalAlignment="Center" FontWeight="Bold" FontSize="20"/>
+        <ComboBox x:Name="cmbox_genero" HorizontalAlignment="Center" Margin="914,304,596,564" VerticalAlignment="Center" Width="90" Height="32" FontSize="20"/>
 
     </Grid>
 </Window>

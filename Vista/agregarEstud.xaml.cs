@@ -59,7 +59,7 @@ namespace AlphaSport.Vista
             
             if (lista.Count != 0 && (lista[0] == entorno.ERRORSQL || lista[0] == entorno.INFOSQL))
             {
-                MessageBox.Show("Error critico leyendo la base de datos!" + "\n" + "Contacte con el administrador " + lista[1]);
+                MessageBox.Show("Error critico leyendo la base de datos!" + "\n" + "Contacte con el administrador \n" + lista[1]);
                 Application.Current.Shutdown();
             }
             carreras = SepararIds(lista);
@@ -108,6 +108,7 @@ namespace AlphaSport.Vista
                 {
                     string nombres = txt1.Text.TrimStart().TrimEnd();
                     string apellidos = txt2.Text.TrimStart().TrimEnd();
+                    string genero = 
                     string reserva = txt9.Text.TrimStart().TrimEnd();
                     UInt64 codigo = Convert.ToUInt64(txt3.Text);
                     UInt64 documento = Convert.ToUInt64(txt8.Text);
