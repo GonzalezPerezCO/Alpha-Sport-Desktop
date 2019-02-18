@@ -36,7 +36,7 @@ namespace AlphaSport.Vista
             BotonesEstado(true);
         }
 
-        private List<string> SepararIds(List<string> lista)
+        /*private List<string> SepararIds(List<string> lista)
         {
             // a,b,c,...,x
 
@@ -52,7 +52,7 @@ namespace AlphaSport.Vista
             }
 
             return result;
-        }
+        }*/
 
         private void PrepararComboBox()
         {
