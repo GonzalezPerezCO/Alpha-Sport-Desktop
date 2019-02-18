@@ -47,8 +47,6 @@ namespace AlphaSport.Controller
             DatosCmboxAgregarEstu();
         }
 
-
-
         public static Entorno GetInstance()
         {
             if (instance == null)
