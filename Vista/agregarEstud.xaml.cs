@@ -100,15 +100,15 @@ namespace AlphaSport.Vista
             else {
                 // validación de tipo de dato correcto, que los numericos sean numeros
                
-                if (!UInt64.TryParse(txt3.Text, out UInt64 abc) || !UInt64.TryParse(txt8.Text, out UInt64 def) || !UInt32.TryParse(txt9.Text, out UInt32 jkl))
+                if (!UInt64.TryParse(txt3.Text, out UInt64 abc) || !UInt64.TryParse(txt8.Text, out UInt64 def) )
                 {
-                    MessageBox.Show("Hay campos númericos con texto. Escriba solo numéros en el Código, el Documento, Reverva y en el Semestre.");
+                    MessageBox.Show("Hay campos númericos con texto. Escriba solo numéros en el Código, el Documento y en el Semestre.");
                 }
                 else
                 {
                     string nombres = txt1.Text.TrimStart().TrimEnd();
                     string apellidos = txt2.Text.TrimStart().TrimEnd();
-                    UInt32 reserva = Convert.ToUInt32(txt9.Text);
+                    string reserva = txt9.Text.TrimStart().TrimEnd();
                     UInt64 codigo = Convert.ToUInt64(txt3.Text);
                     UInt64 documento = Convert.ToUInt64(txt8.Text);
                     string carrera = Convert.ToString(cmbox.SelectedValue).TrimStart().TrimEnd();
