@@ -56,16 +56,24 @@ namespace AlphaSport.Vista
 
         private void PrepararComboBox()
         {
-            List<string> lista = entorno.Carreras();
+            List<string> carreras = entorno.Carreras();
+            List<string> generos = entorno.Generos();
             
-            if (lista.Count != 0 && (lista[0] == entorno.ERRORSQL || lista[0] == entorno.INFOSQL))
+
+            if (carreras.Count != 0 && (carreras[0] == entorno.ERRORSQL || carreras[0] == entorno.INFOSQL))
             {
-                MessageBox.Show("Error critico leyendo la base de datos!" + "\n" + "Contacte con el administrador \n" + lista[1]);
+                MessageBox.Show("GET Carreras: Error critico leyendo la base de datos!" + "\n" + "Contacte con el administrador \n" + carreras[1]);
                 Application.Current.Shutdown();
             }
-            carreras = SepararIds(lista);
-            cmbox_carrera.ItemsSource = carreras;
 
+            if (generos.Count != 0 && (generos[0] == entorno.ERRORSQL || generos[0] == entorno.INFOSQL))
+            {
+                MessageBox.Show("GET Generos: Error critico leyendo la base de datos!" + "\n" + "Contacte con el administrador \n" + generos[1]);
+                Application.Current.Shutdown();
+            }
+
+            carreras = SepararIds(carreras);
+            cmbox_carrera.ItemsSource = carreras;
             cmbox_semestre.ItemsSource = new List<UInt32>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
         }
 

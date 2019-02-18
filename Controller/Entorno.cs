@@ -263,12 +263,6 @@ namespace AlphaSport.Controller
             return connection.ListaUnicaReader(query);
         }
 
-        public List<string> Carreras()
-        {
-            string query = "SELECT GROUP_CONCAT(carrera) FROM tcarreras;";
-            return connection.ListaUnicaReader(query);
-        }
-
         public List<string> BuscarCasilleroEstu(UInt64 codigo)
         {
             string query = "CALL listaCasilleroCodigo("+codigo+")";
@@ -304,6 +298,20 @@ namespace AlphaSport.Controller
         public List<string> Generos()
         {
             string query = "CALL generos();";
+            return connection.ListaUnicaReader(query);
+        }
+
+        public List<string> Carreras()
+        {
+            //string query = "SELECT GROUP_CONCAT(carrera) FROM tcarreras;";
+            string query = "CALL carreras();";
+            return connection.ListaUnicaReader(query);
+        }
+
+        public List<string> Semestres()
+        {
+            //string query = "SELECT GROUP_CONCAT(carrera) FROM tcarreras;";
+            string query = "CALL semestres();";
             return connection.ListaUnicaReader(query);
         }
 
