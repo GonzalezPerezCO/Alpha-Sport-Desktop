@@ -23,9 +23,6 @@ namespace AlphaSport.Vista
     {
 
         private Entorno entorno;
-        private static List<string> carreras;
-        private static List<string> generos;
-        private static List<string> semestres;
 
         public AgregarEstud()
         {
@@ -57,9 +54,9 @@ namespace AlphaSport.Vista
 
         private void PrepararComboBox()
         {                
-            cmbox_carrera.ItemsSource = carreras;
-            cmbox_genero.ItemsSource = generos;           
-            cmbox_semestre.ItemsSource = semestres;
+            cmbox_carrera.ItemsSource = entorno.CARRERAS;
+            cmbox_genero.ItemsSource = entorno.GENEROS;           
+            cmbox_semestre.ItemsSource = entorno.SEMESTRES;
         }
 
         private void Window_Closed(object sender, EventArgs e)

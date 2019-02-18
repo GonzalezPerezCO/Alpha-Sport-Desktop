@@ -32,9 +32,9 @@ namespace AlphaSport.Controller
         public readonly List<string> DIAS = new List<string> { "LUNES", "MARTES", "MIERCOLES", "JUEVES", "VIERNES" };
         public readonly List<string> HORAS = new List<string> { "N/A", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17" };
 
-        public List<string> carreras = new List<string>();
-        public List<string> generos = new List<string>();
-        public List<string> semestres = new List<string>();
+        public List<string> CARRERAS = new List<string>();
+        public List<string> GENEROS = new List<string>();
+        public List<string> SEMESTRES = new List<string>();
 
         private static Entorno instance = null;
         private ConnectionClass connection;
@@ -85,25 +85,25 @@ namespace AlphaSport.Controller
 
         public void DatosCmboxAgregarEstu()
         {
-            carreras = Carreras();
-            generos = Generos();
-            semestres = Semestres();
+            CARRERAS = Carreras();
+            GENEROS = Generos();
+            SEMESTRES = Semestres();
 
-            if (carreras.Count != 0 && (carreras[0] == ERRORSQL || carreras[0] == INFOSQL))
+            if (CARRERAS.Count != 0 && (CARRERAS[0] == ERRORSQL || CARRERAS[0] == INFOSQL))
             {
-                MessageBox.Show("GET Carreras: Error critico leyendo la base de datos!" + "\n" + "Contacte con el administrador \n" + carreras[1]);
+                MessageBox.Show("GET Carreras: Error critico leyendo la base de datos!" + "\n" + "Contacte con el administrador \n" + CARRERAS[1]);
                 Application.Current.Shutdown();
             }
 
-            if (generos.Count != 0 && (generos[0] == ERRORSQL || generos[0] == INFOSQL))
+            if (GENEROS.Count != 0 && (GENEROS[0] == ERRORSQL || GENEROS[0] == INFOSQL))
             {
-                MessageBox.Show("GET Generos: Error critico leyendo la base de datos!" + "\n" + "Contacte con el administrador \n" + generos[1]);
+                MessageBox.Show("GET Generos: Error critico leyendo la base de datos!" + "\n" + "Contacte con el administrador \n" + GENEROS[1]);
                 Application.Current.Shutdown();
             }
 
-            if (semestres.Count != 0 && (semestres[0] == ERRORSQL || semestres[0] == INFOSQL))
+            if (SEMESTRES.Count != 0 && (SEMESTRES[0] == ERRORSQL || SEMESTRES[0] == INFOSQL))
             {
-                MessageBox.Show("GET Semestres: Error critico leyendo la base de datos!" + "\n" + "Contacte con el administrador \n" + semestres[1]);
+                MessageBox.Show("GET Semestres: Error critico leyendo la base de datos!" + "\n" + "Contacte con el administrador \n" + SEMESTRES[1]);
                 Application.Current.Shutdown();
             }
         }
