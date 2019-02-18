@@ -31,7 +31,7 @@
         <Button x:Name="btn2" Content="Limpiar" HorizontalAlignment="Right" Margin="0,139,49,0" VerticalAlignment="Top" Width="76" Click="Btn2_Click"/>
         <Label x:Name="lab9" Content="Documento:" HorizontalAlignment="Center" Margin="280,410,1185,453" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" RenderTransformOrigin="0.182,0.378" Width="135"/>
         <TextBox x:Name="txt8" HorizontalAlignment="Center" Height="36" Margin="418,410,858,454" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Width="324" FontSize="20" CharacterCasing="Upper" MaxLines="1" MaxLength="11" VerticalContentAlignment="Center"/>
-        <ComboBox x:Name="cmbox_carrera" HorizontalAlignment="Center" Margin="914,415,362,454" VerticalAlignment="Center" Width="324" Height="31" FontSize="20"/>
+        <ComboBox x:Name="cmbox_carrera" HorizontalAlignment="Center" Margin="914,415,221,454" VerticalAlignment="Center" Width="465" Height="31" FontSize="20"/>
         <Label x:Name="lab11" Content="Reserva:" HorizontalAlignment="Center" Margin="281,461,1214,403" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" RenderTransformOrigin="0.182,0.378" Width="105"/>
         <TextBox x:Name="txt9" HorizontalAlignment="Center" Height="36" Margin="418,461,858,403" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Width="324" FontSize="20" CharacterCasing="Upper" MaxLines="1" MaxLength="20" VerticalContentAlignment="Center"/>
         <CheckBox x:Name="chbx" Content="Examen médico" HorizontalAlignment="Center" Margin="1074,269,328,605" VerticalAlignment="Center" FontSize="20" FontWeight="Bold" Width="198" />
