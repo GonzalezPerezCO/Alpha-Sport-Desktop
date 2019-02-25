@@ -21,18 +21,20 @@ namespace AlphaSport.Controller
         private MySqlConnection connection;
         private string connectionString;
 
-        private readonly string server = "estudiantes.is.escuelaing.edu.co";
-        private readonly string database = "deportes";
-        private readonly string user = "deportes";
-        private readonly string password = "deportes20182";
-        private readonly string port = "3306";         
-        private readonly string sslM = "none";
+        private string server;
+        private string database;
+        private string user;
+        private string password;
+        private string port;
+        private string sslM;
 
         private MySqlCommand cmd;
         private MySqlDataReader reader;
                 
         private bool disposed = false; // Flag: Has Dispose already been called?
-        
+
+        private readonly DATA_SERVER_template data_server = new DATA_SERVER_template();
+
         public void Dispose()
         {   
             Dispose(true); // Dispose of unmanaged resources.            
@@ -70,7 +72,18 @@ namespace AlphaSport.Controller
         private ConnectionClass()
         {
             Debug.WriteLine(" ----   INITIALIZATE");
+            
             Initialize();
+        }
+
+        private void LoadDataServer()
+        {
+            server = ;
+            database;
+            user;
+            password;
+            port;
+            sslM;
         }
 
         public static ConnectionClass GetInstance()

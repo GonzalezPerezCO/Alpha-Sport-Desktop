@@ -43,7 +43,7 @@ namespace AlphaSport.Controller
         private Entorno() {
             connection = ConnectionClass.GetInstance();
             PERIODO = connection.GetPeriodo();
-
+                        
             TestConection(); // Test de conexión
 
             DatosCmboxAgregarEstu();
