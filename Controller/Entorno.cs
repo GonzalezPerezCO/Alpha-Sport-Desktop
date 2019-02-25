@@ -57,7 +57,7 @@ namespace AlphaSport.Controller
             }
             catch (Exception ex)
             {
-                MessageBox.Show("No es posible conectarse a la Base de Datos"+ "\n\n" + "Error: "+ex);
+                MessageBox.Show("No es posible conectarse a la Base de Datos"+ "\n\n"+ex);
 
                 Application.Current.Shutdown();
             }
