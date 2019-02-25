@@ -135,6 +135,7 @@
     <Compile Include="Vista\Cupos.xaml.cs">
       <DependentUpon>Cupos.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Vista\DATA_SERVER.template.cs" />
     <Compile Include="Vista\HorarioGym.xaml.cs">
       <DependentUpon>HorarioGym.xaml</DependentUpon>
     </Compile>

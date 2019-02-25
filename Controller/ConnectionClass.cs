@@ -21,7 +21,7 @@ namespace AlphaSport.Controller
         private MySqlConnection connection;
         private string connectionString;
 
-        private readonly string server = "aestudiantes.is.escuelaing.edu.co";
+        private readonly string server = "estudiantes.is.escuelaing.edu.co";
         private readonly string database = "deportes";
         private readonly string user = "deportes";
         private readonly string password = "deportes20182";
