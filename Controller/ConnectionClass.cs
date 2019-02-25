@@ -34,8 +34,8 @@ namespace AlphaSport.Controller
                 
         private bool disposed = false; // Flag: Has Dispose already been called?
 
-        private readonly DATA_SERVER_template data_server = new DATA_SERVER_template();
-        //private readonly DATA_SERVER data_server = new DATA_SERVER();
+        //private readonly DATA_SERVER_template data_server = new DATA_SERVER_template();
+        private readonly DATA_SERVER data_server = new DATA_SERVER();  
 
         public void Dispose()
         {   

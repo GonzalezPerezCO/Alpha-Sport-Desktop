@@ -18,7 +18,7 @@ namespace AlphaSport.Controller
 
         public DATA_SERVER_template()
         {
-            Debug.WriteLine("Read Data Server... \n Connection DATA from DATA_SERVER");
+            Debug.WriteLine("Read Data Server... \n Connection DATA from DATA_SERVER_TEMPLATE");
         }
 
         public string GET_server() { return server; }
