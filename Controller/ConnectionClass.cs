@@ -11,6 +11,7 @@ using MySql.Data.MySqlClient;
 
 using Microsoft.Win32.SafeHandles;
 using System.Runtime.InteropServices;
+using System.Windows;
 
 namespace AlphaSport.Controller
 {
@@ -78,12 +79,17 @@ namespace AlphaSport.Controller
 
         private void LoadDataServer()
         {
-            server = ;
-            database;
-            user;
-            password;
-            port;
-            sslM;
+            server = data_server.GET_server();
+            database = data_server.GET_database();
+            user = data_server.GET_user();
+            password = data_server.GET_password();
+            port = data_server.GET_port();
+            sslM = data_server.GET_sslM();
+
+            if (server=="" || database=="" || user=="")
+            {
+                MessageBox.Show("Sin datos Básicos de Conexión. \n cree su propia clase DATA_server a partir de DATA_SERVER_template.cs \n El programa terminará");
+            }
         }
 
         public static ConnectionClass GetInstance()

@@ -31,6 +31,6 @@ namespace AlphaSport.Controller
 
         public string GET_port() { return port; }
 
-        public string GET_sslMr() { return sslM; }
+        public string GET_sslM() { return sslM; }
     }
 }
