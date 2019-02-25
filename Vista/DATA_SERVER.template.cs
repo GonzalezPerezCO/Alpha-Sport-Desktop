@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,8 +18,21 @@ namespace AlphaSport.Vista
 
         public DATA_SERVER()
         {
-
+            Debug.WriteLine("Read... \n Connection DATA from DATA_SERVER");
         }
+
+        public string GET_server(){ return server; }
+
+        public string GET_database() { return database; }
+
+        public string GET_user() { return user; }
+
+        public string GET_password() { return password; }
+
+        public string GET_port() { return port; }
+
+        public string GET_sslMr() { return sslM; }
+
     }
 
 }
