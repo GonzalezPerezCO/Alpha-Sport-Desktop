@@ -123,6 +123,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controller\DATA_SERVER.cs" />
     <Compile Include="Controller\DATA_SERVER_template.cs" />
     <Compile Include="Vista\agregarEstud.xaml.cs">
       <DependentUpon>agregarEstud.xaml</DependentUpon>
