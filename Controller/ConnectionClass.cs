@@ -74,10 +74,9 @@ namespace AlphaSport.Controller
         private ConnectionClass()
         {
             Debug.WriteLine(" ----   INITIALIZATE");
-            
-            Initialize();
 
             LoadDataServer();
+            Initialize();
         }
 
         private void LoadDataServer()
@@ -95,7 +94,7 @@ namespace AlphaSport.Controller
                 Application.Current.Shutdown();
             }
 
-            Debug.WriteLine("<<< Información del servidor cargada {DATA_SERVER}");
+            Debug.WriteLine("<<< Información del servidor cargada {DATA_SERVER: "+server+", "+database+"}");
         }
 
         public static ConnectionClass GetInstance()
