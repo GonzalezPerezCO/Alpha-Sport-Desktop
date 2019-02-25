@@ -21,7 +21,7 @@ namespace AlphaSport.Controller
         private MySqlConnection connection;
         private string connectionString;
 
-        private readonly string server = "estudiantes.is.escuelaing.edu.co";
+        private readonly string server = "aestudiantes.is.escuelaing.edu.co";
         private readonly string database = "deportes";
         private readonly string user = "deportes";
         private readonly string password = "deportes20182";
@@ -118,6 +118,31 @@ namespace AlphaSport.Controller
            connection.Close();
 
             Debug.WriteLine(" ----   CLOSE CONNECTION");           
+        }
+
+
+        // Test Connection
+        public void TEST_CONNECION()
+        {
+            Debug.WriteLine(" ----   QUERY TEST_CONNECION");
+
+            string query = "SELECT 1";
+
+            this.OpenConnection();
+
+            cmd = new MySqlCommand(query, connection);
+
+            try
+            {
+                Debug.WriteLine(" ----   RESULT QERY TRY TEST_CONNECION: " + query);
+                reader = cmd.ExecuteReader();
+            }
+            catch (MySqlException ex)
+            {
+                Debug.WriteLine(" ----   CATCH TEST_CONNECION: " + ex);
+            }
+
+            this.CloseConnection();
         }
 
         //Login
@@ -492,7 +517,7 @@ namespace AlphaSport.Controller
             reader = null;
             List<string> result = new List<string>();
 
-            Debug.WriteLine(" ----   QUERY READER OPEN CONNECTION ListaUnicaReader reader");
+            Debug.WriteLine(" ----   QUERY READER OPEN CONNECTION ListaUnicaReader reader : " + query);
 
             this.OpenConnection();
 

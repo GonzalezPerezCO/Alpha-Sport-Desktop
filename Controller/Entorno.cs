@@ -44,7 +44,23 @@ namespace AlphaSport.Controller
             connection = ConnectionClass.GetInstance();
             PERIODO = connection.GetPeriodo();
 
+            TestConection(); // Test de conexión
+
             DatosCmboxAgregarEstu();
+        }
+
+        private void TestConection()
+        {
+            try
+            {
+                connection.TEST_CONNECION();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No es posible conectarse a la Base de Datos"+ "\n\n" + "Error: "+ex);
+
+                Application.Current.Shutdown();
+            }
         }
 
         public static Entorno GetInstance()
