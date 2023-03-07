@@ -1,4 +1,11 @@
-﻿# Epic-Sport-_Deportes
+# Proyecto de Grado 2018-2019
+# Sistema de Gestión y Registro del Gimnasio de la Escuela
+ 
+El proyecto fue desarrollado para mejorar el actual proceso mediante el desarrollo de una herramienta informática que permite realizar procesos de registro y seguimiento de horarios a los usuarios de un gimnasio deportivo, y procesos de gestión administrativa de recursos y servicios a los administradores del mismo.
+
+## Epic-Sport-_Deportes
+![Pantalla de inicio](alphasport.jpg)
+
 
 ### .NET Framework 4.6.1 - WPF Application
 
